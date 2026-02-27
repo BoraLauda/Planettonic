@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52414fa3869acd040b0ed6b6d3d42937, type: 3}
+  m_Name: Io
+  m_EditorClassIdentifier: 
+  characterName: IO STELLAN
+  profileIcon: {fileID: 21300000, guid: 405748e6d2ec0014992aab7edeff6d2d, type: 3}
+  portraitImage: {fileID: 281146401269919291, guid: a592fd1e0039a0b41a340d5324df28b1, type: 3}
+  profileList: "Age: 24 Human Years\r\nGender: Female\r\nNationality: Coastal City
+    in Venus\r\nSexuality: Bisexual\r\nHeight: 178 cm\r\nWeight: 60 kg\r\nOccupation:
+    Producer for a New Music Label That\u2019s Gaining Popularity\r\nEducation Level:
+    University Graduate \u2013 Music Engineer\r\nDate Intention: Committed Relationship\r\nDrinks:
+    Yes\r\nSmokes: Sometimes\r\nAllergies: None\r\nLocation Preferences: Restaurant,
+    Cafe, Arcade\r\nDietary Preferences: Vegetarian\r\nFavorite Activity: Watching
+    Anime, Singing, Swimming, Playing Guitar, Reading Comics\r\nZodiac: Libra\r\nMarriage:
+    Not yet\r\nKids: Not yet\r\n"
+  info: "Io is a young adult trying to exist and survive as an artist in one of Venus\u2019
+    many bustling coastal cities. She is a music engineering graduate and is a promising
+    young artist in the industry. She spends her free time being a nerd, collecting
+    comics and merch of her favorite shows. She hasn\u2019t had much luck with dating
+    as of yet. "

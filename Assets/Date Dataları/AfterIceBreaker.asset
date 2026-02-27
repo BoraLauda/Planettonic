@@ -1,0 +1,52 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f832b14936fc2048824d9308b14ded6, type: 3}
+  m_Name: AfterIceBreaker
+  m_EditorClassIdentifier: 
+  allLines:
+  - side: 3
+    characterName: Chaperon
+    characterSprite: {fileID: 0}
+    sentence: "Okay, that was it guys. Thanks for playing, I\u2019ll leave you to
+      it."
+    eventTrigger: 
+    choices: []
+  - side: 0
+    characterName: Io
+    characterSprite: {fileID: -1160322238068995058, guid: e79cf994b0112f542bb5904bcd06966b, type: 3}
+    sentence: "Damn, that was kinda intense, huh. I never thought I\u2019d be so
+      pumped with adrenaline at 2 pm in a cafe date but here we are."
+    eventTrigger: 
+    choices: []
+  - side: 1
+    characterName: Elroi
+    characterSprite: {fileID: -6843144879011698485, guid: 1af55f43fff034e4297b2207808da62a, type: 3}
+    sentence: 
+    eventTrigger: 
+    choices:
+    - choices: "1-)Well I`m certainly pumped with adrenaline. It\u2019s \u2018cause
+        of you though."
+      nextScenario: {fileID: 11400000, guid: f5d7192c9bc0e1a498c91779d9ae1c63, type: 2}
+      target: 1
+      starReward: 1
+      heartReward: 20
+    - choices: "2-)I was gonna make a joke with the word \u2018pump\u2019 but I forgot. "
+      nextScenario: {fileID: 11400000, guid: 5df5b7b6b504d4c4dbe8703aebf1b0ee, type: 2}
+      target: 1
+      starReward: 0.5
+      heartReward: 10
+    - choices: 3-It wasn`t that intense. I mean I lift so nothing really is.
+      nextScenario: {fileID: 11400000, guid: 4e6ba3d4f9c38c04b9255ec198272be3, type: 2}
+      target: 1
+      starReward: 0
+      heartReward: 0
+  nextScenario: {fileID: 0}

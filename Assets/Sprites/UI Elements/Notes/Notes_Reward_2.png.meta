@@ -1,0 +1,3601 @@
+fileFormatVersion: 2
+guid: c4f73e705428b2749a761fc759e150cc
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 8349537423253859060
+    second: Notes_Reward_2_0
+  - first:
+      213: 4555839707844677839
+    second: Notes_Reward_2_1
+  - first:
+      213: 2002415602641698665
+    second: Notes_Reward_2_2
+  - first:
+      213: 883237534072993745
+    second: Notes_Reward_2_3
+  - first:
+      213: 7679078196721699746
+    second: Notes_Reward_2_4
+  - first:
+      213: 4877038537708413928
+    second: Notes_Reward_2_5
+  - first:
+      213: -7931568639812552676
+    second: Notes_Reward_2_6
+  - first:
+      213: 4868292011018303136
+    second: Notes_Reward_2_7
+  - first:
+      213: -7842242216541467386
+    second: Notes_Reward_2_8
+  - first:
+      213: 7590310055710707899
+    second: Notes_Reward_2_9
+  - first:
+      213: -4653007260342586023
+    second: Notes_Reward_2_10
+  - first:
+      213: 1157263534612673464
+    second: Notes_Reward_2_11
+  - first:
+      213: -8073669552871161559
+    second: Notes_Reward_2_12
+  - first:
+      213: 2716732370416352730
+    second: Notes_Reward_2_13
+  - first:
+      213: -2527843396392026916
+    second: Notes_Reward_2_14
+  - first:
+      213: 8627377206958366223
+    second: Notes_Reward_2_15
+  - first:
+      213: 5735332024535404265
+    second: Notes_Reward_2_16
+  - first:
+      213: 1146251628278369088
+    second: Notes_Reward_2_17
+  - first:
+      213: -9068943736273525123
+    second: Notes_Reward_2_18
+  - first:
+      213: -1867820030210989639
+    second: Notes_Reward_2_19
+  - first:
+      213: 6673513838558069301
+    second: Notes_Reward_2_20
+  - first:
+      213: 3618026024831360740
+    second: Notes_Reward_2_21
+  - first:
+      213: -1344256057601684482
+    second: Notes_Reward_2_22
+  - first:
+      213: -3037542876729034387
+    second: Notes_Reward_2_23
+  - first:
+      213: 2770227590707577837
+    second: Notes_Reward_2_24
+  - first:
+      213: 8285539628135856671
+    second: Notes_Reward_2_25
+  - first:
+      213: 3689238340460661763
+    second: Notes_Reward_2_26
+  - first:
+      213: -8828990163290846494
+    second: Notes_Reward_2_27
+  - first:
+      213: -4340182404694463134
+    second: Notes_Reward_2_28
+  - first:
+      213: -1246927481226010598
+    second: Notes_Reward_2_29
+  - first:
+      213: -6500981936434612387
+    second: Notes_Reward_2_30
+  - first:
+      213: 6546009412302072864
+    second: Notes_Reward_2_31
+  - first:
+      213: 3596509160768821582
+    second: Notes_Reward_2_32
+  - first:
+      213: -6490428588363781593
+    second: Notes_Reward_2_33
+  - first:
+      213: 7871839227236476438
+    second: Notes_Reward_2_34
+  - first:
+      213: 4997630782001600920
+    second: Notes_Reward_2_35
+  - first:
+      213: -8791696967434760166
+    second: Notes_Reward_2_36
+  - first:
+      213: 239671345913272385
+    second: Notes_Reward_2_37
+  - first:
+      213: 7713305145646376367
+    second: Notes_Reward_2_38
+  - first:
+      213: -2402944223049150147
+    second: Notes_Reward_2_39
+  - first:
+      213: -5744980896784887763
+    second: Notes_Reward_2_40
+  - first:
+      213: 5245276391850693265
+    second: Notes_Reward_2_41
+  - first:
+      213: 9198909957183856423
+    second: Notes_Reward_2_42
+  - first:
+      213: 7588078473362604676
+    second: Notes_Reward_2_43
+  - first:
+      213: -7122070908356349734
+    second: Notes_Reward_2_44
+  - first:
+      213: -5927441947186334729
+    second: Notes_Reward_2_45
+  - first:
+      213: -1037608161129488112
+    second: Notes_Reward_2_46
+  - first:
+      213: 5050173136585467626
+    second: Notes_Reward_2_47
+  - first:
+      213: -408440430614531438
+    second: Notes_Reward_2_48
+  - first:
+      213: -1050994917273444224
+    second: Notes_Reward_2_49
+  - first:
+      213: 7632857531561056313
+    second: Notes_Reward_2_50
+  - first:
+      213: 1964149275592809385
+    second: Notes_Reward_2_51
+  - first:
+      213: 2612425502938428539
+    second: Notes_Reward_2_52
+  - first:
+      213: 3921829423610486285
+    second: Notes_Reward_2_53
+  - first:
+      213: -2973828525739993699
+    second: Notes_Reward_2_54
+  - first:
+      213: -2456128052485806249
+    second: Notes_Reward_2_55
+  - first:
+      213: 6674161554086840730
+    second: Notes_Reward_2_56
+  - first:
+      213: 7997392095747103534
+    second: Notes_Reward_2_57
+  - first:
+      213: 2828752435373257650
+    second: Notes_Reward_2_58
+  - first:
+      213: 2607925487676210639
+    second: Notes_Reward_2_59
+  - first:
+      213: -4732650659858217378
+    second: Notes_Reward_2_60
+  - first:
+      213: 5840357155367085643
+    second: Notes_Reward_2_61
+  - first:
+      213: -469971900876951249
+    second: Notes_Reward_2_62
+  - first:
+      213: -840066403615414588
+    second: Notes_Reward_2_63
+  - first:
+      213: -2228702158301247996
+    second: Notes_Reward_2_64
+  - first:
+      213: 5852019448873785542
+    second: Notes_Reward_2_65
+  - first:
+      213: 6227704265635375130
+    second: Notes_Reward_2_66
+  - first:
+      213: 9019063897497259203
+    second: Notes_Reward_2_67
+  - first:
+      213: 8535890479230298529
+    second: Notes_Reward_2_68
+  - first:
+      213: 3371494076294488376
+    second: Notes_Reward_2_69
+  - first:
+      213: 5917291161791683598
+    second: Notes_Reward_2_70
+  - first:
+      213: -4887195219544958329
+    second: Notes_Reward_2_71
+  - first:
+      213: -2057472572351104186
+    second: Notes_Reward_2_72
+  - first:
+      213: -7776934277600351736
+    second: Notes_Reward_2_73
+  - first:
+      213: -3779785926873421026
+    second: Notes_Reward_2_74
+  - first:
+      213: -8382900286593949424
+    second: Notes_Reward_2_75
+  - first:
+      213: 4508006126907851052
+    second: Notes_Reward_2_76
+  - first:
+      213: -5772456407845489206
+    second: Notes_Reward_2_77
+  - first:
+      213: -6051568654500054793
+    second: Notes_Reward_2_78
+  - first:
+      213: -9088178079285245409
+    second: Notes_Reward_2_79
+  - first:
+      213: -8738856922876681472
+    second: Notes_Reward_2_80
+  - first:
+      213: 4899658514745268888
+    second: Notes_Reward_2_81
+  - first:
+      213: 9104884059608137076
+    second: Notes_Reward_2_82
+  - first:
+      213: 3885075571401766736
+    second: Notes_Reward_2_83
+  - first:
+      213: 3858616020146950630
+    second: Notes_Reward_2_84
+  - first:
+      213: -4865180898399128216
+    second: Notes_Reward_2_85
+  - first:
+      213: -2287131509555615917
+    second: Notes_Reward_2_86
+  - first:
+      213: 4515423279871395939
+    second: Notes_Reward_2_87
+  - first:
+      213: -2215876583430282249
+    second: Notes_Reward_2_88
+  - first:
+      213: -8690321837935721686
+    second: Notes_Reward_2_89
+  - first:
+      213: 4629608201181378027
+    second: Notes_Reward_2_90
+  - first:
+      213: -5098249134058744345
+    second: Notes_Reward_2_91
+  - first:
+      213: -2337309293147461529
+    second: Notes_Reward_2_92
+  - first:
+      213: -3871569490931429712
+    second: Notes_Reward_2_93
+  - first:
+      213: -7235351776179029532
+    second: Notes_Reward_2_94
+  - first:
+      213: -8429834801006963409
+    second: Notes_Reward_2_95
+  - first:
+      213: -6773649874227952388
+    second: Notes_Reward_2_96
+  - first:
+      213: -255339951701097649
+    second: Notes_Reward_2_97
+  - first:
+      213: -8716808022790779591
+    second: Notes_Reward_2_98
+  - first:
+      213: 8133572968642771125
+    second: Notes_Reward_2_99
+  - first:
+      213: -233220728461970336
+    second: Notes_Reward_2_100
+  - first:
+      213: -8713065019174402978
+    second: Notes_Reward_2_101
+  - first:
+      213: 7252810806944070997
+    second: Notes_Reward_2_102
+  - first:
+      213: -8501717187814276841
+    second: Notes_Reward_2_103
+  - first:
+      213: 6060962668045103474
+    second: Notes_Reward_2_104
+  - first:
+      213: 5938965123059654253
+    second: Notes_Reward_2_105
+  - first:
+      213: 4407913162079462405
+    second: Notes_Reward_2_106
+  - first:
+      213: -1789057532933052199
+    second: Notes_Reward_2_107
+  - first:
+      213: -9032569223694955116
+    second: Notes_Reward_2_108
+  - first:
+      213: 8098889506564925868
+    second: Notes_Reward_2_109
+  - first:
+      213: 5774136974302344613
+    second: Notes_Reward_2_110
+  - first:
+      213: 5886579260958092731
+    second: Notes_Reward_2_111
+  - first:
+      213: 4157948510818332127
+    second: Notes_Reward_2_112
+  - first:
+      213: -6412929490743082683
+    second: Notes_Reward_2_113
+  - first:
+      213: 1107972003081553100
+    second: Notes_Reward_2_114
+  - first:
+      213: 5138459410155759204
+    second: Notes_Reward_2_115
+  - first:
+      213: 6479692979116912309
+    second: Notes_Reward_2_116
+  - first:
+      213: -1696297902518958143
+    second: Notes_Reward_2_117
+  - first:
+      213: 1946196990891603531
+    second: Notes_Reward_2_118
+  - first:
+      213: -6407853344178031285
+    second: Notes_Reward_2_119
+  - first:
+      213: 9048448354502464823
+    second: Notes_Reward_2_120
+  - first:
+      213: 7840378283424624145
+    second: Notes_Reward_2_121
+  - first:
+      213: 7392752201041500753
+    second: Notes_Reward_2_122
+  - first:
+      213: -4011136557846806855
+    second: Notes_Reward_2_123
+  - first:
+      213: -8456362411185087340
+    second: Notes_Reward_2_124
+  - first:
+      213: -8591878946647915003
+    second: Notes_Reward_2_125
+  - first:
+      213: 2066726667966790728
+    second: Notes_Reward_2_126
+  - first:
+      213: -6290605516026515092
+    second: Notes_Reward_2_127
+  - first:
+      213: 8283277660467373408
+    second: Notes_Reward_2_128
+  - first:
+      213: -5702234901363438013
+    second: Notes_Reward_2_129
+  - first:
+      213: 1383329109456677779
+    second: Notes_Reward_2_130
+  - first:
+      213: -4516174258303092826
+    second: Notes_Reward_2_131
+  - first:
+      213: -771470012617149133
+    second: Notes_Reward_2_132
+  - first:
+      213: -8006647034405003562
+    second: Notes_Reward_2_133
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Notes_Reward_2_0
+      rect:
+        serializedVersion: 2
+        x: 642
+        y: 223
+        width: 308
+        height: 254
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4fa60e77c048fd370800000000000000
+      internalID: 8349537423253859060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_Reward_2_1
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 52
+        width: 24
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fc093bf8318993f30800000000000000
+      internalID: 4555839707844677839
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_Reward_2_2
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 52
+        width: 6
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 96f7820a1620acb10800000000000000
+      internalID: 2002415602641698665
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_Reward_2_3
+      rect:
+        serializedVersion: 2
+        x: 213
+        y: 51
+        width: 20
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1d776be8bd3e14c00800000000000000
+      internalID: 883237534072993745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_Reward_2_4
+      rect:
+        serializedVersion: 2
+        x: 233
+        y: 51
+        width: 17
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2ab4b063fe0919a60800000000000000
+      internalID: 7679078196721699746
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_Reward_2_5
+      rect:
+        serializedVersion: 2
+        x: 261
+        y: 52
+        width: 20
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8e3200cd5b8bea340800000000000000
+      internalID: 4877038537708413928
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_Reward_2_6
+      rect:
+        serializedVersion: 2
+        x: 283
+        y: 51
+        width: 20
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c18385868586de190800000000000000
+      internalID: -7931568639812552676
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_Reward_2_7
+      rect:
+        serializedVersion: 2
+        x: 339
+        y: 51
+        width: 17
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a63e9b6ac5af8340800000000000000
+      internalID: 4868292011018303136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_Reward_2_8
+      rect:
+        serializedVersion: 2
+        x: 383
+        y: 52
+        width: 16
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 60d49780142ca2390800000000000000
+      internalID: -7842242216541467386
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_Reward_2_9
+      rect:
+        serializedVersion: 2
+        x: 441
+        y: 51
+        width: 20
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb056bdc7c2365960800000000000000
+      internalID: 7590310055710707899
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_Reward_2_10
+      rect:
+        serializedVersion: 2
+        x: 481
+        y: 51
+        width: 20
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 95577f5ac823d6fb0800000000000000
+      internalID: -4653007260342586023
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_Reward_2_11
+      rect:
+        serializedVersion: 2
+        x: 626
+        y: 51
+        width: 20
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8b3f914ad0d6f0010800000000000000
+      internalID: 1157263534612673464
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_Reward_2_12
+      rect:
+        serializedVersion: 2
+        x: 681
+        y: 52
+        width: 16
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9214a3b515094ff80800000000000000
+      internalID: -8073669552871161559
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_Reward_2_13
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 52
+        width: 6
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: addb87072b5c3b520800000000000000
+      internalID: 2716732370416352730
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_Reward_2_14
+      rect:
+        serializedVersion: 2
+        x: 755
+        y: 51
+        width: 20
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cdc7c36f2db4becd0800000000000000
+      internalID: -2527843396392026916
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_Reward_2_15
+      rect:
+        serializedVersion: 2
+        x: 778
+        y: 52
+        width: 6
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f0e1e042cd99ab770800000000000000
+      internalID: 8627377206958366223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_Reward_2_16
+      rect:
+        serializedVersion: 2
+        x: 786
+        y: 51
+        width: 20
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9eeca57d61ef79f40800000000000000
+      internalID: 5735332024535404265
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_Reward_2_17
+      rect:
+        serializedVersion: 2
+        x: 825
+        y: 51
+        width: 17
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 04bceb668cd48ef00800000000000000
+      internalID: 1146251628278369088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_Reward_2_18
+      rect:
+        serializedVersion: 2
+        x: 843
+        y: 73
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d76a96f98b3a42280800000000000000
+      internalID: -9068943736273525123
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_Reward_2_19
+      rect:
+        serializedVersion: 2
+        x: 983
+        y: 52
+        width: 33
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b12ae2249b2416e0800000000000000
+      internalID: -1867820030210989639
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_Reward_2_20
+      rect:
+        serializedVersion: 2
+        x: 1018
+        y: 73
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 53248e67a751d9c50800000000000000
+      internalID: 6673513838558069301
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_Reward_2_21
+      rect:
+        serializedVersion: 2
+        x: 1052
+        y: 52
+        width: 20
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4ee113e108fc53230800000000000000
+      internalID: 3618026024831360740
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_Reward_2_22
+      rect:
+        serializedVersion: 2
+        x: 1072
+        y: 51
+        width: 17
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: efb0c7fdc3e385de0800000000000000
+      internalID: -1344256057601684482
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_Reward_2_23
+      rect:
+        serializedVersion: 2
+        x: 1100
+        y: 52
+        width: 33
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d693c82e8da78d5d0800000000000000
+      internalID: -3037542876729034387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_Reward_2_24
+      rect:
+        serializedVersion: 2
+        x: 1159
+        y: 52
+        width: 19
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de38c130153d17620800000000000000
+      internalID: 2770227590707577837
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_Reward_2_25
+      rect:
+        serializedVersion: 2
+        x: 1177
+        y: 51
+        width: 20
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f1ab573a4662cf270800000000000000
+      internalID: 8285539628135856671
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_Reward_2_26
+      rect:
+        serializedVersion: 2
+        x: 1208
+        y: 73
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 30cc8e669bec23330800000000000000
+      internalID: 3689238340460661763
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_Reward_2_27
+      rect:
+        serializedVersion: 2
+        x: 1328
+        y: 73
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2ea81a77930297580800000000000000
+      internalID: -8828990163290846494
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_Reward_2_28
+      rect:
+        serializedVersion: 2
+        x: 1380
+        y: 51
+        width: 22
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 26d29c3291394c3c0800000000000000
+      internalID: -4340182404694463134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_Reward_2_29
+      rect:
+        serializedVersion: 2
+        x: 1424
+        y: 51
+        width: 17
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a10e9d4ff0602bee0800000000000000
+      internalID: -1246927481226010598
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_Reward_2_30
+      rect:
+        serializedVersion: 2
+        x: 1441
+        y: 51
+        width: 20
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d57759b5f5fd7c5a0800000000000000
+      internalID: -6500981936434612387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_Reward_2_31
+      rect:
+        serializedVersion: 2
+        x: 1471
+        y: 51
+        width: 20
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 02ce0a4d0e818da50800000000000000
+      internalID: 6546009412302072864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_Reward_2_32
+      rect:
+        serializedVersion: 2
+        x: 1511
+        y: 51
+        width: 20
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e49501fc60e59e130800000000000000
+      internalID: 3596509160768821582
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_Reward_2_33
+      rect:
+        serializedVersion: 2
+        x: 1554
+        y: 51
+        width: 17
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 72a698e269d5de5a0800000000000000
+      internalID: -6490428588363781593
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_Reward_2_34
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 61
+        width: 15
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6166a6402146e3d60800000000000000
+      internalID: 7871839227236476438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_Reward_2_35
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 51
+        width: 22
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 89953c7b7b62b5540800000000000000
+      internalID: 4997630782001600920
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_Reward_2_36
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 51
+        width: 20
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a101c23403e9df580800000000000000
+      internalID: -8791696967434760166
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_Reward_2_37
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 51
+        width: 22
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 148100cb1db735300800000000000000
+      internalID: 239671345913272385
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_Reward_2_38
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 51
+        width: 17
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fa5e172c92a2b0b60800000000000000
+      internalID: 7713305145646376367
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_Reward_2_39
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 51
+        width: 22
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d311412e5f607aed0800000000000000
+      internalID: -2402944223049150147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_Reward_2_40
+      rect:
+        serializedVersion: 2
+        x: 190
+        y: 43
+        width: 22
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d205bb5005ab540b0800000000000000
+      internalID: -5744980896784887763
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_Reward_2_41
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 51
+        width: 22
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 192d0057617fac840800000000000000
+      internalID: 5245276391850693265
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_Reward_2_42
+      rect:
+        serializedVersion: 2
+        x: 327
+        y: 52
+        width: 13
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 72f5fbe3ed719af70800000000000000
+      internalID: 9198909957183856423
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_Reward_2_43
+      rect:
+        serializedVersion: 2
+        x: 356
+        y: 51
+        width: 17
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 482019c0b254e4960800000000000000
+      internalID: 7588078473362604676
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_Reward_2_44
+      rect:
+        serializedVersion: 2
+        x: 397
+        y: 51
+        width: 22
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ad0b6424e32592d90800000000000000
+      internalID: -7122070908356349734
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_Reward_2_45
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 52
+        width: 13
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7f3753734fe7dbda0800000000000000
+      internalID: -5927441947186334729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_Reward_2_46
+      rect:
+        serializedVersion: 2
+        x: 460
+        y: 51
+        width: 22
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 011a4dbffdca991f0800000000000000
+      internalID: -1037608161129488112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_Reward_2_47
+      rect:
+        serializedVersion: 2
+        x: 502
+        y: 52
+        width: 13
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ae6a564f5b1d51640800000000000000
+      internalID: 5050173136585467626
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_Reward_2_48
+      rect:
+        serializedVersion: 2
+        x: 516
+        y: 43
+        width: 20
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2923055a79de45af0800000000000000
+      internalID: -408440430614531438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_Reward_2_49
+      rect:
+        serializedVersion: 2
+        x: 547
+        y: 51
+        width: 17
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 080ec2fe0bd1a61f0800000000000000
+      internalID: -1050994917273444224
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_Reward_2_50
+      rect:
+        serializedVersion: 2
+        x: 565
+        y: 51
+        width: 20
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9389cddfb7b5de960800000000000000
+      internalID: 7632857531561056313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_Reward_2_51
+      rect:
+        serializedVersion: 2
+        x: 587
+        y: 51
+        width: 20
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9abdc811c5f024b10800000000000000
+      internalID: 1964149275592809385
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_Reward_2_52
+      rect:
+        serializedVersion: 2
+        x: 606
+        y: 51
+        width: 20
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b74f0d85723314420800000000000000
+      internalID: 2612425502938428539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_Reward_2_53
+      rect:
+        serializedVersion: 2
+        x: 646
+        y: 51
+        width: 17
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d0e5afff4132d6630800000000000000
+      internalID: 3921829423610486285
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_Reward_2_54
+      rect:
+        serializedVersion: 2
+        x: 664
+        y: 51
+        width: 17
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d95185c36b6dab6d0800000000000000
+      internalID: -2973828525739993699
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_Reward_2_55
+      rect:
+        serializedVersion: 2
+        x: 697
+        y: 51
+        width: 20
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 75726b4ac841aedd0800000000000000
+      internalID: -2456128052485806249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_Reward_2_56
+      rect:
+        serializedVersion: 2
+        x: 737
+        y: 51
+        width: 17
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a994aec72926f9c50800000000000000
+      internalID: 6674161554086840730
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_Reward_2_57
+      rect:
+        serializedVersion: 2
+        x: 806
+        y: 51
+        width: 20
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e2bd5843db17cfe60800000000000000
+      internalID: 7997392095747103534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_Reward_2_58
+      rect:
+        serializedVersion: 2
+        x: 844
+        y: 52
+        width: 6
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2b3b1f34a5fb14720800000000000000
+      internalID: 2828752435373257650
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_Reward_2_59
+      rect:
+        serializedVersion: 2
+        x: 852
+        y: 51
+        width: 22
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fcdb0a5e966313420800000000000000
+      internalID: 2607925487676210639
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_Reward_2_60
+      rect:
+        serializedVersion: 2
+        x: 875
+        y: 52
+        width: 21
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e56022dac4f325eb0800000000000000
+      internalID: -4732650659858217378
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_Reward_2_61
+      rect:
+        serializedVersion: 2
+        x: 907
+        y: 43
+        width: 20
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b46e017a3ed1d0150800000000000000
+      internalID: 5840357155367085643
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_Reward_2_62
+      rect:
+        serializedVersion: 2
+        x: 929
+        y: 51
+        width: 22
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f2170d1db035a79f0800000000000000
+      internalID: -469971900876951249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_Reward_2_63
+      rect:
+        serializedVersion: 2
+        x: 952
+        y: 51
+        width: 20
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4c663c88e0c7754f0800000000000000
+      internalID: -840066403615414588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_Reward_2_64
+      rect:
+        serializedVersion: 2
+        x: 1019
+        y: 52
+        width: 6
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 406ce48f13f0211e0800000000000000
+      internalID: -2228702158301247996
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_Reward_2_65
+      rect:
+        serializedVersion: 2
+        x: 1027
+        y: 43
+        width: 22
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6c89cc4feac863150800000000000000
+      internalID: 5852019448873785542
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_Reward_2_66
+      rect:
+        serializedVersion: 2
+        x: 1134
+        y: 51
+        width: 22
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a18a167a8004d6650800000000000000
+      internalID: 6227704265635375130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_Reward_2_67
+      rect:
+        serializedVersion: 2
+        x: 1209
+        y: 52
+        width: 6
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3cccfd864d62a2d70800000000000000
+      internalID: 9019063897497259203
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_Reward_2_68
+      rect:
+        serializedVersion: 2
+        x: 1218
+        y: 52
+        width: 21
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1a929207a23957670800000000000000
+      internalID: 8535890479230298529
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_Reward_2_69
+      rect:
+        serializedVersion: 2
+        x: 1249
+        y: 51
+        width: 22
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 831eddbdff3f9ce20800000000000000
+      internalID: 3371494076294488376
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_Reward_2_70
+      rect:
+        serializedVersion: 2
+        x: 1273
+        y: 52
+        width: 21
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e0cd623e5f07e1250800000000000000
+      internalID: 5917291161791683598
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_Reward_2_71
+      rect:
+        serializedVersion: 2
+        x: 1296
+        y: 43
+        width: 20
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 78a190f57d13d2cb0800000000000000
+      internalID: -4887195219544958329
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_Reward_2_72
+      rect:
+        serializedVersion: 2
+        x: 1329
+        y: 52
+        width: 6
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 64b37eda8936273e0800000000000000
+      internalID: -2057472572351104186
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_Reward_2_73
+      rect:
+        serializedVersion: 2
+        x: 1338
+        y: 52
+        width: 21
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 80a621e7a77c21490800000000000000
+      internalID: -7776934277600351736
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_Reward_2_74
+      rect:
+        serializedVersion: 2
+        x: 1363
+        y: 61
+        width: 15
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e1b60b5c9b08b8bc0800000000000000
+      internalID: -3779785926873421026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_Reward_2_75
+      rect:
+        serializedVersion: 2
+        x: 1403
+        y: 51
+        width: 22
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0112c069a94f9ab80800000000000000
+      internalID: -8382900286593949424
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_Reward_2_76
+      rect:
+        serializedVersion: 2
+        x: 1491
+        y: 51
+        width: 22
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c2180af10b7af8e30800000000000000
+      internalID: 4508006126907851052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_Reward_2_77
+      rect:
+        serializedVersion: 2
+        x: 1533
+        y: 52
+        width: 21
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ac531f81b7d14efa0800000000000000
+      internalID: -5772456407845489206
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_Reward_2_78
+      rect:
+        serializedVersion: 2
+        x: 1572
+        y: 45
+        width: 8
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7f8b2ae0f52840ca0800000000000000
+      internalID: -6051568654500054793
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_Reward_2_79
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 9
+        width: 20
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f1a06b8203e40e180800000000000000
+      internalID: -9088178079285245409
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_Reward_2_80
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 30
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 003e8f8dde759b680800000000000000
+      internalID: -8738856922876681472
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_Reward_2_81
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 9
+        width: 20
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 89a1c1ca5751ff340800000000000000
+      internalID: 4899658514745268888
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_Reward_2_82
+      rect:
+        serializedVersion: 2
+        x: 289
+        y: 9
+        width: 6
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 47d3f0effcb0b5e70800000000000000
+      internalID: 9104884059608137076
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_Reward_2_83
+      rect:
+        serializedVersion: 2
+        x: 319
+        y: 8
+        width: 17
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 05733fee5af8ae530800000000000000
+      internalID: 3885075571401766736
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_Reward_2_84
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 8
+        width: 20
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6e19d7593de8c8530800000000000000
+      internalID: 3858616020146950630
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_Reward_2_85
+      rect:
+        serializedVersion: 2
+        x: 419
+        y: 8
+        width: 20
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 86577eeefb76b7cb0800000000000000
+      internalID: -4865180898399128216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_Reward_2_86
+      rect:
+        serializedVersion: 2
+        x: 449
+        y: 8
+        width: 17
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 357a552820a7240e0800000000000000
+      internalID: -2287131509555615917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_Reward_2_87
+      rect:
+        serializedVersion: 2
+        x: 577
+        y: 9
+        width: 20
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 368834f9c810aae30800000000000000
+      internalID: 4515423279871395939
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_Reward_2_88
+      rect:
+        serializedVersion: 2
+        x: 639
+        y: 8
+        width: 20
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7f32882dcff9f31e0800000000000000
+      internalID: -2215876583430282249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_Reward_2_89
+      rect:
+        serializedVersion: 2
+        x: 687
+        y: 8
+        width: 20
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a23850ae456c56780800000000000000
+      internalID: -8690321837935721686
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_Reward_2_90
+      rect:
+        serializedVersion: 2
+        x: 727
+        y: 8
+        width: 20
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be5b6a8512caf3040800000000000000
+      internalID: 4629608201181378027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_Reward_2_91
+      rect:
+        serializedVersion: 2
+        x: 785
+        y: 9
+        width: 6
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7e55cfb9c616f39b0800000000000000
+      internalID: -5098249134058744345
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_Reward_2_92
+      rect:
+        serializedVersion: 2
+        x: 805
+        y: 30
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 768e9bbd495309fd0800000000000000
+      internalID: -2337309293147461529
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_Reward_2_93
+      rect:
+        serializedVersion: 2
+        x: 813
+        y: 8
+        width: 17
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0becac97f0c654ac0800000000000000
+      internalID: -3871569490931429712
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_Reward_2_94
+      rect:
+        serializedVersion: 2
+        x: 830
+        y: 8
+        width: 20
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4e97bd3e4edd69b90800000000000000
+      internalID: -7235351776179029532
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_Reward_2_95
+      rect:
+        serializedVersion: 2
+        x: 851
+        y: 9
+        width: 33
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f2511c269e5330b80800000000000000
+      internalID: -8429834801006963409
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_Reward_2_96
+      rect:
+        serializedVersion: 2
+        x: 913
+        y: 9
+        width: 16
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cf406c5e3592ff1a0800000000000000
+      internalID: -6773649874227952388
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_Reward_2_97
+      rect:
+        serializedVersion: 2
+        x: 963
+        y: 9
+        width: 33
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f4304e1baa9d47cf0800000000000000
+      internalID: -255339951701097649
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_Reward_2_98
+      rect:
+        serializedVersion: 2
+        x: 1007
+        y: 8
+        width: 17
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 93dc742794da70780800000000000000
+      internalID: -8716808022790779591
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_Reward_2_99
+      rect:
+        serializedVersion: 2
+        x: 1026
+        y: 9
+        width: 20
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5b8fbae758140e070800000000000000
+      internalID: 8133572968642771125
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_Reward_2_100
+      rect:
+        serializedVersion: 2
+        x: 1047
+        y: 8
+        width: 20
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 06434cdabfe63ccf0800000000000000
+      internalID: -233220728461970336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_Reward_2_101
+      rect:
+        serializedVersion: 2
+        x: 1098
+        y: 9
+        width: 20
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e544a336789f41780800000000000000
+      internalID: -8713065019174402978
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_Reward_2_102
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 8
+        width: 31
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 55df30b700927a460800000000000000
+      internalID: 7252810806944070997
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_Reward_2_103
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 9
+        width: 6
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7114f7ff245d30a80800000000000000
+      internalID: -8501717187814276841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_Reward_2_104
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 8
+        width: 20
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2717bb92f6ddc1450800000000000000
+      internalID: 6060962668045103474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_Reward_2_105
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 0
+        width: 20
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d6e976d30517b6250800000000000000
+      internalID: 5938965123059654253
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_Reward_2_106
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 8
+        width: 22
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 504e382baad0c2d30800000000000000
+      internalID: 4407913162079462405
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_Reward_2_107
+      rect:
+        serializedVersion: 2
+        x: 181
+        y: 8
+        width: 20
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9d8e9c217adfb27e0800000000000000
+      internalID: -1789057532933052199
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_Reward_2_108
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 8
+        width: 20
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 49d498cc52ed5a280800000000000000
+      internalID: -9032569223694955116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_Reward_2_109
+      rect:
+        serializedVersion: 2
+        x: 232
+        y: 8
+        width: 22
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ca9e0f1b819056070800000000000000
+      internalID: 8098889506564925868
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_Reward_2_110
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 9
+        width: 21
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5a57db54cfad12050800000000000000
+      internalID: 5774136974302344613
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_Reward_2_111
+      rect:
+        serializedVersion: 2
+        x: 297
+        y: 8
+        width: 22
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bbda69f36a451b150800000000000000
+      internalID: 5886579260958092731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_Reward_2_112
+      rect:
+        serializedVersion: 2
+        x: 358
+        y: 9
+        width: 13
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fdde0bd042004b930800000000000000
+      internalID: 4157948510818332127
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_Reward_2_113
+      rect:
+        serializedVersion: 2
+        x: 380
+        y: 8
+        width: 20
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 541c1a6fa92b007a0800000000000000
+      internalID: -6412929490743082683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_Reward_2_114
+      rect:
+        serializedVersion: 2
+        x: 401
+        y: 8
+        width: 17
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cc401c0aaae406f00800000000000000
+      internalID: 1107972003081553100
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_Reward_2_115
+      rect:
+        serializedVersion: 2
+        x: 466
+        y: 8
+        width: 22
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 466e81bdb997f4740800000000000000
+      internalID: 5138459410155759204
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_Reward_2_116
+      rect:
+        serializedVersion: 2
+        x: 499
+        y: 1
+        width: 22
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5be2bd10f6e7ce950800000000000000
+      internalID: 6479692979116912309
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_Reward_2_117
+      rect:
+        serializedVersion: 2
+        x: 521
+        y: 8
+        width: 20
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1c70e178b0a8578e0800000000000000
+      internalID: -1696297902518958143
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_Reward_2_118
+      rect:
+        serializedVersion: 2
+        x: 543
+        y: 9
+        width: 13
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b4637011ad7420b10800000000000000
+      internalID: 1946196990891603531
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_Reward_2_119
+      rect:
+        serializedVersion: 2
+        x: 555
+        y: 8
+        width: 20
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b45387f655bb217a0800000000000000
+      internalID: -6407853344178031285
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_Reward_2_120
+      rect:
+        serializedVersion: 2
+        x: 598
+        y: 8
+        width: 22
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 735569276db829d70800000000000000
+      internalID: 9048448354502464823
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_Reward_2_121
+      rect:
+        serializedVersion: 2
+        x: 621
+        y: 8
+        width: 17
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 11e2638328e9ecc60800000000000000
+      internalID: 7840378283424624145
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_Reward_2_122
+      rect:
+        serializedVersion: 2
+        x: 670
+        y: 8
+        width: 17
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 15ad09755f4589660800000000000000
+      internalID: 7392752201041500753
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_Reward_2_123
+      rect:
+        serializedVersion: 2
+        x: 707
+        y: 8
+        width: 22
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9be35f37d849558c0800000000000000
+      internalID: -4011136557846806855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_Reward_2_124
+      rect:
+        serializedVersion: 2
+        x: 749
+        y: 9
+        width: 13
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 49cd855d037f4aa80800000000000000
+      internalID: -8456362411185087340
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_Reward_2_125
+      rect:
+        serializedVersion: 2
+        x: 761
+        y: 8
+        width: 22
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 506c4e7ae9383c880800000000000000
+      internalID: -8591878946647915003
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_Reward_2_126
+      rect:
+        serializedVersion: 2
+        x: 806
+        y: 9
+        width: 6
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 84cbcfb54fc7eac10800000000000000
+      internalID: 2066726667966790728
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_Reward_2_127
+      rect:
+        serializedVersion: 2
+        x: 885
+        y: 8
+        width: 17
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c61702bbc9743b8a0800000000000000
+      internalID: -6290605516026515092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_Reward_2_128
+      rect:
+        serializedVersion: 2
+        x: 929
+        y: 9
+        width: 13
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0652610452d14f270800000000000000
+      internalID: 8283277660467373408
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_Reward_2_129
+      rect:
+        serializedVersion: 2
+        x: 941
+        y: 8
+        width: 22
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 34ec566a1979dd0b0800000000000000
+      internalID: -5702234901363438013
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_Reward_2_130
+      rect:
+        serializedVersion: 2
+        x: 1078
+        y: 8
+        width: 17
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 39b6f90fe72923310800000000000000
+      internalID: 1383329109456677779
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_Reward_2_131
+      rect:
+        serializedVersion: 2
+        x: 1119
+        y: 8
+        width: 22
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6a7b41690735351c0800000000000000
+      internalID: -4516174258303092826
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_Reward_2_132
+      rect:
+        serializedVersion: 2
+        x: 1142
+        y: 1
+        width: 22
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 335b6176c103b45f0800000000000000
+      internalID: -771470012617149133
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_Reward_2_133
+      rect:
+        serializedVersion: 2
+        x: 1165
+        y: 8
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6deda5871fca2e090800000000000000
+      internalID: -8006647034405003562
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Notes_Reward_2_0: 8349537423253859060
+      Notes_Reward_2_1: 4555839707844677839
+      Notes_Reward_2_10: -4653007260342586023
+      Notes_Reward_2_100: -233220728461970336
+      Notes_Reward_2_101: -8713065019174402978
+      Notes_Reward_2_102: 7252810806944070997
+      Notes_Reward_2_103: -8501717187814276841
+      Notes_Reward_2_104: 6060962668045103474
+      Notes_Reward_2_105: 5938965123059654253
+      Notes_Reward_2_106: 4407913162079462405
+      Notes_Reward_2_107: -1789057532933052199
+      Notes_Reward_2_108: -9032569223694955116
+      Notes_Reward_2_109: 8098889506564925868
+      Notes_Reward_2_11: 1157263534612673464
+      Notes_Reward_2_110: 5774136974302344613
+      Notes_Reward_2_111: 5886579260958092731
+      Notes_Reward_2_112: 4157948510818332127
+      Notes_Reward_2_113: -6412929490743082683
+      Notes_Reward_2_114: 1107972003081553100
+      Notes_Reward_2_115: 5138459410155759204
+      Notes_Reward_2_116: 6479692979116912309
+      Notes_Reward_2_117: -1696297902518958143
+      Notes_Reward_2_118: 1946196990891603531
+      Notes_Reward_2_119: -6407853344178031285
+      Notes_Reward_2_12: -8073669552871161559
+      Notes_Reward_2_120: 9048448354502464823
+      Notes_Reward_2_121: 7840378283424624145
+      Notes_Reward_2_122: 7392752201041500753
+      Notes_Reward_2_123: -4011136557846806855
+      Notes_Reward_2_124: -8456362411185087340
+      Notes_Reward_2_125: -8591878946647915003
+      Notes_Reward_2_126: 2066726667966790728
+      Notes_Reward_2_127: -6290605516026515092
+      Notes_Reward_2_128: 8283277660467373408
+      Notes_Reward_2_129: -5702234901363438013
+      Notes_Reward_2_13: 2716732370416352730
+      Notes_Reward_2_130: 1383329109456677779
+      Notes_Reward_2_131: -4516174258303092826
+      Notes_Reward_2_132: -771470012617149133
+      Notes_Reward_2_133: -8006647034405003562
+      Notes_Reward_2_14: -2527843396392026916
+      Notes_Reward_2_15: 8627377206958366223
+      Notes_Reward_2_16: 5735332024535404265
+      Notes_Reward_2_17: 1146251628278369088
+      Notes_Reward_2_18: -9068943736273525123
+      Notes_Reward_2_19: -1867820030210989639
+      Notes_Reward_2_2: 2002415602641698665
+      Notes_Reward_2_20: 6673513838558069301
+      Notes_Reward_2_21: 3618026024831360740
+      Notes_Reward_2_22: -1344256057601684482
+      Notes_Reward_2_23: -3037542876729034387
+      Notes_Reward_2_24: 2770227590707577837
+      Notes_Reward_2_25: 8285539628135856671
+      Notes_Reward_2_26: 3689238340460661763
+      Notes_Reward_2_27: -8828990163290846494
+      Notes_Reward_2_28: -4340182404694463134
+      Notes_Reward_2_29: -1246927481226010598
+      Notes_Reward_2_3: 883237534072993745
+      Notes_Reward_2_30: -6500981936434612387
+      Notes_Reward_2_31: 6546009412302072864
+      Notes_Reward_2_32: 3596509160768821582
+      Notes_Reward_2_33: -6490428588363781593
+      Notes_Reward_2_34: 7871839227236476438
+      Notes_Reward_2_35: 4997630782001600920
+      Notes_Reward_2_36: -8791696967434760166
+      Notes_Reward_2_37: 239671345913272385
+      Notes_Reward_2_38: 7713305145646376367
+      Notes_Reward_2_39: -2402944223049150147
+      Notes_Reward_2_4: 7679078196721699746
+      Notes_Reward_2_40: -5744980896784887763
+      Notes_Reward_2_41: 5245276391850693265
+      Notes_Reward_2_42: 9198909957183856423
+      Notes_Reward_2_43: 7588078473362604676
+      Notes_Reward_2_44: -7122070908356349734
+      Notes_Reward_2_45: -5927441947186334729
+      Notes_Reward_2_46: -1037608161129488112
+      Notes_Reward_2_47: 5050173136585467626
+      Notes_Reward_2_48: -408440430614531438
+      Notes_Reward_2_49: -1050994917273444224
+      Notes_Reward_2_5: 4877038537708413928
+      Notes_Reward_2_50: 7632857531561056313
+      Notes_Reward_2_51: 1964149275592809385
+      Notes_Reward_2_52: 2612425502938428539
+      Notes_Reward_2_53: 3921829423610486285
+      Notes_Reward_2_54: -2973828525739993699
+      Notes_Reward_2_55: -2456128052485806249
+      Notes_Reward_2_56: 6674161554086840730
+      Notes_Reward_2_57: 7997392095747103534
+      Notes_Reward_2_58: 2828752435373257650
+      Notes_Reward_2_59: 2607925487676210639
+      Notes_Reward_2_6: -7931568639812552676
+      Notes_Reward_2_60: -4732650659858217378
+      Notes_Reward_2_61: 5840357155367085643
+      Notes_Reward_2_62: -469971900876951249
+      Notes_Reward_2_63: -840066403615414588
+      Notes_Reward_2_64: -2228702158301247996
+      Notes_Reward_2_65: 5852019448873785542
+      Notes_Reward_2_66: 6227704265635375130
+      Notes_Reward_2_67: 9019063897497259203
+      Notes_Reward_2_68: 8535890479230298529
+      Notes_Reward_2_69: 3371494076294488376
+      Notes_Reward_2_7: 4868292011018303136
+      Notes_Reward_2_70: 5917291161791683598
+      Notes_Reward_2_71: -4887195219544958329
+      Notes_Reward_2_72: -2057472572351104186
+      Notes_Reward_2_73: -7776934277600351736
+      Notes_Reward_2_74: -3779785926873421026
+      Notes_Reward_2_75: -8382900286593949424
+      Notes_Reward_2_76: 4508006126907851052
+      Notes_Reward_2_77: -5772456407845489206
+      Notes_Reward_2_78: -6051568654500054793
+      Notes_Reward_2_79: -9088178079285245409
+      Notes_Reward_2_8: -7842242216541467386
+      Notes_Reward_2_80: -8738856922876681472
+      Notes_Reward_2_81: 4899658514745268888
+      Notes_Reward_2_82: 9104884059608137076
+      Notes_Reward_2_83: 3885075571401766736
+      Notes_Reward_2_84: 3858616020146950630
+      Notes_Reward_2_85: -4865180898399128216
+      Notes_Reward_2_86: -2287131509555615917
+      Notes_Reward_2_87: 4515423279871395939
+      Notes_Reward_2_88: -2215876583430282249
+      Notes_Reward_2_89: -8690321837935721686
+      Notes_Reward_2_9: 7590310055710707899
+      Notes_Reward_2_90: 4629608201181378027
+      Notes_Reward_2_91: -5098249134058744345
+      Notes_Reward_2_92: -2337309293147461529
+      Notes_Reward_2_93: -3871569490931429712
+      Notes_Reward_2_94: -7235351776179029532
+      Notes_Reward_2_95: -8429834801006963409
+      Notes_Reward_2_96: -6773649874227952388
+      Notes_Reward_2_97: -255339951701097649
+      Notes_Reward_2_98: -8716808022790779591
+      Notes_Reward_2_99: 8133572968642771125
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,585 @@
+fileFormatVersion: 2
+guid: bc2e4a0477e059447a787955485db7c5
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -4806079341414188681
+    second: Elroi_Profile_Name_0
+  - first:
+      213: -5239100412213456986
+    second: Elroi_Profile_Name_1
+  - first:
+      213: 6181772629750345977
+    second: Elroi_Profile_Name_2
+  - first:
+      213: 6733861651906525784
+    second: Elroi_Profile_Name_3
+  - first:
+      213: 491562888045821473
+    second: Elroi_Profile_Name_4
+  - first:
+      213: 5381874900483869268
+    second: Elroi_Profile_Name_5
+  - first:
+      213: 4304400225060347385
+    second: Elroi_Profile_Name_6
+  - first:
+      213: -3249809118902689213
+    second: Elroi_Profile_Name_7
+  - first:
+      213: -7450019532406076765
+    second: Elroi_Profile_Name_8
+  - first:
+      213: -1184668660831442448
+    second: Elroi_Profile_Name_9
+  - first:
+      213: 8098129432005462135
+    second: Elroi_Profile_Name_10
+  - first:
+      213: 9147147179517296635
+    second: Elroi_Profile_Name_11
+  - first:
+      213: 7846134912706797126
+    second: Elroi_Profile_Name_12
+  - first:
+      213: -6098861487521601830
+    second: Elroi_Profile_Name_13
+  - first:
+      213: 9053107879189659142
+    second: Elroi_Profile_Name_14
+  - first:
+      213: 429749333802171404
+    second: Elroi_Profile_Name_15
+  - first:
+      213: 366828117149859349
+    second: Elroi_Profile_Name_16
+  - first:
+      213: -7066493420891314091
+    second: Elroi_Profile_Name_17
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Elroi_Profile_Name_0
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 61
+        width: 24
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 779f9ac7d406d4db0800000000000000
+      internalID: -4806079341414188681
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Elroi_Profile_Name_1
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 61
+        width: 22
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6af0a6bdee9fa47b0800000000000000
+      internalID: -5239100412213456986
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Elroi_Profile_Name_2
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 61
+        width: 26
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9f0708e44711ac550800000000000000
+      internalID: 6181772629750345977
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Elroi_Profile_Name_3
+      rect:
+        serializedVersion: 2
+        x: 123
+        y: 60
+        width: 31
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 85a7380be7b737d50800000000000000
+      internalID: 6733861651906525784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Elroi_Profile_Name_4
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 61
+        width: 10
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 12e7cbe97d162d600800000000000000
+      internalID: 491562888045821473
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Elroi_Profile_Name_5
+      rect:
+        serializedVersion: 2
+        x: 178
+        y: 61
+        width: 33
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 45a8ee425b240ba40800000000000000
+      internalID: 5381874900483869268
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Elroi_Profile_Name_6
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 60
+        width: 28
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9fd55d1f23d4cbb30800000000000000
+      internalID: 4304400225060347385
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Elroi_Profile_Name_7
+      rect:
+        serializedVersion: 2
+        x: 241
+        y: 61
+        width: 22
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 342eaf713db56e2d0800000000000000
+      internalID: -3249809118902689213
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Elroi_Profile_Name_8
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 61
+        width: 10
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3aac63905b63c9890800000000000000
+      internalID: -7450019532406076765
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Elroi_Profile_Name_9
+      rect:
+        serializedVersion: 2
+        x: 277
+        y: 61
+        width: 24
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0f9aa9e21263f8fe0800000000000000
+      internalID: -1184668660831442448
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Elroi_Profile_Name_10
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 61
+        width: 33
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 77842db00d5526070800000000000000
+      internalID: 8098129432005462135
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Elroi_Profile_Name_11
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 12
+        width: 25
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bff385765e131fe70800000000000000
+      internalID: 9147147179517296635
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Elroi_Profile_Name_12
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 13
+        width: 29
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 64eddabe12213ec60800000000000000
+      internalID: 7846134912706797126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Elroi_Profile_Name_13
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 13
+        width: 22
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ad6e6fd4acd7c5ba0800000000000000
+      internalID: -6098861487521601830
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Elroi_Profile_Name_14
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 12
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 60eb36496a913ad70800000000000000
+      internalID: 9053107879189659142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Elroi_Profile_Name_15
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 13
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c0c3dbffdb6c6f500800000000000000
+      internalID: 429749333802171404
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Elroi_Profile_Name_16
+      rect:
+        serializedVersion: 2
+        x: 232
+        y: 13
+        width: 10
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 51eb750aa3c371500800000000000000
+      internalID: 366828117149859349
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Elroi_Profile_Name_17
+      rect:
+        serializedVersion: 2
+        x: 246
+        y: 12
+        width: 28
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 55863207ca5ceed90800000000000000
+      internalID: -7066493420891314091
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Elroi_Profile_Name_0: -4806079341414188681
+      Elroi_Profile_Name_1: -5239100412213456986
+      Elroi_Profile_Name_10: 8098129432005462135
+      Elroi_Profile_Name_11: 9147147179517296635
+      Elroi_Profile_Name_12: 7846134912706797126
+      Elroi_Profile_Name_13: -6098861487521601830
+      Elroi_Profile_Name_14: 9053107879189659142
+      Elroi_Profile_Name_15: 429749333802171404
+      Elroi_Profile_Name_16: 366828117149859349
+      Elroi_Profile_Name_17: -7066493420891314091
+      Elroi_Profile_Name_2: 6181772629750345977
+      Elroi_Profile_Name_3: 6733861651906525784
+      Elroi_Profile_Name_4: 491562888045821473
+      Elroi_Profile_Name_5: 5381874900483869268
+      Elroi_Profile_Name_6: 4304400225060347385
+      Elroi_Profile_Name_7: -3249809118902689213
+      Elroi_Profile_Name_8: -7450019532406076765
+      Elroi_Profile_Name_9: -1184668660831442448
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

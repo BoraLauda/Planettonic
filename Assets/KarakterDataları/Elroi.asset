@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52414fa3869acd040b0ed6b6d3d42937, type: 3}
+  m_Name: Elroi
+  m_EditorClassIdentifier: 
+  characterName: Elroi
+  profileIcon: {fileID: -3940248032974027194, guid: 8ac483391faa5b343b3452c691d8c18d, type: 3}
+  portraitImage: {fileID: -5408334947099728532, guid: d31dc9871b7d06c4eb9f928a8c8aa299, type: 3}
+  profileList: "\r\r\n\r\n"
+  info: 

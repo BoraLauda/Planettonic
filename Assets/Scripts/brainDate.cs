@@ -1,0 +1,761 @@
+using UnityEngine;
+using UnityEngine.UI;
+using System.Collections;
+using System.Collections.Generic;
+using TMPro;
+using UnityEngine.SceneManagement;
+    
+public class brainDate : MonoBehaviour
+
+{
+    public GameObject introPanel;
+    
+    public TutorialPopup tutorialPopup; 
+    
+    public List<Sprite> menuTutorialSprites; 
+    public List<Sprite> iceBreakerTutorialSprites;
+    public List<Sprite> dodgeTutorialSprites;
+    
+    public string desktopScene = "Desktop";
+    
+    public GameObject dateSuccessPanel; 
+    public GameObject dateFailPanel;
+    
+    public GameObject BGblur;
+    
+    public Transform ioStarsCont;     
+    public Transform elroiStarsCont;
+    public Transform successIoStars;     
+    public Transform successElroiStars;  
+    public Transform failIoStars;        
+    public Transform failElroiStars;
+    
+    public float ioStars = 0;
+    public float elroiStars = 0;
+    
+    public GameObject dateEndedObject;    
+    public DialogueDataları startingScenario;
+    public DialogueDataları failScenario;
+    private DialogueDataları savedMainScenario;
+    
+    public brainDODGE dodgeScript;
+    private bool isDodgeMode = false;
+    
+    public Image leftDaterImage;          
+    public GameObject leftDialoguePanel; 
+    public TMP_Text leftNameText;            
+    public TMP_Text leftBodyText;
+    
+    public GameObject leftOptionsPanel;  
+    public Button[] leftButtons;
+    
+    public Transform stars;  
+    public GameObject fullStarPrefab; 
+    public GameObject halfStarPrefab;
+
+    public Image rightDaterImage;         
+    public GameObject rightDialoguePanel;
+    public TMP_Text rightNameText;
+    public TMP_Text rightBodyText;
+    
+    public GameObject rightOptionsPanel; 
+    public Button[] rightButtons;
+    
+    public IceBreaker iceBreakerScript; 
+    private bool isIceBreakerMode = false;
+   
+    public GameObject chancellorPanel;
+    public TMP_Text chancellorNameText;     // İçindeki Name
+    public TMP_Text chancellorBodyText;
+    
+    public GameObject chaperonPanel;
+    public TMP_Text chaperonNameText;       // İçindeki Name
+    public TMP_Text chaperonBodyText;
+    
+    
+    //KALP YILDIZ
+    public float starThreshold = 6f;
+    public float currentStars = 0;   
+    public int totalHearts = 0;
+    public TMP_Text heartUI; 
+    public TMP_Text starUI;
+    
+
+    public GameObject menuMiniGameObj;
+    // public GameObject iceBreakerObj; 
+    // public GameObject dodgeObj;
+    
+    public DialogueDataları menuTutorialScenario;
+    
+    public float typeSpeed = 0.04f;//text için bura
+    
+    private DialogueDataları currentScenario;
+    private Queue<DialogueDataları> scenarioQueue = new Queue<DialogueDataları>();
+    
+    private int lineIndex = 0;
+    private bool isTyping = false;
+    private string currentFullSentence = "";
+
+    private bool isEventTriggered = false;
+    
+    public float focusSpeed = 10f;
+    private Vector3 leftTargetScale = Vector3.one;
+    private Vector3 rightTargetScale = Vector3.one;
+    
+    private bool isMenuMode = false;
+
+// Start is called once before the first execution of Update after the MonoBehaviour is created
+    void Start()
+    {
+        if(leftDialoguePanel) leftDialoguePanel.SetActive(false);
+        if(leftOptionsPanel) leftOptionsPanel.SetActive(false);
+        if(chancellorPanel) chancellorPanel.SetActive(false);
+        if(chaperonPanel) chaperonPanel.SetActive(false);
+        
+        if(rightDialoguePanel) rightDialoguePanel.SetActive(false);
+        if(rightOptionsPanel) rightOptionsPanel.SetActive(false);
+        
+        if(BGblur) BGblur.SetActive(false);
+
+        if(menuMiniGameObj) menuMiniGameObj.SetActive(false);
+        if(dateEndedObject) dateEndedObject.SetActive(false);
+        
+        UpdateScoreUI();
+
+      
+        if (introPanel != null)
+        {
+            introPanel.SetActive(true);
+        }
+        else
+        {
+            
+            if (startingScenario != null)
+            {
+                StartScenario(startingScenario);
+            }
+        }
+    }
+    
+    void Update()
+    {
+        if (leftDaterImage != null)
+        {
+            leftDaterImage.transform.localScale = Vector3.Lerp(leftDaterImage.transform.localScale, leftTargetScale, Time.deltaTime * focusSpeed);
+        }
+
+        if (rightDaterImage != null)
+        {
+            rightDaterImage.transform.localScale = Vector3.Lerp(rightDaterImage.transform.localScale, rightTargetScale, Time.deltaTime * focusSpeed);
+        }
+    }
+
+    public void StartScenario(DialogueDataları scenario)
+    {
+        currentScenario = scenario;
+        lineIndex = 0;
+        DisplayLine();
+    }
+    
+    public void QueueScenarios(List<DialogueDataları> scenariosToPlay)
+    {
+        scenarioQueue.Clear(); 
+        
+        foreach (var sc in scenariosToPlay)
+        {
+            scenarioQueue.Enqueue(sc);
+        }
+
+       
+        PlayNextInQueue();
+    }
+    
+    void PlayNextInQueue()
+    {
+        if (scenarioQueue.Count > 0)
+        {
+            DialogueDataları next = scenarioQueue.Dequeue();
+            StartScenario(next);
+        }
+        else
+        {
+
+            float totalScore = ioStars + elroiStars; // Toplam puan
+            
+            
+            if(leftDialoguePanel) leftDialoguePanel.SetActive(false);
+            if(rightDialoguePanel) rightDialoguePanel.SetActive(false);
+            if(chancellorPanel) chancellorPanel.SetActive(false);
+            if(chaperonPanel) chaperonPanel.SetActive(false);
+
+          
+            if (dateEndedObject != null) dateEndedObject.SetActive(true); 
+
+           
+            if (totalScore >= starThreshold) 
+            {
+                if(dateSuccessPanel != null) dateSuccessPanel.SetActive(true);
+            }
+            else
+            {
+                if(dateFailPanel != null) dateFailPanel.SetActive(true);
+            }
+        }
+    }
+    
+    
+    public void AddReward(float stars, int hearts, TargetCharacter target)
+    {
+        totalHearts += hearts;
+
+        if (target == TargetCharacter.Io)
+        {
+            ioStars += stars;
+            Debug.Log($"IO KAZANDI: {stars} Yıldız.");
+        }
+        else if (target == TargetCharacter.Elroi)
+        {
+            elroiStars += stars;
+            Debug.Log($"ELROI KAZANDI: {stars} Yıldız.");
+        }
+        else if (target == TargetCharacter.Both)
+        {
+            ioStars += stars;
+            elroiStars += stars;
+            Debug.Log($"İKİSİ DE KAZANDI: {stars} Yıldız.");
+        }
+        
+        UpdateScoreUI();
+    }
+    
+    
+    
+    void DisplayLine()
+    {
+        if (lineIndex >= currentScenario.allLines.Count)
+        {
+           
+            if (isMenuMode) 
+            {
+                if(leftDialoguePanel) leftDialoguePanel.SetActive(false);
+                if(rightDialoguePanel) rightDialoguePanel.SetActive(false);
+                if(chancellorPanel) chancellorPanel.SetActive(false);
+                if(chaperonPanel) chaperonPanel.SetActive(false);
+                return; 
+            }
+            
+            if (isDodgeMode) { if (dodgeScript != null) dodgeScript.ResumeAfterDialogue(); return; }
+            if (isIceBreakerMode) { if (iceBreakerScript != null) iceBreakerScript.ResumeGame(); return; }
+            
+            if (currentScenario.nextScenario != null) { StartScenario(currentScenario.nextScenario); return; }
+            PlayNextInQueue(); 
+            return;
+        }
+
+        DialogueLine line = currentScenario.allLines[lineIndex];
+        UpdateCharacterFocus(line.side);
+
+        // 1. SOL (Io)
+        if (line.side == SpeakerSide.Left)
+        {
+            ActivatePanel(SpeakerSide.Left);
+            HandleUI(leftOptionsPanel, leftButtons, leftDaterImage, leftNameText, leftBodyText, line);
+        }
+        // 2. SAĞ (Elroi)
+        else if (line.side == SpeakerSide.Right)
+        {
+            ActivatePanel(SpeakerSide.Right);
+            HandleUI(rightOptionsPanel, rightButtons, rightDaterImage, rightNameText, rightBodyText, line);
+        }
+        
+        else if (line.side == SpeakerSide.Counselor)
+        {
+            ActivatePanel(SpeakerSide.Counselor); 
+            
+            HandleMentorDirect(chancellorNameText, chancellorBodyText, line);
+        }
+
+        else if (line.side == SpeakerSide.Chaperon)
+        {
+            ActivatePanel(SpeakerSide.Chaperon);
+         
+            HandleMentorDirect(chaperonNameText, chaperonBodyText, line);
+        }
+    }
+    
+    void HandleMentorDirect(TMP_Text targetNameText, TMP_Text targetBodyText, DialogueLine line)
+    {
+        targetNameText.text = line.characterName;
+
+        if (line.choices != null && line.choices.Count > 0)
+        {
+            targetBodyText.text = line.sentence;
+            leftOptionsPanel.SetActive(true); 
+            SetupButtons(leftButtons, line.choices);
+        }
+        else
+        {
+            StopAllCoroutines();
+            StartCoroutine(TypeSentence(targetBodyText, line.sentence));
+        }
+    }
+   
+    void HandleUI(GameObject activeDialoguePanel, GameObject inactiveDialoguePanel, 
+        GameObject activeOptionsPanel, Button[] activeButtons,
+        Image charImg, TMP_Text nameTxt, TMP_Text bodyTxt, 
+        DialogueLine line)
+    {
+        
+        inactiveDialoguePanel.SetActive(false);
+        
+        if (leftOptionsPanel.activeSelf) leftOptionsPanel.SetActive(false);
+        if (rightOptionsPanel.activeSelf) rightOptionsPanel.SetActive(false);
+
+       
+        activeDialoguePanel.SetActive(true);
+
+      
+        if (line.characterSprite != null) charImg.sprite = line.characterSprite;
+        nameTxt.text = line.characterName;
+
+       
+        bool hasChoices = (line.choices != null && line.choices.Count > 0);
+
+        if (hasChoices)
+        {
+           
+            bodyTxt.gameObject.SetActive(false);
+            activeOptionsPanel.SetActive(true);
+
+            
+            SetupButtons(activeButtons, line.choices);
+        }
+        else
+        {
+            
+            activeOptionsPanel.SetActive(false);
+            bodyTxt.gameObject.SetActive(true);
+
+            StopAllCoroutines();
+            StartCoroutine(TypeSentence(bodyTxt, line.sentence));
+        }
+    }
+    
+    
+    void ActivatePanel(SpeakerSide activeSide)
+    { 
+        if(leftDialoguePanel) leftDialoguePanel.SetActive(false);
+        if(rightDialoguePanel) rightDialoguePanel.SetActive(false);
+        
+        if(chancellorPanel) chancellorPanel.SetActive(false);
+        if(chaperonPanel) chaperonPanel.SetActive(false);
+
+        if (activeSide == SpeakerSide.Left) 
+            leftDialoguePanel.SetActive(true);
+        else if (activeSide == SpeakerSide.Right) 
+            rightDialoguePanel.SetActive(true);
+        else if (activeSide == SpeakerSide.Counselor)
+            chancellorPanel.SetActive(true); 
+        else if (activeSide == SpeakerSide.Chaperon)
+            chaperonPanel.SetActive(true);   
+    }
+    
+    
+    void HandleUI(GameObject activeOptionsPanel, Button[] activeButtons,
+        Image charImg, TMP_Text nameTxt, TMP_Text bodyTxt, 
+        DialogueLine line)
+    {
+        if (line.characterSprite != null) charImg.sprite = line.characterSprite;
+        nameTxt.text = line.characterName;
+
+        bool hasChoices = (line.choices != null && line.choices.Count > 0);
+
+        if (hasChoices)
+        {
+            bodyTxt.gameObject.SetActive(false);
+            activeOptionsPanel.SetActive(true);
+            SetupButtons(activeButtons, line.choices);
+        }
+        else
+        {
+            activeOptionsPanel.SetActive(false);
+            bodyTxt.gameObject.SetActive(true);
+
+            StopAllCoroutines();
+            StartCoroutine(TypeSentence(bodyTxt, line.sentence));
+        }
+    }
+    
+    
+    
+    
+    
+    
+    void SetupButtons(Button[] buttons, List<ChoiceOption> choices)
+    {
+      
+        foreach (var btn in buttons) btn.gameObject.SetActive(false);
+
+        for (int i = 0; i < choices.Count; i++)
+        {
+            if (i >= buttons.Length) break; 
+
+            buttons[i].gameObject.SetActive(true);
+            
+            
+            
+            TMP_Text btnText = buttons[i].GetComponentInChildren<TMP_Text>();
+            if (btnText != null) btnText.text = choices[i].choices;
+
+            int index = i; 
+            buttons[i].onClick.RemoveAllListeners();
+            buttons[i].onClick.AddListener(() => OnOptionSelected(choices[index]));
+        }
+    }
+    
+    void OnOptionSelected(ChoiceOption option)
+    {
+        
+        if(leftOptionsPanel) leftOptionsPanel.SetActive(false);
+        if(rightOptionsPanel) rightOptionsPanel.SetActive(false);
+        
+        if (option.starReward > 0 || option.heartReward > 0)
+        {
+            AddReward(option.starReward, option.heartReward, option.target);
+        }
+
+        if (option.nextScenario != null)
+        {
+            scenarioQueue.Clear();
+            StartScenario(option.nextScenario);
+        }
+        else
+        {
+            NextLine();
+        }
+    }
+    
+    
+    IEnumerator TypeSentence(TMP_Text textObj, string sentence)
+    {
+        isTyping = true;
+        currentFullSentence = sentence;
+        textObj.text = "";
+
+        foreach (char letter in sentence.ToCharArray())
+        {
+            textObj.text += letter;
+            yield return new WaitForSeconds(typeSpeed);
+        }
+        isTyping = false;
+    }
+    public void OnScreenClick()
+    {
+        if (isMenuMode) return; 
+
+        if (currentScenario == null) return;
+        if (lineIndex >= currentScenario.allLines.Count) return;
+        
+        if (currentScenario == null) return;
+        if (lineIndex >= currentScenario.allLines.Count) return;
+        if (isEventTriggered) return;
+
+        DialogueLine line = currentScenario.allLines[lineIndex];
+
+        if (line.choices != null && line.choices.Count > 0) return;
+
+        if (isTyping)
+        {
+            StopAllCoroutines();
+            if (line.side == SpeakerSide.Left) leftBodyText.text = currentFullSentence;
+            else if (line.side == SpeakerSide.Right) rightBodyText.text = currentFullSentence;
+           
+            else if (line.side == SpeakerSide.Counselor) chancellorBodyText.text = currentFullSentence;
+           
+            else if (line.side == SpeakerSide.Chaperon) chaperonBodyText.text = currentFullSentence;
+            
+            isTyping = false;
+            return;
+        }
+
+        if (!string.IsNullOrEmpty(line.eventTrigger))
+        {
+            TriggerEvent(line.eventTrigger);
+            return; 
+        }
+        NextLine();
+    }
+
+    void TriggerEvent(string eventName)
+    {
+       
+       if (eventName == "StartMenuGame")
+       {
+           
+           
+           if (BGblur) BGblur.SetActive(true);
+           
+          
+           if (menuMiniGameObj != null) menuMiniGameObj.SetActive(true);
+
+         
+           if (menuTutorialScenario != null)
+           {
+               StartScenario(menuTutorialScenario);
+           }
+       }
+      
+       else if (eventName == "MenüMiniGame")
+       {
+           isEventTriggered = true;
+
+           
+           if(leftDialoguePanel) leftDialoguePanel.SetActive(false);
+           if(rightDialoguePanel) rightDialoguePanel.SetActive(false);
+           if(chancellorPanel) chancellorPanel.SetActive(false);
+           if(chaperonPanel) chaperonPanel.SetActive(false);
+            
+          
+           tutorialPopup.OpenTutorial("MENU", menuTutorialSprites, () =>
+           {
+               
+               isEventTriggered = false; 
+               
+               isMenuMode = true;
+
+           });
+       }
+       
+      
+       else if (eventName == "StartIceBreaker")
+       {
+           savedMainScenario = currentScenario;
+           isEventTriggered = true;
+
+           if (leftDialoguePanel) leftDialoguePanel.SetActive(false);
+           if (rightDialoguePanel) rightDialoguePanel.SetActive(false);
+           if(chancellorPanel) chancellorPanel.SetActive(false);
+           if(chaperonPanel) chaperonPanel.SetActive(false);
+            
+           if (BGblur) BGblur.SetActive(true);
+
+           tutorialPopup.OpenTutorial("ICE BREAKER", iceBreakerTutorialSprites, () =>
+           {
+               if (iceBreakerScript != null) iceBreakerScript.StartGame();
+           });
+       }
+       else if (eventName == "StartDodgeGame")
+       {
+           savedMainScenario = currentScenario; 
+           isEventTriggered = true;
+            
+           if(leftDialoguePanel) leftDialoguePanel.SetActive(false);
+           if(rightDialoguePanel) rightDialoguePanel.SetActive(false);
+           if(chancellorPanel) chancellorPanel.SetActive(false);
+           if(chaperonPanel) chaperonPanel.SetActive(false);
+            
+           if (BGblur) BGblur.SetActive(true);
+            
+           tutorialPopup.OpenTutorial("DODGE THE QUESTION", dodgeTutorialSprites, () =>
+           {
+               if (dodgeScript != null) dodgeScript.StartGame();
+           });
+       }
+        
+    }
+
+    public void ResumeFromMiniGame(List<DialogueDataları> results)
+    {
+        isMenuMode = false;
+        
+        isEventTriggered = false;
+        
+        if (menuMiniGameObj != null) menuMiniGameObj.SetActive(false);
+        
+        
+        if (BGblur) BGblur.SetActive(false);
+        
+        QueueScenarios(results);
+    }
+    
+    
+    void NextLine()
+    {
+        lineIndex++;
+        DisplayLine();
+    }
+    
+    public void PlayIceBreakerDialogue(DialogueDataları scenario)
+    {
+        isIceBreakerMode = true; 
+        
+        isEventTriggered = false;
+        
+        StartScenario(scenario);
+    }
+
+    // Ice Breaker
+    public void EndIceBreaker(bool success)
+    {
+        isIceBreakerMode = false;
+        if(iceBreakerScript != null) iceBreakerScript.gameObject.SetActive(false);
+        isEventTriggered = false;
+       
+        if (BGblur) BGblur.SetActive(false);
+        
+        if (savedMainScenario != null && savedMainScenario.nextScenario != null)
+        {
+            
+            StartScenario(savedMainScenario.nextScenario);
+        }
+        else
+        {
+            Debug.LogWarning("Ice Breaker bitti devamına senaryo bağla datadan");
+        }
+    }
+    
+    public void PlayDodgeDialogue(DialogueDataları scenario)
+    {
+        isDodgeMode = true;
+        
+       
+        isEventTriggered = false; 
+        
+        StartScenario(scenario);
+    }
+
+  
+    public void EndDodgeGame()
+    {
+        isDodgeMode = false;
+        
+        if(dodgeScript != null) dodgeScript.gameObject.SetActive(false);
+        
+        isEventTriggered = false;
+        
+        if (BGblur) BGblur.SetActive(false);
+
+        Debug.Log("Dodge Game Bitti");
+        
+       
+        float totalScore = ioStars + elroiStars;
+        
+        if (totalScore >= starThreshold) 
+        {
+            if (savedMainScenario != null && savedMainScenario.nextScenario != null)
+            {
+                StartScenario(savedMainScenario.nextScenario);
+            }
+        }
+        else
+        {
+            if (failScenario != null)
+            {
+                StartScenario(failScenario);
+            }
+        }
+    }
+    
+    void UpdateScoreUI()
+    {
+        if (heartUI != null) heartUI.text = totalHearts.ToString();
+        
+        float totalStars = ioStars + elroiStars;
+        // if (starUI != null) starUI.text = "Star: " + totalStars.ToString("F1"); 
+        
+       
+        UpdateBar(ioStarsCont, ioStars);
+        UpdateBar(elroiStarsCont, elroiStars);
+
+     
+        if (successIoStars != null) UpdateBar(successIoStars, ioStars);
+        if (successElroiStars != null) UpdateBar(successElroiStars, elroiStars);
+        
+        if (failIoStars != null) UpdateBar(failIoStars, ioStars);
+        if (failElroiStars != null) UpdateBar(failElroiStars, elroiStars);
+    }
+    
+    void UpdateBar(Transform container, float starCount)
+    {
+        if (container == null || fullStarPrefab == null || halfStarPrefab == null) return;
+     
+        foreach (Transform child in container)
+        {
+            Destroy(child.gameObject);
+        }
+      
+        int fullCount = Mathf.FloorToInt(starCount); 
+        bool needsHalf = (starCount - fullCount) >= 0.5f;
+
+        for (int i = 0; i < fullCount; i++)
+        {
+            Instantiate(fullStarPrefab, container);
+        }
+        
+        if (needsHalf)
+        {
+            Instantiate(halfStarPrefab, container);
+        }
+    }
+    
+    void UpdateCharacterFocus(SpeakerSide activeSide)
+    {
+        Vector3 focusScale = new Vector3(1.06f, 1.06f, 1f); 
+        Vector3 normalScale = Vector3.one;                
+        
+        if (activeSide == SpeakerSide.Left)
+        {
+            leftTargetScale = focusScale;
+            rightTargetScale = normalScale;
+        }
+        else if (activeSide == SpeakerSide.Right)
+        {
+            leftTargetScale = normalScale;
+            rightTargetScale = focusScale;
+        }
+        else 
+        {
+            leftTargetScale = normalScale;
+            rightTargetScale = normalScale;
+        }
+    }
+    
+    public void RestartDate()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    
+    public void ReturnToDesktop()
+    {
+        int currentBank = PlayerPrefs.GetInt("SavedHearts", 0); 
+        int newTotal = currentBank + totalHearts; 
+        PlayerPrefs.SetInt("SavedHearts", newTotal);
+        
+        PlayerPrefs.SetInt("IsMarketUnlocked", 1);
+        
+        PlayerPrefs.Save();
+        
+      
+        
+        if (!string.IsNullOrEmpty(desktopScene))
+        {
+            SceneManager.LoadScene(desktopScene);
+        }
+    }
+    
+    public void StartTheDate() //Button
+    {
+        if (introPanel != null)
+        {
+            introPanel.SetActive(false); 
+        }
+        
+        if (startingScenario != null)
+        {
+            StartScenario(startingScenario);
+        }
+    }
+    
+
+}
