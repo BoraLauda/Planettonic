@@ -17,3 +17,20 @@ MonoBehaviour:
   portraitImage: {fileID: -5408334947099728532, guid: d31dc9871b7d06c4eb9f928a8c8aa299, type: 3}
   profileList: "\r\r\n\r\n"
   info: 
+  hatedFoods:
+  - food: 1
+    reactionScenario: {fileID: 11400000, guid: 66badacdee50e1946bdc2dcee5ea15ce, type: 2}
+  - food: 3
+    reactionScenario: {fileID: 11400000, guid: c46d411f54d8e3449865fba4781663bc, type: 2}
+  iceBreakerGood:
+  - {fileID: 11400000, guid: cdc74d7ce648d7f458a73f8afebaa955, type: 2}
+  - {fileID: 11400000, guid: b0ce68945d7e36c42922290a6a78c589, type: 2}
+  iceBreakerMid:
+  - {fileID: 11400000, guid: 91820d75f471f93459317bff7e38426f, type: 2}
+  - {fileID: 11400000, guid: 06f2f9e7e23cdd240836b608e98aeabd, type: 2}
+  iceBreakerBad:
+  - {fileID: 11400000, guid: 2225fe64fa3e76544a3fe3e826548de8, type: 2}
+  - {fileID: 11400000, guid: 1a0eaa36705da8c4b9706672b16bf472, type: 2}
+  dodgeQuestions:
+  - {fileID: 11400000, guid: 2988f1beccccc2c4eacdfa73c3b157a4, type: 2}
+  - {fileID: 11400000, guid: 3f1d86936054c5e4482b60866817b31b, type: 2}

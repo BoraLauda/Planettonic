@@ -1,5 +1,5 @@
 using UnityEngine;
-
+using System.Collections.Generic;
 
 [CreateAssetMenu(fileName = "NewProfile", menuName = "Matchmaker/Character Profile")]
 public class Characters : ScriptableObject
@@ -22,5 +22,22 @@ public class Characters : ScriptableObject
     [TextArea(3, 10)] 
     public string info;
     
-    
+    [Header("Sevilmeyen Yemekler")]
+    public List<FoodReaction> hatedFoods; 
+
+    [Header("Ice Breaker Soruları")]
+    public List<DialogueDataları> iceBreakerGood;
+    public List<DialogueDataları> iceBreakerMid;
+    public List<DialogueDataları> iceBreakerBad;
+
+    [Header("Dodge Oyunu Soruları")]
+    public List<DialogueDataları> dodgeQuestions;
+}
+
+
+[System.Serializable]
+public class FoodReaction
+{
+    public FoodType food; 
+    public DialogueDataları reactionScenario; 
 }

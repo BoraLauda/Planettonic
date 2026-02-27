@@ -9,25 +9,23 @@ public class MenuResults : MonoBehaviour
     public float turnDelay = 1.0f;          
     public float waitBeforeFinish = 1.5f;
     
-    [Header("Feedback Objeleri")]
-    public GameObject[] ioFeedbacks;    
-    public GameObject[] elroiFeedbacks; 
+    [Header("Feedback Objeleri (Mutlu Efektler)")]
+    public GameObject[] leftFeedbacks;    
+    public GameObject[] rightFeedbacks;   
 
-    [Header("Slotlar")]
-    public Image[] ioSlots;    
-    public Image[] elroiSlots;
+    [Header("Slotlar (Tabaklar)")]
+    public Image[] leftSlots;     
+    public Image[] rightSlots;   
     
     public Foods[] allMenuFoods;
     
     public float starReward = 0.5f; 
     public int heartReward = 10;
     
-    [Header("Senaryolar")]
+    [Header("Genel Senaryolar")]
     public DialogueDataları scenarioSuccess;      
-    public DialogueDataları scenarioFail_Seafood;  
-    public DialogueDataları scenarioFail_Wine;     
-    public DialogueDataları scenarioFail_IoMeat;
     public DialogueDataları scenarioContinuation;
+    
     
     private brainDate dateManager;
     private bool isProcessing = false;
@@ -36,13 +34,13 @@ public class MenuResults : MonoBehaviour
     {
         dateManager = FindFirstObjectByType<brainDate>();
         
-        foreach(var obj in ioFeedbacks) if(obj) obj.SetActive(false);
-        foreach(var obj in elroiFeedbacks) if(obj) obj.SetActive(false);
+        foreach(var obj in leftFeedbacks) if(obj) obj.SetActive(false);
+        foreach(var obj in rightFeedbacks) if(obj) obj.SetActive(false);
     }
 
     public void ChecktheOrdersFinish()
     {
-        if (AreSlotsEmpty(ioSlots) || AreSlotsEmpty(elroiSlots))
+        if (AreSlotsEmpty(leftSlots) || AreSlotsEmpty(rightSlots))
         {
             return;
         }
@@ -53,45 +51,42 @@ public class MenuResults : MonoBehaviour
     IEnumerator ProcessResultsWithEffects()
     {
         isProcessing = true; 
-        
-        for (int i = 0; i < elroiSlots.Length; i++)
+      
+        for (int i = 0; i < rightSlots.Length; i++)
         {
-            FoodType type = GetFoodTypeFromSprite(elroiSlots[i].sprite);
+            FoodType type = GetFoodTypeFromSprite(rightSlots[i].sprite);
             
-          
-            if (type != FoodType.Seafood && type != FoodType.Wine && type != FoodType.Salad)
+            
+            if (!IsFoodHated(DateSettings.rightChar, type))
             {
-                if (elroiFeedbacks != null && i < elroiFeedbacks.Length && elroiFeedbacks[i] != null) 
+                if (rightFeedbacks != null && i < rightFeedbacks.Length && rightFeedbacks[i] != null) 
                 {
-                    elroiFeedbacks[i].SetActive(true);
+                    rightFeedbacks[i].SetActive(true);
                 }
             }
-            
             
             yield return new WaitForSecondsRealtime(delayBetweenEffects);
         }
 
-        
         yield return new WaitForSecondsRealtime(turnDelay);
 
-        
-        for (int i = 0; i < ioSlots.Length; i++)
+       
+        for (int i = 0; i < leftSlots.Length; i++)
         {
-            FoodType type = GetFoodTypeFromSprite(ioSlots[i].sprite);
+            FoodType type = GetFoodTypeFromSprite(leftSlots[i].sprite);
 
-            if (type != FoodType.Meat && type != FoodType.Seafood)
+          
+            if (!IsFoodHated(DateSettings.leftChar, type))
             {
-                if (ioFeedbacks != null && i < ioFeedbacks.Length && ioFeedbacks[i] != null) 
+                if (leftFeedbacks != null && i < leftFeedbacks.Length && leftFeedbacks[i] != null) 
                 {
-                    ioFeedbacks[i].SetActive(true);
+                    leftFeedbacks[i].SetActive(true);
                 }
             }
-            
             
             yield return new WaitForSecondsRealtime(delayBetweenEffects);
         }
 
-        
         yield return new WaitForSecondsRealtime(waitBeforeFinish); 
 
         FinalizeLogic();
@@ -104,35 +99,33 @@ public class MenuResults : MonoBehaviour
         List<DialogueDataları> finalSequence = new List<DialogueDataları>();
         bool anyMistake = false;
 
-        foreach (Image slot in elroiSlots)
+       
+        foreach (Image slot in rightSlots)
         {
             FoodType type = GetFoodTypeFromSprite(slot.sprite);
-            if (type == FoodType.Seafood)
+            DialogueDataları failReaction = GetHatedFoodReaction(DateSettings.rightChar, type);
+            
+            if (failReaction != null) 
             {
-                if (!finalSequence.Contains(scenarioFail_Seafood))
+                if (!finalSequence.Contains(failReaction)) 
                 {
-                    finalSequence.Add(scenarioFail_Seafood);
-                    anyMistake = true;
-                }
-            }
-            else if (type == FoodType.Wine)
-            {
-                if (!finalSequence.Contains(scenarioFail_Wine))
-                {
-                    finalSequence.Add(scenarioFail_Wine);
+                    finalSequence.Add(failReaction);
                     anyMistake = true;
                 }
             }
         }
 
-        foreach (Image slot in ioSlots)
+       
+        foreach (Image slot in leftSlots)
         {
             FoodType type = GetFoodTypeFromSprite(slot.sprite);
-            if (type == FoodType.Meat || type == FoodType.Seafood)
+            DialogueDataları failReaction = GetHatedFoodReaction(DateSettings.leftChar, type);
+            
+            if (failReaction != null)
             {
-                if (!finalSequence.Contains(scenarioFail_IoMeat))
+                if (!finalSequence.Contains(failReaction))
                 {
-                    finalSequence.Add(scenarioFail_IoMeat);
+                    finalSequence.Add(failReaction);
                     anyMistake = true;
                 }
             }
@@ -153,34 +146,57 @@ public class MenuResults : MonoBehaviour
    
     void CalculateRewards()
     {
-        float ioStars = 0;
-        int ioHearts = 0;
-        foreach (Image slot in ioSlots)
+        float leftStars = 0;
+        int leftHearts = 0;
+        foreach (Image slot in leftSlots)
         {
             FoodType type = GetFoodTypeFromSprite(slot.sprite);
-            if (type != FoodType.Meat && type != FoodType.Seafood)
+            if (!IsFoodHated(DateSettings.leftChar, type))
             {
-                ioStars += starReward;
-                ioHearts += heartReward;
+                leftStars += starReward;
+                leftHearts += heartReward;
             }
         }
-        if(dateManager != null && (ioStars > 0 || ioHearts > 0))
-            dateManager.AddReward(ioStars, ioHearts, TargetCharacter.Io); 
+        if(dateManager != null && (leftStars > 0 || leftHearts > 0))
+            dateManager.AddReward(leftStars, leftHearts, TargetCharacter.Left); 
 
-        float elroiStars = 0;
-        int elroiHearts = 0;
-        foreach (Image slot in elroiSlots)
+        float rightStars = 0;
+        int rightHearts = 0;
+        foreach (Image slot in rightSlots)
         {
             FoodType type = GetFoodTypeFromSprite(slot.sprite);
-            if (type != FoodType.Seafood && type != FoodType.Wine && type != FoodType.Salad)
+            if (!IsFoodHated(DateSettings.rightChar, type))
             {
-                elroiStars += starReward;
-                elroiHearts += heartReward;
+                rightStars += starReward;
+                rightHearts += heartReward;
             }
         }
-        if(dateManager != null && (elroiStars > 0 || elroiHearts > 0))
-            dateManager.AddReward(elroiStars, elroiHearts, TargetCharacter.Elroi);
+        if(dateManager != null && (rightStars > 0 || rightHearts > 0))
+            dateManager.AddReward(rightStars, rightHearts, TargetCharacter.Right);
     }
+    
+    bool IsFoodHated(Characters character, FoodType food)
+    {
+        if (character == null || character.hatedFoods == null) return false;
+        
+        foreach (FoodReaction fr in character.hatedFoods)
+        {
+            if (fr.food == food) return true;
+        }
+        return false;
+    }
+    
+    DialogueDataları GetHatedFoodReaction(Characters character, FoodType food)
+    {
+        if (character == null || character.hatedFoods == null) return null;
+        
+        foreach (FoodReaction fr in character.hatedFoods)
+        {
+            if (fr.food == food) return fr.reactionScenario;
+        }
+        return null;
+    }
+    
     
     FoodType GetFoodTypeFromSprite(Sprite slotSprite)
     {
@@ -213,6 +229,4 @@ public class MenuResults : MonoBehaviour
             dateManager.ResumeFromMiniGame(sequence);
         }
     }
-    
-    
 }

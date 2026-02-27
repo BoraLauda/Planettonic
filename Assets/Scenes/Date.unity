@@ -3898,7 +3898,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &407253687
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6560,24 +6560,6 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 2808756d9e4a67447bd5c80736920a62, type: 3}
   - {fileID: 21300000, guid: 5c1aa26a693412947897543845e698fd, type: 3}
   explosion: 200
-  ioGoodQuestions:
-  - {fileID: 11400000, guid: 7ccdc90d8bf6c7e4796a2ebe82f5e941, type: 2}
-  - {fileID: 11400000, guid: 6344b5269991abb43ad78c95c3bc0d18, type: 2}
-  ioMidQuestions:
-  - {fileID: 11400000, guid: b6af3a74f374cd040831e1abf8c93811, type: 2}
-  - {fileID: 11400000, guid: e8ac8d5e031cb384d9b84d9d9e5d676c, type: 2}
-  ioBadQuestions:
-  - {fileID: 11400000, guid: 55e1b9aeb332c4941808358f10c41368, type: 2}
-  - {fileID: 11400000, guid: 9b07c77d4b8f8c14dbac5b72b0e154f1, type: 2}
-  elroiGoodQuestions:
-  - {fileID: 11400000, guid: cdc74d7ce648d7f458a73f8afebaa955, type: 2}
-  - {fileID: 11400000, guid: b0ce68945d7e36c42922290a6a78c589, type: 2}
-  elroiMidQuestions:
-  - {fileID: 11400000, guid: 91820d75f471f93459317bff7e38426f, type: 2}
-  - {fileID: 11400000, guid: 06f2f9e7e23cdd240836b608e98aeabd, type: 2}
-  elroiBadQuestions:
-  - {fileID: 11400000, guid: 2225fe64fa3e76544a3fe3e826548de8, type: 2}
-  - {fileID: 11400000, guid: 1a0eaa36705da8c4b9706672b16bf472, type: 2}
   speed: 1300
   shakeStrength: 5
   strikeDistance: 30
@@ -7241,16 +7223,16 @@ MonoBehaviour:
   delayBetweenEffects: 0.5
   turnDelay: 0.5
   waitBeforeFinish: 0.5
-  ioFeedbacks:
-  - {fileID: 1576221328}
+  leftFeedbacks:
   - {fileID: 1630141699}
-  elroiFeedbacks:
+  - {fileID: 1576221328}
+  rightFeedbacks:
   - {fileID: 735941435}
   - {fileID: 642363133}
-  ioSlots:
+  leftSlots:
   - {fileID: 949416070}
   - {fileID: 1952393305}
-  elroiSlots:
+  rightSlots:
   - {fileID: 493767088}
   - {fileID: 612019942}
   allMenuFoods:
@@ -7263,9 +7245,6 @@ MonoBehaviour:
   starReward: 0.5
   heartReward: 10
   scenarioSuccess: {fileID: 11400000, guid: c5dde4982a3d3f04790c699bf5a683da, type: 2}
-  scenarioFail_Seafood: {fileID: 11400000, guid: 66badacdee50e1946bdc2dcee5ea15ce, type: 2}
-  scenarioFail_Wine: {fileID: 11400000, guid: c46d411f54d8e3449865fba4781663bc, type: 2}
-  scenarioFail_IoMeat: {fileID: 11400000, guid: d6d0176578ce07a4fabf9173d344d21a, type: 2}
   scenarioContinuation: {fileID: 11400000, guid: 2d2bfd17d08bc7e4f9d994e00138b320, type: 2}
 --- !u!1 &760160395
 GameObject:
@@ -11552,8 +11531,6 @@ MonoBehaviour:
   fadeImage: {fileID: 61672657}
   gameSaniye: 20
   centerCharacterImage: {fileID: 985565053}
-  ioSprite: {fileID: 21300000, guid: 405748e6d2ec0014992aab7edeff6d2d, type: 3}
-  elroiSprite: {fileID: -3940248032974027194, guid: 8ac483391faa5b343b3452c691d8c18d, type: 3}
   questionsForIo:
   - {fileID: 11400000, guid: 2988f1beccccc2c4eacdfa73c3b157a4, type: 2}
   - {fileID: 11400000, guid: 3f1d86936054c5e4482b60866817b31b, type: 2}

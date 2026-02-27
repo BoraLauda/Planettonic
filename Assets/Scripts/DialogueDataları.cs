@@ -49,9 +49,12 @@ public enum SpeakerSide
 
 public enum TargetCharacter
 {
-    Io,
-    Elroi,
-    Both
+    Left,
+    Right,
+    Both,
+    
+    Io, //SONRA SİL    
+    Elroi //SONRA SİL  
 }
     
     

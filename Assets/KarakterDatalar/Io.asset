@@ -28,3 +28,20 @@ MonoBehaviour:
     young artist in the industry. She spends her free time being a nerd, collecting
     comics and merch of her favorite shows. She hasn\u2019t had much luck with dating
     as of yet. "
+  hatedFoods:
+  - food: 2
+    reactionScenario: {fileID: 11400000, guid: d6d0176578ce07a4fabf9173d344d21a, type: 2}
+  - food: 1
+    reactionScenario: {fileID: 11400000, guid: d6d0176578ce07a4fabf9173d344d21a, type: 2}
+  iceBreakerGood:
+  - {fileID: 11400000, guid: 7ccdc90d8bf6c7e4796a2ebe82f5e941, type: 2}
+  - {fileID: 11400000, guid: 6344b5269991abb43ad78c95c3bc0d18, type: 2}
+  iceBreakerMid:
+  - {fileID: 11400000, guid: b6af3a74f374cd040831e1abf8c93811, type: 2}
+  - {fileID: 11400000, guid: e8ac8d5e031cb384d9b84d9d9e5d676c, type: 2}
+  iceBreakerBad:
+  - {fileID: 11400000, guid: 55e1b9aeb332c4941808358f10c41368, type: 2}
+  - {fileID: 11400000, guid: 9b07c77d4b8f8c14dbac5b72b0e154f1, type: 2}
+  dodgeQuestions:
+  - {fileID: 11400000, guid: 4fc40f655e52f53418b6699a38ec2f7f, type: 2}
+  - {fileID: 11400000, guid: 2a4a4488c4e6ac74d8149e78dffe4f15, type: 2}

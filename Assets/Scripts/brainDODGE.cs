@@ -17,9 +17,7 @@ public class brainDODGE : MonoBehaviour
     public Image fadeImage;
     public float gameSaniye = 20f; 
     
-    public Image centerCharacterImage; 
-    public Sprite ioSprite;            
-    public Sprite elroiSprite;
+    public Image centerCharacterImage;
     
     public List<DialogueDataları> questionsForIo;
     public List<DialogueDataları> questionsForElroi;
@@ -51,8 +49,8 @@ public class brainDODGE : MonoBehaviour
 
     private float timer;
     public bool isGameActive = true;
-    private int currentTurn = 0; // 0=Io, 1=Elroi, 2=Io, 3=Elroi
-    private bool isIoDodging = true;
+    private int currentTurn = 0; 
+    private bool isLeftDodging = true;
     
     private int hitCount = 0;
     
@@ -98,28 +96,25 @@ public class brainDODGE : MonoBehaviour
                 if (sign != null) sign.SetActive(false);
             }
         }
-
-      
+        
         if (currentTurn % 2 == 0)
         {
-            isIoDodging = true;
-            centerCharacterImage.sprite = ioSprite;
-            Debug.Log("Sıra: IO KAÇIYOR (Tur " + (currentTurn+1) + ")");
+            isLeftDodging = true;
+            if(DateSettings.leftChar != null) centerCharacterImage.sprite = DateSettings.leftChar.profileIcon;
+            Debug.Log("Sıra: SOL KARAKTER KAÇIYOR (Tur " + (currentTurn+1) + ")");
         }
         else
         {
-            isIoDodging = false;
-            centerCharacterImage.sprite = elroiSprite;
-            Debug.Log("Sıra: ELROI KAÇIYOR (Tur " + (currentTurn+1) + ")");
+            isLeftDodging = false;
+            if(DateSettings.rightChar != null) centerCharacterImage.sprite = DateSettings.rightChar.profileIcon;
+            Debug.Log("Sıra: SAĞ KARAKTER KAÇIYOR (Tur " + (currentTurn+1) + ")");
         }
 
-        
         timer = gameSaniye;
         currentRocketSpeed = startSpeed;
         currentSpawnDelay = startSpawnAralık;
         isGameActive = true;
 
-        
         StopAllCoroutines();
         StartCoroutine(SpawnLoop());
     }
@@ -189,22 +184,18 @@ public class brainDODGE : MonoBehaviour
         {
             Debug.Log("VURULDUN");
             
-           
-            
             DialogueDataları questionToAsk = null;
 
-            
-            if (isIoDodging) 
+            // --- YENİ SİSTEM: Soruları Karakter Dosyasından Çek ---
+            if (isLeftDodging) 
             {
-                questionToAsk = GetRandomQuestion(questionsForIo);
+                if(DateSettings.leftChar != null) questionToAsk = GetRandomQuestion(DateSettings.leftChar.dodgeQuestions);
             }
-           
             else 
             {
-                questionToAsk = GetRandomQuestion(questionsForElroi);
+                if(DateSettings.rightChar != null) questionToAsk = GetRandomQuestion(DateSettings.rightChar.dodgeQuestions);
             }
 
-           
             if (dateManager != null && questionToAsk != null)
             {
                 if(pauseImage != null) pauseImage.SetActive(true);
@@ -214,7 +205,6 @@ public class brainDODGE : MonoBehaviour
             }
             else
             {
-                
                 NextTurn();
             }
         }
