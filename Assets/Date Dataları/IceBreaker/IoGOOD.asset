@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f832b14936fc2048824d9308b14ded6, type: 3}
   m_Name: IoGOOD
   m_EditorClassIdentifier: 
+  locationName: 
+  locationBackground: {fileID: 0}
   allLines:
   - side: 0
     characterName: Io
@@ -22,7 +24,7 @@ MonoBehaviour:
     choices: []
   - side: 1
     characterName: Elroi
-    characterSprite: {fileID: -6843144879011698485, guid: 1af55f43fff034e4297b2207808da62a, type: 3}
+    characterSprite: {fileID: 21300000, guid: 940a91f339e1825439b9f6d15b9c98fa, type: 3}
     sentence: "Yes, actually. The lens is self-adjusting every 1/3rd of a milisecond.
       It\u2019s so smooth that no one in this solar system has eyes good enough to
       notice."

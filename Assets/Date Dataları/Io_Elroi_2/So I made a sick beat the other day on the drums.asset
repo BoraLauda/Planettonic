@@ -1,0 +1,99 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f832b14936fc2048824d9308b14ded6, type: 3}
+  m_Name: So I made a sick beat the other day on the drums
+  m_EditorClassIdentifier: 
+  allLines:
+  - side: 1
+    characterName: Elroi
+    characterSprite: {fileID: 0}
+    sentence: "I just remembered, I came up with this sick drum progression the other
+      day. I\u2019d like you to give it a listen and let me know if we can like..
+      jam sometime. "
+    eventTrigger: 
+    choices: []
+  - side: 0
+    characterName: Io
+    characterSprite: {fileID: 0}
+    sentence: "Oh I\u2019d love to! You know I play the guitar?\r\n"
+    eventTrigger: 
+    choices: []
+  - side: 1
+    characterName: Elroi
+    characterSprite: {fileID: 0}
+    sentence: 'Cool. We can make a song together.
+
+'
+    eventTrigger: 
+    choices: []
+  - side: 0
+    characterName: Io
+    characterSprite: {fileID: 0}
+    sentence: 'Yeah! Have you written one before?
+
+'
+    eventTrigger: 
+    choices: []
+  - side: 1
+    characterName: Elroi
+    characterSprite: {fileID: 0}
+    sentence: '... No.
+
+'
+    eventTrigger: 
+    choices: []
+  - side: 0
+    characterName: Io
+    characterSprite: {fileID: 0}
+    sentence: "*laughs* Don\u2019t worry, El. I\u2019ll help you out.\r\n"
+    eventTrigger: 
+    choices: []
+  - side: 1
+    characterName: Elroi
+    characterSprite: {fileID: 0}
+    sentence: 'I like you.
+
+'
+    eventTrigger: 
+    choices: []
+  - side: 0
+    characterName: Io
+    characterSprite: {fileID: 0}
+    sentence: "Oh! Well... I do too, but heh, if you don\u2019t mind me asking, where
+      did that come from?\r\n"
+    eventTrigger: 
+    choices: []
+  - side: 1
+    characterName: Elroi
+    characterSprite: {fileID: 0}
+    sentence: 'Yeah uh ahem. That was kinda cringe. I might have a thing for nicknames.
+
+'
+    eventTrigger: 
+    choices: []
+  - side: 0
+    characterName: Io
+    characterSprite: {fileID: 0}
+    sentence: 'Oh, good to know. El.
+
+'
+    eventTrigger: 
+    choices: []
+  - side: 1
+    characterName: Elroi
+    characterSprite: {fileID: 0}
+    sentence: 'Hahahah... hell yeah.
+
+'
+    eventTrigger: 
+    choices: []
+  nextScenario: {fileID: 11400000, guid: 40b62e1cc7d91fd4fa27a096a990c77a, type: 2}

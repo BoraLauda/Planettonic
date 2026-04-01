@@ -1,0 +1,109 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f832b14936fc2048824d9308b14ded6, type: 3}
+  m_Name: Start
+  m_EditorClassIdentifier: 
+  locationName: BAR
+  locationBackground: {fileID: 21300000, guid: 25063601c79f1564093b3a1ef16c828d, type: 3}
+  allLines:
+  - side: 1
+    characterName: Elroi
+    characterSprite: {fileID: 21300000, guid: 50ded667945ab4c4b8acc9e58eafd0a1, type: 3}
+    sentence: "Hey, IO. I\u2019m so glad we finally get to drink together.\r\n"
+    eventTrigger: 
+    choices: []
+  - side: 0
+    characterName: Io
+    characterSprite: {fileID: 7956698841550424776, guid: 2dfa7703027856e42aa0ad06571044c3, type: 3}
+    sentence: "Haha, yeah. I\u2019ve been looking forward to it too!\r\n\r\n"
+    eventTrigger: 
+    choices: []
+  - side: 1
+    characterName: Elroi
+    characterSprite: {fileID: 0}
+    sentence: 'You look... hot.
+
+
+
+
+
+'
+    eventTrigger: 
+    choices: []
+  - side: 0
+    characterName: Io
+    characterSprite: {fileID: 0}
+    sentence: 'Well you look good, yourself. I like the fit.
+
+'
+    eventTrigger: 
+    choices: []
+  - side: 1
+    characterName: Elroi
+    characterSprite: {fileID: 0}
+    sentence: "Heh. I like it too. It\u2019s fucking fire.\r\n\r\n"
+    eventTrigger: 
+    choices: []
+  - side: 2
+    characterName: Counselor
+    characterSprite: {fileID: 0}
+    sentence: "Hi, hello Chaperon babe. Just popping in to say that I won\u2019t
+      get to guide you through second dates at all, as it is apparently considered
+      \u2018invasion of privacy\u2019 or whatever. ****ing bull****.\r\n\n"
+    eventTrigger: 
+    choices: []
+  - side: 2
+    characterName: Counselor
+    characterSprite: {fileID: 0}
+    sentence: "Like- it is extremely stupid but unfortunately, I do not make the
+      rules. So, you\u2019re all on your own with this one. Good luck! Buh-bye~\r\n"
+    eventTrigger: 
+    choices: []
+  - side: 3
+    characterName: Chaperon
+    characterSprite: {fileID: 0}
+    sentence: 'Damn...
+
+
+
+'
+    eventTrigger: 
+    choices: []
+  - side: 3
+    characterName: Chaperon
+    characterSprite: {fileID: 0}
+    sentence: 'Ahem, hello again guys. Can I get you started with some drinks?
+
+
+'
+    eventTrigger: 
+    choices: []
+  - side: 0
+    characterName: Io
+    characterSprite: {fileID: 0}
+    sentence: "Hi! Yes, I\u2019d like something... sweet and sour. A Venus classic
+      would be great.\r\n\r\n\n"
+    eventTrigger: 
+    choices: []
+  - side: 1
+    characterName: Elroi
+    characterSprite: {fileID: 0}
+    sentence: "Hard liqour for me. And, make sure to prepare it.. hard. \n\n"
+    eventTrigger: 
+    choices: []
+  - side: 0
+    characterName: Io
+    characterSprite: {fileID: 0}
+    sentence: "*chuckles* You\u2019re a freak.\r\n\n"
+    eventTrigger: StartBartending
+    choices: []
+  nextScenario: {fileID: 11400000, guid: 82ea4fe5ed41e1147b9ce3599d583a8b, type: 2}

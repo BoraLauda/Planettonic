@@ -1,0 +1,199 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f832b14936fc2048824d9308b14ded6, type: 3}
+  m_Name: AfterPixel
+  m_EditorClassIdentifier: 
+  allLines:
+  - side: 0
+    characterName: Io
+    characterSprite: {fileID: 0}
+    sentence: "So, Elroi... I wanted to ask you about your past relationships. I
+      know it\u2019s kind of a shitty topic but it is something I value knowing as
+      a Venusian and as a person as well.\r\n"
+    eventTrigger: 
+    choices: []
+  - side: 1
+    characterName: Elroi
+    characterSprite: {fileID: 0}
+    sentence: 'Ask away babe, I am an honest man. But you might not like what you
+      hear.
+
+'
+    eventTrigger: 
+    choices: []
+  - side: 0
+    characterName: Io
+    characterSprite: {fileID: 0}
+    sentence: "See, you probably won\u2019t either. I recently went through a breakup.
+      It wasn\u2019t a bad one, we agreed to keep things friendly but the problem
+      was that... it just didn\u2019t last for a long time.\r\n"
+    eventTrigger: 
+    choices: []
+  - side: 1
+    characterName: Elroi
+    characterSprite: {fileID: 0}
+    sentence: "I don\u2019t see a problem with that.\r\n"
+    eventTrigger: 
+    choices: []
+  - side: 0
+    characterName: Io
+    characterSprite: {fileID: 0}
+    sentence: "And I don\u2019t mean to scare you because I do wanna see where..
+      this might lead but the thing is I never manage to make things last- wait.
+      What do you mean?\r\n"
+    eventTrigger: 
+    choices: []
+  - side: 1
+    characterName: Elroi
+    characterSprite: {fileID: 0}
+    sentence: 'Well, I know we are doing this program bullshit, whatever, Chaperon
+      cover your ears.
+
+'
+    eventTrigger: 
+    choices: []
+  - side: 3
+    characterName: Chaperon
+    characterSprite: {fileID: 0}
+    sentence: "I am sorry, I can\u2019t do that.\r\n"
+    eventTrigger: 
+    choices: []
+  - side: 1
+    characterName: Elroi
+    characterSprite: {fileID: 0}
+    sentence: "Okay, fuck you then. Anyways, I know we are here to \u201Cfind love\u201D
+      and shit but I\u2019ve never really been too good at that whole biz.\r\n"
+    eventTrigger: 
+    choices: []
+  - side: 0
+    characterName: Io
+    characterSprite: {fileID: 0}
+    sentence: 'Well, me neither.
+
+'
+    eventTrigger: 
+    choices: []
+  - side: 1
+    characterName: Elroi
+    characterSprite: {fileID: 0}
+    sentence: "You know you are way more chill and a lot funnier than most women
+      I\u2019ve been with.\r\n"
+    eventTrigger: 
+    choices: []
+  - side: 0
+    characterName: Io
+    characterSprite: {fileID: 0}
+    sentence: '..Oh..kay?
+
+'
+    eventTrigger: 
+    choices: []
+  - side: 1
+    characterName: Elroi
+    characterSprite: {fileID: 0}
+    sentence: 'And I do enjoy talking to you.
+
+'
+    eventTrigger: 
+    choices: []
+  - side: 0
+    characterName: Io
+    characterSprite: {fileID: 0}
+    sentence: 'Uh-huh.
+
+
+
+'
+    eventTrigger: 
+    choices: []
+  - side: 1
+    characterName: Elroi
+    characterSprite: {fileID: 0}
+    sentence: "But I\u2019m not gonna marry you.\r\n"
+    eventTrigger: 
+    choices: []
+  - side: 0
+    characterName: Io
+    characterSprite: {fileID: 0}
+    sentence: 'OH GOD NO! HAHA! Well, I mean, marriage was never my intention going
+      into this anyway. But I guess I was hoping that this would somehow... fix me,
+      or something.
+
+'
+    eventTrigger: 
+    choices: []
+  - side: 1
+    characterName: Elroi
+    characterSprite: {fileID: 0}
+    sentence: "Yeah it\u2019s not like the government has ever let you down before.\r\n\r\n"
+    eventTrigger: 
+    choices: []
+  - side: 0
+    characterName: Io
+    characterSprite: {fileID: 0}
+    sentence: "That might be the smartest thing you\u2019ve said so far. "
+    eventTrigger: 
+    choices: []
+  - side: 1
+    characterName: Elroi
+    characterSprite: {fileID: 0}
+    sentence: 'Thank you. '
+    eventTrigger: 
+    choices: []
+  - side: 1
+    characterName: Elroi
+    characterSprite: {fileID: 0}
+    sentence: "Hmm.. Ah, whatever. I really don\u2019t know what I was expecting.
+      You want more drinks? "
+    eventTrigger: 
+    choices: []
+  - side: 1
+    characterName: Elroi
+    characterSprite: {fileID: 0}
+    sentence: "\u2018Course I do. "
+    eventTrigger: 
+    choices: []
+  - side: 0
+    characterName: Io
+    characterSprite: {fileID: 0}
+    sentence: "Ah, I wish I had siblings. I\u2019ve kind of had a lonely childhood. "
+    eventTrigger: 
+    choices: []
+  - side: 1
+    characterName: Elroi
+    characterSprite: {fileID: 0}
+    sentence: "You know, Yova might be the only person I can talk to for hours and
+      hours without getting bored. She\u2019s truly amazing.\r\n"
+    eventTrigger: 
+    choices: []
+  - side: 1
+    characterName: Elroi
+    characterSprite: {fileID: 0}
+    sentence: 
+    eventTrigger: 
+    choices:
+    - choices: What does she do for a living?
+      nextScenario: {fileID: 11400000, guid: 7d42679ed2723af4aa76acc1be2ad1b0, type: 2}
+      target: 0
+      starReward: 0
+      heartReward: 0
+    - choices: "I\u2019m guessing your sister never taught you how to talk to girls?"
+      nextScenario: {fileID: 11400000, guid: bc9acd0af81f7e64786e952fc8708ebe, type: 2}
+      target: 0
+      starReward: 0
+      heartReward: 0
+    - choices: Has she ever bullied the shit out of you?
+      nextScenario: {fileID: 11400000, guid: 08bf9546d247e464a9e1120562767a59, type: 2}
+      target: 0
+      starReward: 0
+      heartReward: 0
+  nextScenario: {fileID: 0}

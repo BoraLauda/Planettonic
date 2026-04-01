@@ -1,0 +1,52 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f832b14936fc2048824d9308b14ded6, type: 3}
+  m_Name: How much can you do with all four of your arms
+  m_EditorClassIdentifier: 
+  allLines:
+  - side: 1
+    characterName: Elroi
+    characterSprite: {fileID: 0}
+    sentence: Sooo, you know how you have four arms? How much can you multitask with
+      them? Like, hehe, you know?
+    eventTrigger: 
+    choices: []
+  - side: 0
+    characterName: Io
+    characterSprite: {fileID: 0}
+    sentence: "Oh wow, that\u2019s like... extremely offensive to ask, everyone knows
+      we are omnidexterous.\r\n"
+    eventTrigger: 
+    choices: []
+  - side: 1
+    characterName: Elroi
+    characterSprite: {fileID: 0}
+    sentence: "Well, I certainly didn\u2019t.\r\n"
+    eventTrigger: 
+    choices: []
+  - side: 0
+    characterName: Io
+    characterSprite: {fileID: 0}
+    sentence: "It\u2019s not nice that that\u2019s the first thing you think of when
+      you look at my arms. I can do a lot more than please people with them and that\u2019s
+      not me flirting with you.\r\n"
+    eventTrigger: 
+    choices: []
+  - side: 1
+    characterName: Elroi
+    characterSprite: {fileID: 0}
+    sentence: 'Alright! I get it. Whatever...
+
+'
+    eventTrigger: 
+    choices: []
+  nextScenario: {fileID: 11400000, guid: 40b62e1cc7d91fd4fa27a096a990c77a, type: 2}

@@ -5,6 +5,11 @@ using System.Collections.Generic;
 [CreateAssetMenu(fileName = "New Scenario", menuName = "Date System")]
 public class DialogueDataları : ScriptableObject
 {
+
+    [Header("Mekan Bilgileri")]
+    public string locationName; 
+    public Sprite locationBackground;
+
     [Header("Senaryo Akışı")]
     public List<DialogueLine> allLines;
     public DialogueDataları nextScenario;

@@ -1,0 +1,83 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f832b14936fc2048824d9308b14ded6, type: 3}
+  m_Name: What does she do for a living
+  m_EditorClassIdentifier: 
+  allLines:
+  - side: 0
+    characterName: Io
+    characterSprite: {fileID: 0}
+    sentence: What does Yova do for a living? Is she in the same industry as you?
+    eventTrigger: 
+    choices: []
+  - side: 1
+    characterName: Elroi
+    characterSprite: {fileID: 0}
+    sentence: "She is, actually. She works in sound design and ambience. She\u2019s
+      kinda more successful than I am.\r\n"
+    eventTrigger: 
+    choices: []
+  - side: 0
+    characterName: Io
+    characterSprite: {fileID: 0}
+    sentence: "Really? That\u2019s really cool. Can you introduce me to her some
+      time? If you aren\u2019t too worried I\u2019ll get attached to you?\r\n"
+    eventTrigger: 
+    choices: []
+  - side: 1
+    characterName: Elroi
+    characterSprite: {fileID: 0}
+    sentence: "I guess it wouldn\u2019t hurt to. Don\u2019t become too close with
+      her though, I\u2019ll get jealous, haha.\r\n"
+    eventTrigger: 
+    choices: []
+  - side: 0
+    characterName: Io
+    characterSprite: {fileID: 0}
+    sentence: "I\u2019ll be her friend instead, how about that?\r\n"
+    eventTrigger: 
+    choices: []
+  - side: 1
+    characterName: Elroi
+    characterSprite: {fileID: 0}
+    sentence: "Don\u2019t you fucking dare.\r\n"
+    eventTrigger: 
+    choices: []
+  - side: 0
+    characterName: Io
+    characterSprite: {fileID: 0}
+    sentence: "Oh, relax, I\u2019m just kidding. Although... is she pretty?\r\n"
+    eventTrigger: 
+    choices: []
+  - side: 1
+    characterName: Elroi
+    characterSprite: {fileID: 0}
+    sentence: 'Hey Chaperon!
+
+'
+    eventTrigger: 
+    choices: []
+  - side: 0
+    characterName: Io
+    characterSprite: {fileID: 0}
+    sentence: "NO! I\u2019m joking, really.\r\n"
+    eventTrigger: 
+    choices: []
+  - side: 1
+    characterName: Elroi
+    characterSprite: {fileID: 0}
+    sentence: 'Okay, fine. I trust you. I think.
+
+'
+    eventTrigger: 
+    choices: []
+  nextScenario: {fileID: 0}

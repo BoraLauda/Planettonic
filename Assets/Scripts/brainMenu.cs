@@ -9,6 +9,10 @@ public class brainMenu : MonoBehaviour
     public Button confirmButton;
     public Button clearButton;
     
+    public AudioSource audioSource;
+    public AudioClip pickUpSound; 
+    public AudioClip dropSound;
+    
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -26,6 +30,19 @@ public class brainMenu : MonoBehaviour
             Debug.LogError("HATA");
         }
     }
+    
+    public void PlayPickUpSound()
+    {
+        if (audioSource != null && pickUpSound != null)
+            audioSource.PlayOneShot(pickUpSound);
+    }
+
+    public void PlayDropSound()
+    {
+        if (audioSource != null && dropSound != null)
+            audioSource.PlayOneShot(dropSound);
+    }
+    
 
     public void CheckAllSlots()
     {

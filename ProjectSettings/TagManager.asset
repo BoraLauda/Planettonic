@@ -5,6 +5,10 @@ TagManager:
   serializedVersion: 3
   tags:
   - Background
+  - Liquid
+  - Anahtar
+  - Kalp
+  - Death
   layers:
   - Default
   - TransparentFX
@@ -12,10 +16,10 @@ TagManager:
   - Efekt
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
+  - Fluids
+  - Ground
+  - Pixel
+  - Enemy
   - 
   - 
   - 

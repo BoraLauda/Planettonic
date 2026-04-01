@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: DataCyberchics
   m_EditorClassIdentifier: 
   itemName: The Cyberchichs
-  price: 100
+  price: 250
   cardImage: {fileID: 21300000, guid: 40da5053056ac8f49a52991630a0797c, type: 3}

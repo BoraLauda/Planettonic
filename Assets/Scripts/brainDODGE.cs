@@ -55,6 +55,7 @@ public class brainDODGE : MonoBehaviour
     private int hitCount = 0;
     
     private brainDate dateManager;
+    private Dictionary<List<DialogueDataları>, List<DialogueDataları>> questionPools = new Dictionary<List<DialogueDataları>, List<DialogueDataları>>();
     private float currentSpawnDelay;
     
     
@@ -420,12 +421,27 @@ public class brainDODGE : MonoBehaviour
         }
     }
     
-    DialogueDataları GetRandomQuestion(List<DialogueDataları> list)
+    DialogueDataları GetRandomQuestion(List<DialogueDataları> originalList)
     {
-        if (list == null || list.Count == 0) return null;
-        int rnd = Random.Range(0, list.Count);
-        DialogueDataları q = list[rnd];
-        list.RemoveAt(rnd);
-        return q;
+        if (originalList == null || originalList.Count == 0) return null;
+        
+        if (!questionPools.ContainsKey(originalList))
+        {
+            questionPools[originalList] = new List<DialogueDataları>(originalList);
+        }
+        
+        List<DialogueDataları> pool = questionPools[originalList];
+        
+        if (pool.Count == 0)
+        {
+            pool.AddRange(originalList);
+        }
+        
+        int rnd = Random.Range(0, pool.Count);
+        DialogueDataları selectedQ = pool[rnd];
+        
+        pool.RemoveAt(rnd);
+
+        return selectedQ;
     }
 }

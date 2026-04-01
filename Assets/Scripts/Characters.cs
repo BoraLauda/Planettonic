@@ -14,13 +14,18 @@ public class Characters : ScriptableObject
     [Header("GörselBüyük")]
     public Sprite portraitImage; 
         
-    [Header("Detay Metinleri")]
-    [TextArea(3, 10)] 
-    public string profileList;
+    //[Header("Detay Metinleri")]
+    //[TextArea(3, 10)] 
+    //public string profileList;
     
+    public List<LocationPreference> locationPreferences;
     
-    [TextArea(3, 10)] 
-    public string info;
+    //[TextArea(3, 10)] 
+    //public string info;
+    
+    public Sprite nameImage;  
+    public Sprite listImage; // boy kilo vs.
+    public Sprite infoImage; //özet
     
     [Header("Sevilmeyen Yemekler")]
     public List<FoodReaction> hatedFoods; 
@@ -40,4 +45,12 @@ public class FoodReaction
 {
     public FoodType food; 
     public DialogueDataları reactionScenario; 
+}
+
+
+[System.Serializable]
+public class LocationPreference
+{
+    public string locationName; 
+    public float bonusStars;    
 }

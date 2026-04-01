@@ -20,16 +20,6 @@ public class DesktopManager : MonoBehaviour
     {
         instance = this; 
         
-        
-        if (!isGameSessionStarted)
-        {
-            
-            PlayerPrefs.DeleteAll();
-            
-            
-            isGameSessionStarted = true;
-        }
-       
     }
 
     void Start()

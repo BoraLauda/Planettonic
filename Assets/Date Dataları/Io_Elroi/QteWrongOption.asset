@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f832b14936fc2048824d9308b14ded6, type: 3}
+  m_Name: QteWrongOption
+  m_EditorClassIdentifier: 
+  locationName: 
+  locationBackground: {fileID: 0}
+  allLines:
+  - side: 0
+    characterName: Io
+    characterSprite: {fileID: 0}
+    sentence: "I just told you, I don\u2019t DJ. And DJ music isn\u2019t really my
+      thing anyway, I don\u2019t think I\u2019d have a good time, sorry.\r\n"
+    eventTrigger: 
+    choices: []
+  - side: 1
+    characterName: Elroi
+    characterSprite: {fileID: 21300000, guid: 50ded667945ab4c4b8acc9e58eafd0a1, type: 3}
+    sentence: "Okay, your loss babe. Just know that you\u2019re missing out on the
+      craziest parties in Mars, though."
+    eventTrigger: 
+    choices: []
+  - side: 0
+    characterName: Io
+    characterSprite: {fileID: -3897279123651508243, guid: feec8c50e19636d40bf0d925b19b288d, type: 3}
+    sentence: Yeah no thanks, not interested.
+    eventTrigger: 
+    choices: []
+  - side: 2
+    characterName: Counselor
+    characterSprite: {fileID: 0}
+    sentence: "Yeesh, well I\u2019ll blame that one on your inexperience. And also
+      I guess it wasn\u2019t completely invalid either I mean, who wouldn\u2019t
+      wanna party with this guy, am I right? Hehe... I don\u2019t think I\u2019m
+      allowed to say that."
+    eventTrigger: 
+    choices: []
+  nextScenario: {fileID: 11400000, guid: 0c8c874c911d43b40a702fb149850d99, type: 2}

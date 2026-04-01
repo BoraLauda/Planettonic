@@ -8,9 +8,9 @@ public class DropSlots : MonoBehaviour, IDropHandler, IBeginDragHandler, IDragHa
     public Image slotImage; 
     
     [HideInInspector] public bool isFull = false;
-    [HideInInspector] public FoodType currentFoodType; 
+    [HideInInspector] public FoodType currentFoodType;
+    [HideInInspector] public menuDragDrop currentItem;
     
-    private menuDragDrop currentItem;
     private brainMenu manager;
     private GameObject dragIcon;
     private Canvas mainCanvas;
@@ -20,6 +20,12 @@ public class DropSlots : MonoBehaviour, IDropHandler, IBeginDragHandler, IDragHa
         manager = FindObjectOfType<brainMenu>();
         mainCanvas = GetComponentInParent<Canvas>();
         if(mainCanvas != null) mainCanvas = mainCanvas.rootCanvas;
+        
+        if (slotImage != null)
+        {
+            slotImage.preserveAspect = true;
+        }
+        
         ResetSlot();
     }
 
@@ -32,22 +38,18 @@ public class DropSlots : MonoBehaviour, IDropHandler, IBeginDragHandler, IDragHa
         if (droppedItem != null)
         {
             Foods foodInfo = droppedItem.GetComponent<Foods>();
-
             if (foodInfo != null)
             {
                 bool incomingIsDrink = IsDrink(foodInfo.type);
-
                 if (partnerSlot != null && partnerSlot.isFull)
                 {
                     bool partnerIsDrink = IsDrink(partnerSlot.currentFoodType);
-
                     if (incomingIsDrink == partnerIsDrink)
                     {
                         Debug.Log("HATA: Bir kişiye iki aynı türden veremezsin!");
                         return; 
                     }
                 }
-                
                 currentFoodType = foodInfo.type;
             }
 
@@ -57,6 +59,34 @@ public class DropSlots : MonoBehaviour, IDropHandler, IBeginDragHandler, IDragHa
             
             droppedItem.gameObject.SetActive(false); 
             currentItem = droppedItem; 
+            if (manager != null) manager.PlayDropSound();
+            manager.CheckAllSlots();
+            return;
+        }
+        
+        DropSlots sourceSlot = eventData.pointerDrag.GetComponent<DropSlots>();
+        
+        if (sourceSlot != null && sourceSlot != this && sourceSlot.isFull)
+        {
+            bool incomingIsDrink = IsDrink(sourceSlot.currentFoodType);
+            if (partnerSlot != null && partnerSlot.isFull && partnerSlot != sourceSlot)
+            {
+                bool partnerIsDrink = IsDrink(partnerSlot.currentFoodType);
+                if (incomingIsDrink == partnerIsDrink)
+                {
+                    return; 
+                }
+            }
+            
+            this.currentFoodType = sourceSlot.currentFoodType;
+            this.slotImage.sprite = sourceSlot.slotImage.sprite;
+            this.slotImage.color = Color.white;
+            this.isFull = true;
+            this.currentItem = sourceSlot.currentItem;
+            
+            sourceSlot.currentItem = null; 
+            sourceSlot.ResetSlot();
+            if (manager != null) manager.PlayDropSound();
             manager.CheckAllSlots();
         }
     }
@@ -93,6 +123,7 @@ public class DropSlots : MonoBehaviour, IDropHandler, IBeginDragHandler, IDragHa
     public void OnBeginDrag(PointerEventData eventData)
     {
         if (!isFull) return;
+        if (manager != null) manager.PlayPickUpSound();
         dragIcon = new GameObject("TempIcon");
         dragIcon.transform.SetParent(mainCanvas.transform);
         dragIcon.transform.localScale = Vector3.one;
@@ -100,6 +131,7 @@ public class DropSlots : MonoBehaviour, IDropHandler, IBeginDragHandler, IDragHa
         Image iconImg = dragIcon.AddComponent<Image>();
         iconImg.sprite = slotImage.sprite;
         iconImg.raycastTarget = false; 
+        iconImg.preserveAspect = true;
         RectTransform iconRect = dragIcon.GetComponent<RectTransform>();
         iconRect.sizeDelta = GetComponent<RectTransform>().sizeDelta;
         slotImage.color = new Color(1, 1, 1, 0.5f);

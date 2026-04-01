@@ -1,0 +1,179 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f832b14936fc2048824d9308b14ded6, type: 3}
+  m_Name: Has she ever bullied the shit out of you
+  m_EditorClassIdentifier: 
+  allLines:
+  - side: 0
+    characterName: Io
+    characterSprite: {fileID: 0}
+    sentence: "I\u2019ve heard sisters always tend to be amazing. Do you have like
+      a memory of her bullying you straight into the ground? "
+    eventTrigger: 
+    choices: []
+  - side: 1
+    characterName: Elroi
+    characterSprite: {fileID: 0}
+    sentence: '*laughs* Oh where should I even begin? There was this one time I had
+      a little accident...
+
+'
+    eventTrigger: 
+    choices: []
+  - side: 0
+    characterName: Io
+    characterSprite: {fileID: 0}
+    sentence: 'What kind of accident?
+
+'
+    eventTrigger: 
+    choices: []
+  - side: 1
+    characterName: Elroi
+    characterSprite: {fileID: 0}
+    sentence: "Okay promise not to laugh, I was like 12. Shit like that never happens
+      anymore, like, obviously it doesn\u2019t. And like I had the right to, I was
+      sick with a stomach bug.\r\n"
+    eventTrigger: 
+    choices: []
+  - side: 0
+    characterName: Io
+    characterSprite: {fileID: 0}
+    sentence: 'Did you shit yourself?
+
+'
+    eventTrigger: 
+    choices: []
+  - side: 1
+    characterName: Elroi
+    characterSprite: {fileID: 0}
+    sentence: '...yeah.
+
+'
+    eventTrigger: 
+    choices: []
+  - side: 0
+    characterName: Io
+    characterSprite: {fileID: 0}
+    sentence: 'Okay, you know what, it happens. Continue.
+
+'
+    eventTrigger: 
+    choices: []
+  - side: 1
+    characterName: Elroi
+    characterSprite: {fileID: 0}
+    sentence: 'I had stolen her console the week before and apparently she found
+      it in my room the morning of the... event.
+
+'
+    eventTrigger: 
+    choices: []
+  - side: 0
+    characterName: Io
+    characterSprite: {fileID: 0}
+    sentence: 'The shitting event, okay.
+
+'
+    eventTrigger: 
+    choices: []
+  - side: 1
+    characterName: Elroi
+    characterSprite: {fileID: 0}
+    sentence: "Don\u2019t say it like that- Anyways, it happened at school but thankfully
+      I made it to the bathroom before anyone saw. It was during class hours and
+      suddenly, someone barged into the bathroom\r\n"
+    eventTrigger: 
+    choices: []
+  - side: 1
+    characterName: Elroi
+    characterSprite: {fileID: 0}
+    sentence: 'It was her, apparently she came to confront me about it but then I
+      made the mistake of being vulnerable and just told her about the situation
+      I was in.
+
+'
+    eventTrigger: 
+    choices: []
+  - side: 0
+    characterName: Io
+    characterSprite: {fileID: 0}
+    sentence: 'Oh no...
+
+'
+    eventTrigger: 
+    choices: []
+  - side: 1
+    characterName: Elroi
+    characterSprite: {fileID: 0}
+    sentence: 'Yeah so before I even knew she was angry with me, she went on to tell
+      everyone in my year that I was in the bathroom with my pants covered in shit.
+
+'
+    eventTrigger: 
+    choices: []
+  - side: 0
+    characterName: Io
+    characterSprite: {fileID: 0}
+    sentence: '*chuckles* Ohohoh nooo that is evil.
+
+'
+    eventTrigger: 
+    choices: []
+  - side: 1
+    characterName: Elroi
+    characterSprite: {fileID: 0}
+    sentence: 'And then every guy in my year piled into the bathroom. There was a
+      whole crowd waiting to see my skid mark.
+
+'
+    eventTrigger: 
+    choices: []
+  - side: 0
+    characterName: Io
+    characterSprite: {fileID: 0}
+    sentence: "I\u2019m guessing you never stole her stuff again.\r\n"
+    eventTrigger: 
+    choices: []
+  - side: 1
+    characterName: Elroi
+    characterSprite: {fileID: 0}
+    sentence: 'For a while, yeah. Then I got smart about it. She sounds absolutely
+      evil when I tell it like this but believe me, I had it coming.
+
+      
+
+'
+    eventTrigger: 
+    choices: []
+  - side: 0
+    characterName: Io
+    characterSprite: {fileID: 0}
+    sentence: "Oh I don\u2019t feel all that bad for you. I can tell you were a naughty
+      kid.\r\n"
+    eventTrigger: 
+    choices: []
+  - side: 1
+    characterName: Elroi
+    characterSprite: {fileID: 0}
+    sentence: "Would it be inappropriate to say I\u2019m naughtier now?\r\n"
+    eventTrigger: 
+    choices: []
+  - side: 0
+    characterName: Io
+    characterSprite: {fileID: 0}
+    sentence: 'Mm, not at all, unless the Chaperon minds it.
+
+'
+    eventTrigger: 
+    choices: []
+  nextScenario: {fileID: 0}

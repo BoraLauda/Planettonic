@@ -1,0 +1,67 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f832b14936fc2048824d9308b14ded6, type: 3}
+  m_Name: MainMusicDia
+  m_EditorClassIdentifier: 
+  locationName: 
+  locationBackground: {fileID: 0}
+  allLines:
+  - side: 1
+    characterName: Elroi
+    characterSprite: {fileID: 21300000, guid: 940a91f339e1825439b9f6d15b9c98fa, type: 3}
+    sentence: Soooo, you make music? Are you like a DJ?
+    eventTrigger: 
+    choices: []
+  - side: 0
+    characterName: Io
+    characterSprite: {fileID: -1160322238068995058, guid: e79cf994b0112f542bb5904bcd06966b, type: 3}
+    sentence: "Oh no, not really. Although I did DJ here and there for parties and
+      stuff when I first started out. Wasn\u2019t really my thing though."
+    eventTrigger: 
+    choices: []
+  - side: 1
+    characterName: Elroi
+    characterSprite: {fileID: 0}
+    sentence: "Cool, cool. You know if you want, I host some pretty banger parties
+      at my penthouse once every few weeks. You can do a set and then you know, the
+      two of us can parteyyy! I\u2019ll pay you well."
+    eventTrigger: 
+    choices: []
+  - side: 2
+    characterName: Counselor
+    characterSprite: {fileID: 0}
+    sentence: "Heyy look, one of the daters pressed the help button. Means she doesn\u2019t
+      know how to respond. Quick, help her out!"
+    eventTrigger: 
+    choices: []
+  - side: 0
+    characterName: Io
+    characterSprite: {fileID: -1160322238068995058, guid: e79cf994b0112f542bb5904bcd06966b, type: 3}
+    sentence: 
+    eventTrigger: 
+    choices:
+    - choices: 1-) I don`t really DJ, sorry.
+      nextScenario: {fileID: 11400000, guid: 9feb4513ec8699c468f75b409dec61be, type: 2}
+      target: 0
+      starReward: 0
+      heartReward: 0
+    - choices: "2-) Well I\u2019m a pretty shit DJ but I can make you a playlist!"
+      nextScenario: {fileID: 11400000, guid: 4c363db54388d754594af6e362496d33, type: 2}
+      target: 0
+      starReward: 1
+      heartReward: 20
+    - choices: "3-) I\u2019ll do it but I kinda suck at it so don\u2019t pay me."
+      nextScenario: {fileID: 11400000, guid: c3fb42c9c4707bc4c8b034f1f18e39ff, type: 2}
+      target: 0
+      starReward: 0.5
+      heartReward: 10
+  nextScenario: {fileID: 0}

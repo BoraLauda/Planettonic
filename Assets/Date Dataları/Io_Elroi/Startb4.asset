@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f832b14936fc2048824d9308b14ded6, type: 3}
+  m_Name: Startb4
+  m_EditorClassIdentifier: 
+  locationName: RESTAURANT
+  locationBackground: {fileID: 21300000, guid: 99f8b52cd13c70845a1feb7b3f0d1d2f, type: 3}
+  allLines:
+  - side: 2
+    characterName: Counselor
+    characterSprite: {fileID: 0}
+    sentence: "Welcome to your first ever date, Chaperon! This one will be rather
+      quick and easy, like a little tutorial date if you will, since I will be assisting
+      you. You have a lot of room for failure, don`t worry. Just\u2026 not too much..
+      preferably.\r\n"
+    eventTrigger: 
+    choices: []
+  - side: 2
+    characterName: Counselor
+    characterSprite: {fileID: 0}
+    sentence: Your job is to assist both daters through all the classic first-date
+      issues that may arise; Such as dietary disagreements, shitty small talk and
+      literally dodging questions that might be just a little too much for the first
+      date.
+    eventTrigger: 
+    choices: []
+  - side: 2
+    characterName: Counselor
+    characterSprite: {fileID: 0}
+    sentence: "I will let you know when it`s your turn to butt in so for now, just
+      sit back and observe the daters and uh.. Don\u2019t stare too much!"
+    eventTrigger: 
+    choices: []
+  nextScenario: {fileID: 11400000, guid: 43c022bc5ac278444bde2d39b85f907f, type: 2}

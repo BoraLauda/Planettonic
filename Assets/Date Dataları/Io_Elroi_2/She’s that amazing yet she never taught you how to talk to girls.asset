@@ -1,0 +1,49 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f832b14936fc2048824d9308b14ded6, type: 3}
+  m_Name: "She\u2019s that amazing yet she never taught you how to talk to girls"
+  m_EditorClassIdentifier: 
+  allLines:
+  - side: 0
+    characterName: Io
+    characterSprite: {fileID: 0}
+    sentence: "She\u2019s that amazing yet she never taught you how to talk to girls? "
+    eventTrigger: 
+    choices: []
+  - side: 1
+    characterName: Elroi
+    characterSprite: {fileID: 0}
+    sentence: "Don\u2019t you dare speak of her like that. She is the most respectable
+      person I know and she has taught me so much more than you can imagine.\r\n"
+    eventTrigger: 
+    choices: []
+  - side: 0
+    characterName: Io
+    characterSprite: {fileID: 0}
+    sentence: "Woah, okay sorry. I didn\u2019t know this was such a sensitive topic.
+      I was just joking.\r\n"
+    eventTrigger: 
+    choices: []
+  - side: 1
+    characterName: Elroi
+    characterSprite: {fileID: 0}
+    sentence: "Well, it wasn\u2019t very funny. You know nothing about her. Man,
+      women are all the same...\r\n"
+    eventTrigger: 
+    choices: []
+  - side: 0
+    characterName: Io
+    characterSprite: {fileID: 0}
+    sentence: "\rI guess I kind of answered my own question with that one, huh...\r\n"
+    eventTrigger: 
+    choices: []
+  nextScenario: {fileID: 0}

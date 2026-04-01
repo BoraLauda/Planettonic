@@ -16,7 +16,7 @@ public class menuDragDrop : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
     private RectTransform rectTransform;
     private RectTransform canvasRectTransform;
     
-    
+    private brainMenu manager;
     
     private Vector2 offsetPos;
     
@@ -26,6 +26,7 @@ public class menuDragDrop : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
         canvas = GetComponent<CanvasGroup>();
         rectTransform = GetComponent<RectTransform>();
         
+        manager = FindObjectOfType<brainMenu>();
         
         UpdateCanvas();
     }
@@ -55,6 +56,8 @@ public class menuDragDrop : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
     
     public void OnBeginDrag(PointerEventData eventData)
     {
+        if (manager != null) manager.PlayPickUpSound();
+        
         parentBe4Drag = transform.parent;
         startPosition = transform.localPosition;
         transform.SetParent(mainCanvas.transform);

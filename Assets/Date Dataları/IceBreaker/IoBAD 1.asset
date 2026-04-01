@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f832b14936fc2048824d9308b14ded6, type: 3}
   m_Name: IoBAD 1
   m_EditorClassIdentifier: 
+  locationName: 
+  locationBackground: {fileID: 0}
   allLines:
   - side: 0
     characterName: Io
@@ -21,7 +23,7 @@ MonoBehaviour:
     choices: []
   - side: 1
     characterName: Elroi
-    characterSprite: {fileID: -5222092688038810552, guid: 2fa8e79c000175e4ca9aef8003abdb6f, type: 3}
+    characterSprite: {fileID: 21300000, guid: 6845c902b4dff3b438ed3a722b170f07, type: 3}
     sentence: What the fuck?
     eventTrigger: 
     choices: []

@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52414fa3869acd040b0ed6b6d3d42937, type: 3}
+  m_Name: X
+  m_EditorClassIdentifier: 
+  characterName: X
+  profileIcon: {fileID: -7636065062218683851, guid: 970002d2d10f33542aae1f19fb6dcdce, type: 3}
+  portraitImage: {fileID: 21300000, guid: deb9dd8dbeb82234298ff82b0bf513c2, type: 3}
+  locationBonusStars: 3
+  nameImage: {fileID: 5435209892939362672, guid: 17abec920a7b3ac43be6fee6fd54c6f6, type: 3}
+  listImage: {fileID: -4641414636127444354, guid: 9a7cdc106ecab704db43b05f2ae833bf, type: 3}
+  infoImage: {fileID: 21300000, guid: 0436b9b5970010c4bb914087932ecde2, type: 3}
+  hatedFoods:
+  - food: 2
+    reactionScenario: {fileID: 11400000, guid: d6d15898236df9b4cb657a4a640d4b40, type: 2}
+  - food: 5
+    reactionScenario: {fileID: 11400000, guid: d6d15898236df9b4cb657a4a640d4b40, type: 2}
+  iceBreakerGood:
+  - {fileID: 11400000, guid: d6d15898236df9b4cb657a4a640d4b40, type: 2}
+  iceBreakerMid:
+  - {fileID: 11400000, guid: d6d15898236df9b4cb657a4a640d4b40, type: 2}
+  iceBreakerBad:
+  - {fileID: 11400000, guid: d6d15898236df9b4cb657a4a640d4b40, type: 2}
+  dodgeQuestions:
+  - {fileID: 11400000, guid: d6d15898236df9b4cb657a4a640d4b40, type: 2}

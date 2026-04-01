@@ -5,6 +5,9 @@ using System.Collections.Generic;
 
 public class IceBreaker : MonoBehaviour
 {
+    public AudioSource audioSource;
+    public AudioClip[] hitSounds;
+    
     public GameObject pauseImage; 
     public GameObject startImage;
     
@@ -54,6 +57,7 @@ public class IceBreaker : MonoBehaviour
     
     private brainDate dateManager;
 
+    private Dictionary<List<DialogueDataları>, List<DialogueDataları>> questionPools = new Dictionary<List<DialogueDataları>, List<DialogueDataları>>();
     void Start()
     {
        dateManager = FindFirstObjectByType<brainDate>();
@@ -171,6 +175,11 @@ public class IceBreaker : MonoBehaviour
     
         if (pendingDamage > 0)
         {
+            if (audioSource != null && hitSounds != null && hitSounds.Length > 0)
+            {
+                int rastgeleSayi = Random.Range(0, hitSounds.Length);
+                audioSource.PlayOneShot(hitSounds[rastgeleSayi]);
+            }
             ApplyIceDamage(pendingDamage);
             SpawnShards(); 
             yield return new WaitForSeconds(1.0f); 
@@ -315,17 +324,28 @@ public class IceBreaker : MonoBehaviour
         gameObject.SetActive(false); 
     }
     
-    DialogueDataları GetRandomQuestion(List<DialogueDataları> list)
+    DialogueDataları GetRandomQuestion(List<DialogueDataları> originalList)
     {
-        if (list == null || list.Count == 0) 
+        
+        if (originalList == null || originalList.Count == 0) return null;
+        
+        if (!questionPools.ContainsKey(originalList))
         {
-            Debug.LogWarning("Daha soru kalmadı(Bunun olmaması lazım..)");
-            return null;
+            questionPools[originalList] = new List<DialogueDataları>(originalList);
         }
         
-        int randomIndex = Random.Range(0, list.Count);
-        DialogueDataları selectedQ = list[randomIndex];
-        list.RemoveAt(randomIndex);
+        List<DialogueDataları> pool = questionPools[originalList];
+        
+        if (pool.Count == 0)
+        {
+            pool.AddRange(originalList);
+        }
+        
+        int rnd = Random.Range(0, pool.Count);
+        DialogueDataları selectedQ = pool[rnd];
+        
+        pool.RemoveAt(rnd);
+
         return selectedQ;
     }
 }

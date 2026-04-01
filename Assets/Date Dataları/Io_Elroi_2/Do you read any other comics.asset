@@ -1,0 +1,68 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f832b14936fc2048824d9308b14ded6, type: 3}
+  m_Name: Do you read any other comics
+  m_EditorClassIdentifier: 
+  allLines:
+  - side: 1
+    characterName: Elroi
+    characterSprite: {fileID: 0}
+    sentence: Do you read any other comics? Like, other than the ones we are apparently
+      not allowed to talk about?
+    eventTrigger: 
+    choices: []
+  - side: 0
+    characterName: Io
+    characterSprite: {fileID: 0}
+    sentence: "I do, I like action and fantasy. I just started reading Indestructable
+      and I\u2019ve been enjoying it a lot.\r\n"
+    eventTrigger: 
+    choices: []
+  - side: 1
+    characterName: Elroi
+    characterSprite: {fileID: 0}
+    sentence: "Oh yeah, that\u2019s a good one. Did you watch the adaptation?\r\n"
+    eventTrigger: 
+    choices: []
+  - side: 0
+    characterName: Io
+    characterSprite: {fileID: 0}
+    sentence: "No, I always like reading the original comics first. Although I think
+      I\u2019m almost caught up with the series, wanna rewatch it with me when I\u2019m
+      done?\r\n"
+    eventTrigger: 
+    choices: []
+  - side: 1
+    characterName: Elroi
+    characterSprite: {fileID: 0}
+    sentence: 'I have a TV that covers the entire wall. Wanna do it at mine?
+
+'
+    eventTrigger: 
+    choices: []
+  - side: 0
+    characterName: Io
+    characterSprite: {fileID: 0}
+    sentence: "Sure! It\u2019s a date.\r\n"
+    eventTrigger: 
+    choices: []
+  - side: 1
+    characterName: Elroi
+    characterSprite: {fileID: 0}
+    sentence: 'Fuck yeah.
+
+      
+
+'
+    eventTrigger: 
+    choices: []
+  nextScenario: {fileID: 11400000, guid: 40b62e1cc7d91fd4fa27a096a990c77a, type: 2}
