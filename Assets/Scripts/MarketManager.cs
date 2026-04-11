@@ -32,6 +32,7 @@ public class MarketManager : MonoBehaviour
 
     void Start()
     {
+        PlayerPrefs.SetInt("SavedHearts", 100);
         
         currentHearts = PlayerPrefs.GetInt("SavedHearts", 0);
         UpdateMoneyUI();
@@ -154,8 +155,21 @@ public class MarketManager : MonoBehaviour
         }
     }
 
-    void CreateCard(ItemData item, Transform parent, GameObject prefabToUse, string state)
+   
+    void CreateCard(ItemData item, Transform parent, GameObject fallbackPrefab, string state)
     {
+        
+        GameObject prefabToUse = null;
+
+        if (parent == ownedParentSmall || parent == equippedParentSmall || parent.name.Contains("Small"))
+        {
+            prefabToUse = item.specificPrefabSmall != null ? item.specificPrefabSmall : fallbackPrefab;
+        }
+        else
+        {
+            prefabToUse = item.specificPrefabBig != null ? item.specificPrefabBig : fallbackPrefab;
+        }
+
         if (prefabToUse == null || parent == null) return;
 
         GameObject newCard = Instantiate(prefabToUse, parent);

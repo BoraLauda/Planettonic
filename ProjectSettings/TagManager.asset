@@ -9,6 +9,9 @@ TagManager:
   - Anahtar
   - Kalp
   - Death
+  - Enemy
+  - Bird
+  - Tas
   layers:
   - Default
   - TransparentFX

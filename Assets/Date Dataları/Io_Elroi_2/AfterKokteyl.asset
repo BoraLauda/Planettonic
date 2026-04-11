@@ -135,13 +135,13 @@ MonoBehaviour:
     - choices: So I made a sick beat the other day on the drums...
       nextScenario: {fileID: 11400000, guid: cc2c8b388ebb2c5479a971889339c731, type: 2}
       target: 1
-      starReward: 0
-      heartReward: 0
+      starReward: 1
+      heartReward: 20
     - choices: Do you read any other comics?
       nextScenario: {fileID: 11400000, guid: 1f2f634cddf018c49adfd78569288122, type: 2}
       target: 1
-      starReward: 0
-      heartReward: 0
+      starReward: 0.5
+      heartReward: 10
     - choices: How much can you do with all four of your arms?
       nextScenario: {fileID: 11400000, guid: d82f7023925c0b14b8cce81da50794ea, type: 2}
       target: 1

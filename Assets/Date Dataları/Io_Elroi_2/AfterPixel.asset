@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f832b14936fc2048824d9308b14ded6, type: 3}
   m_Name: AfterPixel
   m_EditorClassIdentifier: 
+  locationName: 
+  locationBackground: {fileID: 0}
   allLines:
   - side: 0
     characterName: Io
@@ -184,8 +186,8 @@ MonoBehaviour:
     - choices: What does she do for a living?
       nextScenario: {fileID: 11400000, guid: 7d42679ed2723af4aa76acc1be2ad1b0, type: 2}
       target: 0
-      starReward: 0
-      heartReward: 0
+      starReward: 0.5
+      heartReward: 10
     - choices: "I\u2019m guessing your sister never taught you how to talk to girls?"
       nextScenario: {fileID: 11400000, guid: bc9acd0af81f7e64786e952fc8708ebe, type: 2}
       target: 0
@@ -194,6 +196,6 @@ MonoBehaviour:
     - choices: Has she ever bullied the shit out of you?
       nextScenario: {fileID: 11400000, guid: 08bf9546d247e464a9e1120562767a59, type: 2}
       target: 0
-      starReward: 0
-      heartReward: 0
+      starReward: 1
+      heartReward: 20
   nextScenario: {fileID: 0}

@@ -4,15 +4,16 @@ using TMPro;
 
 public class ItemCardUI : MonoBehaviour
 {
-    
     public ItemData myData;       
     public MarketManager manager; 
     
-   
     public Button actionButton;   
     public TMP_Text buttonText;   
-
+    
+    public Image cardImageUI;
+    public TMP_Text itemNameText; 
   
+
     public string cardType = "Market"; 
     
     void OnEnable()
@@ -22,10 +23,22 @@ public class ItemCardUI : MonoBehaviour
 
     void Start()
     {
-        
         if (actionButton == null) actionButton = GetComponentInChildren<Button>();
         
-        // Listener'ları ayarla
+    
+        if (myData != null)
+        {
+            if (cardImageUI != null && myData.cardImage != null)
+            {
+                cardImageUI.sprite = myData.cardImage; 
+            }
+
+            if (itemNameText != null)
+            {
+                itemNameText.text = myData.itemName; 
+            }
+        }
+     
         if (actionButton != null)
         {
             actionButton.onClick.RemoveAllListeners();
@@ -46,10 +59,8 @@ public class ItemCardUI : MonoBehaviour
         }
 
         ForceUpdateState();
-       
     }
     
-  
     public void SetupCopy(ItemData data, MarketManager mngr, string type)
     {
         myData = data;
@@ -73,16 +84,12 @@ public class ItemCardUI : MonoBehaviour
             }
             else
             {
-               
                 if(buttonText) buttonText.text = myData.price.ToString();
-                
-                
                 actionButton.interactable = true;
             }
         }
         else if (cardType == "Owned")
         {
-           
             if (manager.IsEquipped(myData))
             {
                 if(buttonText) buttonText.text = "Equipped";
@@ -96,7 +103,6 @@ public class ItemCardUI : MonoBehaviour
         }
         else if (cardType == "Equipped")
         {
-          
             if(buttonText) buttonText.text = "Equipped";
             actionButton.interactable = false;
         }
@@ -108,6 +114,7 @@ public class ItemCardUI : MonoBehaviour
         {
             manager.BuyItem(myData);
         }
+        ForceUpdateState();
     }
 
     void TryEquip()
@@ -116,5 +123,6 @@ public class ItemCardUI : MonoBehaviour
         {
             manager.EquipItem(myData);
         }
+        ForceUpdateState();
     }
 }

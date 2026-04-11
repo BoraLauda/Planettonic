@@ -90,8 +90,16 @@ public class ShakerInteraction : MonoBehaviour, IDropHandler, IPointerClickHandl
                     }
                 }
                 
-                else if (draggedItem.itemName == "Bardak")
+                else if (draggedItem.itemName.StartsWith("Bardak_"))
                 {
+                    string indexString = draggedItem.itemName.Substring(draggedItem.itemName.Length - 1);
+                    int bIndex = int.Parse(indexString);
+                    
+                    if (KokteylManager.Instance != null)
+                    {
+                        KokteylManager.Instance.secilenBardakIndex = bIndex;
+                    }
+
                     draggedItem.ForceTurn();
                     StartCoroutine(GecikmeliFazaGec(KokteylManager.GamePhase.Pouring, 0.4f));
                 }

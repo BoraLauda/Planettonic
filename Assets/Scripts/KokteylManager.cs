@@ -42,6 +42,9 @@ public class KokteylManager : MonoBehaviour
     public List<KokteylTarifi> tumTarifler = new List<KokteylTarifi>(); 
     public KokteylTarifi aktifTarif; 
   
+  
+    public int secilenBardakIndex = 0; 
+    public GameObject[] pouringBardakObjeleri;
 
     void Awake()
     {
@@ -93,6 +96,14 @@ public class KokteylManager : MonoBehaviour
                 break;
             case GamePhase.Pouring:
                 if (phase4_Pouring) phase4_Pouring.SetActive(true);
+                
+                for (int i = 0; i < pouringBardakObjeleri.Length; i++)
+                {
+                    if (pouringBardakObjeleri[i] != null)
+                    {
+                        pouringBardakObjeleri[i].SetActive(i == secilenBardakIndex);
+                    }
+                }
                 break;
             case GamePhase.Finished:
                 Debug.Log("Kokteyl hazır! Puan hesaplanıyor...");
@@ -206,5 +217,33 @@ public class KokteylManager : MonoBehaviour
         
         if (miniGameAnaObje != null) miniGameAnaObje.SetActive(false); 
         else gameObject.SetActive(false);
+    }
+    
+    
+    public Color GetKokteylRengi()
+    {
+      
+        if (eklenenSoslar.Count == 0) return Color.white; 
+        
+        string anaSos = eklenenSoslar[0];
+
+        switch (anaSos)
+        {
+            case "Mavi":
+                return new Color(0.2f, 0.6f, 1f);
+            case "Pembe":
+                return new Color(1f, 0.4f, 0.7f);
+            case "Sari":
+                return Color.yellow;
+            case "Turuncu":
+                return new Color(1f, 0.5f, 0f);
+            case "Kirmizi":
+                return Color.red;
+            case "Yesil":
+                return Color.green;
+
+            default:
+                return Color.white;
+        }
     }
 }

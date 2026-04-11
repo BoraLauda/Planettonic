@@ -290,6 +290,8 @@ MonoBehaviour:
   manager: {fileID: 0}
   actionButton: {fileID: 6604426441540419674}
   buttonText: {fileID: 5539711839498067789}
+  cardImageUI: {fileID: 6378289200197920596}
+  itemNameText: {fileID: 0}
   cardType: Market
 --- !u!1 &5942755999886785385
 GameObject:

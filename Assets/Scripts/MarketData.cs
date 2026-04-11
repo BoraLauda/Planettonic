@@ -5,5 +5,8 @@ public class ItemData : ScriptableObject
 {
     public string itemName; 
     public int price;      
-    public Sprite cardImage; 
+    public Sprite cardImage;
+    
+    public GameObject specificPrefabSmall; 
+    public GameObject specificPrefabBig;
 }

@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16f2c3ec4a4ba4b448b93dcff474e9d0, type: 3}
+  m_Name: HeartOfTheCircuit
+  m_EditorClassIdentifier: 
+  itemName: Heart of the Circuit
+  price: 50
+  cardImage: {fileID: 21300000, guid: 0bf51e4a17df52e41bd5497fd38c8ba7, type: 3}
+  specificPrefabSmall: {fileID: 8569759607036352939, guid: 6737bef971794f9419da6f3e359ebc12, type: 3}
+  specificPrefabBig: {fileID: 3328745275996256991, guid: 91974c23da6713d43832a82dd4286c2a, type: 3}

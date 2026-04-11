@@ -112,9 +112,18 @@ public class brainDate : MonoBehaviour
     private bool isMenuMode = false;
     
     public GameObject pixelMiniGameObj;
+    
+    public GameObject cyberchicsButton;
+    private bool isCyberchicsUsed = false;
+    
+    public GameObject heartOfCircuitButton; 
+    private bool isHeartOfCircuitActive = false;
+    private bool isHeartOfCircuitUsedThisDate = false;
 
     void Start()
     {
+        // PlayerPrefs.SetString("SavedEquippedItems", "The Cyberchics,Heart of the Circuit,");// SONRADAN SİL
+        
         if(leftDialoguePanel) leftDialoguePanel.SetActive(false);
         if(leftOptionsPanel) leftOptionsPanel.SetActive(false);
         if(chancellorPanel) chancellorPanel.SetActive(false);
@@ -224,6 +233,8 @@ public class brainDate : MonoBehaviour
         if (introRightStarsCont != null) UpdateBar(introRightStarsCont, rightStars);
 
         UpdateScoreUI();
+        
+        CheckHeartOfCircuitAvailability();
     }
     
     void Update()
@@ -287,6 +298,16 @@ public class brainDate : MonoBehaviour
     
     public void AddReward(float stars, int hearts, TargetCharacter target)
     {
+        if (isHeartOfCircuitActive && hearts > 0)
+        {
+            int roll = Random.Range(0, 100);
+            if (roll < 30) 
+            {
+                hearts *= 2;
+                Debug.Log("Heart of the Circuit tutu! Kalp ikiye katlandı: " + hearts);
+            }
+        }
+        
         totalHearts += hearts;
 
         if (target == TargetCharacter.Left)
@@ -482,6 +503,9 @@ public class brainDate : MonoBehaviour
             buttons[i].onClick.RemoveAllListeners();
             buttons[i].onClick.AddListener(() => OnOptionSelected(choices[index]));
         }
+        
+        DialogueLine currentLine = currentScenario.allLines[lineIndex];
+        CheckCyberchicsAvailability(currentLine);
     }
     
     void OnOptionSelected(ChoiceOption option)
@@ -730,6 +754,60 @@ public class brainDate : MonoBehaviour
         }
     }
     
+    public void UseHeartOfCircuit()
+    {
+        if (isHeartOfCircuitActive) return;
+
+        isHeartOfCircuitActive = true;
+        isHeartOfCircuitUsedThisDate = true;
+
+        if (heartOfCircuitButton != null) heartOfCircuitButton.SetActive(false);
+        
+        PlayerPrefs.SetInt("HeartCooldown", 2); 
+        PlayerPrefs.Save();
+
+        Debug.Log("Heart of the Circuit Aktif! Artık her kalp %30 şansla 2x olabilir.");
+    }
+    
+    public void UseCyberchics()
+    {
+        if (isCyberchicsUsed) return; 
+        isCyberchicsUsed = true;
+
+        if (cyberchicsButton != null) cyberchicsButton.SetActive(false);
+
+        DialogueLine currentLine = currentScenario.allLines[lineIndex];
+        
+        int worstIndex = -1;
+        float lowestScore = float.MaxValue;
+
+        for (int i = 0; i < currentLine.choices.Count; i++)
+        {
+            float score = currentLine.choices[i].starReward + currentLine.choices[i].heartReward;
+            if (score < lowestScore)
+            {
+                lowestScore = score;
+                worstIndex = i;
+            }
+        }
+        
+        if (worstIndex != -1)
+        {
+            if (leftOptionsPanel.activeSelf) leftButtons[worstIndex].gameObject.SetActive(false);
+            else if (rightOptionsPanel.activeSelf) rightButtons[worstIndex].gameObject.SetActive(false);
+        }
+        
+        string owned = PlayerPrefs.GetString("SavedOwnedItems", "");
+        string equipped = PlayerPrefs.GetString("SavedEquippedItems", "");
+        
+        owned = owned.Replace("The Cyberchics,", "");
+        equipped = equipped.Replace("The Cyberchics,", "");
+        
+        PlayerPrefs.SetString("SavedOwnedItems", owned);
+        PlayerPrefs.SetString("SavedEquippedItems", equipped);
+        PlayerPrefs.Save();
+    }
+    
     void UpdateScoreUI()
     {
         if (heartUI != null) heartUI.text = totalHearts.ToString();
@@ -796,6 +874,15 @@ public class brainDate : MonoBehaviour
 
     public void ReturnToDesktop()
     {
+        if (!isHeartOfCircuitUsedThisDate)
+        {
+            int currentCD = PlayerPrefs.GetInt("HeartCooldown", 0);
+            if (currentCD > 0)
+            {
+                PlayerPrefs.SetInt("HeartCooldown", currentCD - 1);
+            }
+        }
+        
         float totalScore = leftStars + rightStars; 
     
         if (totalScore >= starThreshold && DateSettings.leftChar != null && DateSettings.rightChar != null) 
@@ -875,6 +962,38 @@ public class brainDate : MonoBehaviour
         }
     }
     
+    public void CheckCyberchicsAvailability(DialogueLine line)
+    {
+        if (cyberchicsButton == null) return;
+        
+        string equippedItems = PlayerPrefs.GetString("SavedEquippedItems", "");
+        
+        if (equippedItems.Contains("The Cyberchics") && !isCyberchicsUsed && line.choices != null && line.choices.Count > 2)
+        {
+            cyberchicsButton.SetActive(true);
+        }
+        else
+        {
+            cyberchicsButton.SetActive(false);
+        }
+    }
+    
+    public void CheckHeartOfCircuitAvailability()
+    {
+        if (heartOfCircuitButton == null) return;
+
+        string equippedItems = PlayerPrefs.GetString("SavedEquippedItems", "");
+        int cooldown = PlayerPrefs.GetInt("HeartCooldown", 0);
+        
+        if (equippedItems.Contains("Heart of the Circuit") && cooldown <= 0)
+        {
+            heartOfCircuitButton.SetActive(true);
+        }
+        else
+        {
+            heartOfCircuitButton.SetActive(false);
+        }
+    }
     
     
     void NextLine()

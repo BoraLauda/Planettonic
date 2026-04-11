@@ -38,6 +38,7 @@ public class MarketPages : MonoBehaviour
         if(equippedPanelSmall) equippedPanelSmall.SetActive(false);
 
      
+        
         if(marketPanelBig) marketPanelBig.SetActive(false);
         if(ownedPanelBig) ownedPanelBig.SetActive(true);
         if(equippedPanelBig) equippedPanelBig.SetActive(false);

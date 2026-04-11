@@ -27,6 +27,12 @@ public class PixelPlayer : MonoBehaviour
     public Image kafesImage;        
     public Sprite acikKafesGorseli; 
     public float bitisGecikmesi = 1.5f; 
+
+    [Header("Can Sistemi")]
+    public int maxCan = 2;
+    private int mevcutCan;
+    private bool hasarAlabilirMi = true;
+    public float hasarGormezlikSuresi = 1.5f;
     
     private SpriteRenderer sr;
     private Color orijinalRenk;
@@ -63,6 +69,8 @@ public class PixelPlayer : MonoBehaviour
         {
             orijinalRenk = sr.color; 
         }
+
+        mevcutCan = maxCan;
     }
 
     void Update()
@@ -172,6 +180,39 @@ public class PixelPlayer : MonoBehaviour
         scaler.x *= -1;
         transform.localScale = scaler;
     }
+
+    public void HasarAl(int miktar)
+    {
+        if (!hasarAlabilirMi) return;
+
+        mevcutCan -= miktar;
+        Debug.Log("Can Gitti! Kalan Can: " + mevcutCan);
+
+        if (mevcutCan <= 0)
+        {
+            StartCoroutine(OlumVeBitir());
+        }
+        else
+        {
+            StartCoroutine(HasarEfekti());
+        }
+    }
+
+    IEnumerator HasarEfekti()
+    {
+        hasarAlabilirMi = false;
+        if (sr != null)
+        {
+            for (int i = 0; i < 5; i++)
+            {
+                sr.color = new Color(1f, 1f, 1f, 0.2f);
+                yield return new WaitForSeconds(hasarGormezlikSuresi / 10);
+                sr.color = orijinalRenk;
+                yield return new WaitForSeconds(hasarGormezlikSuresi / 10);
+            }
+        }
+        hasarAlabilirMi = true;
+    }
     
     private void OnTriggerEnter2D(Collider2D temas)
     {
@@ -185,6 +226,11 @@ public class PixelPlayer : MonoBehaviour
         if (temas.gameObject.CompareTag("Death"))
         {
             StartCoroutine(OlumVeBitir());
+        }
+
+        if (temas.gameObject.CompareTag("Tas") || temas.gameObject.CompareTag("Enemy"))
+        {
+            HasarAl(1);
         }
         
         if (temas.gameObject.CompareTag("Kalp"))
@@ -231,7 +277,6 @@ public class PixelPlayer : MonoBehaviour
         }
     }
 
-   
     IEnumerator OlumVeBitir()
     {
         if (sr != null)

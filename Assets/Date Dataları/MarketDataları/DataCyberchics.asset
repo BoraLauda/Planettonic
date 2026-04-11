@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16f2c3ec4a4ba4b448b93dcff474e9d0, type: 3}
   m_Name: DataCyberchics
   m_EditorClassIdentifier: 
-  itemName: The Cyberchichs
-  price: 250
-  cardImage: {fileID: 21300000, guid: 40da5053056ac8f49a52991630a0797c, type: 3}
+  itemName: The Cyberchics
+  price: 50
+  cardImage: {fileID: 21300000, guid: 0e047cbae1485f046a5be749aa1b4788, type: 3}
+  specificPrefabSmall: {fileID: 8569759607036352939, guid: 8351476fc02153d4386e6d9b1912bccd, type: 3}
+  specificPrefabBig: {fileID: 3328745275996256991, guid: 8bbbede8a0fe0664b879c96bf2f8e30a, type: 3}
