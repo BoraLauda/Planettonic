@@ -184,7 +184,10 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      sos_turuncu_0: 155703332141856763
+      sos_turuncu_1: 7009382441886981842
+      sos_turuncu_2: 262618205420058084
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

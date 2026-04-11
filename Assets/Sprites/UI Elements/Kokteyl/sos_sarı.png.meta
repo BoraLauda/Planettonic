@@ -184,7 +184,10 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      "sos_sar\u0131_0": 1626026005284078692
+      "sos_sar\u0131_1": -6593187739880988464
+      "sos_sar\u0131_2": 5630738288596997834
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

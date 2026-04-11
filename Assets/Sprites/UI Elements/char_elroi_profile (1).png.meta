@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      char_elroi_profile (1)_0: -8927126898821382205
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

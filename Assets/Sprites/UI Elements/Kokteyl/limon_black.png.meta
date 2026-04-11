@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      limon_black_0: -8092591102013632041
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

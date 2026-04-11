@@ -334,7 +334,16 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      kokteyl_0: -1724462703790674765
+      kokteyl_1: -9081686226488124855
+      kokteyl_2: -4446664055356146973
+      kokteyl_3: -4399887514730629080
+      kokteyl_4: 7278451257523306419
+      kokteyl_5: 1192627849422820220
+      kokteyl_6: 4802496895166522866
+      kokteyl_7: 8949402812646311175
+      kokteyl_8: -1894192749391072239
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
