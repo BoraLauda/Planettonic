@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Io
   m_EditorClassIdentifier: 
   characterName: Io
-  profileIcon: {fileID: 21300000, guid: 405748e6d2ec0014992aab7edeff6d2d, type: 3}
+  profileIcon: {fileID: 21300000, guid: e0283ca0d50327b46bb0248485cbfd49, type: 3}
   portraitImage: {fileID: 281146401269919291, guid: a592fd1e0039a0b41a340d5324df28b1, type: 3}
   locationPreferences:
   - locationName: RESTAURANT

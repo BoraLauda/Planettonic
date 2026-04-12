@@ -1,19 +1,17 @@
 using UnityEngine;
 using System.Collections;
 
-public class Claw : MonoBehaviour
+public class Claw: MonoBehaviour
 {
     [Header("Kanca Ayarları")]
     public float horizontalSpeed = 300f;
     public float verticalSpeed = 500f;
     public float dropDistance = 400f;
-    
     public float toleranceY = 60f; 
     public float toleranceX = 60f;
     
-    [Header("Yakalama Merkezi (YENİ)")]
-    public Transform grabPoint;
-    
+    [Header("Yakalama Merkezi")]
+    public Transform grabPoint; 
     public float catchOffsetY = 0f; 
 
     [Header("Kanca Animasyon (Parmaklar)")]
@@ -22,6 +20,8 @@ public class Claw : MonoBehaviour
     public float openAngle = 30f;   
     public float closeAngle = 0f;   
     public float clawAnimSpeed = 10f; 
+    
+    public float shrinkDuration = 0.3f; 
 
     [Header("Referanslar")]
     public PelusSpawner spawner; 
@@ -30,6 +30,7 @@ public class Claw : MonoBehaviour
     public int bearCount = 0;
     public int bunnyCount = 0;
     public int foxCount = 0;
+    public int catCount = 0; 
     
     private RectTransform rectTransform;
     private Vector2 startPos;
@@ -39,7 +40,6 @@ public class Claw : MonoBehaviour
     private bool isGameWon = false;
     
     private float movementTimer = 0f; 
-    
 
     void Start()
     {
@@ -90,14 +90,11 @@ public class Claw : MonoBehaviour
             yield return null;
         }
 
-      
         RectTransform caughtToy = TryCatchToy();
 
         if (caughtToy != null)
         {
-            
             caughtToy.SetParent(grabPoint);
-            
             caughtToy.anchoredPosition = new Vector2(0, catchOffsetY); 
             
             Peluslar moleLogic = caughtToy.GetComponent<Peluslar>();
@@ -146,7 +143,6 @@ public class Claw : MonoBehaviour
 
     RectTransform TryCatchToy()
     {
-        
         if (grabPoint == null) return null;
 
         foreach (RectTransform toy in spawner.activeToys)
@@ -154,12 +150,9 @@ public class Claw : MonoBehaviour
             if (toy == null) continue;
 
             Vector2 localPos = grabPoint.InverseTransformPoint(toy.position);
-           
-            Debug.Log($"[Hedef: {toy.name}] GrabPoint'e uzaklığı -> X: {Mathf.Abs(localPos.x)}, Y: {Mathf.Abs(localPos.y)}");
 
             if (Mathf.Abs(localPos.x) < toleranceX && Mathf.Abs(localPos.y) < toleranceY)
             {
-                Debug.Log($"*** YAKALANDI! ({toy.name}) ***");
                 return toy;
             }
         }
@@ -173,14 +166,42 @@ public class Claw : MonoBehaviour
         if (toyName.Contains("bear")) bearCount++;
         else if (toyName.Contains("bunny")) bunnyCount++;
         else if (toyName.Contains("fox")) foxCount++;
+        else if (toyName.Contains("cat")) catCount++; 
+        
+        StartCoroutine(ShrinkAndDestroy(toy));
 
-        Destroy(toy.gameObject);
         CheckWinCondition();
+    }
+
+   
+    IEnumerator ShrinkAndDestroy(RectTransform toy)
+    {
+        float time = 0;
+        Vector3 initialScale = toy.localScale;
+
+      
+        while (time < shrinkDuration)
+        {
+            if (toy == null) yield break;
+
+            time += Time.deltaTime;
+            float progress = time / shrinkDuration;
+            
+          
+            toy.localScale = Vector3.Lerp(initialScale, Vector3.zero, progress);
+            
+            yield return null;
+        }
+        
+        if (toy != null)
+        {
+            Destroy(toy.gameObject);
+        }
     }
 
     void CheckWinCondition()
     {
-        if (bearCount > 0 && bunnyCount > 0 && foxCount > 0)
+        if (bearCount > 0 && bunnyCount > 0 && foxCount > 0 && catCount > 0) 
         {
             isGameWon = true;
             isMoving = false;

@@ -7,6 +7,7 @@ public class PelusSpawner : MonoBehaviour
     public GameObject bearPrefab;
     public GameObject bunnyPrefab;
     public GameObject foxPrefab;
+    public GameObject catPrefab; // YENİ: Kedi Prefab yuvası eklendi
     public RectTransform[] spawnHoles; 
     public RectTransform pelusContainer; 
     
@@ -48,7 +49,6 @@ public class PelusSpawner : MonoBehaviour
     {
         if (spawnHoles == null || pelusContainer == null || clawScript == null) return;
 
-      
         List<int> bosDelikler = new List<int>();
         for (int i = 0; i < doluDelikler.Length; i++)
         {
@@ -66,11 +66,13 @@ public class PelusSpawner : MonoBehaviour
             
         if (clawScript.foxCount == 0 && !IsToyAlreadyInGame("fox")) 
             uygunPrefablar.Add(foxPrefab);
+            
+        // YENİ: Kedi için üretim şartı
+        if (clawScript.catCount == 0 && !IsToyAlreadyInGame("cat")) 
+            uygunPrefablar.Add(catPrefab);
 
-       
         if (uygunPrefablar.Count == 0) return;
 
-       
         GameObject secilenPrefab = uygunPrefablar[Random.Range(0, uygunPrefablar.Count)];
         int secilenHoleIndex = bosDelikler[Random.Range(0, bosDelikler.Count)];
         
@@ -79,7 +81,6 @@ public class PelusSpawner : MonoBehaviour
         GameObject newToy = Instantiate(secilenPrefab, pelusContainer);
         RectTransform toyRect = newToy.GetComponent<RectTransform>();
 
-     
         var logic = newToy.GetComponent<Peluslar>();
         if (logic != null)
         {
@@ -92,7 +93,7 @@ public class PelusSpawner : MonoBehaviour
         
         activeToys.Add(toyRect);
     }
-    
+
     bool IsToyAlreadyInGame(string typeName)
     {
         foreach (var toy in activeToys)

@@ -3355,10 +3355,12 @@ MonoBehaviour:
   openAngle: 0
   closeAngle: 20
   clawAnimSpeed: 5
+  shrinkDuration: 0.3
   spawner: {fileID: 652538371}
   bearCount: 0
   bunnyCount: 0
   foxCount: 0
+  catCount: 0
 --- !u!1 &177406678
 GameObject:
   m_ObjectHideFlags: 0
@@ -5245,7 +5247,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &354429737
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6307,7 +6309,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &407253687
 RectTransform:
   m_ObjectHideFlags: 0
@@ -10424,6 +10426,7 @@ MonoBehaviour:
   bearPrefab: {fileID: 1819872367254861920, guid: a1dc5f5d52479f444a08ac86c5ea326a, type: 3}
   bunnyPrefab: {fileID: 2610834103158284808, guid: b794f0b251442a244872be4561e1e495, type: 3}
   foxPrefab: {fileID: 7872568271433453753, guid: 48725a277d776544db4a165dfbd43ebd, type: 3}
+  catPrefab: {fileID: 8047717599099594914, guid: c759460b292d9ca4aa4a1bbe5f9157b1, type: 3}
   spawnHoles:
   - {fileID: 359003230}
   - {fileID: 772798903}
