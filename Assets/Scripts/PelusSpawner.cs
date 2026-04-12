@@ -7,7 +7,7 @@ public class PelusSpawner : MonoBehaviour
     public GameObject bearPrefab;
     public GameObject bunnyPrefab;
     public GameObject foxPrefab;
-    public GameObject catPrefab; // YENİ: Kedi Prefab yuvası eklendi
+    public GameObject catPrefab; 
     public RectTransform[] spawnHoles; 
     public RectTransform pelusContainer; 
     

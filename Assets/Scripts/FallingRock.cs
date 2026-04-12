@@ -1,29 +1,51 @@
 using UnityEngine;
-
+using System.Collections;
 public class FallingRock : MonoBehaviour
 {
-    void OnTriggerEnter2D(Collider2D other)
-    {
+    [Header("Şimşek Ayarları")]
+    public float fallSpeed = 45f; 
     
-        if (other.CompareTag("Player"))
-        {
-            Debug.Log("Taş tam isabet!");
-            
-            PixelPlayer playerScript = other.GetComponent<PixelPlayer>();
+    private bool hasStruck = false;
 
-       
-            if (playerScript != null)
-            {
-                playerScript.HasarAl(1);
-            }
-
-            Destroy(gameObject);
-        }
-
+    void Update()
+    {
         
-        if (!other.CompareTag("Enemy") && !other.CompareTag("Bird") && !other.CompareTag("Tas"))
+        if (hasStruck) return;
+
+        transform.Translate(Vector3.down * fallSpeed * Time.deltaTime);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (hasStruck) return;
+
+        if (collision.CompareTag("Player"))
         {
+            PixelPlayer playerObj = collision.GetComponent<PixelPlayer>();
+            if (playerObj != null)
+            {
+                playerObj.HasarAl(1);
+            }
+            
             Destroy(gameObject);
         }
+        else if (collision.CompareTag("Zemin"))
+        {
+            hasStruck = true;
+            
+            StartCoroutine(FlashAndDestroy());
+        }
+    }
+    
+    IEnumerator FlashAndDestroy()
+    {
+       
+        yield return new WaitForSeconds(0.1f);
+        Destroy(gameObject);
+    }
+
+    private void OnBecameInvisible()
+    {
+        Destroy(gameObject);
     }
 }
