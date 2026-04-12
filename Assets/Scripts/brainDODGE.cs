@@ -101,13 +101,29 @@ public class brainDODGE : MonoBehaviour
         if (currentTurn % 2 == 0)
         {
             isLeftDodging = true;
-            if(DateSettings.leftChar != null) centerCharacterImage.sprite = DateSettings.leftChar.profileIcon;
+            
+            if(DateSettings.leftChar != null) 
+            {
+                
+                if(DateSettings.leftChar.dodgeTheQuestionIkonu != null)
+                    centerCharacterImage.sprite = DateSettings.leftChar.dodgeTheQuestionIkonu;
+                else
+                    centerCharacterImage.sprite = DateSettings.leftChar.profileIcon;
+            }
             Debug.Log("Sıra: SOL KARAKTER KAÇIYOR (Tur " + (currentTurn+1) + ")");
         }
         else
         {
             isLeftDodging = false;
-            if(DateSettings.rightChar != null) centerCharacterImage.sprite = DateSettings.rightChar.profileIcon;
+            
+            if(DateSettings.rightChar != null) 
+            {
+               
+                if(DateSettings.rightChar.dodgeTheQuestionIkonu != null)
+                    centerCharacterImage.sprite = DateSettings.rightChar.dodgeTheQuestionIkonu;
+                else
+                    centerCharacterImage.sprite = DateSettings.rightChar.profileIcon;
+            }
             Debug.Log("Sıra: SAĞ KARAKTER KAÇIYOR (Tur " + (currentTurn+1) + ")");
         }
 

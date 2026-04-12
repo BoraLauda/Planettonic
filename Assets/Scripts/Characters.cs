@@ -11,6 +11,8 @@ public class Characters : ScriptableObject
     [Header("Görsel")]
     public Sprite profileIcon;
     
+    public Sprite dodgeTheQuestionIkonu;
+    
     [Header("GörselBüyük")]
     public Sprite portraitImage; 
         

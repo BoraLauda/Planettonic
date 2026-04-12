@@ -5,14 +5,23 @@ public class FallingRock : MonoBehaviour
     [Header("Şimşek Ayarları")]
     public float fallSpeed = 45f; 
     
+    public float horizontalSpeed = 10f; 
+    
     private bool hasStruck = false;
+    private float direction = 0f; 
+
+  
+    public void SetDirection(float dir)
+    {
+        direction = dir;
+    }
 
     void Update()
     {
-        
         if (hasStruck) return;
-
-        transform.Translate(Vector3.down * fallSpeed * Time.deltaTime);
+        
+        Vector3 moveVector = new Vector3(direction * horizontalSpeed, -fallSpeed, 0f);
+        transform.Translate(moveVector * Time.deltaTime);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -24,24 +33,16 @@ public class FallingRock : MonoBehaviour
             PixelPlayer playerObj = collision.GetComponent<PixelPlayer>();
             if (playerObj != null)
             {
-                playerObj.HasarAl(1);
+                playerObj.HasarAl(1); 
             }
             
             Destroy(gameObject);
         }
         else if (collision.CompareTag("Zemin"))
         {
-            hasStruck = true;
-            
-            StartCoroutine(FlashAndDestroy());
+            hasStruck = true; 
+            Destroy(gameObject);
         }
-    }
-    
-    IEnumerator FlashAndDestroy()
-    {
-       
-        yield return new WaitForSeconds(0.1f);
-        Destroy(gameObject);
     }
 
     private void OnBecameInvisible()

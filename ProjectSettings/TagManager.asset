@@ -12,6 +12,7 @@ TagManager:
   - Enemy
   - Bird
   - Tas
+  - Zemin
   layers:
   - Default
   - TransparentFX

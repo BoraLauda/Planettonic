@@ -81,9 +81,16 @@ public class Bird : MonoBehaviour
     {
         if (rockPrefab != null && dropPoint != null && rockContainer != null)
         {
-            GameObject yeniTas = Instantiate(rockPrefab, rockContainer);
-            yeniTas.transform.position = dropPoint.position;
-            yeniTas.transform.localScale = Vector3.one; 
+            GameObject newLightning = Instantiate(rockPrefab, dropPoint.position, Quaternion.identity, rockContainer);
+            
+            newLightning.transform.localScale = Vector3.one;
+            
+            FallingRock lightningScript = newLightning.GetComponent<FallingRock>();
+            if (lightningScript != null)
+            {
+                float dir = isFacingRight ? 1f : -1f; 
+                lightningScript.SetDirection(dir);
+            }
         }
     }
 
