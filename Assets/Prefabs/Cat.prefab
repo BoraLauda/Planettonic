@@ -90,6 +90,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 350
   maxRise: 150
-  waitTimeAtPeak: 6
+  waitTimeAtPeak: 3
   spawner: {fileID: 0}
   benimDelikIndexim: -1

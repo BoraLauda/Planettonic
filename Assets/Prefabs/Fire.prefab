@@ -158,5 +158,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73890ad4c756d614f80dd87be43380ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ucusHizi: 3
+  ucusHizi: 2.2
   yasamSuresi: 2
