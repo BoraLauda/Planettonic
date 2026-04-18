@@ -1,6 +1,6 @@
 using UnityEngine;
 using System.Collections;
-using UnityEngine.UI; 
+using UnityEngine.UI;
 
 public class PixelPlayer : MonoBehaviour
 {
@@ -33,6 +33,9 @@ public class PixelPlayer : MonoBehaviour
     private int mevcutCan;
     private bool hasarAlabilirMi = true;
     public float hasarGormezlikSuresi = 1.5f;
+
+    [Header("Kalp UI Ayarları")]
+    public Image[] kalpIkonlari; 
     
     private SpriteRenderer sr;
     private Color orijinalRenk;
@@ -71,6 +74,7 @@ public class PixelPlayer : MonoBehaviour
         }
 
         mevcutCan = maxCan;
+        KalpleriGuncelle();
     }
 
     void Update()
@@ -100,6 +104,7 @@ public class PixelPlayer : MonoBehaviour
                 col.offset = normalColliderOffset;
             }
         }
+
         if (isGrounded && Input.GetButtonDown("Jump") && !isCrouching)
         {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
@@ -186,7 +191,8 @@ public class PixelPlayer : MonoBehaviour
         if (!hasarAlabilirMi) return;
 
         mevcutCan -= miktar;
-        Debug.Log("Can Gitti! Kalan Can: " + mevcutCan);
+        
+        KalpleriGuncelle();
 
         if (mevcutCan <= 0)
         {
@@ -195,6 +201,21 @@ public class PixelPlayer : MonoBehaviour
         else
         {
             StartCoroutine(HasarEfekti());
+        }
+    }
+
+    void KalpleriGuncelle()
+    {
+        for (int i = 0; i < kalpIkonlari.Length; i++)
+        {
+            if (i < mevcutCan)
+            {
+                kalpIkonlari[i].enabled = true;
+            }
+            else
+            {
+                kalpIkonlari[i].enabled = false;
+            }
         }
     }
 
@@ -220,7 +241,6 @@ public class PixelPlayer : MonoBehaviour
         {
             anahtarVarMi = true; 
             Destroy(temas.gameObject); 
-            Debug.Log("Anahtar alındı");
         }
 
         if (temas.gameObject.CompareTag("Death"))
@@ -235,14 +255,9 @@ public class PixelPlayer : MonoBehaviour
         
         if (temas.gameObject.CompareTag("Kalp"))
         {
-            if (anahtarVarMi == true)
+            if (anahtarVarMi)
             {
-                Debug.Log("Kalbe ulaşıldı");
                 StartCoroutine(KafesiAcVeBitir());
-            }
-            else
-            {
-                Debug.Log("Anahtarın yok!");
             }
         }
     }

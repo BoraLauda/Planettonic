@@ -100,10 +100,15 @@ public class LaneUI : MonoBehaviour
         if (isSuccess)
         {
             hitTarget.localScale = originalScale * popScale;
+            
+            if (Combo.Instance != null) 
+            {
+                Combo.Instance.AddCombo();
+            }
         }
         else
         {
-            TriggerMissFeedback();
+            TriggerMissFeedback(); 
         }
 
         activeNotes.Remove(noteToHit);
@@ -112,6 +117,11 @@ public class LaneUI : MonoBehaviour
 
     void TriggerMissFeedback()
     {
+        if (Combo.Instance != null)
+        {
+            Combo.Instance.ResetCombo();
+        }
+
         if (activeMissCoroutine != null)
         {
             StopCoroutine(activeMissCoroutine);

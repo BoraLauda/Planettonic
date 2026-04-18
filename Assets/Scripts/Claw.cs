@@ -1,5 +1,7 @@
 using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
+using TMPro; 
 
 public class Claw: MonoBehaviour
 {
@@ -9,7 +11,15 @@ public class Claw: MonoBehaviour
     public float dropDistance = 400f;
     public float toleranceY = 60f; 
     public float toleranceX = 60f;
-    
+    public float hareketMesafesi = 400f;
+
+    [Header("Zamanlayıcı Ayarları")]
+    public float gameTimer = 20f;
+    public TextMeshProUGUI timerText;
+    public TextMeshProUGUI timeFeedbackText;
+    private bool isGameOver = false;
+    private Vector3 feedbackOriginalPos;
+
     [Header("Yakalama Merkezi")]
     public Transform grabPoint; 
     public float catchOffsetY = 0f; 
@@ -46,22 +56,69 @@ public class Claw: MonoBehaviour
         rectTransform = GetComponent<RectTransform>();
         startPos = rectTransform.anchoredPosition;
         SetClawAngles(openAngle);
+
+        if (timeFeedbackText != null)
+        {
+            feedbackOriginalPos = timeFeedbackText.rectTransform.anchoredPosition;
+            timeFeedbackText.alpha = 0f; 
+        }
     }
 
     void Update()
     {
-        if (isGameWon) return;
+        if (isGameWon || isGameOver) return;
+
+        gameTimer -= Time.deltaTime;
+
+        if (timerText != null)
+        {
+            int kalanSaniye = Mathf.CeilToInt(Mathf.Max(0, gameTimer));
+            timerText.text = kalanSaniye.ToString();
+
+            if (gameTimer <= 5f && gameTimer > 0f)
+            {
+                timerText.color = Color.red;
+                float saniyeKusurati = gameTimer % 1f; 
+                float palseScale = 1f + (saniyeKusurati * 0.4f); 
+                timerText.transform.localScale = new Vector3(palseScale, palseScale, 1f);
+            }
+            else
+            {
+                timerText.color = Color.white;
+                timerText.transform.localScale = Vector3.one;
+            }
+        }
+
+        if (gameTimer <= 0)
+        {
+            TriggerGameOver();
+            return;
+        }
 
         if (isMoving && !isDropping)
         {
             movementTimer += Time.deltaTime; 
-            float newX = startPos.x + Mathf.PingPong(movementTimer * horizontalSpeed, 800) - 400; 
+          
+            float newX = startPos.x + Mathf.PingPong(movementTimer * horizontalSpeed, hareketMesafesi * 2) - hareketMesafesi; 
+            
             rectTransform.anchoredPosition = new Vector2(newX, startPos.y);
             
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 StartCoroutine(DropSequence());
             }
+        }
+    }
+
+    void TriggerGameOver()
+    {
+        isGameOver = true;
+        isMoving = false;
+        
+        if (timerText != null)
+        {
+            timerText.transform.localScale = Vector3.one;
+            timerText.text = "0";
         }
     }
 
@@ -161,6 +218,13 @@ public class Claw: MonoBehaviour
 
     void ProcessCaughtToy(RectTransform toy)
     {
+        gameTimer += 5f;
+
+        if (timeFeedbackText != null)
+        {
+            StartCoroutine(ShowTimeFeedbackAnimation());
+        }
+
         string toyName = toy.gameObject.name.ToLower();
 
         if (toyName.Contains("bear")) bearCount++;
@@ -173,13 +237,11 @@ public class Claw: MonoBehaviour
         CheckWinCondition();
     }
 
-   
     IEnumerator ShrinkAndDestroy(RectTransform toy)
     {
         float time = 0;
         Vector3 initialScale = toy.localScale;
 
-      
         while (time < shrinkDuration)
         {
             if (toy == null) yield break;
@@ -187,7 +249,6 @@ public class Claw: MonoBehaviour
             time += Time.deltaTime;
             float progress = time / shrinkDuration;
             
-          
             toy.localScale = Vector3.Lerp(initialScale, Vector3.zero, progress);
             
             yield return null;
@@ -207,5 +268,31 @@ public class Claw: MonoBehaviour
             isMoving = false;
             spawner.StopSpawning();
         }
+    }
+
+    IEnumerator ShowTimeFeedbackAnimation()
+    {
+        timeFeedbackText.text = "+5";
+        timeFeedbackText.color = Color.green; 
+        timeFeedbackText.alpha = 1f; 
+        timeFeedbackText.rectTransform.anchoredPosition = feedbackOriginalPos;
+
+        float elapsed = 0f;
+        float duration = 1f; 
+        float floatSpeed = 50f; 
+
+        while (elapsed < duration)
+        {
+            elapsed += Time.deltaTime;
+            timeFeedbackText.rectTransform.anchoredPosition += Vector2.up * floatSpeed * Time.deltaTime;
+            
+            float alpha = Mathf.Lerp(1f, 0f, elapsed / duration);
+            timeFeedbackText.alpha = alpha;
+
+            yield return null;
+        }
+
+        timeFeedbackText.alpha = 0f; 
+        timeFeedbackText.rectTransform.anchoredPosition = feedbackOriginalPos;
     }
 }

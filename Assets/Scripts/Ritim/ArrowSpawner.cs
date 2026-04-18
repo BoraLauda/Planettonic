@@ -1,7 +1,9 @@
 using UnityEngine;
 using System.Collections.Generic;
+using UnityEngine.UI;
+using TMPro; 
 
-public class NoteSpawner : MonoBehaviour
+public class ArrowSpawner : MonoBehaviour
 {
     public GameObject blueNotePrefab;
     public GameObject pinkNotePrefab;
@@ -11,6 +13,8 @@ public class NoteSpawner : MonoBehaviour
     public float initialSpawnInterval = 1f;
     public float baseFallSpeed = 400f; 
     public float gameDuration = 20f;
+    
+    public TextMeshProUGUI sureText;
 
     private float timer;
     private float gameTimer;
@@ -28,6 +32,28 @@ public class NoteSpawner : MonoBehaviour
 
         gameTimer -= Time.deltaTime;
         
+        if (sureText != null)
+        {
+            int kalanSaniye = Mathf.CeilToInt(Mathf.Max(0, gameTimer));
+            sureText.text = kalanSaniye.ToString();
+            
+            if (gameTimer <= 5f && gameTimer > 0f)
+            {
+                sureText.color = Color.red;
+                
+                float saniyeKusurati = gameTimer % 1f;
+                
+                float palseScale = 1f + (saniyeKusurati * 2f); 
+                
+                sureText.transform.localScale = new Vector3(palseScale, palseScale, 1f);
+            }
+            else
+            {
+                sureText.color = Color.white; 
+                sureText.transform.localScale = Vector3.one; 
+            }
+        }
+
         float progress = (gameDuration - gameTimer) / gameDuration;
         float spawnDifficulty = 1f + (progress * 2.0f); 
         float speedDifficulty = 1f + (progress * 0.3f); 
@@ -75,6 +101,13 @@ public class NoteSpawner : MonoBehaviour
     void GameOver()
     {
         isGameOver = true;
+        
+        if (sureText != null)
+        {
+            sureText.transform.localScale = Vector3.one;
+            sureText.text = "0";
+        }
+        
         Debug.Log("SÜRE BİTTİ! OYUN TAMAMLANDI.");
     }
 }
