@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      SonUpdate_Kokteyl_Background_0: 4873574336428766783
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
