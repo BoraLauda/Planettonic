@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterName: Jetty
   profileIcon: {fileID: 1936918675910826544, guid: e8f1130d0e09cef45bb1f9ab49489848, type: 3}
-  dodgeTheQuestionIkonu: {fileID: 0}
+  dodgeTheQuestionIkonu: {fileID: 21300000, guid: f6caab269191e234395448f13e4edc50, type: 3}
+  menuMinigameIkonu: {fileID: 21300000, guid: f6caab269191e234395448f13e4edc50, type: 3}
   portraitImage: {fileID: 1936918675910826544, guid: e8f1130d0e09cef45bb1f9ab49489848, type: 3}
   locationPreferences:
   - locationName: Restaurant

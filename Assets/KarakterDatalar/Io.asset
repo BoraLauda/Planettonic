@@ -15,6 +15,7 @@ MonoBehaviour:
   characterName: Io
   profileIcon: {fileID: 21300000, guid: e0283ca0d50327b46bb0248485cbfd49, type: 3}
   dodgeTheQuestionIkonu: {fileID: 21300000, guid: 430e19e528bdefa49af8d370aa671692, type: 3}
+  menuMinigameIkonu: {fileID: 21300000, guid: 430e19e528bdefa49af8d370aa671692, type: 3}
   portraitImage: {fileID: 281146401269919291, guid: a592fd1e0039a0b41a340d5324df28b1, type: 3}
   locationPreferences:
   - locationName: RESTAURANT
@@ -28,6 +29,8 @@ MonoBehaviour:
   - food: 2
     reactionScenario: {fileID: 11400000, guid: d6d0176578ce07a4fabf9173d344d21a, type: 2}
   - food: 1
+    reactionScenario: {fileID: 11400000, guid: d6d0176578ce07a4fabf9173d344d21a, type: 2}
+  - food: 7
     reactionScenario: {fileID: 11400000, guid: d6d0176578ce07a4fabf9173d344d21a, type: 2}
   iceBreakerGood:
   - {fileID: 11400000, guid: 7ccdc90d8bf6c7e4796a2ebe82f5e941, type: 2}

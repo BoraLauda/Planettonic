@@ -12,7 +12,10 @@ public enum FoodType
         Meat,     
         Wine,     
         SoftDrink, 
-        Beer,       
+        Beer,
+        Spaghetti,
+        Pizza,
+        Limonata,
         SafeFood    
 }
     

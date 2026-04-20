@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterName: Linus
   profileIcon: {fileID: 21300000, guid: dc24e77c8220d5b43bd418e911809b3b, type: 3}
-  dodgeTheQuestionIkonu: {fileID: 0}
+  dodgeTheQuestionIkonu: {fileID: 21300000, guid: ce329e50f8af18748a531df9650dc141, type: 3}
+  menuMinigameIkonu: {fileID: 21300000, guid: ce329e50f8af18748a531df9650dc141, type: 3}
   portraitImage: {fileID: 21300000, guid: dc24e77c8220d5b43bd418e911809b3b, type: 3}
   locationPreferences:
   - locationName: Restaurant

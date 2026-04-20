@@ -101,13 +101,28 @@ public class ArrowSpawner : MonoBehaviour
     void GameOver()
     {
         isGameOver = true;
-        
+
         if (sureText != null)
         {
             sureText.transform.localScale = Vector3.one;
             sureText.text = "0";
         }
-        
+
         Debug.Log("SÜRE BİTTİ! OYUN TAMAMLANDI.");
+        
+        brainDate bd = FindFirstObjectByType<brainDate>();
+        if (bd != null)
+        {
+          
+            float kazanilanYildiz = 1f;
+            int kazanilanKalp = 10;
+
+            bd.EndRhythmGame(kazanilanYildiz, kazanilanKalp, TargetCharacter.Both);
+        }
+        else
+        {
+            
+            transform.parent.gameObject.SetActive(false);
+        }
     }
 }

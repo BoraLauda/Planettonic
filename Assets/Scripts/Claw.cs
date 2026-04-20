@@ -120,6 +120,9 @@ public class Claw: MonoBehaviour
             timerText.transform.localScale = Vector3.one;
             timerText.text = "0";
         }
+        
+        // SÜRE BİTTİ - KAYBETTİ
+        EndMiniGame(false);
     }
 
     IEnumerator DropSequence()
@@ -267,6 +270,9 @@ public class Claw: MonoBehaviour
             isGameWon = true;
             isMoving = false;
             spawner.StopSpawning();
+            
+            // BÜTÜN OYUNCAKLAR TOPLANDI - KAZANDI
+            EndMiniGame(true);
         }
     }
 
@@ -294,5 +300,22 @@ public class Claw: MonoBehaviour
 
         timeFeedbackText.alpha = 0f; 
         timeFeedbackText.rectTransform.anchoredPosition = feedbackOriginalPos;
+    }
+    
+    void EndMiniGame(bool kazanildiMi)
+    {
+        brainDate bd = FindFirstObjectByType<brainDate>();
+        if (bd != null)
+        {
+            float kazanilanYildiz = kazanildiMi ? 1f : 0f;
+            
+            int kazanilanKalp = kazanildiMi ? 15 : (bearCount + bunnyCount + foxCount + catCount) * 2; 
+
+            bd.EndClawMachine(kazanilanYildiz, kazanilanKalp, TargetCharacter.Both);
+        }
+        else
+        {
+            transform.parent.gameObject.SetActive(false);
+        }
     }
 }

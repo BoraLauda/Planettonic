@@ -6,28 +6,21 @@ public class Characters : ScriptableObject
 {
     [Header("Kimlik")]
     public string characterName; 
-    
 
     [Header("Görsel")]
     public Sprite profileIcon;
-    
     public Sprite dodgeTheQuestionIkonu;
+    
+    public Sprite menuMinigameIkonu; 
     
     [Header("GörselBüyük")]
     public Sprite portraitImage; 
         
-    //[Header("Detay Metinleri")]
-    //[TextArea(3, 10)] 
-    //public string profileList;
-    
     public List<LocationPreference> locationPreferences;
     
-    //[TextArea(3, 10)] 
-    //public string info;
-    
     public Sprite nameImage;  
-    public Sprite listImage; // boy kilo vs.
-    public Sprite infoImage; //özet
+    public Sprite listImage; 
+    public Sprite infoImage; 
     
     [Header("Sevilmeyen Yemekler")]
     public List<FoodReaction> hatedFoods; 
@@ -41,14 +34,12 @@ public class Characters : ScriptableObject
     public List<DialogueDataları> dodgeQuestions;
 }
 
-
 [System.Serializable]
 public class FoodReaction
 {
     public FoodType food; 
     public DialogueDataları reactionScenario; 
 }
-
 
 [System.Serializable]
 public class LocationPreference
