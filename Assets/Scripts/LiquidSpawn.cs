@@ -71,11 +71,9 @@ public class LiquidSpawn : MonoBehaviour
 
         if (KokteylManager.Instance != null)
         {
-            HangiTarifYapildiKontrolEt();
-            
             KokteylManager.Instance.MasadakiBardagiGuncelle(liquidImage.fillAmount);
             
-            KokteylManager.Instance.NextPhase(); 
+            KokteylManager.Instance.SadeceMasayiBirakVeSifirla(); 
         }
     }
 

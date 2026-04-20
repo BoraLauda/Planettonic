@@ -64,6 +64,26 @@ public class ShakerInteraction : MonoBehaviour, IDropHandler, IPointerClickHandl
                     
                     Destroy(draggedItem.gameObject); 
                 }
+                
+               
+                else if (draggedItem.itemName == "Portakal" || draggedItem.itemName == "Nane" || 
+                         draggedItem.itemName == "Cilek" || draggedItem.itemName == "Zeytin")
+                {
+                    draggedItem.isLocked = true;
+                    
+                    if (KokteylManager.Instance != null)
+                    {
+                        if (draggedItem.itemName == "Portakal") KokteylManager.Instance.PortakalEkle();
+                        else if (draggedItem.itemName == "Nane") KokteylManager.Instance.NaneEkle();
+                        else if (draggedItem.itemName == "Cilek") KokteylManager.Instance.CilekEkle();
+                        else if (draggedItem.itemName == "Zeytin") KokteylManager.Instance.ZeytinEkle();
+                    }
+                    
+                    Debug.Log(draggedItem.itemName + " shaker'a atıldı!");
+                    Destroy(draggedItem.gameObject); 
+                }
+              
+
                 else if (draggedItem.itemName == "Sos")
                 {
                     draggedItem.isLocked = true; 

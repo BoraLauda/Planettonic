@@ -4,10 +4,20 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine.SceneManagement;
+
+[System.Serializable]
+public class CoupleEndScenario
+{
+    public string ciftAdi = "Yeni Çift";
+    public Characters characterA;
+    public Characters characterB;
+    
+    [Header("Bu Çifte Özel Fail Senaryosu")]
+    public DialogueDataları specificFailScenario;
+}
     
 public class brainDate : MonoBehaviour
 {
-    
     public TMP_Text introLocationText; 
     public Image backgroundImage;
     
@@ -46,7 +56,11 @@ public class brainDate : MonoBehaviour
     
     public GameObject dateEndedObject;    
     public DialogueDataları startingScenario;
-    public DialogueDataları failScenario;
+    
+    [Header("Çiftlere Özel Senaryolar")]
+    public List<CoupleEndScenario> coupleEndScenarios;
+    public DialogueDataları defaultFailScenario;
+    
     private DialogueDataları savedMainScenario;
     
     public brainDODGE dodgeScript;
@@ -83,7 +97,6 @@ public class brainDate : MonoBehaviour
     public TMP_Text chaperonNameText;       
     public TMP_Text chaperonBodyText;
     
-    // KALP YILDIZ
     public float starThreshold = 6f;
     public float currentStars = 0;   
     public int totalHearts = 0;
@@ -91,7 +104,6 @@ public class brainDate : MonoBehaviour
     public TMP_Text starUI;
 
     public GameObject menuMiniGameObj;
-    
     public DialogueDataları menuTutorialScenario;
     
     public float typeSpeed = 0.04f;
@@ -122,8 +134,6 @@ public class brainDate : MonoBehaviour
 
     void Start()
     {
-        // PlayerPrefs.SetString("SavedEquippedItems", "The Cyberchics,Heart of the Circuit,");// SONRADAN SİL
-        
         if(leftDialoguePanel) leftDialoguePanel.SetActive(false);
         if(leftOptionsPanel) leftOptionsPanel.SetActive(false);
         if(chancellorPanel) chancellorPanel.SetActive(false);
@@ -137,7 +147,6 @@ public class brainDate : MonoBehaviour
         if(menuMiniGameObj) menuMiniGameObj.SetActive(false);
         if(dateEndedObject) dateEndedObject.SetActive(false);
         
-        
         PrepareSceneData();
 
         if (introPanel != null)
@@ -150,7 +159,6 @@ public class brainDate : MonoBehaviour
         }
     }
     
-   
     void PrepareSceneData()
     {
         DialogueDataları playThis = DateSettings.selectedScenario != null ? DateSettings.selectedScenario : startingScenario;
@@ -170,7 +178,6 @@ public class brainDate : MonoBehaviour
             Sprite foundLeft = null;
             Sprite foundRight = null;
 
-           
             foreach (var line in playThis.allLines)
             {
                 if (foundLeft == null && line.side == SpeakerSide.Left && line.characterSprite != null)
@@ -182,7 +189,6 @@ public class brainDate : MonoBehaviour
                 if (foundLeft != null && foundRight != null) break; 
             }
 
-            
             if (foundLeft != null && leftDaterImage != null) 
             {
                 leftDaterImage.sprite = foundLeft;
@@ -193,13 +199,11 @@ public class brainDate : MonoBehaviour
             }
         }
 
-       
         string currentLocation = "";
         if (playThis != null && !string.IsNullOrEmpty(playThis.locationName))
         {
             currentLocation = playThis.locationName;
         }
-
 
         if (DateSettings.leftChar != null)
         {
@@ -233,7 +237,6 @@ public class brainDate : MonoBehaviour
         if (introRightStarsCont != null) UpdateBar(introRightStarsCont, rightStars);
 
         UpdateScoreUI();
-        
         CheckHeartOfCircuitAvailability();
     }
     
@@ -668,7 +671,6 @@ public class brainDate : MonoBehaviour
             
           if (BGblur) BGblur.SetActive(true);
 
-          
           if (bartendingMiniGameObj != null) 
           {
               bartendingMiniGameObj.SetActive(true);
@@ -760,11 +762,25 @@ public class brainDate : MonoBehaviour
         }
         else
         {
-            if (failScenario != null)
+            DialogueDataları activeFail = GetActiveFailScenario();
+            if (activeFail != null)
             {
-                StartScenario(failScenario);
+                StartScenario(activeFail);
             }
         }
+    }
+    
+    public DialogueDataları GetActiveFailScenario()
+    {
+        foreach (var outcome in coupleEndScenarios)
+        {
+            if ((DateSettings.leftChar == outcome.characterA && DateSettings.rightChar == outcome.characterB) ||
+                (DateSettings.leftChar == outcome.characterB && DateSettings.rightChar == outcome.characterA))
+            {
+                if (outcome.specificFailScenario != null) return outcome.specificFailScenario;
+            }
+        }
+        return defaultFailScenario; 
     }
     
     public void UseHeartOfCircuit()
@@ -915,7 +931,6 @@ public class brainDate : MonoBehaviour
         PlayerPrefs.SetInt("SavedHearts", newTotal);
         
         PlayerPrefs.SetInt("IsMarketUnlocked", 1);
-        
         PlayerPrefs.SetInt("HasSave", 1); 
 
         PlayerPrefs.Save();
@@ -952,7 +967,6 @@ public class brainDate : MonoBehaviour
         if (BGblur) BGblur.SetActive(false);
         
         AddReward(earnedStars, earnedHearts, target);
-        
         
         if (savedMainScenario != null && savedMainScenario.nextScenario != null)
         {
@@ -1007,7 +1021,6 @@ public class brainDate : MonoBehaviour
             heartOfCircuitButton.SetActive(false);
         }
     }
-    
     
     void NextLine()
     {

@@ -11,23 +11,17 @@ public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     public Vector2 startPosition;
     private Vector2 pointerOffset;
     
-    public static int buzSayaci = 0;
-
     [HideInInspector] public bool isLocked = false;
-    
     public bool isInfiniteSource = false;
 
-  
     private Vector2 homePosition;
     private bool hasHome = false;
    
-
     void Awake()
     {
         rectTransform = GetComponent<RectTransform>();
         canvasGroup = GetComponent<CanvasGroup>();
     }
-    
     
     void Start()
     {
@@ -96,18 +90,30 @@ public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
         
         canvasGroup.blocksRaycasts = true;
         canvasGroup.alpha = 1f;
+        
+        bool isDrinkFinished = KokteylManager.Instance.zilObjesi != null && KokteylManager.Instance.zilObjesi.activeSelf;
+        bool isGarnish = (itemName == "Zeytin" || itemName == "Portakal" || itemName == "Nane" || itemName == "Cilek");
+
+        if (isDrinkFinished && isGarnish && !isLocked)
+        {
+            isLocked = true; 
+            this.transform.SetParent(KokteylManager.Instance.masadakiBardakObjeleri[KokteylManager.Instance.secilenBardakIndex]);
+            canvasGroup.blocksRaycasts = false; 
+            this.enabled = false;
+            
+            if (itemName == "Zeytin") KokteylManager.Instance.ZeytinEkle();
+            else if (itemName == "Portakal") KokteylManager.Instance.PortakalEkle();
+            else if (itemName == "Nane") KokteylManager.Instance.NaneEkle();
+            else if (itemName == "Cilek") KokteylManager.Instance.CilekEkle();
+            
+            KokteylManager.Instance.masadakiSusler.Add(this.gameObject);
+            
+            return; 
+        }
 
         if (isInfiniteSource)
         {
-            if (!isLocked)
-            {
-                Destroy(gameObject);
-            }
-            else
-            {
-                buzSayaci++;
-                Debug.Log("Atılan Buz: " + buzSayaci);
-            }
+            if (!isLocked) Destroy(gameObject);
             return; 
         }
         
@@ -120,10 +126,8 @@ public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     public void ForceTurn()
     {
         rectTransform.anchoredPosition = startPosition; 
-        
         canvasGroup.blocksRaycasts = true;
         canvasGroup.alpha = 1f;
-        
         isLocked = false;
     }
 }
