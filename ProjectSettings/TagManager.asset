@@ -13,6 +13,8 @@ TagManager:
   - Bird
   - Tas
   - Zemin
+  - Engel
+  - KirikKalp
   layers:
   - Default
   - TransparentFX
@@ -24,7 +26,7 @@ TagManager:
   - Ground
   - Pixel
   - Enemy
-  - 
+  - Zemin
   - 
   - 
   - 

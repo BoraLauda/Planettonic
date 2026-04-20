@@ -9,28 +9,26 @@ public class APPler : MonoBehaviour
     public GameObject backButtonSmall; 
     public GameObject backButtonLarge;
     
-    [Header("Sayfalar")]
     public int currentPageSayı = 0;
     private Stack<int> pageHistory = new Stack<int>();
     
     public Characters IoData;    
     public Characters ElroiData;
-
     
+    [Header("Sonradan Açılacak Karakterler")]
+    public Characters JettyData;
+    public Characters LinusData;
     
     public Image ortakTamName;
     public Image ortakTamList;
     public Image ortakTamInfo;
     
-  
     public Image ortakSmallName;
     public Image ortakSmallList;
     public Image ortakSmallInfo;
-    
 
     public GameObject confirmButton;
 
-    
     public List<Image> onaylaImages; 
     public List<Image> leftHeartImages;   
     public List<Image> rightHeartImages;
@@ -48,13 +46,21 @@ public class APPler : MonoBehaviour
     public List<GameObject> smallPages; 
     public List<GameObject> largePages; 
 
-    
     public List<MatchScenario> coupleScenarios; 
     public DialogueDataları defaultScenario;
 
     public GameObject warningPanelSmall; 
     public GameObject warningPanelBig;   
     public float warningDuration = 2.0f;
+
+    [Header("UI Kilitli Prefab (image_6 Prefabı)")]
+    public GameObject lockedPrefab; 
+
+    [Header("Mekan Butonları")]
+    public Button btnRestoran;
+    public Button btnBar;
+    public Button btnEv;
+    public Button btnArcade;
 
     void Start()
     {
@@ -97,12 +103,10 @@ public class APPler : MonoBehaviour
         if (pageHistory.Count > 0) OpenPageByIndex(pageHistory.Pop(), false);
     }
 
-    
     public void OnCandidateSelected(Characters profile)
     {
         tempCandidate = profile; 
         
-       
         foreach (var img in onaylaImages)
         {
             if (img != null)
@@ -113,7 +117,6 @@ public class APPler : MonoBehaviour
             img.preserveAspect = true;
         }
         
-      
         if (ortakTamName != null) ortakTamName.sprite = profile.nameImage;
         if (ortakSmallName != null) ortakSmallName.sprite = profile.nameImage;
 
@@ -174,9 +177,41 @@ public class APPler : MonoBehaviour
     
     void RefreshSlots()
     {
-        foreach (var slot in allSlots)
+        if (IoData == null || ElroiData == null) return;
+
+        string char1 = IoData.characterName;
+        string char2 = ElroiData.characterName;
+        string coupleKey = string.Compare(char1, char2) < 0 ? 
+            "CoupleLevel_" + char1 + "_" + char2 : 
+            "CoupleLevel_" + char2 + "_" + char1;
+
+        int ioElroiLevel = PlayerPrefs.GetInt(coupleKey, 0);
+        bool isFirstDateDone = ioElroiLevel > 0;
+
+        for (int i = 0; i < allSlots.Count; i++)
         {
-            slot.UpdateSlotState(selectedLeft, selectedRight);
+            if (allSlots[i] == null || allSlots[i].myProfile == null)
+            {
+                if (allSlots[i] != null) allSlots[i].UpdateSlotState(selectedLeft, selectedRight, false, lockedPrefab);
+                continue;
+            }
+
+            bool isUnlocked = false;
+
+            if (allSlots[i].myProfile == IoData || allSlots[i].myProfile == ElroiData)
+            {
+                isUnlocked = true; 
+            }
+            else if (allSlots[i].myProfile == JettyData || allSlots[i].myProfile == LinusData)
+            {
+                isUnlocked = isFirstDateDone; 
+            }
+            else
+            {
+                isUnlocked = false; 
+            }
+
+            allSlots[i].UpdateSlotState(selectedLeft, selectedRight, isUnlocked, lockedPrefab);
         }
     }
     
@@ -210,6 +245,7 @@ public class APPler : MonoBehaviour
                 img.color = Color.white; 
             }
         }
+        
         RefreshSlots();
     }
     
@@ -232,46 +268,108 @@ public class APPler : MonoBehaviour
     {
         if (selectedLeft != null && selectedRight != null)
         {
-          
-            DateSettings.leftChar = selectedLeft;
-            DateSettings.rightChar = selectedRight;
-            DateSettings.selectedScenario = defaultScenario; 
-
-           
-            foreach (var match in coupleScenarios)
-            {
-                if ((selectedLeft == match.characterA && selectedRight == match.characterB) ||
-                    (selectedLeft == match.characterB && selectedRight == match.characterA))
-                {
-                    DateSettings.leftChar = match.characterA; 
-                    DateSettings.rightChar = match.characterB;
-                    
-                    string char1 = match.characterA.characterName;
-                    string char2 = match.characterB.characterName;
-                    string coupleKey = string.Compare(char1, char2) < 0 ? 
-                        "DateLevel_" + char1 + "_" + char2 : 
-                        "DateLevel_" + char2 + "_" + char1;
-
-                    int currentLevel = PlayerPrefs.GetInt(coupleKey, 0);
-                    
-                    if (currentLevel < match.dateLevels.Count)
-                    {
-                        DateSettings.selectedScenario = match.dateLevels[currentLevel];
-                    }
-                    else
-                    {
-                        DateSettings.selectedScenario = match.dateLevels[match.dateLevels.Count - 1];
-                    }
-
-                    break; 
-                }
-            }
-            SceneManager.LoadScene("Loading");
+            UpdateLocationButtons();
+            OpenPageByIndex(5); 
         }
         else
         {
             ShowWarningPopup(); 
         }
+    }
+
+    public void UpdateLocationButtons()
+    {
+        if (selectedLeft == null || selectedRight == null) return;
+
+        string char1 = selectedLeft.characterName;
+        string char2 = selectedRight.characterName;
+        string coupleKey = string.Compare(char1, char2) < 0 ? 
+            "CoupleLevel_" + char1 + "_" + char2 : 
+            "CoupleLevel_" + char2 + "_" + char1;
+
+        int currentLevel = PlayerPrefs.GetInt(coupleKey, 0);
+
+        if ((selectedLeft == IoData && selectedRight == ElroiData || selectedLeft == ElroiData && selectedRight == IoData) && currentLevel == 0)
+        {
+            SetButtonState(btnRestoran, true);
+            SetButtonState(btnArcade, false);
+            SetButtonState(btnBar, false);
+            SetButtonState(btnEv, false);
+            return;
+        }
+
+        if (currentLevel == 0)
+        {
+            SetButtonState(btnRestoran, true);
+            SetButtonState(btnArcade, true);
+            SetButtonState(btnBar, false);
+            SetButtonState(btnEv, false);
+        }
+        else if (currentLevel == 1)
+        {
+            SetButtonState(btnRestoran, false);
+            SetButtonState(btnArcade, false);
+            SetButtonState(btnBar, true);
+            SetButtonState(btnEv, true);
+        }
+        else 
+        {
+            SetButtonState(btnRestoran, false);
+            SetButtonState(btnArcade, false);
+            SetButtonState(btnBar, false);
+            SetButtonState(btnEv, false);
+        }
+    }
+
+    private void SetButtonState(Button btn, bool isActive)
+    {
+        if (btn != null)
+        {
+            btn.interactable = isActive;
+        }
+    }
+
+    public void StartDateWithLocation(string secilenMekan)
+    {
+        DateSettings.leftChar = selectedLeft;
+        DateSettings.rightChar = selectedRight;
+        DateSettings.selectedScenario = defaultScenario; 
+
+        foreach (var match in coupleScenarios)
+        {
+            if ((selectedLeft == match.characterA && selectedRight == match.characterB) ||
+                (selectedLeft == match.characterB && selectedRight == match.characterA))
+            {
+                List<DialogueDataları> aranacakListe = null;
+
+                switch (secilenMekan)
+                {
+                    case "Restoran": aranacakListe = match.restoranSenaryolari; break;
+                    case "Ev": aranacakListe = match.evSenaryolari; break;
+                    case "Bar": aranacakListe = match.barSenaryolari; break;
+                    case "Arcade": aranacakListe = match.arcadeSenaryolari; break;
+                }
+
+                if (aranacakListe != null && aranacakListe.Count > 0)
+                {
+                    string char1 = match.characterA.characterName;
+                    string char2 = match.characterB.characterName;
+                    
+                    string coupleKey = string.Compare(char1, char2) < 0 ? 
+                        "CoupleLevel_" + char1 + "_" + char2 : 
+                        "CoupleLevel_" + char2 + "_" + char1;
+
+                    int currentLevel = PlayerPrefs.GetInt(coupleKey, 0);
+                    
+                    DateSettings.selectedScenario = aranacakListe[0];
+
+                    PlayerPrefs.SetInt(coupleKey, currentLevel + 1);
+                    PlayerPrefs.Save();
+                }
+                break; 
+            }
+        }
+        SceneManager.LoadScene("Loading");
     }
     
     public void OnLoginClicked() => OpenPageByIndex(1);
@@ -283,5 +381,9 @@ public class MatchScenario
 {
     public Characters characterA;
     public Characters characterB;
-    public List<DialogueDataları> dateLevels; 
+    
+    public List<DialogueDataları> restoranSenaryolari; 
+    public List<DialogueDataları> arcadeSenaryolari;
+    public List<DialogueDataları> barSenaryolari;
+    public List<DialogueDataları> evSenaryolari;
 }

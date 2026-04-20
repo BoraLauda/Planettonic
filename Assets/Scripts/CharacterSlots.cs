@@ -3,44 +3,61 @@ using UnityEngine.UI;
 
 public class CharacterSlots : MonoBehaviour
 {
-    [Header("Veri")]
-    public Characters myProfile; 
-
-    [Header("Görsel Bileşenler")]
-    public Image myImage;     
-    public Button myButton;   
-
+    public Characters myProfile;
+    public Image myImage;
+    public Button myButton;
     
-    void Start()
+    [Header("UI Görsel Bileşenleri")]
+    public GameObject planetIcon; 
+
+    private GameObject currentLockedUI; 
+
+    public void UpdateSlotState(Characters selectedLeft, Characters selectedRight, bool isUnlocked, GameObject lockedPrefab)
     {
-        if (myProfile != null)
+        if (currentLockedUI != null) Destroy(currentLockedUI);
+
+        if (!isUnlocked)
         {
-            myImage.sprite = myProfile.profileIcon;
-        }
-    }
+            myButton.interactable = false;
+            myImage.enabled = false; 
 
-    
-    public void UpdateSlotState(Characters selectedLeft, Characters selectedRight)
-    {
-        // Eğer ben zaten seçiliysem
+            if (planetIcon != null) planetIcon.SetActive(false); 
+
+            if (lockedPrefab != null)
+            {
+                currentLockedUI = Instantiate(lockedPrefab, transform);
+                
+                RectTransform rt = currentLockedUI.GetComponent<RectTransform>();
+                if(rt != null)
+                {
+                    rt.anchoredPosition = Vector2.zero;
+                    rt.localPosition = Vector3.zero;
+                    rt.localScale = Vector3.one; 
+                }
+            }
+            return;
+        }
+
+        myButton.interactable = true;
+        myImage.enabled = true; 
+        
+        if (myProfile != null) myImage.sprite = myProfile.profileIcon;
+        myImage.color = Color.white;
+
+        if (planetIcon != null) planetIcon.SetActive(true); 
+
         if (myProfile != null && (myProfile == selectedLeft || myProfile == selectedRight))
         {
-            myButton.interactable = false; // Tıklanamaz ol
-            myImage.color = Color.gray;    // Gri ol
-        }
-        else
-        {
-            myButton.interactable = true;  // Normal ol
-            myImage.color = Color.white;   // Beyaz ol
+            myButton.interactable = false;
+            myImage.color = Color.gray;
         }
     }
 
-    
     public void OnClicked()
     {
         if (myProfile != null)
         {
-          FindObjectOfType<APPler>().OnCandidateSelected(myProfile);
+            FindObjectOfType<APPler>().OnCandidateSelected(myProfile);
         }
     }
 }

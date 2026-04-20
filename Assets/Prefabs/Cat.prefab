@@ -35,8 +35,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 121.45, y: -407.92}
-  m_SizeDelta: {x: 143, y: 351}
+  m_AnchoredPosition: {x: 121.45, y: -382.53006}
+  m_SizeDelta: {x: 90.96, y: 208.5899}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2994118222008167299
 CanvasRenderer:
@@ -89,7 +89,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 350
-  maxRise: 150
+  maxRise: 75
   waitTimeAtPeak: 3
   spawner: {fileID: 0}
   benimDelikIndexim: -1

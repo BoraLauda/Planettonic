@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52414fa3869acd040b0ed6b6d3d42937, type: 3}
+  m_Name: Jetty
+  m_EditorClassIdentifier: 
+  characterName: Jetty
+  profileIcon: {fileID: 21300000, guid: 96d25367f3fe0bf4eadc2c79d2fcd4d3, type: 3}
+  dodgeTheQuestionIkonu: {fileID: 0}
+  portraitImage: {fileID: -4618163885305531347, guid: 96d25367f3fe0bf4eadc2c79d2fcd4d3, type: 3}
+  locationPreferences:
+  - locationName: Restaurant
+    bonusStars: 1
+  nameImage: {fileID: 21300000, guid: 25063601c79f1564093b3a1ef16c828d, type: 3}
+  listImage: {fileID: 21300000, guid: 9fc74c07cce3e7b45bf5e3bcc5163e5a, type: 3}
+  infoImage: {fileID: 4404905234282257119, guid: f2ce6b62e7cd7de4695658a2e54b327e, type: 3}
+  hatedFoods: []
+  iceBreakerGood: []
+  iceBreakerMid: []
+  iceBreakerBad: []
+  dodgeQuestions: []

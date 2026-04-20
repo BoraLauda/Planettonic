@@ -7,10 +7,10 @@ public class Foods : MonoBehaviour
 
 public enum FoodType
 {
-        Salad,  //IO İÇİN    
-        Seafood, //Elroi alerjisi varrrr   
-        Meat,      // Io sevmiyo
-        Wine,      // Elroi sevmiyo
+        Salad,  
+        Seafood, 
+        Meat,     
+        Wine,     
         SoftDrink, 
         Beer,       
         SafeFood    

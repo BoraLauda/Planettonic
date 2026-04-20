@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Start
   m_EditorClassIdentifier: 
   locationName: BAR
-  locationBackground: {fileID: 21300000, guid: 25063601c79f1564093b3a1ef16c828d, type: 3}
+  locationBackground: {fileID: -3380845427794256051, guid: d0fe8f52ba5bdcc4583a68a1a6e81f88, type: 3}
   allLines:
   - side: 1
     characterName: Elroi
