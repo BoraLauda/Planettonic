@@ -22,4 +22,4 @@ MonoBehaviour:
       Neptunian before me?
     eventTrigger: 
     choices: []
-  nextScenario: {fileID: 11400000, guid: 8958df9c2a3b19b418c15bbab0c8edf1, type: 2}
+  nextScenario: {fileID: 0}

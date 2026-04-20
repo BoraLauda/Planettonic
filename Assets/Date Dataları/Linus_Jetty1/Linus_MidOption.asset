@@ -35,4 +35,4 @@ MonoBehaviour:
     sentence: "It\u2019s good to have a friend to feel safe next to at night."
     eventTrigger: StartDodgeGame
     choices: []
-  nextScenario: {fileID: 0}
+  nextScenario: {fileID: 11400000, guid: 8958df9c2a3b19b418c15bbab0c8edf1, type: 2}

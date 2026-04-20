@@ -26792,10 +26792,13 @@ MonoBehaviour:
   heartUI: {fileID: 953281964}
   starUI: {fileID: 0}
   menuMiniGameObj: {fileID: 407253686}
+  pixelMiniGameObj: {fileID: 1978774584}
+  rhythmMiniGameObj: {fileID: 1816591632}
+  clawMachineMiniGameObj: {fileID: 824090829}
+  runnerMiniGameObj: {fileID: 227849805}
   menuTutorialScenario: {fileID: 11400000, guid: 8f572fefddd2e26458a1845b2fe5be4f, type: 2}
   typeSpeed: 0.04
   focusSpeed: 10
-  pixelMiniGameObj: {fileID: 1978774584}
   cyberchicsButton: {fileID: 1212563971}
   heartOfCircuitButton: {fileID: 129048988}
 --- !u!1 &1047217392
@@ -49192,7 +49195,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1816591633
 RectTransform:
   m_ObjectHideFlags: 0

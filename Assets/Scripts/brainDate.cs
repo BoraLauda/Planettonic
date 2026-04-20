@@ -103,7 +103,13 @@ public class brainDate : MonoBehaviour
     public TMP_Text heartUI; 
     public TMP_Text starUI;
 
+    [Header("Mini Oyun Objeleri")]
     public GameObject menuMiniGameObj;
+    public GameObject pixelMiniGameObj;
+    public GameObject rhythmMiniGameObj;       // YENİ
+    public GameObject clawMachineMiniGameObj;  // YENİ
+    public GameObject runnerMiniGameObj;       // YENİ
+    
     public DialogueDataları menuTutorialScenario;
     
     public float typeSpeed = 0.04f;
@@ -122,8 +128,6 @@ public class brainDate : MonoBehaviour
     private Vector3 rightTargetScale = Vector3.one;
     
     private bool isMenuMode = false;
-    
-    public GameObject pixelMiniGameObj;
     
     public GameObject cyberchicsButton;
     private bool isCyberchicsUsed = false;
@@ -145,6 +149,11 @@ public class brainDate : MonoBehaviour
         if(BGblur) BGblur.SetActive(false);
 
         if(menuMiniGameObj) menuMiniGameObj.SetActive(false);
+        if(pixelMiniGameObj) pixelMiniGameObj.SetActive(false);
+        if(rhythmMiniGameObj) rhythmMiniGameObj.SetActive(false);           
+        if(clawMachineMiniGameObj) clawMachineMiniGameObj.SetActive(false);  
+        if(runnerMiniGameObj) runnerMiniGameObj.SetActive(false);             
+
         if(dateEndedObject) dateEndedObject.SetActive(false);
         
         PrepareSceneData();
@@ -634,10 +643,7 @@ public class brainDate : MonoBehaviour
     
           if (BGblur) BGblur.SetActive(true);
            
-          if (pixelMiniGameObj != null) 
-          {
-              pixelMiniGameObj.SetActive(true);
-          }
+          if (pixelMiniGameObj != null) pixelMiniGameObj.SetActive(true);
       }
        
       else if (eventName == "StartIceBreaker")
@@ -671,10 +677,7 @@ public class brainDate : MonoBehaviour
             
           if (BGblur) BGblur.SetActive(true);
 
-          if (bartendingMiniGameObj != null) 
-          {
-              bartendingMiniGameObj.SetActive(true);
-          }
+          if (bartendingMiniGameObj != null) bartendingMiniGameObj.SetActive(true);
       }
        
       else if (eventName == "StartDodgeGame")
@@ -693,6 +696,49 @@ public class brainDate : MonoBehaviour
           {
               if (dodgeScript != null) dodgeScript.StartGame();
           });
+      }
+      
+
+      else if (eventName == "StartRitimGame")
+      {
+          savedMainScenario = currentScenario; 
+          isEventTriggered = true;
+            
+          if(leftDialoguePanel) leftDialoguePanel.SetActive(false);
+          if(rightDialoguePanel) rightDialoguePanel.SetActive(false);
+          if(chancellorPanel) chancellorPanel.SetActive(false);
+          if(chaperonPanel) chaperonPanel.SetActive(false);
+            
+          if (BGblur) BGblur.SetActive(true);
+          if (rhythmMiniGameObj != null) rhythmMiniGameObj.SetActive(true);
+      }
+      
+      else if (eventName == "StartClawMachine")
+      {
+          savedMainScenario = currentScenario; 
+          isEventTriggered = true;
+            
+          if(leftDialoguePanel) leftDialoguePanel.SetActive(false);
+          if(rightDialoguePanel) rightDialoguePanel.SetActive(false);
+          if(chancellorPanel) chancellorPanel.SetActive(false);
+          if(chaperonPanel) chaperonPanel.SetActive(false);
+            
+          if (BGblur) BGblur.SetActive(true);
+          if (clawMachineMiniGameObj != null) clawMachineMiniGameObj.SetActive(true);
+      }
+
+      else if (eventName == "StartKurtGame")
+      {
+          savedMainScenario = currentScenario; 
+          isEventTriggered = true;
+            
+          if(leftDialoguePanel) leftDialoguePanel.SetActive(false);
+          if(rightDialoguePanel) rightDialoguePanel.SetActive(false);
+          if(chancellorPanel) chancellorPanel.SetActive(false);
+          if(chaperonPanel) chaperonPanel.SetActive(false);
+            
+          if (BGblur) BGblur.SetActive(true);
+          if (runnerMiniGameObj != null) runnerMiniGameObj.SetActive(true);
       }
     }
 
@@ -981,6 +1027,49 @@ public class brainDate : MonoBehaviour
         if (pixelMiniGameObj != null) pixelMiniGameObj.SetActive(false);
         if (BGblur) BGblur.SetActive(false);
     
+        AddReward(earnedStars, earnedHearts, target);
+        
+        if (savedMainScenario != null && savedMainScenario.nextScenario != null)
+        {
+            StartScenario(savedMainScenario.nextScenario);
+        }
+    }
+
+   
+    public void EndRhythmGame(float earnedStars, int earnedHearts, TargetCharacter target)
+    {
+        isEventTriggered = false;
+        if (rhythmMiniGameObj != null) rhythmMiniGameObj.SetActive(false);
+        if (BGblur) BGblur.SetActive(false);
+        
+        AddReward(earnedStars, earnedHearts, target);
+        
+        if (savedMainScenario != null && savedMainScenario.nextScenario != null)
+        {
+            StartScenario(savedMainScenario.nextScenario);
+        }
+    }
+
+    public void EndClawMachine(float earnedStars, int earnedHearts, TargetCharacter target)
+    {
+        isEventTriggered = false;
+        if (clawMachineMiniGameObj != null) clawMachineMiniGameObj.SetActive(false);
+        if (BGblur) BGblur.SetActive(false);
+        
+        AddReward(earnedStars, earnedHearts, target);
+        
+        if (savedMainScenario != null && savedMainScenario.nextScenario != null)
+        {
+            StartScenario(savedMainScenario.nextScenario);
+        }
+    }
+
+    public void EndRunnerGame(float earnedStars, int earnedHearts, TargetCharacter target)
+    {
+        isEventTriggered = false;
+        if (runnerMiniGameObj != null) runnerMiniGameObj.SetActive(false);
+        if (BGblur) BGblur.SetActive(false);
+        
         AddReward(earnedStars, earnedHearts, target);
         
         if (savedMainScenario != null && savedMainScenario.nextScenario != null)

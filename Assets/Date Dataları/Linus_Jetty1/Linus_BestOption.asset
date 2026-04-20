@@ -62,4 +62,4 @@ MonoBehaviour:
     sentence: And the switch-up is somehow even more charming...
     eventTrigger: StartDodgeGame
     choices: []
-  nextScenario: {fileID: 0}
+  nextScenario: {fileID: 11400000, guid: 8958df9c2a3b19b418c15bbab0c8edf1, type: 2}
