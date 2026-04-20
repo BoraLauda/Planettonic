@@ -1,0 +1,103 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f832b14936fc2048824d9308b14ded6, type: 3}
+  m_Name: Jetty_BestOption_Arcade
+  m_EditorClassIdentifier: 
+  locationName: 
+  locationBackground: {fileID: 0}
+  allLines:
+  - side: 0
+    characterName: Jetty
+    characterSprite: {fileID: 1936918675910826544, guid: e8f1130d0e09cef45bb1f9ab49489848, type: 3}
+    sentence: 'You seem to get a rise out of that. Are you into desperation, or manipulation? '
+    eventTrigger: 
+    choices: []
+  - side: 1
+    characterName: Linus
+    characterSprite: {fileID: 21300000, guid: dc24e77c8220d5b43bd418e911809b3b, type: 3}
+    sentence: "A little bit of both, under the right circumstances of course. I don\u2019t
+      have any bad intentions with you."
+    eventTrigger: 
+    choices: []
+  - side: 0
+    characterName: Jetty
+    characterSprite: {fileID: 3149642799716058400, guid: e8f20d8f7db9ba542878b46ed2f36bc0, type: 3}
+    sentence: "Ah, that\u2019s a shame. Would\u2019ve been interesting at least if
+      you did.\r"
+    eventTrigger: 
+    choices: []
+  - side: 1
+    characterName: Linus
+    characterSprite: {fileID: 21300000, guid: dc24e77c8220d5b43bd418e911809b3b, type: 3}
+    sentence: "A lot of things can be interesting though, you don\u2019t know me
+      at all yet."
+    eventTrigger: 
+    choices: []
+  - side: 0
+    characterName: Jetty
+    characterSprite: {fileID: 1936918675910826544, guid: e8f1130d0e09cef45bb1f9ab49489848, type: 3}
+    sentence: "And you don\u2019t know what I find interesting."
+    eventTrigger: 
+    choices: []
+  - side: 1
+    characterName: Linus
+    characterSprite: {fileID: 0}
+    sentence: "Bad intentions is a start, I\u2019m sure I can get a little more information
+      out of you by the end of this."
+    eventTrigger: 
+    choices: []
+  - side: 0
+    characterName: Jetty
+    characterSprite: {fileID: 0}
+    sentence: Objection your honor. This solicitor is using foul play.
+    eventTrigger: 
+    choices: []
+  - side: 1
+    characterName: Linus
+    characterSprite: {fileID: 0}
+    sentence: Overruled.
+    eventTrigger: 
+    choices: []
+  - side: 0
+    characterName: Jetty
+    characterSprite: {fileID: 0}
+    sentence: "Damn. Must\u2019ve been bribed. Let me guess, couple of sips from
+      your flask?"
+    eventTrigger: 
+    choices: []
+  - side: 1
+    characterName: Linus
+    characterSprite: {fileID: 0}
+    sentence: Bingo.
+    eventTrigger: 
+    choices: []
+  - side: 2
+    characterName: Counselor
+    characterSprite: {fileID: 0}
+    sentence: Hate to interrupt, for a fun reason at least. I have a little game
+      for the both of you to get to know each other better.
+    eventTrigger: 
+    choices: []
+  - side: 2
+    characterName: Counselor
+    characterSprite: {fileID: 0}
+    sentence: "The tablet in front of you displays the Icebreaker. A game I\u2019m
+      sure both of you are familiar with, being good communicators and all!"
+    eventTrigger: 
+    choices: []
+  - side: 2
+    characterName: Counselor
+    characterSprite: {fileID: 0}
+    sentence: "Niceeee, you\u2019re getting good at this."
+    eventTrigger: StartIceBreaker
+    choices: []
+  nextScenario: {fileID: 11400000, guid: 793051a46b678fb4f939b2f40ba8145c, type: 2}
