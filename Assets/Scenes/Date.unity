@@ -9490,7 +9490,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &407253687
 RectTransform:
   m_ObjectHideFlags: 0
@@ -19287,8 +19287,8 @@ MonoBehaviour:
   - ciftAdi: Jetty ve Linus
     characterA: {fileID: 11400000, guid: 74736f0dd50e8ce448a5eb50e16802ba, type: 2}
     characterB: {fileID: 11400000, guid: 5f6e0fde49813654aa1d61918d175f26, type: 2}
-    successScenario: {fileID: 11400000, guid: ce474e329f1da8445bfc8c2409a8a179, type: 2}
-    continuationScenario: {fileID: 11400000, guid: ce474e329f1da8445bfc8c2409a8a179, type: 2}
+    successScenario: {fileID: 11400000, guid: 6d82b8d27d70f454da59d69dcad0e2e7, type: 2}
+    continuationScenario: {fileID: 11400000, guid: 9602219198a39d54da5479231d130b0f, type: 2}
 --- !u!82 &756997994
 AudioSource:
   m_ObjectHideFlags: 0
@@ -26752,10 +26752,10 @@ MonoBehaviour:
     characterA: {fileID: 11400000, guid: 914c084cda719c149b3ce3ae947d0973, type: 2}
     characterB: {fileID: 11400000, guid: 70924192341f4a244bdda3ba9cd56e47, type: 2}
     specificFailScenario: {fileID: 11400000, guid: ca15603d2031b1d4d88d9368681bcccd, type: 2}
-  - ciftAdi: 
-    characterA: {fileID: 0}
-    characterB: {fileID: 0}
-    specificFailScenario: {fileID: 0}
+  - ciftAdi: Jetty Linus
+    characterA: {fileID: 11400000, guid: 74736f0dd50e8ce448a5eb50e16802ba, type: 2}
+    characterB: {fileID: 11400000, guid: 5f6e0fde49813654aa1d61918d175f26, type: 2}
+    specificFailScenario: {fileID: 11400000, guid: 567ce53e961ca8d4e88789dc0eede723, type: 2}
   defaultFailScenario: {fileID: 0}
   dodgeScript: {fileID: 1190985220}
   leftDaterImage: {fileID: 370962506}

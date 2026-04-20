@@ -22,8 +22,20 @@ MonoBehaviour:
   nameImage: {fileID: 21300000, guid: 077ae3aef0cae16468d788ca4f219e5c, type: 3}
   listImage: {fileID: 21300000, guid: b5a5cc5d83848d843aadeaf9b5e083f1, type: 3}
   infoImage: {fileID: 21300000, guid: cf07af3557b7ead429132313bd835c06, type: 3}
-  hatedFoods: []
-  iceBreakerGood: []
-  iceBreakerMid: []
-  iceBreakerBad: []
-  dodgeQuestions: []
+  hatedFoods:
+  - food: 3
+    reactionScenario: {fileID: 0}
+  - food: 5
+    reactionScenario: {fileID: 0}
+  iceBreakerGood:
+  - {fileID: 11400000, guid: f23f90616f911af41b2e0a10b6319e9c, type: 2}
+  - {fileID: 11400000, guid: 12e1bf46934c778468f3a0e395c09e5d, type: 2}
+  iceBreakerMid:
+  - {fileID: 11400000, guid: af364d1665b2bfb4da7fc8e3fe6d9672, type: 2}
+  - {fileID: 11400000, guid: 7a9140ffc789a28488742ae2d72719c9, type: 2}
+  iceBreakerBad:
+  - {fileID: 11400000, guid: d18fe2989e37bae41a1100800497128c, type: 2}
+  - {fileID: 11400000, guid: 52d5f39e867dd5b48a4d2a1597141b7a, type: 2}
+  dodgeQuestions:
+  - {fileID: 11400000, guid: bd65eee06b455a34cb1cf4d7057cb5d2, type: 2}
+  - {fileID: 11400000, guid: b7ba85d75165d8c4dba71ac0dba92f5b, type: 2}

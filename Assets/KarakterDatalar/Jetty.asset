@@ -13,17 +13,27 @@ MonoBehaviour:
   m_Name: Jetty
   m_EditorClassIdentifier: 
   characterName: Jetty
-  profileIcon: {fileID: 21300000, guid: 96d25367f3fe0bf4eadc2c79d2fcd4d3, type: 3}
+  profileIcon: {fileID: 1936918675910826544, guid: e8f1130d0e09cef45bb1f9ab49489848, type: 3}
   dodgeTheQuestionIkonu: {fileID: 0}
-  portraitImage: {fileID: -4618163885305531347, guid: 96d25367f3fe0bf4eadc2c79d2fcd4d3, type: 3}
+  portraitImage: {fileID: 1936918675910826544, guid: e8f1130d0e09cef45bb1f9ab49489848, type: 3}
   locationPreferences:
   - locationName: Restaurant
     bonusStars: 1
   nameImage: {fileID: 21300000, guid: 25063601c79f1564093b3a1ef16c828d, type: 3}
   listImage: {fileID: 21300000, guid: 9fc74c07cce3e7b45bf5e3bcc5163e5a, type: 3}
   infoImage: {fileID: 4404905234282257119, guid: f2ce6b62e7cd7de4695658a2e54b327e, type: 3}
-  hatedFoods: []
-  iceBreakerGood: []
-  iceBreakerMid: []
-  iceBreakerBad: []
-  dodgeQuestions: []
+  hatedFoods:
+  - food: 0
+    reactionScenario: {fileID: 11400000, guid: 08b1ff16f60bfdb4ca046126682780d3, type: 2}
+  iceBreakerGood:
+  - {fileID: 11400000, guid: ee0e12515b688134e95c1b384624c4cc, type: 2}
+  - {fileID: 11400000, guid: 68bb5c7bfa73a5049b9cce643bc71a78, type: 2}
+  iceBreakerMid:
+  - {fileID: 11400000, guid: be62aefaf2b622446b10daa4aa96fb59, type: 2}
+  - {fileID: 11400000, guid: 1eb4d5d51184a72459452ebaf6c78e3f, type: 2}
+  iceBreakerBad:
+  - {fileID: 11400000, guid: dff4f7c983b8e6a4099f7cd7d7ef2a9b, type: 2}
+  - {fileID: 11400000, guid: 89459b0193607d347a870e431545063b, type: 2}
+  dodgeQuestions:
+  - {fileID: 11400000, guid: b9f303e588fd6e64490bf5039af23c4e, type: 2}
+  - {fileID: 11400000, guid: 4e78c92f20fcafd46954916be2928a26, type: 2}
