@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 0eb7671d0ae026f44b03866f37c5fc27
+guid: af0c810f9bf8b7840ad7c7e7ceff54b5
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4508569267248303721
-    second: neptune_SON_0
+      213: -7716790916683590337
+    second: LINUS HAPPY FIXED_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: neptune_SON_0
+      name: LINUS HAPPY FIXED_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 1985
-        height: 1295
+        x: 1077
+        y: 399
+        width: 1405
+        height: 4302
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 791fb6c83285e61c0800000000000000
-      internalID: -4508569267248303721
+      spriteID: f351d1deb8378e490800000000000000
+      internalID: -7716790916683590337
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      neptune_SON_0: -4508569267248303721
+      LINUS HAPPY FIXED_0: -7716790916683590337
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

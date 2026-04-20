@@ -1,10 +1,13 @@
 fileFormatVersion: 2
-guid: 0eb7671d0ae026f44b03866f37c5fc27
+guid: e8f20d8f7db9ba542878b46ed2f36bc0
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4508569267248303721
-    second: neptune_SON_0
+      213: -3473205998720447787
+    second: JETTY HAPPY_0
+  - first:
+      213: 3149642799716058400
+    second: JETTY HAPPY_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +103,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: neptune_SON_0
+      name: JETTY HAPPY_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 1985
-        height: 1295
+        x: 1031
+        y: 1944
+        width: 10
+        height: 10
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +118,30 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 791fb6c83285e61c0800000000000000
-      internalID: -4508569267248303721
+      spriteID: 5da0386cb81bccfc0800000000000000
+      internalID: -3473205998720447787
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JETTY HAPPY_1
+      rect:
+        serializedVersion: 2
+        x: 1183
+        y: 451
+        width: 1541
+        height: 4098
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 02541765077c5bb20800000000000000
+      internalID: 3149642799716058400
       vertices: []
       indices: 
       edges: []
@@ -135,7 +160,8 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      neptune_SON_0: -4508569267248303721
+      JETTY HAPPY_0: -3473205998720447787
+      JETTY HAPPY_1: 3149642799716058400
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

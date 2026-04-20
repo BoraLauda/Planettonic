@@ -1,10 +1,13 @@
 fileFormatVersion: 2
-guid: 0eb7671d0ae026f44b03866f37c5fc27
+guid: 28d5548cec0782146bbf36cf0742a234
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4508569267248303721
-    second: neptune_SON_0
+      213: 6913372045528284903
+    second: LINUS HAPPY (1)_0
+  - first:
+      213: 5984428270473891180
+    second: LINUS HAPPY (1)_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +103,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: neptune_SON_0
+      name: LINUS HAPPY (1)_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 1985
-        height: 1295
+        x: 1077
+        y: 399
+        width: 1405
+        height: 4302
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +118,30 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 791fb6c83285e61c0800000000000000
-      internalID: -4508569267248303721
+      spriteID: 7ee34dd2f3b31ff50800000000000000
+      internalID: 6913372045528284903
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LINUS HAPPY (1)_1
+      rect:
+        serializedVersion: 2
+        x: 2867
+        y: 429
+        width: 7
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c6dc66d1ec5fc0350800000000000000
+      internalID: 5984428270473891180
       vertices: []
       indices: 
       edges: []
@@ -135,7 +160,8 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      neptune_SON_0: -4508569267248303721
+      LINUS HAPPY (1)_0: 6913372045528284903
+      LINUS HAPPY (1)_1: 5984428270473891180
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
