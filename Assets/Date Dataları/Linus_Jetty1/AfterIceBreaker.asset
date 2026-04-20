@@ -44,7 +44,7 @@ MonoBehaviour:
       starReward: 0
       heartReward: 0
     - choices: Icebreakers tend to get boring after a while, though.
-      nextScenario: {fileID: 11400000, guid: 0ff2863020cbf5f4aa5e7fc5141a7f83, type: 2}
+      nextScenario: {fileID: 11400000, guid: a840b1fcc6d4b7a45ad262a493c986b3, type: 2}
       target: 1
       starReward: 0
       heartReward: 0

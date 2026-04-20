@@ -1,24 +1,26 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections.Generic;
-public class brainMenu : MonoBehaviour
 
+public class brainMenu : MonoBehaviour
 {
+    [Header("Karakter İkonları")]
+    public Image solKarakterIkonu;
+    public Image sagKarakterIkonu;
+
+    [Header("Slot ve Buton Ayarları")]
     public List<DropSlots> allSlots;
-    
     public Button confirmButton;
     public Button clearButton;
     
+    [Header("Ses Ayarları")]
     public AudioSource audioSource;
     public AudioClip pickUpSound; 
     public AudioClip dropSound;
     
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
         SetButtonsInteractable(false);
-        
         
         if (clearButton != null)
         {
@@ -28,6 +30,22 @@ public class brainMenu : MonoBehaviour
         if(allSlots == null || allSlots.Count == 0)
         {
             Debug.LogError("HATA");
+        }
+
+        if (DateSettings.leftChar != null && solKarakterIkonu != null)
+        {
+            if (DateSettings.leftChar.menuMinigameIkonu != null)
+                solKarakterIkonu.sprite = DateSettings.leftChar.menuMinigameIkonu;
+            else
+                solKarakterIkonu.sprite = DateSettings.leftChar.profileIcon; 
+        }
+
+        if (DateSettings.rightChar != null && sagKarakterIkonu != null)
+        {
+            if (DateSettings.rightChar.menuMinigameIkonu != null)
+                sagKarakterIkonu.sprite = DateSettings.rightChar.menuMinigameIkonu;
+            else
+                sagKarakterIkonu.sprite = DateSettings.rightChar.profileIcon; 
         }
     }
     
@@ -42,14 +60,13 @@ public class brainMenu : MonoBehaviour
         if (audioSource != null && dropSound != null)
             audioSource.PlayOneShot(dropSound);
     }
-    
 
     public void CheckAllSlots()
     {
         int filledCount = 0;
         foreach (DropSlots slot in allSlots)
         {
-            if (slot == null) continue;//DENEME AMAÇLI SİL
+            if (slot == null) continue;
             if (slot.isFull)
             {
                 filledCount++;
@@ -57,7 +74,6 @@ public class brainMenu : MonoBehaviour
         }
         
         Debug.Log("Toplam Slot: " + allSlots.Count + " | Dolu Olan: " + filledCount);
-
         
         if (filledCount == 4)
         {
@@ -85,7 +101,4 @@ public class brainMenu : MonoBehaviour
         
         CheckAllSlots();
     }
-    
-    
-    
 }

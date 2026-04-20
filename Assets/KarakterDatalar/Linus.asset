@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterName: Linus
   profileIcon: {fileID: 21300000, guid: dc24e77c8220d5b43bd418e911809b3b, type: 3}
-  dodgeTheQuestionIkonu: {fileID: 0}
+  dodgeTheQuestionIkonu: {fileID: 21300000, guid: ce329e50f8af18748a531df9650dc141, type: 3}
+  menuMinigameIkonu: {fileID: 21300000, guid: ce329e50f8af18748a531df9650dc141, type: 3}
   portraitImage: {fileID: 21300000, guid: dc24e77c8220d5b43bd418e911809b3b, type: 3}
   locationPreferences:
   - locationName: Restaurant
@@ -26,9 +27,15 @@ MonoBehaviour:
   infoImage: {fileID: 21300000, guid: cf07af3557b7ead429132313bd835c06, type: 3}
   hatedFoods:
   - food: 3
-    reactionScenario: {fileID: 0}
+    reactionScenario: {fileID: 11400000, guid: 3b9413dd336563e48ace9cf6b8768dd9, type: 2}
   - food: 5
-    reactionScenario: {fileID: 0}
+    reactionScenario: {fileID: 11400000, guid: 3b9413dd336563e48ace9cf6b8768dd9, type: 2}
+  - food: 7
+    reactionScenario: {fileID: 11400000, guid: 3b9413dd336563e48ace9cf6b8768dd9, type: 2}
+  - food: 8
+    reactionScenario: {fileID: 11400000, guid: 3b9413dd336563e48ace9cf6b8768dd9, type: 2}
+  - food: 6
+    reactionScenario: {fileID: 11400000, guid: 3b9413dd336563e48ace9cf6b8768dd9, type: 2}
   iceBreakerGood:
   - {fileID: 11400000, guid: f23f90616f911af41b2e0a10b6319e9c, type: 2}
   - {fileID: 11400000, guid: 12e1bf46934c778468f3a0e395c09e5d, type: 2}

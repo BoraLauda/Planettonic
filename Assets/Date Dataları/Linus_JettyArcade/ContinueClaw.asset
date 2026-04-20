@@ -19,7 +19,8 @@ MonoBehaviour:
     characterName: Chaperon
     characterSprite: {fileID: 0}
     sentence: "Damn, they\u2019re both such hotties. I sometimes wish I was a mere
-      counselor than a higher up. Then I\u2019d get to hang with both of these bombshells."
+      counselor than a higher up. Then I\u2019d get to hang with both of these bombshells.
+      xx"
     eventTrigger: 
     choices: []
   - side: 2

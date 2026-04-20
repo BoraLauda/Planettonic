@@ -73,4 +73,4 @@ MonoBehaviour:
     sentence: Hah. You flatter me.
     eventTrigger: StartClawMachine
     choices: []
-  nextScenario: {fileID: 0}
+  nextScenario: {fileID: 11400000, guid: f34092d5e13d5ad46b35ff6f323d53ad, type: 2}

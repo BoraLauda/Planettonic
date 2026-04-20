@@ -39,14 +39,14 @@ MonoBehaviour:
     characterName: Linus
     characterSprite: {fileID: 21300000, guid: dc24e77c8220d5b43bd418e911809b3b, type: 3}
     sentence: Not yet, yes.
-    eventTrigger: StartIceBreaker
+    eventTrigger: 
     choices: []
   - side: 2
     characterName: Counselor
     characterSprite: {fileID: 0}
     sentence: Hate to interrupt, for a fun reason at least. I have a little game
       for the both of you to get to know each other better.
-    eventTrigger: StartIceBreaker
+    eventTrigger: 
     choices: []
   - side: 2
     characterName: Counselor
@@ -59,6 +59,6 @@ MonoBehaviour:
     characterName: Chaperon
     characterSprite: {fileID: 0}
     sentence: "Niceeee, you\u2019re getting good at this."
-    eventTrigger: StartIceBreaker
+    eventTrigger: 
     choices: []
-  nextScenario: {fileID: 11400000, guid: 793051a46b678fb4f939b2f40ba8145c, type: 2}
+  nextScenario: {fileID: 11400000, guid: b29c58747b66a1c4d96684ddcb8140f4, type: 2}

@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterName: Jetty
   profileIcon: {fileID: 1936918675910826544, guid: e8f1130d0e09cef45bb1f9ab49489848, type: 3}
-  dodgeTheQuestionIkonu: {fileID: 0}
+  dodgeTheQuestionIkonu: {fileID: 21300000, guid: f6caab269191e234395448f13e4edc50, type: 3}
+  menuMinigameIkonu: {fileID: 21300000, guid: f6caab269191e234395448f13e4edc50, type: 3}
   portraitImage: {fileID: 1936918675910826544, guid: e8f1130d0e09cef45bb1f9ab49489848, type: 3}
   locationPreferences:
   - locationName: Restaurant
@@ -23,7 +24,7 @@ MonoBehaviour:
   listImage: {fileID: 21300000, guid: 9fc74c07cce3e7b45bf5e3bcc5163e5a, type: 3}
   infoImage: {fileID: 4404905234282257119, guid: f2ce6b62e7cd7de4695658a2e54b327e, type: 3}
   hatedFoods:
-  - food: 0
+  - food: 7
     reactionScenario: {fileID: 11400000, guid: 08b1ff16f60bfdb4ca046126682780d3, type: 2}
   iceBreakerGood:
   - {fileID: 11400000, guid: ee0e12515b688134e95c1b384624c4cc, type: 2}

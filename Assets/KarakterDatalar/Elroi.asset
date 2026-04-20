@@ -15,6 +15,7 @@ MonoBehaviour:
   characterName: Elroi
   profileIcon: {fileID: 21300000, guid: 8fbf8b0f92eac1547ad6d9e6fbfb47ca, type: 3}
   dodgeTheQuestionIkonu: {fileID: 21300000, guid: ab943a432ee0e0843b7dcb39963b6878, type: 3}
+  menuMinigameIkonu: {fileID: 21300000, guid: ab943a432ee0e0843b7dcb39963b6878, type: 3}
   portraitImage: {fileID: -5408334947099728532, guid: d31dc9871b7d06c4eb9f928a8c8aa299, type: 3}
   locationPreferences:
   - locationName: BAR
@@ -27,6 +28,8 @@ MonoBehaviour:
     reactionScenario: {fileID: 11400000, guid: 66badacdee50e1946bdc2dcee5ea15ce, type: 2}
   - food: 3
     reactionScenario: {fileID: 11400000, guid: c46d411f54d8e3449865fba4781663bc, type: 2}
+  - food: 8
+    reactionScenario: {fileID: 11400000, guid: 6b71b9f07fcfd564480c7be7f8a4f1ec, type: 2}
   iceBreakerGood:
   - {fileID: 11400000, guid: cdc74d7ce648d7f458a73f8afebaa955, type: 2}
   - {fileID: 11400000, guid: b0ce68945d7e36c42922290a6a78c589, type: 2}

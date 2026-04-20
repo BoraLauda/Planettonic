@@ -91,6 +91,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 500
+  yokOlmaMesafesi: 5
 --- !u!50 &-3130758212431098737
 Rigidbody2D:
   serializedVersion: 5
