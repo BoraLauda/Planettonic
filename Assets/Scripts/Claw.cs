@@ -36,6 +36,12 @@ public class Claw: MonoBehaviour
     [Header("Referanslar")]
     public PelusSpawner spawner; 
 
+    [Header("Koleksiyon İkonları (UI)")] 
+    public GameObject bearIcon;
+    public GameObject bunnyIcon;
+    public GameObject foxIcon;
+    public GameObject catIcon;
+
     [Header("Koleksiyon (Kazanma Şartı)")]
     public int bearCount = 0;
     public int bunnyCount = 0;
@@ -62,6 +68,12 @@ public class Claw: MonoBehaviour
             feedbackOriginalPos = timeFeedbackText.rectTransform.anchoredPosition;
             timeFeedbackText.alpha = 0f; 
         }
+
+        
+        if (bearIcon != null) bearIcon.SetActive(true);
+        if (bunnyIcon != null) bunnyIcon.SetActive(true);
+        if (foxIcon != null) foxIcon.SetActive(true);
+        if (catIcon != null) catIcon.SetActive(true);
     }
 
     void Update()
@@ -121,7 +133,6 @@ public class Claw: MonoBehaviour
             timerText.text = "0";
         }
         
-        // SÜRE BİTTİ - KAYBETTİ
         EndMiniGame(false);
     }
 
@@ -229,11 +240,27 @@ public class Claw: MonoBehaviour
         }
 
         string toyName = toy.gameObject.name.ToLower();
-
-        if (toyName.Contains("bear")) bearCount++;
-        else if (toyName.Contains("bunny")) bunnyCount++;
-        else if (toyName.Contains("fox")) foxCount++;
-        else if (toyName.Contains("cat")) catCount++; 
+        
+        if (toyName.Contains("bear")) 
+        { 
+            bearCount++; 
+            if (bearIcon != null) bearIcon.SetActive(false); 
+        }
+        else if (toyName.Contains("bunny")) 
+        { 
+            bunnyCount++; 
+            if (bunnyIcon != null) bunnyIcon.SetActive(false); 
+        }
+        else if (toyName.Contains("fox")) 
+        { 
+            foxCount++; 
+            if (foxIcon != null) foxIcon.SetActive(false); 
+        }
+        else if (toyName.Contains("cat")) 
+        { 
+            catCount++; 
+            if (catIcon != null) catIcon.SetActive(false); 
+        } 
         
         StartCoroutine(ShrinkAndDestroy(toy));
 
@@ -271,7 +298,6 @@ public class Claw: MonoBehaviour
             isMoving = false;
             spawner.StopSpawning();
             
-            // BÜTÜN OYUNCAKLAR TOPLANDI - KAZANDI
             EndMiniGame(true);
         }
     }
@@ -301,14 +327,13 @@ public class Claw: MonoBehaviour
         timeFeedbackText.alpha = 0f; 
         timeFeedbackText.rectTransform.anchoredPosition = feedbackOriginalPos;
     }
-    
+
     void EndMiniGame(bool kazanildiMi)
     {
         brainDate bd = FindFirstObjectByType<brainDate>();
         if (bd != null)
         {
             float kazanilanYildiz = kazanildiMi ? 1f : 0f;
-            
             int kazanilanKalp = kazanildiMi ? 15 : (bearCount + bunnyCount + foxCount + catCount) * 2; 
 
             bd.EndClawMachine(kazanilanYildiz, kazanilanKalp, TargetCharacter.Both);

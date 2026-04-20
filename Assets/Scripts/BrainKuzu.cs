@@ -9,8 +9,6 @@ public class BrainKuzu : MonoBehaviour
 
     [Header("Kalp UI Ayarları")]
     public Image[] kalpImajlari; 
-    public Sprite doluKalpSprite;
-    public Sprite bosKalpSprite;
 
     [Header("Zamanlayıcı Ayarları")]
     public float gameDuration = 20f;
@@ -19,8 +17,9 @@ public class BrainKuzu : MonoBehaviour
     private bool isGameOver = false;
 
     [Header("Oyun Mantığı")]
-    public int maksimumKalp = 5;
-    private int mevcutKalp = 0; 
+    public int maksimumKalp = 5; 
+    
+    private int mevcutYarimKalpPuan = 0; 
 
     private void Awake()
     {
@@ -46,7 +45,6 @@ public class BrainKuzu : MonoBehaviour
             int kalanSaniye = Mathf.CeilToInt(Mathf.Max(0, gameTimer));
             sureText.text = kalanSaniye.ToString();
 
-           
             if (gameTimer <= 5f && gameTimer > 0f)
             {
                 sureText.color = Color.red;
@@ -61,7 +59,7 @@ public class BrainKuzu : MonoBehaviour
                 sureText.transform.localScale = Vector3.one;
             }
         }
-        
+
         if (gameTimer <= 0)
         {
             MinigameBitti(false);
@@ -72,12 +70,14 @@ public class BrainKuzu : MonoBehaviour
     {
         if (isGameOver) return;
 
-        if (mevcutKalp < maksimumKalp)
+        int maksimumYarimPuan = maksimumKalp * 2; 
+
+        if (mevcutYarimKalpPuan < maksimumYarimPuan)
         {
-            mevcutKalp++;
+            mevcutYarimKalpPuan++;
             KalpleriGuncelle();
             
-            if (mevcutKalp == maksimumKalp)
+            if (mevcutYarimKalpPuan == maksimumYarimPuan)
             {
                 MinigameBitti(true);
             }
@@ -88,21 +88,24 @@ public class BrainKuzu : MonoBehaviour
     {
         if (isGameOver) return;
 
-        if (mevcutKalp > 0)
+        if (mevcutYarimKalpPuan > 0)
         {
-            mevcutKalp--;
+            mevcutYarimKalpPuan--; 
             KalpleriGuncelle();
         }
     }
     
     private void KalpleriGuncelle()
     {
+        
         for (int i = 0; i < kalpImajlari.Length; i++)
         {
-            if (i < mevcutKalp)
-                kalpImajlari[i].sprite = doluKalpSprite;
-            else
-                kalpImajlari[i].sprite = bosKalpSprite;
+            if (kalpImajlari[i] != null)
+            {
+                float kalbinPayi = (mevcutYarimKalpPuan - (i * 2)) / 2f;
+                
+                kalpImajlari[i].fillAmount = Mathf.Clamp(kalbinPayi, 0f, 1f);
+            }
         }
     }
     
@@ -111,12 +114,11 @@ public class BrainKuzu : MonoBehaviour
         isGameOver = true;
         Debug.Log(basariliMi ? "TEBRİKLER: Tüm kalpler toplandı!" : "SÜRE BİTTİ!");
 
-      
         brainDate bd = FindFirstObjectByType<brainDate>();
         if (bd != null)
         {
             float kazanilanYildiz = basariliMi ? 1f : 0.5f; 
-            int kazanilanKalp = mevcutKalp * 5;
+            int kazanilanKalp = Mathf.RoundToInt(mevcutYarimKalpPuan * 2.5f); 
 
             bd.EndRunnerGame(kazanilanYildiz, kazanilanKalp, TargetCharacter.Both);
         }
