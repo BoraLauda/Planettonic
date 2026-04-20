@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f832b14936fc2048824d9308b14ded6, type: 3}
+  m_Name: Start
+  m_EditorClassIdentifier: 
+  locationName: Restaurant
+  locationBackground: {fileID: 21300000, guid: f8bdb2b11a144d94f9ac89625b2a01f4, type: 3}
+  allLines:
+  - side: 1
+    characterName: Linus
+    characterSprite: {fileID: 21300000, guid: dc24e77c8220d5b43bd418e911809b3b, type: 3}
+    sentence: 'Hey, Jetty. It is very nice to meet you. Beautiful venue, huh?
+
+'
+    eventTrigger: 
+    choices: []
+  - side: 0
+    characterName: Jetty
+    characterSprite: {fileID: 21300000, guid: 96d25367f3fe0bf4eadc2c79d2fcd4d3, type: 3}
+    sentence: "Nice to meet you too. I\u2019ve been to Venus quite a few times, crazy
+      to think I haven\u2019t come here once.\r\n"
+    eventTrigger: 
+    choices: []
+  - side: 0
+    characterName: Jetty
+    characterSprite: {fileID: 21300000, guid: 96d25367f3fe0bf4eadc2c79d2fcd4d3, type: 3}
+    sentence: Hah. You flatter me.
+    eventTrigger: StartMenuGame
+    choices: []
+  nextScenario: {fileID: 0}

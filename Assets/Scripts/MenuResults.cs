@@ -3,6 +3,18 @@ using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
 
+[System.Serializable]
+public class CoupleMenuOutcome
+{
+    public string ciftAdi = "Yeni Çift"; // Inspector'da karışmasın diye
+    public Characters characterA;
+    public Characters characterB;
+    
+    [Header("Bu Çifte Özel Senaryolar")]
+    public DialogueDataları successScenario;      // Hatasız sipariş verirlerse
+    public DialogueDataları continuationScenario; // Yemekten sonraki asıl devam diyaloğu
+}
+
 public class MenuResults : MonoBehaviour
 {
     public float delayBetweenEffects = 0.8f; 
@@ -22,10 +34,8 @@ public class MenuResults : MonoBehaviour
     public float starReward = 0.5f; 
     public int heartReward = 10;
     
-    [Header("Genel Senaryolar")]
-    public DialogueDataları scenarioSuccess;      
-    public DialogueDataları scenarioContinuation;
-    
+    [Header("Çiftlere Özel Menü Sonuçları")]
+    public List<CoupleMenuOutcome> coupleOutcomes; 
     
     private brainDate dateManager;
     private bool isProcessing = false;
@@ -56,7 +66,6 @@ public class MenuResults : MonoBehaviour
         {
             FoodType type = GetFoodTypeFromSprite(rightSlots[i].sprite);
             
-            
             if (!IsFoodHated(DateSettings.rightChar, type))
             {
                 if (rightFeedbacks != null && i < rightFeedbacks.Length && rightFeedbacks[i] != null) 
@@ -70,12 +79,10 @@ public class MenuResults : MonoBehaviour
 
         yield return new WaitForSecondsRealtime(turnDelay);
 
-       
         for (int i = 0; i < leftSlots.Length; i++)
         {
             FoodType type = GetFoodTypeFromSprite(leftSlots[i].sprite);
 
-          
             if (!IsFoodHated(DateSettings.leftChar, type))
             {
                 if (leftFeedbacks != null && i < leftFeedbacks.Length && leftFeedbacks[i] != null) 
@@ -99,7 +106,7 @@ public class MenuResults : MonoBehaviour
         List<DialogueDataları> finalSequence = new List<DialogueDataları>();
         bool anyMistake = false;
 
-       
+        // Sağdaki karakterin nefret ettiği yemek var mı?
         foreach (Image slot in rightSlots)
         {
             FoodType type = GetFoodTypeFromSprite(slot.sprite);
@@ -115,7 +122,7 @@ public class MenuResults : MonoBehaviour
             }
         }
 
-       
+        // Soldaki karakterin nefret ettiği yemek var mı?
         foreach (Image slot in leftSlots)
         {
             FoodType type = GetFoodTypeFromSprite(slot.sprite);
@@ -131,14 +138,31 @@ public class MenuResults : MonoBehaviour
             }
         }
 
-        if (!anyMistake)
+        // MASADAKİ ÇİFTİ BUL VE ONLARA ÖZEL SENARYOLARI ÇEK
+        DialogueDataları activeSuccess = null;
+        DialogueDataları activeContinuation = null;
+
+        foreach (var outcome in coupleOutcomes)
         {
-            finalSequence.Add(scenarioSuccess);
+            if ((DateSettings.leftChar == outcome.characterA && DateSettings.rightChar == outcome.characterB) ||
+                (DateSettings.leftChar == outcome.characterB && DateSettings.rightChar == outcome.characterA))
+            {
+                activeSuccess = outcome.successScenario;
+                activeContinuation = outcome.continuationScenario;
+                break;
+            }
+        }
+
+        // Hata yoksa başarı diyaloğunu ekle
+        if (!anyMistake && activeSuccess != null)
+        {
+            finalSequence.Add(activeSuccess);
         }
         
-        if (scenarioContinuation != null)
+        // Her halükarda devam diyaloğunu ekle
+        if (activeContinuation != null)
         {
-            finalSequence.Add(scenarioContinuation);
+            finalSequence.Add(activeContinuation);
         }
 
         FinishGame(finalSequence);
@@ -196,7 +220,6 @@ public class MenuResults : MonoBehaviour
         }
         return null;
     }
-    
     
     FoodType GetFoodTypeFromSprite(Sprite slotSprite)
     {

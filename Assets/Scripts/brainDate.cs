@@ -577,108 +577,121 @@ public class brainDate : MonoBehaviour
 
     void TriggerEvent(string eventName)
     {
-       if (eventName == "StartMenuGame")
-       {
-           if (BGblur) BGblur.SetActive(true);
-           if (menuMiniGameObj != null) menuMiniGameObj.SetActive(true);
+      if (eventName == "StartMenuGame")
+      {
+          if(leftDialoguePanel) leftDialoguePanel.SetActive(false);
+          if(rightDialoguePanel) rightDialoguePanel.SetActive(false);
+          
+          if (BGblur) BGblur.SetActive(true);
+          if (menuMiniGameObj != null) menuMiniGameObj.SetActive(true);
+          
+          bool isIoAndElroi = false;
+          if (DateSettings.leftChar != null && DateSettings.rightChar != null)
+          {
+              string char1 = DateSettings.leftChar.characterName;
+              string char2 = DateSettings.rightChar.characterName;
+               
+              if ((char1 == "Io" && char2 == "Elroi") || (char1 == "Elroi" && char2 == "Io"))
+              {
+                  isIoAndElroi = true;
+              }
+          }
 
-           if (menuTutorialScenario != null)
-           {
-               StartScenario(menuTutorialScenario);
-           }
-       }
-       else if (eventName == "MenüMiniGame")
-       {
-           isEventTriggered = true;
+          if (isIoAndElroi && menuTutorialScenario != null)
+          {
+              StartScenario(menuTutorialScenario);
+          }
+         
+      }
+      else if (eventName == "MenüMiniGame")
+      {
+          isEventTriggered = true;
 
-           if(leftDialoguePanel) leftDialoguePanel.SetActive(false);
-           if(rightDialoguePanel) rightDialoguePanel.SetActive(false);
-           if(chancellorPanel) chancellorPanel.SetActive(false);
-           if(chaperonPanel) chaperonPanel.SetActive(false);
+          if(leftDialoguePanel) leftDialoguePanel.SetActive(false);
+          if(rightDialoguePanel) rightDialoguePanel.SetActive(false);
+          if(chancellorPanel) chancellorPanel.SetActive(false);
+          if(chaperonPanel) chaperonPanel.SetActive(false);
             
-           tutorialPopup.OpenTutorial("MENU", menuTutorialSprites, () =>
-           {
-               isEventTriggered = false; 
-               isMenuMode = true;
-           });
-       }
+          tutorialPopup.OpenTutorial("MENU", menuTutorialSprites, () =>
+          {
+              isEventTriggered = false; 
+              isMenuMode = true;
+          });
+      }
        
-       else if (eventName == "StartPixelGame")
-       {
-           savedMainScenario = currentScenario; 
-           isEventTriggered = true;
+      else if (eventName == "StartPixelGame")
+      {
+          savedMainScenario = currentScenario; 
+          isEventTriggered = true;
            
-           if(leftDialoguePanel) leftDialoguePanel.SetActive(false);
-           if(rightDialoguePanel) rightDialoguePanel.SetActive(false);
-           if(chancellorPanel) chancellorPanel.SetActive(false);
-           if(chaperonPanel) chaperonPanel.SetActive(false);
+          if(leftDialoguePanel) leftDialoguePanel.SetActive(false);
+          if(rightDialoguePanel) rightDialoguePanel.SetActive(false);
+          if(chancellorPanel) chancellorPanel.SetActive(false);
+          if(chaperonPanel) chaperonPanel.SetActive(false);
     
-           if (BGblur) BGblur.SetActive(true);
+          if (BGblur) BGblur.SetActive(true);
            
-           if (pixelMiniGameObj != null) 
-           {
-               pixelMiniGameObj.SetActive(true);
-           }
-       }
+          if (pixelMiniGameObj != null) 
+          {
+              pixelMiniGameObj.SetActive(true);
+          }
+      }
        
-       else if (eventName == "StartIceBreaker")
-       {
-           savedMainScenario = currentScenario;
-           isEventTriggered = true;
+      else if (eventName == "StartIceBreaker")
+      {
+          savedMainScenario = currentScenario;
+          isEventTriggered = true;
 
-           if (leftDialoguePanel) leftDialoguePanel.SetActive(false);
-           if (rightDialoguePanel) rightDialoguePanel.SetActive(false);
-           if(chancellorPanel) chancellorPanel.SetActive(false);
-           if(chaperonPanel) chaperonPanel.SetActive(false);
+          if (leftDialoguePanel) leftDialoguePanel.SetActive(false);
+          if (rightDialoguePanel) rightDialoguePanel.SetActive(false);
+          if(chancellorPanel) chancellorPanel.SetActive(false);
+          if(chaperonPanel) chaperonPanel.SetActive(false);
             
-           if (BGblur) BGblur.SetActive(true);
+          if (BGblur) BGblur.SetActive(true);
 
-           tutorialPopup.OpenTutorial("ICE BREAKER", iceBreakerTutorialSprites, () =>
-           {
-               if (iceBreakerScript != null) iceBreakerScript.StartGame();
-           });
-       }
+          tutorialPopup.OpenTutorial("ICE BREAKER", iceBreakerTutorialSprites, () =>
+          {
+              if (iceBreakerScript != null) iceBreakerScript.StartGame();
+          });
+      }
        
-       else if (eventName == "StartBartending")
-       {
-           savedMainScenario = currentScenario;
-           isEventTriggered = true;
-           isBartendingMode = true;
+      else if (eventName == "StartBartending")
+      {
+          savedMainScenario = currentScenario;
+          isEventTriggered = true;
+          isBartendingMode = true;
            
-           if(leftDialoguePanel) leftDialoguePanel.SetActive(false);
-           if(rightDialoguePanel) rightDialoguePanel.SetActive(false);
-           if(chancellorPanel) chancellorPanel.SetActive(false);
-           if(chaperonPanel) chaperonPanel.SetActive(false);
+          if(leftDialoguePanel) leftDialoguePanel.SetActive(false);
+          if(rightDialoguePanel) rightDialoguePanel.SetActive(false);
+          if(chancellorPanel) chancellorPanel.SetActive(false);
+          if(chaperonPanel) chaperonPanel.SetActive(false);
             
-           if (BGblur) BGblur.SetActive(true);
+          if (BGblur) BGblur.SetActive(true);
 
           
-           if (bartendingMiniGameObj != null) 
-           {
-               bartendingMiniGameObj.SetActive(true);
-           }
-       }
+          if (bartendingMiniGameObj != null) 
+          {
+              bartendingMiniGameObj.SetActive(true);
+          }
+      }
        
-       
-       
-       
-       else if (eventName == "StartDodgeGame")
-       {
-           savedMainScenario = currentScenario; 
-           isEventTriggered = true;
+      else if (eventName == "StartDodgeGame")
+      {
+          savedMainScenario = currentScenario; 
+          isEventTriggered = true;
             
-           if(leftDialoguePanel) leftDialoguePanel.SetActive(false);
-           if(rightDialoguePanel) rightDialoguePanel.SetActive(false);
-           if(chancellorPanel) chancellorPanel.SetActive(false);
-           if(chaperonPanel) chaperonPanel.SetActive(false);
+          if(leftDialoguePanel) leftDialoguePanel.SetActive(false);
+          if(rightDialoguePanel) rightDialoguePanel.SetActive(false);
+          if(chancellorPanel) chancellorPanel.SetActive(false);
+          if(chaperonPanel) chaperonPanel.SetActive(false);
             
-           if (BGblur) BGblur.SetActive(true);
+          if (BGblur) BGblur.SetActive(true);
             
-           tutorialPopup.OpenTutorial("DODGE THE QUESTION", dodgeTutorialSprites, () =>
-           {
-               if (dodgeScript != null) dodgeScript.StartGame();
-           });
-       }
+          tutorialPopup.OpenTutorial("DODGE THE QUESTION", dodgeTutorialSprites, () =>
+          {
+              if (dodgeScript != null) dodgeScript.StartGame();
+          });
+      }
     }
 
     public void ResumeFromMiniGame(List<DialogueDataları> results)

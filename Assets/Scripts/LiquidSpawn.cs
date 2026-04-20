@@ -40,7 +40,6 @@ public class LiquidSpawn : MonoBehaviour
     {
         if (isFinished) return;
 
-      
         if (Input.GetMouseButton(0))
         {
             hasStartedPouring = true;
@@ -49,7 +48,6 @@ public class LiquidSpawn : MonoBehaviour
         }
         else if (hasStartedPouring)
         {
-            
             idleTimer += Time.deltaTime;
             
             if (idleTimer >= 3f)
@@ -75,6 +73,8 @@ public class LiquidSpawn : MonoBehaviour
         {
             HangiTarifYapildiKontrolEt();
             
+            KokteylManager.Instance.MasadakiBardagiGuncelle(liquidImage.fillAmount);
+            
             KokteylManager.Instance.NextPhase(); 
         }
     }
@@ -85,13 +85,11 @@ public class LiquidSpawn : MonoBehaviour
         
         foreach (KokteylTarifi tarif in KokteylManager.Instance.tumTarifler)
         {
-          
             if (KokteylManager.Instance.eklenenBuzSayisi == tarif.istenenBuzSayisi &&
                 KokteylManager.Instance.eklenenLimonSayisi == tarif.istenenLimonSayisi &&
                 KokteylManager.Instance.isStirred == tarif.karistirilmaliMi &&
                 KokteylManager.Instance.isShaken == tarif.calkalanmaliMi)
             {
-                
                 if (KokteylManager.Instance.eklenenSoslar.Count == tarif.istenenSoslar.Count)
                 {
                     List<string> kopyaEklenenler = new List<string>(KokteylManager.Instance.eklenenSoslar);

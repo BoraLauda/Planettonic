@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 using System.Collections.Generic;
 
 [System.Serializable]
@@ -41,8 +42,9 @@ public class KokteylManager : MonoBehaviour
     public KeyCode hileTusu = KeyCode.F10; 
     public GameObject miniGameAnaObje;   
 
-    [Header("Kitap UI Bağlantısı")]
+    [Header("Kitap ve Masa UI Bağlantısı")]
     public GameObject kitapButonu; 
+    public Image[] masadakiBardakSivilari; 
     
     [Header("Oyuncunun Ekledikleri (Hafıza)")]
     public int eklenenBuzSayisi = 0;
@@ -142,6 +144,14 @@ public class KokteylManager : MonoBehaviour
         eklenenSoslar.Clear(); 
         
         SivilariTemizle();
+        
+        if (masadakiBardakSivilari != null)
+        {
+            foreach (Image sivi in masadakiBardakSivilari)
+            {
+                if (sivi != null) sivi.fillAmount = 0f;
+            }
+        }
 
         if (kitapButonu != null) kitapButonu.SetActive(true);
     }
@@ -152,11 +162,13 @@ public class KokteylManager : MonoBehaviour
         foreach (GameObject sivi in sivilar) Destroy(sivi);
     }
     
-    private void TemizlikYap()
+    private void SadeceMasayiBirakVeSifirla()
     {
+        if (phase1_Jigger != null) phase1_Jigger.SetActive(false);
+        if (phase2_Stirring != null) phase2_Stirring.SetActive(false);
+        if (phase3_Shaking != null) phase3_Shaking.SetActive(false);
         if (phase4_Pouring != null) phase4_Pouring.SetActive(false);
-        if (kitapButonu != null) kitapButonu.SetActive(false);
-
+        
         if (pouringBardakObjeleri != null)
         {
             foreach (GameObject bardak in pouringBardakObjeleri)
@@ -164,19 +176,40 @@ public class KokteylManager : MonoBehaviour
                 if (bardak != null) bardak.SetActive(false);
             }
         }
-
-        if (miniGameAnaObje != null) miniGameAnaObje.SetActive(false); 
-        else gameObject.SetActive(false);
+        
+        if (phase0_Preparation != null) phase0_Preparation.SetActive(true);
+        if (kitapButonu != null) kitapButonu.SetActive(true);
+        
+        eklenenBuzSayisi = 0;
+        eklenenLimonSayisi = 0;
+        eklenenSoslar.Clear();
+        isShaken = false;
+        isStirred = false;
+        
+        currentPhase = GamePhase.Preparation;
     }
     
+    public void MasadakiBardagiGuncelle(float dolulukOrani)
+    {
+        if (masadakiBardakSivilari != null && secilenBardakIndex < masadakiBardakSivilari.Length)
+        {
+            Image hedefSivi = masadakiBardakSivilari[secilenBardakIndex];
+            if (hedefSivi != null)
+            {
+                hedefSivi.color = GetKokteylRengi();
+                hedefSivi.fillAmount = dolulukOrani;
+            }
+        }
+    }
+
     private void HileyleBitir()
     {
         brainDate bd = FindFirstObjectByType<brainDate>(); 
         if (bd == null) bd = FindObjectOfType<brainDate>(); 
-        
         if (bd != null) bd.EndPixelGame(1f, 1, TargetCharacter.Both); 
         
-        TemizlikYap();
+        MasadakiBardagiGuncelle(1f);
+        SadeceMasayiBirakVeSifirla();
     }
     
     public void EklenenSosuKaydet(string sosAdi)
@@ -230,26 +263,20 @@ public class KokteylManager : MonoBehaviour
 
         if (yapilanTarif != null)
         {
-            Debug.Log("Harika! Kitaptaki " + yapilanTarif.tarifAdi + " tarifini başarıyla yaptın!");
             basariOrani = 1f; 
             kalpKazanildi = 1;
         }
         else
         {
-            Debug.Log("Başarısız! Yaptığın karışım kitaptaki hiçbir tarife uymuyor.");
             basariOrani = 0f; 
             kalpKazanildi = 0;
         }
         
         brainDate bd = FindFirstObjectByType<brainDate>(); 
         if (bd == null) bd = FindObjectOfType<brainDate>(); 
+        if (bd != null) bd.EndPixelGame(basariOrani, kalpKazanildi, TargetCharacter.Both); 
         
-        if (bd != null)
-        {
-            bd.EndPixelGame(basariOrani, kalpKazanildi, TargetCharacter.Both); 
-        }
-        
-        TemizlikYap();
+        SadeceMasayiBirakVeSifirla();
     }
     
     public Color GetKokteylRengi()
