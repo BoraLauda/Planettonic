@@ -1,0 +1,76 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f832b14936fc2048824d9308b14ded6, type: 3}
+  m_Name: Start
+  m_EditorClassIdentifier: 
+  locationName: Arcade
+  locationBackground: {fileID: 21300000, guid: d779b7908bc668e469543f0877a9ba9c, type: 3}
+  allLines:
+  - side: 1
+    characterName: Linus
+    characterSprite: {fileID: 21300000, guid: dc24e77c8220d5b43bd418e911809b3b, type: 3}
+    sentence: 'Hey, Jetty. It is very nice to meet you. Kind of an odd first-date
+      spot huh?
+
+'
+    eventTrigger: 
+    choices: []
+  - side: 0
+    characterName: Jetty
+    characterSprite: {fileID: 1936918675910826544, guid: e8f1130d0e09cef45bb1f9ab49489848, type: 3}
+    sentence: "Nice to meet you too and yeah, not... really my thing but I\u2019m
+      always open to new experiences on new planets. "
+    eventTrigger: 
+    choices: []
+  - side: 1
+    characterName: Linus
+    characterSprite: {fileID: 21300000, guid: dc24e77c8220d5b43bd418e911809b3b, type: 3}
+    sentence: "You\u2019re an entertainer, right? I bet you get to travel quite a
+      bit."
+    eventTrigger: 
+    choices: []
+  - side: 0
+    characterName: Jetty
+    characterSprite: {fileID: 1936918675910826544, guid: e8f1130d0e09cef45bb1f9ab49489848, type: 3}
+    sentence: "Heh, yeah. Although it can be a bit tiring at times, it\u2019s nice
+      that I get to meet so many different people."
+    eventTrigger: 
+    choices: []
+  - side: 1
+    characterName: Linus
+    characterSprite: {fileID: 21300000, guid: dc24e77c8220d5b43bd418e911809b3b, type: 3}
+    sentence: "Ah, I\u2019m kinda jealous. I only get to meet people when they\u2019re
+      tense, pity we are not allowed to drink in court like you would at a lounge.
+      Heh, well, at least not openly."
+    eventTrigger: 
+    choices: []
+  - side: 0
+    characterName: Jetty
+    characterSprite: {fileID: 1936918675910826544, guid: e8f1130d0e09cef45bb1f9ab49489848, type: 3}
+    sentence: "Wow~ Admitting to your crimes so soon? I knew I could be distracting
+      but I\u2019ve never gotten a confession this quick."
+    eventTrigger: 
+    choices: []
+  - side: 1
+    characterName: Linus
+    characterSprite: {fileID: 21300000, guid: dc24e77c8220d5b43bd418e911809b3b, type: 3}
+    sentence: "Well, it\u2019s not that big of a secret, but I must say, I do tend
+      to get loose around a Neptunian so pretty."
+    eventTrigger: 
+    choices: []
+  - side: 0
+    characterName: Jetty
+    characterSprite: {fileID: 1936918675910826544, guid: e8f1130d0e09cef45bb1f9ab49489848, type: 3}
+    sentence: Hah. You flatter me.
+    eventTrigger: StartClawMachine
+    choices: []
+  nextScenario: {fileID: 11400000, guid: f34092d5e13d5ad46b35ff6f323d53ad, type: 2}
