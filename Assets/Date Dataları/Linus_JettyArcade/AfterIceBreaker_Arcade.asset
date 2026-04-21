@@ -36,12 +36,12 @@ MonoBehaviour:
     - choices: Any other silly childhood habits that stuck with you?
       nextScenario: {fileID: 11400000, guid: eb6c2a2291f503c45b987afb3bc8aba0, type: 2}
       target: 1
-      starReward: 1
+      starReward: 0.5
       heartReward: 0
     - choices: "I think it\u2019s good to hold onto some childish tendencies."
       nextScenario: {fileID: 11400000, guid: 8e5ec08582e9c924aa81cad08f064c0d, type: 2}
       target: 1
-      starReward: 2
+      starReward: 1
       heartReward: 0
     - choices: Icebreakers tend to get boring after a while, though.
       nextScenario: {fileID: 11400000, guid: 772fb97634733c740b66bb9c0a375db8, type: 2}

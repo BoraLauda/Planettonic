@@ -97,11 +97,11 @@ MonoBehaviour:
     - choices: Best not to get drunk around you then.
       nextScenario: {fileID: 11400000, guid: 2bdc76bae5705b346a296722f1faa0a1, type: 2}
       target: 0
-      starReward: 1
+      starReward: 0.5
       heartReward: 0
     - choices: You seem to get a rise out of that.
       nextScenario: {fileID: 11400000, guid: f27fe006dde73b04f8a7ce837ccc35e0, type: 2}
       target: 0
-      starReward: 2
+      starReward: 1
       heartReward: 0
   nextScenario: {fileID: 0}

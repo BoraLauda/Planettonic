@@ -22,6 +22,10 @@ MonoBehaviour:
     bonusStars: 1
   - locationName: Arcade
     bonusStars: 1
+  - locationName: Bar
+    bonusStars: 1
+  - locationName: House
+    bonusStars: 1
   nameImage: {fileID: 21300000, guid: 077ae3aef0cae16468d788ca4f219e5c, type: 3}
   listImage: {fileID: 21300000, guid: b5a5cc5d83848d843aadeaf9b5e083f1, type: 3}
   infoImage: {fileID: 21300000, guid: cf07af3557b7ead429132313bd835c06, type: 3}

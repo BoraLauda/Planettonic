@@ -1,0 +1,101 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f832b14936fc2048824d9308b14ded6, type: 3}
+  m_Name: AfterCocktail
+  m_EditorClassIdentifier: 
+  locationName: 
+  locationBackground: {fileID: 0}
+  allLines:
+  - side: 0
+    characterName: Jetty
+    characterSprite: {fileID: 1936918675910826544, guid: e8f1130d0e09cef45bb1f9ab49489848, type: 3}
+    sentence: I have to ask, Linus. You seem like a fair, intelligent man. Yet you
+      seem kind of stuck up on planetary stereotypes. Why is that the case?
+    eventTrigger: 
+    choices: []
+  - side: 1
+    characterName: Linus
+    characterSprite: {fileID: 21300000, guid: dc24e77c8220d5b43bd418e911809b3b, type: 3}
+    sentence: "Ah, you noticed. I really don\u2019t mean to be that way but I guess
+      my job kind of revolves around stereotyping people in one way or another. I
+      can\u2019t help but do the same in my day to day life."
+    eventTrigger: 
+    choices: []
+  - side: 0
+    characterName: Jetty
+    characterSprite: {fileID: 0}
+    sentence: "That\u2019s understandable, mine does too. But I sense something else
+      underneath it. I mean, the way you speak-"
+    eventTrigger: 
+    choices: []
+  - side: 1
+    characterName: Linus
+    characterSprite: {fileID: 0}
+    sentence: Are you psychoanalyzing me right now?
+    eventTrigger: 
+    choices: []
+  - side: 1
+    characterName: Linus
+    characterSprite: {fileID: 0}
+    sentence: "I\u2019m guessing you don\u2019t give out that compliment to anyone,
+      huh?"
+    eventTrigger: 
+    choices: []
+  - side: 0
+    characterName: Jetty
+    characterSprite: {fileID: 0}
+    sentence: "Ah maybe? I can\u2019t help myself either, it seems. I\u2019m not
+      judging you for it, to be clear. I\u2019m just curious. You\u2019re.. interesting."
+    eventTrigger: 
+    choices: []
+  - side: 1
+    characterName: Linus
+    characterSprite: {fileID: 0}
+    sentence: "I\u2019m guessing you don\u2019t give out that compliment to anyone,
+      huh?"
+    eventTrigger: 
+    choices: []
+  - side: 0
+    characterName: Jetty
+    characterSprite: {fileID: 0}
+    sentence: "I really don\u2019t, and it really is a compliment. You intrigue me."
+    eventTrigger: 
+    choices: []
+  - side: 1
+    characterName: Linus
+    characterSprite: {fileID: 0}
+    sentence: Is that a good thing, though? Considering the context of our current
+      situation...
+    eventTrigger: 
+    choices: []
+  - side: 0
+    characterName: Jetty
+    characterSprite: {fileID: 0}
+    sentence: 
+    eventTrigger: 
+    choices:
+    - choices: Most of the time, no.
+      nextScenario: {fileID: 11400000, guid: 8b16c550bb4159446ba210064461b8b7, type: 2}
+      target: 0
+      starReward: 1
+      heartReward: 0
+    - choices: Darling, romance is nothing if not intriguing.
+      nextScenario: {fileID: 11400000, guid: 3576f20d63083b24b9ba3ce3e3201301, type: 2}
+      target: 0
+      starReward: 0.5
+      heartReward: 0
+    - choices: It depends on whether I can truly trust you or not.
+      nextScenario: {fileID: 11400000, guid: 9715622c6471d9a419748bdcb898f39a, type: 2}
+      target: 0
+      starReward: 0
+      heartReward: 0
+  nextScenario: {fileID: 0}

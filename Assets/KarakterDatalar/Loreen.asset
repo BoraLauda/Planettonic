@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52414fa3869acd040b0ed6b6d3d42937, type: 3}
+  m_Name: Loreen
+  m_EditorClassIdentifier: 
+  characterName: Loreen
+  profileIcon: {fileID: -6078847221198206883, guid: 060ce1a822b54874482426dfc33b0bc0, type: 3}
+  dodgeTheQuestionIkonu: {fileID: -1828969362478291655, guid: 5ead717043e661141ab437c3976ff9fa, type: 3}
+  menuMinigameIkonu: {fileID: -1828969362478291655, guid: 5ead717043e661141ab437c3976ff9fa, type: 3}
+  portraitImage: {fileID: 21300000, guid: 146a6ce1894c7084984f7771ba7e263e, type: 3}
+  locationPreferences:
+  - locationName: Restaurant
+    bonusStars: 1
+  nameImage: {fileID: 0}
+  listImage: {fileID: 0}
+  infoImage: {fileID: 0}
+  hatedFoods: []
+  iceBreakerGood:
+  - {fileID: 11400000, guid: 7ed2f308005e2934ab8f7f87d898d754, type: 2}
+  - {fileID: 11400000, guid: 95afde117dfb926449b68c9bbb237e8b, type: 2}
+  iceBreakerMid:
+  - {fileID: 11400000, guid: 1982fbfc695e482438d2a7c9241ae510, type: 2}
+  - {fileID: 11400000, guid: 6cacd7f6ea4721b4f9fe14ff92f23e9c, type: 2}
+  iceBreakerBad:
+  - {fileID: 11400000, guid: 47e88d3e93c5b7945a8ed9ef3fb739ab, type: 2}
+  - {fileID: 11400000, guid: 129b69c30f923b642988577e2a976757, type: 2}
+  dodgeQuestions:
+  - {fileID: 11400000, guid: 1be374ca8a46aa14d8e50fd223a18a15, type: 2}
+  - {fileID: 11400000, guid: dca7ccf4c85960e4fa58be6d5a4b7c38, type: 2}
