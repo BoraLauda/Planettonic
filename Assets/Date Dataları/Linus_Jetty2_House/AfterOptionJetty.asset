@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f832b14936fc2048824d9308b14ded6, type: 3}
+  m_Name: AfterOptionJetty
+  m_EditorClassIdentifier: 
+  locationName: 
+  locationBackground: {fileID: 0}
+  allLines:
+  - side: 2
+    characterName: Counselor
+    characterSprite: {fileID: 0}
+    sentence: We now have a premium second-date game for you two to play. I promise,
+      it is a lot more stimulating than the stuff I had you guys play the first time.
+    eventTrigger: 
+    choices: []
+  - side: 0
+    characterName: Jetty
+    characterSprite: {fileID: 1936918675910826544, guid: e8f1130d0e09cef45bb1f9ab49489848, type: 3}
+    sentence: "Alright, let\u2019s see it."
+    eventTrigger: StartPixelGame
+    choices: []
+  nextScenario: {fileID: 11400000, guid: c03f5c42ef3747d4786537bc9b4363ef, type: 2}

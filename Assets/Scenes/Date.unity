@@ -19571,6 +19571,11 @@ MonoBehaviour:
     characterB: {fileID: 11400000, guid: 5f6e0fde49813654aa1d61918d175f26, type: 2}
     successScenario: {fileID: 11400000, guid: 6d82b8d27d70f454da59d69dcad0e2e7, type: 2}
     continuationScenario: {fileID: 11400000, guid: 9602219198a39d54da5479231d130b0f, type: 2}
+  - ciftAdi: Loreen ve Ary
+    characterA: {fileID: 11400000, guid: 52f97840cc872804392c25a1f2b8175b, type: 2}
+    characterB: {fileID: 11400000, guid: d9880c6a901c8d643a786ea1b19f0372, type: 2}
+    successScenario: {fileID: 11400000, guid: 83bd953d67b80e8489e6e364a9041077, type: 2}
+    continuationScenario: {fileID: 11400000, guid: bf33c344cea61054e8cca56c2c8e7172, type: 2}
 --- !u!82 &756997994
 AudioSource:
   m_ObjectHideFlags: 0
@@ -27175,7 +27180,15 @@ MonoBehaviour:
   - ciftAdi: Jetty Linus
     characterA: {fileID: 11400000, guid: 74736f0dd50e8ce448a5eb50e16802ba, type: 2}
     characterB: {fileID: 11400000, guid: 5f6e0fde49813654aa1d61918d175f26, type: 2}
-    specificFailScenario: {fileID: 11400000, guid: eed3b5b1296b52249b17e135dab77ef8, type: 2}
+    specificFailScenario: {fileID: 11400000, guid: 567ce53e961ca8d4e88789dc0eede723, type: 2}
+  - ciftAdi: Jetty Ary
+    characterA: {fileID: 11400000, guid: 74736f0dd50e8ce448a5eb50e16802ba, type: 2}
+    characterB: {fileID: 11400000, guid: d9880c6a901c8d643a786ea1b19f0372, type: 2}
+    specificFailScenario: {fileID: 11400000, guid: a28d85af1911cf942b544239bfb26ad8, type: 2}
+  - ciftAdi: Loreen Ary
+    characterA: {fileID: 11400000, guid: 52f97840cc872804392c25a1f2b8175b, type: 2}
+    characterB: {fileID: 11400000, guid: d9880c6a901c8d643a786ea1b19f0372, type: 2}
+    specificFailScenario: {fileID: 11400000, guid: f0fc909b4d5a2f94b85ea4251ec7a2ac, type: 2}
   defaultFailScenario: {fileID: 0}
   dodgeScript: {fileID: 1190985220}
   leftDaterImage: {fileID: 370962506}
@@ -54940,7 +54953,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2000811911
 RectTransform:
   m_ObjectHideFlags: 0
@@ -57989,7 +58002,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2111466658
 RectTransform:
   m_ObjectHideFlags: 0

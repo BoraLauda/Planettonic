@@ -61,22 +61,7 @@ MonoBehaviour:
     sentence: "I didn\u2019t mean to sound that judgemental. I serve my fair share
       of that same scum most often than not."
     eventTrigger: 
-    choices:
-    - choices: Collecting dirty secrets is one of my many specialties.
-      nextScenario: {fileID: 11400000, guid: 3671e8d91adfe9f458e3863ccfcab83d, type: 2}
-      target: 0
-      starReward: 0
-      heartReward: 0
-    - choices: Best not to get drunk around you then.
-      nextScenario: {fileID: 11400000, guid: 1e8a2ea3ea1383e42a4bfb1ca2544105, type: 2}
-      target: 0
-      starReward: 0
-      heartReward: 0
-    - choices: You seem to get a rise out of that.
-      nextScenario: {fileID: 11400000, guid: 8215476e0fb5df641be7aed0fe5b3496, type: 2}
-      target: 0
-      starReward: 0
-      heartReward: 0
+    choices: []
   - side: 1
     characterName: Linus
     characterSprite: {fileID: 0}
@@ -112,11 +97,11 @@ MonoBehaviour:
     - choices: Best not to get drunk around you then.
       nextScenario: {fileID: 11400000, guid: 1e8a2ea3ea1383e42a4bfb1ca2544105, type: 2}
       target: 0
-      starReward: 0
+      starReward: 0.5
       heartReward: 0
     - choices: You seem to get a rise out of that.
       nextScenario: {fileID: 11400000, guid: 8215476e0fb5df641be7aed0fe5b3496, type: 2}
       target: 0
-      starReward: 0
+      starReward: 1
       heartReward: 0
   nextScenario: {fileID: 0}

@@ -1,0 +1,82 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f832b14936fc2048824d9308b14ded6, type: 3}
+  m_Name: Start_AryLor_Restaurant
+  m_EditorClassIdentifier: 
+  locationName: Restaurant
+  locationBackground: {fileID: 21300000, guid: f8bdb2b11a144d94f9ac89625b2a01f4, type: 3}
+  allLines:
+  - side: 1
+    characterName: Ary
+    characterSprite: {fileID: 21300000, guid: ece41423a199ba04f8804d355c231cbb, type: 3}
+    sentence: 'Hey, Jetty. It is very nice to meet you. Beautiful venue, huh?
+
+'
+    eventTrigger: 
+    choices: []
+  - side: 0
+    characterName: Loreen
+    characterSprite: {fileID: 21300000, guid: 146a6ce1894c7084984f7771ba7e263e, type: 3}
+    sentence: "Nice to meet you too. I\u2019ve been to Venus quite a few times, crazy
+      to think I haven\u2019t come here once.\r\n"
+    eventTrigger: 
+    choices: []
+  - side: 1
+    characterName: Ary
+    characterSprite: {fileID: 0}
+    sentence: "You\u2019re an entertainer, right? I bet you get to travel quite a
+      bit."
+    eventTrigger: 
+    choices: []
+  - side: 0
+    characterName: Loreen
+    characterSprite: {fileID: 0}
+    sentence: "Heh, yeah. Although it can be a bit tiring at times, it\u2019s nice
+      that I get to meet so many different people."
+    eventTrigger: 
+    choices: []
+  - side: 1
+    characterName: Ary
+    characterSprite: {fileID: 0}
+    sentence: "Ah, I\u2019m kinda jealous. I only get to meet people when they\u2019re
+      tense, pity we are not allowed to drink in court like you would at a lounge.
+      Heh, well, at least not openly."
+    eventTrigger: 
+    choices: []
+  - side: 0
+    characterName: Loreen
+    characterSprite: {fileID: 0}
+    sentence: "Wow~ Admitting to your crimes so soon? I knew I could be distracting
+      but I\u2019ve never gotten a confession this quick."
+    eventTrigger: 
+    choices: []
+  - side: 1
+    characterName: Ary
+    characterSprite: {fileID: 0}
+    sentence: "Well, it\u2019s not that big of a secret, but I must say, I do tend
+      to get loose around a Neptunian so pretty."
+    eventTrigger: 
+    choices: []
+  - side: 0
+    characterName: Loreen
+    characterSprite: {fileID: 0}
+    sentence: Hah. You flatter me.
+    eventTrigger: 
+    choices: []
+  - side: 3
+    characterName: Chaperon
+    characterSprite: {fileID: 0}
+    sentence: I see you are getting on quite well already. Shall we get started with
+      some appetizers?
+    eventTrigger: StartMenuGame
+    choices: []
+  nextScenario: {fileID: 0}

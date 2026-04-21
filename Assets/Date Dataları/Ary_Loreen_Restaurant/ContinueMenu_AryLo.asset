@@ -1,0 +1,107 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f832b14936fc2048824d9308b14ded6, type: 3}
+  m_Name: ContinueMenu_AryLo
+  m_EditorClassIdentifier: 
+  locationName: 
+  locationBackground: {fileID: 0}
+  allLines:
+  - side: 3
+    characterName: Chaperon
+    characterSprite: {fileID: 0}
+    sentence: "Damn, they\u2019re both such hotties. I sometimes wish I was a mere
+      counselor than a higher up. Then I\u2019d get to hang with both of these bombshells."
+    eventTrigger: 
+    choices: []
+  - side: 2
+    characterName: Counselor
+    characterSprite: {fileID: 0}
+    sentence: Well, wanna swap for the day?
+    eventTrigger: 
+    choices: []
+  - side: 3
+    characterName: Chaperon
+    characterSprite: {fileID: 0}
+    sentence: F*** no!
+    eventTrigger: 
+    choices: []
+  - side: 2
+    characterName: Counselor
+    characterSprite: {fileID: 0}
+    sentence: Oh, uh. Okay then.
+    eventTrigger: 
+    choices: []
+  - side: 0
+    characterName: Loreen
+    characterSprite: {fileID: 21300000, guid: 146a6ce1894c7084984f7771ba7e263e, type: 3}
+    sentence: So, a lawyer, huh? A lawyer that drinks, nonetheless. Are you one of
+      those shitty ones or do you have dignity?
+    eventTrigger: 
+    choices: []
+  - side: 1
+    characterName: Ary
+    characterSprite: {fileID: 21300000, guid: ece41423a199ba04f8804d355c231cbb, type: 3}
+    sentence: "Wow, so direct. You know, I tend to get mostly respectable clients
+      but of course I have to defend the scum of the earth from time to time too.
+      They\u2019re mostly the ones that pay for my rent so, can\u2019t really complain."
+    eventTrigger: 
+    choices: []
+  - side: 0
+    characterName: Loreen
+    characterSprite: {fileID: 0}
+    sentence: "I didn\u2019t mean to sound that judgemental. I serve my fair share
+      of that same scum most often than not."
+    eventTrigger: 
+    choices: []
+  - side: 1
+    characterName: Ary
+    characterSprite: {fileID: 0}
+    sentence: You pour their drinks, I cover up their secrets. Oh to be an interplanetary
+      piggy and live a life so glamorous.
+    eventTrigger: 
+    choices: []
+  - side: 0
+    characterName: Loreen
+    characterSprite: {fileID: 0}
+    sentence: You think their lives are glamorous?
+    eventTrigger: 
+    choices: []
+  - side: 1
+    characterName: Ary
+    characterSprite: {fileID: 0}
+    sentence: "\u2018Course not. I bet I know more about their dirty secrets than
+      you do. A drunk man is an honest man, a desperate man however, is willing to
+      give so much more than honesty."
+    eventTrigger: 
+    choices: []
+  - side: 0
+    characterName: Loreen
+    characterSprite: {fileID: 0}
+    sentence: 
+    eventTrigger: 
+    choices:
+    - choices: Collecting dirty secrets is one of my many specialties.
+      nextScenario: {fileID: 11400000, guid: 3464f9ea9ea96d84fb3c991a79fb0808, type: 2}
+      target: 0
+      starReward: 0
+      heartReward: 0
+    - choices: Best not to get drunk around you then.
+      nextScenario: {fileID: 11400000, guid: 0f35e0cadebd46f46a7306ab6264ebbe, type: 2}
+      target: 0
+      starReward: 0.5
+      heartReward: 0
+    - choices: You seem to get a rise out of that.
+      nextScenario: {fileID: 11400000, guid: 2dc3ba3b6c5c7b346a9c747d56fe0ad0, type: 2}
+      target: 0
+      starReward: 1
+      heartReward: 0
+  nextScenario: {fileID: 0}

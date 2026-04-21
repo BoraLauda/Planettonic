@@ -1,0 +1,91 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f832b14936fc2048824d9308b14ded6, type: 3}
+  m_Name: AfterPixelGame
+  m_EditorClassIdentifier: 
+  locationName: 
+  locationBackground: {fileID: 0}
+  allLines:
+  - side: 1
+    characterName: Linus
+    characterSprite: {fileID: 21300000, guid: dc24e77c8220d5b43bd418e911809b3b, type: 3}
+    sentence: "You know, I have to be honest here. I actually never thought I\u2019d
+      meet someone like you in a program like this."
+    eventTrigger: 
+    choices: []
+  - side: 0
+    characterName: Jetty
+    characterSprite: {fileID: 1936918675910826544, guid: e8f1130d0e09cef45bb1f9ab49489848, type: 3}
+    sentence: Likewise. I thought I was going to be meeting a bunch of clueless people
+      who are just here for an easy hook-up.
+    eventTrigger: 
+    choices: []
+  - side: 1
+    characterName: Linus
+    characterSprite: {fileID: 0}
+    sentence: "Oh, you weren\u2019t looking for a hook-up then?"
+    eventTrigger: 
+    choices: []
+  - side: 0
+    characterName: Jetty
+    characterSprite: {fileID: 0}
+    sentence: "That.. is not what I said. I see what you\u2019re trying to do here."
+    eventTrigger: 
+    choices: []
+  - side: 1
+    characterName: Linus
+    characterSprite: {fileID: 0}
+    sentence: Does it bother you? I can stop.
+    eventTrigger: 
+    choices: []
+  - side: 0
+    characterName: Jetty
+    characterSprite: {fileID: 0}
+    sentence: "No, not at all. I have to warn you, though. I\u2019m probably not
+      what you think I am."
+    eventTrigger: 
+    choices: []
+  - side: 1
+    characterName: Linus
+    characterSprite: {fileID: 0}
+    sentence: "What if that\u2019s exactly what I want? Someone who isn\u2019t at
+      all what they seem."
+    eventTrigger: 
+    choices: []
+  - side: 0
+    characterName: Jetty
+    characterSprite: {fileID: 0}
+    sentence: Do you want something different than what you see right now?
+    eventTrigger: 
+    choices: []
+  - side: 1
+    characterName: Linus
+    characterSprite: {fileID: 0}
+    sentence: 
+    eventTrigger: 
+    choices:
+    - choices: "What if I want both what I see and what I don\u2019t?"
+      nextScenario: {fileID: 11400000, guid: efc696affcee52948af18eb18d995d0d, type: 2}
+      target: 1
+      starReward: 1
+      heartReward: 0
+    - choices: "Depends on what you\u2019re hiding under that pretty exterior."
+      nextScenario: {fileID: 11400000, guid: 00ff19991b1d42d47924f064c985ff65, type: 2}
+      target: 1
+      starReward: 0.5
+      heartReward: 0
+    - choices: I can tell you have a mask up.
+      nextScenario: {fileID: 11400000, guid: a41b4c79d00c89b449660ae56431f229, type: 2}
+      target: 1
+      starReward: 0
+      heartReward: 0
+  nextScenario: {fileID: 0}

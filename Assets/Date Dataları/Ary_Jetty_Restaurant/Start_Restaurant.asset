@@ -1,0 +1,87 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f832b14936fc2048824d9308b14ded6, type: 3}
+  m_Name: Start_Restaurant
+  m_EditorClassIdentifier: 
+  locationName: Restaurant
+  locationBackground: {fileID: 21300000, guid: f8bdb2b11a144d94f9ac89625b2a01f4, type: 3}
+  allLines:
+  - side: 1
+    characterName: Ary
+    characterSprite: {fileID: 21300000, guid: ece41423a199ba04f8804d355c231cbb, type: 3}
+    sentence: Hi, Jetty. You look really pretty in that outfit.
+    eventTrigger: 
+    choices: []
+  - side: 0
+    characterName: Jetty
+    characterSprite: {fileID: 1936918675910826544, guid: e8f1130d0e09cef45bb1f9ab49489848, type: 3}
+    sentence: Hey, thank you. I like your fit too.
+    eventTrigger: 
+    choices: []
+  - side: 1
+    characterName: Ary
+    characterSprite: {fileID: 0}
+    sentence: "You\u2019re a performer, right? I wouldn\u2019t imagine that someone
+      like you would struggle to meet new people. Why are you here?"
+    eventTrigger: 
+    choices: []
+  - side: 0
+    characterName: Jetty
+    characterSprite: {fileID: 0}
+    sentence: Weird assumption that I do, and what do you mean someone like me?
+    eventTrigger: 
+    choices: []
+  - side: 1
+    characterName: Ary
+    characterSprite: {fileID: 0}
+    sentence: "You know, a showman, a communicator. Someone you wouldn\u2019t expect
+      to meet here. Are you trying to improve your mind-reading skills or what?"
+    eventTrigger: 
+    choices: []
+  - side: 0
+    characterName: Jetty
+    characterSprite: {fileID: 0}
+    sentence: "Yeah, I\u2019m not doing this first thing into a date."
+    eventTrigger: 
+    choices: []
+  - side: 1
+    characterName: Ary
+    characterSprite: {fileID: 0}
+    sentence: Oh, come on. Never been called out before?
+    eventTrigger: 
+    choices: []
+  - side: 0
+    characterName: Jetty
+    characterSprite: {fileID: 0}
+    sentence: I have but it seems like you need it more than I do, know-it-all. Counselor,
+      I would like to leave please.
+    eventTrigger: 
+    choices: []
+  - side: 1
+    characterName: Ary
+    characterSprite: {fileID: 0}
+    sentence: Wow, so easily offended and boring. I guess I want out too.
+    eventTrigger: 
+    choices: []
+  - side: 0
+    characterName: Jetty
+    characterSprite: {fileID: 0}
+    sentence: Great, have a great day.
+    eventTrigger: 
+    choices: []
+  - side: 1
+    characterName: Ary
+    characterSprite: {fileID: 0}
+    sentence: Right, see ya.
+    eventTrigger: 
+    choices: []
+  nextScenario: {fileID: 0}

@@ -59,6 +59,6 @@ MonoBehaviour:
     characterName: Chaperon
     characterSprite: {fileID: 0}
     sentence: "Niceeee, you\u2019re getting good at this."
-    eventTrigger: 
+    eventTrigger: StartIceBreaker
     choices: []
   nextScenario: {fileID: 11400000, guid: 793051a46b678fb4f939b2f40ba8145c, type: 2}
