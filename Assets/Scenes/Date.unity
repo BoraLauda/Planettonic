@@ -27175,7 +27175,7 @@ MonoBehaviour:
   - ciftAdi: Jetty Linus
     characterA: {fileID: 11400000, guid: 74736f0dd50e8ce448a5eb50e16802ba, type: 2}
     characterB: {fileID: 11400000, guid: 5f6e0fde49813654aa1d61918d175f26, type: 2}
-    specificFailScenario: {fileID: 11400000, guid: 567ce53e961ca8d4e88789dc0eede723, type: 2}
+    specificFailScenario: {fileID: 11400000, guid: eed3b5b1296b52249b17e135dab77ef8, type: 2}
   defaultFailScenario: {fileID: 0}
   dodgeScript: {fileID: 1190985220}
   leftDaterImage: {fileID: 370962506}
