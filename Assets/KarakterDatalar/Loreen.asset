@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Loreen
   m_EditorClassIdentifier: 
   characterName: Loreen
-  profileIcon: {fileID: -6078847221198206883, guid: 060ce1a822b54874482426dfc33b0bc0, type: 3}
+  profileIcon: {fileID: 21300000, guid: 060ce1a822b54874482426dfc33b0bc0, type: 3}
   dodgeTheQuestionIkonu: {fileID: -1828969362478291655, guid: 5ead717043e661141ab437c3976ff9fa, type: 3}
   menuMinigameIkonu: {fileID: -1828969362478291655, guid: 5ead717043e661141ab437c3976ff9fa, type: 3}
   portraitImage: {fileID: 21300000, guid: 146a6ce1894c7084984f7771ba7e263e, type: 3}

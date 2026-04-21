@@ -12,7 +12,8 @@ public class CharacterSlots : MonoBehaviour
 
     private GameObject currentLockedUI; 
 
-    public void UpdateSlotState(Characters selectedLeft, Characters selectedRight, bool isUnlocked, GameObject lockedPrefab)
+    
+    public void UpdateSlotState(Characters selectedLeft, Characters selectedRight, bool isUnlocked, GameObject lockedPrefab, bool isGrayedOut = false)
     {
         if (currentLockedUI != null) Destroy(currentLockedUI);
 
@@ -37,12 +38,13 @@ public class CharacterSlots : MonoBehaviour
             }
             return;
         }
-
-        myButton.interactable = true;
+        
+        myButton.interactable = !isGrayedOut;
         myImage.enabled = true; 
         
         if (myProfile != null) myImage.sprite = myProfile.profileIcon;
-        myImage.color = Color.white;
+        
+        myImage.color = isGrayedOut ? Color.gray : Color.white;
 
         if (planetIcon != null) planetIcon.SetActive(true); 
 

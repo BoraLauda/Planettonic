@@ -177,41 +177,58 @@ public class APPler : MonoBehaviour
     
     void RefreshSlots()
     {
-        if (IoData == null || ElroiData == null) return;
+       if (IoData == null || ElroiData == null) return;
 
         string char1 = IoData.characterName;
         string char2 = ElroiData.characterName;
-        string coupleKey = string.Compare(char1, char2) < 0 ? 
-            "CoupleLevel_" + char1 + "_" + char2 : 
-            "CoupleLevel_" + char2 + "_" + char1;
+        
+        string dateKey = string.Compare(char1, char2) < 0 ? 
+            "DateLevel_" + char1 + "_" + char2 : 
+            "DateLevel_" + char2 + "_" + char1;
 
-        int ioElroiLevel = PlayerPrefs.GetInt(coupleKey, 0);
+        int ioElroiLevel = PlayerPrefs.GetInt(dateKey, 0);
         bool isFirstDateDone = ioElroiLevel > 0;
 
         for (int i = 0; i < allSlots.Count; i++)
         {
             if (allSlots[i] == null || allSlots[i].myProfile == null)
             {
-                if (allSlots[i] != null) allSlots[i].UpdateSlotState(selectedLeft, selectedRight, false, lockedPrefab);
+                if (allSlots[i] != null) allSlots[i].UpdateSlotState(selectedLeft, selectedRight, false, lockedPrefab, false);
                 continue;
             }
 
             bool isUnlocked = false;
+            bool isGrayedOut = false; 
 
             if (allSlots[i].myProfile == IoData || allSlots[i].myProfile == ElroiData)
             {
                 isUnlocked = true; 
             }
-            else if (allSlots[i].myProfile == JettyData || allSlots[i].myProfile == LinusData)
+            else
             {
                 isUnlocked = isFirstDateDone; 
             }
-            else
+
+            string cName = allSlots[i].myProfile.characterName;
+
+            
+            if (PlayerPrefs.GetInt("PlayedCouple_Ary_Jetty", 0) == 1)
             {
-                isUnlocked = false; 
+                if (cName == "Jetty")
+                {
+                    bool isArySelected = (selectedLeft != null && selectedLeft.characterName == "Ary") || 
+                                         (selectedRight != null && selectedRight.characterName == "Ary");
+                    if (isArySelected) isGrayedOut = true;
+                }
+                else if (cName == "Ary")
+                {
+                    bool isJettySelected = (selectedLeft != null && selectedLeft.characterName == "Jetty") || 
+                                           (selectedRight != null && selectedRight.characterName == "Jetty");
+                    if (isJettySelected) isGrayedOut = true;
+                }
             }
 
-            allSlots[i].UpdateSlotState(selectedLeft, selectedRight, isUnlocked, lockedPrefab);
+            allSlots[i].UpdateSlotState(selectedLeft, selectedRight, isUnlocked, lockedPrefab, isGrayedOut);
         }
     }
     
@@ -283,34 +300,49 @@ public class APPler : MonoBehaviour
 
         string char1 = selectedLeft.characterName;
         string char2 = selectedRight.characterName;
-        string coupleKey = string.Compare(char1, char2) < 0 ? 
-            "CoupleLevel_" + char1 + "_" + char2 : 
-            "CoupleLevel_" + char2 + "_" + char1;
+        
+        string dateKey = string.Compare(char1, char2) < 0 ? 
+            "DateLevel_" + char1 + "_" + char2 : 
+            "DateLevel_" + char2 + "_" + char1;
 
-        int currentLevel = PlayerPrefs.GetInt(coupleKey, 0);
+        int currentLevel = PlayerPrefs.GetInt(dateKey, 0);
 
-        if ((selectedLeft == IoData && selectedRight == ElroiData || selectedLeft == ElroiData && selectedRight == IoData) && currentLevel == 0)
-        {
-            SetButtonState(btnRestoran, true);
-            SetButtonState(btnArcade, false);
-            SetButtonState(btnBar, false);
-            SetButtonState(btnEv, false);
-            return;
-        }
+        bool isIoAndElroi = (selectedLeft == IoData && selectedRight == ElroiData) || 
+                            (selectedLeft == ElroiData && selectedRight == IoData);
 
         if (currentLevel == 0)
         {
-            SetButtonState(btnRestoran, true);
-            SetButtonState(btnArcade, true);
-            SetButtonState(btnBar, false);
-            SetButtonState(btnEv, false);
+            if (isIoAndElroi)
+            {
+                SetButtonState(btnRestoran, true);
+                SetButtonState(btnArcade, false);
+                SetButtonState(btnBar, false);
+                SetButtonState(btnEv, false);
+            }
+            else
+            {
+                SetButtonState(btnRestoran, true);
+                SetButtonState(btnArcade, true);
+                SetButtonState(btnBar, false);
+                SetButtonState(btnEv, false);
+            }
         }
         else if (currentLevel == 1)
         {
-            SetButtonState(btnRestoran, false);
-            SetButtonState(btnArcade, false);
-            SetButtonState(btnBar, true);
-            SetButtonState(btnEv, true);
+            if (isIoAndElroi)
+            {
+                SetButtonState(btnRestoran, false);
+                SetButtonState(btnArcade, false);
+                SetButtonState(btnBar, false); 
+                SetButtonState(btnEv, true);   
+            }
+            else
+            {
+                SetButtonState(btnRestoran, false);
+                SetButtonState(btnArcade, false);
+                SetButtonState(btnBar, true);
+                SetButtonState(btnEv, true);
+            }
         }
         else 
         {
@@ -334,6 +366,19 @@ public class APPler : MonoBehaviour
         DateSettings.leftChar = selectedLeft;
         DateSettings.rightChar = selectedRight;
         DateSettings.selectedScenario = defaultScenario; 
+
+        
+        if (selectedLeft != null && selectedRight != null)
+        {
+            string c1 = selectedLeft.characterName;
+            string c2 = selectedRight.characterName;
+            string playedCoupleKey = string.Compare(c1, c2) < 0 ? 
+                "PlayedCouple_" + c1 + "_" + c2 : 
+                "PlayedCouple_" + c2 + "_" + c1;
+            
+            PlayerPrefs.SetInt(playedCoupleKey, 1);
+            PlayerPrefs.Save();
+        }
 
         foreach (var match in coupleScenarios)
         {

@@ -93,7 +93,7 @@ public class DropSlots : MonoBehaviour, IDropHandler, IBeginDragHandler, IDragHa
 
     bool IsDrink(FoodType type)
     {
-        return (type == FoodType.Wine || type == FoodType.SoftDrink || type == FoodType.Beer);
+        return (type == FoodType.Wine || type == FoodType.SoftDrink || type == FoodType.Beer || type == FoodType.Limonata);
     }
 
     public void ResetSlot()

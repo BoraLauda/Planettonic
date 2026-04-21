@@ -35,4 +35,4 @@ MonoBehaviour:
     sentence: I guess we are not, at least not yet.
     eventTrigger: StartPixelGame
     choices: []
-  nextScenario: {fileID: 0}
+  nextScenario: {fileID: 11400000, guid: 807ff7fb3a197a148b6938983d5939e2, type: 2}

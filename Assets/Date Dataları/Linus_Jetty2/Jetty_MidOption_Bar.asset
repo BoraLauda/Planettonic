@@ -48,4 +48,4 @@ MonoBehaviour:
     sentence: Hmm, good. See, you understand.
     eventTrigger: StartPixelGame
     choices: []
-  nextScenario: {fileID: 0}
+  nextScenario: {fileID: 11400000, guid: 807ff7fb3a197a148b6938983d5939e2, type: 2}

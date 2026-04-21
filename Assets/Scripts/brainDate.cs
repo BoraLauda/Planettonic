@@ -28,9 +28,6 @@ public class brainDate : MonoBehaviour
     public Transform introLeftStarsCont; 
     public Transform introRightStarsCont;
     
-    public GameObject bartendingMiniGameObj; 
-    private bool isBartendingMode = false;
-    
     public TutorialPopup tutorialPopup; 
     
     public List<Sprite> menuTutorialSprites; 
@@ -42,6 +39,12 @@ public class brainDate : MonoBehaviour
     public GameObject dateSuccessPanel; 
     public GameObject dateFailPanel;
     
+    [Header("Success Panel Ayarları")]
+    public TMP_Text successLeftNameText;
+    public TMP_Text successRightNameText;
+    public GameObject successTutorialTextObj;
+ 
+
     [Header("Fail Panel Ayarları")]
     public TMP_Text failLeftNameText;
     public TMP_Text failRightNameText;
@@ -49,7 +52,6 @@ public class brainDate : MonoBehaviour
     public GameObject failRestartButtonObj;
     public GameObject failDesktopButtonObj; 
    
-    
     public GameObject BGblur;
     
     public Transform leftStarsCont;     
@@ -117,6 +119,8 @@ public class brainDate : MonoBehaviour
     public GameObject rhythmMiniGameObj;       
     public GameObject clawMachineMiniGameObj;  
     public GameObject runnerMiniGameObj;       
+    public GameObject bartendingMiniGameObj; 
+    private bool isBartendingMode = false;   
     
     public DialogueDataları menuTutorialScenario;
     
@@ -161,6 +165,7 @@ public class brainDate : MonoBehaviour
         if(rhythmMiniGameObj) rhythmMiniGameObj.SetActive(false);           
         if(clawMachineMiniGameObj) clawMachineMiniGameObj.SetActive(false);  
         if(runnerMiniGameObj) runnerMiniGameObj.SetActive(false);             
+        if(bartendingMiniGameObj) bartendingMiniGameObj.SetActive(false); 
 
         if(dateEndedObject) dateEndedObject.SetActive(false);
         
@@ -307,11 +312,30 @@ public class brainDate : MonoBehaviour
 
             if (totalScore >= starThreshold) 
             {
+                bool isTutorialDate = false;
+
+                if (DateSettings.leftChar != null && DateSettings.rightChar != null)
+                {
+                    string char1 = DateSettings.leftChar.characterName;
+                    string char2 = DateSettings.rightChar.characterName;
+                    
+                    if (successLeftNameText != null) successLeftNameText.text = DateSettings.leftChar.characterName;
+                    if (successRightNameText != null) successRightNameText.text = DateSettings.rightChar.characterName;
+                    
+                    if ((char1 == "Io" && char2 == "Elroi") || (char1 == "Elroi" && char2 == "Io"))
+                    {
+                        isTutorialDate = true;
+                    }
+                }
+
+             
+                if (successTutorialTextObj != null) successTutorialTextObj.SetActive(isTutorialDate);
+
                 if(dateSuccessPanel != null) dateSuccessPanel.SetActive(true);
             }
             else
             {
-               
+                
                 bool isTutorialDate = false;
 
                 if (DateSettings.leftChar != null && DateSettings.rightChar != null)
@@ -319,7 +343,6 @@ public class brainDate : MonoBehaviour
                     string char1 = DateSettings.leftChar.characterName;
                     string char2 = DateSettings.rightChar.characterName;
 
-                   
                     if (failLeftNameText != null) failLeftNameText.text = DateSettings.leftChar.characterName;
                     if (failRightNameText != null) failRightNameText.text = DateSettings.rightChar.characterName;
                     
@@ -329,12 +352,10 @@ public class brainDate : MonoBehaviour
                     }
                 }
 
-              
                 if (failTutorialTextObj != null) failTutorialTextObj.SetActive(isTutorialDate);
                 if (failRestartButtonObj != null) failRestartButtonObj.SetActive(isTutorialDate);
                 if (failDesktopButtonObj != null) failDesktopButtonObj.SetActive(!isTutorialDate);
               
-
                 if(dateFailPanel != null) dateFailPanel.SetActive(true);
             }
         }
@@ -378,7 +399,7 @@ public class brainDate : MonoBehaviour
     {
         if (lineIndex >= currentScenario.allLines.Count)
         {
-            if (isMenuMode) 
+            if (isMenuMode || isBartendingMode) 
             {
                 if(leftDialoguePanel) leftDialoguePanel.SetActive(false);
                 if(rightDialoguePanel) rightDialoguePanel.SetActive(false);

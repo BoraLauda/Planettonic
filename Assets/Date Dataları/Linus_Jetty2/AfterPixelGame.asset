@@ -88,4 +88,4 @@ MonoBehaviour:
       target: 1
       starReward: 0
       heartReward: 0
-  nextScenario: {fileID: 0}
+  nextScenario: {fileID: 11400000, guid: a2beaa40ad90f7e4c9a5d2794f48d444, type: 2}
