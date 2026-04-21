@@ -42,6 +42,14 @@ public class brainDate : MonoBehaviour
     public GameObject dateSuccessPanel; 
     public GameObject dateFailPanel;
     
+    [Header("Fail Panel Ayarları")]
+    public TMP_Text failLeftNameText;
+    public TMP_Text failRightNameText;
+    public GameObject failTutorialTextObj;
+    public GameObject failRestartButtonObj;
+    public GameObject failDesktopButtonObj; 
+   
+    
     public GameObject BGblur;
     
     public Transform leftStarsCont;     
@@ -106,9 +114,9 @@ public class brainDate : MonoBehaviour
     [Header("Mini Oyun Objeleri")]
     public GameObject menuMiniGameObj;
     public GameObject pixelMiniGameObj;
-    public GameObject rhythmMiniGameObj;       // YENİ
-    public GameObject clawMachineMiniGameObj;  // YENİ
-    public GameObject runnerMiniGameObj;       // YENİ
+    public GameObject rhythmMiniGameObj;       
+    public GameObject clawMachineMiniGameObj;  
+    public GameObject runnerMiniGameObj;       
     
     public DialogueDataları menuTutorialScenario;
     
@@ -303,6 +311,30 @@ public class brainDate : MonoBehaviour
             }
             else
             {
+               
+                bool isTutorialDate = false;
+
+                if (DateSettings.leftChar != null && DateSettings.rightChar != null)
+                {
+                    string char1 = DateSettings.leftChar.characterName;
+                    string char2 = DateSettings.rightChar.characterName;
+
+                   
+                    if (failLeftNameText != null) failLeftNameText.text = DateSettings.leftChar.characterName;
+                    if (failRightNameText != null) failRightNameText.text = DateSettings.rightChar.characterName;
+                    
+                    if ((char1 == "Io" && char2 == "Elroi") || (char1 == "Elroi" && char2 == "Io"))
+                    {
+                        isTutorialDate = true;
+                    }
+                }
+
+              
+                if (failTutorialTextObj != null) failTutorialTextObj.SetActive(isTutorialDate);
+                if (failRestartButtonObj != null) failRestartButtonObj.SetActive(isTutorialDate);
+                if (failDesktopButtonObj != null) failDesktopButtonObj.SetActive(!isTutorialDate);
+              
+
                 if(dateFailPanel != null) dateFailPanel.SetActive(true);
             }
         }
@@ -593,6 +625,8 @@ public class brainDate : MonoBehaviour
       {
           if(leftDialoguePanel) leftDialoguePanel.SetActive(false);
           if(rightDialoguePanel) rightDialoguePanel.SetActive(false);
+          if(chancellorPanel) chancellorPanel.SetActive(false);
+          if(chaperonPanel) chaperonPanel.SetActive(false);
           
           if (BGblur) BGblur.SetActive(true);
           if (menuMiniGameObj != null) menuMiniGameObj.SetActive(true);
