@@ -28,24 +28,4 @@ MonoBehaviour:
     sentence: Careful, doll. Desperation often hides behind narcissism.
     eventTrigger: 
     choices: []
-  - side: 2
-    characterName: Counselor
-    characterSprite: {fileID: 0}
-    sentence: Hate to interrupt, for a fun reason at least. I have a little game
-      for the both of you to get to know each other better.
-    eventTrigger: 
-    choices: []
-  - side: 2
-    characterName: Counselor
-    characterSprite: {fileID: 0}
-    sentence: "The tablet in front of you displays the Icebreaker. A game I\u2019m
-      sure both of you are familiar with, being good communicators and all!"
-    eventTrigger: 
-    choices: []
-  - side: 3
-    characterName: Chaperon
-    characterSprite: {fileID: 0}
-    sentence: "Niceeee, you\u2019re getting good at this"
-    eventTrigger: 
-    choices: []
   nextScenario: {fileID: 11400000, guid: b29c58747b66a1c4d96684ddcb8140f4, type: 2}

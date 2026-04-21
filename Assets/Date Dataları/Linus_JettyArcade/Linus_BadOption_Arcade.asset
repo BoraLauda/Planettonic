@@ -19,7 +19,7 @@ MonoBehaviour:
     characterName: Linus
     characterSprite: {fileID: 21300000, guid: dc24e77c8220d5b43bd418e911809b3b, type: 3}
     sentence: "I still don\u2019t like icebreakers, though. They tend to get boring
-      after you\u2019ve done it enough times. xx"
+      after you\u2019ve done it enough times. "
     eventTrigger: 
     choices: []
   - side: 0
@@ -29,4 +29,4 @@ MonoBehaviour:
       A pity..."
     eventTrigger: StartRitimGame
     choices: []
-  nextScenario: {fileID: 11400000, guid: 8958df9c2a3b19b418c15bbab0c8edf1, type: 2}
+  nextScenario: {fileID: 11400000, guid: 3c8719da1eed2be46a6cf6cfc41d179a, type: 2}

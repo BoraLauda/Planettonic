@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Start
   m_EditorClassIdentifier: 
   locationName: Arcade
-  locationBackground: {fileID: 21300000, guid: d779b7908bc668e469543f0877a9ba9c, type: 3}
+  locationBackground: {fileID: 1439995735934848948, guid: d7c0804f77d78c149a3021d444e47e1f, type: 3}
   allLines:
   - side: 1
     characterName: Linus

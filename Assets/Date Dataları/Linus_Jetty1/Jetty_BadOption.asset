@@ -18,8 +18,8 @@ MonoBehaviour:
   - side: 0
     characterName: Jetty
     characterSprite: {fileID: 1936918675910826544, guid: e8f1130d0e09cef45bb1f9ab49489848, type: 3}
-    sentence: Well, collecting dirty secrets is one of my many specialties, desperation,
-      though? Just comes naturally around me. xx
+    sentence: 'Well, collecting dirty secrets is one of my many specialties, desperation,
+      though? Just comes naturally around me. '
     eventTrigger: 
     choices: []
   - side: 1
@@ -45,7 +45,7 @@ MonoBehaviour:
   - side: 3
     characterName: Chaperon
     characterSprite: {fileID: 0}
-    sentence: "Niceeee, you\u2019re getting good at this"
-    eventTrigger: StartIceBreaker
+    sentence: "Niceeee, you\u2019re getting good at this."
+    eventTrigger: 
     choices: []
   nextScenario: {fileID: 11400000, guid: 793051a46b678fb4f939b2f40ba8145c, type: 2}
