@@ -39,6 +39,7 @@ public class brainDate : MonoBehaviour
     public GameObject dateSuccessPanel; 
     public GameObject dateFailPanel;
     
+  
     [Header("Success Panel Ayarları")]
     public TMP_Text successLeftNameText;
     public TMP_Text successRightNameText;
@@ -273,6 +274,33 @@ public class brainDate : MonoBehaviour
         {
             rightDaterImage.transform.localScale = Vector3.Lerp(rightDaterImage.transform.localScale, rightTargetScale, Time.deltaTime * focusSpeed);
         }
+
+        // YENİ: Hem F9 hem de H tuşu ile hileyi çalıştırabilirsin!
+        if (Input.GetKeyDown(KeyCode.F9) || Input.GetKeyDown(KeyCode.H)) 
+        {
+            Debug.Log("HİLE AKTİF: Date otomatik kazanıldı!");
+            
+            leftStars = 10f;
+            rightStars = 10f;
+            totalHearts += 50;
+            UpdateScoreUI();
+            
+            isMenuMode = false;
+            isDodgeMode = false;
+            isIceBreakerMode = false;
+            isBartendingMode = false;
+
+            if (menuMiniGameObj) menuMiniGameObj.SetActive(false);
+            if (pixelMiniGameObj) pixelMiniGameObj.SetActive(false);
+            if (rhythmMiniGameObj) rhythmMiniGameObj.SetActive(false);           
+            if (clawMachineMiniGameObj) clawMachineMiniGameObj.SetActive(false);  
+            if (runnerMiniGameObj) runnerMiniGameObj.SetActive(false);             
+            if (bartendingMiniGameObj) bartendingMiniGameObj.SetActive(false); 
+            if (BGblur) BGblur.SetActive(false);
+            
+            scenarioQueue.Clear();
+            PlayNextInQueue(); 
+        }
     }
 
     public void StartScenario(DialogueDataları scenario)
@@ -328,14 +356,12 @@ public class brainDate : MonoBehaviour
                     }
                 }
 
-             
                 if (successTutorialTextObj != null) successTutorialTextObj.SetActive(isTutorialDate);
 
                 if(dateSuccessPanel != null) dateSuccessPanel.SetActive(true);
             }
             else
             {
-                
                 bool isTutorialDate = false;
 
                 if (DateSettings.leftChar != null && DateSettings.rightChar != null)
@@ -399,6 +425,11 @@ public class brainDate : MonoBehaviour
     {
         if (lineIndex >= currentScenario.allLines.Count)
         {
+            if (isMenuMode && menuMiniGameObj != null && !menuMiniGameObj.activeSelf) isMenuMode = false;
+            if (isBartendingMode && bartendingMiniGameObj != null && !bartendingMiniGameObj.activeSelf) isBartendingMode = false;
+            if (isDodgeMode && dodgeScript != null && !dodgeScript.gameObject.activeSelf) isDodgeMode = false;
+            if (isIceBreakerMode && iceBreakerScript != null && !iceBreakerScript.gameObject.activeSelf) isIceBreakerMode = false;
+
             if (isMenuMode || isBartendingMode) 
             {
                 if(leftDialoguePanel) leftDialoguePanel.SetActive(false);
@@ -428,12 +459,30 @@ public class brainDate : MonoBehaviour
                 if (iceBreakerScript != null) iceBreakerScript.ResumeGame(); return;
             }
             
-            if (currentScenario.nextScenario != null) { StartScenario(currentScenario.nextScenario); return; }
+            if (currentScenario.nextScenario != null) 
+            { 
+                Debug.Log("✅ GEÇİŞ YAPILIYOR: Sıradaki senaryo -> " + currentScenario.nextScenario.name);
+                StartScenario(currentScenario.nextScenario); 
+                return; 
+            }
+            
+            Debug.Log("⚠️ SIRADAKİ SENARYO YOK: Kuyruğa bakılıyor veya Date bitiriliyor.");
             PlayNextInQueue(); 
             return;
         }
 
         DialogueLine line = currentScenario.allLines[lineIndex];
+
+        string evt = line.eventTrigger != null ? line.eventTrigger.Trim() : "";
+        bool noText = string.IsNullOrEmpty(line.sentence);
+        bool noChoices = (line.choices == null || line.choices.Count == 0);
+        
+        if (noText && noChoices && !string.IsNullOrEmpty(evt))
+        {
+            TriggerEvent(evt);
+            return; 
+        }
+
         UpdateCharacterFocus(line.side);
 
         if (line.side == SpeakerSide.Left)
@@ -597,6 +646,7 @@ public class brainDate : MonoBehaviour
     IEnumerator TypeSentence(TMP_Text textObj, string sentence)
     {
         isTyping = true;
+        if (sentence == null) sentence = ""; 
         currentFullSentence = sentence;
         textObj.text = "";
 
@@ -614,6 +664,12 @@ public class brainDate : MonoBehaviour
 
         if (currentScenario == null) return;
         if (lineIndex >= currentScenario.allLines.Count) return;
+
+        if (!isMenuMode && !isDodgeMode && !isIceBreakerMode && !isBartendingMode) 
+        {
+            isEventTriggered = false; 
+        }
+
         if (isEventTriggered) return;
 
         DialogueLine line = currentScenario.allLines[lineIndex];
@@ -632,11 +688,13 @@ public class brainDate : MonoBehaviour
             return;
         }
 
-        if (!string.IsNullOrEmpty(line.eventTrigger))
+        string evt = line.eventTrigger != null ? line.eventTrigger.Trim() : "";
+        if (!string.IsNullOrEmpty(evt))
         {
-            TriggerEvent(line.eventTrigger);
+            TriggerEvent(evt);
             return; 
         }
+        
         NextLine();
     }
 
@@ -753,7 +811,6 @@ public class brainDate : MonoBehaviour
           });
       }
       
-
       else if (eventName == "StartRitimGame")
       {
           savedMainScenario = currentScenario; 
@@ -794,6 +851,12 @@ public class brainDate : MonoBehaviour
             
           if (BGblur) BGblur.SetActive(true);
           if (runnerMiniGameObj != null) runnerMiniGameObj.SetActive(true);
+      }
+      else 
+      {
+          Debug.LogWarning("DİKKAT: '" + eventName + "' adında bir olay bulunamadı! Harf hatası olabilir. Oyun es geçiyor.");
+          isEventTriggered = false; 
+          NextLine(); 
       }
     }
 
