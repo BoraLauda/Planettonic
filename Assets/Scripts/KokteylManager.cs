@@ -225,43 +225,84 @@ public class KokteylManager : MonoBehaviour
         }
     }
 
+
     private void PuanHesaplaVeBitir()
     {
-        KokteylTarifi yapilanTarif = null;
+        float enYuksekBasariOrani = 0f;
 
+     
         foreach (KokteylTarifi tarif in tumTarifler)
         {
-            if (eklenenBuzSayisi == tarif.istenenBuzSayisi &&
-                eklenenLimonSayisi == tarif.istenenLimonSayisi &&
-                eklenenPortakalSayisi == tarif.istenenPortakalSayisi &&
-                eklenenNaneSayisi == tarif.istenenNaneSayisi &&
-                eklenenCilekSayisi == tarif.istenenCilekSayisi &&
-                eklenenZeytinSayisi == tarif.istenenZeytinSayisi &&
-                isStirred == tarif.karistirilmaliMi &&
-                isShaken == tarif.calkalanmaliMi)
+            float dogruPuan = 0;
+          
+            float toplamKriter = 8f + tarif.istenenSoslar.Count;
+
+            if (eklenenBuzSayisi == tarif.istenenBuzSayisi) dogruPuan++;
+            if (eklenenLimonSayisi == tarif.istenenLimonSayisi) dogruPuan++;
+            if (eklenenPortakalSayisi == tarif.istenenPortakalSayisi) dogruPuan++;
+            if (eklenenNaneSayisi == tarif.istenenNaneSayisi) dogruPuan++;
+            if (eklenenCilekSayisi == tarif.istenenCilekSayisi) dogruPuan++;
+            if (eklenenZeytinSayisi == tarif.istenenZeytinSayisi) dogruPuan++;
+            
+            if (isStirred == tarif.karistirilmaliMi) dogruPuan++;
+            if (isShaken == tarif.calkalanmaliMi) dogruPuan++;
+
+            int dogruSosSayisi = 0;
+            List<string> kopyaEklenenler = new List<string>(eklenenSoslar);
+            foreach (string istenenSos in tarif.istenenSoslar)
             {
-                if (eklenenSoslar.Count == tarif.istenenSoslar.Count)
+                if (kopyaEklenenler.Contains(istenenSos))
                 {
-                    List<string> kopyaEklenenler = new List<string>(eklenenSoslar);
-                    bool soslarDogruMu = true;
-                    foreach (string istenenSos in tarif.istenenSoslar)
-                    {
-                        if (kopyaEklenenler.Contains(istenenSos)) kopyaEklenenler.Remove(istenenSos);
-                        else { soslarDogruMu = false; break; }
-                    }
-                    if (soslarDogruMu) { yapilanTarif = tarif; break; }
+                    dogruSosSayisi++;
+                    kopyaEklenenler.Remove(istenenSos); 
                 }
+            }
+            dogruPuan += dogruSosSayisi;
+
+            int yanlisSosSayisi = kopyaEklenenler.Count;
+            dogruPuan -= (yanlisSosSayisi * 0.5f); 
+
+            float oran = Mathf.Clamp01(dogruPuan / toplamKriter);
+            
+            if (oran > enYuksekBasariOrani)
+            {
+                enYuksekBasariOrani = oran;
             }
         }
 
-        float basariOrani = (yapilanTarif != null) ? 1f : 0f;
-        int kalpKazanildi = (yapilanTarif != null) ? 1 : 0;
+        float kazanilanYildiz = 0f;
+        int kazanilanKalp = 0;
+
+       
+        if (enYuksekBasariOrani >= 1f) 
+        {
+            kazanilanYildiz = 1f;
+            kazanilanKalp = 40;
+            Debug.Log($"BARMEN: KUSURSUZ KOKTEYL! Oran: {enYuksekBasariOrani} -> +1 Yıldız, +40 Kalp");
+        }
+        else if (enYuksekBasariOrani >= 0.5f) 
+        {
+            kazanilanYildiz = 0.5f;
+            kazanilanKalp = 20;
+            Debug.Log($"BARMEN: İDARE EDER! Oran: {enYuksekBasariOrani} -> +0.5 Yıldız, +20 Kalp");
+        }
+        else 
+        {
+            kazanilanYildiz = 0f;
+            kazanilanKalp = 0;
+            Debug.Log($"BARMEN: BERBAT KARIŞIM! Oran: {enYuksekBasariOrani} -> 0 Yıldız, 0 Kalp");
+        }
         
         brainDate bd = FindFirstObjectByType<brainDate>(); 
-        if (bd != null) bd.EndPixelGame(basariOrani, kalpKazanildi, TargetCharacter.Both); 
+        if (bd != null) 
+        {
+           
+            bd.EndBartendingGame(kazanilanYildiz, kazanilanKalp, TargetCharacter.Both); 
+        }
         
         TemizlikYap();
     }
+ 
 
     public void SadeceMasayiBirakVeSifirla()
     {
@@ -323,7 +364,7 @@ public class KokteylManager : MonoBehaviour
     private void HileyleBitir()
     {
         brainDate bd = FindFirstObjectByType<brainDate>(); 
-        if (bd != null) bd.EndPixelGame(1f, 1, TargetCharacter.Both); 
+        if (bd != null) bd.EndBartendingGame(1f, 40, TargetCharacter.Both); 
         MasadakiBardagiGuncelle(1f);
         TemizlikYap();
     }

@@ -87,12 +87,12 @@ MonoBehaviour:
       nextScenario: {fileID: 11400000, guid: 8b16c550bb4159446ba210064461b8b7, type: 2}
       target: 0
       starReward: 1
-      heartReward: 0
+      heartReward: 20
     - choices: Darling, romance is nothing if not intriguing.
       nextScenario: {fileID: 11400000, guid: 3576f20d63083b24b9ba3ce3e3201301, type: 2}
       target: 0
       starReward: 0.5
-      heartReward: 0
+      heartReward: 10
     - choices: It depends on whether I can truly trust you or not.
       nextScenario: {fileID: 11400000, guid: 9715622c6471d9a419748bdcb898f39a, type: 2}
       target: 0

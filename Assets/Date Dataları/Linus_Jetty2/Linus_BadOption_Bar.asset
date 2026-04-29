@@ -38,6 +38,6 @@ MonoBehaviour:
     characterName: Jetty
     characterSprite: {fileID: 0}
     sentence: Hmm...
-    eventTrigger: 
+    eventTrigger: StartDodgeGame
     choices: []
   nextScenario: {fileID: 11400000, guid: a2beaa40ad90f7e4c9a5d2794f48d444, type: 2}
