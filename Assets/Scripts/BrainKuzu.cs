@@ -97,7 +97,6 @@ public class BrainKuzu : MonoBehaviour
     
     private void KalpleriGuncelle()
     {
-        
         for (int i = 0; i < kalpImajlari.Length; i++)
         {
             if (kalpImajlari[i] != null)
@@ -109,16 +108,29 @@ public class BrainKuzu : MonoBehaviour
         }
     }
     
+ 
     private void MinigameBitti(bool basariliMi)
     {
         isGameOver = true;
-        Debug.Log(basariliMi ? "TEBRİKLER: Tüm kalpler toplandı!" : "SÜRE BİTTİ!");
 
         brainDate bd = FindFirstObjectByType<brainDate>();
         if (bd != null)
         {
-            float kazanilanYildiz = basariliMi ? 1f : 0.5f; 
-            int kazanilanKalp = Mathf.RoundToInt(mevcutYarimKalpPuan * 2.5f); 
+            float kazanilanYildiz = 0f; 
+            int kazanilanKalp = 0; 
+
+            if (basariliMi) 
+            {
+                kazanilanYildiz = 1f;
+                kazanilanKalp = 20;
+                Debug.Log("KURT: KUSURSUZ! Tüm kalpler toplandı. -> +1 Yıldız, +20 Kalp");
+            }
+            else 
+            {
+                kazanilanYildiz = 0f;
+                kazanilanKalp = 0;
+                Debug.Log("KURT: BAŞARISIZ! Kalpler eksik veya süre bitti. -> 0 Yıldız, 0 Kalp");
+            }
 
             bd.EndRunnerGame(kazanilanYildiz, kazanilanKalp, TargetCharacter.Both);
         }

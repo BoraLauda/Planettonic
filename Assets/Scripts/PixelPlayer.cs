@@ -261,7 +261,7 @@ public class PixelPlayer : MonoBehaviour
             }
         }
     }
-
+    
     IEnumerator KafesiAcVeBitir()
     {
         if (kafesImage != null && acikKafesGorseli != null)
@@ -283,7 +283,8 @@ public class PixelPlayer : MonoBehaviour
         
         if (bd != null)
         {
-            bd.EndPixelGame(1f, 1, TargetCharacter.Both); 
+            Debug.Log("PİKSEL: ZAFER! -> +1 Yıldız, +20 Kalp");
+            bd.EndPixelGame(1f, 20, TargetCharacter.Both); 
         }
 
         if (miniGameAnaObje != null)
@@ -291,7 +292,7 @@ public class PixelPlayer : MonoBehaviour
             miniGameAnaObje.SetActive(false); 
         }
     }
-
+    
     IEnumerator OlumVeBitir()
     {
         if (sr != null)
@@ -320,6 +321,7 @@ public class PixelPlayer : MonoBehaviour
         
         if (bd != null)
         {
+            Debug.Log("PİKSEL: ÖLÜM! -> 0 Yıldız, 0 Kalp");
             bd.EndPixelGame(0f, 0, TargetCharacter.Both); 
         }
         
