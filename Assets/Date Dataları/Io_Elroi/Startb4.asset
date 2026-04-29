@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Startb4
   m_EditorClassIdentifier: 
   locationName: RESTAURANT
-  locationBackground: {fileID: 21300000, guid: 99f8b52cd13c70845a1feb7b3f0d1d2f, type: 3}
+  locationBackground: {fileID: 21300000, guid: f8bdb2b11a144d94f9ac89625b2a01f4, type: 3}
   allLines:
   - side: 2
     characterName: Counselor

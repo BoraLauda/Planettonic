@@ -363,11 +363,21 @@ public class APPler : MonoBehaviour
 
     public void StartDateWithLocation(string secilenMekan)
     {
+        
+        if (selectedLeft == null || selectedRight == null)
+        {
+            return; 
+        }
+        
+        
         DateSettings.leftChar = selectedLeft;
         DateSettings.rightChar = selectedRight;
         DateSettings.selectedScenario = defaultScenario; 
 
-        
+        if (selectedLeft != null) PlayerPrefs.SetInt("Played_" + selectedLeft.characterName, 1);
+        if (selectedRight != null) PlayerPrefs.SetInt("Played_" + selectedRight.characterName, 1);
+        PlayerPrefs.Save();
+
         if (selectedLeft != null && selectedRight != null)
         {
             string c1 = selectedLeft.characterName;
@@ -385,6 +395,11 @@ public class APPler : MonoBehaviour
             if ((selectedLeft == match.characterA && selectedRight == match.characterB) ||
                 (selectedLeft == match.characterB && selectedRight == match.characterA))
             {
+               
+                DateSettings.leftChar = match.characterA;
+                DateSettings.rightChar = match.characterB;
+              
+
                 List<DialogueDataları> aranacakListe = null;
 
                 switch (secilenMekan)
