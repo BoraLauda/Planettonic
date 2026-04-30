@@ -68,7 +68,6 @@ public class Claw: MonoBehaviour
             feedbackOriginalPos = timeFeedbackText.rectTransform.anchoredPosition;
             timeFeedbackText.alpha = 0f; 
         }
-
         
         if (bearIcon != null) bearIcon.SetActive(true);
         if (bunnyIcon != null) bunnyIcon.SetActive(true);
@@ -133,7 +132,7 @@ public class Claw: MonoBehaviour
             timerText.text = "0";
         }
         
-        EndMiniGame(false);
+        EndMiniGame();
     }
 
     IEnumerator DropSequence()
@@ -298,7 +297,7 @@ public class Claw: MonoBehaviour
             isMoving = false;
             spawner.StopSpawning();
             
-            EndMiniGame(true);
+            EndMiniGame();
         }
     }
 
@@ -328,13 +327,34 @@ public class Claw: MonoBehaviour
         timeFeedbackText.rectTransform.anchoredPosition = feedbackOriginalPos;
     }
 
-    void EndMiniGame(bool kazanildiMi)
+   
+    void EndMiniGame()
     {
         brainDate bd = FindFirstObjectByType<brainDate>();
         if (bd != null)
         {
-            float kazanilanYildiz = kazanildiMi ? 1f : 0f;
-            int kazanilanKalp = kazanildiMi ? 15 : (bearCount + bunnyCount + foxCount + catCount) * 2; 
+            int toplamOyuncak = bearCount + bunnyCount + foxCount + catCount;
+            float kazanilanYildiz = 0f;
+            int kazanilanKalp = 0;
+
+            if (toplamOyuncak == 4) 
+            {
+                kazanilanYildiz = 1f;
+                kazanilanKalp = 40;
+                Debug.Log($"KEPÇE: MÜKEMMEL! Hepsini topladın. -> +1 Yıldız, +40 Kalp");
+            }
+            else if (toplamOyuncak == 2 || toplamOyuncak == 3)
+            {
+                kazanilanYildiz = 0.5f;
+                kazanilanKalp = 20;
+                Debug.Log($"KEPÇE: İDARE EDER! {toplamOyuncak} oyuncak topladın. -> +0.5 Yıldız, +20 Kalp");
+            }
+            else 
+            {
+                kazanilanYildiz = 0f;
+                kazanilanKalp = 0;
+                Debug.Log($"KEPÇE: BOŞ DÖNDÜ! Sadece {toplamOyuncak} oyuncak toplayabildin. -> 0 Yıldız, 0 Kalp");
+            }
 
             bd.EndClawMachine(kazanilanYildiz, kazanilanKalp, TargetCharacter.Both);
         }

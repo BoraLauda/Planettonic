@@ -60,7 +60,6 @@ public class LaneUI : MonoBehaviour
 
             if (localY < missKayıpGıtmeSiniri)
             {
-                Debug.Log("MISS! Ok akıp gitti.");
                 HitNote(targetNote, false); 
             }
         }
@@ -75,17 +74,14 @@ public class LaneUI : MonoBehaviour
 
             if (distance <= perfectHitTolerance)
             {
-                Debug.Log("PERFECT! Combo x1 - Mesafe: " + distance);
                 HitNote(targetNote, true); 
             }
             else if (distance <= goodHitTolerance)
             {
-                Debug.Log("GOOD! - Mesafe: " + distance);
                 HitNote(targetNote, true); 
             }
             else
             {
-                Debug.Log("MISS! Çok erken veya geç bastın. Mesafe: " + distance);
                 HitNote(targetNote, false); 
             }
         }
@@ -101,6 +97,14 @@ public class LaneUI : MonoBehaviour
         {
             hitTarget.localScale = originalScale * popScale;
             
+          
+            ArrowSpawner.currentGlobalCombo++;
+            if (ArrowSpawner.currentGlobalCombo > ArrowSpawner.maxGlobalCombo)
+            {
+                ArrowSpawner.maxGlobalCombo = ArrowSpawner.currentGlobalCombo;
+            }
+            
+
             if (Combo.Instance != null) 
             {
                 Combo.Instance.AddCombo();
@@ -117,6 +121,9 @@ public class LaneUI : MonoBehaviour
 
     void TriggerMissFeedback()
     {
+      
+        ArrowSpawner.currentGlobalCombo = 0;
+
         if (Combo.Instance != null)
         {
             Combo.Instance.ResetCombo();

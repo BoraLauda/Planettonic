@@ -19,11 +19,17 @@ public class ArrowSpawner : MonoBehaviour
     private float timer;
     private float gameTimer;
     private bool isGameOver = false;
-
+    
+    public static int currentGlobalCombo = 0;
+    public static int maxGlobalCombo = 0;
+   
     void Start()
     {
         gameTimer = gameDuration;
         timer = initialSpawnInterval;
+        
+        currentGlobalCombo = 0;
+        maxGlobalCombo = 0; 
     }
 
     void Update()
@@ -40,11 +46,8 @@ public class ArrowSpawner : MonoBehaviour
             if (gameTimer <= 5f && gameTimer > 0f)
             {
                 sureText.color = Color.red;
-                
                 float saniyeKusurati = gameTimer % 1f;
-                
                 float palseScale = 1f + (saniyeKusurati * 2f); 
-                
                 sureText.transform.localScale = new Vector3(palseScale, palseScale, 1f);
             }
             else
@@ -107,21 +110,37 @@ public class ArrowSpawner : MonoBehaviour
             sureText.transform.localScale = Vector3.one;
             sureText.text = "0";
         }
-
-        Debug.Log("SÜRE BİTTİ! OYUN TAMAMLANDI.");
         
         brainDate bd = FindFirstObjectByType<brainDate>();
         if (bd != null)
         {
-          
-            float kazanilanYildiz = 1f;
-            int kazanilanKalp = 10;
+            float kazanilanYildiz = 0f;
+            int kazanilanKalp = 0;
+
+            
+            if (maxGlobalCombo >= 14) 
+            {
+                kazanilanYildiz = 1f;
+                kazanilanKalp = 40;
+                Debug.Log($"RİTİM: KUSURSUZ! En Yüksek Kombo: {maxGlobalCombo} -> +1 Yıldız, +40 Kalp");
+            }
+            else if (maxGlobalCombo >= 7) 
+            {
+                kazanilanYildiz = 0.5f;
+                kazanilanKalp = 20;
+                Debug.Log($"RİTİM: İYİ İŞ ÇIKARDIN! En Yüksek Kombo: {maxGlobalCombo} -> +0.5 Yıldız, +20 Kalp");
+            }
+            else // Ritim Kaçtı
+            {
+                kazanilanYildiz = 0f;
+                kazanilanKalp = 0;
+                Debug.Log($"RİTİM: BERBAT! En Yüksek Kombo: {maxGlobalCombo} -> 0 Yıldız, 0 Kalp");
+            }
 
             bd.EndRhythmGame(kazanilanYildiz, kazanilanKalp, TargetCharacter.Both);
         }
         else
         {
-            
             transform.parent.gameObject.SetActive(false);
         }
     }
