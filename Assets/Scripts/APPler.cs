@@ -331,10 +331,11 @@ public class APPler : MonoBehaviour
         {
             if (isIoAndElroi)
             {
+              
                 SetButtonState(btnRestoran, false);
                 SetButtonState(btnArcade, false);
-                SetButtonState(btnBar, false); 
-                SetButtonState(btnEv, true);   
+                SetButtonState(btnBar, true);  
+                SetButtonState(btnEv, false);   
             }
             else
             {
@@ -363,12 +364,11 @@ public class APPler : MonoBehaviour
 
     public void StartDateWithLocation(string secilenMekan)
     {
-        
+       
         if (selectedLeft == null || selectedRight == null)
         {
             return; 
         }
-        
         
         DateSettings.leftChar = selectedLeft;
         DateSettings.rightChar = selectedRight;
@@ -395,10 +395,8 @@ public class APPler : MonoBehaviour
             if ((selectedLeft == match.characterA && selectedRight == match.characterB) ||
                 (selectedLeft == match.characterB && selectedRight == match.characterA))
             {
-               
                 DateSettings.leftChar = match.characterA;
                 DateSettings.rightChar = match.characterB;
-              
 
                 List<DialogueDataları> aranacakListe = null;
 
