@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 using System.Collections.Generic;
 using UnityEngine.Serialization;
 using UnityEngine.SceneManagement;
@@ -19,13 +20,21 @@ public class APPler : MonoBehaviour
     public Characters JettyData;
     public Characters LinusData;
     
-    public Image ortakTamName;
-    public Image ortakTamList;
-    public Image ortakTamInfo;
+    [Header("Büyük Ekran Yazıları")]
+    public TMP_Text ortakTamFullName;
+    public TMP_Text ortakTamDemographics;
+    public TMP_Text ortakTamRelationship;
+    public TMP_Text ortakTamHobbies;
+    public TMP_Text ortakTamFoodPrefs;
+    public TMP_Text ortakTamQuote;
     
-    public Image ortakSmallName;
-    public Image ortakSmallList;
-    public Image ortakSmallInfo;
+    [Header("Küçük Ekran Yazıları")]
+    public TMP_Text ortakSmallFullName;
+    public TMP_Text ortakSmallDemographics;
+    public TMP_Text ortakSmallRelationship;
+    public TMP_Text ortakSmallHobbies;
+    public TMP_Text ortakSmallFoodPrefs;
+    public TMP_Text ortakSmallQuote;
 
     public GameObject confirmButton;
 
@@ -56,11 +65,23 @@ public class APPler : MonoBehaviour
     [Header("UI Kilitli Prefab (image_6 Prefabı)")]
     public GameObject lockedPrefab; 
 
-    [Header("Mekan Butonları")]
-    public Button btnRestoran;
-    public Button btnBar;
-    public Button btnEv;
-    public Button btnArcade;
+    [Header("Mekan Butonları Küçük")]
+    public Button btnRestoranSmall;
+    public Button btnBarSmall;
+    public Button btnEvSmall;
+    public Button btnArcadeSmall;
+
+    [Header("Mekan Butonları Büyük")]
+    public Button btnRestoranLarge;
+    public Button btnBarLarge;
+    public Button btnEvLarge;
+    public Button btnArcadeLarge;
+
+    [Header("Reviews (Değerlendirmeler) Ekranı")]
+    public Transform reviewsContentContainerSmall; 
+    public Transform reviewsContentContainerLarge; 
+    public GameObject reviewSlotPrefabSmall;       // YENİ: Küçük Ekran Prefabı
+    public GameObject reviewSlotPrefabLarge;       // YENİ: Büyük Ekran Prefabı
 
     void Start()
     {
@@ -88,12 +109,12 @@ public class APPler : MonoBehaviour
 
         currentPageSayı = index;
         
-        bool shouldShowBackButton = (index != 4 && index != 0); 
+        bool shouldShowBackButton = (index != 3 && index != 0); 
 
         if (backButtonSmall != null) backButtonSmall.SetActive(shouldShowBackButton);
         if (backButtonLarge != null) backButtonLarge.SetActive(shouldShowBackButton);
 
-        if (index == 2) RefreshSlots(); 
+        if (index == 1) RefreshSlots(); 
         
         RefreshAllUI();
     }
@@ -117,16 +138,21 @@ public class APPler : MonoBehaviour
             img.preserveAspect = true;
         }
         
-        if (ortakTamName != null) ortakTamName.sprite = profile.nameImage;
-        if (ortakSmallName != null) ortakSmallName.sprite = profile.nameImage;
+        if (ortakTamFullName != null) ortakTamFullName.text = profile.fullName;
+        if (ortakTamDemographics != null) ortakTamDemographics.text = profile.demographicsInfo;
+        if (ortakTamRelationship != null) ortakTamRelationship.text = profile.relationshipGoals;
+        if (ortakTamHobbies != null) ortakTamHobbies.text = profile.hobbies;
+        if (ortakTamFoodPrefs != null) ortakTamFoodPrefs.text = profile.foodPreferenceText;
+        if (ortakTamQuote != null) ortakTamQuote.text = profile.quoteText;
 
-        if (ortakTamList != null) ortakTamList.sprite = profile.listImage;
-        if (ortakSmallList != null) ortakSmallList.sprite = profile.listImage;
+        if (ortakSmallFullName != null) ortakSmallFullName.text = profile.fullName;
+        if (ortakSmallDemographics != null) ortakSmallDemographics.text = profile.demographicsInfo;
+        if (ortakSmallRelationship != null) ortakSmallRelationship.text = profile.relationshipGoals;
+        if (ortakSmallHobbies != null) ortakSmallHobbies.text = profile.hobbies;
+        if (ortakSmallFoodPrefs != null) ortakSmallFoodPrefs.text = profile.foodPreferenceText;
+        if (ortakSmallQuote != null) ortakSmallQuote.text = profile.quoteText;
 
-        if (ortakTamInfo != null) ortakTamInfo.sprite = profile.infoImage;
-        if (ortakSmallInfo != null) ortakSmallInfo.sprite = profile.infoImage;
-
-        OpenPageByIndex(3);
+        OpenPageByIndex(2);
     }
     
     public void OnConfirmSelection()
@@ -157,7 +183,7 @@ public class APPler : MonoBehaviour
             }
         }
 
-        OpenPageByIndex(4);
+        OpenPageByIndex(3);
     }
 
     public void OnHeartClicked(int slotIndex)
@@ -167,12 +193,13 @@ public class APPler : MonoBehaviour
         else selectedRight = null;
         
         RefreshAllUI();
-        OpenPageByIndex(2); 
+        
+        OpenPageByIndex(1); 
     }
     
     public void OnDatePlacesClicked()
     {
-        OpenPageByIndex(5); 
+        OpenPageByIndex(4); 
     }
     
     void RefreshSlots()
@@ -211,7 +238,6 @@ public class APPler : MonoBehaviour
 
             string cName = allSlots[i].myProfile.characterName;
 
-            
             if (PlayerPrefs.GetInt("PlayedCouple_Ary_Jetty", 0) == 1)
             {
                 if (cName == "Jetty")
@@ -264,6 +290,7 @@ public class APPler : MonoBehaviour
         }
         
         RefreshSlots();
+        UpdateLocationButtons();
     }
     
     public void ShowWarningPopup()
@@ -286,7 +313,7 @@ public class APPler : MonoBehaviour
         if (selectedLeft != null && selectedRight != null)
         {
             UpdateLocationButtons();
-            OpenPageByIndex(5); 
+            OpenPageByIndex(4); 
         }
         else
         {
@@ -296,7 +323,14 @@ public class APPler : MonoBehaviour
 
     public void UpdateLocationButtons()
     {
-        if (selectedLeft == null || selectedRight == null) return;
+        if (selectedLeft == null || selectedRight == null) 
+        {
+            SetButtonState(btnRestoranSmall, btnRestoranLarge, false);
+            SetButtonState(btnArcadeSmall, btnArcadeLarge, false);
+            SetButtonState(btnBarSmall, btnBarLarge, false);
+            SetButtonState(btnEvSmall, btnEvLarge, false);
+            return; 
+        }
 
         string char1 = selectedLeft.characterName;
         string char2 = selectedRight.characterName;
@@ -314,61 +348,54 @@ public class APPler : MonoBehaviour
         {
             if (isIoAndElroi)
             {
-                SetButtonState(btnRestoran, true);
-                SetButtonState(btnArcade, false);
-                SetButtonState(btnBar, false);
-                SetButtonState(btnEv, false);
+                SetButtonState(btnRestoranSmall, btnRestoranLarge, true);
+                SetButtonState(btnArcadeSmall, btnArcadeLarge, false);
+                SetButtonState(btnBarSmall, btnBarLarge, false);
+                SetButtonState(btnEvSmall, btnEvLarge, false);
             }
             else
             {
-                SetButtonState(btnRestoran, true);
-                SetButtonState(btnArcade, true);
-                SetButtonState(btnBar, false);
-                SetButtonState(btnEv, false);
+                SetButtonState(btnRestoranSmall, btnRestoranLarge, true);
+                SetButtonState(btnArcadeSmall, btnArcadeLarge, true);
+                SetButtonState(btnBarSmall, btnBarLarge, false);
+                SetButtonState(btnEvSmall, btnEvLarge, false);
             }
         }
         else if (currentLevel == 1)
         {
             if (isIoAndElroi)
             {
-              
-                SetButtonState(btnRestoran, false);
-                SetButtonState(btnArcade, false);
-                SetButtonState(btnBar, true);  
-                SetButtonState(btnEv, false);   
+                SetButtonState(btnRestoranSmall, btnRestoranLarge, false);
+                SetButtonState(btnArcadeSmall, btnArcadeLarge, false);
+                SetButtonState(btnBarSmall, btnBarLarge, true);  
+                SetButtonState(btnEvSmall, btnEvLarge, false);   
             }
             else
             {
-                SetButtonState(btnRestoran, false);
-                SetButtonState(btnArcade, false);
-                SetButtonState(btnBar, true);
-                SetButtonState(btnEv, true);
+                SetButtonState(btnRestoranSmall, btnRestoranLarge, false);
+                SetButtonState(btnArcadeSmall, btnArcadeLarge, false);
+                SetButtonState(btnBarSmall, btnBarLarge, true);
+                SetButtonState(btnEvSmall, btnEvLarge, true);
             }
         }
         else 
         {
-            SetButtonState(btnRestoran, false);
-            SetButtonState(btnArcade, false);
-            SetButtonState(btnBar, false);
-            SetButtonState(btnEv, false);
+            SetButtonState(btnRestoranSmall, btnRestoranLarge, false);
+            SetButtonState(btnArcadeSmall, btnArcadeLarge, false);
+            SetButtonState(btnBarSmall, btnBarLarge, false);
+            SetButtonState(btnEvSmall, btnEvLarge, false);
         }
     }
 
-    private void SetButtonState(Button btn, bool isActive)
+    private void SetButtonState(Button btnSmall, Button btnLarge, bool isActive)
     {
-        if (btn != null)
-        {
-            btn.interactable = isActive;
-        }
+        if (btnSmall != null) btnSmall.interactable = isActive;
+        if (btnLarge != null) btnLarge.interactable = isActive;
     }
 
     public void StartDateWithLocation(string secilenMekan)
     {
-       
-        if (selectedLeft == null || selectedRight == null)
-        {
-            return; 
-        }
+        if (selectedLeft == null || selectedRight == null) return; 
         
         DateSettings.leftChar = selectedLeft;
         DateSettings.rightChar = selectedRight;
@@ -431,7 +458,69 @@ public class APPler : MonoBehaviour
     }
     
     public void OnLoginClicked() => OpenPageByIndex(1);
-    public void OnMatchButtonClicked() => OpenPageByIndex(2);
+    
+    public void OnMatchButtonClicked() => OpenPageByIndex(1);
+
+    public void LoadReviews()
+    {
+        if (reviewsContentContainerSmall != null)
+        {
+            foreach (Transform child in reviewsContentContainerSmall)
+            {
+                Destroy(child.gameObject);
+            }
+        }
+
+        if (reviewsContentContainerLarge != null)
+        {
+            foreach (Transform child in reviewsContentContainerLarge)
+            {
+                Destroy(child.gameObject);
+            }
+        }
+
+        string jsonLoad = PlayerPrefs.GetString("SavedReviewsDB", "");
+        if (string.IsNullOrEmpty(jsonLoad)) return; 
+
+        ReviewDatabase db = JsonUtility.FromJson<ReviewDatabase>(jsonLoad);
+
+        db.allPastDates.Reverse();
+
+        foreach (var reviewData in db.allPastDates)
+        {
+            Sprite icon1 = GetProfileIconByName(reviewData.char1Name);
+            Sprite icon2 = GetProfileIconByName(reviewData.char2Name);
+            
+            if (reviewsContentContainerSmall != null && reviewSlotPrefabSmall != null)
+            {
+                GameObject newSlotSmall = Instantiate(reviewSlotPrefabSmall, reviewsContentContainerSmall);
+                ReviewSlot slotScriptSmall = newSlotSmall.GetComponent<ReviewSlot>();
+                if (slotScriptSmall != null)
+                {
+                    slotScriptSmall.Setup(reviewData, icon1, icon2);
+                }
+            }
+
+            if (reviewsContentContainerLarge != null && reviewSlotPrefabLarge != null)
+            {
+                GameObject newSlotLarge = Instantiate(reviewSlotPrefabLarge, reviewsContentContainerLarge);
+                ReviewSlot slotScriptLarge = newSlotLarge.GetComponent<ReviewSlot>();
+                if (slotScriptLarge != null)
+                {
+                    slotScriptLarge.Setup(reviewData, icon1, icon2);
+                }
+            }
+        }
+    }
+
+    private Sprite GetProfileIconByName(string charName)
+    {
+        if (IoData != null && IoData.characterName == charName) return IoData.profileIcon;
+        if (ElroiData != null && ElroiData.characterName == charName) return ElroiData.profileIcon;
+        if (JettyData != null && JettyData.characterName == charName) return JettyData.profileIcon;
+        if (LinusData != null && LinusData.characterName == charName) return LinusData.profileIcon;
+        return defaultIcon;
+    }
 }
 
 [System.Serializable]

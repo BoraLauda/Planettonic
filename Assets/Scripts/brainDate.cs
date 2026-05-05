@@ -11,165 +11,166 @@ public class CoupleEndScenario
     public string ciftAdi = "Yeni Çift";
     public Characters characterA;
     public Characters characterB;
-    
+
     [Header("Bu Çifte Özel Fail Senaryosu")]
     public DialogueDataları specificFailScenario;
 }
-    
+
 public class brainDate : MonoBehaviour
 {
-    public TMP_Text introLocationText; 
+    public TMP_Text introLocationText;
     public Image backgroundImage;
-    
     public GameObject introPanel;
-    
-    public TMP_Text introLeftNameText;  
-    public TMP_Text introRightNameText;  
-    public Transform introLeftStarsCont; 
+
+    public TMP_Text introLeftNameText;
+    public TMP_Text introRightNameText;
+    public Transform introLeftStarsCont;
     public Transform introRightStarsCont;
-    
-    public TutorialPopup tutorialPopup; 
-    
-    public List<Sprite> menuTutorialSprites; 
+
+    public TutorialPopup tutorialPopup;
+
+    public List<Sprite> menuTutorialSprites;
     public List<Sprite> iceBreakerTutorialSprites;
     public List<Sprite> dodgeTutorialSprites;
-    
+
     public string desktopScene = "Desktop";
-    
-    public GameObject dateSuccessPanel; 
+
+    public GameObject dateSuccessPanel;
     public GameObject dateFailPanel;
-    
-  
+
     [Header("Success Panel Ayarları")]
     public TMP_Text successLeftNameText;
     public TMP_Text successRightNameText;
     public GameObject successTutorialTextObj;
- 
 
     [Header("Fail Panel Ayarları")]
     public TMP_Text failLeftNameText;
     public TMP_Text failRightNameText;
     public GameObject failTutorialTextObj;
     public GameObject failRestartButtonObj;
-    public GameObject failDesktopButtonObj; 
-   
+    public GameObject failDesktopButtonObj;
+
     public GameObject BGblur;
-    
-    public Transform leftStarsCont;     
+
+    public Transform leftStarsCont;
     public Transform rightStarsCont;
-    public Transform successLeftStars;     
-    public Transform successRightStars;  
-    public Transform failLeftStars;        
+    public Transform successLeftStars;
+    public Transform successRightStars;
+    public Transform failLeftStars;
     public Transform failRightStars;
-    
+
     public float leftStars = 0;
     public float rightStars = 0;
-    
-    public GameObject dateEndedObject;    
+
+    public GameObject dateEndedObject;
     public DialogueDataları startingScenario;
-    
+
     [Header("Çiftlere Özel Senaryolar")]
     public List<CoupleEndScenario> coupleEndScenarios;
     public DialogueDataları defaultFailScenario;
-    
+
     private DialogueDataları savedMainScenario;
-    
+
     public brainDODGE dodgeScript;
     private bool isDodgeMode = false;
-    
-    public Image leftDaterImage;          
-    public GameObject leftDialoguePanel; 
-    public TMP_Text leftNameText;            
+
+    public Image leftDaterImage;
+    public GameObject leftDialoguePanel;
+    public TMP_Text leftNameText;
     public TMP_Text leftBodyText;
-    
-    public GameObject leftOptionsPanel;  
+
+    public GameObject leftOptionsPanel;
     public Button[] leftButtons;
-    
-    public Transform stars;  
-    public GameObject fullStarPrefab; 
+
+    public Transform stars;
+    public GameObject fullStarPrefab;
     public GameObject halfStarPrefab;
 
-    public Image rightDaterImage;         
+    public Image rightDaterImage;
     public GameObject rightDialoguePanel;
     public TMP_Text rightNameText;
     public TMP_Text rightBodyText;
-    
-    public GameObject rightOptionsPanel; 
+
+    public GameObject rightOptionsPanel;
     public Button[] rightButtons;
-    
-    public IceBreaker iceBreakerScript; 
+
+    public IceBreaker iceBreakerScript;
     private bool isIceBreakerMode = false;
-   
+
     public GameObject chancellorPanel;
-    public TMP_Text chancellorNameText;     
+    public TMP_Text chancellorNameText;
     public TMP_Text chancellorBodyText;
-    
+
     public GameObject chaperonPanel;
-    public TMP_Text chaperonNameText;       
+    public TMP_Text chaperonNameText;
     public TMP_Text chaperonBodyText;
-    
+
     public float starThreshold = 6f;
-    public float currentStars = 0;   
+    public float currentStars = 0;
     public int totalHearts = 0;
-    public TMP_Text heartUI; 
+    public TMP_Text heartUI;
     public TMP_Text starUI;
 
     [Header("Mini Oyun Objeleri")]
     public GameObject menuMiniGameObj;
     public GameObject pixelMiniGameObj;
-    public GameObject rhythmMiniGameObj;       
-    public GameObject clawMachineMiniGameObj;  
-    public GameObject runnerMiniGameObj;       
-    public GameObject bartendingMiniGameObj; 
-    private bool isBartendingMode = false;   
-    
+    public GameObject rhythmMiniGameObj;
+    public GameObject clawMachineMiniGameObj;
+    public GameObject runnerMiniGameObj;
+    public GameObject bartendingMiniGameObj;
+    private bool isBartendingMode = false;
+
     public DialogueDataları menuTutorialScenario;
-    
+
     public float typeSpeed = 0.04f;
-    
+
     private DialogueDataları currentScenario;
     private Queue<DialogueDataları> scenarioQueue = new Queue<DialogueDataları>();
-    
+
     private int lineIndex = 0;
     private bool isTyping = false;
     private string currentFullSentence = "";
 
     private bool isEventTriggered = false;
-    
+
     public float focusSpeed = 10f;
     private Vector3 leftTargetScale = Vector3.one;
     private Vector3 rightTargetScale = Vector3.one;
-    
+
     private bool isMenuMode = false;
-    
+
     public GameObject cyberchicsButton;
     private bool isCyberchicsUsed = false;
-    
-    public GameObject heartOfCircuitButton; 
+
+    public GameObject heartOfCircuitButton;
     private bool isHeartOfCircuitActive = false;
     private bool isHeartOfCircuitUsedThisDate = false;
 
+    public List<string> goodReviews;
+    public List<string> midReviews;
+    public List<string> badReviews;
+
     void Start()
     {
-        if(leftDialoguePanel) leftDialoguePanel.SetActive(false);
-        if(leftOptionsPanel) leftOptionsPanel.SetActive(false);
-        if(chancellorPanel) chancellorPanel.SetActive(false);
-        if(chaperonPanel) chaperonPanel.SetActive(false);
-        
-        if(rightDialoguePanel) rightDialoguePanel.SetActive(false);
-        if(rightOptionsPanel) rightOptionsPanel.SetActive(false);
-        
-        if(BGblur) BGblur.SetActive(false);
+        if (leftDialoguePanel) leftDialoguePanel.SetActive(false);
+        if (leftOptionsPanel) leftOptionsPanel.SetActive(false);
+        if (chancellorPanel) chancellorPanel.SetActive(false);
+        if (chaperonPanel) chaperonPanel.SetActive(false);
 
-        if(menuMiniGameObj) menuMiniGameObj.SetActive(false);
-        if(pixelMiniGameObj) pixelMiniGameObj.SetActive(false);
-        if(rhythmMiniGameObj) rhythmMiniGameObj.SetActive(false);           
-        if(clawMachineMiniGameObj) clawMachineMiniGameObj.SetActive(false);  
-        if(runnerMiniGameObj) runnerMiniGameObj.SetActive(false);             
-        if(bartendingMiniGameObj) bartendingMiniGameObj.SetActive(false); 
+        if (rightDialoguePanel) rightDialoguePanel.SetActive(false);
+        if (rightOptionsPanel) rightOptionsPanel.SetActive(false);
 
-        if(dateEndedObject) dateEndedObject.SetActive(false);
-        
+        if (BGblur) BGblur.SetActive(false);
+
+        if (menuMiniGameObj) menuMiniGameObj.SetActive(false);
+        if (pixelMiniGameObj) pixelMiniGameObj.SetActive(false);
+        if (rhythmMiniGameObj) rhythmMiniGameObj.SetActive(false);
+        if (clawMachineMiniGameObj) clawMachineMiniGameObj.SetActive(false);
+        if (runnerMiniGameObj) runnerMiniGameObj.SetActive(false);
+        if (bartendingMiniGameObj) bartendingMiniGameObj.SetActive(false);
+
+        if (dateEndedObject) dateEndedObject.SetActive(false);
+
         PrepareSceneData();
 
         if (introPanel != null)
@@ -178,26 +179,26 @@ public class brainDate : MonoBehaviour
         }
         else
         {
-            StartTheDate(); 
+            StartTheDate();
         }
     }
-    
+
     void PrepareSceneData()
     {
         DialogueDataları playThis = DateSettings.selectedScenario != null ? DateSettings.selectedScenario : startingScenario;
-        
+
         if (playThis != null)
         {
             if (introLocationText != null && !string.IsNullOrEmpty(playThis.locationName))
             {
-                introLocationText.text = playThis.locationName; 
+                introLocationText.text = playThis.locationName;
             }
 
             if (backgroundImage != null && playThis.locationBackground != null)
             {
-                backgroundImage.sprite = playThis.locationBackground; 
+                backgroundImage.sprite = playThis.locationBackground;
             }
-            
+
             Sprite foundLeft = null;
             Sprite foundRight = null;
 
@@ -205,18 +206,18 @@ public class brainDate : MonoBehaviour
             {
                 if (foundLeft == null && line.side == SpeakerSide.Left && line.characterSprite != null)
                     foundLeft = line.characterSprite;
-                    
+
                 if (foundRight == null && line.side == SpeakerSide.Right && line.characterSprite != null)
                     foundRight = line.characterSprite;
 
-                if (foundLeft != null && foundRight != null) break; 
+                if (foundLeft != null && foundRight != null) break;
             }
 
-            if (foundLeft != null && leftDaterImage != null) 
+            if (foundLeft != null && leftDaterImage != null)
             {
                 leftDaterImage.sprite = foundLeft;
             }
-            if (foundRight != null && rightDaterImage != null) 
+            if (foundRight != null && rightDaterImage != null)
             {
                 rightDaterImage.sprite = foundRight;
             }
@@ -230,39 +231,39 @@ public class brainDate : MonoBehaviour
 
         if (DateSettings.leftChar != null)
         {
-            if (introLeftNameText != null) introLeftNameText.text = DateSettings.leftChar.characterName; 
-            
+            if (introLeftNameText != null) introLeftNameText.text = DateSettings.leftChar.characterName;
+
             foreach (var pref in DateSettings.leftChar.locationPreferences)
             {
                 if (pref.locationName == currentLocation)
                 {
                     leftStars += pref.bonusStars;
-                    break; 
+                    break;
                 }
             }
         }
-        
+
         if (DateSettings.rightChar != null)
         {
             if (introRightNameText != null) introRightNameText.text = DateSettings.rightChar.characterName;
-            
+
             foreach (var pref in DateSettings.rightChar.locationPreferences)
             {
                 if (pref.locationName == currentLocation)
                 {
                     rightStars += pref.bonusStars;
-                    break; 
+                    break;
                 }
             }
         }
-        
+
         if (introLeftStarsCont != null) UpdateBar(introLeftStarsCont, leftStars);
         if (introRightStarsCont != null) UpdateBar(introRightStarsCont, rightStars);
 
         UpdateScoreUI();
         CheckHeartOfCircuitAvailability();
     }
-    
+
     void Update()
     {
         if (leftDaterImage != null)
@@ -275,16 +276,13 @@ public class brainDate : MonoBehaviour
             rightDaterImage.transform.localScale = Vector3.Lerp(rightDaterImage.transform.localScale, rightTargetScale, Time.deltaTime * focusSpeed);
         }
 
-        // YENİ: Hem F9 hem de H tuşu ile hileyi çalıştırabilirsin!
-        if (Input.GetKeyDown(KeyCode.F9) || Input.GetKeyDown(KeyCode.H)) 
+        if (Input.GetKeyDown(KeyCode.F9) || Input.GetKeyDown(KeyCode.H))
         {
-            Debug.Log("HİLE AKTİF: Date otomatik kazanıldı!");
-            
-            leftStars = 10f;
-            rightStars = 10f;
+            leftStars = 3f;
+            rightStars = 4f;
             totalHearts += 50;
             UpdateScoreUI();
-            
+
             isMenuMode = false;
             isDodgeMode = false;
             isIceBreakerMode = false;
@@ -292,14 +290,14 @@ public class brainDate : MonoBehaviour
 
             if (menuMiniGameObj) menuMiniGameObj.SetActive(false);
             if (pixelMiniGameObj) pixelMiniGameObj.SetActive(false);
-            if (rhythmMiniGameObj) rhythmMiniGameObj.SetActive(false);           
-            if (clawMachineMiniGameObj) clawMachineMiniGameObj.SetActive(false);  
-            if (runnerMiniGameObj) runnerMiniGameObj.SetActive(false);             
-            if (bartendingMiniGameObj) bartendingMiniGameObj.SetActive(false); 
+            if (rhythmMiniGameObj) rhythmMiniGameObj.SetActive(false);
+            if (clawMachineMiniGameObj) clawMachineMiniGameObj.SetActive(false);
+            if (runnerMiniGameObj) runnerMiniGameObj.SetActive(false);
+            if (bartendingMiniGameObj) bartendingMiniGameObj.SetActive(false);
             if (BGblur) BGblur.SetActive(false);
-            
+
             scenarioQueue.Clear();
-            PlayNextInQueue(); 
+            PlayNextInQueue();
         }
     }
 
@@ -309,17 +307,17 @@ public class brainDate : MonoBehaviour
         lineIndex = 0;
         DisplayLine();
     }
-    
+
     public void QueueScenarios(List<DialogueDataları> scenariosToPlay)
     {
-        scenarioQueue.Clear(); 
+        scenarioQueue.Clear();
         foreach (var sc in scenariosToPlay)
         {
             scenarioQueue.Enqueue(sc);
         }
         PlayNextInQueue();
     }
-    
+
     void PlayNextInQueue()
     {
         if (scenarioQueue.Count > 0)
@@ -329,16 +327,45 @@ public class brainDate : MonoBehaviour
         }
         else
         {
-            float totalScore = leftStars + rightStars; 
-            
-            if(leftDialoguePanel) leftDialoguePanel.SetActive(false);
-            if(rightDialoguePanel) rightDialoguePanel.SetActive(false);
-            if(chancellorPanel) chancellorPanel.SetActive(false);
-            if(chaperonPanel) chaperonPanel.SetActive(false);
+            float totalScore = leftStars + rightStars;
+            bool isSuccessFlag = totalScore >= starThreshold;
 
-            if (dateEndedObject != null) dateEndedObject.SetActive(true); 
+            if (leftDialoguePanel) leftDialoguePanel.SetActive(false);
+            if (rightDialoguePanel) rightDialoguePanel.SetActive(false);
+            if (chancellorPanel) chancellorPanel.SetActive(false);
+            if (chaperonPanel) chaperonPanel.SetActive(false);
 
-            if (totalScore >= starThreshold) 
+            if (dateEndedObject != null) dateEndedObject.SetActive(true);
+
+            if (DateSettings.leftChar != null && DateSettings.rightChar != null)
+            {
+                string GetRandomComment(float stars)
+                {
+                    List<string> pool = stars >= 4 ? goodReviews : (stars >= 3 ? midReviews : badReviews);
+                    if (pool == null || pool.Count == 0) return "...";
+                    return pool[UnityEngine.Random.Range(0, pool.Count)];
+                }
+
+                string jsonLoad = UnityEngine.PlayerPrefs.GetString("SavedReviewsDB", "");
+                ReviewDatabase db = string.IsNullOrEmpty(jsonLoad) ? new ReviewDatabase() : UnityEngine.JsonUtility.FromJson<ReviewDatabase>(jsonLoad);
+
+                DateReview newReview = new DateReview
+                {
+                    char1Name = DateSettings.leftChar.characterName,
+                    char2Name = DateSettings.rightChar.characterName,
+                    char1Stars = leftStars,
+                    char2Stars = rightStars,
+                    char1Comment = GetRandomComment(leftStars),
+                    char2Comment = GetRandomComment(rightStars),
+                    isSuccess = isSuccessFlag
+                };
+
+                db.allPastDates.Add(newReview);
+                UnityEngine.PlayerPrefs.SetString("SavedReviewsDB", UnityEngine.JsonUtility.ToJson(db));
+                UnityEngine.PlayerPrefs.Save();
+            }
+
+            if (isSuccessFlag)
             {
                 bool isTutorialDate = false;
 
@@ -346,10 +373,10 @@ public class brainDate : MonoBehaviour
                 {
                     string char1 = DateSettings.leftChar.characterName;
                     string char2 = DateSettings.rightChar.characterName;
-                    
+
                     if (successLeftNameText != null) successLeftNameText.text = DateSettings.leftChar.characterName;
                     if (successRightNameText != null) successRightNameText.text = DateSettings.rightChar.characterName;
-                    
+
                     if ((char1 == "Io" && char2 == "Elroi") || (char1 == "Elroi" && char2 == "Io"))
                     {
                         isTutorialDate = true;
@@ -357,8 +384,7 @@ public class brainDate : MonoBehaviour
                 }
 
                 if (successTutorialTextObj != null) successTutorialTextObj.SetActive(isTutorialDate);
-
-                if(dateSuccessPanel != null) dateSuccessPanel.SetActive(true);
+                if (dateSuccessPanel != null) dateSuccessPanel.SetActive(true);
             }
             else
             {
@@ -371,7 +397,7 @@ public class brainDate : MonoBehaviour
 
                     if (failLeftNameText != null) failLeftNameText.text = DateSettings.leftChar.characterName;
                     if (failRightNameText != null) failRightNameText.text = DateSettings.rightChar.characterName;
-                    
+
                     if ((char1 == "Io" && char2 == "Elroi") || (char1 == "Elroi" && char2 == "Io"))
                     {
                         isTutorialDate = true;
@@ -381,24 +407,24 @@ public class brainDate : MonoBehaviour
                 if (failTutorialTextObj != null) failTutorialTextObj.SetActive(isTutorialDate);
                 if (failRestartButtonObj != null) failRestartButtonObj.SetActive(isTutorialDate);
                 if (failDesktopButtonObj != null) failDesktopButtonObj.SetActive(!isTutorialDate);
-              
-                if(dateFailPanel != null) dateFailPanel.SetActive(true);
+
+                if (dateFailPanel != null) dateFailPanel.SetActive(true);
             }
         }
     }
-    
+
     public void AddReward(float stars, int hearts, TargetCharacter target)
     {
         if (isHeartOfCircuitActive && hearts > 0)
         {
             int roll = Random.Range(0, 100);
-            if (roll < 30) 
+            if (roll < 30)
             {
                 hearts *= 2;
                 Debug.Log("Heart of the Circuit tutu! Kalp ikiye katlandı: " + hearts);
             }
         }
-        
+
         totalHearts += hearts;
 
         if (target == TargetCharacter.Left)
@@ -417,10 +443,10 @@ public class brainDate : MonoBehaviour
             rightStars += stars;
             Debug.Log($"İKİSİ DE KAZANDI: {stars} Yıldız.");
         }
-        
+
         UpdateScoreUI();
     }
-    
+
     void DisplayLine()
     {
         if (lineIndex >= currentScenario.allLines.Count)
@@ -430,44 +456,44 @@ public class brainDate : MonoBehaviour
             if (isDodgeMode && dodgeScript != null && !dodgeScript.gameObject.activeSelf) isDodgeMode = false;
             if (isIceBreakerMode && iceBreakerScript != null && !iceBreakerScript.gameObject.activeSelf) isIceBreakerMode = false;
 
-            if (isMenuMode || isBartendingMode) 
+            if (isMenuMode || isBartendingMode)
             {
-                if(leftDialoguePanel) leftDialoguePanel.SetActive(false);
-                if(rightDialoguePanel) rightDialoguePanel.SetActive(false);
-                if(chancellorPanel) chancellorPanel.SetActive(false);
-                if(chaperonPanel) chaperonPanel.SetActive(false);
-
-                return; 
+                if (leftDialoguePanel) leftDialoguePanel.SetActive(false);
+                if (rightDialoguePanel) rightDialoguePanel.SetActive(false);
+                if (chancellorPanel) chancellorPanel.SetActive(false);
+                if (chaperonPanel) chaperonPanel.SetActive(false);
+                return;
             }
-            
-            if (isDodgeMode) 
-            { 
-                if(leftDialoguePanel) leftDialoguePanel.SetActive(false);
-                if(rightDialoguePanel) rightDialoguePanel.SetActive(false);
-                
+
+            if (isDodgeMode)
+            {
+                if (leftDialoguePanel) leftDialoguePanel.SetActive(false);
+                if (rightDialoguePanel) rightDialoguePanel.SetActive(false);
+
                 leftTargetScale = Vector3.one;
                 rightTargetScale = Vector3.one;
-                
-                if (dodgeScript != null) dodgeScript.ResumeAfterDialogue(); 
-                return; 
+
+                if (dodgeScript != null) dodgeScript.ResumeAfterDialogue();
+                return;
             }
 
             if (isIceBreakerMode)
             {
                 leftTargetScale = Vector3.one;
                 rightTargetScale = Vector3.one;
-                if (iceBreakerScript != null) iceBreakerScript.ResumeGame(); return;
+                if (iceBreakerScript != null) iceBreakerScript.ResumeGame();
+                return;
             }
-            
-            if (currentScenario.nextScenario != null) 
-            { 
+
+            if (currentScenario.nextScenario != null)
+            {
                 Debug.Log("✅ GEÇİŞ YAPILIYOR: Sıradaki senaryo -> " + currentScenario.nextScenario.name);
-                StartScenario(currentScenario.nextScenario); 
-                return; 
+                StartScenario(currentScenario.nextScenario);
+                return;
             }
-            
+
             Debug.Log("⚠️ SIRADAKİ SENARYO YOK: Kuyruğa bakılıyor veya Date bitiriliyor.");
-            PlayNextInQueue(); 
+            PlayNextInQueue();
             return;
         }
 
@@ -476,11 +502,11 @@ public class brainDate : MonoBehaviour
         string evt = line.eventTrigger != null ? line.eventTrigger.Trim() : "";
         bool noText = string.IsNullOrEmpty(line.sentence);
         bool noChoices = (line.choices == null || line.choices.Count == 0);
-        
+
         if (noText && noChoices && !string.IsNullOrEmpty(evt))
         {
             TriggerEvent(evt);
-            return; 
+            return;
         }
 
         UpdateCharacterFocus(line.side);
@@ -497,7 +523,7 @@ public class brainDate : MonoBehaviour
         }
         else if (line.side == SpeakerSide.Counselor)
         {
-            ActivatePanel(SpeakerSide.Counselor); 
+            ActivatePanel(SpeakerSide.Counselor);
             HandleMentorDirect(chancellorNameText, chancellorBodyText, line);
         }
         else if (line.side == SpeakerSide.Chaperon)
@@ -506,7 +532,7 @@ public class brainDate : MonoBehaviour
             HandleMentorDirect(chaperonNameText, chaperonBodyText, line);
         }
     }
-    
+
     void HandleMentorDirect(TMP_Text targetNameText, TMP_Text targetBodyText, DialogueLine line)
     {
         targetNameText.text = line.characterName;
@@ -514,7 +540,7 @@ public class brainDate : MonoBehaviour
         if (line.choices != null && line.choices.Count > 0)
         {
             targetBodyText.text = line.sentence;
-            leftOptionsPanel.SetActive(true); 
+            leftOptionsPanel.SetActive(true);
             SetupButtons(leftButtons, line.choices);
         }
         else
@@ -523,10 +549,8 @@ public class brainDate : MonoBehaviour
             StartCoroutine(TypeSentence(targetBodyText, line.sentence));
         }
     }
-   
-    void HandleUI(GameObject activeOptionsPanel, Button[] activeButtons,
-        Image charImg, TMP_Text nameTxt, TMP_Text bodyTxt, 
-        DialogueLine line)
+
+    void HandleUI(GameObject activeOptionsPanel, Button[] activeButtons, Image charImg, TMP_Text nameTxt, TMP_Text bodyTxt, DialogueLine line)
     {
         if (line.characterSprite != null) charImg.sprite = line.characterSprite;
         nameTxt.text = line.characterName;
@@ -549,13 +573,10 @@ public class brainDate : MonoBehaviour
         }
     }
 
-    void HandleUI(GameObject activeDialoguePanel, GameObject inactiveDialoguePanel, 
-        GameObject activeOptionsPanel, Button[] activeButtons,
-        Image charImg, TMP_Text nameTxt, TMP_Text bodyTxt, 
-        DialogueLine line)
+    void HandleUI(GameObject activeDialoguePanel, GameObject inactiveDialoguePanel, GameObject activeOptionsPanel, Button[] activeButtons, Image charImg, TMP_Text nameTxt, TMP_Text bodyTxt, DialogueLine line)
     {
         inactiveDialoguePanel.SetActive(false);
-        
+
         if (leftOptionsPanel.activeSelf) leftOptionsPanel.SetActive(false);
         if (rightOptionsPanel.activeSelf) rightOptionsPanel.SetActive(false);
 
@@ -581,52 +602,51 @@ public class brainDate : MonoBehaviour
             StartCoroutine(TypeSentence(bodyTxt, line.sentence));
         }
     }
-    
-    void ActivatePanel(SpeakerSide activeSide)
-    { 
-        if(leftDialoguePanel) leftDialoguePanel.SetActive(false);
-        if(rightDialoguePanel) rightDialoguePanel.SetActive(false);
-        
-        if(chancellorPanel) chancellorPanel.SetActive(false);
-        if(chaperonPanel) chaperonPanel.SetActive(false);
 
-        if (activeSide == SpeakerSide.Left) 
+    void ActivatePanel(SpeakerSide activeSide)
+    {
+        if (leftDialoguePanel) leftDialoguePanel.SetActive(false);
+        if (rightDialoguePanel) rightDialoguePanel.SetActive(false);
+        if (chancellorPanel) chancellorPanel.SetActive(false);
+        if (chaperonPanel) chaperonPanel.SetActive(false);
+
+        if (activeSide == SpeakerSide.Left)
             leftDialoguePanel.SetActive(true);
-        else if (activeSide == SpeakerSide.Right) 
+        else if (activeSide == SpeakerSide.Right)
             rightDialoguePanel.SetActive(true);
         else if (activeSide == SpeakerSide.Counselor)
-            chancellorPanel.SetActive(true); 
+            chancellorPanel.SetActive(true);
         else if (activeSide == SpeakerSide.Chaperon)
-            chaperonPanel.SetActive(true);   
+            chaperonPanel.SetActive(true);
     }
-    
+
     void SetupButtons(Button[] buttons, List<ChoiceOption> choices)
     {
         foreach (var btn in buttons) btn.gameObject.SetActive(false);
 
         for (int i = 0; i < choices.Count; i++)
         {
-            if (i >= buttons.Length) break; 
+            if (i >= buttons.Length) break;
 
             buttons[i].gameObject.SetActive(true);
-            
+
             TMP_Text btnText = buttons[i].GetComponentInChildren<TMP_Text>();
             if (btnText != null) btnText.text = choices[i].choices;
 
-            int index = i; 
+            int index = i;
             buttons[i].onClick.RemoveAllListeners();
             buttons[i].onClick.AddListener(() => OnOptionSelected(choices[index]));
         }
-        
+
         DialogueLine currentLine = currentScenario.allLines[lineIndex];
         CheckCyberchicsAvailability(currentLine);
     }
-    
+
     void OnOptionSelected(ChoiceOption option)
     {
-        if(leftOptionsPanel) leftOptionsPanel.SetActive(false);
-        if(rightOptionsPanel) rightOptionsPanel.SetActive(false);
-        
+        if (leftOptionsPanel) leftOptionsPanel.SetActive(false);
+        if (rightOptionsPanel) rightOptionsPanel.SetActive(false);
+
         if (option.starReward > 0 || option.heartReward > 0)
         {
             AddReward(option.starReward, option.heartReward, option.target);
@@ -642,11 +662,11 @@ public class brainDate : MonoBehaviour
             NextLine();
         }
     }
-    
+
     IEnumerator TypeSentence(TMP_Text textObj, string sentence)
     {
         isTyping = true;
-        if (sentence == null) sentence = ""; 
+        if (sentence == null) sentence = "";
         currentFullSentence = sentence;
         textObj.text = "";
 
@@ -660,14 +680,13 @@ public class brainDate : MonoBehaviour
 
     public void OnScreenClick()
     {
-        if (isMenuMode) return; 
-
+        if (isMenuMode) return;
         if (currentScenario == null) return;
         if (lineIndex >= currentScenario.allLines.Count) return;
 
-        if (!isMenuMode && !isDodgeMode && !isIceBreakerMode && !isBartendingMode) 
+        if (!isMenuMode && !isDodgeMode && !isIceBreakerMode && !isBartendingMode)
         {
-            isEventTriggered = false; 
+            isEventTriggered = false;
         }
 
         if (isEventTriggered) return;
@@ -683,7 +702,7 @@ public class brainDate : MonoBehaviour
             else if (line.side == SpeakerSide.Right) rightBodyText.text = currentFullSentence;
             else if (line.side == SpeakerSide.Counselor) chancellorBodyText.text = currentFullSentence;
             else if (line.side == SpeakerSide.Chaperon) chaperonBodyText.text = currentFullSentence;
-            
+
             isTyping = false;
             return;
         }
@@ -692,188 +711,178 @@ public class brainDate : MonoBehaviour
         if (!string.IsNullOrEmpty(evt))
         {
             TriggerEvent(evt);
-            return; 
+            return;
         }
-        
+
         NextLine();
     }
 
     void TriggerEvent(string eventName)
     {
-      if (eventName == "StartMenuGame")
-      {
-          if(leftDialoguePanel) leftDialoguePanel.SetActive(false);
-          if(rightDialoguePanel) rightDialoguePanel.SetActive(false);
-          if(chancellorPanel) chancellorPanel.SetActive(false);
-          if(chaperonPanel) chaperonPanel.SetActive(false);
-          
-          if (BGblur) BGblur.SetActive(true);
-          if (menuMiniGameObj != null) menuMiniGameObj.SetActive(true);
-          
-          bool isIoAndElroi = false;
-          if (DateSettings.leftChar != null && DateSettings.rightChar != null)
-          {
-              string char1 = DateSettings.leftChar.characterName;
-              string char2 = DateSettings.rightChar.characterName;
-               
-              if ((char1 == "Io" && char2 == "Elroi") || (char1 == "Elroi" && char2 == "Io"))
-              {
-                  isIoAndElroi = true;
-              }
-          }
+        if (eventName == "StartMenuGame")
+        {
+            if (leftDialoguePanel) leftDialoguePanel.SetActive(false);
+            if (rightDialoguePanel) rightDialoguePanel.SetActive(false);
+            if (chancellorPanel) chancellorPanel.SetActive(false);
+            if (chaperonPanel) chaperonPanel.SetActive(false);
 
-          if (isIoAndElroi && menuTutorialScenario != null)
-          {
-              StartScenario(menuTutorialScenario);
-          }
-         
-      }
-      else if (eventName == "MenüMiniGame")
-      {
-          isEventTriggered = true;
+            if (BGblur) BGblur.SetActive(true);
+            if (menuMiniGameObj != null) menuMiniGameObj.SetActive(true);
 
-          if(leftDialoguePanel) leftDialoguePanel.SetActive(false);
-          if(rightDialoguePanel) rightDialoguePanel.SetActive(false);
-          if(chancellorPanel) chancellorPanel.SetActive(false);
-          if(chaperonPanel) chaperonPanel.SetActive(false);
-            
-          tutorialPopup.OpenTutorial("MENU", menuTutorialSprites, () =>
-          {
-              isEventTriggered = false; 
-              isMenuMode = true;
-          });
-      }
-       
-      else if (eventName == "StartPixelGame")
-      {
-          savedMainScenario = currentScenario; 
-          isEventTriggered = true;
-           
-          if(leftDialoguePanel) leftDialoguePanel.SetActive(false);
-          if(rightDialoguePanel) rightDialoguePanel.SetActive(false);
-          if(chancellorPanel) chancellorPanel.SetActive(false);
-          if(chaperonPanel) chaperonPanel.SetActive(false);
-    
-          if (BGblur) BGblur.SetActive(true);
-           
-          if (pixelMiniGameObj != null) pixelMiniGameObj.SetActive(true);
-      }
-       
-      else if (eventName == "StartIceBreaker")
-      {
-          savedMainScenario = currentScenario;
-          isEventTriggered = true;
+            bool isIoAndElroi = false;
+            if (DateSettings.leftChar != null && DateSettings.rightChar != null)
+            {
+                string char1 = DateSettings.leftChar.characterName;
+                string char2 = DateSettings.rightChar.characterName;
 
-          if (leftDialoguePanel) leftDialoguePanel.SetActive(false);
-          if (rightDialoguePanel) rightDialoguePanel.SetActive(false);
-          if(chancellorPanel) chancellorPanel.SetActive(false);
-          if(chaperonPanel) chaperonPanel.SetActive(false);
-            
-          if (BGblur) BGblur.SetActive(true);
+                if ((char1 == "Io" && char2 == "Elroi") || (char1 == "Elroi" && char2 == "Io"))
+                {
+                    isIoAndElroi = true;
+                }
+            }
 
-          tutorialPopup.OpenTutorial("ICE BREAKER", iceBreakerTutorialSprites, () =>
-          {
-              if (iceBreakerScript != null) iceBreakerScript.StartGame();
-          });
-      }
-       
-      else if (eventName == "StartBartending")
-      {
-          savedMainScenario = currentScenario;
-          isEventTriggered = true;
-          isBartendingMode = true;
-           
-          if(leftDialoguePanel) leftDialoguePanel.SetActive(false);
-          if(rightDialoguePanel) rightDialoguePanel.SetActive(false);
-          if(chancellorPanel) chancellorPanel.SetActive(false);
-          if(chaperonPanel) chaperonPanel.SetActive(false);
-            
-          if (BGblur) BGblur.SetActive(true);
+            if (isIoAndElroi && menuTutorialScenario != null)
+            {
+                StartScenario(menuTutorialScenario);
+            }
+        }
+        else if (eventName == "MenüMiniGame")
+        {
+            isEventTriggered = true;
 
-          if (bartendingMiniGameObj != null) bartendingMiniGameObj.SetActive(true);
-      }
-       
-      else if (eventName == "StartDodgeGame")
-      {
-          savedMainScenario = currentScenario; 
-          isEventTriggered = true;
-            
-          if(leftDialoguePanel) leftDialoguePanel.SetActive(false);
-          if(rightDialoguePanel) rightDialoguePanel.SetActive(false);
-          if(chancellorPanel) chancellorPanel.SetActive(false);
-          if(chaperonPanel) chaperonPanel.SetActive(false);
-            
-          if (BGblur) BGblur.SetActive(true);
-            
-          tutorialPopup.OpenTutorial("DODGE THE QUESTION", dodgeTutorialSprites, () =>
-          {
-              if (dodgeScript != null) dodgeScript.StartGame();
-          });
-      }
-      
-      else if (eventName == "StartRitimGame")
-      {
-          savedMainScenario = currentScenario; 
-          isEventTriggered = true;
-            
-          if(leftDialoguePanel) leftDialoguePanel.SetActive(false);
-          if(rightDialoguePanel) rightDialoguePanel.SetActive(false);
-          if(chancellorPanel) chancellorPanel.SetActive(false);
-          if(chaperonPanel) chaperonPanel.SetActive(false);
-            
-          if (BGblur) BGblur.SetActive(true);
-          if (rhythmMiniGameObj != null) rhythmMiniGameObj.SetActive(true);
-      }
-      
-      else if (eventName == "StartClawMachine")
-      {
-          savedMainScenario = currentScenario; 
-          isEventTriggered = true;
-            
-          if(leftDialoguePanel) leftDialoguePanel.SetActive(false);
-          if(rightDialoguePanel) rightDialoguePanel.SetActive(false);
-          if(chancellorPanel) chancellorPanel.SetActive(false);
-          if(chaperonPanel) chaperonPanel.SetActive(false);
-            
-          if (BGblur) BGblur.SetActive(true);
-          if (clawMachineMiniGameObj != null) clawMachineMiniGameObj.SetActive(true);
-      }
+            if (leftDialoguePanel) leftDialoguePanel.SetActive(false);
+            if (rightDialoguePanel) rightDialoguePanel.SetActive(false);
+            if (chancellorPanel) chancellorPanel.SetActive(false);
+            if (chaperonPanel) chaperonPanel.SetActive(false);
 
-      else if (eventName == "StartKurtGame")
-      {
-          savedMainScenario = currentScenario; 
-          isEventTriggered = true;
-            
-          if(leftDialoguePanel) leftDialoguePanel.SetActive(false);
-          if(rightDialoguePanel) rightDialoguePanel.SetActive(false);
-          if(chancellorPanel) chancellorPanel.SetActive(false);
-          if(chaperonPanel) chaperonPanel.SetActive(false);
-            
-          if (BGblur) BGblur.SetActive(true);
-          if (runnerMiniGameObj != null) runnerMiniGameObj.SetActive(true);
-      }
-      else 
-      {
-          Debug.LogWarning("DİKKAT: '" + eventName + "' adında bir olay bulunamadı! Harf hatası olabilir. Oyun es geçiyor.");
-          isEventTriggered = false; 
-          NextLine(); 
-      }
+            tutorialPopup.OpenTutorial("MENU", menuTutorialSprites, () =>
+            {
+                isEventTriggered = false;
+                isMenuMode = true;
+            });
+        }
+        else if (eventName == "StartPixelGame")
+        {
+            savedMainScenario = currentScenario;
+            isEventTriggered = true;
+
+            if (leftDialoguePanel) leftDialoguePanel.SetActive(false);
+            if (rightDialoguePanel) rightDialoguePanel.SetActive(false);
+            if (chancellorPanel) chancellorPanel.SetActive(false);
+            if (chaperonPanel) chaperonPanel.SetActive(false);
+
+            if (BGblur) BGblur.SetActive(true);
+            if (pixelMiniGameObj != null) pixelMiniGameObj.SetActive(true);
+        }
+        else if (eventName == "StartIceBreaker")
+        {
+            savedMainScenario = currentScenario;
+            isEventTriggered = true;
+
+            if (leftDialoguePanel) leftDialoguePanel.SetActive(false);
+            if (rightDialoguePanel) rightDialoguePanel.SetActive(false);
+            if (chancellorPanel) chancellorPanel.SetActive(false);
+            if (chaperonPanel) chaperonPanel.SetActive(false);
+
+            if (BGblur) BGblur.SetActive(true);
+
+            tutorialPopup.OpenTutorial("ICE BREAKER", iceBreakerTutorialSprites, () =>
+            {
+                if (iceBreakerScript != null) iceBreakerScript.StartGame();
+            });
+        }
+        else if (eventName == "StartBartending")
+        {
+            savedMainScenario = currentScenario;
+            isEventTriggered = true;
+            isBartendingMode = true;
+
+            if (leftDialoguePanel) leftDialoguePanel.SetActive(false);
+            if (rightDialoguePanel) rightDialoguePanel.SetActive(false);
+            if (chancellorPanel) chancellorPanel.SetActive(false);
+            if (chaperonPanel) chaperonPanel.SetActive(false);
+
+            if (BGblur) BGblur.SetActive(true);
+            if (bartendingMiniGameObj != null) bartendingMiniGameObj.SetActive(true);
+        }
+        else if (eventName == "StartDodgeGame")
+        {
+            savedMainScenario = currentScenario;
+            isEventTriggered = true;
+
+            if (leftDialoguePanel) leftDialoguePanel.SetActive(false);
+            if (rightDialoguePanel) rightDialoguePanel.SetActive(false);
+            if (chancellorPanel) chancellorPanel.SetActive(false);
+            if (chaperonPanel) chaperonPanel.SetActive(false);
+
+            if (BGblur) BGblur.SetActive(true);
+
+            tutorialPopup.OpenTutorial("DODGE THE QUESTION", dodgeTutorialSprites, () =>
+            {
+                if (dodgeScript != null) dodgeScript.StartGame();
+            });
+        }
+        else if (eventName == "StartRitimGame")
+        {
+            savedMainScenario = currentScenario;
+            isEventTriggered = true;
+
+            if (leftDialoguePanel) leftDialoguePanel.SetActive(false);
+            if (rightDialoguePanel) rightDialoguePanel.SetActive(false);
+            if (chancellorPanel) chancellorPanel.SetActive(false);
+            if (chaperonPanel) chaperonPanel.SetActive(false);
+
+            if (BGblur) BGblur.SetActive(true);
+            if (rhythmMiniGameObj != null) rhythmMiniGameObj.SetActive(true);
+        }
+        else if (eventName == "StartClawMachine")
+        {
+            savedMainScenario = currentScenario;
+            isEventTriggered = true;
+
+            if (leftDialoguePanel) leftDialoguePanel.SetActive(false);
+            if (rightDialoguePanel) rightDialoguePanel.SetActive(false);
+            if (chancellorPanel) chancellorPanel.SetActive(false);
+            if (chaperonPanel) chaperonPanel.SetActive(false);
+
+            if (BGblur) BGblur.SetActive(true);
+            if (clawMachineMiniGameObj != null) clawMachineMiniGameObj.SetActive(true);
+        }
+        else if (eventName == "StartKurtGame")
+        {
+            savedMainScenario = currentScenario;
+            isEventTriggered = true;
+
+            if (leftDialoguePanel) leftDialoguePanel.SetActive(false);
+            if (rightDialoguePanel) rightDialoguePanel.SetActive(false);
+            if (chancellorPanel) chancellorPanel.SetActive(false);
+            if (chaperonPanel) chaperonPanel.SetActive(false);
+
+            if (BGblur) BGblur.SetActive(true);
+            if (runnerMiniGameObj != null) runnerMiniGameObj.SetActive(true);
+        }
+        else
+        {
+            Debug.LogWarning("DİKKAT: '" + eventName + "' adında bir olay bulunamadı! Harf hatası olabilir. Oyun es geçiyor.");
+            isEventTriggered = false;
+            NextLine();
+        }
     }
 
     public void ResumeFromMiniGame(List<DialogueDataları> results)
     {
         isMenuMode = false;
         isEventTriggered = false;
-        
+
         if (menuMiniGameObj != null) menuMiniGameObj.SetActive(false);
         if (BGblur) BGblur.SetActive(false);
-        
+
         QueueScenarios(results);
     }
-    
+
     public void PlayIceBreakerDialogue(DialogueDataları scenario)
     {
-        isIceBreakerMode = true; 
+        isIceBreakerMode = true;
         isEventTriggered = false;
         StartScenario(scenario);
     }
@@ -881,11 +890,11 @@ public class brainDate : MonoBehaviour
     public void EndIceBreaker(bool success)
     {
         isIceBreakerMode = false;
-        if(iceBreakerScript != null) iceBreakerScript.gameObject.SetActive(false);
+        if (iceBreakerScript != null) iceBreakerScript.gameObject.SetActive(false);
         isEventTriggered = false;
-       
+
         if (BGblur) BGblur.SetActive(false);
-        
+
         if (savedMainScenario != null && savedMainScenario.nextScenario != null)
         {
             StartScenario(savedMainScenario.nextScenario);
@@ -895,29 +904,29 @@ public class brainDate : MonoBehaviour
             Debug.LogWarning("Ice Breaker bitti devamına senaryo bağla datadan");
         }
     }
-    
+
     public void PlayDodgeDialogue(DialogueDataları scenario)
     {
         isDodgeMode = true;
-        isEventTriggered = false; 
+        isEventTriggered = false;
         StartScenario(scenario);
     }
 
     public void EndDodgeGame()
     {
         isDodgeMode = false;
-        if(dodgeScript != null) dodgeScript.gameObject.SetActive(false);
+        if (dodgeScript != null) dodgeScript.gameObject.SetActive(false);
         isEventTriggered = false;
-        
+
         if (BGblur) BGblur.SetActive(false);
 
         UpdateCharacterFocus((SpeakerSide)(-1));
-        
+
         Debug.Log("Dodge Game Bitti");
-        
+
         float totalScore = leftStars + rightStars;
-        
-        if (totalScore >= starThreshold) 
+
+        if (totalScore >= starThreshold)
         {
             if (savedMainScenario != null && savedMainScenario.nextScenario != null)
             {
@@ -933,7 +942,7 @@ public class brainDate : MonoBehaviour
             }
         }
     }
-    
+
     public DialogueDataları GetActiveFailScenario()
     {
         foreach (var outcome in coupleEndScenarios)
@@ -944,9 +953,9 @@ public class brainDate : MonoBehaviour
                 if (outcome.specificFailScenario != null) return outcome.specificFailScenario;
             }
         }
-        return defaultFailScenario; 
+        return defaultFailScenario;
     }
-    
+
     public void UseHeartOfCircuit()
     {
         if (isHeartOfCircuitActive) return;
@@ -955,22 +964,22 @@ public class brainDate : MonoBehaviour
         isHeartOfCircuitUsedThisDate = true;
 
         if (heartOfCircuitButton != null) heartOfCircuitButton.SetActive(false);
-        
-        PlayerPrefs.SetInt("HeartCooldown", 2); 
+
+        PlayerPrefs.SetInt("HeartCooldown", 2);
         PlayerPrefs.Save();
 
         Debug.Log("Heart of the Circuit Aktif! Artık her kalp %30 şansla 2x olabilir.");
     }
-    
+
     public void UseCyberchics()
     {
-        if (isCyberchicsUsed) return; 
+        if (isCyberchicsUsed) return;
         isCyberchicsUsed = true;
 
         if (cyberchicsButton != null) cyberchicsButton.SetActive(false);
 
         DialogueLine currentLine = currentScenario.allLines[lineIndex];
-        
+
         int worstIndex = -1;
         float lowestScore = float.MaxValue;
 
@@ -983,66 +992,66 @@ public class brainDate : MonoBehaviour
                 worstIndex = i;
             }
         }
-        
+
         if (worstIndex != -1)
         {
             if (leftOptionsPanel.activeSelf) leftButtons[worstIndex].gameObject.SetActive(false);
             else if (rightOptionsPanel.activeSelf) rightButtons[worstIndex].gameObject.SetActive(false);
         }
-        
+
         string owned = PlayerPrefs.GetString("SavedOwnedItems", "");
         string equipped = PlayerPrefs.GetString("SavedEquippedItems", "");
-        
+
         owned = owned.Replace("The Cyberchics,", "");
         equipped = equipped.Replace("The Cyberchics,", "");
-        
+
         PlayerPrefs.SetString("SavedOwnedItems", owned);
         PlayerPrefs.SetString("SavedEquippedItems", equipped);
         PlayerPrefs.Save();
     }
-    
+
     void UpdateScoreUI()
     {
         if (heartUI != null) heartUI.text = totalHearts.ToString();
-        
+
         UpdateBar(leftStarsCont, leftStars);
         UpdateBar(rightStarsCont, rightStars);
 
         if (successLeftStars != null) UpdateBar(successLeftStars, leftStars);
         if (successRightStars != null) UpdateBar(successRightStars, rightStars);
-        
+
         if (failLeftStars != null) UpdateBar(failLeftStars, leftStars);
         if (failRightStars != null) UpdateBar(failRightStars, rightStars);
     }
-    
+
     void UpdateBar(Transform container, float starCount)
     {
         if (container == null || fullStarPrefab == null || halfStarPrefab == null) return;
-     
+
         foreach (Transform child in container)
         {
             Destroy(child.gameObject);
         }
-      
-        int fullCount = Mathf.FloorToInt(starCount); 
+
+        int fullCount = Mathf.FloorToInt(starCount);
         bool needsHalf = (starCount - fullCount) >= 0.5f;
 
         for (int i = 0; i < fullCount; i++)
         {
             Instantiate(fullStarPrefab, container);
         }
-        
+
         if (needsHalf)
         {
             Instantiate(halfStarPrefab, container);
         }
     }
-    
+
     void UpdateCharacterFocus(SpeakerSide activeSide)
     {
-        Vector3 focusScale = new Vector3(1.06f, 1.06f, 1f); 
-        Vector3 normalScale = Vector3.one;                
-        
+        Vector3 focusScale = new Vector3(1.06f, 1.06f, 1f);
+        Vector3 normalScale = Vector3.one;
+
         if (activeSide == SpeakerSide.Left)
         {
             leftTargetScale = focusScale;
@@ -1053,13 +1062,13 @@ public class brainDate : MonoBehaviour
             leftTargetScale = normalScale;
             rightTargetScale = focusScale;
         }
-        else 
+        else
         {
             leftTargetScale = normalScale;
             rightTargetScale = normalScale;
         }
     }
-    
+
     public void RestartDate()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
@@ -1075,93 +1084,92 @@ public class brainDate : MonoBehaviour
                 PlayerPrefs.SetInt("HeartCooldown", currentCD - 1);
             }
         }
-        
-        float totalScore = leftStars + rightStars; 
-    
-        if (totalScore >= starThreshold && DateSettings.leftChar != null && DateSettings.rightChar != null) 
+
+        float totalScore = leftStars + rightStars;
+
+        if (totalScore >= starThreshold && DateSettings.leftChar != null && DateSettings.rightChar != null)
         {
             string char1 = DateSettings.leftChar.characterName;
             string char2 = DateSettings.rightChar.characterName;
-            string coupleKey = string.Compare(char1, char2) < 0 ? 
-                "DateLevel_" + char1 + "_" + char2 : 
+            string coupleKey = string.Compare(char1, char2) < 0 ?
+                "DateLevel_" + char1 + "_" + char2 :
                 "DateLevel_" + char2 + "_" + char1;
-            
+
             int currentLevel = PlayerPrefs.GetInt(coupleKey, 0);
             PlayerPrefs.SetInt(coupleKey, currentLevel + 1);
         }
-        
-        int currentBank = PlayerPrefs.GetInt("SavedHearts", 0); 
-        int newTotal = currentBank + totalHearts; 
+
+        int currentBank = PlayerPrefs.GetInt("SavedHearts", 0);
+        int newTotal = currentBank + totalHearts;
         PlayerPrefs.SetInt("SavedHearts", newTotal);
-        
+
         PlayerPrefs.SetInt("IsMarketUnlocked", 1);
-        PlayerPrefs.SetInt("HasSave", 1); 
+        PlayerPrefs.SetInt("HasSave", 1);
 
         PlayerPrefs.Save();
-        
+
         if (!string.IsNullOrEmpty(desktopScene))
         {
             SceneManager.LoadScene(desktopScene);
         }
     }
-    
-    public void StartTheDate() 
+
+    public void StartTheDate()
     {
         if (introPanel != null)
         {
-            introPanel.SetActive(false); 
+            introPanel.SetActive(false);
         }
-        
+
         if (DateSettings.selectedScenario != null)
         {
-            StartScenario(DateSettings.selectedScenario); 
+            StartScenario(DateSettings.selectedScenario);
         }
         else if (startingScenario != null)
         {
-            StartScenario(startingScenario); 
+            StartScenario(startingScenario);
         }
     }
-    
+
     public void EndBartendingGame(float earnedStars, int earnedHearts, TargetCharacter target)
     {
         isBartendingMode = false;
         isEventTriggered = false;
-        
+
         if (bartendingMiniGameObj != null) bartendingMiniGameObj.SetActive(false);
         if (BGblur) BGblur.SetActive(false);
-        
+
         AddReward(earnedStars, earnedHearts, target);
-        
-        if (savedMainScenario != null && savedMainScenario.nextScenario != null)
-        {
-            StartScenario(savedMainScenario.nextScenario);
-        }
-    }
-    
-    public void EndPixelGame(float earnedStars, int earnedHearts, TargetCharacter target)
-    {
-        isEventTriggered = false;
-    
-        if (pixelMiniGameObj != null) pixelMiniGameObj.SetActive(false);
-        if (BGblur) BGblur.SetActive(false);
-    
-        AddReward(earnedStars, earnedHearts, target);
-        
+
         if (savedMainScenario != null && savedMainScenario.nextScenario != null)
         {
             StartScenario(savedMainScenario.nextScenario);
         }
     }
 
-   
+    public void EndPixelGame(float earnedStars, int earnedHearts, TargetCharacter target)
+    {
+        isEventTriggered = false;
+
+        if (pixelMiniGameObj != null) pixelMiniGameObj.SetActive(false);
+        if (BGblur) BGblur.SetActive(false);
+
+        AddReward(earnedStars, earnedHearts, target);
+
+        if (savedMainScenario != null && savedMainScenario.nextScenario != null)
+        {
+            StartScenario(savedMainScenario.nextScenario);
+        }
+    }
+
     public void EndRhythmGame(float earnedStars, int earnedHearts, TargetCharacter target)
     {
         isEventTriggered = false;
         if (rhythmMiniGameObj != null) rhythmMiniGameObj.SetActive(false);
         if (BGblur) BGblur.SetActive(false);
-        
+
         AddReward(earnedStars, earnedHearts, target);
-        
+
         if (savedMainScenario != null && savedMainScenario.nextScenario != null)
         {
             StartScenario(savedMainScenario.nextScenario);
@@ -1173,9 +1181,9 @@ public class brainDate : MonoBehaviour
         isEventTriggered = false;
         if (clawMachineMiniGameObj != null) clawMachineMiniGameObj.SetActive(false);
         if (BGblur) BGblur.SetActive(false);
-        
+
         AddReward(earnedStars, earnedHearts, target);
-        
+
         if (savedMainScenario != null && savedMainScenario.nextScenario != null)
         {
             StartScenario(savedMainScenario.nextScenario);
@@ -1187,21 +1195,21 @@ public class brainDate : MonoBehaviour
         isEventTriggered = false;
         if (runnerMiniGameObj != null) runnerMiniGameObj.SetActive(false);
         if (BGblur) BGblur.SetActive(false);
-        
+
         AddReward(earnedStars, earnedHearts, target);
-        
+
         if (savedMainScenario != null && savedMainScenario.nextScenario != null)
         {
             StartScenario(savedMainScenario.nextScenario);
         }
     }
-    
+
     public void CheckCyberchicsAvailability(DialogueLine line)
     {
         if (cyberchicsButton == null) return;
-        
+
         string equippedItems = PlayerPrefs.GetString("SavedEquippedItems", "");
-        
+
         if (equippedItems.Contains("The Cyberchics") && !isCyberchicsUsed && line.choices != null && line.choices.Count > 2)
         {
             cyberchicsButton.SetActive(true);
@@ -1211,14 +1219,14 @@ public class brainDate : MonoBehaviour
             cyberchicsButton.SetActive(false);
         }
     }
-    
+
     public void CheckHeartOfCircuitAvailability()
     {
         if (heartOfCircuitButton == null) return;
 
         string equippedItems = PlayerPrefs.GetString("SavedEquippedItems", "");
         int cooldown = PlayerPrefs.GetInt("HeartCooldown", 0);
-        
+
         if (equippedItems.Contains("Heart of the Circuit") && cooldown <= 0)
         {
             heartOfCircuitButton.SetActive(true);
@@ -1228,7 +1236,7 @@ public class brainDate : MonoBehaviour
             heartOfCircuitButton.SetActive(false);
         }
     }
-    
+
     void NextLine()
     {
         lineIndex++;

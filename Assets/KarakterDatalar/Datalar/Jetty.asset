@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52414fa3869acd040b0ed6b6d3d42937, type: 3}
+  m_Name: Jetty
+  m_EditorClassIdentifier: 
+  characterName: Jetty
+  profileIcon: {fileID: 21300000, guid: 85a8789573143ce4ea7d58268b1c1276, type: 3}
+  dodgeTheQuestionIkonu: {fileID: 1700561861170249603, guid: ffa1ba64996e645408fb08388a9b6ee8, type: 3}
+  menuMinigameIkonu: {fileID: 1700561861170249603, guid: ffa1ba64996e645408fb08388a9b6ee8, type: 3}
+  portraitImage: {fileID: 1936918675910826544, guid: e8f1130d0e09cef45bb1f9ab49489848, type: 3}
+  fullName: 
+  demographicsInfo: 
+  relationshipGoals: 
+  hobbies: 
+  foodPreferenceText: 
+  quoteText: 
+  locationPreferences:
+  - locationName: Restaurant
+    bonusStars: 1
+  - locationName: Bar
+    bonusStars: 1
+  hatedFoods:
+  - food: 7
+    reactionScenario: {fileID: 11400000, guid: 08b1ff16f60bfdb4ca046126682780d3, type: 2}
+  iceBreakerGood:
+  - {fileID: 11400000, guid: ee0e12515b688134e95c1b384624c4cc, type: 2}
+  - {fileID: 11400000, guid: 68bb5c7bfa73a5049b9cce643bc71a78, type: 2}
+  iceBreakerMid:
+  - {fileID: 11400000, guid: be62aefaf2b622446b10daa4aa96fb59, type: 2}
+  - {fileID: 11400000, guid: 1eb4d5d51184a72459452ebaf6c78e3f, type: 2}
+  iceBreakerBad:
+  - {fileID: 11400000, guid: dff4f7c983b8e6a4099f7cd7d7ef2a9b, type: 2}
+  - {fileID: 11400000, guid: 89459b0193607d347a870e431545063b, type: 2}
+  dodgeQuestions:
+  - {fileID: 11400000, guid: b9f303e588fd6e64490bf5039af23c4e, type: 2}
+  - {fileID: 11400000, guid: 4e78c92f20fcafd46954916be2928a26, type: 2}

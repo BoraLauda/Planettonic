@@ -1,16 +1,20 @@
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro; 
 using System.Collections.Generic;
 
 public class CarouselWithDetail : MonoBehaviour
 {
-   
+    [Header("Görsel Alanları")]
     public Image imgLeft;
     public Image imgCenter;
     public Image imgRight;
-
-    
     public Image imgDetailDisplay; 
+
+    [Header("Yazı Alanları")]
+    public TMP_Text textPlanetName; 
+    public TMP_Text textPlaceTitle;  
+    public TMP_Text textPlaceDesc; 
 
     [System.Serializable]
     public class ItemData
@@ -18,6 +22,11 @@ public class CarouselWithDetail : MonoBehaviour
         public string itemName;
         public Sprite iconSprite;   
         public Sprite detailSprite; 
+        
+        [Header("Ekranda Çıkacak Metinler")]
+        public string planetName;
+        public string placeTitle;
+        public string placeDescription;
     }
 
     [Header("Veriler")]
@@ -34,7 +43,6 @@ public class CarouselWithDetail : MonoBehaviour
     {
         if (dataList.Count == 0) return;
 
-       
         currentIndex = (currentIndex + 1) % dataList.Count;
         UpdateUI();
     }
@@ -56,19 +64,23 @@ public class CarouselWithDetail : MonoBehaviour
     {
         if (dataList == null || dataList.Count == 0) return;
 
-       
         ItemData currentItem = dataList[currentIndex];
         
+      
         imgCenter.sprite = currentItem.iconSprite;
         imgCenter.rectTransform.localScale = Vector3.one * 1.2f; 
         imgCenter.color = Color.white; 
 
-      
         if(imgDetailDisplay != null)
         {
             imgDetailDisplay.sprite = currentItem.detailSprite;
         }
 
+      
+        if(textPlanetName != null) textPlanetName.text = currentItem.planetName;
+        if(textPlaceTitle != null) textPlaceTitle.text = currentItem.placeTitle;
+        if(textPlaceDesc != null) textPlaceDesc.text = currentItem.placeDescription;
+        
         
         int leftIndex = (currentIndex - 1 + dataList.Count) % dataList.Count;
         
@@ -76,7 +88,6 @@ public class CarouselWithDetail : MonoBehaviour
         imgLeft.sprite = dataList[leftIndex].iconSprite;
         imgLeft.rectTransform.localScale = Vector3.one * 0.7f; 
         imgLeft.color = new Color(1, 1, 1, 0.5f); 
-
         
         int rightIndex = (currentIndex + 1) % dataList.Count;
 
