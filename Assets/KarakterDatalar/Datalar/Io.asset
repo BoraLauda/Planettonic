@@ -18,11 +18,11 @@ MonoBehaviour:
   menuMinigameIkonu: {fileID: 324928346125548867, guid: 868d47c2329247e4e9303e036389f3e6, type: 3}
   portraitImage: {fileID: 281146401269919291, guid: a592fd1e0039a0b41a340d5324df28b1, type: 3}
   fullName: Io
-  demographicsInfo: 26 || MALE || MERCURY || LAWYER
-  relationshipGoals: Casual || Marriage || Kids
-  hobbies: 
-  foodPreferenceText: 
-  quoteText: 
+  demographicsInfo: 24 || Female || Venus || Producer
+  relationshipGoals: Commitment || Marriage || Kids
+  hobbies: Singing, swimming, playing guitar, reading comics
+  foodPreferenceText: Vegetarian
+  quoteText: "\xD6zl\xFC s\xF6z\r\n"
   locationPreferences:
   - locationName: RESTAURANT
     bonusStars: 1
