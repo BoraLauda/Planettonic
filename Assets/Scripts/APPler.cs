@@ -5,6 +5,16 @@ using System.Collections.Generic;
 using UnityEngine.Serialization;
 using UnityEngine.SceneManagement;
 
+[System.Serializable]
+public class LocationUIElement
+{
+    public string locationName;
+    public Button button;       
+    public List<TMP_Text> linkedTexts; 
+    public List<Image> linkedIcons;    
+    public GameObject selectionStroke;
+}
+
 public class APPler : MonoBehaviour
 {
     public GameObject backButtonSmall; 
@@ -15,6 +25,8 @@ public class APPler : MonoBehaviour
     
     public Characters IoData;    
     public Characters ElroiData;
+    public Characters AryData;
+    public Characters LoreenData;
     
     [Header("Sonradan Açılacak Karakterler")]
     public Characters JettyData;
@@ -65,23 +77,31 @@ public class APPler : MonoBehaviour
     [Header("UI Kilitli Prefab (image_6 Prefabı)")]
     public GameObject lockedPrefab; 
 
-    [Header("Mekan Butonları Küçük")]
-    public Button btnRestoranSmall;
-    public Button btnBarSmall;
-    public Button btnEvSmall;
-    public Button btnArcadeSmall;
+    [Header("Mekan UI Paketleri Küçük")]
+    public LocationUIElement restoranSmall;
+    public LocationUIElement barSmall;
+    public LocationUIElement evSmall;
+    public LocationUIElement arcadeSmall;
 
-    [Header("Mekan Butonları Büyük")]
-    public Button btnRestoranLarge;
-    public Button btnBarLarge;
-    public Button btnEvLarge;
-    public Button btnArcadeLarge;
+    [Header("Mekan UI Paketleri Büyük")]
+    public LocationUIElement restoranLarge;
+    public LocationUIElement barLarge;
+    public LocationUIElement evLarge;
+    public LocationUIElement arcadeLarge;
 
     [Header("Reviews (Değerlendirmeler) Ekranı")]
     public Transform reviewsContentContainerSmall; 
     public Transform reviewsContentContainerLarge; 
-    public GameObject reviewSlotPrefabSmall;       // YENİ: Küçük Ekran Prefabı
-    public GameObject reviewSlotPrefabLarge;       // YENİ: Büyük Ekran Prefabı
+    public GameObject reviewSlotPrefabSmall;      
+    public GameObject reviewSlotPrefabLarge;       
+
+    [Header("Match Butonu (Onay Sistemi)")]
+    public Button btnMainMatchSmall; 
+    public Button btnMainMatchLarge; 
+    private string currentSelectedLocation = "";
+    
+    public List<TMP_Text> leftNameTexts; 
+    public List<TMP_Text> rightNameTexts;
 
     void Start()
     {
@@ -199,6 +219,7 @@ public class APPler : MonoBehaviour
     
     public void OnDatePlacesClicked()
     {
+        ResetSelection(); 
         OpenPageByIndex(4); 
     }
     
@@ -274,6 +295,20 @@ public class APPler : MonoBehaviour
             }
         }
 
+        if (leftNameTexts != null)
+        {
+            foreach (var txt in leftNameTexts)
+            {
+                if (txt == null) continue;
+                
+                if (selectedLeft != null)
+                    txt.text = selectedLeft.characterName; 
+                else
+                    txt.text = " "; 
+            }
+        }
+
+     
         foreach (var img in rightHeartImages)
         {
             if (img == null) continue;
@@ -286,6 +321,19 @@ public class APPler : MonoBehaviour
             {
                 if (defaultIcon != null) img.sprite = defaultIcon;
                 img.color = Color.white; 
+            }
+        }
+
+        if (rightNameTexts != null)
+        {
+            foreach (var txt in rightNameTexts)
+            {
+                if (txt == null) continue;
+                
+                if (selectedRight != null)
+                    txt.text = selectedRight.characterName; 
+                else
+                    txt.text = " "; 
             }
         }
         
@@ -325,10 +373,10 @@ public class APPler : MonoBehaviour
     {
         if (selectedLeft == null || selectedRight == null) 
         {
-            SetButtonState(btnRestoranSmall, btnRestoranLarge, false);
-            SetButtonState(btnArcadeSmall, btnArcadeLarge, false);
-            SetButtonState(btnBarSmall, btnBarLarge, false);
-            SetButtonState(btnEvSmall, btnEvLarge, false);
+            SetButtonState(restoranSmall, restoranLarge, false);
+            SetButtonState(arcadeSmall, arcadeLarge, false);
+            SetButtonState(barSmall, barLarge, false);
+            SetButtonState(evSmall, evLarge, false);
             return; 
         }
 
@@ -348,49 +396,135 @@ public class APPler : MonoBehaviour
         {
             if (isIoAndElroi)
             {
-                SetButtonState(btnRestoranSmall, btnRestoranLarge, true);
-                SetButtonState(btnArcadeSmall, btnArcadeLarge, false);
-                SetButtonState(btnBarSmall, btnBarLarge, false);
-                SetButtonState(btnEvSmall, btnEvLarge, false);
+                SetButtonState(restoranSmall, restoranLarge, true);
+                SetButtonState(arcadeSmall, arcadeLarge, false);
+                SetButtonState(barSmall, barLarge, false);
+                SetButtonState(evSmall, evLarge, false);
             }
             else
             {
-                SetButtonState(btnRestoranSmall, btnRestoranLarge, true);
-                SetButtonState(btnArcadeSmall, btnArcadeLarge, true);
-                SetButtonState(btnBarSmall, btnBarLarge, false);
-                SetButtonState(btnEvSmall, btnEvLarge, false);
+                SetButtonState(restoranSmall, restoranLarge, true);
+                SetButtonState(arcadeSmall, arcadeLarge, true);
+                SetButtonState(barSmall, barLarge, false);
+                SetButtonState(evSmall, evLarge, false);
             }
         }
         else if (currentLevel == 1)
         {
             if (isIoAndElroi)
             {
-                SetButtonState(btnRestoranSmall, btnRestoranLarge, false);
-                SetButtonState(btnArcadeSmall, btnArcadeLarge, false);
-                SetButtonState(btnBarSmall, btnBarLarge, true);  
-                SetButtonState(btnEvSmall, btnEvLarge, false);   
+                SetButtonState(restoranSmall, restoranLarge, false);
+                SetButtonState(arcadeSmall, arcadeLarge, false);
+                SetButtonState(barSmall, barLarge, true);  
+                SetButtonState(evSmall, evLarge, false);   
             }
             else
             {
-                SetButtonState(btnRestoranSmall, btnRestoranLarge, false);
-                SetButtonState(btnArcadeSmall, btnArcadeLarge, false);
-                SetButtonState(btnBarSmall, btnBarLarge, true);
-                SetButtonState(btnEvSmall, btnEvLarge, true);
+                SetButtonState(restoranSmall, restoranLarge, false);
+                SetButtonState(arcadeSmall, arcadeLarge, false);
+                SetButtonState(barSmall, barLarge, true);
+                SetButtonState(evSmall, evLarge, true);
             }
         }
         else 
         {
-            SetButtonState(btnRestoranSmall, btnRestoranLarge, false);
-            SetButtonState(btnArcadeSmall, btnArcadeLarge, false);
-            SetButtonState(btnBarSmall, btnBarLarge, false);
-            SetButtonState(btnEvSmall, btnEvLarge, false);
+            SetButtonState(restoranSmall, restoranLarge, false);
+            SetButtonState(arcadeSmall, arcadeLarge, false);
+            SetButtonState(barSmall, barLarge, false);
+            SetButtonState(evSmall, evLarge, false);
         }
     }
 
-    private void SetButtonState(Button btnSmall, Button btnLarge, bool isActive)
+    private void SetButtonState(LocationUIElement uiSmall, LocationUIElement uiLarge, bool isActive)
     {
-        if (btnSmall != null) btnSmall.interactable = isActive;
-        if (btnLarge != null) btnLarge.interactable = isActive;
+        ApplyStateToUIElement(uiSmall, isActive);
+        ApplyStateToUIElement(uiLarge, isActive);
+    }
+
+    private void ApplyStateToUIElement(LocationUIElement uiElement, bool isActive)
+    {
+        if (uiElement == null || uiElement.button == null) return;
+
+        uiElement.button.interactable = isActive;
+        float alpha = isActive ? 1f : 0.3f;
+
+        if (uiElement.linkedTexts != null)
+        {
+            foreach (var txt in uiElement.linkedTexts)
+            {
+                if (txt != null)
+                {
+                    Color c = txt.color;
+                    c.a = alpha;
+                    txt.color = c;
+                }
+            }
+        }
+
+        if (uiElement.linkedIcons != null)
+        {
+            foreach (var img in uiElement.linkedIcons)
+            {
+                if (img != null)
+                {
+                    Color c = img.color;
+                    c.a = alpha;
+                    img.color = c;
+                }
+            }
+        }
+    }
+
+    public void ResetSelection()
+    {
+        currentSelectedLocation = "";
+        
+        if (btnMainMatchSmall != null) btnMainMatchSmall.interactable = false;
+        if (btnMainMatchLarge != null) btnMainMatchLarge.interactable = false;
+        
+        SetStrokeState(restoranSmall, false); SetStrokeState(restoranLarge, false);
+        SetStrokeState(barSmall, false); SetStrokeState(barLarge, false);
+        SetStrokeState(evSmall, false); SetStrokeState(evLarge, false);
+        SetStrokeState(arcadeSmall, false); SetStrokeState(arcadeLarge, false);
+    }
+
+    private void SetStrokeState(LocationUIElement ui, bool state)
+    {
+        if (ui != null && ui.selectionStroke != null) ui.selectionStroke.SetActive(state);
+    }
+
+    public void SelectLocation(string clickedLocationName)
+    {
+        currentSelectedLocation = clickedLocationName;
+
+        SetStrokeState(restoranSmall, false); SetStrokeState(restoranLarge, false);
+        SetStrokeState(barSmall, false); SetStrokeState(barLarge, false);
+        SetStrokeState(evSmall, false); SetStrokeState(evLarge, false);
+        SetStrokeState(arcadeSmall, false); SetStrokeState(arcadeLarge, false);
+
+        EnableStrokeIfMatch(restoranSmall, clickedLocationName); EnableStrokeIfMatch(restoranLarge, clickedLocationName);
+        EnableStrokeIfMatch(barSmall, clickedLocationName); EnableStrokeIfMatch(barLarge, clickedLocationName);
+        EnableStrokeIfMatch(evSmall, clickedLocationName); EnableStrokeIfMatch(evLarge, clickedLocationName);
+        EnableStrokeIfMatch(arcadeSmall, clickedLocationName); EnableStrokeIfMatch(arcadeLarge, clickedLocationName);
+
+        if (btnMainMatchSmall != null) btnMainMatchSmall.interactable = true;
+        if (btnMainMatchLarge != null) btnMainMatchLarge.interactable = true;
+    }
+
+    private void EnableStrokeIfMatch(LocationUIElement ui, string locName)
+    {
+        if (ui != null && ui.selectionStroke != null && ui.locationName == locName)
+        {
+            ui.selectionStroke.SetActive(true);
+        }
+    }
+
+    public void ConfirmAndStartMatch()
+    {
+        if (!string.IsNullOrEmpty(currentSelectedLocation))
+        {
+            StartDateWithLocation(currentSelectedLocation);
+        }
     }
 
     public void StartDateWithLocation(string secilenMekan)
@@ -519,6 +653,8 @@ public class APPler : MonoBehaviour
         if (ElroiData != null && ElroiData.characterName == charName) return ElroiData.profileIcon;
         if (JettyData != null && JettyData.characterName == charName) return JettyData.profileIcon;
         if (LinusData != null && LinusData.characterName == charName) return LinusData.profileIcon;
+        if (AryData != null && AryData.characterName == charName) return AryData.profileIcon; 
+        if (LoreenData != null && LoreenData.characterName == charName) return LoreenData.profileIcon; 
         return defaultIcon;
     }
 }

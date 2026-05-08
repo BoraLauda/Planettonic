@@ -203,8 +203,7 @@ public class brainDODGE : MonoBehaviour
             
             DialogueDataları questionToAsk = null;
 
-            // --- YENİ SİSTEM: Soruları Karakter Dosyasından Çek ---
-            if (isLeftDodging) 
+              if (isLeftDodging) 
             {
                 if(DateSettings.leftChar != null) questionToAsk = GetRandomQuestion(DateSettings.leftChar.dodgeQuestions);
             }
