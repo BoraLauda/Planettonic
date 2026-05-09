@@ -261,7 +261,8 @@ public class APPler : MonoBehaviour
             }
 
             string cName = allSlots[i].myProfile.characterName;
-
+            GenderType cGender = allSlots[i].myProfile.cinsiyet; 
+            
             if (PlayerPrefs.GetInt("PlayedCouple_Ary_Jetty", 0) == 1)
             {
                 if (cName == "Jetty")
@@ -275,6 +276,24 @@ public class APPler : MonoBehaviour
                     bool isJettySelected = (selectedLeft != null && selectedLeft.characterName == "Jetty") || 
                                            (selectedRight != null && selectedRight.characterName == "Jetty");
                     if (isJettySelected) isGrayedOut = true;
+                }
+            }
+
+            
+            if (selectedLeft != null && selectedLeft != allSlots[i].myProfile)
+            {
+                
+                if (selectedLeft.cinsiyet == cGender)
+                {
+                    isGrayedOut = true; 
+                }
+            }
+            else if (selectedRight != null && selectedRight != allSlots[i].myProfile)
+            {
+                
+                if (selectedRight.cinsiyet == cGender)
+                {
+                    isGrayedOut = true;
                 }
             }
 

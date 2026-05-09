@@ -22,11 +22,9 @@ public class TutorialPopup : MonoBehaviour
 
     void Awake()
     {
-        
         canvasGroup = GetComponent<CanvasGroup>();
         if (canvasGroup == null) canvasGroup = gameObject.AddComponent<CanvasGroup>();
 
-       
         leftButton.onClick.RemoveAllListeners(); 
         leftButton.onClick.AddListener(PrevPage);
 
@@ -35,8 +33,10 @@ public class TutorialPopup : MonoBehaviour
 
         readyButton.onClick.RemoveAllListeners();
         readyButton.onClick.AddListener(OnReadyClicked);
-        
-        
+    }
+    
+    void Start()
+    {
         HidePanel();
     }
 
@@ -48,6 +48,8 @@ public class TutorialPopup : MonoBehaviour
             return;
         }
 
+        gameObject.SetActive(true);
+
         if (titleText != null) titleText.text = title;
 
         currentPages = pages;
@@ -55,9 +57,7 @@ public class TutorialPopup : MonoBehaviour
         
         pageIndex = 0; 
         
-        
         ShowPanel();
-        
         UpdateUI();
     }
 
@@ -69,9 +69,27 @@ public class TutorialPopup : MonoBehaviour
             displayImage.preserveAspect = true; 
         }
         
-        if(leftButton) leftButton.gameObject.SetActive(pageIndex > 0);
-        if(rightButton) rightButton.gameObject.SetActive(pageIndex < currentPages.Count - 1);
-        if(readyButton) readyButton.gameObject.SetActive(pageIndex == currentPages.Count - 1);
+        bool canGoLeft = pageIndex > 0;
+        bool canGoRight = pageIndex < currentPages.Count - 1;
+        bool isLastPage = pageIndex == currentPages.Count - 1;
+
+        if(leftButton) 
+        {
+            leftButton.gameObject.SetActive(canGoLeft);
+            leftButton.interactable = canGoLeft;
+        }
+
+        if(rightButton) 
+        {
+            rightButton.gameObject.SetActive(canGoRight);
+            rightButton.interactable = canGoRight;
+        }
+
+        if(readyButton) 
+        {
+            readyButton.gameObject.SetActive(isLastPage);
+            readyButton.interactable = isLastPage;
+        }
     }
 
     void NextPage()
@@ -94,25 +112,20 @@ public class TutorialPopup : MonoBehaviour
 
     void OnReadyClicked()
     {
-        
         if (onReadyCallback != null)
         {
             onReadyCallback.Invoke();
         }
 
-       
         HidePanel();
     }
 
- 
     private void ShowPanel()
     {
-       
         canvasGroup.alpha = 1f; 
         canvasGroup.blocksRaycasts = true; 
         canvasGroup.interactable = true; 
         
-      
         transform.SetAsLastSibling();
     }
 
@@ -121,5 +134,7 @@ public class TutorialPopup : MonoBehaviour
         canvasGroup.alpha = 0f; 
         canvasGroup.blocksRaycasts = false; 
         canvasGroup.interactable = false; 
+        
+        gameObject.SetActive(false);
     }
 }

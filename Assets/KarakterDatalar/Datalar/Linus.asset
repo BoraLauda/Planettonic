@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Linus
   m_EditorClassIdentifier: 
   characterName: Linus
+  cinsiyet: 1
   profileIcon: {fileID: 21300000, guid: 243dec76f289a0c4f86cf1cd834c6e39, type: 3}
   dodgeTheQuestionIkonu: {fileID: -5726526971280107390, guid: 7d8893f829515954da8db8356faa17df, type: 3}
   menuMinigameIkonu: {fileID: -5726526971280107390, guid: 7d8893f829515954da8db8356faa17df, type: 3}
