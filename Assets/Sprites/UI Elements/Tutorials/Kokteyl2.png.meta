@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Kokteyl2_0: 8489541362323208168
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

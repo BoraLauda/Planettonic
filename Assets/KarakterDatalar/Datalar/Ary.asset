@@ -50,7 +50,7 @@ MonoBehaviour:
   - targetCharacter: {fileID: 11400000, guid: 52f97840cc872804392c25a1f2b8175b, type: 2}
     diyalogDosyasi: {fileID: 11400000, guid: e8c2c28230e0e2f4aa9e5e2cefe4051e, type: 2}
   dodgeQuestions:
-  - targetCharacter: {fileID: 0}
-    diyalogDosyasi: {fileID: 0}
-  - targetCharacter: {fileID: 0}
-    diyalogDosyasi: {fileID: 0}
+  - targetCharacter: {fileID: 11400000, guid: 52f97840cc872804392c25a1f2b8175b, type: 2}
+    diyalogDosyasi: {fileID: 11400000, guid: 0f4d66b9e3c95f6448f8497e9a12f078, type: 2}
+  - targetCharacter: {fileID: 11400000, guid: 52f97840cc872804392c25a1f2b8175b, type: 2}
+    diyalogDosyasi: {fileID: 11400000, guid: c73f4c946737af9429309ffee0b00050, type: 2}
