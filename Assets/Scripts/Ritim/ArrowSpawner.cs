@@ -15,6 +15,14 @@ public class ArrowSpawner : MonoBehaviour
     public float gameDuration = 20f;
     
     public TextMeshProUGUI sureText;
+    
+    [Header("Skor UI")]
+    public TextMeshProUGUI leftScoreText;
+    public TextMeshProUGUI rightScoreText;
+
+    public static int leftScore = 0;
+    public static int rightScore = 0;
+   
 
     private float timer;
     private float gameTimer;
@@ -30,6 +38,9 @@ public class ArrowSpawner : MonoBehaviour
         
         currentGlobalCombo = 0;
         maxGlobalCombo = 0; 
+        leftScore = 0;
+        rightScore = 0;
+        UpdateScoreUI();
     }
 
     void Update()
@@ -101,6 +112,30 @@ public class ArrowSpawner : MonoBehaviour
         lanes[randomLane].activeNotes.Add(noteScript);
     }
 
+   
+    public void AddScore(int basePoints, bool isLeftSide)
+    {
+        int earnedScore = basePoints * currentGlobalCombo;
+
+        if (isLeftSide)
+        {
+            leftScore += earnedScore;
+        }
+        else
+        {
+            rightScore += earnedScore;
+        }
+
+        UpdateScoreUI();
+    }
+
+    private void UpdateScoreUI()
+    {
+        if (leftScoreText != null) leftScoreText.text = leftScore.ToString();
+        if (rightScoreText != null) rightScoreText.text = rightScore.ToString();
+    }
+   
+
     void GameOver()
     {
         isGameOver = true;
@@ -116,8 +151,8 @@ public class ArrowSpawner : MonoBehaviour
         {
             float kazanilanYildiz = 0f;
             int kazanilanKalp = 0;
-
             
+          
             if (maxGlobalCombo >= 14) 
             {
                 kazanilanYildiz = 1f;
@@ -130,7 +165,7 @@ public class ArrowSpawner : MonoBehaviour
                 kazanilanKalp = 20;
                 Debug.Log($"RİTİM: İYİ İŞ ÇIKARDIN! En Yüksek Kombo: {maxGlobalCombo} -> +0.5 Yıldız, +20 Kalp");
             }
-            else // Ritim Kaçtı
+            else 
             {
                 kazanilanYildiz = 0f;
                 kazanilanKalp = 0;

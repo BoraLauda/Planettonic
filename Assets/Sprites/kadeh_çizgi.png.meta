@@ -1,0 +1,455 @@
+fileFormatVersion: 2
+guid: 4ce904a98b8eb0749b546b39b6e3e1ad
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -6741924543218809787
+    second: "kadeh_c\u0327izgi_0"
+  - first:
+      213: -6245762738256630575
+    second: "kadeh_c\u0327izgi_1"
+  - first:
+      213: 202478021528140748
+    second: "kadeh_c\u0327izgi_2"
+  - first:
+      213: -3934416985474299434
+    second: "kadeh_c\u0327izgi_3"
+  - first:
+      213: 4007023544168640625
+    second: "kadeh_c\u0327izgi_4"
+  - first:
+      213: 895786569339203431
+    second: "kadeh_c\u0327izgi_5"
+  - first:
+      213: 7629264519360027027
+    second: "kadeh_c\u0327izgi_6"
+  - first:
+      213: -2185428341574305837
+    second: "kadeh_c\u0327izgi_7"
+  - first:
+      213: 5251591514929500294
+    second: "kadeh_c\u0327izgi_8"
+  - first:
+      213: -2442974122000007590
+    second: "kadeh_c\u0327izgi_9"
+  - first:
+      213: 7325761090571056193
+    second: "kadeh_c\u0327izgi_10"
+  - first:
+      213: 6750542187739882557
+    second: "kadeh_c\u0327izgi_11"
+  - first:
+      213: -7905850871649155399
+    second: "kadeh_c\u0327izgi_12"
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: "kadeh_c\u0327izgi_0"
+      rect:
+        serializedVersion: 2
+        x: 1229
+        y: 3765
+        width: 52
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 54484f2295fdf62a0800000000000000
+      internalID: -6741924543218809787
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "kadeh_c\u0327izgi_1"
+      rect:
+        serializedVersion: 2
+        x: 1355
+        y: 3738
+        width: 57
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1dca7da81e79259a0800000000000000
+      internalID: -6245762738256630575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "kadeh_c\u0327izgi_2"
+      rect:
+        serializedVersion: 2
+        x: 2684
+        y: 3738
+        width: 57
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ccb320410b85fc200800000000000000
+      internalID: 202478021528140748
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "kadeh_c\u0327izgi_3"
+      rect:
+        serializedVersion: 2
+        x: 2815
+        y: 3765
+        width: 52
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6d98a8ed8942669c0800000000000000
+      internalID: -3934416985474299434
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "kadeh_c\u0327izgi_4"
+      rect:
+        serializedVersion: 2
+        x: 1486
+        y: 3717
+        width: 57
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1707ccceeaecb9730800000000000000
+      internalID: 4007023544168640625
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "kadeh_c\u0327izgi_5"
+      rect:
+        serializedVersion: 2
+        x: 1618
+        y: 3700
+        width: 57
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 76f670483297e6c00800000000000000
+      internalID: 895786569339203431
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "kadeh_c\u0327izgi_6"
+      rect:
+        serializedVersion: 2
+        x: 2421
+        y: 3700
+        width: 57
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 39912f5a8a790e960800000000000000
+      internalID: 7629264519360027027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "kadeh_c\u0327izgi_7"
+      rect:
+        serializedVersion: 2
+        x: 2553
+        y: 3717
+        width: 57
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3d77462908ccba1e0800000000000000
+      internalID: -2185428341574305837
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "kadeh_c\u0327izgi_8"
+      rect:
+        serializedVersion: 2
+        x: 1750
+        y: 3686
+        width: 58
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 68014d0a8a661e840800000000000000
+      internalID: 5251591514929500294
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "kadeh_c\u0327izgi_9"
+      rect:
+        serializedVersion: 2
+        x: 1882
+        y: 3676
+        width: 58
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a5eb7bebaffc81ed0800000000000000
+      internalID: -2442974122000007590
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "kadeh_c\u0327izgi_10"
+      rect:
+        serializedVersion: 2
+        x: 2015
+        y: 3672
+        width: 66
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 144bdd8f5e45aa560800000000000000
+      internalID: 7325761090571056193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "kadeh_c\u0327izgi_11"
+      rect:
+        serializedVersion: 2
+        x: 2156
+        y: 3676
+        width: 58
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d3426859a5ebead50800000000000000
+      internalID: 6750542187739882557
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "kadeh_c\u0327izgi_12"
+      rect:
+        serializedVersion: 2
+        x: 2288
+        y: 3686
+        width: 58
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b6c32ce486c84290800000000000000
+      internalID: -7905850871649155399
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      "kadeh_c\u0327izgi_0": -6741924543218809787
+      "kadeh_c\u0327izgi_1": -6245762738256630575
+      "kadeh_c\u0327izgi_10": 7325761090571056193
+      "kadeh_c\u0327izgi_11": 6750542187739882557
+      "kadeh_c\u0327izgi_12": -7905850871649155399
+      "kadeh_c\u0327izgi_2": 202478021528140748
+      "kadeh_c\u0327izgi_3": -3934416985474299434
+      "kadeh_c\u0327izgi_4": 4007023544168640625
+      "kadeh_c\u0327izgi_5": 895786569339203431
+      "kadeh_c\u0327izgi_6": 7629264519360027027
+      "kadeh_c\u0327izgi_7": -2185428341574305837
+      "kadeh_c\u0327izgi_8": 5251591514929500294
+      "kadeh_c\u0327izgi_9": -2442974122000007590
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
