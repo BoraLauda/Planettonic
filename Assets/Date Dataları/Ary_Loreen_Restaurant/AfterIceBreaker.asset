@@ -78,7 +78,7 @@ MonoBehaviour:
     choices: []
   - side: 0
     characterName: Loreen
-    characterSprite: {fileID: 0}
+    characterSprite: {fileID: 21300000, guid: 821994f203fef8344a71dda283821891, type: 3}
     sentence: "...so that\u2019s how I ended up falling off my bike. Twice in the
       same day."
     eventTrigger: 
