@@ -23,6 +23,9 @@ MonoBehaviour:
   relationshipGoals: 
   hobbies: 
   foodPreferenceText: 
+  profileRatingIcons:
+  - {fileID: 21300000, guid: a85149ffbf8caf24cb342d45c59ff28c, type: 3}
+  - {fileID: 21300000, guid: 3a92a48834ed72d49ac50653aa5d7202, type: 3}
   quoteText: 
   locationPreferences:
   - locationName: BAR

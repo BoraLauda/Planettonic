@@ -726,6 +726,8 @@ public class brainDate : MonoBehaviour
 
     public void OnScreenClick()
     {
+        if (tutorialPopup != null && tutorialPopup.gameObject.activeSelf) return;
+        
         if (isMenuMode) return;
         if (currentScenario == null) return;
         if (lineIndex >= currentScenario.allLines.Count) return;
