@@ -27,13 +27,31 @@ public class Characters : ScriptableObject
     public List<LocationPreference> locationPreferences;
     public List<FoodReaction> hatedFoods; 
 
-    [Header("Ice Breaker Soruları")]
-    public List<DialogueDataları> iceBreakerGood;
-    public List<DialogueDataları> iceBreakerMid;
-    public List<DialogueDataları> iceBreakerBad;
+   
+    [Header("Ice Breaker Good (Hedefe Özel)")]
+    public List<TargetedDialogue> iceBreakerGood;
 
+    [Header("Ice Breaker Mid (Hedefe Özel)")]
+    public List<TargetedDialogue> iceBreakerMid;
+
+    [Header("Ice Breaker Bad (Hedefe Özel)")]
+    public List<TargetedDialogue> iceBreakerBad;
+    
+
+    
     [Header("Dodge Oyunu Soruları")]
     public List<DialogueDataları> dodgeQuestions;
+}
+
+
+[System.Serializable]
+public class TargetedDialogue
+{
+    [Header("Kime Söylenecek?")]
+    public Characters targetCharacter; 
+
+    [Header("Diyalog Dosyası")]
+    public DialogueDataları diyalogDosyasi; 
 }
 
 [System.Serializable]
