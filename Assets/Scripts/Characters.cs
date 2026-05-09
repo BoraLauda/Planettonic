@@ -27,7 +27,6 @@ public class Characters : ScriptableObject
     public List<LocationPreference> locationPreferences;
     public List<FoodReaction> hatedFoods; 
 
-   
     [Header("Ice Breaker Good (Hedefe Özel)")]
     public List<TargetedDialogue> iceBreakerGood;
 
@@ -36,18 +35,16 @@ public class Characters : ScriptableObject
 
     [Header("Ice Breaker Bad (Hedefe Özel)")]
     public List<TargetedDialogue> iceBreakerBad;
-    
 
-    
-    [Header("Dodge Oyunu Soruları")]
-    public List<DialogueDataları> dodgeQuestions;
+   
+    [Header("Dodge Questions (Hedefe Özel)")]
+    public List<TargetedDialogue> dodgeQuestions;
 }
-
 
 [System.Serializable]
 public class TargetedDialogue
 {
-    [Header("Kime Söylenecek?")]
+    [Header("Kime Söylenecek/Sorulacak?")]
     public Characters targetCharacter; 
 
     [Header("Diyalog Dosyası")]

@@ -51,5 +51,7 @@ MonoBehaviour:
   - targetCharacter: {fileID: 11400000, guid: 70924192341f4a244bdda3ba9cd56e47, type: 2}
     diyalogDosyasi: {fileID: 11400000, guid: 9b07c77d4b8f8c14dbac5b72b0e154f1, type: 2}
   dodgeQuestions:
-  - {fileID: 11400000, guid: 4fc40f655e52f53418b6699a38ec2f7f, type: 2}
-  - {fileID: 11400000, guid: 2a4a4488c4e6ac74d8149e78dffe4f15, type: 2}
+  - targetCharacter: {fileID: 11400000, guid: 70924192341f4a244bdda3ba9cd56e47, type: 2}
+    diyalogDosyasi: {fileID: 11400000, guid: 4fc40f655e52f53418b6699a38ec2f7f, type: 2}
+  - targetCharacter: {fileID: 11400000, guid: 70924192341f4a244bdda3ba9cd56e47, type: 2}
+    diyalogDosyasi: {fileID: 11400000, guid: 2a4a4488c4e6ac74d8149e78dffe4f15, type: 2}
