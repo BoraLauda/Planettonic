@@ -1,0 +1,75 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f832b14936fc2048824d9308b14ded6, type: 3}
+  m_Name: LynnGoodOpt
+  m_EditorClassIdentifier: 
+  locationName: 
+  locationBackground: {fileID: 0}
+  allLines:
+  - side: 1
+    characterName: Lynn
+    characterSprite: {fileID: 21300000, guid: 724a9d18b99b23f4d8ef91418ba692f0, type: 3}
+    sentence: "Oh so you\u2019re an experienced player. This all feels unfair now,
+      it makes so much sense that you\u2019ve got me so..."
+    eventTrigger: 
+    choices: []
+  - side: 0
+    characterName: Io
+    characterSprite: {fileID: -1160322238068995058, guid: e79cf994b0112f542bb5904bcd06966b, type: 3}
+    sentence: So what?
+    eventTrigger: 
+    choices: []
+  - side: 1
+    characterName: Lynn
+    characterSprite: {fileID: 0}
+    sentence: Flustered, I was trying to make a joke but got carried away with it...
+      fuck.
+    eventTrigger: 
+    choices: []
+  - side: 0
+    characterName: Io
+    characterSprite: {fileID: 0}
+    sentence: "God you\u2019re actually adorable. And I think I\u2019m taller than
+      you."
+    eventTrigger: 
+    choices: []
+  - side: 1
+    characterName: Lynn
+    characterSprite: {fileID: 0}
+    sentence: "No you\u2019re fucking not!"
+    eventTrigger: 
+    choices: []
+  - side: 0
+    characterName: Io
+    characterSprite: {fileID: 0}
+    sentence: "Oh but I am! Chaperon, who\u2019s taller?"
+    eventTrigger: 
+    choices: []
+  - side: 3
+    characterName: Chaperon
+    characterSprite: {fileID: 0}
+    sentence: Io is the taller one out of the two of you, by 2 centimeters.
+    eventTrigger: 
+    choices: []
+  - side: 1
+    characterName: Lynn
+    characterSprite: {fileID: 0}
+    sentence: "Hey, that\u2019s private info!\r\n"
+    eventTrigger: 
+    choices: []
+  - side: 0
+    characterName: Io
+    characterSprite: {fileID: 0}
+    sentence: "Oh don\u2019t worry about it, I think it just makes it even better."
+    eventTrigger: StartDodgeGame
+    choices: []
+  nextScenario: {fileID: 11400000, guid: 888a5de0cccb9424eb74f5af33f619d0, type: 2}

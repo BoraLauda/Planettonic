@@ -10,74 +10,57 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0f832b14936fc2048824d9308b14ded6, type: 3}
-  m_Name: Start
+  m_Name: DateSuccess Arcade
   m_EditorClassIdentifier: 
-  locationName: Restaurant
-  locationBackground: {fileID: 21300000, guid: f8bdb2b11a144d94f9ac89625b2a01f4, type: 3}
+  locationName: 
+  locationBackground: {fileID: 0}
   allLines:
   - side: 0
     characterName: Io
     characterSprite: {fileID: -1160322238068995058, guid: e79cf994b0112f542bb5904bcd06966b, type: 3}
-    sentence: "Hi! It\u2019s Lynn, right?"
+    sentence: You know that was a lot of fun. Too bad we only get 1 date.
     eventTrigger: 
     choices: []
   - side: 1
     characterName: Lynn
     characterSprite: {fileID: 21300000, guid: 724a9d18b99b23f4d8ef91418ba692f0, type: 3}
-    sentence: Hey there, yeah. Nice to meet you Io!
+    sentence: "Oh, is that how it works? That\u2019s a shame..."
     eventTrigger: 
     choices: []
   - side: 0
     characterName: Io
     characterSprite: {fileID: 0}
-    sentence: Mhm, nice to meet you too. You look really nice in that fit.
+    sentence: "I\u2019m joking! Fuck, the look on your face, I feel so bad now."
     eventTrigger: 
     choices: []
   - side: 1
     characterName: Lynn
     characterSprite: {fileID: 0}
-    sentence: Thank you, so do you. Heh- Not to give like.. stalker vibes, but I
-      kinda looked you up on the way here.
+    sentence: "You suck. I don\u2019t want a second date with you."
     eventTrigger: 
     choices: []
   - side: 0
     characterName: Io
     characterSprite: {fileID: 0}
-    sentence: Oh, really?
+    sentence: "I\u2019m sorry! I just wanted to see how you\u2019d react."
     eventTrigger: 
     choices: []
   - side: 1
     characterName: Lynn
     characterSprite: {fileID: 0}
-    sentence: Yeah, thought I recognized your name and I ended up being right! I
-      think I read about you while doing research for a uni project.
+    sentence: "No but I actually got sad, you\u2019re evil."
     eventTrigger: 
     choices: []
   - side: 0
     characterName: Io
     characterSprite: {fileID: 0}
-    sentence: Ah, let me guess, the uni radio?
-    eventTrigger: 
-    choices: []
-  - side: 1
-    characterName: Lynn
-    characterSprite: {fileID: 0}
-    sentence: "Yeah, it\u2019s admirable, seeing how you ended up becoming really
-      successful at such a young age. Gave me motivation for my own projects."
-    eventTrigger: 
-    choices: []
-  - side: 0
-    characterName: Io
-    characterSprite: {fileID: 0}
-    sentence: "Ah, I\u2019m not that successful. Just got a little lucky is all.
-      I\u2019m glad it motivated you though!"
+    sentence: Chaperon, we want a second date planned as soon as possible.
     eventTrigger: 
     choices: []
   - side: 3
     characterName: Chaperon
     characterSprite: {fileID: 0}
-    sentence: "Hello, you two. I\u2019ll be your Chaperon for the day. Care for some
-      food and drinks?"
-    eventTrigger: StartMenuGame
+    sentence: "I\u2019m glad you had a good time. Consider it done!"
+    eventTrigger: 
     choices: []
   nextScenario: {fileID: 0}

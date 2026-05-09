@@ -10,74 +10,79 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0f832b14936fc2048824d9308b14ded6, type: 3}
-  m_Name: Start
+  m_Name: ContinueMenu
   m_EditorClassIdentifier: 
-  locationName: Restaurant
-  locationBackground: {fileID: 21300000, guid: f8bdb2b11a144d94f9ac89625b2a01f4, type: 3}
+  locationName: 
+  locationBackground: {fileID: 0}
   allLines:
   - side: 0
     characterName: Io
     characterSprite: {fileID: -1160322238068995058, guid: e79cf994b0112f542bb5904bcd06966b, type: 3}
-    sentence: "Hi! It\u2019s Lynn, right?"
+    sentence: "Mm, now that we\u2019re full, let\u2019s talk about those pins on
+      your bag."
     eventTrigger: 
     choices: []
   - side: 1
     characterName: Lynn
     characterSprite: {fileID: 21300000, guid: 724a9d18b99b23f4d8ef91418ba692f0, type: 3}
-    sentence: Hey there, yeah. Nice to meet you Io!
+    sentence: "Ah, kinda cringe, I admit. Can\u2019t help what you love."
     eventTrigger: 
     choices: []
   - side: 0
     characterName: Io
     characterSprite: {fileID: 0}
-    sentence: Mhm, nice to meet you too. You look really nice in that fit.
+    sentence: "Oh dear, that\u2019s not at all what I was gonna say. I love them."
     eventTrigger: 
     choices: []
   - side: 1
     characterName: Lynn
     characterSprite: {fileID: 0}
-    sentence: Thank you, so do you. Heh- Not to give like.. stalker vibes, but I
-      kinda looked you up on the way here.
+    sentence: Oh, you recognize them?
     eventTrigger: 
     choices: []
   - side: 0
     characterName: Io
     characterSprite: {fileID: 0}
-    sentence: Oh, really?
+    sentence: "Not all the band ones but I\u2019ve played most of those games."
     eventTrigger: 
     choices: []
   - side: 1
     characterName: Lynn
     characterSprite: {fileID: 0}
-    sentence: Yeah, thought I recognized your name and I ended up being right! I
-      think I read about you while doing research for a uni project.
+    sentence: "No way! Fuck, you\u2019re getting too cool for comfort."
     eventTrigger: 
     choices: []
   - side: 0
     characterName: Io
     characterSprite: {fileID: 0}
-    sentence: Ah, let me guess, the uni radio?
+    sentence: Am I now? You play DnD?
     eventTrigger: 
     choices: []
   - side: 1
     characterName: Lynn
     characterSprite: {fileID: 0}
-    sentence: "Yeah, it\u2019s admirable, seeing how you ended up becoming really
-      successful at such a young age. Gave me motivation for my own projects."
+    sentence: "I\u2019m in a tabletop club at my uni."
     eventTrigger: 
     choices: []
   - side: 0
     characterName: Io
     characterSprite: {fileID: 0}
-    sentence: "Ah, I\u2019m not that successful. Just got a little lucky is all.
-      I\u2019m glad it motivated you though!"
+    sentence: 
     eventTrigger: 
-    choices: []
-  - side: 3
-    characterName: Chaperon
-    characterSprite: {fileID: 0}
-    sentence: "Hello, you two. I\u2019ll be your Chaperon for the day. Care for some
-      food and drinks?"
-    eventTrigger: StartMenuGame
-    choices: []
+    choices:
+    - choices: I can never find a good DnD group, can you help?
+      nextScenario: {fileID: 11400000, guid: fbfc4819890a0c14f91bd0db3bad9e5a, type: 2}
+      target: 0
+      starReward: 1
+      heartReward: 0
+    - choices: "That\u2019s swag. I fuck with that."
+      nextScenario: {fileID: 11400000, guid: 896a4cd034fe3c54b9f6cfbe5be2fc01, type: 2}
+      target: 0
+      starReward: 0.5
+      heartReward: 0
+    - choices: "Oh, I\u2019m not that into board games but I do enjoy playing DnD!"
+      nextScenario: {fileID: 11400000, guid: 09223cef7a7948b41974abc78df4055e, type: 2}
+      target: 0
+      starReward: 0.5
+      heartReward: 0
   nextScenario: {fileID: 0}

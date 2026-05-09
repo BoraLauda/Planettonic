@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f832b14936fc2048824d9308b14ded6, type: 3}
   m_Name: Start
   m_EditorClassIdentifier: 
-  locationName: Restaurant
-  locationBackground: {fileID: 21300000, guid: f8bdb2b11a144d94f9ac89625b2a01f4, type: 3}
+  locationName: Arcade
+  locationBackground: {fileID: 1439995735934848948, guid: d7c0804f77d78c149a3021d444e47e1f, type: 3}
   allLines:
   - side: 0
     characterName: Io
     characterSprite: {fileID: -1160322238068995058, guid: e79cf994b0112f542bb5904bcd06966b, type: 3}
-    sentence: "Hi! It\u2019s Lynn, right?"
+    sentence: "Hi! Wow, what a place! It\u2019s Lynn, right?"
     eventTrigger: 
     choices: []
   - side: 1
@@ -78,6 +78,6 @@ MonoBehaviour:
     characterSprite: {fileID: 0}
     sentence: "Hello, you two. I\u2019ll be your Chaperon for the day. Care for some
       food and drinks?"
-    eventTrigger: StartMenuGame
+    eventTrigger: StartClawMachine
     choices: []
-  nextScenario: {fileID: 0}
+  nextScenario: {fileID: 11400000, guid: 848ece74bb573f24ebf1d32bd77ec0f5, type: 2}

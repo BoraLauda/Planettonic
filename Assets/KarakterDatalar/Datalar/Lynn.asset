@@ -15,9 +15,9 @@ MonoBehaviour:
   characterName: Lynn
   cinsiyet: 1
   profileIcon: {fileID: 21300000, guid: 724a9d18b99b23f4d8ef91418ba692f0, type: 3}
-  dodgeTheQuestionIkonu: {fileID: 0}
-  menuMinigameIkonu: {fileID: 0}
-  portraitImage: {fileID: 0}
+  dodgeTheQuestionIkonu: {fileID: 21300000, guid: 724a9d18b99b23f4d8ef91418ba692f0, type: 3}
+  menuMinigameIkonu: {fileID: 21300000, guid: 724a9d18b99b23f4d8ef91418ba692f0, type: 3}
+  portraitImage: {fileID: 21300000, guid: 724a9d18b99b23f4d8ef91418ba692f0, type: 3}
   fullName: 
   demographicsInfo: 
   relationshipGoals: 
@@ -25,9 +25,27 @@ MonoBehaviour:
   foodPreferenceText: 
   profileRatingIcons: []
   quoteText: 
-  locationPreferences: []
+  locationPreferences:
+  - locationName: Restaurant
+    bonusStars: 1
   hatedFoods: []
-  iceBreakerGood: []
-  iceBreakerMid: []
-  iceBreakerBad: []
-  dodgeQuestions: []
+  iceBreakerGood:
+  - targetCharacter: {fileID: 11400000, guid: 914c084cda719c149b3ce3ae947d0973, type: 2}
+    diyalogDosyasi: {fileID: 11400000, guid: fb968e5cd91f9694b84399306abd790e, type: 2}
+  - targetCharacter: {fileID: 11400000, guid: 914c084cda719c149b3ce3ae947d0973, type: 2}
+    diyalogDosyasi: {fileID: 11400000, guid: 0bfea528d43a1da4693831e836c2b8fb, type: 2}
+  iceBreakerMid:
+  - targetCharacter: {fileID: 11400000, guid: 914c084cda719c149b3ce3ae947d0973, type: 2}
+    diyalogDosyasi: {fileID: 11400000, guid: 1129ee5bc8c34d7488b539a926a0142d, type: 2}
+  - targetCharacter: {fileID: 11400000, guid: 914c084cda719c149b3ce3ae947d0973, type: 2}
+    diyalogDosyasi: {fileID: 11400000, guid: f33d161138dfcdf46a7d2f55ca9d6f6e, type: 2}
+  iceBreakerBad:
+  - targetCharacter: {fileID: 11400000, guid: 914c084cda719c149b3ce3ae947d0973, type: 2}
+    diyalogDosyasi: {fileID: 11400000, guid: 0fbbbad5cd797174f9fc682b769cf788, type: 2}
+  - targetCharacter: {fileID: 11400000, guid: 914c084cda719c149b3ce3ae947d0973, type: 2}
+    diyalogDosyasi: {fileID: 11400000, guid: 741b4753390482347ae6d15e5c2f623d, type: 2}
+  dodgeQuestions:
+  - targetCharacter: {fileID: 11400000, guid: 914c084cda719c149b3ce3ae947d0973, type: 2}
+    diyalogDosyasi: {fileID: 11400000, guid: 785b6cbd948d2ae4c9bda35f2ca7225e, type: 2}
+  - targetCharacter: {fileID: 11400000, guid: 914c084cda719c149b3ce3ae947d0973, type: 2}
+    diyalogDosyasi: {fileID: 11400000, guid: 2bf7bd465cd4e9043a138cc5181f1f17, type: 2}

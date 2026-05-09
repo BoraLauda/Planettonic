@@ -19587,11 +19587,11 @@ MonoBehaviour:
     characterB: {fileID: 11400000, guid: 5f6e0fde49813654aa1d61918d175f26, type: 2}
     successScenario: {fileID: 11400000, guid: 1e06ee2e737e5f345aaaa6d51a2e055e, type: 2}
     continuationScenario: {fileID: 11400000, guid: 4afb6126a32be7643899adce157c61f6, type: 2}
-  - ciftAdi: Nemelise ve Linus
-    characterA: {fileID: 11400000, guid: 10ae37b55ea06ba4eadbd5ffcc3098c2, type: 2}
-    characterB: {fileID: 11400000, guid: 5f6e0fde49813654aa1d61918d175f26, type: 2}
-    successScenario: {fileID: 11400000, guid: 1e06ee2e737e5f345aaaa6d51a2e055e, type: 2}
-    continuationScenario: {fileID: 11400000, guid: 4afb6126a32be7643899adce157c61f6, type: 2}
+  - ciftAdi: Io Lynn
+    characterA: {fileID: 11400000, guid: 914c084cda719c149b3ce3ae947d0973, type: 2}
+    characterB: {fileID: 11400000, guid: bfd2e2416d70ccd49b0a798220ace20b, type: 2}
+    successScenario: {fileID: 11400000, guid: 6c63b0b88c6943c4cb1e7a764829a55e, type: 2}
+    continuationScenario: {fileID: 11400000, guid: 7416cd56f4d78a84ab81fb35bb924325, type: 2}
 --- !u!82 &756997994
 AudioSource:
   m_ObjectHideFlags: 0
@@ -27252,6 +27252,10 @@ MonoBehaviour:
     characterA: {fileID: 11400000, guid: 52f97840cc872804392c25a1f2b8175b, type: 2}
     characterB: {fileID: 11400000, guid: 5f6e0fde49813654aa1d61918d175f26, type: 2}
     specificFailScenario: {fileID: 11400000, guid: 4a1dfbc667d65ac4ea142c1917e3d758, type: 2}
+  - ciftAdi: Io Lynn
+    characterA: {fileID: 11400000, guid: 914c084cda719c149b3ce3ae947d0973, type: 2}
+    characterB: {fileID: 11400000, guid: bfd2e2416d70ccd49b0a798220ace20b, type: 2}
+    specificFailScenario: {fileID: 11400000, guid: c723d4cdc4f13f64b846a836066dafa9, type: 2}
   defaultFailScenario: {fileID: 0}
   dodgeScript: {fileID: 1190985220}
   leftDaterImage: {fileID: 370962506}
@@ -30284,7 +30288,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1190985217
 RectTransform:
   m_ObjectHideFlags: 0
