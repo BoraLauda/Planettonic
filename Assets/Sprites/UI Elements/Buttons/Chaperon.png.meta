@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Chaperon_0: 8574707561747675739
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

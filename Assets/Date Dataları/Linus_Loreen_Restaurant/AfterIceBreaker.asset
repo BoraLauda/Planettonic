@@ -1,0 +1,52 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f832b14936fc2048824d9308b14ded6, type: 3}
+  m_Name: AfterIceBreaker
+  m_EditorClassIdentifier: 
+  locationName: 
+  locationBackground: {fileID: 0}
+  allLines:
+  - side: 1
+    characterName: Linus
+    characterSprite: {fileID: 21300000, guid: dc24e77c8220d5b43bd418e911809b3b, type: 3}
+    sentence: Phew, been a hot minute since I last played this game.
+    eventTrigger: 
+    choices: []
+  - side: 0
+    characterName: Loreen
+    characterSprite: {fileID: 3895208362979335837, guid: 146a6ce1894c7084984f7771ba7e263e, type: 3}
+    sentence: Wish I could say the same. I do it quite often, and college students
+      get nasty with it.
+    eventTrigger: 
+    choices: []
+  - side: 1
+    characterName: Linus
+    characterSprite: {fileID: 0}
+    sentence: 
+    eventTrigger: 
+    choices:
+    - choices: adults tend to get rigid with age.
+      nextScenario: {fileID: 11400000, guid: d1f9baa90dfbe5341bac25b37a354628, type: 2}
+      target: 0
+      starReward: 1
+      heartReward: 0
+    - choices: they must come up with fun stuff.
+      nextScenario: {fileID: 11400000, guid: b73a80813472b464bb4a8ee922f8fe35, type: 2}
+      target: 0
+      starReward: 0.5
+      heartReward: 0
+    - choices: Icebreakers tend to get boring after a while, though.
+      nextScenario: {fileID: 11400000, guid: 51eb7aeaebac4454484c0f14511d5da6, type: 2}
+      target: 0
+      starReward: 0
+      heartReward: 0
+  nextScenario: {fileID: 0}
