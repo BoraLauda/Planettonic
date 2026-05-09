@@ -154,7 +154,7 @@ public class brainDate : MonoBehaviour
     public List<string> goodReviews;
     public List<string> midReviews;
     public List<string> badReviews;
-    
+
     public ReactionParticles reactionVFX;
 
     private bool hasPendingReaction = false;
@@ -535,7 +535,7 @@ public class brainDate : MonoBehaviour
             {
                 reactionVFX.PlayReactionEffect(targetKafa, pendingReactionType);
             }
-            hasPendingReaction = false; 
+            hasPendingReaction = false;
         }
 
         if (line.side == SpeakerSide.Left)
@@ -673,14 +673,14 @@ public class brainDate : MonoBehaviour
     {
         if(leftOptionsPanel) leftOptionsPanel.SetActive(false);
         if(rightOptionsPanel) rightOptionsPanel.SetActive(false);
-        
+
         DialogueLine currentLine = currentScenario.allLines[lineIndex];
 
         if (option.starReward == 0 || option.starReward == 1)
         {
             hasPendingReaction = true;
             pendingReactionType = (option.starReward == 0) ? ReactionType.Angry : ReactionType.Happy;
-            
+
             if (currentLine.side == SpeakerSide.Left)
                 pendingReactionTargetSide = SpeakerSide.Right;
             else if (currentLine.side == SpeakerSide.Right)
@@ -727,7 +727,7 @@ public class brainDate : MonoBehaviour
     public void OnScreenClick()
     {
         if (tutorialPopup != null && tutorialPopup.gameObject.activeSelf) return;
-        
+
         if (isMenuMode) return;
         if (currentScenario == null) return;
         if (lineIndex >= currentScenario.allLines.Count) return;
@@ -820,7 +820,7 @@ public class brainDate : MonoBehaviour
             if (chaperonPanel) chaperonPanel.SetActive(false);
 
             if (BGblur) BGblur.SetActive(true);
-            
+
             tutorialPopup.OpenTutorial("PIXEL GAME", pixelTutorialSprites, () =>
             {
                 if (pixelMiniGameObj != null) pixelMiniGameObj.SetActive(true);
@@ -830,7 +830,7 @@ public class brainDate : MonoBehaviour
         {
             savedMainScenario = currentScenario;
             isEventTriggered = true;
-            
+
             isIceBreakerMode = true;
 
             if (leftDialoguePanel) leftDialoguePanel.SetActive(false);
@@ -857,7 +857,7 @@ public class brainDate : MonoBehaviour
             if (chaperonPanel) chaperonPanel.SetActive(false);
 
             if (BGblur) BGblur.SetActive(true);
-            
+
             tutorialPopup.OpenTutorial("BARTENDING", bartendingTutorialSprites, () =>
             {
                 if (bartendingMiniGameObj != null) bartendingMiniGameObj.SetActive(true);
@@ -868,7 +868,7 @@ public class brainDate : MonoBehaviour
             savedMainScenario = currentScenario;
             isEventTriggered = true;
             isDodgeMode = true;
-            
+
             if (leftDialoguePanel) leftDialoguePanel.SetActive(false);
             if (rightDialoguePanel) rightDialoguePanel.SetActive(false);
             if (chancellorPanel) chancellorPanel.SetActive(false);
@@ -892,7 +892,7 @@ public class brainDate : MonoBehaviour
             if (chaperonPanel) chaperonPanel.SetActive(false);
 
             if (BGblur) BGblur.SetActive(true);
-            
+
             tutorialPopup.OpenTutorial("RHYTHM GAME", rhythmTutorialSprites, () =>
             {
                 if (rhythmMiniGameObj != null) rhythmMiniGameObj.SetActive(true);
@@ -909,7 +909,7 @@ public class brainDate : MonoBehaviour
             if (chaperonPanel) chaperonPanel.SetActive(false);
 
             if (BGblur) BGblur.SetActive(true);
-            
+
             tutorialPopup.OpenTutorial("CLAW MACHINE", clawMachineTutorialSprites, () =>
             {
                 if (clawMachineMiniGameObj != null) clawMachineMiniGameObj.SetActive(true);
@@ -926,7 +926,7 @@ public class brainDate : MonoBehaviour
             if (chaperonPanel) chaperonPanel.SetActive(false);
 
             if (BGblur) BGblur.SetActive(true);
-            
+
             tutorialPopup.OpenTutorial("RUNNER GAME", runnerTutorialSprites, () =>
             {
                 if (runnerMiniGameObj != null) runnerMiniGameObj.SetActive(true);
@@ -1257,7 +1257,7 @@ public class brainDate : MonoBehaviour
         AddReward(earnedStars, earnedHearts, target);
 
         float totalScore = leftStars + rightStars;
-        
+
         if (totalScore >= starThreshold)
         {
             if (savedMainScenario != null && savedMainScenario.nextScenario != null)
@@ -1267,7 +1267,6 @@ public class brainDate : MonoBehaviour
         }
         else
         {
-          
             DialogueDataları activeFail = GetActiveFailScenario();
             if (activeFail != null)
             {
@@ -1349,7 +1348,7 @@ public class brainDate : MonoBehaviour
 
         Canvas c = obj.GetComponent<Canvas>();
         if (c == null) c = obj.AddComponent<Canvas>();
-        
+
         GameObject dateManage = GetDateManageRoot();
         if (dateManage != null && obj == dateManage)
         {
@@ -1369,7 +1368,6 @@ public class brainDate : MonoBehaviour
         }
         else
         {
-           
             c.overrideSorting = false;
             c.sortingOrder = 0;
         }

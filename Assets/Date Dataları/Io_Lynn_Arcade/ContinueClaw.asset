@@ -1,0 +1,88 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f832b14936fc2048824d9308b14ded6, type: 3}
+  m_Name: ContinueClaw
+  m_EditorClassIdentifier: 
+  locationName: 
+  locationBackground: {fileID: 0}
+  allLines:
+  - side: 0
+    characterName: Io
+    characterSprite: {fileID: -1160322238068995058, guid: e79cf994b0112f542bb5904bcd06966b, type: 3}
+    sentence: "Mm, now that we\u2019re full, let\u2019s talk about those pins on
+      your bag."
+    eventTrigger: 
+    choices: []
+  - side: 1
+    characterName: Lynn
+    characterSprite: {fileID: 21300000, guid: 724a9d18b99b23f4d8ef91418ba692f0, type: 3}
+    sentence: "Ah, kinda cringe, I admit. Can\u2019t help what you love."
+    eventTrigger: 
+    choices: []
+  - side: 0
+    characterName: Io
+    characterSprite: {fileID: 0}
+    sentence: "Oh dear, that\u2019s not at all what I was gonna say. I love them."
+    eventTrigger: 
+    choices: []
+  - side: 1
+    characterName: Lynn
+    characterSprite: {fileID: 0}
+    sentence: Oh, you recognize them?
+    eventTrigger: 
+    choices: []
+  - side: 0
+    characterName: Io
+    characterSprite: {fileID: 0}
+    sentence: "Not all the band ones but I\u2019ve played most of those games."
+    eventTrigger: 
+    choices: []
+  - side: 1
+    characterName: Lynn
+    characterSprite: {fileID: 0}
+    sentence: "No way! Fuck, you\u2019re getting too cool for comfort."
+    eventTrigger: 
+    choices: []
+  - side: 0
+    characterName: Io
+    characterSprite: {fileID: 0}
+    sentence: Am I now? You play DnD?
+    eventTrigger: 
+    choices: []
+  - side: 1
+    characterName: Lynn
+    characterSprite: {fileID: 0}
+    sentence: "I\u2019m in a tabletop club at my uni."
+    eventTrigger: 
+    choices: []
+  - side: 0
+    characterName: Io
+    characterSprite: {fileID: 0}
+    sentence: 
+    eventTrigger: 
+    choices:
+    - choices: I can never find a good DnD group, can you help?
+      nextScenario: {fileID: 11400000, guid: 38a9ac1ac642a154ba4e5bbc21019799, type: 2}
+      target: 0
+      starReward: 1
+      heartReward: 0
+    - choices: "That\u2019s swag. I fuck with that."
+      nextScenario: {fileID: 11400000, guid: 281f5efc50ad36b4d8512c466b30bede, type: 2}
+      target: 0
+      starReward: 0.5
+      heartReward: 0
+    - choices: "Oh, I\u2019m not that into board games but I do enjoy playing DnD!"
+      nextScenario: {fileID: 11400000, guid: f9301b91782ab374ea48848ba730a617, type: 2}
+      target: 0
+      starReward: 0.5
+      heartReward: 0
+  nextScenario: {fileID: 0}

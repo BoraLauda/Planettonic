@@ -73835,7 +73835,7 @@ MonoBehaviour:
     restoranSenaryolari:
     - {fileID: 11400000, guid: 0872aa1427b6e1244b476412f8e062b5, type: 2}
     arcadeSenaryolari:
-    - {fileID: 0}
+    - {fileID: 11400000, guid: b8ca2232618bd5c4486f345bec78f0fe, type: 2}
     barSenaryolari:
     - {fileID: 0}
     evSenaryolari:
@@ -73860,12 +73860,12 @@ MonoBehaviour:
     - {fileID: 0}
     evSenaryolari:
     - {fileID: 0}
-  - characterA: {fileID: 11400000, guid: 52f97840cc872804392c25a1f2b8175b, type: 2}
-    characterB: {fileID: 11400000, guid: d9880c6a901c8d643a786ea1b19f0372, type: 2}
+  - characterA: {fileID: 11400000, guid: 914c084cda719c149b3ce3ae947d0973, type: 2}
+    characterB: {fileID: 11400000, guid: bfd2e2416d70ccd49b0a798220ace20b, type: 2}
     restoranSenaryolari:
-    - {fileID: 11400000, guid: 0872aa1427b6e1244b476412f8e062b5, type: 2}
+    - {fileID: 11400000, guid: 1e8c735e60b847c40b080036d860c5e1, type: 2}
     arcadeSenaryolari:
-    - {fileID: 11400000, guid: b8ca2232618bd5c4486f345bec78f0fe, type: 2}
+    - {fileID: 11400000, guid: 747a62ed914848c4bbf278a40c918335, type: 2}
     barSenaryolari:
     - {fileID: 0}
     evSenaryolari:
