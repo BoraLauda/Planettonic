@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Ary
   m_EditorClassIdentifier: 
   characterName: Ary
+  cinsiyet: 1
   profileIcon: {fileID: 21300000, guid: 33ac28e23b452574eb3d6ff8cef4f822, type: 3}
   dodgeTheQuestionIkonu: {fileID: 3216859368059932112, guid: 985a192cf3d85f840b87ec78e0742dcc, type: 3}
   menuMinigameIkonu: {fileID: 3216859368059932112, guid: 985a192cf3d85f840b87ec78e0742dcc, type: 3}
