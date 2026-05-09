@@ -1,10 +1,13 @@
 fileFormatVersion: 2
-guid: 865dd6402ca18224ea350c588840bcc4
+guid: 55c7e62f911be8f46853f7cfe611ce87
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7644536383246401122
-    second: "Ekran g\xF6r\xFCnt\xFCs\xFC 2025-12-11 194609_0"
+      213: 8574707561747675739
+    second: Chaperon_0
+  - first:
+      213: -900724834242297029
+    second: Chaperon_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,7 +49,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -100,13 +103,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: "Ekran g\xF6r\xFCnt\xFCs\xFC 2025-12-11 194609_0"
+      name: Chaperon_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 234
-        height: 226
+        x: 688
+        y: 361
+        width: 540
+        height: 150
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +118,30 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e918c0479a629e590800000000000000
-      internalID: -7644536383246401122
+      spriteID: b5a73deb81b7ff670800000000000000
+      internalID: 8574707561747675739
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chaperon_1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 1920
+        height: 352
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b338d96198bff73f0800000000000000
+      internalID: -900724834242297029
       vertices: []
       indices: 
       edges: []
@@ -135,7 +160,8 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      "Ekran g\xF6r\xFCnt\xFCs\xFC 2025-12-11 194609_0": -7644536383246401122
+      Chaperon_0: 8574707561747675739
+      Chaperon_1: -900724834242297029
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

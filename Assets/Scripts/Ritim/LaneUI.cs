@@ -9,6 +9,9 @@ public class LaneUI : MonoBehaviour
     public string teamName; 
     public KeyCode myKey; 
     
+    [Header("Karakter Yönü")]
+    public bool isLeftSideLane = true; 
+
     [Header("Hedef ve Hassasiyet")]
     public RectTransform hitTarget; 
     public Image targetImage;
@@ -32,11 +35,13 @@ public class LaneUI : MonoBehaviour
     private Vector2 originalPos;
     private Color originalColor;
     private Coroutine activeMissCoroutine;
+    private ArrowSpawner spawnerReference;
 
     void Start()
     {
         originalScale = hitTarget.localScale;
         originalPos = hitTarget.anchoredPosition;
+        spawnerReference = FindFirstObjectByType<ArrowSpawner>();
         
         if (targetImage != null)
         {
@@ -60,7 +65,7 @@ public class LaneUI : MonoBehaviour
 
             if (localY < missKayıpGıtmeSiniri)
             {
-                HitNote(targetNote, false); 
+                HitNote(targetNote, "Miss"); 
             }
         }
     }
@@ -72,17 +77,18 @@ public class LaneUI : MonoBehaviour
             Arrows targetNote = activeNotes[0]; 
             float distance = Mathf.Abs(hitTarget.InverseTransformPoint(targetNote.GetComponent<RectTransform>().position).y);
 
+           
             if (distance <= perfectHitTolerance)
             {
-                HitNote(targetNote, true); 
+                HitNote(targetNote, "Perfect"); 
             }
             else if (distance <= goodHitTolerance)
             {
-                HitNote(targetNote, true); 
+                HitNote(targetNote, "Good"); 
             }
             else
             {
-                HitNote(targetNote, false); 
+                HitNote(targetNote, "Miss"); 
             }
         }
         else
@@ -91,26 +97,32 @@ public class LaneUI : MonoBehaviour
         }
     }
 
-    void HitNote(Arrows noteToHit, bool isSuccess)
+    void HitNote(Arrows noteToHit, string hitQuality)
     {
-        if (isSuccess)
+        if (hitQuality == "Perfect" || hitQuality == "Good")
         {
             hitTarget.localScale = originalScale * popScale;
             
-          
             ArrowSpawner.currentGlobalCombo++;
             if (ArrowSpawner.currentGlobalCombo > ArrowSpawner.maxGlobalCombo)
             {
                 ArrowSpawner.maxGlobalCombo = ArrowSpawner.currentGlobalCombo;
             }
-            
 
             if (Combo.Instance != null) 
             {
                 Combo.Instance.AddCombo();
             }
+
+          
+            if (spawnerReference != null)
+            {
+                int basePoints = (hitQuality == "Perfect") ? 10 : 5;
+                spawnerReference.AddScore(basePoints, isLeftSideLane);
+            }
+          
         }
-        else
+        else // Miss
         {
             TriggerMissFeedback(); 
         }
@@ -121,7 +133,6 @@ public class LaneUI : MonoBehaviour
 
     void TriggerMissFeedback()
     {
-      
         ArrowSpawner.currentGlobalCombo = 0;
 
         if (Combo.Instance != null)

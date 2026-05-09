@@ -17,7 +17,7 @@ MonoBehaviour:
   allLines:
   - side: 0
     characterName: 
-    characterSprite: {fileID: 0}
+    characterSprite: {fileID: 21300000, guid: 865dd6402ca18224ea350c588840bcc4, type: 3}
     sentence: ne
     eventTrigger: 
     choices: []

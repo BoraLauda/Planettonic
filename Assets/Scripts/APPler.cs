@@ -94,6 +94,8 @@ public class APPler : MonoBehaviour
     public Transform reviewsContentContainerLarge; 
     public GameObject reviewSlotPrefabSmall;      
     public GameObject reviewSlotPrefabLarge;       
+    public GameObject noReviewsMessageSmall; 
+    public GameObject noReviewsMessageLarge;
 
     [Header("Match Butonu (Onay Sistemi)")]
     public Button btnMainMatchSmall; 
@@ -614,9 +616,27 @@ public class APPler : MonoBehaviour
         }
 
         string jsonLoad = PlayerPrefs.GetString("SavedReviewsDB", "");
-        if (string.IsNullOrEmpty(jsonLoad)) return; 
+        
+        if (string.IsNullOrEmpty(jsonLoad)) 
+        {
+            if (noReviewsMessageSmall != null) noReviewsMessageSmall.SetActive(true);
+            if (noReviewsMessageLarge != null) noReviewsMessageLarge.SetActive(true);
+            return; 
+        }
 
         ReviewDatabase db = JsonUtility.FromJson<ReviewDatabase>(jsonLoad);
+
+       
+        if (db == null || db.allPastDates == null || db.allPastDates.Count == 0)
+        {
+            if (noReviewsMessageSmall != null) noReviewsMessageSmall.SetActive(true);
+            if (noReviewsMessageLarge != null) noReviewsMessageLarge.SetActive(true);
+            return;
+        }
+
+      
+        if (noReviewsMessageSmall != null) noReviewsMessageSmall.SetActive(false);
+        if (noReviewsMessageLarge != null) noReviewsMessageLarge.SetActive(false);
 
         db.allPastDates.Reverse();
 

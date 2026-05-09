@@ -15,25 +15,16 @@ MonoBehaviour:
   locationName: 
   locationBackground: {fileID: 0}
   allLines:
-  - side: 1
-    characterName: "B\u0130RA"
-    characterSprite: {fileID: 21300000, guid: 940a91f339e1825439b9f6d15b9c98fa, type: 3}
+  - side: 0
+    characterName: 
+    characterSprite: {fileID: 0}
     sentence: 
     eventTrigger: 
-    choices:
-    - choices: bok
-      nextScenario: {fileID: 11400000, guid: 45c4c0a24d1ec3749a346859a5512783, type: 2}
-      target: 0
-      starReward: 0
-      heartReward: 0
-    - choices: bok
-      nextScenario: {fileID: 0}
-      target: 0
-      starReward: 0
-      heartReward: 0
-    - choices: bok
-      nextScenario: {fileID: 0}
-      target: 0
-      starReward: 0
-      heartReward: 0
+    choices: []
+  - side: 0
+    characterName: 
+    characterSprite: {fileID: 0}
+    sentence: 
+    eventTrigger: 
+    choices: []
   nextScenario: {fileID: 0}

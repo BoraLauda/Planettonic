@@ -1,0 +1,507 @@
+fileFormatVersion: 2
+guid: 4b337fa16ad5b634bacb0da15f29d3b1
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6888260898804176548
+    second: "margarita_c\u0327izgi_0"
+  - first:
+      213: -8185651739591982605
+    second: "margarita_c\u0327izgi_1"
+  - first:
+      213: 941051666685903747
+    second: "margarita_c\u0327izgi_2"
+  - first:
+      213: -7767308693551548333
+    second: "margarita_c\u0327izgi_3"
+  - first:
+      213: -2270544905902337607
+    second: "margarita_c\u0327izgi_4"
+  - first:
+      213: -6911566923171249475
+    second: "margarita_c\u0327izgi_5"
+  - first:
+      213: -7894460143847011739
+    second: "margarita_c\u0327izgi_6"
+  - first:
+      213: 3448039241286591846
+    second: "margarita_c\u0327izgi_7"
+  - first:
+      213: -5977856666382799863
+    second: "margarita_c\u0327izgi_8"
+  - first:
+      213: 5433796652824148979
+    second: "margarita_c\u0327izgi_9"
+  - first:
+      213: -8057839471225821231
+    second: "margarita_c\u0327izgi_10"
+  - first:
+      213: -2552080786078033381
+    second: "margarita_c\u0327izgi_11"
+  - first:
+      213: 8343124160599815317
+    second: "margarita_c\u0327izgi_12"
+  - first:
+      213: 9133531578275233740
+    second: "margarita_c\u0327izgi_13"
+  - first:
+      213: -8974765749969736401
+    second: "margarita_c\u0327izgi_14"
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: "margarita_c\u0327izgi_0"
+      rect:
+        serializedVersion: 2
+        x: 1033
+        y: 3751
+        width: 58
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4a69f69bac4089f50800000000000000
+      internalID: 6888260898804176548
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "margarita_c\u0327izgi_1"
+      rect:
+        serializedVersion: 2
+        x: 1176
+        y: 3730
+        width: 57
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3f1cf8ebc19b66e80800000000000000
+      internalID: -8185651739591982605
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "margarita_c\u0327izgi_2"
+      rect:
+        serializedVersion: 2
+        x: 2863
+        y: 3730
+        width: 57
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3834a1441894f0d00800000000000000
+      internalID: 941051666685903747
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "margarita_c\u0327izgi_3"
+      rect:
+        serializedVersion: 2
+        x: 3005
+        y: 3751
+        width: 58
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3587e0c65e9f43490800000000000000
+      internalID: -7767308693551548333
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "margarita_c\u0327izgi_4"
+      rect:
+        serializedVersion: 2
+        x: 1319
+        y: 3721
+        width: 58
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b15e1d10776d70e0800000000000000
+      internalID: -2270544905902337607
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "margarita_c\u0327izgi_5"
+      rect:
+        serializedVersion: 2
+        x: 1463
+        y: 3712
+        width: 58
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db2c90f908e2510a0800000000000000
+      internalID: -6911566923171249475
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "margarita_c\u0327izgi_6"
+      rect:
+        serializedVersion: 2
+        x: 1607
+        y: 3703
+        width: 58
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 56a0588635e317290800000000000000
+      internalID: -7894460143847011739
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "margarita_c\u0327izgi_7"
+      rect:
+        serializedVersion: 2
+        x: 2431
+        y: 3703
+        width: 58
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 665ae74eb65e9df20800000000000000
+      internalID: 3448039241286591846
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "margarita_c\u0327izgi_8"
+      rect:
+        serializedVersion: 2
+        x: 2575
+        y: 3712
+        width: 58
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 90c6d02b8036a0da0800000000000000
+      internalID: -5977856666382799863
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "margarita_c\u0327izgi_9"
+      rect:
+        serializedVersion: 2
+        x: 2719
+        y: 3721
+        width: 58
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3fb3a492449b86b40800000000000000
+      internalID: 5433796652824148979
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "margarita_c\u0327izgi_10"
+      rect:
+        serializedVersion: 2
+        x: 1750
+        y: 3694
+        width: 58
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1d7a67471bdcc2090800000000000000
+      internalID: -8057839471225821231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "margarita_c\u0327izgi_11"
+      rect:
+        serializedVersion: 2
+        x: 1894
+        y: 3686
+        width: 58
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b1a18bbeb00359cd0800000000000000
+      internalID: -2552080786078033381
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "margarita_c\u0327izgi_12"
+      rect:
+        serializedVersion: 2
+        x: 2000
+        y: 3681
+        width: 96
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 594f785683bb8c370800000000000000
+      internalID: 8343124160599815317
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "margarita_c\u0327izgi_13"
+      rect:
+        serializedVersion: 2
+        x: 2144
+        y: 3686
+        width: 58
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ccf78e33492d0ce70800000000000000
+      internalID: 9133531578275233740
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "margarita_c\u0327izgi_14"
+      rect:
+        serializedVersion: 2
+        x: 2288
+        y: 3694
+        width: 58
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f2d26bac91a337380800000000000000
+      internalID: -8974765749969736401
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      "margarita_c\u0327izgi_0": 6888260898804176548
+      "margarita_c\u0327izgi_1": -8185651739591982605
+      "margarita_c\u0327izgi_10": -8057839471225821231
+      "margarita_c\u0327izgi_11": -2552080786078033381
+      "margarita_c\u0327izgi_12": 8343124160599815317
+      "margarita_c\u0327izgi_13": 9133531578275233740
+      "margarita_c\u0327izgi_14": -8974765749969736401
+      "margarita_c\u0327izgi_2": 941051666685903747
+      "margarita_c\u0327izgi_3": -7767308693551548333
+      "margarita_c\u0327izgi_4": -2270544905902337607
+      "margarita_c\u0327izgi_5": -6911566923171249475
+      "margarita_c\u0327izgi_6": -7894460143847011739
+      "margarita_c\u0327izgi_7": 3448039241286591846
+      "margarita_c\u0327izgi_8": -5977856666382799863
+      "margarita_c\u0327izgi_9": 5433796652824148979
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
