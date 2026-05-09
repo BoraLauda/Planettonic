@@ -1,8 +1,19 @@
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 using System.Collections.Generic;
 using UnityEngine.Serialization;
 using UnityEngine.SceneManagement;
+
+[System.Serializable]
+public class LocationUIElement
+{
+    public string locationName;
+    public Button button;       
+    public List<TMP_Text> linkedTexts; 
+    public List<Image> linkedIcons;    
+    public GameObject selectionStroke;
+}
 
 public class APPler : MonoBehaviour
 {
@@ -14,18 +25,28 @@ public class APPler : MonoBehaviour
     
     public Characters IoData;    
     public Characters ElroiData;
+    public Characters AryData;
+    public Characters LoreenData;
     
     [Header("Sonradan Açılacak Karakterler")]
     public Characters JettyData;
     public Characters LinusData;
     
-    public Image ortakTamName;
-    public Image ortakTamList;
-    public Image ortakTamInfo;
+    [Header("Büyük Ekran Yazıları")]
+    public TMP_Text ortakTamFullName;
+    public TMP_Text ortakTamDemographics;
+    public TMP_Text ortakTamRelationship;
+    public TMP_Text ortakTamHobbies;
+    public TMP_Text ortakTamFoodPrefs;
+    public TMP_Text ortakTamQuote;
     
-    public Image ortakSmallName;
-    public Image ortakSmallList;
-    public Image ortakSmallInfo;
+    [Header("Küçük Ekran Yazıları")]
+    public TMP_Text ortakSmallFullName;
+    public TMP_Text ortakSmallDemographics;
+    public TMP_Text ortakSmallRelationship;
+    public TMP_Text ortakSmallHobbies;
+    public TMP_Text ortakSmallFoodPrefs;
+    public TMP_Text ortakSmallQuote;
 
     public GameObject confirmButton;
 
@@ -56,11 +77,33 @@ public class APPler : MonoBehaviour
     [Header("UI Kilitli Prefab (image_6 Prefabı)")]
     public GameObject lockedPrefab; 
 
-    [Header("Mekan Butonları")]
-    public Button btnRestoran;
-    public Button btnBar;
-    public Button btnEv;
-    public Button btnArcade;
+    [Header("Mekan UI Paketleri Küçük")]
+    public LocationUIElement restoranSmall;
+    public LocationUIElement barSmall;
+    public LocationUIElement evSmall;
+    public LocationUIElement arcadeSmall;
+
+    [Header("Mekan UI Paketleri Büyük")]
+    public LocationUIElement restoranLarge;
+    public LocationUIElement barLarge;
+    public LocationUIElement evLarge;
+    public LocationUIElement arcadeLarge;
+
+    [Header("Reviews (Değerlendirmeler) Ekranı")]
+    public Transform reviewsContentContainerSmall; 
+    public Transform reviewsContentContainerLarge; 
+    public GameObject reviewSlotPrefabSmall;      
+    public GameObject reviewSlotPrefabLarge;       
+    public GameObject noReviewsMessageSmall; 
+    public GameObject noReviewsMessageLarge;
+
+    [Header("Match Butonu (Onay Sistemi)")]
+    public Button btnMainMatchSmall; 
+    public Button btnMainMatchLarge; 
+    private string currentSelectedLocation = "";
+    
+    public List<TMP_Text> leftNameTexts; 
+    public List<TMP_Text> rightNameTexts;
 
     void Start()
     {
@@ -88,12 +131,12 @@ public class APPler : MonoBehaviour
 
         currentPageSayı = index;
         
-        bool shouldShowBackButton = (index != 4 && index != 0); 
+        bool shouldShowBackButton = (index != 3 && index != 0); 
 
         if (backButtonSmall != null) backButtonSmall.SetActive(shouldShowBackButton);
         if (backButtonLarge != null) backButtonLarge.SetActive(shouldShowBackButton);
 
-        if (index == 2) RefreshSlots(); 
+        if (index == 1) RefreshSlots(); 
         
         RefreshAllUI();
     }
@@ -117,16 +160,21 @@ public class APPler : MonoBehaviour
             img.preserveAspect = true;
         }
         
-        if (ortakTamName != null) ortakTamName.sprite = profile.nameImage;
-        if (ortakSmallName != null) ortakSmallName.sprite = profile.nameImage;
+        if (ortakTamFullName != null) ortakTamFullName.text = profile.fullName;
+        if (ortakTamDemographics != null) ortakTamDemographics.text = profile.demographicsInfo;
+        if (ortakTamRelationship != null) ortakTamRelationship.text = profile.relationshipGoals;
+        if (ortakTamHobbies != null) ortakTamHobbies.text = profile.hobbies;
+        if (ortakTamFoodPrefs != null) ortakTamFoodPrefs.text = profile.foodPreferenceText;
+        if (ortakTamQuote != null) ortakTamQuote.text = profile.quoteText;
 
-        if (ortakTamList != null) ortakTamList.sprite = profile.listImage;
-        if (ortakSmallList != null) ortakSmallList.sprite = profile.listImage;
+        if (ortakSmallFullName != null) ortakSmallFullName.text = profile.fullName;
+        if (ortakSmallDemographics != null) ortakSmallDemographics.text = profile.demographicsInfo;
+        if (ortakSmallRelationship != null) ortakSmallRelationship.text = profile.relationshipGoals;
+        if (ortakSmallHobbies != null) ortakSmallHobbies.text = profile.hobbies;
+        if (ortakSmallFoodPrefs != null) ortakSmallFoodPrefs.text = profile.foodPreferenceText;
+        if (ortakSmallQuote != null) ortakSmallQuote.text = profile.quoteText;
 
-        if (ortakTamInfo != null) ortakTamInfo.sprite = profile.infoImage;
-        if (ortakSmallInfo != null) ortakSmallInfo.sprite = profile.infoImage;
-
-        OpenPageByIndex(3);
+        OpenPageByIndex(2);
     }
     
     public void OnConfirmSelection()
@@ -157,7 +205,7 @@ public class APPler : MonoBehaviour
             }
         }
 
-        OpenPageByIndex(4);
+        OpenPageByIndex(3);
     }
 
     public void OnHeartClicked(int slotIndex)
@@ -167,12 +215,14 @@ public class APPler : MonoBehaviour
         else selectedRight = null;
         
         RefreshAllUI();
-        OpenPageByIndex(2); 
+        
+        OpenPageByIndex(1); 
     }
     
     public void OnDatePlacesClicked()
     {
-        OpenPageByIndex(5); 
+        ResetSelection(); 
+        OpenPageByIndex(4); 
     }
     
     void RefreshSlots()
@@ -211,7 +261,6 @@ public class APPler : MonoBehaviour
 
             string cName = allSlots[i].myProfile.characterName;
 
-            
             if (PlayerPrefs.GetInt("PlayedCouple_Ary_Jetty", 0) == 1)
             {
                 if (cName == "Jetty")
@@ -248,6 +297,20 @@ public class APPler : MonoBehaviour
             }
         }
 
+        if (leftNameTexts != null)
+        {
+            foreach (var txt in leftNameTexts)
+            {
+                if (txt == null) continue;
+                
+                if (selectedLeft != null)
+                    txt.text = selectedLeft.characterName; 
+                else
+                    txt.text = " "; 
+            }
+        }
+
+     
         foreach (var img in rightHeartImages)
         {
             if (img == null) continue;
@@ -262,8 +325,22 @@ public class APPler : MonoBehaviour
                 img.color = Color.white; 
             }
         }
+
+        if (rightNameTexts != null)
+        {
+            foreach (var txt in rightNameTexts)
+            {
+                if (txt == null) continue;
+                
+                if (selectedRight != null)
+                    txt.text = selectedRight.characterName; 
+                else
+                    txt.text = " "; 
+            }
+        }
         
         RefreshSlots();
+        UpdateLocationButtons();
     }
     
     public void ShowWarningPopup()
@@ -286,7 +363,7 @@ public class APPler : MonoBehaviour
         if (selectedLeft != null && selectedRight != null)
         {
             UpdateLocationButtons();
-            OpenPageByIndex(5); 
+            OpenPageByIndex(4); 
         }
         else
         {
@@ -296,7 +373,14 @@ public class APPler : MonoBehaviour
 
     public void UpdateLocationButtons()
     {
-        if (selectedLeft == null || selectedRight == null) return;
+        if (selectedLeft == null || selectedRight == null) 
+        {
+            SetButtonState(restoranSmall, restoranLarge, false);
+            SetButtonState(arcadeSmall, arcadeLarge, false);
+            SetButtonState(barSmall, barLarge, false);
+            SetButtonState(evSmall, evLarge, false);
+            return; 
+        }
 
         string char1 = selectedLeft.characterName;
         string char2 = selectedRight.characterName;
@@ -314,61 +398,140 @@ public class APPler : MonoBehaviour
         {
             if (isIoAndElroi)
             {
-                SetButtonState(btnRestoran, true);
-                SetButtonState(btnArcade, false);
-                SetButtonState(btnBar, false);
-                SetButtonState(btnEv, false);
+                SetButtonState(restoranSmall, restoranLarge, true);
+                SetButtonState(arcadeSmall, arcadeLarge, false);
+                SetButtonState(barSmall, barLarge, false);
+                SetButtonState(evSmall, evLarge, false);
             }
             else
             {
-                SetButtonState(btnRestoran, true);
-                SetButtonState(btnArcade, true);
-                SetButtonState(btnBar, false);
-                SetButtonState(btnEv, false);
+                SetButtonState(restoranSmall, restoranLarge, true);
+                SetButtonState(arcadeSmall, arcadeLarge, true);
+                SetButtonState(barSmall, barLarge, false);
+                SetButtonState(evSmall, evLarge, false);
             }
         }
         else if (currentLevel == 1)
         {
             if (isIoAndElroi)
             {
-                SetButtonState(btnRestoran, false);
-                SetButtonState(btnArcade, false);
-                SetButtonState(btnBar, false); 
-                SetButtonState(btnEv, true);   
+                SetButtonState(restoranSmall, restoranLarge, false);
+                SetButtonState(arcadeSmall, arcadeLarge, false);
+                SetButtonState(barSmall, barLarge, true);  
+                SetButtonState(evSmall, evLarge, false);   
             }
             else
             {
-                SetButtonState(btnRestoran, false);
-                SetButtonState(btnArcade, false);
-                SetButtonState(btnBar, true);
-                SetButtonState(btnEv, true);
+                SetButtonState(restoranSmall, restoranLarge, false);
+                SetButtonState(arcadeSmall, arcadeLarge, false);
+                SetButtonState(barSmall, barLarge, true);
+                SetButtonState(evSmall, evLarge, true);
             }
         }
         else 
         {
-            SetButtonState(btnRestoran, false);
-            SetButtonState(btnArcade, false);
-            SetButtonState(btnBar, false);
-            SetButtonState(btnEv, false);
+            SetButtonState(restoranSmall, restoranLarge, false);
+            SetButtonState(arcadeSmall, arcadeLarge, false);
+            SetButtonState(barSmall, barLarge, false);
+            SetButtonState(evSmall, evLarge, false);
         }
     }
 
-    private void SetButtonState(Button btn, bool isActive)
+    private void SetButtonState(LocationUIElement uiSmall, LocationUIElement uiLarge, bool isActive)
     {
-        if (btn != null)
+        ApplyStateToUIElement(uiSmall, isActive);
+        ApplyStateToUIElement(uiLarge, isActive);
+    }
+
+    private void ApplyStateToUIElement(LocationUIElement uiElement, bool isActive)
+    {
+        if (uiElement == null || uiElement.button == null) return;
+
+        uiElement.button.interactable = isActive;
+        float alpha = isActive ? 1f : 0.3f;
+
+        if (uiElement.linkedTexts != null)
         {
-            btn.interactable = isActive;
+            foreach (var txt in uiElement.linkedTexts)
+            {
+                if (txt != null)
+                {
+                    Color c = txt.color;
+                    c.a = alpha;
+                    txt.color = c;
+                }
+            }
+        }
+
+        if (uiElement.linkedIcons != null)
+        {
+            foreach (var img in uiElement.linkedIcons)
+            {
+                if (img != null)
+                {
+                    Color c = img.color;
+                    c.a = alpha;
+                    img.color = c;
+                }
+            }
+        }
+    }
+
+    public void ResetSelection()
+    {
+        currentSelectedLocation = "";
+        
+        if (btnMainMatchSmall != null) btnMainMatchSmall.interactable = false;
+        if (btnMainMatchLarge != null) btnMainMatchLarge.interactable = false;
+        
+        SetStrokeState(restoranSmall, false); SetStrokeState(restoranLarge, false);
+        SetStrokeState(barSmall, false); SetStrokeState(barLarge, false);
+        SetStrokeState(evSmall, false); SetStrokeState(evLarge, false);
+        SetStrokeState(arcadeSmall, false); SetStrokeState(arcadeLarge, false);
+    }
+
+    private void SetStrokeState(LocationUIElement ui, bool state)
+    {
+        if (ui != null && ui.selectionStroke != null) ui.selectionStroke.SetActive(state);
+    }
+
+    public void SelectLocation(string clickedLocationName)
+    {
+        currentSelectedLocation = clickedLocationName;
+
+        SetStrokeState(restoranSmall, false); SetStrokeState(restoranLarge, false);
+        SetStrokeState(barSmall, false); SetStrokeState(barLarge, false);
+        SetStrokeState(evSmall, false); SetStrokeState(evLarge, false);
+        SetStrokeState(arcadeSmall, false); SetStrokeState(arcadeLarge, false);
+
+        EnableStrokeIfMatch(restoranSmall, clickedLocationName); EnableStrokeIfMatch(restoranLarge, clickedLocationName);
+        EnableStrokeIfMatch(barSmall, clickedLocationName); EnableStrokeIfMatch(barLarge, clickedLocationName);
+        EnableStrokeIfMatch(evSmall, clickedLocationName); EnableStrokeIfMatch(evLarge, clickedLocationName);
+        EnableStrokeIfMatch(arcadeSmall, clickedLocationName); EnableStrokeIfMatch(arcadeLarge, clickedLocationName);
+
+        if (btnMainMatchSmall != null) btnMainMatchSmall.interactable = true;
+        if (btnMainMatchLarge != null) btnMainMatchLarge.interactable = true;
+    }
+
+    private void EnableStrokeIfMatch(LocationUIElement ui, string locName)
+    {
+        if (ui != null && ui.selectionStroke != null && ui.locationName == locName)
+        {
+            ui.selectionStroke.SetActive(true);
+        }
+    }
+
+    public void ConfirmAndStartMatch()
+    {
+        if (!string.IsNullOrEmpty(currentSelectedLocation))
+        {
+            StartDateWithLocation(currentSelectedLocation);
         }
     }
 
     public void StartDateWithLocation(string secilenMekan)
     {
-        
-        if (selectedLeft == null || selectedRight == null)
-        {
-            return; 
-        }
-        
+        if (selectedLeft == null || selectedRight == null) return; 
         
         DateSettings.leftChar = selectedLeft;
         DateSettings.rightChar = selectedRight;
@@ -395,10 +558,8 @@ public class APPler : MonoBehaviour
             if ((selectedLeft == match.characterA && selectedRight == match.characterB) ||
                 (selectedLeft == match.characterB && selectedRight == match.characterA))
             {
-               
                 DateSettings.leftChar = match.characterA;
                 DateSettings.rightChar = match.characterB;
-              
 
                 List<DialogueDataları> aranacakListe = null;
 
@@ -433,7 +594,89 @@ public class APPler : MonoBehaviour
     }
     
     public void OnLoginClicked() => OpenPageByIndex(1);
-    public void OnMatchButtonClicked() => OpenPageByIndex(2);
+    
+    public void OnMatchButtonClicked() => OpenPageByIndex(1);
+
+    public void LoadReviews()
+    {
+        if (reviewsContentContainerSmall != null)
+        {
+            foreach (Transform child in reviewsContentContainerSmall)
+            {
+                Destroy(child.gameObject);
+            }
+        }
+
+        if (reviewsContentContainerLarge != null)
+        {
+            foreach (Transform child in reviewsContentContainerLarge)
+            {
+                Destroy(child.gameObject);
+            }
+        }
+
+        string jsonLoad = PlayerPrefs.GetString("SavedReviewsDB", "");
+        
+        if (string.IsNullOrEmpty(jsonLoad)) 
+        {
+            if (noReviewsMessageSmall != null) noReviewsMessageSmall.SetActive(true);
+            if (noReviewsMessageLarge != null) noReviewsMessageLarge.SetActive(true);
+            return; 
+        }
+
+        ReviewDatabase db = JsonUtility.FromJson<ReviewDatabase>(jsonLoad);
+
+       
+        if (db == null || db.allPastDates == null || db.allPastDates.Count == 0)
+        {
+            if (noReviewsMessageSmall != null) noReviewsMessageSmall.SetActive(true);
+            if (noReviewsMessageLarge != null) noReviewsMessageLarge.SetActive(true);
+            return;
+        }
+
+      
+        if (noReviewsMessageSmall != null) noReviewsMessageSmall.SetActive(false);
+        if (noReviewsMessageLarge != null) noReviewsMessageLarge.SetActive(false);
+
+        db.allPastDates.Reverse();
+
+        foreach (var reviewData in db.allPastDates)
+        {
+            Sprite icon1 = GetProfileIconByName(reviewData.char1Name);
+            Sprite icon2 = GetProfileIconByName(reviewData.char2Name);
+            
+            if (reviewsContentContainerSmall != null && reviewSlotPrefabSmall != null)
+            {
+                GameObject newSlotSmall = Instantiate(reviewSlotPrefabSmall, reviewsContentContainerSmall);
+                ReviewSlot slotScriptSmall = newSlotSmall.GetComponent<ReviewSlot>();
+                if (slotScriptSmall != null)
+                {
+                    slotScriptSmall.Setup(reviewData, icon1, icon2);
+                }
+            }
+
+            if (reviewsContentContainerLarge != null && reviewSlotPrefabLarge != null)
+            {
+                GameObject newSlotLarge = Instantiate(reviewSlotPrefabLarge, reviewsContentContainerLarge);
+                ReviewSlot slotScriptLarge = newSlotLarge.GetComponent<ReviewSlot>();
+                if (slotScriptLarge != null)
+                {
+                    slotScriptLarge.Setup(reviewData, icon1, icon2);
+                }
+            }
+        }
+    }
+
+    private Sprite GetProfileIconByName(string charName)
+    {
+        if (IoData != null && IoData.characterName == charName) return IoData.profileIcon;
+        if (ElroiData != null && ElroiData.characterName == charName) return ElroiData.profileIcon;
+        if (JettyData != null && JettyData.characterName == charName) return JettyData.profileIcon;
+        if (LinusData != null && LinusData.characterName == charName) return LinusData.profileIcon;
+        if (AryData != null && AryData.characterName == charName) return AryData.profileIcon; 
+        if (LoreenData != null && LoreenData.characterName == charName) return LoreenData.profileIcon; 
+        return defaultIcon;
+    }
 }
 
 [System.Serializable]

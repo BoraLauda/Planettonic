@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52414fa3869acd040b0ed6b6d3d42937, type: 3}
+  m_Name: Nemelise
+  m_EditorClassIdentifier: 
+  characterName: Nemelise
+  profileIcon: {fileID: 21300000, guid: b5a5cc5d83848d843aadeaf9b5e083f1, type: 3}
+  dodgeTheQuestionIkonu: {fileID: 21300000, guid: b5a5cc5d83848d843aadeaf9b5e083f1, type: 3}
+  menuMinigameIkonu: {fileID: 21300000, guid: b5a5cc5d83848d843aadeaf9b5e083f1, type: 3}
+  portraitImage: {fileID: 21300000, guid: b5a5cc5d83848d843aadeaf9b5e083f1, type: 3}
+  fullName: Nemelise
+  demographicsInfo: 
+  relationshipGoals: 
+  hobbies: 
+  foodPreferenceText: 
+  quoteText: 
+  locationPreferences:
+  - locationName: Restaurant
+    bonusStars: 1
+  - locationName: House
+    bonusStars: 1
+  hatedFoods:
+  - food: 1
+    reactionScenario: {fileID: 11400000, guid: 3af82a29ca78dee4bb3d5d1161db2fb0, type: 2}
+  - food: 2
+    reactionScenario: {fileID: 11400000, guid: 3af82a29ca78dee4bb3d5d1161db2fb0, type: 2}
+  - food: 7
+    reactionScenario: {fileID: 11400000, guid: 3af82a29ca78dee4bb3d5d1161db2fb0, type: 2}
+  iceBreakerGood:
+  - {fileID: 11400000, guid: fd4a7a270db21014fb9b218054d59f41, type: 2}
+  - {fileID: 11400000, guid: 84bf0d63f317fd54bbf58da27ae00b9f, type: 2}
+  iceBreakerMid:
+  - {fileID: 11400000, guid: 4483b5dccec097245a4e1839a3aeb702, type: 2}
+  - {fileID: 11400000, guid: dde6d4fa265e2ed4a9a40024fd6963b4, type: 2}
+  iceBreakerBad:
+  - {fileID: 11400000, guid: 7e11c7949ea7153428252aeb97eb01a3, type: 2}
+  - {fileID: 11400000, guid: 5d775c9c5ad47d444be80e62836f9d72, type: 2}
+  dodgeQuestions: []

@@ -10,19 +10,21 @@ public class Characters : ScriptableObject
     [Header("Görsel")]
     public Sprite profileIcon;
     public Sprite dodgeTheQuestionIkonu;
-    
     public Sprite menuMinigameIkonu; 
-    
-    [Header("GörselBüyük")]
     public Sprite portraitImage; 
         
+    [Header("Profil Ekranı Metinleri")]
+    public string fullName;             
+    public string demographicsInfo;      
+    public string relationshipGoals;    
+    public string hobbies;               
+    public string foodPreferenceText;    
+    
+    [TextArea(3, 5)] 
+    public string quoteText;         
+    
+    [Header("Mekan ve Yemek Tercihleri")]
     public List<LocationPreference> locationPreferences;
-    
-    public Sprite nameImage;  
-    public Sprite listImage; 
-    public Sprite infoImage; 
-    
-    [Header("Sevilmeyen Yemekler")]
     public List<FoodReaction> hatedFoods; 
 
     [Header("Ice Breaker Soruları")]

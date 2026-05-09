@@ -1,0 +1,85 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f832b14936fc2048824d9308b14ded6, type: 3}
+  m_Name: Start
+  m_EditorClassIdentifier: 
+  locationName: 
+  locationBackground: {fileID: 0}
+  allLines:
+  - side: 1
+    characterName: Linus
+    characterSprite: {fileID: 21300000, guid: dc24e77c8220d5b43bd418e911809b3b, type: 3}
+    sentence: 'Hey, Loreen, nice to meet you. Beautiful venue, huh?
+
+'
+    eventTrigger: 
+    choices: []
+  - side: 0
+    characterName: Loreen
+    characterSprite: {fileID: 3895208362979335837, guid: 146a6ce1894c7084984f7771ba7e263e, type: 3}
+    sentence: Hello, nice to meet you too. It sure is a nice restaurant.
+    eventTrigger: 
+    choices: []
+  - side: 1
+    characterName: Linus
+    characterSprite: {fileID: 0}
+    sentence: "I really like your style and all the colors you\u2019ve got going
+      on.\r\n"
+    eventTrigger: 
+    choices: []
+  - side: 0
+    characterName: Loreen
+    characterSprite: {fileID: 0}
+    sentence: "Thanks, your outfit isn\u2019t too bad either. Hah, I\u2019ll just
+      pretend I don\u2019t own that exact same vest."
+    eventTrigger: 
+    choices: []
+  - side: 1
+    characterName: Linus
+    characterSprite: {fileID: 0}
+    sentence: Hahaha right, thanks. So, girl that likes shopping from the same brand
+      as I do, what do you do for work?
+    eventTrigger: 
+    choices: []
+  - side: 0
+    characterName: Loreen
+    characterSprite: {fileID: 0}
+    sentence: Academician, fairly new though.
+    eventTrigger: 
+    choices: []
+  - side: 1
+    characterName: Linus
+    characterSprite: {fileID: 0}
+    sentence: So, you like reading I presume.
+    eventTrigger: 
+    choices: []
+  - side: 0
+    characterName: Loreen
+    characterSprite: {fileID: 0}
+    sentence: "Wouldn\u2019t be making any money if I didn\u2019t. And you?\r\n"
+    eventTrigger: 
+    choices: []
+  - side: 1
+    characterName: Linus
+    characterSprite: {fileID: 0}
+    sentence: "Could be making money without it, although then I\u2019d be a bad
+      lawyer.\r\n"
+    eventTrigger: 
+    choices: []
+  - side: 3
+    characterName: Chaperon
+    characterSprite: {fileID: 0}
+    sentence: "Hello, you two. I\u2019ll be your Chaperon for the day. Care for some
+      food and drinks?"
+    eventTrigger: StartMenuGame
+    choices: []
+  nextScenario: {fileID: 0}

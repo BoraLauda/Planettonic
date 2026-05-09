@@ -1,33 +1,40 @@
 using UnityEngine;
 using UnityEngine.UI;
+using System.Collections.Generic;
 
 public class CharacterSlots : MonoBehaviour
 {
     public Characters myProfile;
     public Image myImage;
     public Button myButton;
-    
-    [Header("UI Görsel Bileşenleri")]
+    public GameObject overrideLockedPrefab; 
+    public List<GameObject> hideWhenLocked; 
     public GameObject planetIcon; 
 
     private GameObject currentLockedUI; 
 
-    
-    public void UpdateSlotState(Characters selectedLeft, Characters selectedRight, bool isUnlocked, GameObject lockedPrefab, bool isGrayedOut = false)
+    public void UpdateSlotState(Characters selectedLeft, Characters selectedRight, bool isUnlocked, GameObject defaultLockedPrefab, bool isGrayedOut = false)
     {
         if (currentLockedUI != null) Destroy(currentLockedUI);
 
         if (!isUnlocked)
         {
-            myButton.interactable = false;
-            myImage.enabled = false; 
+            myButton.interactable = false; 
+            
+            if (myImage != null) myImage.enabled = false; 
+            
+            foreach (GameObject obj in hideWhenLocked)
+            {
+                if (obj != null) obj.SetActive(false);
+            }
 
             if (planetIcon != null) planetIcon.SetActive(false); 
 
-            if (lockedPrefab != null)
+            GameObject finalPrefabToUse = overrideLockedPrefab != null ? overrideLockedPrefab : defaultLockedPrefab;
+
+            if (finalPrefabToUse != null)
             {
-                currentLockedUI = Instantiate(lockedPrefab, transform);
-                
+                currentLockedUI = Instantiate(finalPrefabToUse, transform);
                 RectTransform rt = currentLockedUI.GetComponent<RectTransform>();
                 if(rt != null)
                 {
@@ -40,18 +47,25 @@ public class CharacterSlots : MonoBehaviour
         }
         
         myButton.interactable = !isGrayedOut;
-        myImage.enabled = true; 
         
-        if (myProfile != null) myImage.sprite = myProfile.profileIcon;
-        
-        myImage.color = isGrayedOut ? Color.gray : Color.white;
+        if (myImage != null)
+        {
+            myImage.enabled = true; 
+            myImage.color = isGrayedOut ? Color.gray : Color.white;
+            if (myProfile != null) myImage.sprite = myProfile.profileIcon; 
+        }
+
+        foreach (GameObject obj in hideWhenLocked)
+        {
+            if (obj != null) obj.SetActive(true);
+        }
 
         if (planetIcon != null) planetIcon.SetActive(true); 
 
         if (myProfile != null && (myProfile == selectedLeft || myProfile == selectedRight))
         {
             myButton.interactable = false;
-            myImage.color = Color.gray;
+            if (myImage != null) myImage.color = Color.gray;
         }
     }
 

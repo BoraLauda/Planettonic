@@ -1,0 +1,49 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52414fa3869acd040b0ed6b6d3d42937, type: 3}
+  m_Name: Io
+  m_EditorClassIdentifier: 
+  characterName: Io
+  profileIcon: {fileID: 21300000, guid: 4315b6d786936364f9e7e42de5404d17, type: 3}
+  dodgeTheQuestionIkonu: {fileID: 324928346125548867, guid: 868d47c2329247e4e9303e036389f3e6, type: 3}
+  menuMinigameIkonu: {fileID: 324928346125548867, guid: 868d47c2329247e4e9303e036389f3e6, type: 3}
+  portraitImage: {fileID: 281146401269919291, guid: a592fd1e0039a0b41a340d5324df28b1, type: 3}
+  fullName: Io
+  demographicsInfo: 24 || Female || Venus || Producer
+  relationshipGoals: Commitment || Marriage || Kids
+  hobbies: Singing, swimming, playing guitar, reading comics
+  foodPreferenceText: Vegetarian
+  quoteText: "\xD6zl\xFC s\xF6z\r\n"
+  locationPreferences:
+  - locationName: RESTAURANT
+    bonusStars: 1
+  - locationName: BAR
+    bonusStars: 1
+  hatedFoods:
+  - food: 2
+    reactionScenario: {fileID: 11400000, guid: d6d0176578ce07a4fabf9173d344d21a, type: 2}
+  - food: 1
+    reactionScenario: {fileID: 11400000, guid: d6d0176578ce07a4fabf9173d344d21a, type: 2}
+  - food: 7
+    reactionScenario: {fileID: 11400000, guid: d6d0176578ce07a4fabf9173d344d21a, type: 2}
+  iceBreakerGood:
+  - {fileID: 11400000, guid: 7ccdc90d8bf6c7e4796a2ebe82f5e941, type: 2}
+  - {fileID: 11400000, guid: 6344b5269991abb43ad78c95c3bc0d18, type: 2}
+  iceBreakerMid:
+  - {fileID: 11400000, guid: b6af3a74f374cd040831e1abf8c93811, type: 2}
+  - {fileID: 11400000, guid: e8ac8d5e031cb384d9b84d9d9e5d676c, type: 2}
+  iceBreakerBad:
+  - {fileID: 11400000, guid: 55e1b9aeb332c4941808358f10c41368, type: 2}
+  - {fileID: 11400000, guid: 9b07c77d4b8f8c14dbac5b72b0e154f1, type: 2}
+  dodgeQuestions:
+  - {fileID: 11400000, guid: 4fc40f655e52f53418b6699a38ec2f7f, type: 2}
+  - {fileID: 11400000, guid: 2a4a4488c4e6ac74d8149e78dffe4f15, type: 2}
