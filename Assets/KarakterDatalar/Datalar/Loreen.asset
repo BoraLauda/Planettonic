@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Loreen
   m_EditorClassIdentifier: 
   characterName: Loreen
+  cinsiyet: 0
   profileIcon: {fileID: 21300000, guid: 3c748b2348f568c46932d729079ea02c, type: 3}
   dodgeTheQuestionIkonu: {fileID: -1979368412444877893, guid: be91fb4712e629647a14536d0fc250ee, type: 3}
   menuMinigameIkonu: {fileID: -1979368412444877893, guid: be91fb4712e629647a14536d0fc250ee, type: 3}
@@ -59,3 +60,7 @@ MonoBehaviour:
     diyalogDosyasi: {fileID: 11400000, guid: 4a3f4a093a6508c4fa4c7f7f1fb43bc6, type: 2}
   - targetCharacter: {fileID: 11400000, guid: 5f6e0fde49813654aa1d61918d175f26, type: 2}
     diyalogDosyasi: {fileID: 11400000, guid: 246f6433b36353e4691faefb1fa06f94, type: 2}
+  - targetCharacter: {fileID: 11400000, guid: d9880c6a901c8d643a786ea1b19f0372, type: 2}
+    diyalogDosyasi: {fileID: 11400000, guid: 1be374ca8a46aa14d8e50fd223a18a15, type: 2}
+  - targetCharacter: {fileID: 11400000, guid: d9880c6a901c8d643a786ea1b19f0372, type: 2}
+    diyalogDosyasi: {fileID: 11400000, guid: dca7ccf4c85960e4fa58be6d5a4b7c38, type: 2}

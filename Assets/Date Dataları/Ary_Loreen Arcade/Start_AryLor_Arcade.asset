@@ -10,65 +10,63 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0f832b14936fc2048824d9308b14ded6, type: 3}
-  m_Name: Ary_BestOption
+  m_Name: Start_AryLor_Arcade
   m_EditorClassIdentifier: 
-  locationName: 
-  locationBackground: {fileID: 0}
+  locationName: Arcade
+  locationBackground: {fileID: 1439995735934848948, guid: d7c0804f77d78c149a3021d444e47e1f, type: 3}
   allLines:
   - side: 1
     characterName: Ary
     characterSprite: {fileID: 21300000, guid: ece41423a199ba04f8804d355c231cbb, type: 3}
-    sentence: Suffering is an overstatement, no? I just like watching a bit of a
-      struggle.
+    sentence: "Hey, ugh it\u2019s loud in here. It\u2019s Loreen right?"
     eventTrigger: 
     choices: []
   - side: 0
     characterName: Loreen
     characterSprite: {fileID: 3895208362979335837, guid: 146a6ce1894c7084984f7771ba7e263e, type: 3}
-    sentence: "So you\u2019re a sadist?"
+    sentence: Mhm.
     eventTrigger: 
     choices: []
   - side: 1
     characterName: Ary
     characterSprite: {fileID: 0}
-    sentence: "Hm, depends. I wouldn\u2019t push you off your bike."
+    sentence: "I\u2019m Ary, pleasure to meet you."
     eventTrigger: 
     choices: []
   - side: 0
     characterName: Loreen
     characterSprite: {fileID: 0}
-    sentence: What a relief. What would you do then?
+    sentence: "You too. You\u2019re a... model, right?\r\n"
     eventTrigger: 
     choices: []
   - side: 1
     characterName: Ary
     characterSprite: {fileID: 0}
-    sentence: "I\u2019d remind you of it in ways that would make you flush all the
-      way up to your ears.\r\n"
+    sentence: Yup. Do I look it?
     eventTrigger: 
     choices: []
   - side: 0
     characterName: Loreen
     characterSprite: {fileID: 0}
-    sentence: That sounds..
+    sentence: "Eh, I\u2019d say so."
     eventTrigger: 
     choices: []
   - side: 1
     characterName: Ary
     characterSprite: {fileID: 0}
-    sentence: Fun?
+    sentence: Hm, not easy to impress, are you?
     eventTrigger: 
     choices: []
   - side: 0
     characterName: Loreen
     characterSprite: {fileID: 0}
-    sentence: Suggestive.
+    sentence: If that was an attempt to impress me, then I guess not.
     eventTrigger: 
     choices: []
-  - side: 1
-    characterName: Ary
+  - side: 3
+    characterName: Chaperon
     characterSprite: {fileID: 0}
-    sentence: Hmm, again, depends.
-    eventTrigger: StartDodgeGame
+    sentence: Good evening, want to put in your orders for dinner?
+    eventTrigger: StartClawMachine
     choices: []
-  nextScenario: {fileID: 11400000, guid: b91951829af531841aa486c19fc485fd, type: 2}
+  nextScenario: {fileID: 11400000, guid: 4567d359bf2667145ab02604a5eea376, type: 2}

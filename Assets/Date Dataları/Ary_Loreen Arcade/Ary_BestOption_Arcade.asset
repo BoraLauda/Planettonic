@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0f832b14936fc2048824d9308b14ded6, type: 3}
-  m_Name: Ary_BestOption
+  m_Name: Ary_BestOption_Arcade
   m_EditorClassIdentifier: 
   locationName: 
   locationBackground: {fileID: 0}
@@ -69,6 +69,6 @@ MonoBehaviour:
     characterName: Ary
     characterSprite: {fileID: 0}
     sentence: Hmm, again, depends.
-    eventTrigger: StartDodgeGame
+    eventTrigger: StartRitimGame
     choices: []
-  nextScenario: {fileID: 11400000, guid: b91951829af531841aa486c19fc485fd, type: 2}
+  nextScenario: {fileID: 11400000, guid: 9d03091094e011a4484b73a53beb5a89, type: 2}

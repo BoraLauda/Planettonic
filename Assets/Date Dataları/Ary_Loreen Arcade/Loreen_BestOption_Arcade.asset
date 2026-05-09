@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0f832b14936fc2048824d9308b14ded6, type: 3}
-  m_Name: Loreen_BestOption
+  m_Name: Loreen_BestOption_Arcade
   m_EditorClassIdentifier: 
   locationName: 
   locationBackground: {fileID: 0}
@@ -102,4 +102,4 @@ MonoBehaviour:
     sentence: "Well then, let\u2019s play!"
     eventTrigger: StartIceBreaker
     choices: []
-  nextScenario: {fileID: 11400000, guid: 18f32bc41bd4f144b961ae571510f51e, type: 2}
+  nextScenario: {fileID: 11400000, guid: b766742083f0d3a40be9b7f349a40c59, type: 2}
