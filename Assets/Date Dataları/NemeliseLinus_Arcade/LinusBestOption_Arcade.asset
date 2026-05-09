@@ -47,6 +47,6 @@ MonoBehaviour:
     characterName: Linus
     characterSprite: {fileID: 0}
     sentence: "You\u2019ve done a wonderful job, then."
-    eventTrigger: StartDodgeGame
+    eventTrigger: StartRitimGame
     choices: []
   nextScenario: {fileID: 11400000, guid: 3230c561d9ee7474a8e28fa36bfdad6f, type: 2}
