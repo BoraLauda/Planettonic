@@ -16,7 +16,7 @@ MonoBehaviour:
   locationBackground: {fileID: 0}
   allLines:
   - side: 1
-    characterName: 
+    characterName: Linus
     characterSprite: {fileID: 21300000, guid: dc24e77c8220d5b43bd418e911809b3b, type: 3}
     sentence: "Being young and bragging about all the unique experiences you\u2019ve
       had is great, but I think really growing up and then finding out just how unique
@@ -24,29 +24,29 @@ MonoBehaviour:
     eventTrigger: 
     choices: []
   - side: 0
-    characterName: 
+    characterName: Nemelise
     characterSprite: {fileID: 21300000, guid: b5a5cc5d83848d843aadeaf9b5e083f1, type: 3}
     sentence: Then, you really get to see in perspective how different life treats
       each individual person.
     eventTrigger: 
     choices: []
   - side: 1
-    characterName: 
+    characterName: Linus
     characterSprite: {fileID: 0}
     sentence: Well, it seems it treated you pretty well up until now. You are breath-taking.
     eventTrigger: 
     choices: []
   - side: 0
-    characterName: 
+    characterName: Nemelise
     characterSprite: {fileID: 0}
     sentence: "I appreciate it. It wasn\u2019t just life, though. I took care of
       myself.\r\n"
     eventTrigger: 
     choices: []
   - side: 1
-    characterName: 
+    characterName: Linus
     characterSprite: {fileID: 0}
     sentence: "You\u2019ve done a wonderful job, then."
     eventTrigger: StartDodgeGame
     choices: []
-  nextScenario: {fileID: 0}
+  nextScenario: {fileID: 11400000, guid: 9ca53d3f6896e7b4397d49a0348b6d5b, type: 2}

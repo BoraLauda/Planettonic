@@ -27,6 +27,7 @@ public class APPler : MonoBehaviour
     public Characters ElroiData;
     public Characters AryData;
     public Characters LoreenData;
+    public Characters NemeliseData;
     
     [Header("Sonradan Açılacak Karakterler")]
     public Characters JettyData;
@@ -675,6 +676,7 @@ public class APPler : MonoBehaviour
         if (LinusData != null && LinusData.characterName == charName) return LinusData.profileIcon;
         if (AryData != null && AryData.characterName == charName) return AryData.profileIcon; 
         if (LoreenData != null && LoreenData.characterName == charName) return LoreenData.profileIcon; 
+        if (NemeliseData != null && NemeliseData.characterName == charName) return NemeliseData.profileIcon;
         return defaultIcon;
     }
 }

@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f832b14936fc2048824d9308b14ded6, type: 3}
+  m_Name: Start_Arcade
+  m_EditorClassIdentifier: 
+  locationName: Restaurant
+  locationBackground: {fileID: 1439995735934848948, guid: d7c0804f77d78c149a3021d444e47e1f, type: 3}
+  allLines:
+  - side: 1
+    characterName: Linus
+    characterSprite: {fileID: 21300000, guid: dc24e77c8220d5b43bd418e911809b3b, type: 3}
+    sentence: Nemelise, right? Hello. You look beautiful.
+    eventTrigger: 
+    choices: []
+  - side: 0
+    characterName: Nemelise
+    characterSprite: {fileID: 21300000, guid: b5a5cc5d83848d843aadeaf9b5e083f1, type: 3}
+    sentence: Thank you Linus, you do too. But I do have to mention, I kind of hate
+      this location of choice.
+    eventTrigger: 
+    choices: []
+  - side: 1
+    characterName: Linus
+    characterSprite: {fileID: 0}
+    sentence: "Well, I guess it\u2019s not ideal but.. wouldn\u2019t hurt to give
+      it a try, yeah?\r\n"
+    eventTrigger: 
+    choices: []
+  - side: 0
+    characterName: Nemelise
+    characterSprite: {fileID: 0}
+    sentence: "I guess so. Let\u2019s see where the night takes us."
+    eventTrigger: StartClawMachine
+    choices: []
+  nextScenario: {fileID: 11400000, guid: b61d006dbe32edd4dad9e717aae6c7fc, type: 2}

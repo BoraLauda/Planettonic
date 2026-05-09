@@ -9636,7 +9636,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &407253687
 RectTransform:
   m_ObjectHideFlags: 0
@@ -19601,7 +19601,7 @@ MonoBehaviour:
     characterA: {fileID: 11400000, guid: 10ae37b55ea06ba4eadbd5ffcc3098c2, type: 2}
     characterB: {fileID: 11400000, guid: 5f6e0fde49813654aa1d61918d175f26, type: 2}
     successScenario: {fileID: 11400000, guid: 1e06ee2e737e5f345aaaa6d51a2e055e, type: 2}
-    continuationScenario: {fileID: 11400000, guid: 7621001a9b1d62f48ae13d195b09c40f, type: 2}
+    continuationScenario: {fileID: 11400000, guid: 4afb6126a32be7643899adce157c61f6, type: 2}
 --- !u!82 &756997994
 AudioSource:
   m_ObjectHideFlags: 0
@@ -27248,6 +27248,14 @@ MonoBehaviour:
     characterA: {fileID: 11400000, guid: 52f97840cc872804392c25a1f2b8175b, type: 2}
     characterB: {fileID: 11400000, guid: d9880c6a901c8d643a786ea1b19f0372, type: 2}
     specificFailScenario: {fileID: 11400000, guid: f0fc909b4d5a2f94b85ea4251ec7a2ac, type: 2}
+  - ciftAdi: Loreen Linus
+    characterA: {fileID: 11400000, guid: 52f97840cc872804392c25a1f2b8175b, type: 2}
+    characterB: {fileID: 11400000, guid: 5f6e0fde49813654aa1d61918d175f26, type: 2}
+    specificFailScenario: {fileID: 11400000, guid: 4a1dfbc667d65ac4ea142c1917e3d758, type: 2}
+  - ciftAdi: Loreen Linus
+    characterA: {fileID: 11400000, guid: 52f97840cc872804392c25a1f2b8175b, type: 2}
+    characterB: {fileID: 11400000, guid: 5f6e0fde49813654aa1d61918d175f26, type: 2}
+    specificFailScenario: {fileID: 11400000, guid: 4a1dfbc667d65ac4ea142c1917e3d758, type: 2}
   - ciftAdi: Loreen Linus
     characterA: {fileID: 11400000, guid: 52f97840cc872804392c25a1f2b8175b, type: 2}
     characterB: {fileID: 11400000, guid: 5f6e0fde49813654aa1d61918d175f26, type: 2}

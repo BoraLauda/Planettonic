@@ -1,0 +1,69 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f832b14936fc2048824d9308b14ded6, type: 3}
+  m_Name: ContinueClaw
+  m_EditorClassIdentifier: 
+  locationName: 
+  locationBackground: {fileID: 0}
+  allLines:
+  - side: 1
+    characterName: Linus
+    characterSprite: {fileID: 21300000, guid: dc24e77c8220d5b43bd418e911809b3b, type: 3}
+    sentence: "So, a Neptunian entertainer. You\u2019re a singer, right?"
+    eventTrigger: 
+    choices: []
+  - side: 0
+    characterName: Nemelise
+    characterSprite: {fileID: 21300000, guid: b5a5cc5d83848d843aadeaf9b5e083f1, type: 3}
+    sentence: Opera singer, yeah. Why, you know other Neptunian singers?
+    eventTrigger: 
+    choices: []
+  - side: 1
+    characterName: Linus
+    characterSprite: {fileID: 0}
+    sentence: "Well there\u2019s no denying the natural talent."
+    eventTrigger: 
+    choices: []
+  - side: 0
+    characterName: Nemelise
+    characterSprite: {fileID: 0}
+    sentence: "Smooth and careful with his words. You\u2019re a dangerous one."
+    eventTrigger: 
+    choices: []
+  - side: 1
+    characterName: Linus
+    characterSprite: {fileID: 0}
+    sentence: "Ah, I wouldn\u2019t say dangerous but.. I\u2019ll still take the compliment."
+    eventTrigger: 
+    choices: []
+  - side: 0
+    characterName: Nemelise
+    characterSprite: {fileID: 0}
+    sentence: 
+    eventTrigger: 
+    choices:
+    - choices: are you this smooth in court?
+      nextScenario: {fileID: 11400000, guid: d2f83c38fb9774640b4698b9655a5ebb, type: 2}
+      target: 0
+      starReward: 1
+      heartReward: 0
+    - choices: "I know what you\u2019re trying to do. I\u2019m not buying it."
+      nextScenario: {fileID: 11400000, guid: e7e043350b2535947a54fddc00ed02e8, type: 2}
+      target: 0
+      starReward: 0.5
+      heartReward: 0
+    - choices: "Oh, but you\u2019re prideful for sure."
+      nextScenario: {fileID: 11400000, guid: aea58fa6700bbe949b9e710e27960cb3, type: 2}
+      target: 0
+      starReward: 0
+      heartReward: 0
+  nextScenario: {fileID: 0}

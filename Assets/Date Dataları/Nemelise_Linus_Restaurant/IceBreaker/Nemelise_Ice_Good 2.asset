@@ -16,20 +16,20 @@ MonoBehaviour:
   locationBackground: {fileID: 0}
   allLines:
   - side: 0
-    characterName: 
+    characterName: Nemelise
     characterSprite: {fileID: 21300000, guid: b5a5cc5d83848d843aadeaf9b5e083f1, type: 3}
     sentence: "What\u2019s your favorite cocktail?\r"
     eventTrigger: 
     choices: []
   - side: 1
-    characterName: 
+    characterName: Linus
     characterSprite: {fileID: 21300000, guid: dc24e77c8220d5b43bd418e911809b3b, type: 3}
     sentence: "I\u2019m more of a whiskey guy but if I had to choose, I\u2019d say...
       an old-fashioned."
     eventTrigger: 
     choices: []
   - side: 0
-    characterName: 
+    characterName: Nemelise
     characterSprite: {fileID: 0}
     sentence: Mm, I love whiskey.
     eventTrigger: 

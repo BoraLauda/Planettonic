@@ -29,20 +29,20 @@ MonoBehaviour:
     eventTrigger: 
     choices: []
   - side: 0
-    characterName: 
+    characterName: Nemelise
     characterSprite: {fileID: 0}
     sentence: "Oh my, I would never. Whatever floats your boat... In this case it\u2019s
       probably water."
     eventTrigger: 
     choices: []
   - side: 1
-    characterName: 
+    characterName: Linus
     characterSprite: {fileID: 0}
     sentence: '*laughs*'
     eventTrigger: 
     choices: []
   - side: 0
-    characterName: 
+    characterName: Nemelise
     characterSprite: {fileID: 0}
     sentence: You seemed to really enjoy that one.
     eventTrigger: 
