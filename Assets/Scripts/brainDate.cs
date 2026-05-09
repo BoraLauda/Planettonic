@@ -830,6 +830,8 @@ public class brainDate : MonoBehaviour
         {
             savedMainScenario = currentScenario;
             isEventTriggered = true;
+            
+            isIceBreakerMode = true;
 
             if (leftDialoguePanel) leftDialoguePanel.SetActive(false);
             if (rightDialoguePanel) rightDialoguePanel.SetActive(false);
@@ -865,7 +867,8 @@ public class brainDate : MonoBehaviour
         {
             savedMainScenario = currentScenario;
             isEventTriggered = true;
-
+            isDodgeMode = true;
+            
             if (leftDialoguePanel) leftDialoguePanel.SetActive(false);
             if (rightDialoguePanel) rightDialoguePanel.SetActive(false);
             if (chancellorPanel) chancellorPanel.SetActive(false);
@@ -1253,9 +1256,23 @@ public class brainDate : MonoBehaviour
 
         AddReward(earnedStars, earnedHearts, target);
 
-        if (savedMainScenario != null && savedMainScenario.nextScenario != null)
+        float totalScore = leftStars + rightStars;
+        
+        if (totalScore >= starThreshold)
         {
-            StartScenario(savedMainScenario.nextScenario);
+            if (savedMainScenario != null && savedMainScenario.nextScenario != null)
+            {
+                StartScenario(savedMainScenario.nextScenario);
+            }
+        }
+        else
+        {
+          
+            DialogueDataları activeFail = GetActiveFailScenario();
+            if (activeFail != null)
+            {
+                StartScenario(activeFail);
+            }
         }
     }
 

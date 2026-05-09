@@ -57,7 +57,7 @@ public class IceBreaker : MonoBehaviour
     
     private brainDate dateManager;
 
-    // YENİ HAVUZ SİSTEMİ: Listeyi ve Karşıdaki Karakteri birleştirip benzersiz bir ID ile tutuyoruz
+   
     private Dictionary<int, List<DialogueDataları>> questionPools = new Dictionary<int, List<DialogueDataları>>();
     
     void Start()
@@ -118,7 +118,6 @@ public class IceBreaker : MonoBehaviour
         DialogueDataları selectedDialogue = null;
         pendingDamage = 0; 
 
-        // Kimin sırasıysa o konuşuyor (Kaynak), diğeri hedef (Opponent)
         TargetCharacter currentTarget = isLeftTurn ? TargetCharacter.Left : TargetCharacter.Right;
         Characters currentCharData = isLeftTurn ? DateSettings.leftChar : DateSettings.rightChar;
         Characters opponentCharData = isLeftTurn ? DateSettings.rightChar : DateSettings.leftChar; 
@@ -326,13 +325,12 @@ public class IceBreaker : MonoBehaviour
         
         gameObject.SetActive(false); 
     }
-    
-    // YENİ: Sadece karşısındaki kişiye (opponent) özel olan diyalogları bulan zeka
+ 
     DialogueDataları GetTargetedQuestion(List<TargetedDialogue> originalList, Characters opponent)
     {
         if (originalList == null || originalList.Count == 0 || opponent == null) return null;
         
-        // Havuz (Pool) anahtarı: Liste kimliği ve Hedef kimliğini birleştir
+      
         int poolKey = originalList.GetHashCode() ^ opponent.GetInstanceID();
         
         if (!questionPools.ContainsKey(poolKey))
@@ -342,7 +340,7 @@ public class IceBreaker : MonoBehaviour
         
         List<DialogueDataları> pool = questionPools[poolKey];
         
-        // Eğer havuz boşsa (veya ilk defa giriliyorsa), orijinal listeden "Hedefi bu rakip olanları" doldur
+       
         if (pool.Count == 0)
         {
             foreach (var item in originalList)
@@ -354,13 +352,13 @@ public class IceBreaker : MonoBehaviour
             }
         }
         
-        // Hedefe uygun hiç diyalog bulunamadıysa (Örn: Henüz eklememişsindir) pas geçsin
+      
         if (pool.Count == 0) return null;
         
         int rnd = Random.Range(0, pool.Count);
         DialogueDataları selectedQ = pool[rnd];
         
-        pool.RemoveAt(rnd); // Tekrar çıkmasın diye havuzdan çıkar
+        pool.RemoveAt(rnd); 
         return selectedQ;
     }
 }
