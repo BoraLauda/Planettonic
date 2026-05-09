@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0f832b14936fc2048824d9308b14ded6, type: 3}
-  m_Name: ContinueMenu_AryLo
+  m_Name: ContinueClaw_AryLo
   m_EditorClassIdentifier: 
   locationName: 
   locationBackground: {fileID: 0}
@@ -86,17 +86,17 @@ MonoBehaviour:
     eventTrigger: 
     choices:
     - choices: "I don\u2019t trust anyone with that many bikes."
-      nextScenario: {fileID: 11400000, guid: 3464f9ea9ea96d84fb3c991a79fb0808, type: 2}
+      nextScenario: {fileID: 11400000, guid: 3cc85aacaefa86c4f99403f184d3d24f, type: 2}
       target: 0
       starReward: 0
       heartReward: 0
     - choices: Hmm, maybe. Depends on your taste, to be honest.
-      nextScenario: {fileID: 11400000, guid: 0f35e0cadebd46f46a7306ab6264ebbe, type: 2}
+      nextScenario: {fileID: 11400000, guid: 2bae6f1d4ee471341ada96a57d4c1351, type: 2}
       target: 0
       starReward: 0.5
       heartReward: 0
     - choices: "What, you think I\u2019m unhappy with my own bike?"
-      nextScenario: {fileID: 11400000, guid: 2dc3ba3b6c5c7b346a9c747d56fe0ad0, type: 2}
+      nextScenario: {fileID: 11400000, guid: 9e3759273e108924e9c225dc86822df6, type: 2}
       target: 0
       starReward: 1
       heartReward: 0

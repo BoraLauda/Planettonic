@@ -17,48 +17,86 @@ MonoBehaviour:
   allLines:
   - side: 0
     characterName: Loreen
-    characterSprite: {fileID: 21300000, guid: 146a6ce1894c7084984f7771ba7e263e, type: 3}
-    sentence: "Best not to get drunk around you then, \u2018cause desperation really
-      isn\u2019t my thing. "
+    characterSprite: {fileID: 3895208362979335837, guid: 146a6ce1894c7084984f7771ba7e263e, type: 3}
+    sentence: Hmm, maybe. Depends on your taste, to be honest.
     eventTrigger: 
     choices: []
   - side: 1
     characterName: Ary
     characterSprite: {fileID: 21300000, guid: ece41423a199ba04f8804d355c231cbb, type: 3}
-    sentence: I can tell. Well, everyone can get desperate if they want something
-      badly enough.
+    sentence: "Trust me, you\u2019ll love each and every one of them."
     eventTrigger: 
     choices: []
   - side: 0
     characterName: Loreen
     characterSprite: {fileID: 0}
-    sentence: "And I definitely don\u2019t want you that bad. At least not yet."
+    sentence: Do they have names?
     eventTrigger: 
     choices: []
   - side: 1
     characterName: Ary
     characterSprite: {fileID: 0}
-    sentence: Not yet, yes.
+    sentence: Of course they do.
     eventTrigger: 
     choices: []
-  - side: 2
-    characterName: Counselor
+  - side: 0
+    characterName: Loreen
     characterSprite: {fileID: 0}
-    sentence: Hate to interrupt, for a fun reason at least. I have a little game
-      for the both of you to get to know each other better.
-    eventTrigger: 
-    choices: []
-  - side: 2
-    characterName: Counselor
-    characterSprite: {fileID: 0}
-    sentence: "The tablet in front of you displays the Icebreaker. A game I\u2019m
-      sure both of you are familiar with, being good communicators and all!\r\n\r"
+    sentence: Hmm, then I guess I could be convinced.
     eventTrigger: 
     choices: []
   - side: 3
     characterName: Chaperon
     characterSprite: {fileID: 0}
-    sentence: "Niceeee, you\u2019re getting good at this."
+    sentence: 'Hello again, can I have your attention for a moment?
+
+'
+    eventTrigger: 
+    choices: []
+  - side: 1
+    characterName: Ary
+    characterSprite: {fileID: 0}
+    sentence: Really not loving this talking tablet thing.
+    eventTrigger: 
+    choices: []
+  - side: 0
+    characterName: Loreen
+    characterSprite: {fileID: 0}
+    sentence: "Yeah but what can you do? Free food, free drinks, free date. You don\u2019t
+      have to pay for anything."
+    eventTrigger: 
+    choices: []
+  - side: 1
+    characterName: Ary
+    characterSprite: {fileID: 0}
+    sentence: "You don\u2019t split the check? As a feminist, I\u2019m disappointed."
+    eventTrigger: StartIceBreaker
+    choices: []
+  - side: 3
+    characterName: Chaperon
+    characterSprite: {fileID: 0}
+    sentence: 'The tablet in front of you displays the Icebreaker. Are you familiar
+      with the title?
+
+'
+    eventTrigger: 
+    choices: []
+  - side: 1
+    characterName: Ary
+    characterSprite: {fileID: 0}
+    sentence: Uh, yeah.
+    eventTrigger: 
+    choices: []
+  - side: 0
+    characterName: Loreen
+    characterSprite: {fileID: 0}
+    sentence: Uh-huh.
+    eventTrigger: 
+    choices: []
+  - side: 3
+    characterName: Chaperon
+    characterSprite: {fileID: 0}
+    sentence: "Well then, let\u2019s play!"
     eventTrigger: StartIceBreaker
     choices: []
   nextScenario: {fileID: 11400000, guid: 18f32bc41bd4f144b961ae571510f51e, type: 2}

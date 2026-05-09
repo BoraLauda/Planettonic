@@ -17,27 +17,14 @@ MonoBehaviour:
   allLines:
   - side: 0
     characterName: Loreen
-    characterSprite: {fileID: 21300000, guid: 146a6ce1894c7084984f7771ba7e263e, type: 3}
-    sentence: "What\u2019s your favorite cocktail?"
+    characterSprite: {fileID: 3895208362979335837, guid: 146a6ce1894c7084984f7771ba7e263e, type: 3}
+    sentence: What kind of music do you listen to?
     eventTrigger: 
     choices: []
   - side: 1
     characterName: Ary
     characterSprite: {fileID: 21300000, guid: ece41423a199ba04f8804d355c231cbb, type: 3}
-    sentence: "I\u2019m more of a whiskey guy but if I had to choose, I\u2019d say...
-      an old-fashioned."
-    eventTrigger: 
-    choices: []
-  - side: 0
-    characterName: Loreen
-    characterSprite: {fileID: 0}
-    sentence: So... whiskey?
-    eventTrigger: 
-    choices: []
-  - side: 1
-    characterName: Ary
-    characterSprite: {fileID: 0}
-    sentence: Yeah, whiskey.
+    sentence: Alternative rock, indie, a bit of electronica and a sprinkle of metal.
     eventTrigger: 
     choices: []
   nextScenario: {fileID: 0}
