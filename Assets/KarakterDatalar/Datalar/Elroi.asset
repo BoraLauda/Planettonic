@@ -18,15 +18,15 @@ MonoBehaviour:
   dodgeTheQuestionIkonu: {fileID: -7573232073122700555, guid: 3fc6841e2157d1d408c8655399747d80, type: 3}
   menuMinigameIkonu: {fileID: -7573232073122700555, guid: 3fc6841e2157d1d408c8655399747d80, type: 3}
   portraitImage: {fileID: -5408334947099728532, guid: d31dc9871b7d06c4eb9f928a8c8aa299, type: 3}
-  fullName: 
-  demographicsInfo: 
-  relationshipGoals: 
-  hobbies: 
-  foodPreferenceText: 
+  fullName: Elroi
+  demographicsInfo: 29 || Male || Mars || Movie Director
+  relationshipGoals: Casual
+  hobbies: Parties, game nights, billard, shuffleboard games
+  foodPreferenceText: None
   profileRatingIcons:
-  - {fileID: 21300000, guid: a85149ffbf8caf24cb342d45c59ff28c, type: 3}
+  - {fileID: 21300000, guid: e5e6a14ad2095aa4482d97042cb3de7f, type: 3}
   - {fileID: 21300000, guid: 3a92a48834ed72d49ac50653aa5d7202, type: 3}
-  quoteText: 
+  quoteText: Only god can judge me...
   locationPreferences:
   - locationName: BAR
     bonusStars: 1
