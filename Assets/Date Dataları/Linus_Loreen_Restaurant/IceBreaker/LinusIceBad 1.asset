@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f832b14936fc2048824d9308b14ded6, type: 3}
+  m_Name: LinusIceBad 1
+  m_EditorClassIdentifier: 
+  locationName: 
+  locationBackground: {fileID: 0}
+  allLines:
+  - side: 1
+    characterName: 
+    characterSprite: {fileID: 21300000, guid: dc24e77c8220d5b43bd418e911809b3b, type: 3}
+    sentence: "They say two Mercurians can never date each other because eventually
+      one of them will end up biting the other\u2019s head off. Thoughts?"
+    eventTrigger: 
+    choices: []
+  - side: 0
+    characterName: 
+    characterSprite: {fileID: 3895208362979335837, guid: 146a6ce1894c7084984f7771ba7e263e, type: 3}
+    sentence: "And prayers. I don\u2019t think either of us are even slightly similar
+      to a mantis."
+    eventTrigger: 
+    choices: []
+  nextScenario: {fileID: 0}
