@@ -1,11 +1,15 @@
 using UnityEngine;
 using System.Collections.Generic;
 
+
+public enum GenderType { Kadin, Erkek }
+
 [CreateAssetMenu(fileName = "NewProfile", menuName = "Matchmaker/Character Profile")]
 public class Characters : ScriptableObject
 {
     [Header("Kimlik")]
     public string characterName; 
+    public GenderType cinsiyet; 
 
     [Header("Görsel")]
     public Sprite profileIcon;
@@ -36,7 +40,6 @@ public class Characters : ScriptableObject
     [Header("Ice Breaker Bad (Hedefe Özel)")]
     public List<TargetedDialogue> iceBreakerBad;
 
-   
     [Header("Dodge Questions (Hedefe Özel)")]
     public List<TargetedDialogue> dodgeQuestions;
 }

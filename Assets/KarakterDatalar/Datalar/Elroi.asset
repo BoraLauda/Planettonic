@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Elroi
   m_EditorClassIdentifier: 
   characterName: Elroi
+  cinsiyet: 1
   profileIcon: {fileID: 21300000, guid: 27579313b051aa944a7d9cc8c597bee6, type: 3}
   dodgeTheQuestionIkonu: {fileID: -7573232073122700555, guid: 3fc6841e2157d1d408c8655399747d80, type: 3}
   menuMinigameIkonu: {fileID: -7573232073122700555, guid: 3fc6841e2157d1d408c8655399747d80, type: 3}
