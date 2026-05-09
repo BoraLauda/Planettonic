@@ -23,7 +23,7 @@ MonoBehaviour:
     choices: []
   - side: 1
     characterName: Linus
-    characterSprite: {fileID: 21300000, guid: dc24e77c8220d5b43bd418e911809b3b, type: 3}
+    characterSprite: {fileID: 21300000, guid: 28d5548cec0782146bbf36cf0742a234, type: 3}
     sentence: "A little bit of both, under the right circumstances of course. I don\u2019t
       have any bad intentions with you."
     eventTrigger: 

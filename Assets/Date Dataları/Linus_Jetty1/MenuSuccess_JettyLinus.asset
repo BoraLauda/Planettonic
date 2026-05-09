@@ -17,7 +17,7 @@ MonoBehaviour:
   allLines:
   - side: 1
     characterName: Linus
-    characterSprite: {fileID: 21300000, guid: dc24e77c8220d5b43bd418e911809b3b, type: 3}
+    characterSprite: {fileID: -7897688028454486748, guid: 0398d82947456fc41abf63d48afc016f, type: 3}
     sentence: "I\u2019m glad this place has such immaculate low-fat options. It\u2019s
       rare to come by."
     eventTrigger: 
