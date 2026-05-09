@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic; 
+
 public class brainDODGE : MonoBehaviour
 {
     public float roundStartDelay = 2.0f;
@@ -11,8 +12,6 @@ public class brainDODGE : MonoBehaviour
     
     public int baseHeartReward = 20;  
     public int penaltyPerHit = 5;      
-    //public float successStarReward = 2f;
-    
     
     public Image fadeImage;
     public float gameSaniye = 20f; 
@@ -29,12 +28,9 @@ public class brainDODGE : MonoBehaviour
     public float doubleSpawnChance = 0.5f; 
     public float timeToStartDouble = 5f;
     
-    
     public float startSpeed = 500f;     
     public float maxSpeed = 1500f;      
     public float hızlanma = 50f;
-    
-    
     
     private float currentRocketSpeed;
     
@@ -55,12 +51,12 @@ public class brainDODGE : MonoBehaviour
     private int hitCount = 0;
     
     private brainDate dateManager;
-    private Dictionary<List<DialogueDataları>, List<DialogueDataları>> questionPools = new Dictionary<List<DialogueDataları>, List<DialogueDataları>>();
+    
+    // YENİ HAVUZ SİSTEMİ: Ice Breaker'daki gibi hedefe kilitli havuz
+    private Dictionary<int, List<DialogueDataları>> questionPools = new Dictionary<int, List<DialogueDataları>>();
+    
     private float currentSpawnDelay;
     
-    
-    
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         dateManager = FindFirstObjectByType<brainDate>();
@@ -68,7 +64,6 @@ public class brainDODGE : MonoBehaviour
         
         if(pauseImage != null) pauseImage.SetActive(false);
         if(startImage != null) startImage.SetActive(false);
-        
     }
     
     public void StartGame()
@@ -104,7 +99,6 @@ public class brainDODGE : MonoBehaviour
             
             if(DateSettings.leftChar != null) 
             {
-                
                 if(DateSettings.leftChar.dodgeTheQuestionIkonu != null)
                     centerCharacterImage.sprite = DateSettings.leftChar.dodgeTheQuestionIkonu;
                 else
@@ -118,7 +112,6 @@ public class brainDODGE : MonoBehaviour
             
             if(DateSettings.rightChar != null) 
             {
-               
                 if(DateSettings.rightChar.dodgeTheQuestionIkonu != null)
                     centerCharacterImage.sprite = DateSettings.rightChar.dodgeTheQuestionIkonu;
                 else
@@ -136,13 +129,10 @@ public class brainDODGE : MonoBehaviour
         StartCoroutine(SpawnLoop());
     }
    
-
-    // Update is called once per frame
     void Update()
     {
         if (!isGameActive) return;
 
-       
         timer -= Time.deltaTime;
         
         if (currentRocketSpeed < maxSpeed)
@@ -154,7 +144,6 @@ public class brainDODGE : MonoBehaviour
         float progress = timePassed / gameSaniye; 
         
         currentSpawnAralık = Mathf.Lerp(startSpawnAralık, minSpawnAralık, progress);
-        
         
         if (timer <= 0)
         {
@@ -176,7 +165,6 @@ public class brainDODGE : MonoBehaviour
         EndRound(false);
     }
     
-    
     void EndRound(bool isSuccess)
     {
         isGameActive = false; 
@@ -190,26 +178,25 @@ public class brainDODGE : MonoBehaviour
             }
         }
 
-        
         if (isSuccess)
         {
             Debug.Log("Soru sorulmadan geçiliyo");
             NextTurn();
         }
-       
         else
         {
             Debug.Log("VURULDUN");
             
             DialogueDataları questionToAsk = null;
 
-              if (isLeftDodging) 
+            // Vurulan (kaçamayan) karakter ve karşısındaki (rakip) karakter
+            Characters currentCharData = isLeftDodging ? DateSettings.leftChar : DateSettings.rightChar;
+            Characters opponentCharData = isLeftDodging ? DateSettings.rightChar : DateSettings.leftChar;
+
+            if (currentCharData != null)
             {
-                if(DateSettings.leftChar != null) questionToAsk = GetRandomQuestion(DateSettings.leftChar.dodgeQuestions);
-            }
-            else 
-            {
-                if(DateSettings.rightChar != null) questionToAsk = GetRandomQuestion(DateSettings.rightChar.dodgeQuestions);
+                // Hedefe kilitlenen yeni fonksiyonu çağırıyoruz
+                questionToAsk = GetTargetedQuestion(currentCharData.dodgeQuestions, opponentCharData);
             }
 
             if (dateManager != null && questionToAsk != null)
@@ -259,16 +246,13 @@ public class brainDODGE : MonoBehaviour
     {
         currentTurn++;
 
-      
         if (currentTurn >= 4)
         {
             Debug.Log("OYUN BİTTİ");
             
-          
             int finalHearts = baseHeartReward - (hitCount * penaltyPerHit);
             if (finalHearts < 0) finalHearts = 0; 
 
-           
             float finalStars = 0;
 
             if (hitCount <= 1) 
@@ -286,10 +270,7 @@ public class brainDODGE : MonoBehaviour
             
             if (dateManager != null)
             {
-               
                 dateManager.AddReward(finalStars, finalHearts, TargetCharacter.Both);
-                
-               
                 dateManager.EndDodgeGame();
             }
         }
@@ -305,18 +286,13 @@ public class brainDODGE : MonoBehaviour
         StartRound();
     }
 
-
-
-
     IEnumerator ShakeSequence()
     {
         Vector3 originalPos = objectShake.anchoredPosition;
         float elapsed = 0f;
 
-       
         while (elapsed < shakeDuration)
         {
-            
             float x = Random.Range(-1f, 1f) * shakeStrength;
             float y = Random.Range(-1f, 1f) * shakeStrength;
 
@@ -328,11 +304,8 @@ public class brainDODGE : MonoBehaviour
         objectShake.anchoredPosition = originalPos;
     }
     
-    
-
     IEnumerator SpawnLoop()
     {
-        
         yield return new WaitForSeconds(roundStartDelay);
         
         while (isGameActive)
@@ -342,10 +315,8 @@ public class brainDODGE : MonoBehaviour
             float timePassed = gameSaniye - timer;
             if (timePassed > timeToStartDouble && Random.value < doubleSpawnChance)
             {
-                
                 index2 = GetSafeSecondIndex(index1);
             }
-
             
             warningSigns[index1].SetActive(true);
             if (index2 != -1) warningSigns[index2].SetActive(true);
@@ -358,7 +329,6 @@ public class brainDODGE : MonoBehaviour
                 if (index2 != -1) warningSigns[index2].SetActive(false);
                 break;
             }
-            
             
             warningSigns[index1].SetActive(false);
             if (index2 != -1) warningSigns[index2].SetActive(false);
@@ -391,7 +361,6 @@ public class brainDODGE : MonoBehaviour
     
     bool IsOpposite(int a, int b)
     {
-       
         bool aIsTop = (a == 0 || a == 1);
         bool bIsBottom = (b == 2 || b == 3);
         if (aIsTop && bIsBottom) return true;
@@ -399,8 +368,6 @@ public class brainDODGE : MonoBehaviour
         bool aIsBottom = (a == 2 || a == 3);
         bool bIsTop = (b == 0 || b == 1);
         if (aIsBottom && bIsTop) return true;
-
-       
         
         bool aIsRightSpawner = (a == 4 || a == 5); 
         bool bIsLeftSpawner = (b == 6 || b == 7);  
@@ -410,12 +377,8 @@ public class brainDODGE : MonoBehaviour
         bool bIsRightSpawner = (b == 4 || b == 5);
         if (aIsLeftSpawner && bIsRightSpawner) return true;
 
-        
         return false;
     }
-
-
-
 
     void SpawnRocket(int index)
     {
@@ -428,7 +391,6 @@ public class brainDODGE : MonoBehaviour
         if (index == 4 || index == 5) dir = Vector2.right;
         if (index == 6 || index == 7) dir = Vector2.left;
 
-      
         var rScript = rocket.GetComponent<RocketDODGE>();
         if(rScript != null)
         {
@@ -436,27 +398,37 @@ public class brainDODGE : MonoBehaviour
         }
     }
     
-    DialogueDataları GetRandomQuestion(List<DialogueDataları> originalList)
+    // YENİ: Sadece karşısındaki kişiye (opponent) özel olan dodge sorularını bulan zeka
+    DialogueDataları GetTargetedQuestion(List<TargetedDialogue> originalList, Characters opponent)
     {
-        if (originalList == null || originalList.Count == 0) return null;
+        if (originalList == null || originalList.Count == 0 || opponent == null) return null;
         
-        if (!questionPools.ContainsKey(originalList))
+        int poolKey = originalList.GetHashCode() ^ opponent.GetInstanceID();
+        
+        if (!questionPools.ContainsKey(poolKey))
         {
-            questionPools[originalList] = new List<DialogueDataları>(originalList);
+            questionPools[poolKey] = new List<DialogueDataları>();
         }
         
-        List<DialogueDataları> pool = questionPools[originalList];
+        List<DialogueDataları> pool = questionPools[poolKey];
         
         if (pool.Count == 0)
         {
-            pool.AddRange(originalList);
+            foreach (var item in originalList)
+            {
+                if (item.targetCharacter == opponent && item.diyalogDosyasi != null)
+                {
+                    pool.Add(item.diyalogDosyasi);
+                }
+            }
         }
+        
+        if (pool.Count == 0) return null;
         
         int rnd = Random.Range(0, pool.Count);
         DialogueDataları selectedQ = pool[rnd];
         
         pool.RemoveAt(rnd);
-
         return selectedQ;
     }
 }
