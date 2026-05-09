@@ -16,20 +16,20 @@ MonoBehaviour:
   locationBackground: {fileID: 0}
   allLines:
   - side: 1
-    characterName: 
+    characterName: Linus
     characterSprite: {fileID: 21300000, guid: dc24e77c8220d5b43bd418e911809b3b, type: 3}
     sentence: How did you end up becoming an academician?
     eventTrigger: 
     choices: []
   - side: 0
-    characterName: 
+    characterName: Loreen
     characterSprite: {fileID: 3895208362979335837, guid: 146a6ce1894c7084984f7771ba7e263e, type: 3}
     sentence: Ah, I always loved reading and then at some point, I started giving
       lectures to other students in college.
     eventTrigger: 
     choices: []
   - side: 1
-    characterName: 
+    characterName: Linus
     characterSprite: {fileID: 0}
     sentence: 'Then you decided why not combine the two?
 
@@ -37,7 +37,7 @@ MonoBehaviour:
     eventTrigger: 
     choices: []
   - side: 0
-    characterName: 
+    characterName: Loreen
     characterSprite: {fileID: 0}
     sentence: Pretty much, yeah.
     eventTrigger: 

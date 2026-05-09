@@ -28,25 +28,25 @@ MonoBehaviour:
     eventTrigger: 
     choices: []
   - side: 1
-    characterName: 
+    characterName: Linus
     characterSprite: {fileID: 0}
     sentence: "Well there\u2019s no denying the natural talent."
     eventTrigger: 
     choices: []
   - side: 0
-    characterName: 
+    characterName: Nemelise
     characterSprite: {fileID: 0}
     sentence: "Smooth and careful with his words. You\u2019re a dangerous one."
     eventTrigger: 
     choices: []
   - side: 1
-    characterName: 
+    characterName: Linus
     characterSprite: {fileID: 0}
     sentence: "Ah, I wouldn\u2019t say dangerous but.. I\u2019ll still take the compliment."
     eventTrigger: 
     choices: []
   - side: 0
-    characterName: 
+    characterName: Nemelise
     characterSprite: {fileID: 0}
     sentence: 
     eventTrigger: 

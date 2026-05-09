@@ -45,19 +45,37 @@ MonoBehaviour:
     reactionScenario: {fileID: 11400000, guid: 3b9413dd336563e48ace9cf6b8768dd9, type: 2}
   iceBreakerGood:
   - targetCharacter: {fileID: 11400000, guid: 52f97840cc872804392c25a1f2b8175b, type: 2}
-    diyalogDosyasi: {fileID: 11400000, guid: faf6b103da058cf4196ea2acaa8ec2d3, type: 2}
+    diyalogDosyasi: {fileID: 11400000, guid: d003e060d1f24f846906f6754de64ce6, type: 2}
   - targetCharacter: {fileID: 11400000, guid: 52f97840cc872804392c25a1f2b8175b, type: 2}
+    diyalogDosyasi: {fileID: 11400000, guid: cc117add26381ed41b5011957b94195b, type: 2}
+  - targetCharacter: {fileID: 11400000, guid: 10ae37b55ea06ba4eadbd5ffcc3098c2, type: 2}
+    diyalogDosyasi: {fileID: 11400000, guid: faf6b103da058cf4196ea2acaa8ec2d3, type: 2}
+  - targetCharacter: {fileID: 11400000, guid: 10ae37b55ea06ba4eadbd5ffcc3098c2, type: 2}
     diyalogDosyasi: {fileID: 11400000, guid: ca94b52bc5ec4f94ba6d72b7a0b292eb, type: 2}
   iceBreakerMid:
   - targetCharacter: {fileID: 11400000, guid: 52f97840cc872804392c25a1f2b8175b, type: 2}
-    diyalogDosyasi: {fileID: 11400000, guid: 28e938e0707d1bd4a9633d424e280f1e, type: 2}
+    diyalogDosyasi: {fileID: 11400000, guid: 0848a89bfe2bd054f84285eb7b1cdb15, type: 2}
   - targetCharacter: {fileID: 11400000, guid: 52f97840cc872804392c25a1f2b8175b, type: 2}
+    diyalogDosyasi: {fileID: 11400000, guid: d7cbba174327df845b6d4fc8a5cbd829, type: 2}
+  - targetCharacter: {fileID: 11400000, guid: 10ae37b55ea06ba4eadbd5ffcc3098c2, type: 2}
+    diyalogDosyasi: {fileID: 11400000, guid: 28e938e0707d1bd4a9633d424e280f1e, type: 2}
+  - targetCharacter: {fileID: 11400000, guid: 10ae37b55ea06ba4eadbd5ffcc3098c2, type: 2}
     diyalogDosyasi: {fileID: 11400000, guid: fc6d3908d3245b540a1ff68776e6985a, type: 2}
   iceBreakerBad:
   - targetCharacter: {fileID: 11400000, guid: 52f97840cc872804392c25a1f2b8175b, type: 2}
-    diyalogDosyasi: {fileID: 11400000, guid: 529ba33272fa975478c749174463fe3e, type: 2}
+    diyalogDosyasi: {fileID: 11400000, guid: 89077e3168c0948488466c304f6fd686, type: 2}
   - targetCharacter: {fileID: 11400000, guid: 52f97840cc872804392c25a1f2b8175b, type: 2}
+    diyalogDosyasi: {fileID: 11400000, guid: 6c8870543897b194a9c88f5191b66eb8, type: 2}
+  - targetCharacter: {fileID: 11400000, guid: 10ae37b55ea06ba4eadbd5ffcc3098c2, type: 2}
+    diyalogDosyasi: {fileID: 11400000, guid: 529ba33272fa975478c749174463fe3e, type: 2}
+  - targetCharacter: {fileID: 11400000, guid: 10ae37b55ea06ba4eadbd5ffcc3098c2, type: 2}
     diyalogDosyasi: {fileID: 11400000, guid: fca4965d5609ee549b84ee81d386942d, type: 2}
   dodgeQuestions:
-  - {fileID: 11400000, guid: bd65eee06b455a34cb1cf4d7057cb5d2, type: 2}
-  - {fileID: 11400000, guid: b7ba85d75165d8c4dba71ac0dba92f5b, type: 2}
+  - targetCharacter: {fileID: 11400000, guid: 52f97840cc872804392c25a1f2b8175b, type: 2}
+    diyalogDosyasi: {fileID: 11400000, guid: 34761ea203bfdcd4599b965e425aa88c, type: 2}
+  - targetCharacter: {fileID: 11400000, guid: 52f97840cc872804392c25a1f2b8175b, type: 2}
+    diyalogDosyasi: {fileID: 11400000, guid: e723d14edd834cf438df79bd6ea0f05d, type: 2}
+  - targetCharacter: {fileID: 11400000, guid: 10ae37b55ea06ba4eadbd5ffcc3098c2, type: 2}
+    diyalogDosyasi: {fileID: 11400000, guid: 1c59394612506a4418549c497d2ea7a6, type: 2}
+  - targetCharacter: {fileID: 11400000, guid: 10ae37b55ea06ba4eadbd5ffcc3098c2, type: 2}
+    diyalogDosyasi: {fileID: 11400000, guid: 28f8b999739f2b24096c3fb68185e322, type: 2}

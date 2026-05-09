@@ -28,20 +28,20 @@ MonoBehaviour:
     eventTrigger: 
     choices: []
   - side: 1
-    characterName: 
+    characterName: Linus
     characterSprite: {fileID: 0}
     sentence: "Never met a Neptunian that lives on Mars, it\u2019s quite rare to
       come by."
     eventTrigger: 
     choices: []
   - side: 0
-    characterName: 
+    characterName: Nemelise
     characterSprite: {fileID: 0}
     sentence: "It\u2019s because it is a difficult life to life, but I manage."
     eventTrigger: 
     choices: []
   - side: 1
-    characterName: 
+    characterName: Linus
     characterSprite: {fileID: 0}
     sentence: I respect that.
     eventTrigger: StartMenuGame

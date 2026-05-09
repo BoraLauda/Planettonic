@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0f832b14936fc2048824d9308b14ded6, type: 3}
-  m_Name: LoreenIceMid 1
+  m_Name: LoreenDodge1
   m_EditorClassIdentifier: 
   locationName: 
   locationBackground: {fileID: 0}
@@ -18,14 +18,7 @@ MonoBehaviour:
   - side: 0
     characterName: Loreen
     characterSprite: {fileID: 3895208362979335837, guid: 146a6ce1894c7084984f7771ba7e263e, type: 3}
-    sentence: "What was the worst client you\u2019ve had like?"
-    eventTrigger: 
-    choices: []
-  - side: 1
-    characterName: Linus
-    characterSprite: {fileID: 21300000, guid: dc24e77c8220d5b43bd418e911809b3b, type: 3}
-    sentence: "Ah, you know what, I understand the curiousity but I\u2019d rather
-      not answer that."
+    sentence: How many partners have you had?
     eventTrigger: 
     choices: []
   nextScenario: {fileID: 0}

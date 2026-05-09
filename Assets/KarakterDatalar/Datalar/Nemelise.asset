@@ -36,12 +36,22 @@ MonoBehaviour:
   - food: 7
     reactionScenario: {fileID: 11400000, guid: 3af82a29ca78dee4bb3d5d1161db2fb0, type: 2}
   iceBreakerGood:
-  - {fileID: 11400000, guid: fd4a7a270db21014fb9b218054d59f41, type: 2}
-  - {fileID: 11400000, guid: 84bf0d63f317fd54bbf58da27ae00b9f, type: 2}
+  - targetCharacter: {fileID: 11400000, guid: 5f6e0fde49813654aa1d61918d175f26, type: 2}
+    diyalogDosyasi: {fileID: 11400000, guid: fd4a7a270db21014fb9b218054d59f41, type: 2}
+  - targetCharacter: {fileID: 11400000, guid: 5f6e0fde49813654aa1d61918d175f26, type: 2}
+    diyalogDosyasi: {fileID: 11400000, guid: fd4a7a270db21014fb9b218054d59f41, type: 2}
   iceBreakerMid:
-  - {fileID: 11400000, guid: 4483b5dccec097245a4e1839a3aeb702, type: 2}
-  - {fileID: 11400000, guid: dde6d4fa265e2ed4a9a40024fd6963b4, type: 2}
+  - targetCharacter: {fileID: 11400000, guid: 5f6e0fde49813654aa1d61918d175f26, type: 2}
+    diyalogDosyasi: {fileID: 11400000, guid: 4483b5dccec097245a4e1839a3aeb702, type: 2}
+  - targetCharacter: {fileID: 11400000, guid: 5f6e0fde49813654aa1d61918d175f26, type: 2}
+    diyalogDosyasi: {fileID: 11400000, guid: dde6d4fa265e2ed4a9a40024fd6963b4, type: 2}
   iceBreakerBad:
-  - {fileID: 11400000, guid: 7e11c7949ea7153428252aeb97eb01a3, type: 2}
-  - {fileID: 11400000, guid: 5d775c9c5ad47d444be80e62836f9d72, type: 2}
-  dodgeQuestions: []
+  - targetCharacter: {fileID: 11400000, guid: 5f6e0fde49813654aa1d61918d175f26, type: 2}
+    diyalogDosyasi: {fileID: 11400000, guid: 7e11c7949ea7153428252aeb97eb01a3, type: 2}
+  - targetCharacter: {fileID: 11400000, guid: 5f6e0fde49813654aa1d61918d175f26, type: 2}
+    diyalogDosyasi: {fileID: 11400000, guid: 5d775c9c5ad47d444be80e62836f9d72, type: 2}
+  dodgeQuestions:
+  - targetCharacter: {fileID: 11400000, guid: 5f6e0fde49813654aa1d61918d175f26, type: 2}
+    diyalogDosyasi: {fileID: 11400000, guid: de4aaf4654d21a942b485356c448035e, type: 2}
+  - targetCharacter: {fileID: 11400000, guid: 5f6e0fde49813654aa1d61918d175f26, type: 2}
+    diyalogDosyasi: {fileID: 11400000, guid: 2e11bfecccd177a48a69e81f2777de1c, type: 2}

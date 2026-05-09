@@ -27252,6 +27252,10 @@ MonoBehaviour:
     characterA: {fileID: 11400000, guid: 52f97840cc872804392c25a1f2b8175b, type: 2}
     characterB: {fileID: 11400000, guid: 5f6e0fde49813654aa1d61918d175f26, type: 2}
     specificFailScenario: {fileID: 11400000, guid: 4a1dfbc667d65ac4ea142c1917e3d758, type: 2}
+  - ciftAdi: Loreen Linus
+    characterA: {fileID: 11400000, guid: 52f97840cc872804392c25a1f2b8175b, type: 2}
+    characterB: {fileID: 11400000, guid: 5f6e0fde49813654aa1d61918d175f26, type: 2}
+    specificFailScenario: {fileID: 11400000, guid: 4a1dfbc667d65ac4ea142c1917e3d758, type: 2}
   defaultFailScenario: {fileID: 0}
   dodgeScript: {fileID: 1190985220}
   leftDaterImage: {fileID: 370962506}

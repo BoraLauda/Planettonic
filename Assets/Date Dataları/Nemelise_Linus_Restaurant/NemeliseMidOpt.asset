@@ -16,25 +16,25 @@ MonoBehaviour:
   locationBackground: {fileID: 0}
   allLines:
   - side: 0
-    characterName: 
+    characterName: Nemelise
     characterSprite: {fileID: 21300000, guid: b5a5cc5d83848d843aadeaf9b5e083f1, type: 3}
     sentence: "I know what you\u2019re trying to do. I\u2019m not buying it."
     eventTrigger: 
     choices: []
   - side: 1
-    characterName: 
+    characterName: Linus
     characterSprite: {fileID: 21300000, guid: dc24e77c8220d5b43bd418e911809b3b, type: 3}
     sentence: "Hmm, I don\u2019t know what you\u2019re talking about."
     eventTrigger: 
     choices: []
   - side: 0
-    characterName: 
+    characterName: Nemelise
     characterSprite: {fileID: 0}
     sentence: "The innocent act. I\u2019ve met guys like you before."
     eventTrigger: 
     choices: []
   - side: 1
-    characterName: 
+    characterName: Linus
     characterSprite: {fileID: 0}
     sentence: "Never said I was innocent, but I\u2019m definitely not guilty either.\r\n"
     eventTrigger: 
