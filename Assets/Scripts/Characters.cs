@@ -22,7 +22,9 @@ public class Characters : ScriptableObject
     public string demographicsInfo;      
     public string relationshipGoals;    
     public string hobbies;               
-    public string foodPreferenceText;    
+    public string foodPreferenceText; 
+    
+    public List<Sprite> profileRatingIcons;
     
     [TextArea(3, 5)] 
     public string quoteText;         

@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Io
   m_EditorClassIdentifier: 
   characterName: Io
+  cinsiyet: 0
   profileIcon: {fileID: 21300000, guid: 4315b6d786936364f9e7e42de5404d17, type: 3}
   dodgeTheQuestionIkonu: {fileID: 324928346125548867, guid: 868d47c2329247e4e9303e036389f3e6, type: 3}
   menuMinigameIkonu: {fileID: 324928346125548867, guid: 868d47c2329247e4e9303e036389f3e6, type: 3}
@@ -22,6 +23,7 @@ MonoBehaviour:
   relationshipGoals: Commitment || Marriage || Kids
   hobbies: Singing, swimming, playing guitar, reading comics
   foodPreferenceText: Vegetarian
+  profileRatingIcons: []
   quoteText: "\xD6zl\xFC s\xF6z\r\n"
   locationPreferences:
   - locationName: RESTAURANT

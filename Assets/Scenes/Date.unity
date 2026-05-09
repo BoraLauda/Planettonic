@@ -9223,7 +9223,6 @@ GameObject:
   - component: {fileID: 388639104}
   - component: {fileID: 388639103}
   - component: {fileID: 388639102}
-  - component: {fileID: 388639105}
   - component: {fileID: 388639106}
   m_Layer: 5
   m_Name: Options (2)
@@ -9335,20 +9334,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 388639100}
   m_CullTransparentMesh: 1
---- !u!114 &388639105
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 388639100}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ad2208df7e708764ca5049cf846f1919, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  buyumeMiktari: 1.1
-  hiz: 10
 --- !u!114 &388639106
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9636,7 +9621,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &407253687
 RectTransform:
   m_ObjectHideFlags: 0
@@ -15833,7 +15818,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &613308420
 RectTransform:
   m_ObjectHideFlags: 0
@@ -30299,7 +30284,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1190985217
 RectTransform:
   m_ObjectHideFlags: 0
@@ -46692,7 +46677,6 @@ GameObject:
   - component: {fileID: 1705751207}
   - component: {fileID: 1705751206}
   - component: {fileID: 1705751205}
-  - component: {fileID: 1705751208}
   - component: {fileID: 1705751209}
   m_Layer: 5
   m_Name: Options
@@ -46804,20 +46788,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1705751203}
   m_CullTransparentMesh: 1
---- !u!114 &1705751208
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1705751203}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ad2208df7e708764ca5049cf846f1919, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  buyumeMiktari: 1.1
-  hiz: 10
 --- !u!114 &1705751209
 MonoBehaviour:
   m_ObjectHideFlags: 0

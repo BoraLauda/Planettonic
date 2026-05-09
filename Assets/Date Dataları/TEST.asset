@@ -15,12 +15,27 @@ MonoBehaviour:
   locationName: 
   locationBackground: {fileID: 0}
   allLines:
-  - side: 0
+  - side: 1
     characterName: 
     characterSprite: {fileID: 0}
     sentence: 
     eventTrigger: 
-    choices: []
+    choices:
+    - choices: ghgh
+      nextScenario: {fileID: 0}
+      target: 0
+      starReward: 0
+      heartReward: 0
+    - choices: ughfj
+      nextScenario: {fileID: 0}
+      target: 0
+      starReward: 0
+      heartReward: 0
+    - choices: yuyu
+      nextScenario: {fileID: 0}
+      target: 0
+      starReward: 0
+      heartReward: 0
   - side: 0
     characterName: 
     characterSprite: {fileID: 0}
