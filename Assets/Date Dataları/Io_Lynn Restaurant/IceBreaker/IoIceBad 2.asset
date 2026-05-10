@@ -24,7 +24,7 @@ MonoBehaviour:
   - side: 1
     characterName: Lynn
     characterSprite: {fileID: 21300000, guid: 724a9d18b99b23f4d8ef91418ba692f0, type: 3}
-    sentence: "Wow uh, I don\u2019t know."
+    sentence: Are you implying something?
     eventTrigger: 
     choices: []
   nextScenario: {fileID: 0}
