@@ -1,0 +1,113 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f832b14936fc2048824d9308b14ded6, type: 3}
+  m_Name: DateSuccess
+  m_EditorClassIdentifier: 
+  locationName: 
+  locationBackground: {fileID: 0}
+  allLines:
+  - side: 0
+    characterName: Io
+    characterSprite: {fileID: -1160322238068995058, guid: e79cf994b0112f542bb5904bcd06966b, type: 3}
+    sentence: "Sooo... I\u2019m getting kinda tired of this bar..."
+    eventTrigger: 
+    choices: []
+  - side: 1
+    characterName: Elroi
+    characterSprite: {fileID: 21300000, guid: 940a91f339e1825439b9f6d15b9c98fa, type: 3}
+    sentence: Yeah, honestly... Oh I know a place that would be much less tiring.
+    eventTrigger: 
+    choices: []
+  - side: 0
+    characterName: Io
+    characterSprite: {fileID: 0}
+    sentence: Let me guess, is it your house?
+    eventTrigger: 
+    choices: []
+  - side: 1
+    characterName: Elroi
+    characterSprite: {fileID: 0}
+    sentence: Your words, not mine babe.
+    eventTrigger: 
+    choices: []
+  - side: 0
+    characterName: Io
+    characterSprite: {fileID: 0}
+    sentence: 'Hmmm, I do kinda wanna see your music setup, you know? Maybe you could
+      give me a house tour?
+
+'
+    eventTrigger: 
+    choices: []
+  - side: 1
+    characterName: Elroi
+    characterSprite: {fileID: 0}
+    sentence: "Oh you\u2019ll love music system in my bedroom then."
+    eventTrigger: 
+    choices: []
+  - side: 2
+    characterName: Counselor
+    characterSprite: {fileID: 0}
+    sentence: "I\u2019m guessing this is my cue to call you two a cab."
+    eventTrigger: 
+    choices: []
+  - side: 1
+    characterName: Elroi
+    characterSprite: {fileID: 0}
+    sentence: Yes. Good girl Counselor.
+    eventTrigger: 
+    choices: []
+  - side: 2
+    characterName: Counselor
+    characterSprite: {fileID: 0}
+    sentence: Excuse me?
+    eventTrigger: 
+    choices: []
+  - side: 0
+    characterName: Io
+    characterSprite: {fileID: 0}
+    sentence: Elroi, what the fuck-
+    eventTrigger: 
+    choices: []
+  - side: 1
+    characterName: Elroi
+    characterSprite: {fileID: 0}
+    sentence: "Yeah I\u2019m sorry that was a bit much-"
+    eventTrigger: 
+    choices: []
+  - side: 2
+    characterName: Counselor
+    characterSprite: {fileID: 0}
+    sentence: Can I just get a signature on the tablet right below where it states
+      you are satisfied with the service and you have been matched successfully?
+    eventTrigger: 
+    choices: []
+  - side: 3
+    characterName: Chaperon
+    characterSprite: {fileID: 0}
+    sentence: "Eugh, what a weirdo, I\u2019m sorry you had to put up with that..."
+    eventTrigger: 
+    choices: []
+  - side: 0
+    characterName: Io
+    characterSprite: {fileID: 0}
+    sentence: "Done! You are officially free from us Counselor and again I\u2019m
+      truly sorry-\r\n"
+    eventTrigger: 
+    choices: []
+  - side: 2
+    characterName: Counselor
+    characterSprite: {fileID: 0}
+    sentence: "Oh look your cab\u2019s here. On you go now."
+    eventTrigger: 
+    choices: []
+  nextScenario: {fileID: 0}

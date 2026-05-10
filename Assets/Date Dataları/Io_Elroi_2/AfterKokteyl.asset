@@ -126,8 +126,8 @@ MonoBehaviour:
     sentence: 'So, in that case, what do you wanna talk about? '
     eventTrigger: 
     choices: []
-  - side: 1
-    characterName: Elroi
+  - side: 0
+    characterName: Io
     characterSprite: {fileID: 0}
     sentence: 
     eventTrigger: 
