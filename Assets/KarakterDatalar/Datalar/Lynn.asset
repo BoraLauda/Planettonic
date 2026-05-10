@@ -28,6 +28,8 @@ MonoBehaviour:
   locationPreferences:
   - locationName: Restaurant
     bonusStars: 1
+  - locationName: Arcade
+    bonusStars: 1
   hatedFoods: []
   iceBreakerGood:
   - targetCharacter: {fileID: 11400000, guid: 914c084cda719c149b3ce3ae947d0973, type: 2}
