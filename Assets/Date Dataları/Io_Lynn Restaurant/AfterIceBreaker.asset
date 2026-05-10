@@ -33,7 +33,7 @@ MonoBehaviour:
     sentence: 
     eventTrigger: 
     choices:
-    - choices: "it\u2019s unfair then, you have experience."
+    - choices: "It\u2019s unfair then, you have experience."
       nextScenario: {fileID: 11400000, guid: 0030bef2050c3ed42ae02f23dadf487b, type: 2}
       target: 0
       starReward: 1
