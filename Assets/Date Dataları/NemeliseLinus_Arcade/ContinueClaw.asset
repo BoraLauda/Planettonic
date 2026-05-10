@@ -51,7 +51,7 @@ MonoBehaviour:
     sentence: 
     eventTrigger: 
     choices:
-    - choices: are you this smooth in court?
+    - choices: Are you this smooth in court?
       nextScenario: {fileID: 11400000, guid: d2f83c38fb9774640b4698b9655a5ebb, type: 2}
       target: 0
       starReward: 1

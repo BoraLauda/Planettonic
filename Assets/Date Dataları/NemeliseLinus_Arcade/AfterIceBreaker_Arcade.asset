@@ -35,7 +35,7 @@ MonoBehaviour:
     sentence: 
     eventTrigger: 
     choices:
-    - choices: growing up, then finding out is better.
+    - choices: Growing up, then finding out is better.
       nextScenario: {fileID: 11400000, guid: 461d3ab0ad668a24f862e47ea53fb6d3, type: 2}
       target: 1
       starReward: 1
@@ -45,7 +45,7 @@ MonoBehaviour:
       target: 1
       starReward: 0.5
       heartReward: 0
-    - choices: "you don\u2019t look a day over 25."
+    - choices: "You don\u2019t look a day over 25."
       nextScenario: {fileID: 11400000, guid: 043982d23f2829c4080d47155bc74f55, type: 2}
       target: 1
       starReward: 0
