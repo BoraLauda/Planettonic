@@ -60,7 +60,9 @@ public class Background : MonoBehaviour
             }
         }
         
-     
+    
+        float atlamaMesafesi = aktifDonguler.Count * (donguGenisligi - icIceGecmePayi);
+
         for (int i = 0; i < aktifDonguler.Count; i++)
         {
             aktifDonguler[i].anchoredPosition += Vector2.left * mesafe;
@@ -69,16 +71,10 @@ public class Background : MonoBehaviour
             
             if (klonSagKenar <= klonKapanisOfseti) 
             {
-                float enSagX = -99999f;
-                foreach (var d in aktifDonguler)
-                {
-                    float dSag = d.anchoredPosition.x + (donguGenisligi * (1f - d.pivot.x));
-                    if (dSag > enSagX) enSagX = dSag;
-                }
                 
-                float yeniX = enSagX + (donguGenisligi * aktifDonguler[i].pivot.x) - icIceGecmePayi;
-                
-                aktifDonguler[i].anchoredPosition = new Vector2(yeniX, aktifDonguler[i].anchoredPosition.y);
+                aktifDonguler[i].anchoredPosition += new Vector2(atlamaMesafesi, 0);
+
+               
             }
         }
     }

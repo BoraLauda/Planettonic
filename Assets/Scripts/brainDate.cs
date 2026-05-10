@@ -728,16 +728,22 @@ public class brainDate : MonoBehaviour
     {
         if (tutorialPopup != null && tutorialPopup.gameObject.activeSelf) return;
 
-        if (isMenuMode) return;
+        bool isAnyMinigameActive =
+            (menuMiniGameObj != null && menuMiniGameObj.activeSelf) ||
+            (pixelMiniGameObj != null && pixelMiniGameObj.activeSelf) ||
+            (rhythmMiniGameObj != null && rhythmMiniGameObj.activeSelf) ||
+            (clawMachineMiniGameObj != null && clawMachineMiniGameObj.activeSelf) ||
+            (runnerMiniGameObj != null && runnerMiniGameObj.activeSelf) ||
+            (bartendingMiniGameObj != null && bartendingMiniGameObj.activeSelf) ||
+            isDodgeMode || isIceBreakerMode || isMenuMode || isBartendingMode;
+
+        if (isAnyMinigameActive) return;
+
+     
         if (currentScenario == null) return;
         if (lineIndex >= currentScenario.allLines.Count) return;
 
-        if (!isMenuMode && !isDodgeMode && !isIceBreakerMode && !isBartendingMode)
-        {
-            isEventTriggered = false;
-        }
-
-        if (isEventTriggered) return;
+        isEventTriggered = false;
 
         DialogueLine line = currentScenario.allLines[lineIndex];
 
