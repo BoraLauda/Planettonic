@@ -18,12 +18,17 @@ MonoBehaviour:
   dodgeTheQuestionIkonu: {fileID: -1979368412444877893, guid: be91fb4712e629647a14536d0fc250ee, type: 3}
   menuMinigameIkonu: {fileID: -1979368412444877893, guid: be91fb4712e629647a14536d0fc250ee, type: 3}
   portraitImage: {fileID: 21300000, guid: 821994f203fef8344a71dda283821891, type: 3}
-  fullName: 
-  demographicsInfo: 
-  relationshipGoals: 
-  hobbies: 
-  foodPreferenceText: 
-  quoteText: 
+  fullName: Loreen
+  demographicsInfo: 28 || Female || Mercury || Teacher
+  relationshipGoals: Commitment || Marriage || Kids
+  hobbies: Motorcycles, late night car rides, reading books
+  foodPreferenceText: None
+  profileRatingIcons:
+  - {fileID: 21300000, guid: 3a92a48834ed72d49ac50653aa5d7202, type: 3}
+  - {fileID: 21300000, guid: e5e6a14ad2095aa4482d97042cb3de7f, type: 3}
+  - {fileID: 21300000, guid: a0743298d763d9b4fad0d06790a00df6, type: 3}
+  - {fileID: 21300000, guid: a85149ffbf8caf24cb342d45c59ff28c, type: 3}
+  quoteText: "\xD6zl\xFC"
   locationPreferences:
   - locationName: Restaurant
     bonusStars: 1

@@ -23,7 +23,7 @@ MonoBehaviour:
     choices: []
   - side: 0
     characterName: Jetty
-    characterSprite: {fileID: 1936918675910826544, guid: e8f1130d0e09cef45bb1f9ab49489848, type: 3}
+    characterSprite: {fileID: 3149642799716058400, guid: e8f20d8f7db9ba542878b46ed2f36bc0, type: 3}
     sentence: Hey, thank you. I like your fit too.
     eventTrigger: 
     choices: []
@@ -36,7 +36,7 @@ MonoBehaviour:
     choices: []
   - side: 0
     characterName: Jetty
-    characterSprite: {fileID: 0}
+    characterSprite: {fileID: 1936918675910826544, guid: e8f1130d0e09cef45bb1f9ab49489848, type: 3}
     sentence: Weird assumption that I do, and what do you mean someone like me?
     eventTrigger: 
     choices: []
@@ -49,7 +49,7 @@ MonoBehaviour:
     choices: []
   - side: 0
     characterName: Jetty
-    characterSprite: {fileID: 0}
+    characterSprite: {fileID: 3947505554978647017, guid: 46d86ba6625735d43aef9c49760dd1da, type: 3}
     sentence: "Yeah, I\u2019m not doing this first thing into a date."
     eventTrigger: 
     choices: []

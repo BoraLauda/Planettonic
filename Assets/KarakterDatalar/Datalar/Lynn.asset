@@ -18,13 +18,15 @@ MonoBehaviour:
   dodgeTheQuestionIkonu: {fileID: 21300000, guid: 724a9d18b99b23f4d8ef91418ba692f0, type: 3}
   menuMinigameIkonu: {fileID: 21300000, guid: 724a9d18b99b23f4d8ef91418ba692f0, type: 3}
   portraitImage: {fileID: 21300000, guid: 724a9d18b99b23f4d8ef91418ba692f0, type: 3}
-  fullName: 
-  demographicsInfo: 
-  relationshipGoals: 
-  hobbies: 
-  foodPreferenceText: 
-  profileRatingIcons: []
-  quoteText: 
+  fullName: Lynn
+  demographicsInfo: 21 || Male || Uranus || Fine Arts
+  relationshipGoals: Casual
+  hobbies: Drawing, painting, playing board games
+  foodPreferenceText: Duck allergy
+  profileRatingIcons:
+  - {fileID: 21300000, guid: 3a92a48834ed72d49ac50653aa5d7202, type: 3}
+  - {fileID: 21300000, guid: e5e6a14ad2095aa4482d97042cb3de7f, type: 3}
+  quoteText: "\xF6zl\xFC s\xF6z"
   locationPreferences:
   - locationName: Restaurant
     bonusStars: 1
