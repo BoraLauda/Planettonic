@@ -23,7 +23,7 @@ MonoBehaviour:
     choices: []
   - side: 0
     characterName: Loreen
-    characterSprite: {fileID: 3895208362979335837, guid: 146a6ce1894c7084984f7771ba7e263e, type: 3}
+    characterSprite: {fileID: 21300000, guid: 821994f203fef8344a71dda283821891, type: 3}
     sentence: Wish I could say the same. I do it quite often, and college students
       get nasty with it.
     eventTrigger: 
@@ -34,12 +34,12 @@ MonoBehaviour:
     sentence: 
     eventTrigger: 
     choices:
-    - choices: adults tend to get rigid with age.
+    - choices: Adults tend to get rigid with age.
       nextScenario: {fileID: 11400000, guid: d1f9baa90dfbe5341bac25b37a354628, type: 2}
       target: 0
       starReward: 1
       heartReward: 0
-    - choices: they must come up with fun stuff.
+    - choices: They must come up with fun stuff.
       nextScenario: {fileID: 11400000, guid: b73a80813472b464bb4a8ee922f8fe35, type: 2}
       target: 0
       starReward: 0.5

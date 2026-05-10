@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f832b14936fc2048824d9308b14ded6, type: 3}
+  m_Name: JettyGood 1
+  m_EditorClassIdentifier: 
+  locationName: 
+  locationBackground: {fileID: 0}
+  allLines:
+  - side: 0
+    characterName: Jetty
+    characterSprite: {fileID: 1936918675910826544, guid: e8f1130d0e09cef45bb1f9ab49489848, type: 3}
+    sentence: "Okay so imagine, you\u2019re shitfaced and starving after dancing
+      for hours at a party. What food are you ordering?"
+    eventTrigger: 
+    choices: []
+  - side: 1
+    characterName: Lynn
+    characterSprite: {fileID: 21300000, guid: 724a9d18b99b23f4d8ef91418ba692f0, type: 3}
+    sentence: A large, greasy pizza. Preferably with cheese crust.
+    eventTrigger: 
+    choices: []
+  - side: 0
+    characterName: Jetty
+    characterSprite: {fileID: 1936918675910826544, guid: e8f1130d0e09cef45bb1f9ab49489848, type: 3}
+    sentence: "You\u2019re making me wish I wasn\u2019t lactose intolerant."
+    eventTrigger: 
+    choices: []
+  nextScenario: {fileID: 0}

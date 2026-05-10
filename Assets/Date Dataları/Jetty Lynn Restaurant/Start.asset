@@ -1,0 +1,68 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f832b14936fc2048824d9308b14ded6, type: 3}
+  m_Name: Start
+  m_EditorClassIdentifier: 
+  locationName: Restaurant
+  locationBackground: {fileID: 21300000, guid: f8bdb2b11a144d94f9ac89625b2a01f4, type: 3}
+  allLines:
+  - side: 1
+    characterName: Lynn
+    characterSprite: {fileID: 21300000, guid: 724a9d18b99b23f4d8ef91418ba692f0, type: 3}
+    sentence: "Hi, I\u2019m Lynn. It\u2019s nice meeting you."
+    eventTrigger: 
+    choices: []
+  - side: 0
+    characterName: Jetty
+    characterSprite: {fileID: 1936918675910826544, guid: e8f1130d0e09cef45bb1f9ab49489848, type: 3}
+    sentence: "Nice meeting you too, Lynn. I\u2019m Jetty."
+    eventTrigger: 
+    choices: []
+  - side: 1
+    characterName: Lynn
+    characterSprite: {fileID: 0}
+    sentence: "Never thought I\u2019d meet such an artist in a program like this,
+      it\u2019s a pleasure."
+    eventTrigger: 
+    choices: []
+  - side: 0
+    characterName: Jetty
+    characterSprite: {fileID: 0}
+    sentence: "Oh the pleasure is mine. And I\u2019m no artist, not yet. Just a performer.
+      Although you are in art school, aren\u2019t you?"
+    eventTrigger: 
+    choices: []
+  - side: 1
+    characterName: Lynn
+    characterSprite: {fileID: 0}
+    sentence: "Yeah, I\u2019m a third year student."
+    eventTrigger: 
+    choices: []
+  - side: 0
+    characterName: Jetty
+    characterSprite: {fileID: 0}
+    sentence: "I bet you\u2019re already more of an artist than I am."
+    eventTrigger: 
+    choices: []
+  - side: 1
+    characterName: Lynn
+    characterSprite: {fileID: 0}
+    sentence: Oh no, not at all!
+    eventTrigger: 
+    choices: []
+  - side: 3
+    characterName: Chaperon
+    characterSprite: {fileID: 0}
+    sentence: Hello. Shall we get started with some appetizers?
+    eventTrigger: StartMenuGame
+    choices: []
+  nextScenario: {fileID: 0}

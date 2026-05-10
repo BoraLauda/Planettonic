@@ -1,0 +1,128 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f832b14936fc2048824d9308b14ded6, type: 3}
+  m_Name: ContinueClaw
+  m_EditorClassIdentifier: 
+  locationName: 
+  locationBackground: {fileID: 0}
+  allLines:
+  - side: 2
+    characterName: Counselor
+    characterSprite: {fileID: 0}
+    sentence: Sup.
+    eventTrigger: 
+    choices: []
+  - side: 3
+    characterName: Chaperon
+    characterSprite: {fileID: 0}
+    sentence: Woah, fuck you scared me.
+    eventTrigger: 
+    choices: []
+  - side: 2
+    characterName: Counselor
+    characterSprite: {fileID: 0}
+    sentence: "How\u2019s it going?"
+    eventTrigger: 
+    choices: []
+  - side: 3
+    characterName: Chaperon
+    characterSprite: {fileID: 0}
+    sentence: "Uhm, good.. I think? Can\u2019t tell yet. They just got their food."
+    eventTrigger: 
+    choices: []
+  - side: 2
+    characterName: Counselor
+    characterSprite: {fileID: 0}
+    sentence: "Cool yeah okay. Hear me out. Get 5 stars from both of these guys and
+      I take you out for dinner for a change, huh, how\u2019s that sound?"
+    eventTrigger: 
+    choices: []
+  - side: 3
+    characterName: Chaperon
+    characterSprite: {fileID: 0}
+    sentence: W-What? Are we even.. allowed to do that?
+    eventTrigger: 
+    choices: []
+  - side: 2
+    characterName: Counselor
+    characterSprite: {fileID: 0}
+    sentence: No we are not and that was a test. You passed. Congrats.
+    eventTrigger: 
+    choices: []
+  - side: 3
+    characterName: Chaperon
+    characterSprite: {fileID: 0}
+    sentence: 'Oh. What..?
+
+'
+    eventTrigger: 
+    choices: []
+  - side: 0
+    characterName: Jetty
+    characterSprite: {fileID: 1936918675910826544, guid: e8f1130d0e09cef45bb1f9ab49489848, type: 3}
+    sentence: "You know, I don\u2019t usually go on dates with younger men."
+    eventTrigger: 
+    choices: []
+  - side: 1
+    characterName: Lynn
+    characterSprite: {fileID: 21300000, guid: 724a9d18b99b23f4d8ef91418ba692f0, type: 3}
+    sentence: "I\u2019m not all that younger than you."
+    eventTrigger: 
+    choices: []
+  - side: 0
+    characterName: Jetty
+    characterSprite: {fileID: 0}
+    sentence: "5 years is a long time when you\u2019re in your twenties."
+    eventTrigger: 
+    choices: []
+  - side: 1
+    characterName: Lynn
+    characterSprite: {fileID: 0}
+    sentence: "I\u2019ve always been told I\u2019m mature for my age. Er- not in
+      like a weird way though."
+    eventTrigger: 
+    choices: []
+  - side: 0
+    characterName: Jetty
+    characterSprite: {fileID: 0}
+    sentence: "*chuckles* Yeah I got it, don\u2019t worry."
+    eventTrigger: 
+    choices: []
+  - side: 1
+    characterName: Lynn
+    characterSprite: {fileID: 0}
+    sentence: "Ah, what am I saying.. I bet you\u2019ve heard this a thousand times
+      already."
+    eventTrigger: 
+    choices: []
+  - side: 0
+    characterName: Jetty
+    characterSprite: {fileID: 0}
+    sentence: 
+    eventTrigger: 
+    choices:
+    - choices: "It\u2019s always been in a professional setting, though."
+      nextScenario: {fileID: 11400000, guid: 9323ea03ee53cc1429bfa1f77f4f702b, type: 2}
+      target: 0
+      starReward: 1
+      heartReward: 0
+    - choices: It loses meaning after a while but this is different.
+      nextScenario: {fileID: 11400000, guid: 6742b6df4ef38a34487f9a3845f51b02, type: 2}
+      target: 0
+      starReward: 0.5
+      heartReward: 0
+    - choices: You do know my job is to perform, right?
+      nextScenario: {fileID: 11400000, guid: 4eb30a3bbaf23b64da5733be37d6278c, type: 2}
+      target: 0
+      starReward: 0
+      heartReward: 0
+  nextScenario: {fileID: 0}

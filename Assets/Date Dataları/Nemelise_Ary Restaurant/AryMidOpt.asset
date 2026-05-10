@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f832b14936fc2048824d9308b14ded6, type: 3}
+  m_Name: AryMidOpt
+  m_EditorClassIdentifier: 
+  locationName: 
+  locationBackground: {fileID: 0}
+  allLines:
+  - side: 1
+    characterName: Ary
+    characterSprite: {fileID: 21300000, guid: ece41423a199ba04f8804d355c231cbb, type: 3}
+    sentence: "You could say that, it\u2019s a long story."
+    eventTrigger: 
+    choices: []
+  - side: 0
+    characterName: Nemelise
+    characterSprite: {fileID: 21300000, guid: b5a5cc5d83848d843aadeaf9b5e083f1, type: 3}
+    sentence: Just like everything tends to be. You want to tell it, or do you want
+      to stay mysterious?
+    eventTrigger: 
+    choices: []
+  - side: 1
+    characterName: Ary
+    characterSprite: {fileID: 0}
+    sentence: 'Mystery is what makes everything more exciting, no?
+
+'
+    eventTrigger: StartDodgeGame
+    choices: []
+  nextScenario: {fileID: 11400000, guid: 002c02845d9838f4d96277aefad45dee, type: 2}

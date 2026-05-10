@@ -25,8 +25,9 @@ MonoBehaviour:
   - side: 1
     characterName: Linus
     characterSprite: {fileID: 21300000, guid: dc24e77c8220d5b43bd418e911809b3b, type: 3}
-    sentence: Ooh this place is surprisingly nice, how much do you think they paid
-      for it?
+    sentence: "A shit ton, for sure. They are funded by the government, remember?
+      They have that disturbingly intelligent AI woman and teleportation devices
+      and shit...\r"
     eventTrigger: 
     choices: []
   - side: 3
@@ -57,7 +58,7 @@ MonoBehaviour:
     choices: []
   - side: 1
     characterName: Linus
-    characterSprite: {fileID: 0}
+    characterSprite: {fileID: 21300000, guid: af0c810f9bf8b7840ad7c7e7ceff54b5, type: 3}
     sentence: Do you think they do like polyamorous dates?
     eventTrigger: 
     choices: []

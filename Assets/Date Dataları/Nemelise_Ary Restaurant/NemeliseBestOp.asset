@@ -1,0 +1,51 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f832b14936fc2048824d9308b14ded6, type: 3}
+  m_Name: NemeliseBestOp
+  m_EditorClassIdentifier: 
+  locationName: 
+  locationBackground: {fileID: 0}
+  allLines:
+  - side: 0
+    characterName: Nemelise
+    characterSprite: {fileID: 21300000, guid: b5a5cc5d83848d843aadeaf9b5e083f1, type: 3}
+    sentence: " Oh my rhythm is just fine, but I'm sure you\u2019d love an excuse
+      to show off."
+    eventTrigger: 
+    choices: []
+  - side: 1
+    characterName: Ary
+    characterSprite: {fileID: 21300000, guid: ece41423a199ba04f8804d355c231cbb, type: 3}
+    sentence: Maybe a little, do you think you can keep up?
+    eventTrigger: 
+    choices: []
+  - side: 0
+    characterName: Nemelise
+    characterSprite: {fileID: 0}
+    sentence: Keep up? Oh honey, you will end up struggling the most if we ever play
+      together.
+    eventTrigger: 
+    choices: []
+  - side: 1
+    characterName: Ary
+    characterSprite: {fileID: 0}
+    sentence: "I\u2019ll keep you to that."
+    eventTrigger: 
+    choices: []
+  - side: 2
+    characterName: Counselor
+    characterSprite: {fileID: 0}
+    sentence: Sorry for the interruption but we have a little game called the Icebreaker
+      for you two to play!
+    eventTrigger: StartIceBreaker
+    choices: []
+  nextScenario: {fileID: 11400000, guid: 23cf0bc5dcc14754fb283459429c2e58, type: 2}
