@@ -12,7 +12,11 @@ public class CoupleEndScenario
     public Characters characterA;
     public Characters characterB;
 
+    [Header("İlk Date Fail Senaryosu")]
     public DialogueDataları specificFailScenario;
+
+    [Header("İkinci Date Fail Senaryosu")]
+    public DialogueDataları secondDateFailScenario;
 }
 
 public class brainDate : MonoBehaviour
@@ -1056,7 +1060,26 @@ public class brainDate : MonoBehaviour
             if ((DateSettings.leftChar == outcome.characterA && DateSettings.rightChar == outcome.characterB) ||
                 (DateSettings.leftChar == outcome.characterB && DateSettings.rightChar == outcome.characterA))
             {
-                if (outcome.specificFailScenario != null) return outcome.specificFailScenario;
+                if (DateSettings.leftChar != null && DateSettings.rightChar != null)
+                {
+                    string char1 = DateSettings.leftChar.characterName;
+                    string char2 = DateSettings.rightChar.characterName;
+                    string coupleKey = string.Compare(char1, char2) < 0 ?
+                        "DateLevel_" + char1 + "_" + char2 :
+                        "DateLevel_" + char2 + "_" + char1;
+
+                    int currentLevel = PlayerPrefs.GetInt(coupleKey, 0);
+
+                    if (currentLevel >= 1 && outcome.secondDateFailScenario != null)
+                    {
+                        return outcome.secondDateFailScenario;
+                    }
+                }
+
+                if (outcome.specificFailScenario != null) 
+                {
+                    return outcome.specificFailScenario;
+                }
             }
         }
         return defaultFailScenario;
