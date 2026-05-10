@@ -177,8 +177,8 @@ MonoBehaviour:
       hours without getting bored. She\u2019s truly amazing.\r\n"
     eventTrigger: 
     choices: []
-  - side: 1
-    characterName: Elroi
+  - side: 0
+    characterName: Io
     characterSprite: {fileID: 0}
     sentence: 
     eventTrigger: 
