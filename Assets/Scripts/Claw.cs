@@ -132,6 +132,12 @@ public class Claw: MonoBehaviour
             timerText.text = "0";
         }
         
+        
+        if (spawner != null)
+        {
+            spawner.StopSpawning();
+        }
+        
         EndMiniGame();
     }
 

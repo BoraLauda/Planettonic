@@ -32,6 +32,15 @@ public class brainDate : MonoBehaviour
 
     public TutorialPopup tutorialPopup;
 
+    [Header("Evrensel Skor Tablosu")]
+    public GameObject evrenselSkorPaneli;
+    public TMP_Text skorYildizText;
+    public TMP_Text skorKalpText;
+    
+    private bool isSkorEkraniAcik = false;
+    private GameObject kapatilacakMiniOyun = null;
+    private System.Action pendingRewardAction = null;
+
     public List<Sprite> menuTutorialSprites;
     public List<Sprite> iceBreakerTutorialSprites;
     public List<Sprite> dodgeTutorialSprites;
@@ -171,6 +180,7 @@ public class brainDate : MonoBehaviour
         if (rightOptionsPanel) rightOptionsPanel.SetActive(false);
 
         if (BGblur) BGblur.SetActive(false);
+        if (evrenselSkorPaneli) evrenselSkorPaneli.SetActive(false);
 
         if (menuMiniGameObj) menuMiniGameObj.SetActive(false);
         if (pixelMiniGameObj) pixelMiniGameObj.SetActive(false);
@@ -298,6 +308,7 @@ public class brainDate : MonoBehaviour
             isDodgeMode = false;
             isIceBreakerMode = false;
             isBartendingMode = false;
+            isSkorEkraniAcik = false;
 
             if (menuMiniGameObj) menuMiniGameObj.SetActive(false);
             if (pixelMiniGameObj) pixelMiniGameObj.SetActive(false);
@@ -305,6 +316,7 @@ public class brainDate : MonoBehaviour
             if (clawMachineMiniGameObj) clawMachineMiniGameObj.SetActive(false);
             if (runnerMiniGameObj) runnerMiniGameObj.SetActive(false);
             if (bartendingMiniGameObj) bartendingMiniGameObj.SetActive(false);
+            if (evrenselSkorPaneli) evrenselSkorPaneli.SetActive(false);
             if (BGblur) BGblur.SetActive(false);
 
             scenarioQueue.Clear();
@@ -321,7 +333,8 @@ public class brainDate : MonoBehaviour
             (rightDialoguePanel != null && rightDialoguePanel.activeInHierarchy) ||
             (chancellorPanel != null && chancellorPanel.activeInHierarchy) ||
             (chaperonPanel != null && chaperonPanel.activeInHierarchy) ||
-            (tutorialPopup != null && tutorialPopup.gameObject.activeSelf);
+            (tutorialPopup != null && tutorialPopup.gameObject.activeSelf) ||
+            (evrenselSkorPaneli != null && evrenselSkorPaneli.activeInHierarchy); 
 
         GameObject[] minigames = { menuMiniGameObj, pixelMiniGameObj, rhythmMiniGameObj, clawMachineMiniGameObj, runnerMiniGameObj, bartendingMiniGameObj };
 
@@ -753,6 +766,24 @@ public class brainDate : MonoBehaviour
     {
         if (tutorialPopup != null && tutorialPopup.gameObject.activeSelf) return;
 
+        // YENİ: Ekrana tıklandığında eğer Skor Ekranı açıksa, sadece onu ve arkadaki mini oyunu kapatıp hikayeyi akıt!
+        if (isSkorEkraniAcik)
+        {
+            isSkorEkraniAcik = false;
+            
+            if (evrenselSkorPaneli != null) evrenselSkorPaneli.SetActive(false);
+            if (kapatilacakMiniOyun != null) kapatilacakMiniOyun.SetActive(false);
+            if (BGblur != null) BGblur.SetActive(false);
+
+            if (pendingRewardAction != null)
+            {
+                System.Action action = pendingRewardAction;
+                pendingRewardAction = null;
+                action.Invoke();
+            }
+            return;
+        }
+
         bool isDialogueActive = 
             (leftDialoguePanel != null && leftDialoguePanel.activeInHierarchy) ||
             (rightDialoguePanel != null && rightDialoguePanel.activeInHierarchy) ||
@@ -986,6 +1017,33 @@ public class brainDate : MonoBehaviour
         QueueScenarios(results);
     }
 
+    
+    private void ShowUniversalScoreBoard(GameObject miniGameObj, float earnedStars, int earnedHearts, System.Action onContinue)
+    {
+        
+        kapatilacakMiniOyun = miniGameObj;
+        pendingRewardAction = onContinue;
+
+        if (BGblur != null) BGblur.SetActive(true);
+
+        if (evrenselSkorPaneli != null)
+        {
+            evrenselSkorPaneli.SetActive(true);
+            evrenselSkorPaneli.transform.SetAsLastSibling(); 
+        }
+
+        if (skorYildizText != null) skorYildizText.text = "+" + earnedStars.ToString();
+        if (skorKalpText != null) skorKalpText.text = "+" + earnedHearts.ToString();
+
+        StartCoroutine(EnableScoreClick());
+    }
+
+    IEnumerator EnableScoreClick()
+    {
+        yield return new WaitForSeconds(0.6f);
+        isSkorEkraniAcik = true;
+    }
+
     public void PlayIceBreakerDialogue(DialogueDataları scenario)
     {
         isIceBreakerMode = true;
@@ -998,18 +1056,18 @@ public class brainDate : MonoBehaviour
         isIceBreakerMode = false;
         isEventTriggered = false;
 
-        if (iceBreakerScript != null) iceBreakerScript.gameObject.SetActive(false);
-        if (BGblur != null) BGblur.SetActive(false);
-
         if (earnedStars > 0 || earnedHearts > 0)
         {
             AddReward(earnedStars, earnedHearts, target);
         }
 
-        if (savedMainScenario != null && savedMainScenario.nextScenario != null)
+        ShowUniversalScoreBoard(iceBreakerScript != null ? iceBreakerScript.gameObject : null, earnedStars, earnedHearts, () => 
         {
-            StartScenario(savedMainScenario.nextScenario);
-        }
+            if (savedMainScenario != null && savedMainScenario.nextScenario != null)
+            {
+                StartScenario(savedMainScenario.nextScenario);
+            }
+        });
     }
 
     public void PlayDodgeDialogue(DialogueDataları scenario)
@@ -1024,9 +1082,6 @@ public class brainDate : MonoBehaviour
         isDodgeMode = false;
         isEventTriggered = false;
 
-        if (dodgeScript != null) dodgeScript.gameObject.SetActive(false);
-        if (BGblur != null) BGblur.SetActive(false);
-
         UpdateCharacterFocus((SpeakerSide)(-1));
 
         if (earnedStars > 0 || earnedHearts > 0)
@@ -1034,23 +1089,113 @@ public class brainDate : MonoBehaviour
             AddReward(earnedStars, earnedHearts, target);
         }
 
-        float totalScore = leftStars + rightStars;
+        ShowUniversalScoreBoard(dodgeScript != null ? dodgeScript.gameObject : null, earnedStars, earnedHearts, () => 
+        {
+            float totalScore = leftStars + rightStars;
+            if (totalScore >= starThreshold)
+            {
+                if (savedMainScenario != null && savedMainScenario.nextScenario != null)
+                {
+                    StartScenario(savedMainScenario.nextScenario);
+                }
+            }
+            else
+            {
+                DialogueDataları activeFail = GetActiveFailScenario();
+                if (activeFail != null)
+                {
+                    StartScenario(activeFail);
+                }
+            }
+        });
+    }
 
-        if (totalScore >= starThreshold)
+    public void EndBartendingGame(float earnedStars, int earnedHearts, TargetCharacter target)
+    {
+        isBartendingMode = false;
+        isEventTriggered = false;
+
+        AddReward(earnedStars, earnedHearts, target);
+
+        ShowUniversalScoreBoard(bartendingMiniGameObj, earnedStars, earnedHearts, () => 
         {
             if (savedMainScenario != null && savedMainScenario.nextScenario != null)
             {
                 StartScenario(savedMainScenario.nextScenario);
             }
-        }
-        else
+        });
+    }
+
+    public void EndPixelGame(float earnedStars, int earnedHearts, TargetCharacter target)
+    {
+        isEventTriggered = false;
+
+        AddReward(earnedStars, earnedHearts, target);
+
+        ShowUniversalScoreBoard(pixelMiniGameObj, earnedStars, earnedHearts, () => 
         {
-            DialogueDataları activeFail = GetActiveFailScenario();
-            if (activeFail != null)
+            if (savedMainScenario != null && savedMainScenario.nextScenario != null)
             {
-                StartScenario(activeFail);
+                StartScenario(savedMainScenario.nextScenario);
             }
-        }
+        });
+    }
+
+    public void EndRhythmGame(float earnedStars, int earnedHearts, TargetCharacter target)
+    {
+        isEventTriggered = false;
+
+        AddReward(earnedStars, earnedHearts, target);
+
+        ShowUniversalScoreBoard(rhythmMiniGameObj, earnedStars, earnedHearts, () => 
+        {
+            float totalScore = leftStars + rightStars;
+            if (totalScore >= starThreshold)
+            {
+                if (savedMainScenario != null && savedMainScenario.nextScenario != null)
+                {
+                    StartScenario(savedMainScenario.nextScenario);
+                }
+            }
+            else
+            {
+                DialogueDataları activeFail = GetActiveFailScenario();
+                if (activeFail != null)
+                {
+                    StartScenario(activeFail);
+                }
+            }
+        });
+    }
+
+    public void EndClawMachine(float earnedStars, int earnedHearts, TargetCharacter target)
+    {
+        isEventTriggered = false;
+
+        AddReward(earnedStars, earnedHearts, target);
+
+        ShowUniversalScoreBoard(clawMachineMiniGameObj, earnedStars, earnedHearts, () => 
+        {
+            if (savedMainScenario != null && savedMainScenario.nextScenario != null)
+            {
+                StartScenario(savedMainScenario.nextScenario);
+            }
+        });
+    }
+
+    public void EndRunnerGame(float earnedStars, int earnedHearts, TargetCharacter target)
+    {
+        isEventTriggered = false;
+
+        AddReward(earnedStars, earnedHearts, target);
+
+        ShowUniversalScoreBoard(runnerMiniGameObj, earnedStars, earnedHearts, () => 
+        {
+            if (savedMainScenario != null && savedMainScenario.nextScenario != null)
+            {
+                StartScenario(savedMainScenario.nextScenario);
+            }
+        });
     }
 
     public DialogueDataları GetActiveFailScenario()
@@ -1279,95 +1424,6 @@ public class brainDate : MonoBehaviour
         else if (startingScenario != null)
         {
             StartScenario(startingScenario);
-        }
-    }
-
-    public void EndBartendingGame(float earnedStars, int earnedHearts, TargetCharacter target)
-    {
-        isBartendingMode = false;
-        isEventTriggered = false;
-
-        if (bartendingMiniGameObj != null) bartendingMiniGameObj.SetActive(false);
-        if (BGblur != null) BGblur.SetActive(false);
-
-        AddReward(earnedStars, earnedHearts, target);
-
-        if (savedMainScenario != null && savedMainScenario.nextScenario != null)
-        {
-            StartScenario(savedMainScenario.nextScenario);
-        }
-    }
-
-    public void EndPixelGame(float earnedStars, int earnedHearts, TargetCharacter target)
-    {
-        isEventTriggered = false;
-
-        if (pixelMiniGameObj != null) pixelMiniGameObj.SetActive(false);
-        if (BGblur != null) BGblur.SetActive(false);
-
-        AddReward(earnedStars, earnedHearts, target);
-
-        if (savedMainScenario != null && savedMainScenario.nextScenario != null)
-        {
-            StartScenario(savedMainScenario.nextScenario);
-        }
-    }
-
-    public void EndRhythmGame(float earnedStars, int earnedHearts, TargetCharacter target)
-    {
-        isEventTriggered = false;
-
-        if (rhythmMiniGameObj != null) rhythmMiniGameObj.SetActive(false);
-        if (BGblur != null) BGblur.SetActive(false);
-
-        AddReward(earnedStars, earnedHearts, target);
-
-        float totalScore = leftStars + rightStars;
-            
-        if (totalScore >= starThreshold)
-        {
-            if (savedMainScenario != null && savedMainScenario.nextScenario != null)
-            {
-                StartScenario(savedMainScenario.nextScenario);
-            }
-        }
-        else
-        {
-            DialogueDataları activeFail = GetActiveFailScenario();
-            if (activeFail != null)
-            {
-                StartScenario(activeFail);
-            }
-        }
-    }
-
-    public void EndClawMachine(float earnedStars, int earnedHearts, TargetCharacter target)
-    {
-        isEventTriggered = false;
-
-        if (clawMachineMiniGameObj != null) clawMachineMiniGameObj.SetActive(false);
-        if (BGblur != null) BGblur.SetActive(false);
-
-        AddReward(earnedStars, earnedHearts, target);
-
-        if (savedMainScenario != null && savedMainScenario.nextScenario != null)
-        {
-            StartScenario(savedMainScenario.nextScenario);
-        }
-    }
-
-    public void EndRunnerGame(float earnedStars, int earnedHearts, TargetCharacter target)
-    {
-        isEventTriggered = false;
-
-        if (runnerMiniGameObj != null) runnerMiniGameObj.SetActive(false);
-        if (BGblur != null) BGblur.SetActive(false);
-
-        AddReward(earnedStars, earnedHearts, target);
-
-        if (savedMainScenario != null && savedMainScenario.nextScenario != null)
-        {
-            StartScenario(savedMainScenario.nextScenario);
         }
     }
 
