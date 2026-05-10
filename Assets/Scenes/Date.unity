@@ -20695,11 +20695,11 @@ MonoBehaviour:
     characterB: {fileID: 11400000, guid: bfd2e2416d70ccd49b0a798220ace20b, type: 2}
     successScenario: {fileID: 11400000, guid: ef9a4e6afa5cedd41a451f94be59ab27, type: 2}
     continuationScenario: {fileID: 11400000, guid: 7a97cff097bb56e4395a9c606f896bd9, type: 2}
-  - ciftAdi: Jetty Lynn
-    characterA: {fileID: 11400000, guid: 74736f0dd50e8ce448a5eb50e16802ba, type: 2}
-    characterB: {fileID: 11400000, guid: bfd2e2416d70ccd49b0a798220ace20b, type: 2}
-    successScenario: {fileID: 11400000, guid: ef9a4e6afa5cedd41a451f94be59ab27, type: 2}
-    continuationScenario: {fileID: 11400000, guid: 7a97cff097bb56e4395a9c606f896bd9, type: 2}
+  - ciftAdi: Nemelise Ary
+    characterA: {fileID: 11400000, guid: 10ae37b55ea06ba4eadbd5ffcc3098c2, type: 2}
+    characterB: {fileID: 11400000, guid: d9880c6a901c8d643a786ea1b19f0372, type: 2}
+    successScenario: {fileID: 11400000, guid: 5840a29f003467d41b4a39c244ffa418, type: 2}
+    continuationScenario: {fileID: 11400000, guid: 96d9ae336e2092e468b1edb547784c1a, type: 2}
 --- !u!82 &756997994
 AudioSource:
   m_ObjectHideFlags: 0
