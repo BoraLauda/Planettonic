@@ -14858,7 +14858,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &566954280
 RectTransform:
   m_ObjectHideFlags: 0
@@ -28908,34 +28908,6 @@ MonoBehaviour:
   clawMachineMiniGameObj: {fileID: 824090829}
   runnerMiniGameObj: {fileID: 227849805}
   bartendingMiniGameObj: {fileID: 613308419}
-  rhythmRewardUI:
-    panelObj: {fileID: 289003603}
-    starText: {fileID: 267594829}
-    heartText: {fileID: 2043177687}
-  pixelRewardUI:
-    panelObj: {fileID: 1615930690}
-    starText: {fileID: 1222257504}
-    heartText: {fileID: 2081426153}
-  bartendingRewardUI:
-    panelObj: {fileID: 950163776}
-    starText: {fileID: 1449280145}
-    heartText: {fileID: 2064465123}
-  clawRewardUI:
-    panelObj: {fileID: 692820798}
-    starText: {fileID: 1138896582}
-    heartText: {fileID: 1648930946}
-  runnerRewardUI:
-    panelObj: {fileID: 566954279}
-    starText: {fileID: 472640869}
-    heartText: {fileID: 2137521372}
-  dodgeRewardUI:
-    panelObj: {fileID: 370288202}
-    starText: {fileID: 1730187751}
-    heartText: {fileID: 992594465}
-  iceBreakerRewardUI:
-    panelObj: {fileID: 1416898062}
-    starText: {fileID: 1150641383}
-    heartText: {fileID: 569967626}
   menuTutorialScenario: {fileID: 11400000, guid: 8f572fefddd2e26458a1845b2fe5be4f, type: 2}
   typeSpeed: 0.04
   focusSpeed: 10
