@@ -73880,6 +73880,16 @@ MonoBehaviour:
     - {fileID: 0}
     evSenaryolari:
     - {fileID: 0}
+  - characterA: {fileID: 11400000, guid: 10ae37b55ea06ba4eadbd5ffcc3098c2, type: 2}
+    characterB: {fileID: 11400000, guid: d9880c6a901c8d643a786ea1b19f0372, type: 2}
+    restoranSenaryolari:
+    - {fileID: 11400000, guid: c7a621a39232f374eb76db81f78f2b49, type: 2}
+    arcadeSenaryolari:
+    - {fileID: 11400000, guid: e2dec11c06dee6e409af0b4543d20dcf, type: 2}
+    barSenaryolari:
+    - {fileID: 0}
+    evSenaryolari:
+    - {fileID: 0}
   defaultScenario: {fileID: 0}
   warningPanelSmall: {fileID: 215909102}
   warningPanelBig: {fileID: 1688793586}
