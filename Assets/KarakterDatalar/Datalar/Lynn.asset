@@ -55,9 +55,9 @@ MonoBehaviour:
   - targetCharacter: {fileID: 11400000, guid: 914c084cda719c149b3ce3ae947d0973, type: 2}
     diyalogDosyasi: {fileID: 11400000, guid: 0fbbbad5cd797174f9fc682b769cf788, type: 2}
   - targetCharacter: {fileID: 11400000, guid: 914c084cda719c149b3ce3ae947d0973, type: 2}
-    diyalogDosyasi: {fileID: 11400000, guid: b5620b39b05c51542bf8f8eeaec6b6f2, type: 2}
-  - targetCharacter: {fileID: 11400000, guid: 74736f0dd50e8ce448a5eb50e16802ba, type: 2}
     diyalogDosyasi: {fileID: 11400000, guid: 741b4753390482347ae6d15e5c2f623d, type: 2}
+  - targetCharacter: {fileID: 11400000, guid: 74736f0dd50e8ce448a5eb50e16802ba, type: 2}
+    diyalogDosyasi: {fileID: 11400000, guid: b5620b39b05c51542bf8f8eeaec6b6f2, type: 2}
   - targetCharacter: {fileID: 11400000, guid: 74736f0dd50e8ce448a5eb50e16802ba, type: 2}
     diyalogDosyasi: {fileID: 11400000, guid: 461e8359412392b4ca13bc698c3d58dd, type: 2}
   dodgeQuestions:
