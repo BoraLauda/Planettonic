@@ -35,7 +35,6 @@ public class IceBreaker : MonoBehaviour
     public List<Sprite> pieceSprites; 
     public float explosion = 800f;
     
-
     [Header("Ayarlar")]
     public float speed = 1200f;        
     private int currentIceLevel = 0; 
@@ -58,6 +57,9 @@ public class IceBreaker : MonoBehaviour
     private brainDate dateManager;
 
    
+    private float totalEarnedStarsThisGame = 0f;
+    private int totalEarnedHeartsThisGame = 0;
+
     private Dictionary<int, List<DialogueDataları>> questionPools = new Dictionary<int, List<DialogueDataları>>();
     
     void Start()
@@ -81,6 +83,10 @@ public class IceBreaker : MonoBehaviour
         currentIceLevel = 0;
         isLeftTurn = true; 
         speed = 1200f; 
+
+        
+        totalEarnedStarsThisGame = 0f;
+        totalEarnedHeartsThisGame = 0;
 
         foreach (var h in SnowImages) h.gameObject.SetActive(true);
         if (iceSprites.Length > 0) iceImage.sprite = iceSprites[0];
@@ -128,6 +134,9 @@ public class IceBreaker : MonoBehaviour
             Debug.Log("SARI");
             pendingDamage = 2; 
         
+           
+            totalEarnedHeartsThisGame += heartPerYellow; 
+
             if(dateManager != null) 
                 dateManager.AddReward(0, heartPerYellow, currentTarget);
 
@@ -139,6 +148,9 @@ public class IceBreaker : MonoBehaviour
         {
             Debug.Log("PEMBE");
             pendingDamage = 1; 
+
+           
+            totalEarnedHeartsThisGame += heartPerPink;
 
             if(dateManager != null) 
                 dateManager.AddReward(0, heartPerPink, currentTarget);
@@ -298,7 +310,10 @@ public class IceBreaker : MonoBehaviour
     {
         if (isSuccess)
         {
-            dateManager.AddReward(totalStarsOnWin, bonusHeartOnWin, TargetCharacter.Both);
+          
+            totalEarnedStarsThisGame += totalStarsOnWin;
+            totalEarnedHeartsThisGame += bonusHeartOnWin;
+            
             
             float duration = 1.0f;
             float elapsed = 0f;
@@ -320,10 +335,11 @@ public class IceBreaker : MonoBehaviour
 
         if (dateManager != null)
         {
-            dateManager.EndIceBreaker(isSuccess);
+            
+            dateManager.EndIceBreaker(isSuccess, totalEarnedStarsThisGame, totalEarnedHeartsThisGame, TargetCharacter.Both);
         }
         
-        gameObject.SetActive(false); 
+      
     }
  
     DialogueDataları GetTargetedQuestion(List<TargetedDialogue> originalList, Characters opponent)
