@@ -15,6 +15,7 @@ MonoBehaviour:
   characterName: Lynn
   cinsiyet: 1
   profileIcon: {fileID: 21300000, guid: 724a9d18b99b23f4d8ef91418ba692f0, type: 3}
+<<<<<<< HEAD
   dodgeTheQuestionIkonu: {fileID: 0}
   menuMinigameIkonu: {fileID: 0}
   portraitImage: {fileID: 0}
@@ -28,6 +29,23 @@ MonoBehaviour:
   - {fileID: 21300000, guid: a85149ffbf8caf24cb342d45c59ff28c, type: 3}
   quoteText: "\xD6zl\xFC s\xF6z"
   locationPreferences: []
+=======
+  dodgeTheQuestionIkonu: {fileID: 21300000, guid: 724a9d18b99b23f4d8ef91418ba692f0, type: 3}
+  menuMinigameIkonu: {fileID: 21300000, guid: 724a9d18b99b23f4d8ef91418ba692f0, type: 3}
+  portraitImage: {fileID: 21300000, guid: 724a9d18b99b23f4d8ef91418ba692f0, type: 3}
+  fullName: 
+  demographicsInfo: 
+  relationshipGoals: 
+  hobbies: 
+  foodPreferenceText: 
+  profileRatingIcons: []
+  quoteText: 
+  locationPreferences:
+  - locationName: Restaurant
+    bonusStars: 1
+  - locationName: Arcade
+    bonusStars: 1
+>>>>>>> 1de140f997c01c6c3da4c5ec77eff1351fbf73fb
   hatedFoods: []
   iceBreakerGood: []
   iceBreakerMid: []
