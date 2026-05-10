@@ -20690,6 +20690,11 @@ MonoBehaviour:
     characterB: {fileID: 11400000, guid: bfd2e2416d70ccd49b0a798220ace20b, type: 2}
     successScenario: {fileID: 11400000, guid: 6c63b0b88c6943c4cb1e7a764829a55e, type: 2}
     continuationScenario: {fileID: 11400000, guid: 7416cd56f4d78a84ab81fb35bb924325, type: 2}
+  - ciftAdi: Jetty Lynn
+    characterA: {fileID: 11400000, guid: 74736f0dd50e8ce448a5eb50e16802ba, type: 2}
+    characterB: {fileID: 11400000, guid: bfd2e2416d70ccd49b0a798220ace20b, type: 2}
+    successScenario: {fileID: 11400000, guid: ef9a4e6afa5cedd41a451f94be59ab27, type: 2}
+    continuationScenario: {fileID: 11400000, guid: 7a97cff097bb56e4395a9c606f896bd9, type: 2}
 --- !u!82 &756997994
 AudioSource:
   m_ObjectHideFlags: 0
@@ -28867,6 +28872,10 @@ MonoBehaviour:
     characterA: {fileID: 11400000, guid: 52f97840cc872804392c25a1f2b8175b, type: 2}
     characterB: {fileID: 11400000, guid: 5f6e0fde49813654aa1d61918d175f26, type: 2}
     specificFailScenario: {fileID: 11400000, guid: 4a1dfbc667d65ac4ea142c1917e3d758, type: 2}
+  - ciftAdi: Jetty Lynn
+    characterA: {fileID: 11400000, guid: 74736f0dd50e8ce448a5eb50e16802ba, type: 2}
+    characterB: {fileID: 11400000, guid: bfd2e2416d70ccd49b0a798220ace20b, type: 2}
+    specificFailScenario: {fileID: 11400000, guid: 8ff6eab34f34760489e5200f50fba0c7, type: 2}
   - ciftAdi: Io Lynn
     characterA: {fileID: 11400000, guid: 914c084cda719c149b3ce3ae947d0973, type: 2}
     characterB: {fileID: 11400000, guid: bfd2e2416d70ccd49b0a798220ace20b, type: 2}
