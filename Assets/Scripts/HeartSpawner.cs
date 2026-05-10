@@ -34,7 +34,7 @@ public class HeartSpawner : MonoBehaviour
             return;
         }
 
-        bool isKalp = Random.value > 0.5f;
+        bool isKalp = Random.value > 0.55f;
 
         GameObject secilenPrefab = isKalp ? kalpPrefab : kirikKalpPrefab;
         Transform secilenNokta = isKalp ? kalpSpawnNoktasi : kirikKalpSpawnNoktasi;
