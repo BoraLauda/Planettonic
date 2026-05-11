@@ -286,9 +286,9 @@ public class IceBreaker : MonoBehaviour
     {
         currentIceLevel += amount;
 
-        if (speed < 1500) speed = 1500;
-        else if (speed < 1800) speed = 1800;
-        else speed = 2250;
+        if (speed < 2200) speed = 2200;
+        else if (speed < 2500) speed = 2500;
+        else speed = 3000;
         
         int indexToShow = Mathf.Clamp(currentIceLevel, 0, iceSprites.Length - 1);
         if (indexToShow < iceSprites.Length)
