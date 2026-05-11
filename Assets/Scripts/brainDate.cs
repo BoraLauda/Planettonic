@@ -85,8 +85,14 @@ public class brainDate : MonoBehaviour
 
     private DialogueDataları savedMainScenario;
 
+    [Header("Dodge Klasik")]
     public brainDODGE dodgeScript;
     private bool isDodgeMode = false;
+
+    [Header("Curve Dodge Yeni")]
+    public GameObject curveDodgeMiniGameObj;
+    public BrainDodgeCurve curveDodgeScript;
+    private bool isCurveDodgeMode = false;
 
     public Image leftDaterImage;
     public GameObject leftDialoguePanel;
@@ -188,6 +194,8 @@ public class brainDate : MonoBehaviour
         if (clawMachineMiniGameObj) clawMachineMiniGameObj.SetActive(false);
         if (runnerMiniGameObj) runnerMiniGameObj.SetActive(false);
         if (bartendingMiniGameObj) bartendingMiniGameObj.SetActive(false);
+        
+        if (curveDodgeMiniGameObj) curveDodgeMiniGameObj.SetActive(false);
 
         if (dateEndedObject) dateEndedObject.SetActive(false);
 
@@ -306,6 +314,7 @@ public class brainDate : MonoBehaviour
 
             isMenuMode = false;
             isDodgeMode = false;
+            isCurveDodgeMode = false;
             isIceBreakerMode = false;
             isBartendingMode = false;
             isSkorEkraniAcik = false;
@@ -316,6 +325,7 @@ public class brainDate : MonoBehaviour
             if (clawMachineMiniGameObj) clawMachineMiniGameObj.SetActive(false);
             if (runnerMiniGameObj) runnerMiniGameObj.SetActive(false);
             if (bartendingMiniGameObj) bartendingMiniGameObj.SetActive(false);
+            if (curveDodgeMiniGameObj) curveDodgeMiniGameObj.SetActive(false);
             if (evrenselSkorPaneli) evrenselSkorPaneli.SetActive(false);
             if (BGblur) BGblur.SetActive(false);
 
@@ -336,7 +346,7 @@ public class brainDate : MonoBehaviour
             (tutorialPopup != null && tutorialPopup.gameObject.activeSelf) ||
             (evrenselSkorPaneli != null && evrenselSkorPaneli.activeInHierarchy); 
 
-        GameObject[] minigames = { menuMiniGameObj, pixelMiniGameObj, rhythmMiniGameObj, clawMachineMiniGameObj, runnerMiniGameObj, bartendingMiniGameObj };
+        GameObject[] minigames = { menuMiniGameObj, pixelMiniGameObj, rhythmMiniGameObj, clawMachineMiniGameObj, runnerMiniGameObj, bartendingMiniGameObj, curveDodgeMiniGameObj };
 
         foreach (GameObject mg in minigames)
         {
@@ -500,6 +510,7 @@ public class brainDate : MonoBehaviour
             if (isMenuMode && menuMiniGameObj != null && !menuMiniGameObj.activeSelf) isMenuMode = false;
             if (isBartendingMode && bartendingMiniGameObj != null && !bartendingMiniGameObj.activeSelf) isBartendingMode = false;
             if (isDodgeMode && dodgeScript != null && !dodgeScript.gameObject.activeSelf) isDodgeMode = false;
+            if (isCurveDodgeMode && curveDodgeScript != null && !curveDodgeScript.gameObject.activeSelf) isCurveDodgeMode = false;
             if (isIceBreakerMode && iceBreakerScript != null && !iceBreakerScript.gameObject.activeSelf) isIceBreakerMode = false;
 
             if (isMenuMode || isBartendingMode)
@@ -519,6 +530,17 @@ public class brainDate : MonoBehaviour
                 UpdateCharacterFocus((SpeakerSide)(-1));
 
                 if (dodgeScript != null) dodgeScript.ResumeAfterDialogue();
+                return;
+            }
+
+            if (isCurveDodgeMode)
+            {
+                if (leftDialoguePanel) leftDialoguePanel.SetActive(false);
+                if (rightDialoguePanel) rightDialoguePanel.SetActive(false);
+
+                UpdateCharacterFocus((SpeakerSide)(-1));
+
+                if (curveDodgeScript != null) curveDodgeScript.ResumeAfterDialogue();
                 return;
             }
 
@@ -766,7 +788,6 @@ public class brainDate : MonoBehaviour
     {
         if (tutorialPopup != null && tutorialPopup.gameObject.activeSelf) return;
 
-        // YENİ: Ekrana tıklandığında eğer Skor Ekranı açıksa, sadece onu ve arkadaki mini oyunu kapatıp hikayeyi akıt!
         if (isSkorEkraniAcik)
         {
             isSkorEkraniAcik = false;
@@ -797,7 +818,7 @@ public class brainDate : MonoBehaviour
             (clawMachineMiniGameObj != null && clawMachineMiniGameObj.activeSelf) ||
             (runnerMiniGameObj != null && runnerMiniGameObj.activeSelf) ||
             (bartendingMiniGameObj != null && bartendingMiniGameObj.activeSelf) ||
-            isDodgeMode || isIceBreakerMode || isMenuMode || isBartendingMode;
+            isDodgeMode || isIceBreakerMode || isMenuMode || isBartendingMode || isCurveDodgeMode;
 
         if (isAnyMinigameActive && !isDialogueActive) return;
 
@@ -948,6 +969,25 @@ public class brainDate : MonoBehaviour
                 if (dodgeScript != null) dodgeScript.StartGame();
             });
         }
+        else if (eventName == "StartCurveDodge")
+        {
+            savedMainScenario = currentScenario;
+            isEventTriggered = true;
+            isCurveDodgeMode = true;
+            
+            if (leftDialoguePanel) leftDialoguePanel.SetActive(false);
+            if (rightDialoguePanel) rightDialoguePanel.SetActive(false);
+            if (chancellorPanel) chancellorPanel.SetActive(false);
+            if (chaperonPanel) chaperonPanel.SetActive(false);
+
+            if (BGblur) BGblur.SetActive(true);
+
+            // Klasik Dodge tutorial'ını kullanıyoruz
+            tutorialPopup.OpenTutorial("CURVE DODGE", dodgeTutorialSprites, () =>
+            {
+                if (curveDodgeScript != null) curveDodgeScript.StartGame();
+            });
+        }
         else if (eventName == "StartRitimGame")
         {
             savedMainScenario = currentScenario;
@@ -1020,7 +1060,6 @@ public class brainDate : MonoBehaviour
     
     private void ShowUniversalScoreBoard(GameObject miniGameObj, float earnedStars, int earnedHearts, System.Action onContinue)
     {
-        
         kapatilacakMiniOyun = miniGameObj;
         pendingRewardAction = onContinue;
 
@@ -1090,6 +1129,47 @@ public class brainDate : MonoBehaviour
         }
 
         ShowUniversalScoreBoard(dodgeScript != null ? dodgeScript.gameObject : null, earnedStars, earnedHearts, () => 
+        {
+            float totalScore = leftStars + rightStars;
+            if (totalScore >= starThreshold)
+            {
+                if (savedMainScenario != null && savedMainScenario.nextScenario != null)
+                {
+                    StartScenario(savedMainScenario.nextScenario);
+                }
+            }
+            else
+            {
+                DialogueDataları activeFail = GetActiveFailScenario();
+                if (activeFail != null)
+                {
+                    StartScenario(activeFail);
+                }
+            }
+        });
+    }
+
+    // YENİ: Kavisli oyun için diyalog ve bitiş fonksiyonları
+    public void PlayCurveDodgeDialogue(DialogueDataları scenario)
+    {
+        isCurveDodgeMode = true;
+        isEventTriggered = false;
+        StartScenario(scenario);
+    }
+
+    public void EndCurveDodgeGame(float earnedStars = 0, int earnedHearts = 0, TargetCharacter target = TargetCharacter.Both)
+    {
+        isCurveDodgeMode = false;
+        isEventTriggered = false;
+
+        UpdateCharacterFocus((SpeakerSide)(-1));
+
+        if (earnedStars > 0 || earnedHearts > 0)
+        {
+            AddReward(earnedStars, earnedHearts, target);
+        }
+
+        ShowUniversalScoreBoard(curveDodgeScript != null ? curveDodgeScript.gameObject : null, earnedStars, earnedHearts, () => 
         {
             float totalScore = leftStars + rightStars;
             if (totalScore >= starThreshold)
@@ -1325,7 +1405,7 @@ public class brainDate : MonoBehaviour
         Vector3 normalScale = Vector3.one;
 
         GameObject dateManageRoot = GetDateManageRoot();
-        bool isMinigameActive = (isDodgeMode || isIceBreakerMode);
+        bool isMinigameActive = (isDodgeMode || isIceBreakerMode || isCurveDodgeMode); // YENİ: Kavis modunu focus içine dahil ettim
 
         if (activeSide == SpeakerSide.Left)
         {

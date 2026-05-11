@@ -17,7 +17,7 @@ MonoBehaviour:
   profileIcon: {fileID: 21300000, guid: 243dec76f289a0c4f86cf1cd834c6e39, type: 3}
   dodgeTheQuestionIkonu: {fileID: -5726526971280107390, guid: 7d8893f829515954da8db8356faa17df, type: 3}
   menuMinigameIkonu: {fileID: -5726526971280107390, guid: 7d8893f829515954da8db8356faa17df, type: 3}
-  portraitImage: {fileID: 21300000, guid: dc24e77c8220d5b43bd418e911809b3b, type: 3}
+  portraitImage: {fileID: 21300000, guid: 19b8c42c96185954db27cd2f9406e0a0, type: 3}
   fullName: Linus
   demographicsInfo: 20 || Male || Lawyer
   relationshipGoals: Casual || Kids
