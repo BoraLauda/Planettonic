@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f832b14936fc2048824d9308b14ded6, type: 3}
   m_Name: AfterIceBreaker Arcade
   m_EditorClassIdentifier: 
+  leftKarakterGelmedi: 0
+  rightKarakterGelmedi: 0
   locationName: 
   locationBackground: {fileID: 0}
   allLines:
@@ -42,17 +44,17 @@ MonoBehaviour:
     choices:
     - choices: I made mistakes before I found my calling.
       nextScenario: {fileID: 11400000, guid: c2a234d69d1bb754195e6540430423da, type: 2}
-      target: 0
+      target: 1
       starReward: 1
       heartReward: 0
     - choices: "You could say that, it\u2019s a long story."
       nextScenario: {fileID: 11400000, guid: f7203a7dc17d5894886b517c433785c8, type: 2}
-      target: 0
+      target: 1
       starReward: 0.5
       heartReward: 0
     - choices: Late? Do I look like I started late?
       nextScenario: {fileID: 11400000, guid: 892e8542d13c8334bbece459d5fec5b8, type: 2}
-      target: 0
+      target: 1
       starReward: 0
       heartReward: 0
   nextScenario: {fileID: 0}

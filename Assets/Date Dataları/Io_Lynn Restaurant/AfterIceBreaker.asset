@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f832b14936fc2048824d9308b14ded6, type: 3}
   m_Name: AfterIceBreaker
   m_EditorClassIdentifier: 
+  leftKarakterGelmedi: 0
+  rightKarakterGelmedi: 0
   locationName: 
   locationBackground: {fileID: 0}
   allLines:
@@ -35,17 +37,17 @@ MonoBehaviour:
     choices:
     - choices: "It\u2019s unfair then, you have experience."
       nextScenario: {fileID: 11400000, guid: 0030bef2050c3ed42ae02f23dadf487b, type: 2}
-      target: 0
+      target: 1
       starReward: 1
       heartReward: 0
     - choices: Wait, you were here? Like, on a date?
       nextScenario: {fileID: 11400000, guid: 170b63af2cd35334282d3c063257f7ed, type: 2}
-      target: 0
+      target: 1
       starReward: 0.5
       heartReward: 0
     - choices: Oh, how did.. that date work out for you?
       nextScenario: {fileID: 11400000, guid: cc7a7a078932314489be7fc9891122ca, type: 2}
-      target: 0
+      target: 1
       starReward: 0
       heartReward: 0
   nextScenario: {fileID: 0}

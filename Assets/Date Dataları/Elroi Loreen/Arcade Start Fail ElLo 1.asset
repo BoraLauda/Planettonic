@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f832b14936fc2048824d9308b14ded6, type: 3}
   m_Name: Arcade Start Fail ElLo 1
   m_EditorClassIdentifier: 
+  leftKarakterGelmedi: 1
+  rightKarakterGelmedi: 0
   locationName: Arcade
   locationBackground: {fileID: 1439995735934848948, guid: d7c0804f77d78c149a3021d444e47e1f, type: 3}
   allLines:
