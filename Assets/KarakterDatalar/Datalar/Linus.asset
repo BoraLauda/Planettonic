@@ -99,3 +99,8 @@ MonoBehaviour:
     diyalogDosyasi: {fileID: 11400000, guid: bd65eee06b455a34cb1cf4d7057cb5d2, type: 2}
   - targetCharacter: {fileID: 11400000, guid: 74736f0dd50e8ce448a5eb50e16802ba, type: 2}
     diyalogDosyasi: {fileID: 11400000, guid: b7ba85d75165d8c4dba71ac0dba92f5b, type: 2}
+  curveDodgeQuestions:
+  - targetCharacter: {fileID: 11400000, guid: 74736f0dd50e8ce448a5eb50e16802ba, type: 2}
+    diyalogDosyasi: {fileID: 11400000, guid: 90a03b38d86856f4ea9a5c4869ed168e, type: 2}
+  - targetCharacter: {fileID: 11400000, guid: 74736f0dd50e8ce448a5eb50e16802ba, type: 2}
+    diyalogDosyasi: {fileID: 11400000, guid: 6ab2c227f74df63468aac78ca8bea000, type: 2}

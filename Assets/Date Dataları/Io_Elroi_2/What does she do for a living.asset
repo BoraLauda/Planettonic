@@ -80,6 +80,6 @@ MonoBehaviour:
     sentence: 'Okay, fine. I trust you. I think.
 
 '
-    eventTrigger: StartDodgeGame
+    eventTrigger: StartCurveDodge
     choices: []
   nextScenario: {fileID: 11400000, guid: c25ab6fc40348db4da2af83ab18dcc7d, type: 2}
