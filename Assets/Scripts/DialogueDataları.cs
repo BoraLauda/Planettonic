@@ -6,6 +6,11 @@ using System.Collections.Generic;
 public class DialogueDataları : ScriptableObject
 {
 
+    public bool leftKarakterGelmedi = false;
+    
+
+    public bool rightKarakterGelmedi = false;
+
     [Header("Mekan Bilgileri")]
     public string locationName; 
     public Sprite locationBackground;
@@ -13,6 +18,8 @@ public class DialogueDataları : ScriptableObject
     [Header("Senaryo Akışı")]
     public List<DialogueLine> allLines;
     public DialogueDataları nextScenario;
+    
+    
 }
 
 [System.Serializable]

@@ -772,6 +772,11 @@ public class APPler : MonoBehaviour
         {
             tabManager.ForceSetTab(tabIndex);
         }
+        
+        if (tabIndex == 2) 
+        {
+            LoadReviews();
+        }
     }
     
     
