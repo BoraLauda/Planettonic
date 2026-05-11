@@ -32,6 +32,8 @@ public class Characters : ScriptableObject
     [Header("Mekan ve Yemek Tercihleri")]
     public List<LocationPreference> locationPreferences;
     public List<FoodReaction> hatedFoods; 
+    
+    public string sevdigiKokteyl;
 
     [Header("Ice Breaker Good (Hedefe Özel)")]
     public List<TargetedDialogue> iceBreakerGood;

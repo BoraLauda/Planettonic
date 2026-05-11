@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f832b14936fc2048824d9308b14ded6, type: 3}
   m_Name: AfterPixelGame_House
   m_EditorClassIdentifier: 
+  leftKarakterGelmedi: 0
+  rightKarakterGelmedi: 0
   locationName: 
   locationBackground: {fileID: 0}
   allLines:
@@ -75,17 +77,17 @@ MonoBehaviour:
     choices:
     - choices: "What if I want both what I see and what I don\u2019t?"
       nextScenario: {fileID: 11400000, guid: ba53f0329969bd84894b991a387297ef, type: 2}
-      target: 0
+      target: 1
       starReward: 1
       heartReward: 0
     - choices: "Depends on what you\u2019re hiding under that pretty exterior."
       nextScenario: {fileID: 11400000, guid: a3d93d4e7f0c80b4ab925eab3c171644, type: 2}
-      target: 0
+      target: 1
       starReward: 0.5
       heartReward: 0
     - choices: I can tell you have a mask up.
       nextScenario: {fileID: 11400000, guid: 520d801dbbdd95c438237191f59bd689, type: 2}
-      target: 0
+      target: 1
       starReward: 0
       heartReward: 0
   nextScenario: {fileID: 0}
