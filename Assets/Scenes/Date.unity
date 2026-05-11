@@ -28300,6 +28300,11 @@ MonoBehaviour:
     characterB: {fileID: 11400000, guid: 70924192341f4a244bdda3ba9cd56e47, type: 2}
     specificFailScenario: {fileID: 11400000, guid: 5aa51dac9d1147648a6fd7557c1c9d7e, type: 2}
     secondDateFailScenario: {fileID: 0}
+  - ciftAdi: Loreen Elroi
+    characterA: {fileID: 11400000, guid: 52f97840cc872804392c25a1f2b8175b, type: 2}
+    characterB: {fileID: 11400000, guid: 70924192341f4a244bdda3ba9cd56e47, type: 2}
+    specificFailScenario: {fileID: 11400000, guid: 5bee2ac2223b8d941b715c8a3d17017c, type: 2}
+    secondDateFailScenario: {fileID: 0}
   defaultFailScenario: {fileID: 0}
   dodgeScript: {fileID: 1190985220}
   curveDodgeMiniGameObj: {fileID: 2092374654}
