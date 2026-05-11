@@ -73,6 +73,14 @@ public class KokteylManager : MonoBehaviour
     public int secilenBardakIndex = 0; 
     public GameObject[] pouringBardakObjeleri;
 
+  
+    private int yapilanIcecekSayisi = 0; // Toplamda 2 içecek yapılınca oyun biter
+    private bool leftCharServed = false;  // Sol karakter içkisini aldı mı?
+    private bool rightCharServed = false; // Sağ karakter içkisini aldı mı?
+    
+    private float totalKazanilanYildiz = 0f;
+    private int totalKazanilanKalp = 0;
+
     void Awake()
     {
         if (Instance == null) Instance = this;
@@ -156,6 +164,18 @@ public class KokteylManager : MonoBehaviour
     
     void OnEnable()
     {
+        yapilanIcecekSayisi = 0; 
+        leftCharServed = false;
+        rightCharServed = false;
+        
+        totalKazanilanYildiz = 0f; 
+        totalKazanilanKalp = 0;
+
+        ResetMasayiVeDegiskenleri(); 
+    }
+
+    private void ResetMasayiVeDegiskenleri()
+    {
         currentPhase = GamePhase.Preparation;
         isShaken = false; 
         isStirred = false;
@@ -168,11 +188,12 @@ public class KokteylManager : MonoBehaviour
         eklenenZeytinSayisi = 0;   
         eklenenSoslar.Clear(); 
         
+        SivilariTemizle();
         if (masadakiBardakSivilari != null)
         {
             foreach (Image sivi in masadakiBardakSivilari)
             {
-                if (sivi != null) sivi.fillAmount = 0f;
+                if (sivi != null) { sivi.fillAmount = 0f; sivi.color = Color.white; }
             }
         }
         
@@ -192,6 +213,8 @@ public class KokteylManager : MonoBehaviour
                     masadakiBardakObjeleri[i].anchoredPosition = bardakBaslangicPozisyonlari[i];
             }
         }
+
+        StartPhase(GamePhase.Preparation);
     }
 
     public void SivilariTemizle()
@@ -225,16 +248,15 @@ public class KokteylManager : MonoBehaviour
         }
     }
 
-
     private void PuanHesaplaVeBitir()
     {
         float enYuksekBasariOrani = 0f;
+        string yapilanKokteylAdi = "Bilinmeyen Karışım";
 
-     
+      
         foreach (KokteylTarifi tarif in tumTarifler)
         {
             float dogruPuan = 0;
-          
             float toplamKriter = 8f + tarif.istenenSoslar.Count;
 
             if (eklenenBuzSayisi == tarif.istenenBuzSayisi) dogruPuan++;
@@ -267,42 +289,67 @@ public class KokteylManager : MonoBehaviour
             if (oran > enYuksekBasariOrani)
             {
                 enYuksekBasariOrani = oran;
+                yapilanKokteylAdi = tarif.tarifAdi; 
             }
         }
 
-        float kazanilanYildiz = 0f;
-        int kazanilanKalp = 0;
+      
+        bool kokteylKabulEdildi = false;
 
        
-        if (enYuksekBasariOrani >= 1f) 
+        if (enYuksekBasariOrani >= 1f)
         {
-            kazanilanYildiz = 1f;
-            kazanilanKalp = 40;
-            Debug.Log($"BARMEN: KUSURSUZ KOKTEYL! Oran: {enYuksekBasariOrani} -> +1 Yıldız, +40 Kalp");
+            
+            if (!leftCharServed && DateSettings.leftChar != null && yapilanKokteylAdi == DateSettings.leftChar.sevdigiKokteyl)
+            {
+                leftCharServed = true;
+                kokteylKabulEdildi = true;
+                Debug.Log($"BAŞARILI: Sol Karakter ({DateSettings.leftChar.name}) içkisini ({yapilanKokteylAdi}) aldı!");
+            }
+            
+            else if (!rightCharServed && DateSettings.rightChar != null && yapilanKokteylAdi == DateSettings.rightChar.sevdigiKokteyl)
+            {
+                rightCharServed = true;
+                kokteylKabulEdildi = true;
+                Debug.Log($"BAŞARILI: Sağ Karakter ({DateSettings.rightChar.name}) içkisini ({yapilanKokteylAdi}) aldı!");
+            }
+
+           
+            if (kokteylKabulEdildi)
+            {
+                totalKazanilanYildiz += 0.5f;
+                totalKazanilanKalp += 20;
+            }
+            else
+            {
+                Debug.Log($"BAŞARISIZ: {yapilanKokteylAdi} mükemmel yapıldı ama bunu şu an isteyen yok (veya zaten içti).");
+            }
         }
-        else if (enYuksekBasariOrani >= 0.5f) 
+        else
         {
-            kazanilanYildiz = 0.5f;
-            kazanilanKalp = 20;
-            Debug.Log($"BARMEN: İDARE EDER! Oran: {enYuksekBasariOrani} -> +0.5 Yıldız, +20 Kalp");
+            Debug.Log($"BAŞARISIZ: Karışım berbat veya eksik. Oran: {enYuksekBasariOrani}");
         }
-        else 
-        {
-            kazanilanYildiz = 0f;
-            kazanilanKalp = 0;
-            Debug.Log($"BARMEN: BERBAT KARIŞIM! Oran: {enYuksekBasariOrani} -> 0 Yıldız, 0 Kalp");
-        }
+
         
-        brainDate bd = FindFirstObjectByType<brainDate>(); 
-        if (bd != null) 
+        yapilanIcecekSayisi++;
+
+        if (yapilanIcecekSayisi < 2)
         {
            
-            bd.EndBartendingGame(kazanilanYildiz, kazanilanKalp, TargetCharacter.Both); 
+            ResetMasayiVeDegiskenleri();
+            Debug.Log("Masa 2. içecek için sıfırlandı!");
         }
-        
-        TemizlikYap();
+        else
+        {
+            
+            brainDate bd = FindFirstObjectByType<brainDate>(); 
+            if (bd != null) 
+            {
+                bd.EndBartendingGame(totalKazanilanYildiz, totalKazanilanKalp, TargetCharacter.Both); 
+            }
+            TemizlikYap();
+        }
     }
- 
 
     public void SadeceMasayiBirakVeSifirla()
     {
