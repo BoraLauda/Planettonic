@@ -73901,12 +73901,52 @@ MonoBehaviour:
     - {fileID: 0}
     evSenaryolari:
     - {fileID: 0}
+  - characterA: {fileID: 11400000, guid: 914c084cda719c149b3ce3ae947d0973, type: 2}
+    characterB: {fileID: 11400000, guid: 5f6e0fde49813654aa1d61918d175f26, type: 2}
+    restoranSenaryolari:
+    - {fileID: 11400000, guid: 1c04ca6ea3ca5334b802accf04e05156, type: 2}
+    arcadeSenaryolari:
+    - {fileID: 11400000, guid: 700df825015b71a439c8afcf7de5b7cb, type: 2}
+    barSenaryolari:
+    - {fileID: 0}
+    evSenaryolari:
+    - {fileID: 0}
   - characterA: {fileID: 11400000, guid: 10ae37b55ea06ba4eadbd5ffcc3098c2, type: 2}
     characterB: {fileID: 11400000, guid: d9880c6a901c8d643a786ea1b19f0372, type: 2}
     restoranSenaryolari:
     - {fileID: 11400000, guid: c7a621a39232f374eb76db81f78f2b49, type: 2}
     arcadeSenaryolari:
     - {fileID: 11400000, guid: e2dec11c06dee6e409af0b4543d20dcf, type: 2}
+    barSenaryolari:
+    - {fileID: 0}
+    evSenaryolari:
+    - {fileID: 0}
+  - characterA: {fileID: 11400000, guid: 74736f0dd50e8ce448a5eb50e16802ba, type: 2}
+    characterB: {fileID: 11400000, guid: 70924192341f4a244bdda3ba9cd56e47, type: 2}
+    restoranSenaryolari:
+    - {fileID: 11400000, guid: 1d5738aa87789194badd6ce6f2807a15, type: 2}
+    arcadeSenaryolari:
+    - {fileID: 11400000, guid: bc6999ee712c42a478ad9226fdfe43c4, type: 2}
+    barSenaryolari:
+    - {fileID: 0}
+    evSenaryolari:
+    - {fileID: 0}
+  - characterA: {fileID: 11400000, guid: 10ae37b55ea06ba4eadbd5ffcc3098c2, type: 2}
+    characterB: {fileID: 11400000, guid: bfd2e2416d70ccd49b0a798220ace20b, type: 2}
+    restoranSenaryolari:
+    - {fileID: 11400000, guid: 9a52827c143a2b147b31fe87df0910cf, type: 2}
+    arcadeSenaryolari:
+    - {fileID: 11400000, guid: c97b48fb2be4e214da648dc5587dd15a, type: 2}
+    barSenaryolari:
+    - {fileID: 0}
+    evSenaryolari:
+    - {fileID: 0}
+  - characterA: {fileID: 11400000, guid: 52f97840cc872804392c25a1f2b8175b, type: 2}
+    characterB: {fileID: 11400000, guid: bfd2e2416d70ccd49b0a798220ace20b, type: 2}
+    restoranSenaryolari:
+    - {fileID: 11400000, guid: 2febf5395b7f0194d9d3d8a02ad9feed, type: 2}
+    arcadeSenaryolari:
+    - {fileID: 11400000, guid: 91fd360ffe9fefb47bf6d2fb0330ffa3, type: 2}
     barSenaryolari:
     - {fileID: 0}
     evSenaryolari:
