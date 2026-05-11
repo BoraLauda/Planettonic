@@ -17,14 +17,16 @@ public class BrainDodgeCurve : MonoBehaviour
     public float gameSaniye = 20f; 
     public Image centerCharacterImage;
     
-    [Header("Kavis (Curve) Noktaları")]
-    public Transform sagAlt;
-    public Transform solAlt;
-    public Transform sagUst;
+    [Header("Kavis (Curve) Noktaları (6 Uç)")]
     public Transform solUst;
+    public Transform sagUst;
+    public Transform solOrta;
+    public Transform solAlt;
+    public Transform sagOrta;
+    public Transform sagAlt;
     public Transform merkezNoktasi; 
 
-    [Header("Uyarı İşaretleri (Sırayla: SağAlt, SolAlt, SağÜst, SolÜst)")]
+    [Header("Uyarı İşaretleri (Sırayla 6 Adet)")]
     public GameObject[] warningSigns;
     
     [Header("Zaman ve Hız Ayarları")]
@@ -152,8 +154,6 @@ public class BrainDodgeCurve : MonoBehaviour
             if (dateManager != null && questionToAsk != null)
             {
                 if(pauseImage != null) pauseImage.SetActive(true);
-                
-                
                 dateManager.PlayCurveDodgeDialogue(questionToAsk);
             }
             else NextTurn();
@@ -197,7 +197,6 @@ public class BrainDodgeCurve : MonoBehaviour
             
             if (dateManager != null)
             {
-              
                 dateManager.EndCurveDodgeGame(finalStars, finalHearts, TargetCharacter.Both);
             }
         }
@@ -232,17 +231,19 @@ public class BrainDodgeCurve : MonoBehaviour
         
         while (isGameActive)
         {
-            int yol1 = Random.Range(0, 8); 
+           
+            int yol1 = Random.Range(0, 6); 
             int yol2 = -1;
             
             if ((gameSaniye - timer) > timeToStartDouble && Random.value < doubleSpawnChance)
             {
-                yol2 = Random.Range(0, 8);
-                if(yol1 == yol2) yol2 = (yol2 + 1) % 8; 
+                yol2 = Random.Range(0, 6);
+                if(yol1 == yol2) yol2 = (yol2 + 1) % 6; 
             }
             
-            int uyari1 = GetWarningIndex(yol1);
-            int uyari2 = yol2 != -1 ? GetWarningIndex(yol2) : -1;
+          
+            int uyari1 = yol1;
+            int uyari2 = yol2;
 
             if(warningSigns.Length > uyari1) warningSigns[uyari1].SetActive(true);
             if(yol2 != -1 && warningSigns.Length > uyari2) warningSigns[uyari2].SetActive(true);
@@ -261,29 +262,24 @@ public class BrainDodgeCurve : MonoBehaviour
         }
     }
 
-    int GetWarningIndex(int yolIndex)
-    {
-        if(yolIndex == 0 || yolIndex == 4) return 0;
-        if(yolIndex == 1 || yolIndex == 6) return 1; 
-        if(yolIndex == 2 || yolIndex == 5) return 2; 
-        if(yolIndex == 3 || yolIndex == 7) return 3; 
-        return 0;
-    }
-
+   
     void SpawnKavisliRocket(int yolIndex)
     {
-        Transform baslangic = sagAlt;
-        Transform bitis = solAlt;
-    
+        Transform baslangic = solUst;
+        Transform bitis = sagUst;
+        Transform kontrol = merkezNoktasi; 
+
         switch(yolIndex) {
-            case 0: baslangic = sagAlt; bitis = solAlt; break;
-            case 1: baslangic = solAlt; bitis = sagAlt; break;
-            case 2: baslangic = sagUst; bitis = solUst; break; 
-            case 3: baslangic = solUst; bitis = sagUst; break;
-            case 4: baslangic = sagAlt; bitis = sagUst; break; 
-            case 5: baslangic = sagUst; bitis = sagAlt; break;
-            case 6: baslangic = solAlt; bitis = solUst; break; 
-            case 7: baslangic = solUst; bitis = solAlt; break;
+          
+            case 0: baslangic = solUst; bitis = sagUst; break;   // Sol Üstten -> Sağ Üste
+            case 1: baslangic = sagUst; bitis = solUst; break;   // Sağ Üstten -> Sol Üste
+            
+            case 2: baslangic = solOrta; bitis = solAlt; break;  // Sol Ortadan -> Sol Alta
+            case 3: baslangic = solAlt; bitis = solOrta; break;  // Sol Alttan -> Sol Ortaya
+
+          
+            case 4: baslangic = sagOrta; bitis = sagAlt; break;  // Sağ Ortadan -> Sağ Alta
+            case 5: baslangic = sagAlt; bitis = sagOrta; break;  // Sağ Alttan -> Sağ Ortaya
         }
 
         GameObject rocket = Instantiate(rocketPrefab, baslangic.position, Quaternion.identity, rocketParent);
@@ -291,9 +287,9 @@ public class BrainDodgeCurve : MonoBehaviour
         
         if(rScript != null)
         {
-            Vector3 hayaletKontrolNoktasi = (2f * merkezNoktasi.position) - (0.5f * baslangic.position) - (0.5f * bitis.position);
+            Vector3 hayaletKontrol = (2f * kontrol.position) - (0.5f * baslangic.position) - (0.5f * bitis.position);
 
-            rScript.Firlat(baslangic.position, hayaletKontrolNoktasi, bitis.position, currentRocketSpeed);
+            rScript.Firlat(baslangic.position, hayaletKontrol, bitis.position, currentRocketSpeed);
         }
     }
     
