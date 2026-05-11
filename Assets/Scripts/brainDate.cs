@@ -250,6 +250,11 @@ public class brainDate : MonoBehaviour
             {
                 rightDaterImage.sprite = foundRight;
             }
+
+           
+            if (leftDaterImage != null) leftDaterImage.gameObject.SetActive(!playThis.leftKarakterGelmedi);
+            if (rightDaterImage != null) rightDaterImage.gameObject.SetActive(!playThis.rightKarakterGelmedi);
+            
         }
 
         string currentLocation = "";
@@ -260,7 +265,12 @@ public class brainDate : MonoBehaviour
 
         if (DateSettings.leftChar != null)
         {
-            if (introLeftNameText != null) introLeftNameText.text = DateSettings.leftChar.characterName;
+            if (introLeftNameText != null) 
+            {
+                introLeftNameText.text = DateSettings.leftChar.characterName;
+               
+                introLeftNameText.gameObject.SetActive(playThis == null || !playThis.leftKarakterGelmedi); 
+            }
 
             foreach (var pref in DateSettings.leftChar.locationPreferences)
             {
@@ -274,7 +284,12 @@ public class brainDate : MonoBehaviour
 
         if (DateSettings.rightChar != null)
         {
-            if (introRightNameText != null) introRightNameText.text = DateSettings.rightChar.characterName;
+            if (introRightNameText != null) 
+            {
+                introRightNameText.text = DateSettings.rightChar.characterName;
+               
+                introRightNameText.gameObject.SetActive(playThis == null || !playThis.rightKarakterGelmedi);
+            }
 
             foreach (var pref in DateSettings.rightChar.locationPreferences)
             {
@@ -286,12 +301,23 @@ public class brainDate : MonoBehaviour
             }
         }
 
-        if (introLeftStarsCont != null) UpdateBar(introLeftStarsCont, leftStars);
-        if (introRightStarsCont != null) UpdateBar(introRightStarsCont, rightStars);
+       
+        if (introLeftStarsCont != null) 
+        {
+            UpdateBar(introLeftStarsCont, leftStars);
+            introLeftStarsCont.gameObject.SetActive(playThis == null || !playThis.leftKarakterGelmedi);
+        }
+        
+        if (introRightStarsCont != null) 
+        {
+            UpdateBar(introRightStarsCont, rightStars);
+            introRightStarsCont.gameObject.SetActive(playThis == null || !playThis.rightKarakterGelmedi);
+        }
 
         UpdateScoreUI();
         CheckHeartOfCircuitAvailability();
     }
+    
 
     void Update()
     {
@@ -305,6 +331,7 @@ public class brainDate : MonoBehaviour
             rightDaterImage.transform.localScale = Vector3.Lerp(rightDaterImage.transform.localScale, rightTargetScale, Time.deltaTime * focusSpeed);
         }
 
+        
         if (Input.GetKeyDown(KeyCode.F9) || Input.GetKeyDown(KeyCode.H))
         {
             leftStars = 3f;
@@ -332,6 +359,40 @@ public class brainDate : MonoBehaviour
             scenarioQueue.Clear();
             PlayNextInQueue();
         }
+
+        
+        if (Input.GetMouseButtonDown(0))
+        {
+            bool isDialogueActive = 
+                (leftDialoguePanel != null && leftDialoguePanel.activeInHierarchy) ||
+                (rightDialoguePanel != null && rightDialoguePanel.activeInHierarchy) ||
+                (chancellorPanel != null && chancellorPanel.activeInHierarchy) ||
+                (chaperonPanel != null && chaperonPanel.activeInHierarchy);
+                
+            bool isScoreActive = (evrenselSkorPaneli != null && evrenselSkorPaneli.activeInHierarchy);
+
+           
+            if (isDialogueActive || isScoreActive)
+            {
+                bool hasChoices = false;
+                
+              
+                if (currentScenario != null && lineIndex < currentScenario.allLines.Count)
+                {
+                    if (currentScenario.allLines[lineIndex].choices != null && currentScenario.allLines[lineIndex].choices.Count > 0)
+                    {
+                        hasChoices = true;
+                    }
+                }
+
+                
+                if (!hasChoices)
+                {
+                    OnScreenClick();
+                }
+            }
+        }
+      
 
         ManageMinigameInteractions();
     }
@@ -365,6 +426,17 @@ public class brainDate : MonoBehaviour
     {
         currentScenario = scenario;
         lineIndex = 0;
+        
+        if (leftDaterImage != null)
+        {
+            leftDaterImage.gameObject.SetActive(!scenario.leftKarakterGelmedi);
+        }
+            
+        if (rightDaterImage != null)
+        {
+            rightDaterImage.gameObject.SetActive(!scenario.rightKarakterGelmedi);
+        }
+
         DisplayLine();
     }
 
