@@ -73951,6 +73951,26 @@ MonoBehaviour:
     - {fileID: 0}
     evSenaryolari:
     - {fileID: 0}
+  - characterA: {fileID: 11400000, guid: 914c084cda719c149b3ce3ae947d0973, type: 2}
+    characterB: {fileID: 11400000, guid: d9880c6a901c8d643a786ea1b19f0372, type: 2}
+    restoranSenaryolari:
+    - {fileID: 11400000, guid: bc8513b2a24d17a428c1fe94a89e885b, type: 2}
+    arcadeSenaryolari:
+    - {fileID: 11400000, guid: 27f59cc204944a54ca68e376869465d9, type: 2}
+    barSenaryolari:
+    - {fileID: 0}
+    evSenaryolari:
+    - {fileID: 0}
+  - characterA: {fileID: 11400000, guid: 10ae37b55ea06ba4eadbd5ffcc3098c2, type: 2}
+    characterB: {fileID: 11400000, guid: 70924192341f4a244bdda3ba9cd56e47, type: 2}
+    restoranSenaryolari:
+    - {fileID: 11400000, guid: 5aa51dac9d1147648a6fd7557c1c9d7e, type: 2}
+    arcadeSenaryolari:
+    - {fileID: 11400000, guid: f8b2b525832a16f479f65c4bfd8ef20b, type: 2}
+    barSenaryolari:
+    - {fileID: 0}
+    evSenaryolari:
+    - {fileID: 0}
   defaultScenario: {fileID: 0}
   warningPanelSmall: {fileID: 215909102}
   warningPanelBig: {fileID: 1688793586}
