@@ -77,3 +77,8 @@ MonoBehaviour:
     diyalogDosyasi: {fileID: 11400000, guid: ef8004abc2318be4991694df2b539857, type: 2}
   - targetCharacter: {fileID: 11400000, guid: bfd2e2416d70ccd49b0a798220ace20b, type: 2}
     diyalogDosyasi: {fileID: 11400000, guid: 9aff158f87e6f4246814bb7bae91e503, type: 2}
+  curveDodgeQuestions:
+  - targetCharacter: {fileID: 11400000, guid: 70924192341f4a244bdda3ba9cd56e47, type: 2}
+    diyalogDosyasi: {fileID: 11400000, guid: ba7992e47a7454948bbff5f54d069516, type: 2}
+  - targetCharacter: {fileID: 11400000, guid: 70924192341f4a244bdda3ba9cd56e47, type: 2}
+    diyalogDosyasi: {fileID: 11400000, guid: bca18e870bf0474419fc07b9f66432de, type: 2}

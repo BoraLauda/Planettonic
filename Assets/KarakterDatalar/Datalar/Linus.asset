@@ -17,7 +17,7 @@ MonoBehaviour:
   profileIcon: {fileID: 21300000, guid: 243dec76f289a0c4f86cf1cd834c6e39, type: 3}
   dodgeTheQuestionIkonu: {fileID: -5726526971280107390, guid: 7d8893f829515954da8db8356faa17df, type: 3}
   menuMinigameIkonu: {fileID: -5726526971280107390, guid: 7d8893f829515954da8db8356faa17df, type: 3}
-  portraitImage: {fileID: 21300000, guid: dc24e77c8220d5b43bd418e911809b3b, type: 3}
+  portraitImage: {fileID: 21300000, guid: 19b8c42c96185954db27cd2f9406e0a0, type: 3}
   fullName: Linus
   demographicsInfo: 20 || Male || Lawyer
   relationshipGoals: Casual || Kids
@@ -99,3 +99,8 @@ MonoBehaviour:
     diyalogDosyasi: {fileID: 11400000, guid: bd65eee06b455a34cb1cf4d7057cb5d2, type: 2}
   - targetCharacter: {fileID: 11400000, guid: 74736f0dd50e8ce448a5eb50e16802ba, type: 2}
     diyalogDosyasi: {fileID: 11400000, guid: b7ba85d75165d8c4dba71ac0dba92f5b, type: 2}
+  curveDodgeQuestions:
+  - targetCharacter: {fileID: 11400000, guid: 74736f0dd50e8ce448a5eb50e16802ba, type: 2}
+    diyalogDosyasi: {fileID: 11400000, guid: 90a03b38d86856f4ea9a5c4869ed168e, type: 2}
+  - targetCharacter: {fileID: 11400000, guid: 74736f0dd50e8ce448a5eb50e16802ba, type: 2}
+    diyalogDosyasi: {fileID: 11400000, guid: 6ab2c227f74df63468aac78ca8bea000, type: 2}

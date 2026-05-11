@@ -46,6 +46,6 @@ MonoBehaviour:
     characterName: Io
     characterSprite: {fileID: 0}
     sentence: "\rI guess I kind of answered my own question with that one, huh...\r\n"
-    eventTrigger: StartDodgeGame
+    eventTrigger: StartCurveDodge
     choices: []
   nextScenario: {fileID: 11400000, guid: c25ab6fc40348db4da2af83ab18dcc7d, type: 2}

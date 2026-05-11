@@ -14,14 +14,14 @@ public class TabHighlightManager : MonoBehaviour
     private int activeTabIndex = 0;   
     private Vector2 targetPosition;  
     private Coroutine returnCoroutine; 
+    private bool isStarted = false;
 
     void Start()
     {
-        if (tabButtons.Length > 0)
+        if (tabButtons.Length > 0 && activeTabIndex < tabButtons.Length)
         {
-          
             targetPosition = tabButtons[activeTabIndex].anchoredPosition;
-            highlightBox.anchoredPosition = targetPosition;
+            if (highlightBox != null) highlightBox.anchoredPosition = targetPosition;
         }
 
         for (int i = 0; i < tabButtons.Length; i++)
@@ -35,23 +35,38 @@ public class TabHighlightManager : MonoBehaviour
             enterEntry.callback.AddListener((data) => { OnHoverEnter(index); });
             trigger.triggers.Add(enterEntry);
 
-           
             EventTrigger.Entry exitEntry = new EventTrigger.Entry { eventID = EventTriggerType.PointerExit };
             exitEntry.callback.AddListener((data) => { OnHoverExit(); });
             trigger.triggers.Add(exitEntry);
 
-           
             Button btn = tabButtons[i].GetComponent<Button>();
             if (btn != null)
             {
-                btn.onClick.AddListener(() => { SetActiveTab(index); });
+                btn.onClick.AddListener(() => { 
+                    SetActiveTab(index); 
+                    
+                    // --- İŞTE EKLENEN OTOMATİK SİHİR BURASI ---
+                    // Butona basıldığında manuel ayar beklemeden APPler'i bulup panelleri değiştirir!
+                    APPler app = FindFirstObjectByType<APPler>();
+                    if (app != null) app.SwitchTab(index);
+                    // -------------------------------------------
+                });
             }
+        }
+        isStarted = true;
+    }
+
+    void OnEnable()
+    {
+        if (isStarted && tabButtons.Length > 0 && activeTabIndex < tabButtons.Length)
+        {
+            targetPosition = tabButtons[activeTabIndex].anchoredPosition;
+            if (highlightBox != null) highlightBox.anchoredPosition = targetPosition;
         }
     }
 
     void Update()
     {
-      
         if (highlightBox != null)
         {
             highlightBox.anchoredPosition = Vector2.Lerp(highlightBox.anchoredPosition, targetPosition, Time.deltaTime * animSpeed);
@@ -60,20 +75,16 @@ public class TabHighlightManager : MonoBehaviour
 
     private void OnHoverEnter(int targetIndex)
     {
-       
         if (returnCoroutine != null)
         {
             StopCoroutine(returnCoroutine);
             returnCoroutine = null;
         }
-        
-        
         targetPosition = tabButtons[targetIndex].anchoredPosition;
     }
 
     private void OnHoverExit()
     {
-        
         if (gameObject.activeInHierarchy)
         {
             returnCoroutine = StartCoroutine(ReturnToActiveDelayed());
@@ -82,17 +93,21 @@ public class TabHighlightManager : MonoBehaviour
 
     private IEnumerator ReturnToActiveDelayed()
     {
-        
         yield return new WaitForSeconds(returnDelay);
-        
         targetPosition = tabButtons[activeTabIndex].anchoredPosition;
     }
 
-   
     public void SetActiveTab(int newIndex)
     {
         activeTabIndex = newIndex;
         OnHoverEnter(activeTabIndex); 
-        
+    }
+
+    public void ForceSetTab(int newIndex)
+    {
+        if (tabButtons == null || newIndex >= tabButtons.Length || newIndex < 0) return;
+        activeTabIndex = newIndex;
+        targetPosition = tabButtons[newIndex].anchoredPosition;
+        if (highlightBox != null) highlightBox.anchoredPosition = targetPosition;
     }
 }
