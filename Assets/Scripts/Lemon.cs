@@ -30,6 +30,11 @@ public class Lemon : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
                 {
                     KokteylManager.Instance.LimonEkle();
                 }
+
+                if (ShakerInteraction.Instance != null)
+                {
+                    ShakerInteraction.Instance.TriggerBlup();
+                }
                 
                 gameObject.SetActive(false);
             }

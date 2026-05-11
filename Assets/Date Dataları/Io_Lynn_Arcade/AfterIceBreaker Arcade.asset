@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f832b14936fc2048824d9308b14ded6, type: 3}
   m_Name: AfterIceBreaker Arcade
   m_EditorClassIdentifier: 
+  leftKarakterGelmedi: 0
+  rightKarakterGelmedi: 0
   locationName: 
   locationBackground: {fileID: 0}
   allLines:
@@ -35,17 +37,17 @@ MonoBehaviour:
     choices:
     - choices: "It\u2019s unfair then, you have experience."
       nextScenario: {fileID: 11400000, guid: 4ef1488703dd53b499767d79f64a174a, type: 2}
-      target: 0
+      target: 1
       starReward: 1
       heartReward: 0
     - choices: Wait, you were here? Like, on a date?
       nextScenario: {fileID: 11400000, guid: c65556dba22adfa4090ce5f500767050, type: 2}
-      target: 0
+      target: 1
       starReward: 0.5
       heartReward: 0
     - choices: Oh, how did.. that date work out for you?
       nextScenario: {fileID: 11400000, guid: a677ba681db544b4493be381a8444c45, type: 2}
-      target: 0
+      target: 1
       starReward: 0
       heartReward: 0
   nextScenario: {fileID: 0}

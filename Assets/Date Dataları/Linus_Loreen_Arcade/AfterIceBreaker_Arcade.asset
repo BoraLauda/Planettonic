@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f832b14936fc2048824d9308b14ded6, type: 3}
   m_Name: AfterIceBreaker_Arcade
   m_EditorClassIdentifier: 
+  leftKarakterGelmedi: 0
+  rightKarakterGelmedi: 0
   locationName: 
   locationBackground: {fileID: 0}
   allLines:
@@ -36,17 +38,17 @@ MonoBehaviour:
     choices:
     - choices: adults tend to get rigid with age.
       nextScenario: {fileID: 11400000, guid: 3a9829c07ac0e16448649d47e46c2b66, type: 2}
-      target: 0
+      target: 1
       starReward: 1
       heartReward: 0
     - choices: they must come up with fun stuff.
       nextScenario: {fileID: 11400000, guid: a7c9c540a76b4d34f9a1ec77d590c4ee, type: 2}
-      target: 0
+      target: 1
       starReward: 0.5
       heartReward: 0
     - choices: Icebreakers tend to get boring after a while, though.
       nextScenario: {fileID: 11400000, guid: 36ceccb2abc04ff45b4d9f33e584313a, type: 2}
-      target: 0
+      target: 1
       starReward: 0
       heartReward: 0
   nextScenario: {fileID: 0}

@@ -7,11 +7,8 @@ public class KokteylSpam : MonoBehaviour
     public RectTransform shakerToShake; 
     
     [Header("Oyun Modu")]
+    [Tooltip("Stir ekranındaysa işaretle (Sağ-Sol). Shake ekranındaysa işareti kaldır (Yukarı-Aşağı).")]
     public bool buEkranStirringMi = false;
-    
-    [Header("Tuş Ayarları")]
-    public KeyCode key1 = KeyCode.W; 
-    public KeyCode key2 = KeyCode.S; 
     
     [Header("İlerleme Ayarları")]
     public float progressPerPress = 10f;
@@ -21,6 +18,12 @@ public class KokteylSpam : MonoBehaviour
     [Header("Sallanma/Dönme Ayarları")]
     public float shakeIntensity = 30f;  
     public float shakeSmoothness = 15f; 
+
+    
+    private KeyCode key1; 
+    private KeyCode key2;
+    private KeyCode altKey1; 
+    private KeyCode altKey2; 
 
     private float currentProgress = 0f;
     private KeyCode lastPressedKey = KeyCode.None;
@@ -48,6 +51,24 @@ public class KokteylSpam : MonoBehaviour
         currentProgress = 0f;
         lastPressedKey = KeyCode.None;
         if (progressBar != null) progressBar.fillAmount = 0f;
+
+     
+        if (buEkranStirringMi)
+        {
+            
+            key1 = KeyCode.LeftArrow;
+            key2 = KeyCode.RightArrow;
+            altKey1 = KeyCode.A;
+            altKey2 = KeyCode.D;
+        }
+        else
+        {
+            
+            key1 = KeyCode.UpArrow;
+            key2 = KeyCode.DownArrow;
+            altKey1 = KeyCode.W;
+            altKey2 = KeyCode.S;
+        }
     }
 
     void Update()
@@ -62,7 +83,8 @@ public class KokteylSpam : MonoBehaviour
 
         timeSinceLastPress += Time.deltaTime;
 
-        if (Input.GetKeyDown(key1))
+      
+        if (Input.GetKeyDown(key1) || Input.GetKeyDown(altKey1))
         {
             if (lastPressedKey != key1)
             {
@@ -72,7 +94,7 @@ public class KokteylSpam : MonoBehaviour
                 timeSinceLastPress = 0f;
             }
         }
-        else if (Input.GetKeyDown(key2))
+        else if (Input.GetKeyDown(key2) || Input.GetKeyDown(altKey2))
         {
             if (lastPressedKey != key2)
             {
@@ -94,10 +116,12 @@ public class KokteylSpam : MonoBehaviour
             
             if (buEkranStirringMi)
             {
+                
                 shakerToShake.localRotation = initialRotation * Quaternion.Euler(0, 0, currentShakeOffset);
             }
             else
             {
+                
                 shakerToShake.anchoredPosition = new Vector2(initialShakerPosition.x, initialShakerPosition.y + currentShakeOffset);
             }
         }
@@ -128,6 +152,7 @@ public class KokteylSpam : MonoBehaviour
                 KokteylManager.Instance.isShaken = true;
             }
 
+          
             KokteylManager.Instance.StartPhase(KokteylManager.GamePhase.Preparation);
         }
     }
