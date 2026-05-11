@@ -195,7 +195,7 @@ public class brainDODGE : MonoBehaviour
 
             if (currentCharData != null)
             {
-                // Hedefe kilitlenen yeni fonksiyonu çağırıyoruz
+                
                 questionToAsk = GetTargetedQuestion(currentCharData.dodgeQuestions, opponentCharData);
             }
 
@@ -270,8 +270,8 @@ public class brainDODGE : MonoBehaviour
             
             if (dateManager != null)
             {
-                dateManager.AddReward(finalStars, finalHearts, TargetCharacter.Both);
-                dateManager.EndDodgeGame();
+              
+                dateManager.EndDodgeGame(finalStars, finalHearts, TargetCharacter.Both);
             }
         }
         else

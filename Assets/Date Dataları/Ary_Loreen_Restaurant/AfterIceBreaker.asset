@@ -1,0 +1,120 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f832b14936fc2048824d9308b14ded6, type: 3}
+  m_Name: AfterIceBreaker
+  m_EditorClassIdentifier: 
+  locationName: 
+  locationBackground: {fileID: 0}
+  allLines:
+  - side: 1
+    characterName: Ary
+    characterSprite: {fileID: 21300000, guid: ece41423a199ba04f8804d355c231cbb, type: 3}
+    sentence: That was truly pointless.
+    eventTrigger: 
+    choices: []
+  - side: 0
+    characterName: Loreen
+    characterSprite: {fileID: 21300000, guid: 16376f7b27e7cca45b652fe062815ecc, type: 3}
+    sentence: Did you have something better in mind?
+    eventTrigger: 
+    choices: []
+  - side: 1
+    characterName: Ary
+    characterSprite: {fileID: 0}
+    sentence: Yeah, like just talking.
+    eventTrigger: 
+    choices: []
+  - side: 3
+    characterName: Chaperon
+    characterSprite: {fileID: 0}
+    sentence: Would you like me to register that as a feedback?
+    eventTrigger: 
+    choices: []
+  - side: 2
+    characterName: Counselor
+    characterSprite: {fileID: 0}
+    sentence: "You can\u2019t keep butting in like that. Give them some space."
+    eventTrigger: 
+    choices: []
+  - side: 3
+    characterName: Chaperon
+    characterSprite: {fileID: 0}
+    sentence: "You\u2019re impossible."
+    eventTrigger: 
+    choices: []
+  - side: 2
+    characterName: Counselor
+    characterSprite: {fileID: 0}
+    sentence: "Woah, sorry babe. Didn\u2019t mean to upset you. Wanna talk about
+      it?\r\n"
+    eventTrigger: 
+    choices: []
+  - side: 3
+    characterName: Chaperon
+    characterSprite: {fileID: 0}
+    sentence: Can I?
+    eventTrigger: 
+    choices: []
+  - side: 2
+    characterName: Counselor
+    characterSprite: {fileID: 0}
+    sentence: Not really.
+    eventTrigger: 
+    choices: []
+  - side: 3
+    characterName: Chaperon
+    characterSprite: {fileID: 0}
+    sentence: "Yeah, that\u2019s what I thought."
+    eventTrigger: 
+    choices: []
+  - side: 0
+    characterName: Loreen
+    characterSprite: {fileID: 21300000, guid: 821994f203fef8344a71dda283821891, type: 3}
+    sentence: "...so that\u2019s how I ended up falling off my bike. Twice in the
+      same day."
+    eventTrigger: 
+    choices: []
+  - side: 1
+    characterName: Ary
+    characterSprite: {fileID: 0}
+    sentence: Oh I would do anything to see footage of that.
+    eventTrigger: 
+    choices: []
+  - side: 0
+    characterName: Loreen
+    characterSprite: {fileID: 0}
+    sentence: "Sadly, there\u2019s none. Can\u2019t believe you\u2019re so eager
+      to watch me suffer."
+    eventTrigger: 
+    choices: []
+  - side: 1
+    characterName: Ary
+    characterSprite: {fileID: 0}
+    sentence: 
+    eventTrigger: 
+    choices:
+    - choices: "I\u2019m not. You just made it sound funny."
+      nextScenario: {fileID: 11400000, guid: 63ca163597a5c00439371114320e69b4, type: 2}
+      target: 1
+      starReward: 0.5
+      heartReward: 0
+    - choices: I just love watching people struggle a little.
+      nextScenario: {fileID: 11400000, guid: 6a846b14d69f2994aae4b6a66e4dfa3b, type: 2}
+      target: 1
+      starReward: 1
+      heartReward: 0
+    - choices: I like watching everyone suffer.
+      nextScenario: {fileID: 11400000, guid: c331b3c31f919fb47b6a9f4ff155136c, type: 2}
+      target: 1
+      starReward: 0
+      heartReward: 0
+  nextScenario: {fileID: 0}

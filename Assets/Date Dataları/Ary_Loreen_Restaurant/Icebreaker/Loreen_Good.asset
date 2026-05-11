@@ -17,29 +17,26 @@ MonoBehaviour:
   allLines:
   - side: 0
     characterName: Loreen
-    characterSprite: {fileID: 21300000, guid: 146a6ce1894c7084984f7771ba7e263e, type: 3}
-    sentence: "What was your biggest fuck-up in a courtroom? I\u2019m talking dream-hauntingly
-      bad."
+    characterSprite: {fileID: 21300000, guid: 821994f203fef8344a71dda283821891, type: 3}
+    sentence: So, what do you study to become a model?
     eventTrigger: 
     choices: []
   - side: 1
     characterName: Ary
     characterSprite: {fileID: 21300000, guid: ece41423a199ba04f8804d355c231cbb, type: 3}
-    sentence: "I accidentally misgendered my client\u2019s wife thinking she was
-      his brother. Then I also misgendered their daughter. I was hired very last
-      minute so I had to skim their file."
+    sentence: "Couldn\u2019t tell you."
     eventTrigger: 
     choices: []
   - side: 0
     characterName: Loreen
     characterSprite: {fileID: 0}
-    sentence: Wow! Let me guess, they were neptunian?
+    sentence: "So secretive. You\u2019re not a uni graduate, then?"
     eventTrigger: 
     choices: []
   - side: 1
     characterName: Ary
     characterSprite: {fileID: 0}
-    sentence: "Look I\u2019m still very ashamed, okay?"
+    sentence: "No, I\u2019m a secret third thing."
     eventTrigger: 
     choices: []
   nextScenario: {fileID: 0}

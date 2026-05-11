@@ -1,0 +1,128 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f832b14936fc2048824d9308b14ded6, type: 3}
+  m_Name: ContinueMenu
+  m_EditorClassIdentifier: 
+  locationName: 
+  locationBackground: {fileID: 0}
+  allLines:
+  - side: 1
+    characterName: Ary
+    characterSprite: {fileID: 21300000, guid: ece41423a199ba04f8804d355c231cbb, type: 3}
+    sentence: So, why opera? Especially in this day and age?
+    eventTrigger: 
+    choices: []
+  - side: 0
+    characterName: Nemelise
+    characterSprite: {fileID: 21300000, guid: b5a5cc5d83848d843aadeaf9b5e083f1, type: 3}
+    sentence: "It\u2019s because I like opera, I always have. What, you would\u2019ve
+      expected something else from me?"
+    eventTrigger: 
+    choices: []
+  - side: 1
+    characterName: Ary
+    characterSprite: {fileID: 0}
+    sentence: "Mm, Neptunians tend to have a lot of bottled up noise inside of them,
+      you know? That\u2019s why the best metal bands are rooted in Neptune."
+    eventTrigger: 
+    choices: []
+  - side: 0
+    characterName: Nemelise
+    characterSprite: {fileID: 0}
+    sentence: "You know, I\u2019ve found that opening up via emotion and care almost
+      always works better than doing it with anger and noise."
+    eventTrigger: 
+    choices: []
+  - side: 1
+    characterName: Ary
+    characterSprite: {fileID: 0}
+    sentence: "I\u2019ll have to disagree with that, my experience has been the exact
+      opposite."
+    eventTrigger: 
+    choices: []
+  - side: 0
+    characterName: Nemelise
+    characterSprite: {fileID: 0}
+    sentence: 'And what kind of experience is that?
+
+'
+    eventTrigger: 
+    choices: []
+  - side: 1
+    characterName: Ary
+    characterSprite: {fileID: 0}
+    sentence: I used to play the bass in a band, a grunge band to be specific. We
+      used to be all about anger and noise.
+    eventTrigger: 
+    choices: []
+  - side: 0
+    characterName: Nemelise
+    characterSprite: {fileID: 0}
+    sentence: "Grunge, huh? I\u2019ll have to be honest, I find that kind of genre
+      to be chaotic and immature."
+    eventTrigger: 
+    choices: []
+  - side: 1
+    characterName: Ary
+    characterSprite: {fileID: 0}
+    sentence: "It\u2019s controlled chaos, unlike what most might think."
+    eventTrigger: 
+    choices: []
+  - side: 0
+    characterName: Nemelise
+    characterSprite: {fileID: 0}
+    sentence: Uh huh. Sure, go on.
+    eventTrigger: 
+    choices: []
+  - side: 1
+    characterName: Ary
+    characterSprite: {fileID: 0}
+    sentence: "Prejudice gets you nowhere, especially when it comes to music. I appreciate
+      opera, I just don\u2019t like the lack of rythm. I bet I could change your
+      mind, teach you a thing or two if you ever wish to see me play."
+    eventTrigger: 
+    choices: []
+  - side: 0
+    characterName: Nemelise
+    characterSprite: {fileID: 0}
+    sentence: Teach me? What exactly are you offering to teach here?
+    eventTrigger: 
+    choices: []
+  - side: 1
+    characterName: Ary
+    characterSprite: {fileID: 0}
+    sentence: What artists like you tend to overlook; rythm.
+    eventTrigger: 
+    choices: []
+  - side: 0
+    characterName: Nemelise
+    characterSprite: {fileID: 0}
+    sentence: 
+    eventTrigger: 
+    choices:
+    - choices: "I\u2019m good but I\u2019m sure you\u2019d love to show off."
+      nextScenario: {fileID: 11400000, guid: c31ac04ef86c5cc48b3cc66570ba4790, type: 2}
+      target: 0
+      starReward: 1
+      heartReward: 0
+    - choices: You really think a grunge bassist can teach a classically trained
+        singer about music?
+      nextScenario: {fileID: 11400000, guid: 72925fed781e2194db50cb506f37ab08, type: 2}
+      target: 0
+      starReward: 0.5
+      heartReward: 0
+    - choices: "I\u2019ll pass, it\u2019s really not my taste."
+      nextScenario: {fileID: 11400000, guid: e7652c3f920734c449cc4da3f3caae5e, type: 2}
+      target: 0
+      starReward: 0
+      heartReward: 0
+  nextScenario: {fileID: 0}

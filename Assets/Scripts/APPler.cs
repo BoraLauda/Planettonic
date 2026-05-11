@@ -28,8 +28,9 @@ public class APPler : MonoBehaviour
     public Characters AryData;
     public Characters LoreenData;
     public Characters NemeliseData;
+    public Characters LynnData;
+    public Characters DanteData;
     
-    [Header("Sonradan Açılacak Karakterler")]
     public Characters JettyData;
     public Characters LinusData;
     
@@ -40,6 +41,7 @@ public class APPler : MonoBehaviour
     public TMP_Text ortakTamHobbies;
     public TMP_Text ortakTamFoodPrefs;
     public TMP_Text ortakTamQuote;
+    public Image[] largeScreenRatingIcons; 
     
     [Header("Küçük Ekran Yazıları")]
     public TMP_Text ortakSmallFullName;
@@ -48,6 +50,7 @@ public class APPler : MonoBehaviour
     public TMP_Text ortakSmallHobbies;
     public TMP_Text ortakSmallFoodPrefs;
     public TMP_Text ortakSmallQuote;
+    public Image[] smallScreenRatingIcons; 
 
     public GameObject confirmButton;
 
@@ -68,6 +71,14 @@ public class APPler : MonoBehaviour
     public List<GameObject> smallPages; 
     public List<GameObject> largePages; 
 
+    [Header("Sekme Panelleri (Küçük Ekran)")]
+    public GameObject[] smallTabPanels;
+
+    [Header("Sekme Panelleri (Büyük Ekran)")]
+    public GameObject[] largeTabPanels;
+
+    public int currentActiveTab = 0;
+
     public List<MatchScenario> coupleScenarios; 
     public DialogueDataları defaultScenario;
 
@@ -75,7 +86,6 @@ public class APPler : MonoBehaviour
     public GameObject warningPanelBig;   
     public float warningDuration = 2.0f;
 
-    [Header("UI Kilitli Prefab (image_6 Prefabı)")]
     public GameObject lockedPrefab; 
 
     [Header("Mekan UI Paketleri Küçük")]
@@ -98,7 +108,6 @@ public class APPler : MonoBehaviour
     public GameObject noReviewsMessageSmall; 
     public GameObject noReviewsMessageLarge;
 
-    [Header("Match Butonu (Onay Sistemi)")]
     public Button btnMainMatchSmall; 
     public Button btnMainMatchLarge; 
     private string currentSelectedLocation = "";
@@ -109,6 +118,7 @@ public class APPler : MonoBehaviour
     void Start()
     {
         if (currentPageSayı == 0 && pageHistory.Count == 0) OpenPageByIndex(0, false);
+        SwitchTab(0);
         RefreshAllUI();
     }
 
@@ -119,12 +129,12 @@ public class APPler : MonoBehaviour
         
         for (int i = 0; i < smallPages.Count; i++)
         {
-            smallPages[i].SetActive(i == index);
+            if(smallPages[i] != null) smallPages[i].SetActive(i == index);
         }
         
         for (int i = 0; i < largePages.Count; i++)
         {
-            if (i < largePages.Count) 
+            if (i < largePages.Count && largePages[i] != null) 
             {
                 largePages[i].SetActive(i == index);
             }
@@ -138,6 +148,8 @@ public class APPler : MonoBehaviour
         if (backButtonLarge != null) backButtonLarge.SetActive(shouldShowBackButton);
 
         if (index == 1) RefreshSlots(); 
+
+        SwitchTab(currentActiveTab);
         
         RefreshAllUI();
     }
@@ -174,6 +186,38 @@ public class APPler : MonoBehaviour
         if (ortakSmallHobbies != null) ortakSmallHobbies.text = profile.hobbies;
         if (ortakSmallFoodPrefs != null) ortakSmallFoodPrefs.text = profile.foodPreferenceText;
         if (ortakSmallQuote != null) ortakSmallQuote.text = profile.quoteText;
+
+        if (smallScreenRatingIcons != null)
+        {
+            for (int i = 0; i < smallScreenRatingIcons.Length; i++)
+            {
+                if (profile.profileRatingIcons != null && i < profile.profileRatingIcons.Count)
+                {
+                    smallScreenRatingIcons[i].sprite = profile.profileRatingIcons[i];
+                    smallScreenRatingIcons[i].gameObject.SetActive(true);
+                }
+                else
+                {
+                    smallScreenRatingIcons[i].gameObject.SetActive(false);
+                }
+            }
+        }
+
+        if (largeScreenRatingIcons != null)
+        {
+            for (int i = 0; i < largeScreenRatingIcons.Length; i++)
+            {
+                if (profile.profileRatingIcons != null && i < profile.profileRatingIcons.Count)
+                {
+                    largeScreenRatingIcons[i].sprite = profile.profileRatingIcons[i];
+                    largeScreenRatingIcons[i].gameObject.SetActive(true);
+                }
+                else
+                {
+                    largeScreenRatingIcons[i].gameObject.SetActive(false);
+                }
+            }
+        }
 
         OpenPageByIndex(2);
     }
@@ -279,10 +323,8 @@ public class APPler : MonoBehaviour
                 }
             }
 
-            
             if (selectedLeft != null && selectedLeft != allSlots[i].myProfile)
             {
-                
                 if (selectedLeft.cinsiyet == cGender)
                 {
                     isGrayedOut = true; 
@@ -290,7 +332,6 @@ public class APPler : MonoBehaviour
             }
             else if (selectedRight != null && selectedRight != allSlots[i].myProfile)
             {
-                
                 if (selectedRight.cinsiyet == cGender)
                 {
                     isGrayedOut = true;
@@ -330,7 +371,6 @@ public class APPler : MonoBehaviour
             }
         }
 
-     
         foreach (var img in rightHeartImages)
         {
             if (img == null) continue;
@@ -646,7 +686,6 @@ public class APPler : MonoBehaviour
 
         ReviewDatabase db = JsonUtility.FromJson<ReviewDatabase>(jsonLoad);
 
-       
         if (db == null || db.allPastDates == null || db.allPastDates.Count == 0)
         {
             if (noReviewsMessageSmall != null) noReviewsMessageSmall.SetActive(true);
@@ -654,7 +693,6 @@ public class APPler : MonoBehaviour
             return;
         }
 
-      
         if (noReviewsMessageSmall != null) noReviewsMessageSmall.SetActive(false);
         if (noReviewsMessageLarge != null) noReviewsMessageLarge.SetActive(false);
 
@@ -696,8 +734,52 @@ public class APPler : MonoBehaviour
         if (AryData != null && AryData.characterName == charName) return AryData.profileIcon; 
         if (LoreenData != null && LoreenData.characterName == charName) return LoreenData.profileIcon; 
         if (NemeliseData != null && NemeliseData.characterName == charName) return NemeliseData.profileIcon;
+        if (DanteData != null && DanteData.characterName == charName) return DanteData.profileIcon;
+        if (LynnData != null && LynnData.characterName == charName) return LynnData.profileIcon;
         return defaultIcon;
     }
+    
+    public void SyncLayoutWithCurrentPage()
+    {
+        OpenPageByIndex(currentPageSayı, false);
+        SwitchTab(currentActiveTab);
+    }
+
+    public void SwitchTab(int tabIndex)
+    {
+        currentActiveTab = tabIndex;
+
+        if (smallTabPanels != null)
+        {
+            for (int i = 0; i < smallTabPanels.Length; i++)
+            {
+                if (smallTabPanels[i] != null) 
+                    smallTabPanels[i].SetActive(i == tabIndex);
+            }
+        }
+
+        if (largeTabPanels != null)
+        {
+            for (int i = 0; i < largeTabPanels.Length; i++)
+            {
+                if (largeTabPanels[i] != null) 
+                    largeTabPanels[i].SetActive(i == tabIndex);
+            }
+        }
+
+        TabHighlightManager[] tabManagers = FindObjectsByType<TabHighlightManager>(FindObjectsInactive.Include, FindObjectsSortMode.None);
+        foreach (var tabManager in tabManagers)
+        {
+            tabManager.ForceSetTab(tabIndex);
+        }
+        
+        if (tabIndex == 2) 
+        {
+            LoadReviews();
+        }
+    }
+    
+    
 }
 
 [System.Serializable]

@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Nemelise
   m_EditorClassIdentifier: 
   characterName: Nemelise
+  cinsiyet: 0
   profileIcon: {fileID: 21300000, guid: b5a5cc5d83848d843aadeaf9b5e083f1, type: 3}
   dodgeTheQuestionIkonu: {fileID: 21300000, guid: b5a5cc5d83848d843aadeaf9b5e083f1, type: 3}
   menuMinigameIkonu: {fileID: 21300000, guid: b5a5cc5d83848d843aadeaf9b5e083f1, type: 3}
@@ -22,6 +23,7 @@ MonoBehaviour:
   relationshipGoals: 
   hobbies: 
   foodPreferenceText: 
+  profileRatingIcons: []
   quoteText: 
   locationPreferences:
   - locationName: Restaurant
@@ -40,18 +42,34 @@ MonoBehaviour:
     diyalogDosyasi: {fileID: 11400000, guid: fd4a7a270db21014fb9b218054d59f41, type: 2}
   - targetCharacter: {fileID: 11400000, guid: 5f6e0fde49813654aa1d61918d175f26, type: 2}
     diyalogDosyasi: {fileID: 11400000, guid: fd4a7a270db21014fb9b218054d59f41, type: 2}
+  - targetCharacter: {fileID: 11400000, guid: d9880c6a901c8d643a786ea1b19f0372, type: 2}
+    diyalogDosyasi: {fileID: 11400000, guid: c013148bdebe6a0439b8f7b1f8b0f5f6, type: 2}
+  - targetCharacter: {fileID: 11400000, guid: d9880c6a901c8d643a786ea1b19f0372, type: 2}
+    diyalogDosyasi: {fileID: 11400000, guid: f06b72a0d22bc0f438547653d8d35c5c, type: 2}
   iceBreakerMid:
   - targetCharacter: {fileID: 11400000, guid: 5f6e0fde49813654aa1d61918d175f26, type: 2}
     diyalogDosyasi: {fileID: 11400000, guid: 4483b5dccec097245a4e1839a3aeb702, type: 2}
   - targetCharacter: {fileID: 11400000, guid: 5f6e0fde49813654aa1d61918d175f26, type: 2}
     diyalogDosyasi: {fileID: 11400000, guid: dde6d4fa265e2ed4a9a40024fd6963b4, type: 2}
+  - targetCharacter: {fileID: 11400000, guid: d9880c6a901c8d643a786ea1b19f0372, type: 2}
+    diyalogDosyasi: {fileID: 11400000, guid: 78ae4080ecc87b0428f5446a77918ab4, type: 2}
+  - targetCharacter: {fileID: 11400000, guid: d9880c6a901c8d643a786ea1b19f0372, type: 2}
+    diyalogDosyasi: {fileID: 11400000, guid: 78dca51a5f92dca488f481c973156f84, type: 2}
   iceBreakerBad:
   - targetCharacter: {fileID: 11400000, guid: 5f6e0fde49813654aa1d61918d175f26, type: 2}
     diyalogDosyasi: {fileID: 11400000, guid: 7e11c7949ea7153428252aeb97eb01a3, type: 2}
   - targetCharacter: {fileID: 11400000, guid: 5f6e0fde49813654aa1d61918d175f26, type: 2}
     diyalogDosyasi: {fileID: 11400000, guid: 5d775c9c5ad47d444be80e62836f9d72, type: 2}
+  - targetCharacter: {fileID: 11400000, guid: d9880c6a901c8d643a786ea1b19f0372, type: 2}
+    diyalogDosyasi: {fileID: 11400000, guid: 59994ab1f04601847ac0b19ae087b111, type: 2}
+  - targetCharacter: {fileID: 11400000, guid: d9880c6a901c8d643a786ea1b19f0372, type: 2}
+    diyalogDosyasi: {fileID: 11400000, guid: a4f0d906363adb34db44fc7e67d30860, type: 2}
   dodgeQuestions:
   - targetCharacter: {fileID: 11400000, guid: 5f6e0fde49813654aa1d61918d175f26, type: 2}
     diyalogDosyasi: {fileID: 11400000, guid: de4aaf4654d21a942b485356c448035e, type: 2}
   - targetCharacter: {fileID: 11400000, guid: 5f6e0fde49813654aa1d61918d175f26, type: 2}
     diyalogDosyasi: {fileID: 11400000, guid: 2e11bfecccd177a48a69e81f2777de1c, type: 2}
+  - targetCharacter: {fileID: 11400000, guid: d9880c6a901c8d643a786ea1b19f0372, type: 2}
+    diyalogDosyasi: {fileID: 11400000, guid: 5b2fe5446955b4f43b5aa81eeab0e213, type: 2}
+  - targetCharacter: {fileID: 11400000, guid: d9880c6a901c8d643a786ea1b19f0372, type: 2}
+    diyalogDosyasi: {fileID: 11400000, guid: 465ff060259536a49819fcfc52026473, type: 2}

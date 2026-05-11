@@ -1,0 +1,103 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f832b14936fc2048824d9308b14ded6, type: 3}
+  m_Name: ContinueClaw_AryLo
+  m_EditorClassIdentifier: 
+  locationName: 
+  locationBackground: {fileID: 0}
+  allLines:
+  - side: 0
+    characterName: Loreen
+    characterSprite: {fileID: 21300000, guid: 821994f203fef8344a71dda283821891, type: 3}
+    sentence: "You know, I don\u2019t really feel like making small talk about our
+      professions.\r\n"
+    eventTrigger: 
+    choices: []
+  - side: 1
+    characterName: Ary
+    characterSprite: {fileID: 21300000, guid: ece41423a199ba04f8804d355c231cbb, type: 3}
+    sentence: What should we talk about then, Ms. Librarian?
+    eventTrigger: 
+    choices: []
+  - side: 0
+    characterName: Loreen
+    characterSprite: {fileID: 0}
+    sentence: "Academician, and I don\u2019t know.. hobbies?\r\n"
+    eventTrigger: 
+    choices: []
+  - side: 1
+    characterName: Ary
+    characterSprite: {fileID: 0}
+    sentence: Uh huh. How creative.
+    eventTrigger: 
+    choices: []
+  - side: 0
+    characterName: Loreen
+    characterSprite: {fileID: 21300000, guid: 146a6ce1894c7084984f7771ba7e263e, type: 3}
+    sentence: Oh fine. Long-term goals in life?
+    eventTrigger: 
+    choices: []
+  - side: 1
+    characterName: Ary
+    characterSprite: {fileID: 21300000, guid: ece41423a199ba04f8804d355c231cbb, type: 3}
+    sentence: Come on, I know you can do better than that.
+    eventTrigger: 
+    choices: []
+  - side: 0
+    characterName: Loreen
+    characterSprite: {fileID: 0}
+    sentence: "Alright. I recognize that jacket you\u2019re wearing. It\u2019s by
+      a motorcycle brand, right?"
+    eventTrigger: 
+    choices: []
+  - side: 1
+    characterName: Ary
+    characterSprite: {fileID: 0}
+    sentence: "Now we\u2019re talking. Yes it is, are you interested?"
+    eventTrigger: 
+    choices: []
+  - side: 0
+    characterName: Loreen
+    characterSprite: {fileID: 0}
+    sentence: Yeah, I love going for a ride every once in a while. Wish I could make
+      more time for it though.
+    eventTrigger: 
+    choices: []
+  - side: 1
+    characterName: Ary
+    characterSprite: {fileID: 0}
+    sentence: Well, I have a couple of bikes to choose from, we can go on a ride
+      together sometime, if you want.
+    eventTrigger: 
+    choices: []
+  - side: 0
+    characterName: Loreen
+    characterSprite: {fileID: 0}
+    sentence: 
+    eventTrigger: 
+    choices:
+    - choices: "I don\u2019t trust anyone with that many bikes."
+      nextScenario: {fileID: 11400000, guid: 3cc85aacaefa86c4f99403f184d3d24f, type: 2}
+      target: 0
+      starReward: 0
+      heartReward: 0
+    - choices: Hmm, maybe. Depends on your taste, to be honest.
+      nextScenario: {fileID: 11400000, guid: 2bae6f1d4ee471341ada96a57d4c1351, type: 2}
+      target: 0
+      starReward: 0.5
+      heartReward: 0
+    - choices: "What, you think I\u2019m unhappy with my own bike?"
+      nextScenario: {fileID: 11400000, guid: 9e3759273e108924e9c225dc86822df6, type: 2}
+      target: 0
+      starReward: 1
+      heartReward: 0
+  nextScenario: {fileID: 0}

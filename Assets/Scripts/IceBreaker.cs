@@ -35,7 +35,6 @@ public class IceBreaker : MonoBehaviour
     public List<Sprite> pieceSprites; 
     public float explosion = 800f;
     
-
     [Header("Ayarlar")]
     public float speed = 1200f;        
     private int currentIceLevel = 0; 
@@ -57,7 +56,10 @@ public class IceBreaker : MonoBehaviour
     
     private brainDate dateManager;
 
-    // YENİ HAVUZ SİSTEMİ: Listeyi ve Karşıdaki Karakteri birleştirip benzersiz bir ID ile tutuyoruz
+   
+    private float totalEarnedStarsThisGame = 0f;
+    private int totalEarnedHeartsThisGame = 0;
+
     private Dictionary<int, List<DialogueDataları>> questionPools = new Dictionary<int, List<DialogueDataları>>();
     
     void Start()
@@ -81,6 +83,10 @@ public class IceBreaker : MonoBehaviour
         currentIceLevel = 0;
         isLeftTurn = true; 
         speed = 1200f; 
+
+        
+        totalEarnedStarsThisGame = 0f;
+        totalEarnedHeartsThisGame = 0;
 
         foreach (var h in SnowImages) h.gameObject.SetActive(true);
         if (iceSprites.Length > 0) iceImage.sprite = iceSprites[0];
@@ -118,7 +124,6 @@ public class IceBreaker : MonoBehaviour
         DialogueDataları selectedDialogue = null;
         pendingDamage = 0; 
 
-        // Kimin sırasıysa o konuşuyor (Kaynak), diğeri hedef (Opponent)
         TargetCharacter currentTarget = isLeftTurn ? TargetCharacter.Left : TargetCharacter.Right;
         Characters currentCharData = isLeftTurn ? DateSettings.leftChar : DateSettings.rightChar;
         Characters opponentCharData = isLeftTurn ? DateSettings.rightChar : DateSettings.leftChar; 
@@ -129,6 +134,9 @@ public class IceBreaker : MonoBehaviour
             Debug.Log("SARI");
             pendingDamage = 2; 
         
+           
+            totalEarnedHeartsThisGame += heartPerYellow; 
+
             if(dateManager != null) 
                 dateManager.AddReward(0, heartPerYellow, currentTarget);
 
@@ -140,6 +148,9 @@ public class IceBreaker : MonoBehaviour
         {
             Debug.Log("PEMBE");
             pendingDamage = 1; 
+
+           
+            totalEarnedHeartsThisGame += heartPerPink;
 
             if(dateManager != null) 
                 dateManager.AddReward(0, heartPerPink, currentTarget);
@@ -275,9 +286,9 @@ public class IceBreaker : MonoBehaviour
     {
         currentIceLevel += amount;
 
-        if (speed < 1500) speed = 1500;
-        else if (speed < 1800) speed = 1800;
-        else speed = 2250;
+        if (speed < 2200) speed = 2200;
+        else if (speed < 2500) speed = 2500;
+        else speed = 3000;
         
         int indexToShow = Mathf.Clamp(currentIceLevel, 0, iceSprites.Length - 1);
         if (indexToShow < iceSprites.Length)
@@ -299,7 +310,10 @@ public class IceBreaker : MonoBehaviour
     {
         if (isSuccess)
         {
-            dateManager.AddReward(totalStarsOnWin, bonusHeartOnWin, TargetCharacter.Both);
+          
+            totalEarnedStarsThisGame += totalStarsOnWin;
+            totalEarnedHeartsThisGame += bonusHeartOnWin;
+            
             
             float duration = 1.0f;
             float elapsed = 0f;
@@ -321,18 +335,18 @@ public class IceBreaker : MonoBehaviour
 
         if (dateManager != null)
         {
-            dateManager.EndIceBreaker(isSuccess);
+            
+            dateManager.EndIceBreaker(isSuccess, totalEarnedStarsThisGame, totalEarnedHeartsThisGame, TargetCharacter.Both);
         }
         
-        gameObject.SetActive(false); 
+      
     }
-    
-    // YENİ: Sadece karşısındaki kişiye (opponent) özel olan diyalogları bulan zeka
+ 
     DialogueDataları GetTargetedQuestion(List<TargetedDialogue> originalList, Characters opponent)
     {
         if (originalList == null || originalList.Count == 0 || opponent == null) return null;
         
-        // Havuz (Pool) anahtarı: Liste kimliği ve Hedef kimliğini birleştir
+      
         int poolKey = originalList.GetHashCode() ^ opponent.GetInstanceID();
         
         if (!questionPools.ContainsKey(poolKey))
@@ -342,7 +356,7 @@ public class IceBreaker : MonoBehaviour
         
         List<DialogueDataları> pool = questionPools[poolKey];
         
-        // Eğer havuz boşsa (veya ilk defa giriliyorsa), orijinal listeden "Hedefi bu rakip olanları" doldur
+       
         if (pool.Count == 0)
         {
             foreach (var item in originalList)
@@ -354,13 +368,13 @@ public class IceBreaker : MonoBehaviour
             }
         }
         
-        // Hedefe uygun hiç diyalog bulunamadıysa (Örn: Henüz eklememişsindir) pas geçsin
+      
         if (pool.Count == 0) return null;
         
         int rnd = Random.Range(0, pool.Count);
         DialogueDataları selectedQ = pool[rnd];
         
-        pool.RemoveAt(rnd); // Tekrar çıkmasın diye havuzdan çıkar
+        pool.RemoveAt(rnd); 
         return selectedQ;
     }
 }

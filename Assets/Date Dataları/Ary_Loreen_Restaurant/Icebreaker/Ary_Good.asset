@@ -18,30 +18,15 @@ MonoBehaviour:
   - side: 1
     characterName: Ary
     characterSprite: {fileID: 21300000, guid: ece41423a199ba04f8804d355c231cbb, type: 3}
-    sentence: 'What kind of performances do you do at the lounge?
+    sentence: 'What do you like to do when you have no responsibilities at all?
 
 '
     eventTrigger: 
     choices: []
   - side: 0
     characterName: Loreen
-    characterSprite: {fileID: 21300000, guid: 146a6ce1894c7084984f7771ba7e263e, type: 3}
-    sentence: I do drag, mostly. Your usual lip-syncing and exclusive live singing
-      some nights. I also bartend sometimes for higher-paying customers.
-    eventTrigger: 
-    choices: []
-  - side: 1
-    characterName: Ary
-    characterSprite: {fileID: 0}
-    sentence: That sounds delightful. What can a man do to be invited to these exclusive
-      live events?
-    eventTrigger: 
-    choices: []
-  - side: 0
-    characterName: Loreen
-    characterSprite: {fileID: 0}
-    sentence: Mmm, maybe I just might give you a one-night VIP pass if I feel happy
-      enough by the end of this date.
+    characterSprite: {fileID: 21300000, guid: 821994f203fef8344a71dda283821891, type: 3}
+    sentence: This sounds kind of edgy but I like to go on late night rides.
     eventTrigger: 
     choices: []
   nextScenario: {fileID: 0}

@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f832b14936fc2048824d9308b14ded6, type: 3}
   m_Name: Has she ever bullied the shit out of you
   m_EditorClassIdentifier: 
+  locationName: 
+  locationBackground: {fileID: 0}
   allLines:
   - side: 0
     characterName: Io
@@ -150,7 +152,7 @@ MonoBehaviour:
     sentence: 'For a while, yeah. Then I got smart about it. She sounds absolutely
       evil when I tell it like this but believe me, I had it coming.
 
-      
+
 
 '
     eventTrigger: 
@@ -174,6 +176,6 @@ MonoBehaviour:
     sentence: 'Mm, not at all, unless the Chaperon minds it.
 
 '
-    eventTrigger: 
+    eventTrigger: StartCurveDodge
     choices: []
-  nextScenario: {fileID: 0}
+  nextScenario: {fileID: 11400000, guid: c25ab6fc40348db4da2af83ab18dcc7d, type: 2}

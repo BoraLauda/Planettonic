@@ -18,12 +18,15 @@ MonoBehaviour:
   dodgeTheQuestionIkonu: {fileID: -7573232073122700555, guid: 3fc6841e2157d1d408c8655399747d80, type: 3}
   menuMinigameIkonu: {fileID: -7573232073122700555, guid: 3fc6841e2157d1d408c8655399747d80, type: 3}
   portraitImage: {fileID: -5408334947099728532, guid: d31dc9871b7d06c4eb9f928a8c8aa299, type: 3}
-  fullName: 
-  demographicsInfo: 
-  relationshipGoals: 
-  hobbies: 
-  foodPreferenceText: 
-  quoteText: 
+  fullName: Elroi
+  demographicsInfo: 29 || Male || Mars || Movie Director
+  relationshipGoals: Casual
+  hobbies: Parties, game nights, billard, shuffleboard games
+  foodPreferenceText: None
+  profileRatingIcons:
+  - {fileID: 21300000, guid: e5e6a14ad2095aa4482d97042cb3de7f, type: 3}
+  - {fileID: 21300000, guid: 3a92a48834ed72d49ac50653aa5d7202, type: 3}
+  quoteText: Only god can judge me...
   locationPreferences:
   - locationName: BAR
     bonusStars: 1
@@ -54,3 +57,8 @@ MonoBehaviour:
     diyalogDosyasi: {fileID: 11400000, guid: 2988f1beccccc2c4eacdfa73c3b157a4, type: 2}
   - targetCharacter: {fileID: 11400000, guid: 914c084cda719c149b3ce3ae947d0973, type: 2}
     diyalogDosyasi: {fileID: 11400000, guid: 3f1d86936054c5e4482b60866817b31b, type: 2}
+  curveDodgeQuestions:
+  - targetCharacter: {fileID: 11400000, guid: 914c084cda719c149b3ce3ae947d0973, type: 2}
+    diyalogDosyasi: {fileID: 11400000, guid: 0ad77fa5b3c22a54ca3f31847e05d035, type: 2}
+  - targetCharacter: {fileID: 11400000, guid: 914c084cda719c149b3ce3ae947d0973, type: 2}
+    diyalogDosyasi: {fileID: 11400000, guid: 732b0295027b2a647882ba9f3f36644f, type: 2}

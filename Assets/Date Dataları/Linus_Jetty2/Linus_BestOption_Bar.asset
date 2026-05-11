@@ -37,7 +37,7 @@ MonoBehaviour:
     characterName: Jetty
     characterSprite: {fileID: 0}
     sentence: "Oh you wouldn\u2019t stand a chance up against my stage persona."
-    eventTrigger: StartDodgeGame
+    eventTrigger: 
     choices: []
   - side: 1
     characterName: Linus
@@ -61,6 +61,6 @@ MonoBehaviour:
     characterName: Jetty
     characterSprite: {fileID: 0}
     sentence: Hmm, maybe you should.
-    eventTrigger: 
+    eventTrigger: StartCurveDodge
     choices: []
   nextScenario: {fileID: 11400000, guid: a2beaa40ad90f7e4c9a5d2794f48d444, type: 2}

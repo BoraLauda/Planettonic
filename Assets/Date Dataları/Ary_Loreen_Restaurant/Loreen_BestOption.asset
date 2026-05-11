@@ -17,87 +17,89 @@ MonoBehaviour:
   allLines:
   - side: 0
     characterName: Loreen
-    characterSprite: {fileID: 21300000, guid: 146a6ce1894c7084984f7771ba7e263e, type: 3}
-    sentence: 'You seem to get a rise out of that. Are you into desperation, or manipulation?  '
+    characterSprite: {fileID: 21300000, guid: 821994f203fef8344a71dda283821891, type: 3}
+    sentence: "What, you think I\u2019m unhappy with my own bike?"
     eventTrigger: 
     choices: []
   - side: 1
     characterName: Ary
     characterSprite: {fileID: 21300000, guid: ece41423a199ba04f8804d355c231cbb, type: 3}
-    sentence: "A little bit of both, under the right circumstances of course. I don\u2019t
-      have any bad intentions with you."
+    sentence: Never said that. You know we could do a little race and when I beat
+      you, you can try riding on one of mine.
     eventTrigger: 
     choices: []
   - side: 0
     characterName: Loreen
     characterSprite: {fileID: 0}
-    sentence: "Ah, that\u2019s a shame. Would\u2019ve been interesting at least if
-      you did.\r"
+    sentence: Or you can try mine when I beat you.
     eventTrigger: 
     choices: []
   - side: 1
     characterName: Ary
     characterSprite: {fileID: 0}
-    sentence: "A lot of things can be interesting though, you don\u2019t know me
-      at all yet."
+    sentence: 'Okay then, game on.
+
+'
     eventTrigger: 
     choices: []
   - side: 0
     characterName: Loreen
     characterSprite: {fileID: 0}
-    sentence: "And you don\u2019t know what I find interesting."
+    sentence: Game on.
+    eventTrigger: 
+    choices: []
+  - side: 3
+    characterName: Chaperon
+    characterSprite: {fileID: 0}
+    sentence: 'Hello again, can I have your attention for a moment?
+
+'
     eventTrigger: 
     choices: []
   - side: 1
     characterName: Ary
     characterSprite: {fileID: 0}
-    sentence: "Bad intentions is a start, I\u2019m sure I can get a little more information
-      out of you by the end of this."
+    sentence: Really not loving this talking tablet thing.
     eventTrigger: 
     choices: []
   - side: 0
     characterName: Loreen
     characterSprite: {fileID: 0}
-    sentence: Objection your honor. This solicitor is using foul play.
+    sentence: "Yeah but what can you do? Free food, free drinks, free date. You don\u2019t
+      have to pay for anything."
     eventTrigger: 
     choices: []
   - side: 1
     characterName: Ary
     characterSprite: {fileID: 0}
-    sentence: Overruled.
+    sentence: "You don\u2019t split the check? As a feminist, I\u2019m disappointed."
+    eventTrigger: 
+    choices: []
+  - side: 3
+    characterName: Chaperon
+    characterSprite: {fileID: 0}
+    sentence: 'The tablet in front of you displays the Icebreaker. Are you familiar
+      with the title?
+
+'
+    eventTrigger: 
+    choices: []
+  - side: 1
+    characterName: Ary
+    characterSprite: {fileID: 0}
+    sentence: Uh, yeah.
     eventTrigger: 
     choices: []
   - side: 0
     characterName: Loreen
     characterSprite: {fileID: 0}
-    sentence: "Damn. Must\u2019ve been bribed. Let me guess, couple of sips from
-      your flask?"
+    sentence: Uh-huh.
     eventTrigger: 
     choices: []
-  - side: 1
-    characterName: Ary
+  - side: 3
+    characterName: Chaperon
     characterSprite: {fileID: 0}
-    sentence: Bingo.
-    eventTrigger: 
-    choices: []
-  - side: 2
-    characterName: Counselor
-    characterSprite: {fileID: 0}
-    sentence: Hate to interrupt, for a fun reason at least. I have a little game
-      for the both of you to get to know each other better.
-    eventTrigger: 
-    choices: []
-  - side: 2
-    characterName: Counselor
-    characterSprite: {fileID: 0}
-    sentence: "The tablet in front of you displays the Icebreaker. A game I\u2019m
-      sure both of you are familiar with, being good communicators and all!"
-    eventTrigger: 
-    choices: []
-  - side: 2
-    characterName: Counselor
-    characterSprite: {fileID: 0}
-    sentence: "Niceeee, you\u2019re getting good at this."
+    sentence: "Well then, let\u2019s play!"
     eventTrigger: StartIceBreaker
     choices: []
   nextScenario: {fileID: 11400000, guid: 18f32bc41bd4f144b961ae571510f51e, type: 2}

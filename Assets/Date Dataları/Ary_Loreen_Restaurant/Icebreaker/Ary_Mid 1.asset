@@ -18,13 +18,13 @@ MonoBehaviour:
   - side: 1
     characterName: Ary
     characterSprite: {fileID: 21300000, guid: ece41423a199ba04f8804d355c231cbb, type: 3}
-    sentence: How bad is your eyesight, just- asking out of curiosity...
+    sentence: If you had to live on another planet, what would it be?
     eventTrigger: 
     choices: []
   - side: 0
     characterName: Loreen
-    characterSprite: {fileID: 21300000, guid: 146a6ce1894c7084984f7771ba7e263e, type: 3}
-    sentence: Decent enough, I wear lenses that help me see better during the day.
+    characterSprite: {fileID: 21300000, guid: 821994f203fef8344a71dda283821891, type: 3}
+    sentence: "I\u2019d say either Neptune, or Venus."
     eventTrigger: 
     choices: []
   nextScenario: {fileID: 0}

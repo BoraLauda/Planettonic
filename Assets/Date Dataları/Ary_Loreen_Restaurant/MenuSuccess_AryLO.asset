@@ -18,15 +18,13 @@ MonoBehaviour:
   - side: 1
     characterName: Ary
     characterSprite: {fileID: 21300000, guid: ece41423a199ba04f8804d355c231cbb, type: 3}
-    sentence: "I\u2019m glad this place has such immaculate low-fat options. It\u2019s
-      rare to come by."
+    sentence: Good pick, Chaperon. Exactly my taste.
     eventTrigger: 
     choices: []
   - side: 0
     characterName: Loreen
-    characterSprite: {fileID: 21300000, guid: 146a6ce1894c7084984f7771ba7e263e, type: 3}
-    sentence: "Ah, I\u2019m kinda bummed out they don\u2019t have lactose-free floats
-      but oh well, this\u2019ll do."
+    characterSprite: {fileID: 21300000, guid: 16376f7b27e7cca45b652fe062815ecc, type: 3}
+    sentence: "I\u2019m chilling either way."
     eventTrigger: 
     choices: []
   nextScenario: {fileID: 0}

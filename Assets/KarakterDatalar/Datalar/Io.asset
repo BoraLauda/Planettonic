@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Io
   m_EditorClassIdentifier: 
   characterName: Io
+  cinsiyet: 0
   profileIcon: {fileID: 21300000, guid: 4315b6d786936364f9e7e42de5404d17, type: 3}
   dodgeTheQuestionIkonu: {fileID: 324928346125548867, guid: 868d47c2329247e4e9303e036389f3e6, type: 3}
   menuMinigameIkonu: {fileID: 324928346125548867, guid: 868d47c2329247e4e9303e036389f3e6, type: 3}
@@ -22,6 +23,11 @@ MonoBehaviour:
   relationshipGoals: Commitment || Marriage || Kids
   hobbies: Singing, swimming, playing guitar, reading comics
   foodPreferenceText: Vegetarian
+  profileRatingIcons:
+  - {fileID: 21300000, guid: 3a92a48834ed72d49ac50653aa5d7202, type: 3}
+  - {fileID: 21300000, guid: e5e6a14ad2095aa4482d97042cb3de7f, type: 3}
+  - {fileID: 21300000, guid: a85149ffbf8caf24cb342d45c59ff28c, type: 3}
+  - {fileID: 21300000, guid: a0743298d763d9b4fad0d06790a00df6, type: 3}
   quoteText: "\xD6zl\xFC s\xF6z\r\n"
   locationPreferences:
   - locationName: RESTAURANT
@@ -40,18 +46,39 @@ MonoBehaviour:
     diyalogDosyasi: {fileID: 11400000, guid: 7ccdc90d8bf6c7e4796a2ebe82f5e941, type: 2}
   - targetCharacter: {fileID: 11400000, guid: 70924192341f4a244bdda3ba9cd56e47, type: 2}
     diyalogDosyasi: {fileID: 11400000, guid: 6344b5269991abb43ad78c95c3bc0d18, type: 2}
+  - targetCharacter: {fileID: 11400000, guid: bfd2e2416d70ccd49b0a798220ace20b, type: 2}
+    diyalogDosyasi: {fileID: 11400000, guid: c7116ddec559b5a4f8a9b669c0cb564f, type: 2}
+  - targetCharacter: {fileID: 11400000, guid: bfd2e2416d70ccd49b0a798220ace20b, type: 2}
+    diyalogDosyasi: {fileID: 11400000, guid: 4f2149cb26fe67541be1e9c26748acd6, type: 2}
   iceBreakerMid:
   - targetCharacter: {fileID: 11400000, guid: 70924192341f4a244bdda3ba9cd56e47, type: 2}
     diyalogDosyasi: {fileID: 11400000, guid: b6af3a74f374cd040831e1abf8c93811, type: 2}
   - targetCharacter: {fileID: 11400000, guid: 70924192341f4a244bdda3ba9cd56e47, type: 2}
     diyalogDosyasi: {fileID: 11400000, guid: e8ac8d5e031cb384d9b84d9d9e5d676c, type: 2}
+  - targetCharacter: {fileID: 11400000, guid: bfd2e2416d70ccd49b0a798220ace20b, type: 2}
+    diyalogDosyasi: {fileID: 11400000, guid: 67a73e21b22f94444bbf3b2442565fae, type: 2}
+  - targetCharacter: {fileID: 11400000, guid: bfd2e2416d70ccd49b0a798220ace20b, type: 2}
+    diyalogDosyasi: {fileID: 11400000, guid: 5d731b02a7fec3041a5dbb02768057a1, type: 2}
   iceBreakerBad:
   - targetCharacter: {fileID: 11400000, guid: 70924192341f4a244bdda3ba9cd56e47, type: 2}
     diyalogDosyasi: {fileID: 11400000, guid: 55e1b9aeb332c4941808358f10c41368, type: 2}
   - targetCharacter: {fileID: 11400000, guid: 70924192341f4a244bdda3ba9cd56e47, type: 2}
     diyalogDosyasi: {fileID: 11400000, guid: 9b07c77d4b8f8c14dbac5b72b0e154f1, type: 2}
+  - targetCharacter: {fileID: 11400000, guid: bfd2e2416d70ccd49b0a798220ace20b, type: 2}
+    diyalogDosyasi: {fileID: 11400000, guid: 47e934ad65530ab49b66475bc430e3aa, type: 2}
+  - targetCharacter: {fileID: 11400000, guid: bfd2e2416d70ccd49b0a798220ace20b, type: 2}
+    diyalogDosyasi: {fileID: 11400000, guid: b0f9f65ea59b3d2419d32f2861649f46, type: 2}
   dodgeQuestions:
   - targetCharacter: {fileID: 11400000, guid: 70924192341f4a244bdda3ba9cd56e47, type: 2}
     diyalogDosyasi: {fileID: 11400000, guid: 4fc40f655e52f53418b6699a38ec2f7f, type: 2}
   - targetCharacter: {fileID: 11400000, guid: 70924192341f4a244bdda3ba9cd56e47, type: 2}
     diyalogDosyasi: {fileID: 11400000, guid: 2a4a4488c4e6ac74d8149e78dffe4f15, type: 2}
+  - targetCharacter: {fileID: 11400000, guid: bfd2e2416d70ccd49b0a798220ace20b, type: 2}
+    diyalogDosyasi: {fileID: 11400000, guid: ef8004abc2318be4991694df2b539857, type: 2}
+  - targetCharacter: {fileID: 11400000, guid: bfd2e2416d70ccd49b0a798220ace20b, type: 2}
+    diyalogDosyasi: {fileID: 11400000, guid: 9aff158f87e6f4246814bb7bae91e503, type: 2}
+  curveDodgeQuestions:
+  - targetCharacter: {fileID: 11400000, guid: 70924192341f4a244bdda3ba9cd56e47, type: 2}
+    diyalogDosyasi: {fileID: 11400000, guid: ba7992e47a7454948bbff5f54d069516, type: 2}
+  - targetCharacter: {fileID: 11400000, guid: 70924192341f4a244bdda3ba9cd56e47, type: 2}
+    diyalogDosyasi: {fileID: 11400000, guid: bca18e870bf0474419fc07b9f66432de, type: 2}

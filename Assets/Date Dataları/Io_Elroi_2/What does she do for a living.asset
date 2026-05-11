@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f832b14936fc2048824d9308b14ded6, type: 3}
   m_Name: What does she do for a living
   m_EditorClassIdentifier: 
+  locationName: 
+  locationBackground: {fileID: 0}
   allLines:
   - side: 0
     characterName: Io
@@ -78,6 +80,6 @@ MonoBehaviour:
     sentence: 'Okay, fine. I trust you. I think.
 
 '
-    eventTrigger: 
+    eventTrigger: StartCurveDodge
     choices: []
-  nextScenario: {fileID: 0}
+  nextScenario: {fileID: 11400000, guid: c25ab6fc40348db4da2af83ab18dcc7d, type: 2}

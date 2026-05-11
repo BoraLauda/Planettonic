@@ -21,10 +21,4 @@ MonoBehaviour:
     sentence: 
     eventTrigger: 
     choices: []
-  - side: 0
-    characterName: 
-    characterSprite: {fileID: 0}
-    sentence: 
-    eventTrigger: 
-    choices: []
   nextScenario: {fileID: 0}

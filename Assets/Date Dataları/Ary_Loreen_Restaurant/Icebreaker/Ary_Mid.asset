@@ -18,14 +18,15 @@ MonoBehaviour:
   - side: 1
     characterName: Ary
     characterSprite: {fileID: 21300000, guid: ece41423a199ba04f8804d355c231cbb, type: 3}
-    sentence: Is it true Neptunians can sleep for days at a time?
+    sentence: 'Were you born and raised in the city?
+
+'
     eventTrigger: 
     choices: []
   - side: 0
     characterName: Loreen
-    characterSprite: {fileID: 21300000, guid: 146a6ce1894c7084984f7771ba7e263e, type: 3}
-    sentence: "That\u2019s true, yeah but we don\u2019t prefer to do so. A lot to
-      do in the modern world, you know?"
+    characterSprite: {fileID: 21300000, guid: 821994f203fef8344a71dda283821891, type: 3}
+    sentence: "Yeah, I was. I\u2019ve never lived anywhere else."
     eventTrigger: 
     choices: []
   nextScenario: {fileID: 0}

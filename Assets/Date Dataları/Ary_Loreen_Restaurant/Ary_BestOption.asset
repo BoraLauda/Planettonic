@@ -18,41 +18,57 @@ MonoBehaviour:
   - side: 1
     characterName: Ary
     characterSprite: {fileID: 21300000, guid: ece41423a199ba04f8804d355c231cbb, type: 3}
-    sentence: "I think it\u2019s good to hold onto some childish tendencies such
-      as get-to-know you activities. We aren\u2019t as different from our younger
-      selves as we think. "
+    sentence: Suffering is an overstatement, no? I just like watching a bit of a
+      struggle.
     eventTrigger: 
     choices: []
   - side: 0
     characterName: Loreen
-    characterSprite: {fileID: 21300000, guid: 146a6ce1894c7084984f7771ba7e263e, type: 3}
-    sentence: That is very true. Most of our traits are just more complex versions
-      of the ones we had in our childhood.
+    characterSprite: {fileID: 21300000, guid: 821994f203fef8344a71dda283821891, type: 3}
+    sentence: "So you\u2019re a sadist?"
     eventTrigger: 
     choices: []
   - side: 1
     characterName: Ary
     characterSprite: {fileID: 0}
-    sentence: You must have been a well-spoken kid, then.
+    sentence: "Hm, depends. I wouldn\u2019t push you off your bike."
     eventTrigger: 
     choices: []
   - side: 0
     characterName: Loreen
     characterSprite: {fileID: 0}
-    sentence: Says you. I must say, you are very close to wooing me with your incredible
-      intellect.
+    sentence: What a relief. What would you do then?
     eventTrigger: 
     choices: []
   - side: 1
     characterName: Ary
     characterSprite: {fileID: 0}
-    sentence: Oh, fuck off.
+    sentence: "I\u2019d remind you of it in ways that would make you flush all the
+      way up to your ears.\r\n"
     eventTrigger: 
     choices: []
   - side: 0
     characterName: Loreen
     characterSprite: {fileID: 0}
-    sentence: And the switch-up is somehow even more charming...
+    sentence: That sounds..
+    eventTrigger: 
+    choices: []
+  - side: 1
+    characterName: Ary
+    characterSprite: {fileID: 0}
+    sentence: Fun?
+    eventTrigger: 
+    choices: []
+  - side: 0
+    characterName: Loreen
+    characterSprite: {fileID: 0}
+    sentence: Suggestive.
+    eventTrigger: 
+    choices: []
+  - side: 1
+    characterName: Ary
+    characterSprite: {fileID: 0}
+    sentence: Hmm, again, depends.
     eventTrigger: StartDodgeGame
     choices: []
   nextScenario: {fileID: 11400000, guid: b91951829af531841aa486c19fc485fd, type: 2}

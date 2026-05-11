@@ -17,48 +17,76 @@ MonoBehaviour:
   allLines:
   - side: 0
     characterName: Loreen
-    characterSprite: {fileID: 21300000, guid: 146a6ce1894c7084984f7771ba7e263e, type: 3}
-    sentence: "I had my reservations about you, I\u2019ve got to admit. But you turned
-      out to be charming in a way that made me feel weirdly safe. Should I be afraid
-      of that?"
+    characterSprite: {fileID: 21300000, guid: 821994f203fef8344a71dda283821891, type: 3}
+    sentence: Soo, about your bikes...
     eventTrigger: 
     choices: []
   - side: 1
     characterName: Ary
     characterSprite: {fileID: 21300000, guid: ece41423a199ba04f8804d355c231cbb, type: 3}
-    sentence: "Coming from a dangerous woman such as yourself, it makes me wonder
-      the same thing. It\u2019s been a while since I connected with someone and actually
-      enjoyed myself on a date."
-    eventTrigger: 
-    choices: []
-  - side: 2
-    characterName: Counselor
-    characterSprite: {fileID: 0}
-    sentence: Would you two be interested in going on a second date?
+    sentence: "You could come \u2018round mine next week, if you have the time."
     eventTrigger: 
     choices: []
   - side: 0
     characterName: Loreen
     characterSprite: {fileID: 0}
-    sentence: "I\u2019d be open to that."
+    sentence: "Oh I\u2019m sure I can make some time for that."
+    eventTrigger: 
+    choices: []
+  - side: 3
+    characterName: Chaperon
+    characterSprite: {fileID: 0}
+    sentence: "I\u2019m guessing you guys enjoyed your evening. Want me to arrange
+      a second date?\r\n"
     eventTrigger: 
     choices: []
   - side: 1
     characterName: Ary
     characterSprite: {fileID: 0}
-    sentence: "You\u2019d be open? Damn, I\u2019m hurt."
+    sentence: "That\u2019d be cool. Can we have a bar date?"
+    eventTrigger: 
+    choices: []
+  - side: 3
+    characterName: Chaperon
+    characterSprite: {fileID: 0}
+    sentence: Of course.
     eventTrigger: 
     choices: []
   - side: 0
     characterName: Loreen
     characterSprite: {fileID: 0}
-    sentence: "Oh fine, I\u2019d like that, Counselor."
+    sentence: "What, you\u2019re trying to get me drunk?"
     eventTrigger: 
     choices: []
   - side: 1
     characterName: Ary
     characterSprite: {fileID: 0}
-    sentence: "That\u2019s more like it, I\u2019d very much like that too."
+    sentence: "I don\u2019t think I need to. I can tell you\u2019re in love with
+      me already."
+    eventTrigger: 
+    choices: []
+  - side: 0
+    characterName: Loreen
+    characterSprite: {fileID: 0}
+    sentence: "Oh no, I can\u2019t believe I made it so obvious!\r\n"
+    eventTrigger: 
+    choices: []
+  - side: 1
+    characterName: Ary
+    characterSprite: {fileID: 0}
+    sentence: Yeah, I tend to have that effect.
+    eventTrigger: 
+    choices: []
+  - side: 0
+    characterName: Loreen
+    characterSprite: {fileID: 0}
+    sentence: "Haha, crazy I\u2019m actually looking forward to that second date."
+    eventTrigger: 
+    choices: []
+  - side: 1
+    characterName: Ary
+    characterSprite: {fileID: 0}
+    sentence: Mm, me too.
     eventTrigger: 
     choices: []
   nextScenario: {fileID: 0}
