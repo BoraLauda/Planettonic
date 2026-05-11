@@ -28290,6 +28290,21 @@ MonoBehaviour:
     characterB: {fileID: 11400000, guid: bfd2e2416d70ccd49b0a798220ace20b, type: 2}
     specificFailScenario: {fileID: 11400000, guid: 91fd360ffe9fefb47bf6d2fb0330ffa3, type: 2}
     secondDateFailScenario: {fileID: 0}
+  - ciftAdi: Io Ary
+    characterA: {fileID: 11400000, guid: 914c084cda719c149b3ce3ae947d0973, type: 2}
+    characterB: {fileID: 11400000, guid: d9880c6a901c8d643a786ea1b19f0372, type: 2}
+    specificFailScenario: {fileID: 11400000, guid: 27f59cc204944a54ca68e376869465d9, type: 2}
+    secondDateFailScenario: {fileID: 0}
+  - ciftAdi: Nemelise Elroi
+    characterA: {fileID: 11400000, guid: 10ae37b55ea06ba4eadbd5ffcc3098c2, type: 2}
+    characterB: {fileID: 11400000, guid: 70924192341f4a244bdda3ba9cd56e47, type: 2}
+    specificFailScenario: {fileID: 11400000, guid: 5aa51dac9d1147648a6fd7557c1c9d7e, type: 2}
+    secondDateFailScenario: {fileID: 0}
+  - ciftAdi: Loreen Elroi
+    characterA: {fileID: 11400000, guid: 52f97840cc872804392c25a1f2b8175b, type: 2}
+    characterB: {fileID: 11400000, guid: 70924192341f4a244bdda3ba9cd56e47, type: 2}
+    specificFailScenario: {fileID: 11400000, guid: 5bee2ac2223b8d941b715c8a3d17017c, type: 2}
+    secondDateFailScenario: {fileID: 0}
   defaultFailScenario: {fileID: 0}
   dodgeScript: {fileID: 1190985220}
   curveDodgeMiniGameObj: {fileID: 2092374654}
