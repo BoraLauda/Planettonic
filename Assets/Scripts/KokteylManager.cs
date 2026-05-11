@@ -73,14 +73,6 @@ public class KokteylManager : MonoBehaviour
     public int secilenBardakIndex = 0; 
     public GameObject[] pouringBardakObjeleri;
 
-  
-    private int yapilanIcecekSayisi = 0; // Toplamda 2 içecek yapılınca oyun biter
-    private bool leftCharServed = false;  // Sol karakter içkisini aldı mı?
-    private bool rightCharServed = false; // Sağ karakter içkisini aldı mı?
-    
-    private float totalKazanilanYildiz = 0f;
-    private int totalKazanilanKalp = 0;
-
     void Awake()
     {
         if (Instance == null) Instance = this;
@@ -164,13 +156,6 @@ public class KokteylManager : MonoBehaviour
     
     void OnEnable()
     {
-        yapilanIcecekSayisi = 0; 
-        leftCharServed = false;
-        rightCharServed = false;
-        
-        totalKazanilanYildiz = 0f; 
-        totalKazanilanKalp = 0;
-
         ResetMasayiVeDegiskenleri(); 
     }
 
@@ -253,7 +238,7 @@ public class KokteylManager : MonoBehaviour
         float enYuksekBasariOrani = 0f;
         string yapilanKokteylAdi = "Bilinmeyen Karışım";
 
-      
+        
         foreach (KokteylTarifi tarif in tumTarifler)
         {
             float dogruPuan = 0;
@@ -293,36 +278,30 @@ public class KokteylManager : MonoBehaviour
             }
         }
 
-      
-        bool kokteylKabulEdildi = false;
+        
+        float kazanilanYildiz = 0f;
+        int kazanilanKalp = 0;
+        TargetCharacter hedefKarakter = TargetCharacter.Both; 
 
-       
         if (enYuksekBasariOrani >= 1f)
         {
-            
-            if (!leftCharServed && DateSettings.leftChar != null && yapilanKokteylAdi == DateSettings.leftChar.sevdigiKokteyl)
+            if (DateSettings.leftChar != null && yapilanKokteylAdi == DateSettings.leftChar.sevdigiKokteyl)
             {
-                leftCharServed = true;
-                kokteylKabulEdildi = true;
+                kazanilanYildiz = 1f; // Tam Puan
+                kazanilanKalp = 40;
+                hedefKarakter = TargetCharacter.Left; 
                 Debug.Log($"BAŞARILI: Sol Karakter ({DateSettings.leftChar.name}) içkisini ({yapilanKokteylAdi}) aldı!");
             }
-            
-            else if (!rightCharServed && DateSettings.rightChar != null && yapilanKokteylAdi == DateSettings.rightChar.sevdigiKokteyl)
+            else if (DateSettings.rightChar != null && yapilanKokteylAdi == DateSettings.rightChar.sevdigiKokteyl)
             {
-                rightCharServed = true;
-                kokteylKabulEdildi = true;
+                kazanilanYildiz = 1f; // Tam Puan
+                kazanilanKalp = 40;
+                hedefKarakter = TargetCharacter.Right; 
                 Debug.Log($"BAŞARILI: Sağ Karakter ({DateSettings.rightChar.name}) içkisini ({yapilanKokteylAdi}) aldı!");
-            }
-
-           
-            if (kokteylKabulEdildi)
-            {
-                totalKazanilanYildiz += 0.5f;
-                totalKazanilanKalp += 20;
             }
             else
             {
-                Debug.Log($"BAŞARISIZ: {yapilanKokteylAdi} mükemmel yapıldı ama bunu şu an isteyen yok (veya zaten içti).");
+                Debug.Log($"BAŞARISIZ: {yapilanKokteylAdi} yapıldı ama masada bunu isteyen yok.");
             }
         }
         else
@@ -330,25 +309,13 @@ public class KokteylManager : MonoBehaviour
             Debug.Log($"BAŞARISIZ: Karışım berbat veya eksik. Oran: {enYuksekBasariOrani}");
         }
 
-        
-        yapilanIcecekSayisi++;
-
-        if (yapilanIcecekSayisi < 2)
+        // Oyunu hemen bitir ve puanı yolla
+        brainDate bd = FindFirstObjectByType<brainDate>(); 
+        if (bd != null) 
         {
-           
-            ResetMasayiVeDegiskenleri();
-            Debug.Log("Masa 2. içecek için sıfırlandı!");
+            bd.EndBartendingGame(kazanilanYildiz, kazanilanKalp, hedefKarakter); 
         }
-        else
-        {
-            
-            brainDate bd = FindFirstObjectByType<brainDate>(); 
-            if (bd != null) 
-            {
-                bd.EndBartendingGame(totalKazanilanYildiz, totalKazanilanKalp, TargetCharacter.Both); 
-            }
-            TemizlikYap();
-        }
+        TemizlikYap();
     }
 
     public void SadeceMasayiBirakVeSifirla()

@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      LOREEN DEFAULT_0: -3836117630390742812
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -36,7 +36,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 29.550709, y: 23.16272}
-  m_SizeDelta: {x: 117.6615, y: 204.1355}
+  m_SizeDelta: {x: 145.84, y: 291.68}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &38301716033229573
 CanvasRenderer:
@@ -90,6 +90,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 350
   maxRise: 85
-  waitTimeAtPeak: 3
+  waitTimeAtPeak: 15
   spawner: {fileID: 0}
   benimDelikIndexim: -1
