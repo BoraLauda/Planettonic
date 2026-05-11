@@ -10,35 +10,34 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0f832b14936fc2048824d9308b14ded6, type: 3}
-  m_Name: Start and Fail
+  m_Name: Start and Fail ElNem
   m_EditorClassIdentifier: 
   locationName: Restaurant
   locationBackground: {fileID: 21300000, guid: f8bdb2b11a144d94f9ac89625b2a01f4, type: 3}
   allLines:
-  - side: 0
-    characterName: Io
-    characterSprite: {fileID: -1160322238068995058, guid: e79cf994b0112f542bb5904bcd06966b, type: 3}
-    sentence: "Hey, uh... Chaperon? It\u2019s been half an hour, almost. Where is
-      Linus?\r\n"
+  - side: 2
+    characterName: Counselor
+    characterSprite: {fileID: 0}
+    sentence: Hiya.
     eventTrigger: 
     choices: []
   - side: 3
     characterName: Chaperon
     characterSprite: {fileID: 0}
-    sentence: "I\u2019m sorry Io, we haven\u2019t heard from him either. Would you
-      like to wait?"
+    sentence: Heyy, uh- Both of these guys are like super late.
     eventTrigger: 
     choices: []
-  - side: 0
-    characterName: Io
-    characterSprite: {fileID: -1160322238068995058, guid: e79cf994b0112f542bb5904bcd06966b, type: 3}
-    sentence: Uhm, I guess not. Is the cab home free?
+  - side: 2
+    characterName: Counselor
+    characterSprite: {fileID: 0}
+    sentence: "Yeah, the date is canceled. Nemelise, the Neptunian candidate doesn\u2019t
+      date Marsians."
     eventTrigger: 
     choices: []
   - side: 3
     characterName: Chaperon
     characterSprite: {fileID: 0}
-    sentence: Of course, calling you one right away.
+    sentence: Ah okay, I guess that makes sense.
     eventTrigger: 
     choices: []
   nextScenario: {fileID: 0}

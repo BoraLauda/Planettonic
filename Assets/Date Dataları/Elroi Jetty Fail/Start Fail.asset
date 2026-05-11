@@ -10,57 +10,57 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0f832b14936fc2048824d9308b14ded6, type: 3}
-  m_Name: Linus_BestOption_Bar
+  m_Name: Start Fail
   m_EditorClassIdentifier: 
-  locationName: 
-  locationBackground: {fileID: 0}
+  locationName: Restaurant
+  locationBackground: {fileID: 21300000, guid: f8bdb2b11a144d94f9ac89625b2a01f4, type: 3}
   allLines:
   - side: 1
-    characterName: Linus
-    characterSprite: {fileID: 21300000, guid: dc24e77c8220d5b43bd418e911809b3b, type: 3}
-    sentence: "What if I want both what I see and what I don\u2019t?"
+    characterName: Elroi
+    characterSprite: {fileID: 21300000, guid: 940a91f339e1825439b9f6d15b9c98fa, type: 3}
+    sentence: "Heyy, how\u2019s it going?"
     eventTrigger: 
     choices: []
   - side: 0
     characterName: Jetty
     characterSprite: {fileID: 1936918675910826544, guid: e8f1130d0e09cef45bb1f9ab49489848, type: 3}
-    sentence: Then maybe I just might let you get to know me for real.
+    sentence: "Hello, I\u2019m good how about you?"
     eventTrigger: 
     choices: []
   - side: 1
-    characterName: Linus
+    characterName: Elroi
     characterSprite: {fileID: 0}
-    sentence: While keeping up the stage act, right? I sure love me some razzle dazzle.
+    sentence: "Good, good. Wow you\u2019re really hot."
     eventTrigger: 
     choices: []
   - side: 0
     characterName: Jetty
     characterSprite: {fileID: 0}
-    sentence: "Oh you wouldn\u2019t stand a chance up against my stage persona."
+    sentence: Oh, thank you.
     eventTrigger: 
     choices: []
   - side: 1
-    characterName: Linus
+    characterName: Elroi
     characterSprite: {fileID: 0}
-    sentence: Up against, huh?
+    sentence: "Yeah, uh.. You\u2019re not gonna say it back?"
     eventTrigger: 
     choices: []
   - side: 0
     characterName: Jetty
     characterSprite: {fileID: 0}
-    sentence: Apologies. Slip of the tongue.
+    sentence: "Uhh, I don\u2019t think I\u2019m required to."
     eventTrigger: 
     choices: []
   - side: 1
-    characterName: Linus
+    characterName: Elroi
     characterSprite: {fileID: 0}
-    sentence: Careful now, I might start taking these slips seriously at some point.
+    sentence: "Ohkay, just trying to be nice. You don\u2019t have to be so  stuck-up."
     eventTrigger: 
     choices: []
   - side: 0
     characterName: Jetty
     characterSprite: {fileID: 0}
-    sentence: Hmm, maybe you should.
-    eventTrigger: StartCurveDodge
+    sentence: Yeah, this is not happening.
+    eventTrigger: 
     choices: []
-  nextScenario: {fileID: 11400000, guid: a2beaa40ad90f7e4c9a5d2794f48d444, type: 2}
+  nextScenario: {fileID: 0}
