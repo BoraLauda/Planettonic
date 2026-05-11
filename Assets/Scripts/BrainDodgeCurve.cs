@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 public class BrainDodgeCurve : MonoBehaviour
 {
-    public float roundStartDelay = 2.0f;
+   public float roundStartDelay = 2.0f;
     
     public GameObject pauseImage;
     public GameObject startImage;
@@ -17,16 +17,17 @@ public class BrainDodgeCurve : MonoBehaviour
     public float gameSaniye = 20f; 
     public Image centerCharacterImage;
     
-    [Header("Kavis (Curve) Noktaları (6 Uç)")]
-    public Transform solUst;
-    public Transform sagUst;
-    public Transform solOrta;
-    public Transform solAlt;
-    public Transform sagOrta;
-    public Transform sagAlt;
-    public Transform merkezNoktasi; 
+    [Header("Çıkış/Varış Noktaları (8 Adet)")]
+    public Transform ustOrta;    // Üst orta
+    public Transform altOrta;    // Alt orta
+    public Transform solUst;     // Sol çapraz üst
+    public Transform sagAlt;     // Sağ çapraz alt
+    public Transform sagUst;     // Sağ çapraz üst
+    public Transform solAlt;     // Sol çapraz alt
+    public Transform solOrta;    // Sol düz
+    public Transform sagOrta;    // Sağ düz
 
-    [Header("Uyarı İşaretleri (Sırayla 6 Adet)")]
+    [Header("Uyarı İşaretleri (Sırayla 8 Adet)")]
     public GameObject[] warningSigns;
     
     [Header("Zaman ve Hız Ayarları")]
@@ -37,7 +38,7 @@ public class BrainDodgeCurve : MonoBehaviour
     public float doubleSpawnChance = 0.5f; 
     public float timeToStartDouble = 5f;
     
-    public float startSpeed = 500f;     
+    public float startSpeed = 5f;     
     public float maxSpeed = 1500f;      
     public float hızlanma = 50f;
     private float currentRocketSpeed;
@@ -231,17 +232,16 @@ public class BrainDodgeCurve : MonoBehaviour
         
         while (isGameActive)
         {
-           
-            int yol1 = Random.Range(0, 6); 
+            // 8 farklı rotadan biri seçiliyor
+            int yol1 = Random.Range(0, 8); 
             int yol2 = -1;
             
             if ((gameSaniye - timer) > timeToStartDouble && Random.value < doubleSpawnChance)
             {
-                yol2 = Random.Range(0, 6);
-                if(yol1 == yol2) yol2 = (yol2 + 1) % 6; 
+                yol2 = Random.Range(0, 8);
+                if(yol1 == yol2) yol2 = (yol2 + 1) % 8; 
             }
             
-          
             int uyari1 = yol1;
             int uyari2 = yol2;
 
@@ -255,41 +255,41 @@ public class BrainDodgeCurve : MonoBehaviour
             if(warningSigns.Length > uyari1) warningSigns[uyari1].SetActive(false);
             if(yol2 != -1 && warningSigns.Length > uyari2) warningSigns[uyari2].SetActive(false);
 
-            SpawnKavisliRocket(yol1);
-            if (yol2 != -1) SpawnKavisliRocket(yol2);
+            SpawnStraightRocket(yol1);
+            if (yol2 != -1) SpawnStraightRocket(yol2);
             
             yield return new WaitForSeconds(currentSpawnAralık);
         }
     }
 
-   
-    void SpawnKavisliRocket(int yolIndex)
+    // --- DÜMDÜZ 8 KARŞILIKLI ROTA ---
+    void SpawnStraightRocket(int yolIndex)
     {
-        Transform baslangic = solUst;
-        Transform bitis = sagUst;
-        Transform kontrol = merkezNoktasi; 
+        Transform baslangic = ustOrta;
+        Transform bitis = altOrta;
 
         switch(yolIndex) {
-          
-            case 0: baslangic = solUst; bitis = sagUst; break;   // Sol Üstten -> Sağ Üste
-            case 1: baslangic = sagUst; bitis = solUst; break;   // Sağ Üstten -> Sol Üste
-            
-            case 2: baslangic = solOrta; bitis = solAlt; break;  // Sol Ortadan -> Sol Alta
-            case 3: baslangic = solAlt; bitis = solOrta; break;  // Sol Alttan -> Sol Ortaya
-
-          
-            case 4: baslangic = sagOrta; bitis = sagAlt; break;  // Sağ Ortadan -> Sağ Alta
-            case 5: baslangic = sagAlt; bitis = sagOrta; break;  // Sağ Alttan -> Sağ Ortaya
+            case 0: baslangic = ustOrta; bitis = altOrta; break;   // Üstten -> Alta
+            case 1: baslangic = altOrta; bitis = ustOrta; break;   // Alttan -> Üste
+            case 2: baslangic = solUst; bitis = sagAlt; break;     // Sol Üstten -> Sağ Alta
+            case 3: baslangic = sagAlt; bitis = solUst; break;     // Sağ Alttan -> Sol Üste
+            case 4: baslangic = sagUst; bitis = solAlt; break;     // Sağ Üstten -> Sol Alta
+            case 5: baslangic = solAlt; bitis = sagUst; break;     // Sol Alttan -> Sağ Üste
+            case 6: baslangic = solOrta; bitis = sagOrta; break;   // Sol Ortadan -> Sağ Ortaya
+            case 7: baslangic = sagOrta; bitis = solOrta; break;   // Sağ Ortadan -> Sol Ortaya
         }
 
         GameObject rocket = Instantiate(rocketPrefab, baslangic.position, Quaternion.identity, rocketParent);
+        
         RocketCurve rScript = rocket.GetComponent<RocketCurve>();
         
         if(rScript != null)
         {
-            Vector3 hayaletKontrol = (2f * kontrol.position) - (0.5f * baslangic.position) - (0.5f * bitis.position);
-
-            rScript.Firlat(baslangic.position, hayaletKontrol, bitis.position, currentRocketSpeed);
+            // BÜYÜK DEĞİŞİKLİK: Eski oyunundaki gibi roketin GİDECEĞİ YÖNÜ hesaplıyoruz.
+            Vector2 gidisYonu = (bitis.position - baslangic.position).normalized;
+            
+            // Rokete yönü ve hızı veriyoruz, o gerisini eski oyunundaki gibi kendi hallediyor!
+            rScript.Setup(gidisYonu, currentRocketSpeed);
         }
     }
     
