@@ -6236,7 +6236,7 @@ MonoBehaviour:
   itemName: Cilek
   startPosition: {x: 0, y: 0}
   isLocked: 0
-  isInfiniteSource: 0
+  isInfiniteSource: 1
 --- !u!225 &243683070
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -6506,7 +6506,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -3.406372, y: -16.038086}
+  m_AnchoredPosition: {x: -3.40625, y: -16.038086}
   m_SizeDelta: {x: -725.307, y: -277.4596}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &265618234
@@ -8067,7 +8067,7 @@ MonoBehaviour:
   itemName: Cilek
   startPosition: {x: 0, y: 0}
   isLocked: 0
-  isInfiniteSource: 0
+  isInfiniteSource: 1
 --- !u!225 &316352938
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -8998,7 +8998,7 @@ MonoBehaviour:
   itemName: Cilek
   startPosition: {x: 0, y: 0}
   isLocked: 0
-  isInfiniteSource: 0
+  isInfiniteSource: 1
 --- !u!225 &376128138
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -10051,7 +10051,7 @@ MonoBehaviour:
   itemName: Cilek
   startPosition: {x: 0, y: 0}
   isLocked: 0
-  isInfiniteSource: 0
+  isInfiniteSource: 1
 --- !u!225 &415199883
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -14557,7 +14557,7 @@ MonoBehaviour:
   itemName: Cilek
   startPosition: {x: 0, y: 0}
   isLocked: 0
-  isInfiniteSource: 0
+  isInfiniteSource: 1
 --- !u!225 &562995795
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -15864,7 +15864,7 @@ MonoBehaviour:
   itemName: Cilek
   startPosition: {x: 0, y: 0}
   isLocked: 0
-  isInfiniteSource: 0
+  isInfiniteSource: 1
 --- !u!225 &591849307
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -16518,7 +16518,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &613308420
 RectTransform:
   m_ObjectHideFlags: 0
@@ -16536,7 +16536,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.7961426, y: 22.57367}
+  m_AnchoredPosition: {x: -0.7961426, y: 22.57373}
   m_SizeDelta: {x: -1126.0602, y: -282.1474}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &613308421
@@ -18894,7 +18894,7 @@ MonoBehaviour:
   itemName: Cilek
   startPosition: {x: 0, y: 0}
   isLocked: 0
-  isInfiniteSource: 0
+  isInfiniteSource: 1
 --- !u!225 &702016720
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -21705,7 +21705,7 @@ MonoBehaviour:
   itemName: Cilek
   startPosition: {x: 0, y: 0}
   isLocked: 0
-  isInfiniteSource: 0
+  isInfiniteSource: 1
 --- !u!225 &807918730
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -21901,7 +21901,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 1.1195068, y: 12.460022}
+  m_AnchoredPosition: {x: 1.1196289, y: 12.459961}
   m_SizeDelta: {x: -630, y: -200.37}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &824090831
@@ -24238,7 +24238,7 @@ MonoBehaviour:
   itemName: Cilek
   startPosition: {x: 0, y: 0}
   isLocked: 0
-  isInfiniteSource: 0
+  isInfiniteSource: 1
 --- !u!225 &904000666
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -24854,7 +24854,7 @@ MonoBehaviour:
   itemName: Cilek
   startPosition: {x: 0, y: 0}
   isLocked: 0
-  isInfiniteSource: 0
+  isInfiniteSource: 1
 --- !u!225 &912252135
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -30224,7 +30224,7 @@ MonoBehaviour:
   itemName: Cilek
   startPosition: {x: 0, y: 0}
   isLocked: 0
-  isInfiniteSource: 0
+  isInfiniteSource: 1
 --- !u!225 &1110788811
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -33624,7 +33624,7 @@ MonoBehaviour:
   itemName: Cilek
   startPosition: {x: 0, y: 0}
   isLocked: 0
-  isInfiniteSource: 0
+  isInfiniteSource: 1
 --- !u!225 &1282876825
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -35650,7 +35650,7 @@ MonoBehaviour:
   itemName: Cilek
   startPosition: {x: 0, y: 0}
   isLocked: 0
-  isInfiniteSource: 0
+  isInfiniteSource: 1
 --- !u!225 &1367613024
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -39569,7 +39569,7 @@ MonoBehaviour:
   itemName: Cilek
   startPosition: {x: 0, y: 0}
   isLocked: 0
-  isInfiniteSource: 0
+  isInfiniteSource: 1
 --- !u!225 &1563871217
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -39762,7 +39762,7 @@ MonoBehaviour:
   itemName: Cilek
   startPosition: {x: 0, y: 0}
   isLocked: 0
-  isInfiniteSource: 0
+  isInfiniteSource: 1
 --- !u!225 &1567286921
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -40085,7 +40085,7 @@ MonoBehaviour:
   itemName: Cilek
   startPosition: {x: 0, y: 0}
   isLocked: 0
-  isInfiniteSource: 0
+  isInfiniteSource: 1
 --- !u!225 &1586286010
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -41664,7 +41664,7 @@ MonoBehaviour:
   itemName: Cilek
   startPosition: {x: 0, y: 0}
   isLocked: 0
-  isInfiniteSource: 0
+  isInfiniteSource: 1
 --- !u!225 &1629982180
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -50094,7 +50094,7 @@ MonoBehaviour:
   itemName: Cilek
   startPosition: {x: 0, y: 0}
   isLocked: 0
-  isInfiniteSource: 0
+  isInfiniteSource: 1
 --- !u!225 &1744173903
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -50148,7 +50148,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -10.379028, y: 34.299988}
+  m_AnchoredPosition: {x: -10.378906, y: 34.30005}
   m_SizeDelta: {x: -493.53, y: -261.07}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1756561903
@@ -51354,7 +51354,7 @@ MonoBehaviour:
   itemName: Cilek
   startPosition: {x: 0, y: 0}
   isLocked: 0
-  isInfiniteSource: 0
+  isInfiniteSource: 1
 --- !u!225 &1773719825
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -53911,7 +53911,7 @@ MonoBehaviour:
   itemName: Cilek
   startPosition: {x: 0, y: 0}
   isLocked: 0
-  isInfiniteSource: 0
+  isInfiniteSource: 1
 --- !u!225 &1873966043
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -54481,7 +54481,7 @@ MonoBehaviour:
   itemName: Cilek
   startPosition: {x: 0, y: 0}
   isLocked: 0
-  isInfiniteSource: 0
+  isInfiniteSource: 1
 --- !u!225 &1905476159
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -59330,7 +59330,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &2092374655
 MonoBehaviour:
   m_ObjectHideFlags: 0
