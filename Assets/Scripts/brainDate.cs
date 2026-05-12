@@ -28,6 +28,14 @@ public class CoupleEndScenario
     public DialogueDataları secondDateFailScenario;
 }
 
+[System.Serializable]
+public class LocationAudio
+{
+    public string locationName = "Mekan Adı";
+    public AudioClip musicClip;
+    public AudioClip ambianceClip;
+}
+
 public class brainDate : MonoBehaviour
 {
     public TMP_Text introLocationText;
@@ -102,6 +110,12 @@ public class brainDate : MonoBehaviour
     public DialogueDataları defaultFailScenario;
 
     private DialogueDataları savedMainScenario;
+
+    [Header("Mekan Ses Sistemi")]
+    public List<LocationAudio> mekanSesleri;
+    public AudioSource bgmSource; 
+    public AudioSource bgsSource; 
+    public float fadeSpeed = 3f; 
 
     [Header("Dodge Klasik")]
     public brainDODGE dodgeScript;
@@ -449,6 +463,11 @@ public class brainDate : MonoBehaviour
     {
         currentScenario = scenario;
         lineIndex = 0;
+
+        if (!string.IsNullOrEmpty(scenario.locationName))
+        {
+            PlayLocationAudio(scenario.locationName);
+        }
         
         if (leftDaterImage != null)
         {
@@ -1718,6 +1737,47 @@ public class brainDate : MonoBehaviour
         {
             if (heartUI.transform.parent != null) PopToFront(heartUI.transform.parent.gameObject, true, 32000);
             else PopToFront(heartUI.gameObject, true, 32000);
+        }
+    }
+
+    public void PlayLocationAudio(string locName)
+    {
+        LocationAudio locAudio = mekanSesleri.Find(x => x.locationName == locName);
+        if (locAudio != null)
+        {
+            StartCoroutine(FadeAudio(bgmSource, locAudio.musicClip));
+            StartCoroutine(FadeAudio(bgsSource, locAudio.ambianceClip));
+        }
+    }
+
+    IEnumerator FadeAudio(AudioSource source, AudioClip newClip)
+    {
+        if (source == null) yield break;
+
+        if (source.clip == newClip && source.isPlaying) yield break;
+
+        if (source.isPlaying)
+        {
+            while (source.volume > 0)
+            {
+                source.volume -= Time.deltaTime * fadeSpeed;
+                yield return null;
+            }
+        }
+
+        source.Stop();
+        source.clip = newClip;
+
+        if (newClip != null)
+        {
+            source.volume = 0;
+            source.Play();
+            while (source.volume < 1f) 
+            {
+                source.volume += Time.deltaTime * fadeSpeed;
+                yield return null;
+            }
+            source.volume = 1f; 
         }
     }
 }
