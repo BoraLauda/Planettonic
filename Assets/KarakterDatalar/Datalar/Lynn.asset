@@ -33,6 +33,7 @@ MonoBehaviour:
   - locationName: Arcade
     bonusStars: 1
   hatedFoods: []
+  sevdigiKokteyl: 
   iceBreakerGood:
   - targetCharacter: {fileID: 11400000, guid: 914c084cda719c149b3ce3ae947d0973, type: 2}
     diyalogDosyasi: {fileID: 11400000, guid: fb968e5cd91f9694b84399306abd790e, type: 2}
@@ -69,3 +70,8 @@ MonoBehaviour:
     diyalogDosyasi: {fileID: 11400000, guid: cd2e917564bb74c47bbeb514e8168bbd, type: 2}
   - targetCharacter: {fileID: 11400000, guid: 74736f0dd50e8ce448a5eb50e16802ba, type: 2}
     diyalogDosyasi: {fileID: 11400000, guid: bde62aac80705e04d940f0cb61f7932c, type: 2}
+  curveDodgeQuestions:
+  - targetCharacter: {fileID: 11400000, guid: 914c084cda719c149b3ce3ae947d0973, type: 2}
+    diyalogDosyasi: {fileID: 11400000, guid: fb8d46c58404e894fbbe400e3c2b250d, type: 2}
+  - targetCharacter: {fileID: 11400000, guid: 914c084cda719c149b3ce3ae947d0973, type: 2}
+    diyalogDosyasi: {fileID: 11400000, guid: aa990a95fd5333a45a5e36323394966b, type: 2}
