@@ -73830,7 +73830,7 @@ MonoBehaviour:
     barSenaryolari:
     - {fileID: 11400000, guid: 32d9ea7a34af157409207a942f77ea1a, type: 2}
     evSenaryolari:
-    - {fileID: 11400000, guid: 32d9ea7a34af157409207a942f77ea1a, type: 2}
+    - {fileID: 0}
   - characterA: {fileID: 11400000, guid: 74736f0dd50e8ce448a5eb50e16802ba, type: 2}
     characterB: {fileID: 11400000, guid: 5f6e0fde49813654aa1d61918d175f26, type: 2}
     restoranSenaryolari:
