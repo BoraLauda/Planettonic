@@ -29455,16 +29455,24 @@ MonoBehaviour:
   mekanSesleri:
   - locationName: Restaurant
     musicClip: {fileID: 8300000, guid: 601c9502ba12148419bfe029fb7cd64a, type: 3}
+    musicVolume: 1
     ambianceClip: {fileID: 8300000, guid: 2d488c135462c294d9a58c606903fb66, type: 3}
+    ambianceVolume: 1
   - locationName: Arcade
     musicClip: {fileID: 8300000, guid: 5d0b84762a5a38e4b909337ca8b3dd79, type: 3}
+    musicVolume: 1
     ambianceClip: {fileID: 8300000, guid: 8964c0547494e704099ae75d99d95461, type: 3}
+    ambianceVolume: 1
   - locationName: Bar
     musicClip: {fileID: 8300000, guid: f25f338b9df49164a8da2ca65720bb38, type: 3}
+    musicVolume: 1
     ambianceClip: {fileID: 8300000, guid: cf6515b0f3625ca43ae560f68cddcbb0, type: 3}
+    ambianceVolume: 1
   - locationName: House
     musicClip: {fileID: 8300000, guid: bd364e4bb084e6541b37fd24dd5759af, type: 3}
+    musicVolume: 1
     ambianceClip: {fileID: 0}
+    ambianceVolume: 1
   bgmSource: {fileID: 1606547670}
   bgsSource: {fileID: 322454627}
   fadeSpeed: 3
@@ -58103,7 +58111,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2000811911
 RectTransform:
   m_ObjectHideFlags: 0
