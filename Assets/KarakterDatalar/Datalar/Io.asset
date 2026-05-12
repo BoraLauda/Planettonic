@@ -45,7 +45,8 @@ MonoBehaviour:
     reactionScenario: {fileID: 11400000, guid: d6d0176578ce07a4fabf9173d344d21a, type: 2}
   - food: 7
     reactionScenario: {fileID: 11400000, guid: d6d0176578ce07a4fabf9173d344d21a, type: 2}
-  sevdigiKokteyl: 
+  sevdigiKokteyl: Neptun
+  kokteylSevmediDiyalogu: {fileID: 0}
   iceBreakerGood:
   - targetCharacter: {fileID: 11400000, guid: 70924192341f4a244bdda3ba9cd56e47, type: 2}
     diyalogDosyasi: {fileID: 11400000, guid: 7ccdc90d8bf6c7e4796a2ebe82f5e941, type: 2}
