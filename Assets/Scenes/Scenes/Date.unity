@@ -29249,7 +29249,7 @@ MonoBehaviour:
     characterA: {fileID: 11400000, guid: 74736f0dd50e8ce448a5eb50e16802ba, type: 2}
     characterB: {fileID: 11400000, guid: bfd2e2416d70ccd49b0a798220ace20b, type: 2}
     specificFailScenario: {fileID: 11400000, guid: 8ff6eab34f34760489e5200f50fba0c7, type: 2}
-    secondDateFailScenario: {fileID: 0}
+    secondDateFailScenario: {fileID: 11400000, guid: 4ab7e1b51852e9f4bb3df9b569b628bc, type: 2}
   - ciftAdi: Nemelise Ary
     characterA: {fileID: 11400000, guid: 10ae37b55ea06ba4eadbd5ffcc3098c2, type: 2}
     characterB: {fileID: 11400000, guid: d9880c6a901c8d643a786ea1b19f0372, type: 2}

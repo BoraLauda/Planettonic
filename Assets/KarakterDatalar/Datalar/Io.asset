@@ -41,6 +41,7 @@ MonoBehaviour:
     reactionScenario: {fileID: 11400000, guid: d6d0176578ce07a4fabf9173d344d21a, type: 2}
   - food: 7
     reactionScenario: {fileID: 11400000, guid: d6d0176578ce07a4fabf9173d344d21a, type: 2}
+  sevdigiKokteyl: 
   iceBreakerGood:
   - targetCharacter: {fileID: 11400000, guid: 70924192341f4a244bdda3ba9cd56e47, type: 2}
     diyalogDosyasi: {fileID: 11400000, guid: 7ccdc90d8bf6c7e4796a2ebe82f5e941, type: 2}
@@ -82,3 +83,7 @@ MonoBehaviour:
     diyalogDosyasi: {fileID: 11400000, guid: ba7992e47a7454948bbff5f54d069516, type: 2}
   - targetCharacter: {fileID: 11400000, guid: 70924192341f4a244bdda3ba9cd56e47, type: 2}
     diyalogDosyasi: {fileID: 11400000, guid: bca18e870bf0474419fc07b9f66432de, type: 2}
+  - targetCharacter: {fileID: 11400000, guid: bfd2e2416d70ccd49b0a798220ace20b, type: 2}
+    diyalogDosyasi: {fileID: 11400000, guid: e25552d34c25b1445a3abcb4d16235f0, type: 2}
+  - targetCharacter: {fileID: 11400000, guid: bfd2e2416d70ccd49b0a798220ace20b, type: 2}
+    diyalogDosyasi: {fileID: 11400000, guid: b25861732217a134fb8f11ada2d337f9, type: 2}

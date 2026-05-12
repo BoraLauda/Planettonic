@@ -1,0 +1,82 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f832b14936fc2048824d9308b14ded6, type: 3}
+  m_Name: AfterKurtKuzu
+  m_EditorClassIdentifier: 
+  leftKarakterGelmedi: 0
+  rightKarakterGelmedi: 0
+  locationName: 
+  locationBackground: {fileID: 0}
+  allLines:
+  - side: 0
+    characterName: Io
+    characterSprite: {fileID: -1160322238068995058, guid: e79cf994b0112f542bb5904bcd06966b, type: 3}
+    sentence: So, Lynn. Before we lose ourselves in nerdy talk again I want to ask-
+      Why did you come here?
+    eventTrigger: 
+    choices: []
+  - side: 1
+    characterName: Lynn
+    characterSprite: {fileID: 21300000, guid: 724a9d18b99b23f4d8ef91418ba692f0, type: 3}
+    sentence: Oh, well.. I thought you and I.. we kind of connected you know and-
+    eventTrigger: 
+    choices: []
+  - side: 0
+    characterName: Io
+    characterSprite: {fileID: 0}
+    sentence: "Oh haha, I guess I should\u2019ve been clearer. I meant like, what
+      led you to signing up for these dates?"
+    eventTrigger: 
+    choices: []
+  - side: 1
+    characterName: Lynn
+    characterSprite: {fileID: 0}
+    sentence: "Oh uh.. Well to be honest, ever since my most recent break up I haven\u2019t
+      really been able to connect with anyone. I thought going to uni would help
+      but it just made things worse."
+    eventTrigger: 
+    choices: []
+  - side: 0
+    characterName: Io
+    characterSprite: {fileID: 0}
+    sentence: "I hear you. I\u2019ve never been a natural at these things either."
+    eventTrigger: 
+    choices: []
+  - side: 1
+    characterName: Lynn
+    characterSprite: {fileID: 0}
+    sentence: "What- really? But you\u2019re like gorgeous and as much as I\u2019ve
+      seen, very talented at flirting."
+    eventTrigger: 
+    choices: []
+  - side: 0
+    characterName: Io
+    characterSprite: {fileID: 0}
+    sentence: 
+    eventTrigger: 
+    choices:
+    - choices: "It\u2019s standard but I really want to get to know you better."
+      nextScenario: {fileID: 11400000, guid: 151127a801029e3448b7404cd8adebdc, type: 2}
+      target: 0
+      starReward: 1
+      heartReward: 0
+    - choices: "I\u2019m only good at flirting until I feel something."
+      nextScenario: {fileID: 11400000, guid: 6362185a484c3a940a9c196cadafc1b0, type: 2}
+      target: 0
+      starReward: 0.5
+      heartReward: 0
+    - choices: It is kind of an act, as sad as that sounds.
+      nextScenario: {fileID: 11400000, guid: a01c117263420dd4199d1f4378c216bb, type: 2}
+      target: 0
+      starReward: 0
+      heartReward: 0
+  nextScenario: {fileID: 0}
