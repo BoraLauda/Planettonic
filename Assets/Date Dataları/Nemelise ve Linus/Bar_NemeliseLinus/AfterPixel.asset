@@ -1,0 +1,82 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f832b14936fc2048824d9308b14ded6, type: 3}
+  m_Name: AfterPixel
+  m_EditorClassIdentifier: 
+  leftKarakterGelmedi: 0
+  rightKarakterGelmedi: 0
+  locationName: 
+  locationBackground: {fileID: 0}
+  allLines:
+  - side: 1
+    characterName: Linus
+    characterSprite: {fileID: 21300000, guid: dc24e77c8220d5b43bd418e911809b3b, type: 3}
+    sentence: "I\u2019m curious, how is it that you ended up livingin Mars? I thought
+      Neptunians and Marsians were polar opposites."
+    eventTrigger: 
+    choices: []
+  - side: 0
+    characterName: Nemelise
+    characterSprite: {fileID: 21300000, guid: b5a5cc5d83848d843aadeaf9b5e083f1, type: 3}
+    sentence: Ah well. I was born and raised in Neptune originally and then I got
+      accepted into a prestigious college in Mars. Interestingly so, they are home
+      to some of the best performance schools in the galaxy.
+    eventTrigger: 
+    choices: []
+  - side: 0
+    characterName: Nemelise
+    characterSprite: {fileID: 0}
+    sentence: "It broke me when I first arrived, I wasn\u2019t accepted as who I
+      was. Everyone told me I was supposed to be the opposite of what I believed
+      to be my best attributes."
+    eventTrigger: 
+    choices: []
+  - side: 1
+    characterName: Linus
+    characterSprite: {fileID: 0}
+    sentence: 'Gender norms. Mars is surprisingly backwards about that sort of thing.
+
+'
+    eventTrigger: 
+    choices: []
+  - side: 0
+    characterName: Nemelise
+    characterSprite: {fileID: 0}
+    sentence: "Yeah, but I came out on top at the end. It destroyed me at first,
+      but then I rebuilt myself to be even stronger. I used to see it as a curse,
+      but now it\u2019s become a blessing."
+    eventTrigger: 
+    choices: []
+  - side: 1
+    characterName: Linus
+    characterSprite: {fileID: 0}
+    sentence: 
+    eventTrigger: 
+    choices:
+    - choices: "You\u2019ve created something beautiful for new generations to look
+        up to."
+      nextScenario: {fileID: 11400000, guid: a72183cb46e8a224b87da0612c895ba3, type: 2}
+      target: 1
+      starReward: 1
+      heartReward: 0
+    - choices: "I\u2019m really glad you stayed true to yourself."
+      nextScenario: {fileID: 11400000, guid: 3672aa9d9cce59e4fbaad1e87d5fe2ac, type: 2}
+      target: 1
+      starReward: 0.5
+      heartReward: 0
+    - choices: "That\u2019s beautiful, such a shame that all Neptunians can\u2019t
+        be as strong spirited as you are."
+      nextScenario: {fileID: 11400000, guid: 75eee044eae1ba241a5653ab782f94b3, type: 2}
+      target: 1
+      starReward: 0
+      heartReward: 0
+  nextScenario: {fileID: 0}
