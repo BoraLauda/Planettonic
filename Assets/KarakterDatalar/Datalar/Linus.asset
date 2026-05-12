@@ -30,8 +30,6 @@ MonoBehaviour:
   locationPreferences:
   - locationName: Restaurant
     bonusStars: 1
-  - locationName: Arcade
-    bonusStars: 1
   - locationName: Bar
     bonusStars: 1
   - locationName: House

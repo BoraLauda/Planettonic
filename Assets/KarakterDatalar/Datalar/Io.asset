@@ -30,9 +30,13 @@ MonoBehaviour:
   - {fileID: 21300000, guid: a0743298d763d9b4fad0d06790a00df6, type: 3}
   quoteText: "\xD6zl\xFC s\xF6z\r\n"
   locationPreferences:
-  - locationName: RESTAURANT
+  - locationName: Restaurant
     bonusStars: 1
-  - locationName: BAR
+  - locationName: Bar
+    bonusStars: 1
+  - locationName: Arcade
+    bonusStars: 1
+  - locationName: House
     bonusStars: 1
   hatedFoods:
   - food: 2
