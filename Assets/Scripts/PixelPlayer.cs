@@ -55,6 +55,9 @@ public class PixelPlayer : MonoBehaviour
     private Vector2 normalColliderSize;
     private Vector2 normalColliderOffset;
 
+    
+    private PixelSesBrain sesYonetici;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -75,6 +78,9 @@ public class PixelPlayer : MonoBehaviour
 
         mevcutCan = maxCan;
         KalpleriGuncelle();
+
+        
+        sesYonetici = FindFirstObjectByType<PixelSesBrain>();
     }
 
     void Update()
@@ -191,7 +197,6 @@ public class PixelPlayer : MonoBehaviour
         if (!hasarAlabilirMi) return;
 
         mevcutCan -= miktar;
-        
         KalpleriGuncelle();
 
         if (mevcutCan <= 0)
@@ -200,6 +205,9 @@ public class PixelPlayer : MonoBehaviour
         }
         else
         {
+          
+            if (sesYonetici != null) sesYonetici.HitSesiCal();
+            
             StartCoroutine(HasarEfekti());
         }
     }
@@ -276,11 +284,6 @@ public class PixelPlayer : MonoBehaviour
         yield return new WaitForSeconds(bitisGecikmesi);
         
         brainDate bd = FindFirstObjectByType<brainDate>(); 
-        if (bd == null) 
-        {
-            bd = FindObjectOfType<brainDate>(); 
-        }
-        
         if (bd != null)
         {
             Debug.Log("PİKSEL: ZAFER! -> +1 Yıldız, +20 Kalp");
@@ -295,6 +298,9 @@ public class PixelPlayer : MonoBehaviour
     
     IEnumerator OlumVeBitir()
     {
+       
+        if (sesYonetici != null) sesYonetici.OlumSesiCal();
+
         if (sr != null)
         {
             sr.color = new Color(1f, 1f, 1f, 0.4f); 
@@ -314,11 +320,6 @@ public class PixelPlayer : MonoBehaviour
         yield return new WaitForSeconds(bitisGecikmesi);
         
         brainDate bd = FindFirstObjectByType<brainDate>(); 
-        if (bd == null) 
-        {
-            bd = FindObjectOfType<brainDate>(); 
-        }
-        
         if (bd != null)
         {
             Debug.Log("PİKSEL: ÖLÜM! -> 0 Yıldız, 0 Kalp");
@@ -326,7 +327,7 @@ public class PixelPlayer : MonoBehaviour
         }
         
         if (sr != null) sr.color = orijinalRenk;
-        foreach (Collider2D col in colliders) col.enabled = true;
+        foreach (Collider2D c in colliders) c.enabled = true;
         anim.speed = 1f;
         
         if (miniGameAnaObje != null)

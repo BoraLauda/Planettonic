@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f832b14936fc2048824d9308b14ded6, type: 3}
   m_Name: Start
   m_EditorClassIdentifier: 
-  locationName: BAR
+  leftKarakterGelmedi: 0
+  rightKarakterGelmedi: 0
+  locationName: Bar
   locationBackground: {fileID: -3380845427794256051, guid: d0fe8f52ba5bdcc4583a68a1a6e81f88, type: 3}
   allLines:
   - side: 1
