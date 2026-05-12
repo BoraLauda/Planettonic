@@ -63,17 +63,17 @@ MonoBehaviour:
     eventTrigger: 
     choices:
     - choices: The justice system is shit and doing good can leave you broke.
-      nextScenario: {fileID: 11400000, guid: 98262b6b72a2961488e46b0b58d6489c, type: 2}
+      nextScenario: {fileID: 11400000, guid: 919cd118d55399e4cb2b773a8e152d47, type: 2}
       target: 0
       starReward: 1
       heartReward: 0
     - choices: I feel like you say that to ease your own conscience.
-      nextScenario: {fileID: 11400000, guid: 72676669f38464d41b54bb1a7871dd5f, type: 2}
+      nextScenario: {fileID: 11400000, guid: 0664db8f167282f4aa8ea93429a90a44, type: 2}
       target: 0
       starReward: 0.5
       heartReward: 0
     - choices: "Lawyers tend to take cases they know they\u2019re going to win."
-      nextScenario: {fileID: 11400000, guid: e4fa92d1281a2f446899cd4a5654f234, type: 2}
+      nextScenario: {fileID: 11400000, guid: c66332c466e3197498f6e307b3b25226, type: 2}
       target: 0
       starReward: 0
       heartReward: 0
