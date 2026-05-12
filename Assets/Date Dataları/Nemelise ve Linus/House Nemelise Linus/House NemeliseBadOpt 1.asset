@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f832b14936fc2048824d9308b14ded6, type: 3}
+  m_Name: House NemeliseBadOpt 1
+  m_EditorClassIdentifier: 
+  leftKarakterGelmedi: 0
+  rightKarakterGelmedi: 0
+  locationName: 
+  locationBackground: {fileID: 0}
+  allLines:
+  - side: 0
+    characterName: Nemelise
+    characterSprite: {fileID: 21300000, guid: b5a5cc5d83848d843aadeaf9b5e083f1, type: 3}
+    sentence: "You\u2019d like to? I know lawyers tend to chase after cases that
+      they know they\u2019re likely to win, so I find that hard to believe."
+    eventTrigger: 
+    choices: []
+  - side: 1
+    characterName: Linus
+    characterSprite: {fileID: 21300000, guid: dc24e77c8220d5b43bd418e911809b3b, type: 3}
+    sentence: "It\u2019s weird that you think I\u2019m not aware of what I\u2019ve
+      done. You don\u2019t need the moral conscience of a saint to know that."
+    eventTrigger: 
+    choices: []
+  - side: 0
+    characterName: Nemelise
+    characterSprite: {fileID: 0}
+    sentence: "I didn\u2019t say you weren\u2019t aware. I just wasn\u2019t sure
+      if anyone had called you out before."
+    eventTrigger: 
+    choices: []
+  - side: 3
+    characterName: Chaperon
+    characterSprite: {fileID: 0}
+    sentence: We now have a second-date special for you guys to play! Are you ready?
+    eventTrigger: 
+    choices: []
+  - side: 0
+    characterName: Nemelise
+    characterSprite: {fileID: 0}
+    sentence: I guess we are!
+    eventTrigger: StartPixelGame
+    choices: []
+  nextScenario: {fileID: 11400000, guid: 54219c7d6c06c8a46b8b919096cf1e2f, type: 2}
