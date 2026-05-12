@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: a0ffa5936e6dde14aab9637ddffa2fc1
+guid: 34b0adce9c34d3846a6e5fff6632eb9a
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5083140257529398867
-    second: Female_Icon 1_0
+      213: -5315511236324005602
+    second: LOREEN ANGRY_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,7 +46,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Female_Icon 1_0
+      name: LOREEN ANGRY_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 668
-        height: 1005
+        x: 978
+        y: 154
+        width: 1044
+        height: 3672
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: da9f87e0ede0579b0800000000000000
-      internalID: -5083140257529398867
+      spriteID: e196f4f71b28b36b0800000000000000
+      internalID: -5315511236324005602
       vertices: []
       indices: 
       edges: []
@@ -125,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Female_Icon 1_0: -5083140257529398867
+      LOREEN ANGRY_0: -5315511236324005602
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

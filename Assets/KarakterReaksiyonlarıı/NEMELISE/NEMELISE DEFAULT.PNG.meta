@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: a0ffa5936e6dde14aab9637ddffa2fc1
+guid: 28d7790a91b4b464094faf043544df35
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5083140257529398867
-    second: Female_Icon 1_0
+      213: 3456797449147395136
+    second: NEMELISE DEFAULT_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,7 +46,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Female_Icon 1_0
+      name: NEMELISE DEFAULT_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 668
-        height: 1005
+        x: 834
+        y: 92
+        width: 1235
+        height: 3649
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: da9f87e0ede0579b0800000000000000
-      internalID: -5083140257529398867
+      spriteID: 04c28e017f209ff20800000000000000
+      internalID: 3456797449147395136
       vertices: []
       indices: 
       edges: []
@@ -125,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Female_Icon 1_0: -5083140257529398867
+      NEMELISE DEFAULT_0: 3456797449147395136
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
