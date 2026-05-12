@@ -39,7 +39,8 @@ MonoBehaviour:
   - locationName: House
     bonusStars: 1
   hatedFoods: []
-  sevdigiKokteyl: 
+  sevdigiKokteyl: Neptun
+  kokteylSevmediDiyalogu: {fileID: 11400000, guid: 7a0e336fc7ef63742be98e92797a904a, type: 2}
   iceBreakerGood:
   - targetCharacter: {fileID: 11400000, guid: 5f6e0fde49813654aa1d61918d175f26, type: 2}
     diyalogDosyasi: {fileID: 11400000, guid: c2f30f396918e164c9dec4e9004d1f3d, type: 2}
@@ -76,4 +77,8 @@ MonoBehaviour:
     diyalogDosyasi: {fileID: 11400000, guid: 1be374ca8a46aa14d8e50fd223a18a15, type: 2}
   - targetCharacter: {fileID: 11400000, guid: d9880c6a901c8d643a786ea1b19f0372, type: 2}
     diyalogDosyasi: {fileID: 11400000, guid: dca7ccf4c85960e4fa58be6d5a4b7c38, type: 2}
-  curveDodgeQuestions: []
+  curveDodgeQuestions:
+  - targetCharacter: {fileID: 11400000, guid: d9880c6a901c8d643a786ea1b19f0372, type: 2}
+    diyalogDosyasi: {fileID: 11400000, guid: 927156abeb400494faf53ad1543d7653, type: 2}
+  - targetCharacter: {fileID: 11400000, guid: d9880c6a901c8d643a786ea1b19f0372, type: 2}
+    diyalogDosyasi: {fileID: 11400000, guid: 905ec04470909174c9608d273232ab92, type: 2}

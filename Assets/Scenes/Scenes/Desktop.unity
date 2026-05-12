@@ -73756,9 +73756,9 @@ MonoBehaviour:
     arcadeSenaryolari:
     - {fileID: 11400000, guid: b8ca2232618bd5c4486f345bec78f0fe, type: 2}
     barSenaryolari:
-    - {fileID: 0}
+    - {fileID: 11400000, guid: d1eedd6a46e08cc45b27b46d4b1b2a48, type: 2}
     evSenaryolari:
-    - {fileID: 0}
+    - {fileID: 11400000, guid: e03e5b5d9ea92124d93564210356f050, type: 2}
   - characterA: {fileID: 11400000, guid: 52f97840cc872804392c25a1f2b8175b, type: 2}
     characterB: {fileID: 11400000, guid: 5f6e0fde49813654aa1d61918d175f26, type: 2}
     restoranSenaryolari:
