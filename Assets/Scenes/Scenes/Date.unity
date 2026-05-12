@@ -6124,7 +6124,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &220383599
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10693,7 +10693,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &407253687
 RectTransform:
   m_ObjectHideFlags: 0
@@ -29244,7 +29244,7 @@ MonoBehaviour:
     characterA: {fileID: 11400000, guid: 52f97840cc872804392c25a1f2b8175b, type: 2}
     characterB: {fileID: 11400000, guid: 5f6e0fde49813654aa1d61918d175f26, type: 2}
     specificFailScenario: {fileID: 11400000, guid: 4a1dfbc667d65ac4ea142c1917e3d758, type: 2}
-    secondDateFailScenario: {fileID: 0}
+    secondDateFailScenario: {fileID: 11400000, guid: 8d9395ad135779142bc27eb1419d5aa3, type: 2}
   - ciftAdi: Jetty Lynn
     characterA: {fileID: 11400000, guid: 74736f0dd50e8ce448a5eb50e16802ba, type: 2}
     characterB: {fileID: 11400000, guid: bfd2e2416d70ccd49b0a798220ace20b, type: 2}
@@ -29259,11 +29259,41 @@ MonoBehaviour:
     characterA: {fileID: 11400000, guid: 914c084cda719c149b3ce3ae947d0973, type: 2}
     characterB: {fileID: 11400000, guid: bfd2e2416d70ccd49b0a798220ace20b, type: 2}
     specificFailScenario: {fileID: 11400000, guid: c723d4cdc4f13f64b846a836066dafa9, type: 2}
+    secondDateFailScenario: {fileID: 11400000, guid: bf2f5aa54e3a060408b717304c383d51, type: 2}
+  - ciftAdi: Jetty Elroi
+    characterA: {fileID: 11400000, guid: 74736f0dd50e8ce448a5eb50e16802ba, type: 2}
+    characterB: {fileID: 11400000, guid: 70924192341f4a244bdda3ba9cd56e47, type: 2}
+    specificFailScenario: {fileID: 11400000, guid: 1d5738aa87789194badd6ce6f2807a15, type: 2}
     secondDateFailScenario: {fileID: 0}
-  - ciftAdi: Io Lynn
+  - ciftAdi: Io Linus
     characterA: {fileID: 11400000, guid: 914c084cda719c149b3ce3ae947d0973, type: 2}
+    characterB: {fileID: 11400000, guid: 5f6e0fde49813654aa1d61918d175f26, type: 2}
+    specificFailScenario: {fileID: 11400000, guid: 1c04ca6ea3ca5334b802accf04e05156, type: 2}
+    secondDateFailScenario: {fileID: 0}
+  - ciftAdi: Nemelise Lynn
+    characterA: {fileID: 11400000, guid: 10ae37b55ea06ba4eadbd5ffcc3098c2, type: 2}
     characterB: {fileID: 11400000, guid: bfd2e2416d70ccd49b0a798220ace20b, type: 2}
-    specificFailScenario: {fileID: 11400000, guid: c723d4cdc4f13f64b846a836066dafa9, type: 2}
+    specificFailScenario: {fileID: 11400000, guid: c97b48fb2be4e214da648dc5587dd15a, type: 2}
+    secondDateFailScenario: {fileID: 0}
+  - ciftAdi: Loreen Lynn
+    characterA: {fileID: 11400000, guid: 52f97840cc872804392c25a1f2b8175b, type: 2}
+    characterB: {fileID: 11400000, guid: bfd2e2416d70ccd49b0a798220ace20b, type: 2}
+    specificFailScenario: {fileID: 11400000, guid: 2febf5395b7f0194d9d3d8a02ad9feed, type: 2}
+    secondDateFailScenario: {fileID: 0}
+  - ciftAdi: Io Ary
+    characterA: {fileID: 11400000, guid: 914c084cda719c149b3ce3ae947d0973, type: 2}
+    characterB: {fileID: 11400000, guid: d9880c6a901c8d643a786ea1b19f0372, type: 2}
+    specificFailScenario: {fileID: 11400000, guid: bc8513b2a24d17a428c1fe94a89e885b, type: 2}
+    secondDateFailScenario: {fileID: 0}
+  - ciftAdi: Nemelise Elroi
+    characterA: {fileID: 11400000, guid: 10ae37b55ea06ba4eadbd5ffcc3098c2, type: 2}
+    characterB: {fileID: 11400000, guid: 70924192341f4a244bdda3ba9cd56e47, type: 2}
+    specificFailScenario: {fileID: 11400000, guid: 5aa51dac9d1147648a6fd7557c1c9d7e, type: 2}
+    secondDateFailScenario: {fileID: 0}
+  - ciftAdi: Loreen Elroi
+    characterA: {fileID: 11400000, guid: 52f97840cc872804392c25a1f2b8175b, type: 2}
+    characterB: {fileID: 11400000, guid: 70924192341f4a244bdda3ba9cd56e47, type: 2}
+    specificFailScenario: {fileID: 11400000, guid: 5bee2ac2223b8d941b715c8a3d17017c, type: 2}
     secondDateFailScenario: {fileID: 0}
   defaultFailScenario: {fileID: 0}
   dodgeScript: {fileID: 1190985220}
@@ -36079,7 +36109,6 @@ GameObject:
   - component: {fileID: 1340633912}
   - component: {fileID: 1340633918}
   - component: {fileID: 1340633917}
-  - component: {fileID: 1340633916}
   m_Layer: 5
   m_Name: Limonata (1)
   m_TagString: Untagged
@@ -36103,21 +36132,9 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -114.8, y: -101.3}
-  m_SizeDelta: {x: 138.6, y: 77.648}
+  m_AnchoredPosition: {x: -116.7, y: -101.30002}
+  m_SizeDelta: {x: 69.69, y: 77.65}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!225 &1340633916
-CanvasGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1340633911}
-  m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
-  m_IgnoreParentGroups: 0
 --- !u!114 &1340633917
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -36132,7 +36149,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 0.39215687}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -36140,7 +36157,7 @@ MonoBehaviour:
       m_Calls: []
   m_Sprite: {fileID: 21300000, guid: 1ef054768b01faf438d9ceeec52aa08f, type: 3}
   m_Type: 0
-  m_PreserveAspect: 1
+  m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
