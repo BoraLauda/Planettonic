@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 146a6ce1894c7084984f7771ba7e263e
+guid: c114fd6d1880ea24695360e45c2a4fd4
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3895208362979335837
-    second: LOREEN PLACEHOLDER_0
+      213: 6809532525292994323
+    second: 11111111111@2x_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,7 +46,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: LOREEN PLACEHOLDER_0
+      name: 11111111111@2x_0
       rect:
         serializedVersion: 2
-        x: 978
-        y: 154
-        width: 1044
-        height: 3672
+        x: 437
+        y: 176
+        width: 1594
+        height: 5609
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d9e93815e5f8e0630800000000000000
-      internalID: 3895208362979335837
+      spriteID: 31fbe88d0c1508e50800000000000000
+      internalID: 6809532525292994323
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      LOREEN PLACEHOLDER_0: 3895208362979335837
+      11111111111@2x_0: 6809532525292994323
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

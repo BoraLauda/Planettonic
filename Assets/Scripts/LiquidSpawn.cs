@@ -50,7 +50,7 @@ public class LiquidSpawn : MonoBehaviour
         {
             idleTimer += Time.deltaTime;
             
-            if (idleTimer >= 3f)
+            if (idleTimer >= 1f)
             {
                 FinishPouring();
             }
