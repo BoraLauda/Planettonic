@@ -6,6 +6,15 @@ using TMPro;
 using UnityEngine.SceneManagement;
 
 [System.Serializable]
+public class CoupleKokteylOutcome
+{
+    public string ciftAdi = "Yeni Çift";
+    public Characters characterA;
+    public Characters characterB;
+    public DialogueDataları ortakSevmeSenaryosu;
+}
+
+[System.Serializable]
 public class CoupleEndScenario
 {
     public string ciftAdi = "Yeni Çift";
@@ -55,7 +64,7 @@ public class brainDate : MonoBehaviour
     [Header("Bitiş Panelleri")]
     public GameObject dateSuccessPanel;
     public GameObject dateFailPanel;
-    public GameObject dateEkilmePanel; //Gelmeyen karakterler için
+    public GameObject dateEkilmePanel; 
     public TMP_Text ekilmeKalanKarakterText;
     
     private bool leftKarakterGelmedi = false;
@@ -85,6 +94,9 @@ public class brainDate : MonoBehaviour
 
     public GameObject dateEndedObject;
     public DialogueDataları startingScenario;
+
+    [Header("Kokteyl Çift Senaryoları")]
+    public List<CoupleKokteylOutcome> coupleKokteylOutcomes;
 
     public List<CoupleEndScenario> coupleEndScenarios;
     public DialogueDataları defaultFailScenario;
@@ -220,13 +232,17 @@ public class brainDate : MonoBehaviour
         }
     }
 
+    public DialogueDataları GetSavedMainScenario()
+    {
+        return savedMainScenario;
+    }
+
     void PrepareSceneData()
     {
         DialogueDataları playThis = DateSettings.selectedScenario != null ? DateSettings.selectedScenario : startingScenario;
 
         if (playThis != null)
         {
-            // YENİ: Gelmeme durumunu global değişkene çek
             leftKarakterGelmedi = playThis.leftKarakterGelmedi;
             rightKarakterGelmedi = playThis.rightKarakterGelmedi;
 
@@ -591,7 +607,6 @@ public class brainDate : MonoBehaviour
 
         totalHearts += hearts;
 
-        // YENİ: Eğer karakter gelmemişse asla yıldız alamaz!
         if (target == TargetCharacter.Left && !leftKarakterGelmedi)
         {
             leftStars += stars;
@@ -609,7 +624,6 @@ public class brainDate : MonoBehaviour
         UpdateScoreUI();
     }
 
-    // ... [Geri Kalan Kod Aynı] ...
     void DisplayLine()
     {
         if (lineIndex >= currentScenario.allLines.Count)
@@ -1288,7 +1302,7 @@ public class brainDate : MonoBehaviour
         });
     }
 
-    public void EndBartendingGame(float earnedStars, int earnedHearts, TargetCharacter target)
+    public void EndBartendingGame(float earnedStars, int earnedHearts, TargetCharacter target, List<DialogueDataları> sequence)
     {
         isBartendingMode = false;
         isEventTriggered = false;
@@ -1297,9 +1311,13 @@ public class brainDate : MonoBehaviour
 
         ShowUniversalScoreBoard(bartendingMiniGameObj, earnedStars, earnedHearts, () => 
         {
-            if (savedMainScenario != null && savedMainScenario.nextScenario != null)
+            if (sequence != null && sequence.Count > 0)
             {
-                StartScenario(savedMainScenario.nextScenario);
+                QueueScenarios(sequence); 
+            }
+            else if (savedMainScenario != null && savedMainScenario.nextScenario != null)
+            {
+                StartScenario(savedMainScenario.nextScenario); 
             }
         });
     }

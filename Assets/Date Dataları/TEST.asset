@@ -12,13 +12,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f832b14936fc2048824d9308b14ded6, type: 3}
   m_Name: TEST
   m_EditorClassIdentifier: 
+  leftKarakterGelmedi: 0
+  rightKarakterGelmedi: 0
   locationName: 
   locationBackground: {fileID: 0}
   allLines:
   - side: 0
-    characterName: 
+    characterName: Io
     characterSprite: {fileID: 0}
-    sentence: 
+    sentence: "\xC7ok iyi"
+    eventTrigger: 
+    choices: []
+  - side: 1
+    characterName: Elroi
+    characterSprite: {fileID: 0}
+    sentence: 'Wowwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww '
     eventTrigger: 
     choices: []
   nextScenario: {fileID: 0}
