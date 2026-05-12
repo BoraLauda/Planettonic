@@ -6124,7 +6124,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &220383599
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10693,7 +10693,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &407253687
 RectTransform:
   m_ObjectHideFlags: 0
@@ -36079,7 +36079,6 @@ GameObject:
   - component: {fileID: 1340633912}
   - component: {fileID: 1340633918}
   - component: {fileID: 1340633917}
-  - component: {fileID: 1340633916}
   m_Layer: 5
   m_Name: Limonata (1)
   m_TagString: Untagged
@@ -36103,21 +36102,9 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -114.8, y: -101.3}
-  m_SizeDelta: {x: 138.6, y: 77.648}
+  m_AnchoredPosition: {x: -116.7, y: -101.30002}
+  m_SizeDelta: {x: 69.69, y: 77.65}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!225 &1340633916
-CanvasGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1340633911}
-  m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
-  m_IgnoreParentGroups: 0
 --- !u!114 &1340633917
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -36132,7 +36119,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 0.39215687}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -36140,7 +36127,7 @@ MonoBehaviour:
       m_Calls: []
   m_Sprite: {fileID: 21300000, guid: 1ef054768b01faf438d9ceeec52aa08f, type: 3}
   m_Type: 0
-  m_PreserveAspect: 1
+  m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
