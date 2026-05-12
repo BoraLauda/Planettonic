@@ -1,0 +1,68 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f832b14936fc2048824d9308b14ded6, type: 3}
+  m_Name: AfterIceBreaker
+  m_EditorClassIdentifier: 
+  leftKarakterGelmedi: 0
+  rightKarakterGelmedi: 0
+  locationName: 
+  locationBackground: {fileID: 0}
+  allLines:
+  - side: 1
+    characterName: Lynn
+    characterSprite: {fileID: 21300000, guid: 724a9d18b99b23f4d8ef91418ba692f0, type: 3}
+    sentence: This game always reminds me of all those school UN conferences I used
+      to attend..
+    eventTrigger: 
+    choices: []
+  - side: 0
+    characterName: Jetty
+    characterSprite: {fileID: 1936918675910826544, guid: e8f1130d0e09cef45bb1f9ab49489848, type: 3}
+    sentence: Oof, sounds boring.
+    eventTrigger: 
+    choices: []
+  - side: 1
+    characterName: Lynn
+    characterSprite: {fileID: 0}
+    sentence: They were.
+    eventTrigger: 
+    choices: []
+  - side: 0
+    characterName: Jetty
+    characterSprite: {fileID: 0}
+    sentence: "They were.I\u2019m sorry, I have to ask. Why are you taking this program
+      when you\u2019re still in school? Surely you\u2019d have a better shot at meeting
+      people you\u2019re compatible with there."
+    eventTrigger: 
+    choices: []
+  - side: 1
+    characterName: Lynn
+    characterSprite: {fileID: 0}
+    sentence: 
+    eventTrigger: 
+    choices:
+    - choices: "I\u2019ve never really had game."
+      nextScenario: {fileID: 11400000, guid: f4c48a895b306084da701b0acda33dd2, type: 2}
+      target: 1
+      starReward: 1
+      heartReward: 0
+    - choices: I just wanted to give it a try.
+      nextScenario: {fileID: 11400000, guid: 67e662100357bf246a8ae7ba7f4533fc, type: 2}
+      target: 1
+      starReward: 0.5
+      heartReward: 0
+    - choices: "I\u2019d rather keep that to myself, if that\u2019s okay."
+      nextScenario: {fileID: 11400000, guid: cd4e9991dc6d92a4691ef7be18ee5a80, type: 2}
+      target: 1
+      starReward: 0
+      heartReward: 0
+  nextScenario: {fileID: 0}

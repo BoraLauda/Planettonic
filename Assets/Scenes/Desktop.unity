@@ -73830,7 +73830,7 @@ MonoBehaviour:
     barSenaryolari:
     - {fileID: 11400000, guid: 32d9ea7a34af157409207a942f77ea1a, type: 2}
     evSenaryolari:
-    - {fileID: 11400000, guid: 32d9ea7a34af157409207a942f77ea1a, type: 2}
+    - {fileID: 0}
   - characterA: {fileID: 11400000, guid: 74736f0dd50e8ce448a5eb50e16802ba, type: 2}
     characterB: {fileID: 11400000, guid: 5f6e0fde49813654aa1d61918d175f26, type: 2}
     restoranSenaryolari:
@@ -73868,9 +73868,9 @@ MonoBehaviour:
     arcadeSenaryolari:
     - {fileID: 11400000, guid: cce79e29ebae75446a3b3403bea15796, type: 2}
     barSenaryolari:
-    - {fileID: 0}
+    - {fileID: 11400000, guid: 8d9395ad135779142bc27eb1419d5aa3, type: 2}
     evSenaryolari:
-    - {fileID: 0}
+    - {fileID: 11400000, guid: dccb1289f6d404b488ec78becf5f05c4, type: 2}
   - characterA: {fileID: 11400000, guid: 10ae37b55ea06ba4eadbd5ffcc3098c2, type: 2}
     characterB: {fileID: 11400000, guid: 5f6e0fde49813654aa1d61918d175f26, type: 2}
     restoranSenaryolari:
@@ -73888,9 +73888,9 @@ MonoBehaviour:
     arcadeSenaryolari:
     - {fileID: 11400000, guid: 747a62ed914848c4bbf278a40c918335, type: 2}
     barSenaryolari:
-    - {fileID: 0}
+    - {fileID: 11400000, guid: 91e7347d76016bb45b8c1ef8096fa3f8, type: 2}
     evSenaryolari:
-    - {fileID: 0}
+    - {fileID: 11400000, guid: 38b819f958d67c04d8c60aaab4392b74, type: 2}
   - characterA: {fileID: 11400000, guid: 74736f0dd50e8ce448a5eb50e16802ba, type: 2}
     characterB: {fileID: 11400000, guid: bfd2e2416d70ccd49b0a798220ace20b, type: 2}
     restoranSenaryolari:
@@ -73898,9 +73898,9 @@ MonoBehaviour:
     arcadeSenaryolari:
     - {fileID: 11400000, guid: cb7aa3bd90ba98c4a861df29824f4098, type: 2}
     barSenaryolari:
-    - {fileID: 0}
+    - {fileID: 11400000, guid: 4ab7e1b51852e9f4bb3df9b569b628bc, type: 2}
     evSenaryolari:
-    - {fileID: 0}
+    - {fileID: 11400000, guid: 7afeb654c3117a54bba7e5c2e6934e57, type: 2}
   - characterA: {fileID: 11400000, guid: 914c084cda719c149b3ce3ae947d0973, type: 2}
     characterB: {fileID: 11400000, guid: 5f6e0fde49813654aa1d61918d175f26, type: 2}
     restoranSenaryolari:

@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+
 public class PlayerDODGE : MonoBehaviour
 {
     public float moveSpeed = 500f;
@@ -9,22 +10,36 @@ public class PlayerDODGE : MonoBehaviour
     private Image PlayerImage;
     
     private brainDODGE gameManager;
+    private BrainDodgeCurve curveGameManager; 
 
-    private RectTransform rect;
-       void Start()
+    void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         
         gameManager = FindFirstObjectByType<brainDODGE>();
+        curveGameManager = FindFirstObjectByType<BrainDodgeCurve>();
         
         PlayerImage = GetComponent<Image>();
     }
 
     
+    bool IsGameStopped()
+    {
+        if (curveGameManager != null && curveGameManager.gameObject.activeInHierarchy)
+        {
+            return !curveGameManager.isGameActive;
+        }
+        if (gameManager != null && gameManager.gameObject.activeInHierarchy)
+        {
+            return !gameManager.isGameActive;
+        }
+        return false;
+    }
+
     void Update()
     {
         
-        if (gameManager != null && gameManager.isGameActive == false)
+        if (IsGameStopped())
         {
             movement = Vector2.zero; 
             ChangeAlpha(0.5f);
@@ -35,7 +50,6 @@ public class PlayerDODGE : MonoBehaviour
             ChangeAlpha(1f);
         }
         
-       
         float mx = Input.GetAxisRaw("Horizontal");
         float my = Input.GetAxisRaw("Vertical");
         
@@ -44,7 +58,7 @@ public class PlayerDODGE : MonoBehaviour
     
     void FixedUpdate()
     {
-        if (gameManager != null && gameManager.isGameActive == false)
+        if (IsGameStopped())
         {
             rb.linearVelocity = Vector2.zero; 
             return;
@@ -55,11 +69,16 @@ public class PlayerDODGE : MonoBehaviour
     public void TakeDamage()
     {
         Debug.Log("Çarpışma");
-        if(gameManager != null)
+        
+      
+        if (curveGameManager != null && curveGameManager.gameObject.activeInHierarchy)
+        {
+            curveGameManager.TakeDamage();
+        }
+        else if (gameManager != null && gameManager.gameObject.activeInHierarchy)
         {
             gameManager.TakeDamage();
         }
-        
     }
 
     void ChangeAlpha(float alphaValue)
@@ -68,13 +87,11 @@ public class PlayerDODGE : MonoBehaviour
         {
             Color tempColor = PlayerImage.color;
 
-
             if (Mathf.Abs(tempColor.a - alphaValue) > 0.01f)
             {
                 tempColor.a = alphaValue;
                 PlayerImage.color = tempColor;
             }
         }
-
     }
 }

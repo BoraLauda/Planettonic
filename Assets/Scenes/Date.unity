@@ -28205,6 +28205,8 @@ MonoBehaviour:
   desktopScene: Desktop
   dateSuccessPanel: {fileID: 420650145}
   dateFailPanel: {fileID: 265618232}
+  dateEkilmePanel: {fileID: 0}
+  ekilmeKalanKarakterText: {fileID: 0}
   successLeftNameText: {fileID: 1616700900}
   successRightNameText: {fileID: 2110225283}
   successTutorialTextObj: {fileID: 386067114}
@@ -28254,12 +28256,12 @@ MonoBehaviour:
     characterA: {fileID: 11400000, guid: 52f97840cc872804392c25a1f2b8175b, type: 2}
     characterB: {fileID: 11400000, guid: 5f6e0fde49813654aa1d61918d175f26, type: 2}
     specificFailScenario: {fileID: 11400000, guid: 4a1dfbc667d65ac4ea142c1917e3d758, type: 2}
-    secondDateFailScenario: {fileID: 0}
+    secondDateFailScenario: {fileID: 11400000, guid: 8d9395ad135779142bc27eb1419d5aa3, type: 2}
   - ciftAdi: Jetty Lynn
     characterA: {fileID: 11400000, guid: 74736f0dd50e8ce448a5eb50e16802ba, type: 2}
     characterB: {fileID: 11400000, guid: bfd2e2416d70ccd49b0a798220ace20b, type: 2}
     specificFailScenario: {fileID: 11400000, guid: 8ff6eab34f34760489e5200f50fba0c7, type: 2}
-    secondDateFailScenario: {fileID: 0}
+    secondDateFailScenario: {fileID: 11400000, guid: 4ab7e1b51852e9f4bb3df9b569b628bc, type: 2}
   - ciftAdi: Nemelise Ary
     characterA: {fileID: 11400000, guid: 10ae37b55ea06ba4eadbd5ffcc3098c2, type: 2}
     characterB: {fileID: 11400000, guid: d9880c6a901c8d643a786ea1b19f0372, type: 2}
@@ -28269,7 +28271,7 @@ MonoBehaviour:
     characterA: {fileID: 11400000, guid: 914c084cda719c149b3ce3ae947d0973, type: 2}
     characterB: {fileID: 11400000, guid: bfd2e2416d70ccd49b0a798220ace20b, type: 2}
     specificFailScenario: {fileID: 11400000, guid: c723d4cdc4f13f64b846a836066dafa9, type: 2}
-    secondDateFailScenario: {fileID: 0}
+    secondDateFailScenario: {fileID: 11400000, guid: bf2f5aa54e3a060408b717304c383d51, type: 2}
   - ciftAdi: Jetty Elroi
     characterA: {fileID: 11400000, guid: 74736f0dd50e8ce448a5eb50e16802ba, type: 2}
     characterB: {fileID: 11400000, guid: 70924192341f4a244bdda3ba9cd56e47, type: 2}
@@ -59003,11 +59005,14 @@ MonoBehaviour:
   fadeImage: {fileID: 1272370400}
   gameSaniye: 20
   centerCharacterImage: {fileID: 1489187136}
-  sagAlt: {fileID: 1624043337}
-  solAlt: {fileID: 242692316}
-  sagUst: {fileID: 1945784948}
+  ustOrta: {fileID: 0}
+  altOrta: {fileID: 0}
   solUst: {fileID: 846331879}
-  merkezNoktasi: {fileID: 319798103}
+  sagAlt: {fileID: 1624043337}
+  sagUst: {fileID: 1945784948}
+  solAlt: {fileID: 242692316}
+  solOrta: {fileID: 0}
+  sagOrta: {fileID: 0}
   warningSigns:
   - {fileID: 489989267}
   - {fileID: 1321712860}
@@ -62664,6 +62669,8 @@ MonoBehaviour:
   kapakAcikMi: 0
   kapaliShakerObjesi: {fileID: 647116984}
   acikShakerObjesi: {fileID: 111780810}
+  bumpUpScale: 1.15
+  bumpDuration: 0.1
 --- !u!1 &3963122323935133897
 GameObject:
   m_ObjectHideFlags: 0
@@ -63191,8 +63198,6 @@ MonoBehaviour:
   progressBar: {fileID: 6960636756236384059}
   shakerToShake: {fileID: 1013786838322803385}
   buEkranStirringMi: 0
-  key1: 97
-  key2: 100
   progressPerPress: 10
   maxProgress: 100
   decayRate: 30
@@ -64641,8 +64646,6 @@ MonoBehaviour:
   progressBar: {fileID: 6169966652286796757}
   shakerToShake: {fileID: 1438695404}
   buEkranStirringMi: 1
-  key1: 97
-  key2: 100
   progressPerPress: 10
   maxProgress: 100
   decayRate: 15

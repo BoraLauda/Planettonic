@@ -2,24 +2,19 @@ using UnityEngine;
 
 public class Glass : MonoBehaviour
 {
-    
     public int currentDrops = 0;      
     public int targetDrops = 100;     
     public int tolerance = 15;      
 
-   
     void OnTriggerEnter2D(Collider2D col)
     {
-        
         if (col.CompareTag("Liquid"))
         {
             currentDrops++; 
             Debug.Log(" Toplam: " + currentDrops);
-            
         }
     }
 
-   
     public void CheckScore()
     {
         int difference = Mathf.Abs(targetDrops - currentDrops);
@@ -42,12 +37,15 @@ public class Glass : MonoBehaviour
             heartsToGive = 0;
         }
         
-        brainDate mainDateScript = FindObjectOfType<brainDate>();
+        brainDate mainDateScript = FindFirstObjectByType<brainDate>();
         if (mainDateScript != null)
         {
-            mainDateScript.EndBartendingGame(starsToGive, heartsToGive, TargetCharacter.Left); 
+            mainDateScript.EndBartendingGame(starsToGive, heartsToGive, TargetCharacter.Left, null); 
         }
         
-        KokteylManager.Instance.NextPhase();
+        if (KokteylManager.Instance != null)
+        {
+            KokteylManager.Instance.NextPhase();
+        }
     }
 }

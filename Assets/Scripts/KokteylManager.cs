@@ -73,14 +73,6 @@ public class KokteylManager : MonoBehaviour
     public int secilenBardakIndex = 0; 
     public GameObject[] pouringBardakObjeleri;
 
-  
-    private int yapilanIcecekSayisi = 0; // Toplamda 2 içecek yapılınca oyun biter
-    private bool leftCharServed = false;  // Sol karakter içkisini aldı mı?
-    private bool rightCharServed = false; // Sağ karakter içkisini aldı mı?
-    
-    private float totalKazanilanYildiz = 0f;
-    private int totalKazanilanKalp = 0;
-
     void Awake()
     {
         if (Instance == null) Instance = this;
@@ -164,13 +156,6 @@ public class KokteylManager : MonoBehaviour
     
     void OnEnable()
     {
-        yapilanIcecekSayisi = 0; 
-        leftCharServed = false;
-        rightCharServed = false;
-        
-        totalKazanilanYildiz = 0f; 
-        totalKazanilanKalp = 0;
-
         ResetMasayiVeDegiskenleri(); 
     }
 
@@ -253,7 +238,6 @@ public class KokteylManager : MonoBehaviour
         float enYuksekBasariOrani = 0f;
         string yapilanKokteylAdi = "Bilinmeyen Karışım";
 
-      
         foreach (KokteylTarifi tarif in tumTarifler)
         {
             float dogruPuan = 0;
@@ -293,61 +277,79 @@ public class KokteylManager : MonoBehaviour
             }
         }
 
-      
-        bool kokteylKabulEdildi = false;
+        bool solSevdi = false;
+        bool sagSevdi = false;
 
-       
         if (enYuksekBasariOrani >= 1f)
         {
-            
-            if (!leftCharServed && DateSettings.leftChar != null && yapilanKokteylAdi == DateSettings.leftChar.sevdigiKokteyl)
-            {
-                leftCharServed = true;
-                kokteylKabulEdildi = true;
-                Debug.Log($"BAŞARILI: Sol Karakter ({DateSettings.leftChar.name}) içkisini ({yapilanKokteylAdi}) aldı!");
-            }
-            
-            else if (!rightCharServed && DateSettings.rightChar != null && yapilanKokteylAdi == DateSettings.rightChar.sevdigiKokteyl)
-            {
-                rightCharServed = true;
-                kokteylKabulEdildi = true;
-                Debug.Log($"BAŞARILI: Sağ Karakter ({DateSettings.rightChar.name}) içkisini ({yapilanKokteylAdi}) aldı!");
-            }
-
-           
-            if (kokteylKabulEdildi)
-            {
-                totalKazanilanYildiz += 0.5f;
-                totalKazanilanKalp += 20;
-            }
-            else
-            {
-                Debug.Log($"BAŞARISIZ: {yapilanKokteylAdi} mükemmel yapıldı ama bunu şu an isteyen yok (veya zaten içti).");
-            }
-        }
-        else
-        {
-            Debug.Log($"BAŞARISIZ: Karışım berbat veya eksik. Oran: {enYuksekBasariOrani}");
+            if (DateSettings.leftChar != null && yapilanKokteylAdi == DateSettings.leftChar.sevdigiKokteyl)
+                solSevdi = true;
+                
+            if (DateSettings.rightChar != null && yapilanKokteylAdi == DateSettings.rightChar.sevdigiKokteyl)
+                sagSevdi = true;
         }
 
+        float kazanilanYildiz = 0f;
+        int kazanilanKalp = 0;
+        TargetCharacter hedefKarakter = TargetCharacter.Both;
         
-        yapilanIcecekSayisi++;
+        List<DialogueDataları> reactionSequence = new List<DialogueDataları>();
+        brainDate bd = FindFirstObjectByType<brainDate>(); 
 
-        if (yapilanIcecekSayisi < 2)
+        if (solSevdi && sagSevdi)
         {
-           
-            ResetMasayiVeDegiskenleri();
-            Debug.Log("Masa 2. içecek için sıfırlandı!");
+            kazanilanYildiz = 2f; 
+            kazanilanKalp = 80;
+            hedefKarakter = TargetCharacter.Both;
+            
+            if (bd != null)
+            {
+                foreach (var outcome in bd.coupleKokteylOutcomes)
+                {
+                    if ((DateSettings.leftChar == outcome.characterA && DateSettings.rightChar == outcome.characterB) ||
+                        (DateSettings.leftChar == outcome.characterB && DateSettings.rightChar == outcome.characterA))
+                    {
+                        if (outcome.ortakSevmeSenaryosu != null)
+                            reactionSequence.Add(outcome.ortakSevmeSenaryosu);
+                        break;
+                    }
+                }
+            }
         }
         else
         {
-            
-            brainDate bd = FindFirstObjectByType<brainDate>(); 
-            if (bd != null) 
+            if (solSevdi)
             {
-                bd.EndBartendingGame(totalKazanilanYildiz, totalKazanilanKalp, TargetCharacter.Both); 
+                kazanilanYildiz = 1f; kazanilanKalp = 40; hedefKarakter = TargetCharacter.Left;
             }
-            TemizlikYap();
+            else if (sagSevdi)
+            {
+                kazanilanYildiz = 1f; kazanilanKalp = 40; hedefKarakter = TargetCharacter.Right;
+            }
+
+            if (!solSevdi && DateSettings.leftChar != null && DateSettings.leftChar.kokteylSevmediDiyalogu != null)
+            {
+                reactionSequence.Add(DateSettings.leftChar.kokteylSevmediDiyalogu);
+            }
+
+            if (!sagSevdi && DateSettings.rightChar != null && DateSettings.rightChar.kokteylSevmediDiyalogu != null)
+            {
+                reactionSequence.Add(DateSettings.rightChar.kokteylSevmediDiyalogu);
+            }
+        }
+
+        if (bd != null) 
+        {
+            DialogueDataları savedScenario = bd.GetSavedMainScenario();
+            if (savedScenario != null && savedScenario.nextScenario != null)
+            {
+                reactionSequence.Add(savedScenario.nextScenario);
+            }
+        }
+
+        if (bd != null) 
+        {
+            bd.EndBartendingGame(kazanilanYildiz, kazanilanKalp, hedefKarakter, reactionSequence); 
         }
     }
 
@@ -411,24 +413,102 @@ public class KokteylManager : MonoBehaviour
     private void HileyleBitir()
     {
         brainDate bd = FindFirstObjectByType<brainDate>(); 
-        if (bd != null) bd.EndBartendingGame(1f, 40, TargetCharacter.Both); 
+        if (bd != null) bd.EndBartendingGame(1f, 40, TargetCharacter.Both, new List<DialogueDataları>()); 
         MasadakiBardagiGuncelle(1f);
         TemizlikYap();
     }
 
+   // YENİ: Renk vermeden önce shaker'ın içindekilerin hangi tarife dönüştüğünü bulur
+    private string MevcutTarifiBul()
+    {
+        float enYuksekBasariOrani = 0f;
+        string yapilanKokteylAdi = "";
+
+        foreach (KokteylTarifi tarif in tumTarifler)
+        {
+            float dogruPuan = 0;
+            float toplamKriter = 8f + tarif.istenenSoslar.Count;
+
+            if (eklenenBuzSayisi == tarif.istenenBuzSayisi) dogruPuan++;
+            if (eklenenLimonSayisi == tarif.istenenLimonSayisi) dogruPuan++;
+            if (eklenenPortakalSayisi == tarif.istenenPortakalSayisi) dogruPuan++;
+            if (eklenenNaneSayisi == tarif.istenenNaneSayisi) dogruPuan++;
+            if (eklenenCilekSayisi == tarif.istenenCilekSayisi) dogruPuan++;
+            if (eklenenZeytinSayisi == tarif.istenenZeytinSayisi) dogruPuan++;
+            
+            if (isStirred == tarif.karistirilmaliMi) dogruPuan++;
+            if (isShaken == tarif.calkalanmaliMi) dogruPuan++;
+
+            int dogruSosSayisi = 0;
+            List<string> kopyaEklenenler = new List<string>(eklenenSoslar);
+            foreach (string istenenSos in tarif.istenenSoslar)
+            {
+                if (kopyaEklenenler.Contains(istenenSos))
+                {
+                    dogruSosSayisi++;
+                    kopyaEklenenler.Remove(istenenSos); 
+                }
+            }
+            dogruPuan += dogruSosSayisi;
+            dogruPuan -= (kopyaEklenenler.Count * 0.5f); 
+
+            float oran = Mathf.Clamp01(dogruPuan / toplamKriter);
+            
+            if (oran > enYuksekBasariOrani)
+            {
+                enYuksekBasariOrani = oran;
+                yapilanKokteylAdi = tarif.tarifAdi; 
+            }
+        }
+
+        if (enYuksekBasariOrani >= 1f)
+        {
+            return yapilanKokteylAdi;
+        }
+        
+        return "";
+    }
+
+   
     public Color GetKokteylRengi()
     {
-        if (eklenenSoslar.Count == 0) return Color.white; 
-        string anaSos = eklenenSoslar[0];
-        switch (anaSos)
+        Color sonucRengi = Color.white; 
+        
+        
+        string yapilanTarif = MevcutTarifiBul().ToLower();
+
+       
+        if (yapilanTarif.Contains("cosmopolitan"))
         {
-            case "Mavi": return new Color(0.2f, 0.6f, 1f);
-            case "Pembe": return new Color(1f, 0.4f, 0.7f);
-            case "Sari": return Color.yellow;
-            case "Turuncu": return new Color(1f, 0.5f, 0f);
-            case "Kirmizi": return Color.red;
-            case "Yesil": return Color.green;
-            default: return Color.white;
+            ColorUtility.TryParseHtmlString("#E9ADAD", out sonucRengi);
         }
+        else if (yapilanTarif.Contains("martini"))
+        {
+            ColorUtility.TryParseHtmlString("#F8BF9E", out sonucRengi);
+        }
+        else if (yapilanTarif.Contains("neptun") || yapilanTarif.Contains("neptün"))
+        {
+            ColorUtility.TryParseHtmlString("#BDF39D", out sonucRengi);
+        }
+        else if (eklenenSoslar.Count > 0)
+        {
+          
+            string anaSos = eklenenSoslar[0];
+            switch (anaSos)
+            {
+                case "Mavi": sonucRengi = new Color(0.2f, 0.6f, 1f); break;
+                case "Pembe": sonucRengi = new Color(1f, 0.4f, 0.7f); break;
+                case "Sari": sonucRengi = Color.yellow; break;
+                case "Turuncu": sonucRengi = new Color(1f, 0.5f, 0f); break;
+                case "Kirmizi": sonucRengi = Color.red; break;
+                case "Yesil": sonucRengi = Color.green; break;
+            }
+        }
+
+      
+        sonucRengi.a = 180f / 255f; 
+        
+        return sonucRengi;
     }
+    
 }

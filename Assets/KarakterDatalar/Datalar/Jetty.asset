@@ -35,6 +35,10 @@ MonoBehaviour:
   hatedFoods:
   - food: 7
     reactionScenario: {fileID: 11400000, guid: 08b1ff16f60bfdb4ca046126682780d3, type: 2}
+  - food: 2
+    reactionScenario: {fileID: 11400000, guid: 08b1ff16f60bfdb4ca046126682780d3, type: 2}
+  sevdigiKokteyl: Cosmopolitan
+  kokteylSevmediDiyalogu: {fileID: 11400000, guid: 752aa093cf63b894f8cff324abd1a468, type: 2}
   iceBreakerGood:
   - targetCharacter: {fileID: 11400000, guid: 5f6e0fde49813654aa1d61918d175f26, type: 2}
     diyalogDosyasi: {fileID: 11400000, guid: ee0e12515b688134e95c1b384624c4cc, type: 2}
