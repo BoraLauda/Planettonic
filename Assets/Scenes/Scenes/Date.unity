@@ -8992,7 +8992,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 1
@@ -17677,7 +17677,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.7961426, y: 22.57373}
+  m_AnchoredPosition: {x: 3.0340576, y: 4.2800293}
   m_SizeDelta: {x: -1126.0602, y: -282.1474}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &613308421
@@ -23044,7 +23044,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 1.1196289, y: -43.48999}
+  m_AnchoredPosition: {x: 2.659912, y: 8.870117}
   m_SizeDelta: {x: -630, y: -236.24}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &824090831
@@ -29727,22 +29727,22 @@ MonoBehaviour:
   mekanSesleri:
   - locationName: Restaurant
     musicClip: {fileID: 8300000, guid: 601c9502ba12148419bfe029fb7cd64a, type: 3}
-    musicVolume: 1
+    musicVolume: 0.5
     ambianceClip: {fileID: 8300000, guid: 2d488c135462c294d9a58c606903fb66, type: 3}
-    ambianceVolume: 1
+    ambianceVolume: 0.5
   - locationName: Arcade
     musicClip: {fileID: 8300000, guid: 5d0b84762a5a38e4b909337ca8b3dd79, type: 3}
-    musicVolume: 1
+    musicVolume: 0.5
     ambianceClip: {fileID: 8300000, guid: 8964c0547494e704099ae75d99d95461, type: 3}
-    ambianceVolume: 1
+    ambianceVolume: 0.5
   - locationName: Bar
-    musicClip: {fileID: 8300000, guid: f25f338b9df49164a8da2ca65720bb38, type: 3}
-    musicVolume: 1
+    musicClip: {fileID: 8300000, guid: bebe1e11d3583ca4bb1dffa73427d174, type: 3}
+    musicVolume: 0.5
     ambianceClip: {fileID: 8300000, guid: cf6515b0f3625ca43ae560f68cddcbb0, type: 3}
-    ambianceVolume: 1
+    ambianceVolume: 0.5
   - locationName: House
     musicClip: {fileID: 8300000, guid: bd364e4bb084e6541b37fd24dd5759af, type: 3}
-    musicVolume: 1
+    musicVolume: 0.5
     ambianceClip: {fileID: 0}
     ambianceVolume: 1
   bgmSource: {fileID: 1606547670}
@@ -32974,7 +32974,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 28.375977, y: 308}
+  m_AnchoredPosition: {x: 17.232056, y: 308}
   m_SizeDelta: {x: -1090.0043, y: -349.1098}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1190985218
@@ -37986,8 +37986,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 2.66, y: 6.4684}
-  m_SizeDelta: {x: 906.07, y: 818.06}
+  m_AnchoredPosition: {x: 2.66, y: 4.28}
+  m_SizeDelta: {x: 906.07, y: 822.44}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &1416898064
 Canvas:
@@ -42344,7 +42344,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 1
@@ -54216,7 +54216,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1.119, y: 157}
+  m_AnchoredPosition: {x: 3.0341, y: 141}
   m_SizeDelta: {x: 797.77, y: 745.68}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1828623619
