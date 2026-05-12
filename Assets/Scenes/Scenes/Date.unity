@@ -29218,7 +29218,19 @@ MonoBehaviour:
   - ciftAdi: Io Elroi
     characterA: {fileID: 11400000, guid: 914c084cda719c149b3ce3ae947d0973, type: 2}
     characterB: {fileID: 11400000, guid: 70924192341f4a244bdda3ba9cd56e47, type: 2}
-    ortakSevmeSenaryosu: {fileID: 11400000, guid: 2e25a3f5804a2144696cfc19b3358be6, type: 2}
+    ortakSevmeSenaryosu: {fileID: 11400000, guid: 684445afff02ae74cb1e6720cfa6db65, type: 2}
+  - ciftAdi: Io Lynn
+    characterA: {fileID: 11400000, guid: 914c084cda719c149b3ce3ae947d0973, type: 2}
+    characterB: {fileID: 11400000, guid: bfd2e2416d70ccd49b0a798220ace20b, type: 2}
+    ortakSevmeSenaryosu: {fileID: 11400000, guid: 6d33ba7ecb8bcd54c9f7618586e71676, type: 2}
+  - ciftAdi: Linus Jetty
+    characterA: {fileID: 11400000, guid: 74736f0dd50e8ce448a5eb50e16802ba, type: 2}
+    characterB: {fileID: 11400000, guid: 5f6e0fde49813654aa1d61918d175f26, type: 2}
+    ortakSevmeSenaryosu: {fileID: 11400000, guid: 5e04fb0789cfaa740852a0f06b15c06e, type: 2}
+  - ciftAdi: Linus Nemelise
+    characterA: {fileID: 11400000, guid: 10ae37b55ea06ba4eadbd5ffcc3098c2, type: 2}
+    characterB: {fileID: 11400000, guid: 5f6e0fde49813654aa1d61918d175f26, type: 2}
+    ortakSevmeSenaryosu: {fileID: 11400000, guid: 385d657cc73f1b741b6dc18203793418, type: 2}
   coupleEndScenarios:
   - ciftAdi: Io Elroi
     characterA: {fileID: 11400000, guid: 914c084cda719c149b3ce3ae947d0973, type: 2}
