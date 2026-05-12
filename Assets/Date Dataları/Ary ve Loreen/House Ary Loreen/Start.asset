@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f832b14936fc2048824d9308b14ded6, type: 3}
+  m_Name: Start
+  m_EditorClassIdentifier: 
+  leftKarakterGelmedi: 0
+  rightKarakterGelmedi: 0
+  locationName: House
+  locationBackground: {fileID: -6643673001374232007, guid: 6cb3a6d37d3340942b9d3a11a14f33c4, type: 3}
+  allLines:
+  - side: 0
+    characterName: Loreen
+    characterSprite: {fileID: 21300000, guid: 8ee8136007822ef44baf33c1fe10e0ba, type: 3}
+    sentence: "Hi again, what\u2019s up?"
+    eventTrigger: 
+    choices: []
+  - side: 1
+    characterName: Ary
+    characterSprite: {fileID: 21300000, guid: ece41423a199ba04f8804d355c231cbb, type: 3}
+    sentence: Hey, a little tired. Really looking forward to a drink.
+    eventTrigger: 
+    choices: []
+  - side: 0
+    characterName: Loreen
+    characterSprite: {fileID: 0}
+    sentence: Yeah, me too. It was a long day.
+    eventTrigger: 
+    choices: []
+  - side: 1
+    characterName: Ary
+    characterSprite: {fileID: 0}
+    sentence: "Let\u2019s hope this place has a fridge somewhere around here."
+    eventTrigger: StartKurtGame
+    choices: []
+  nextScenario: {fileID: 11400000, guid: fb0daa310f278ae4dbab82068376e2a6, type: 2}
