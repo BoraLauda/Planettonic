@@ -29244,7 +29244,7 @@ MonoBehaviour:
     characterA: {fileID: 11400000, guid: 52f97840cc872804392c25a1f2b8175b, type: 2}
     characterB: {fileID: 11400000, guid: 5f6e0fde49813654aa1d61918d175f26, type: 2}
     specificFailScenario: {fileID: 11400000, guid: 4a1dfbc667d65ac4ea142c1917e3d758, type: 2}
-    secondDateFailScenario: {fileID: 0}
+    secondDateFailScenario: {fileID: 11400000, guid: 8d9395ad135779142bc27eb1419d5aa3, type: 2}
   - ciftAdi: Jetty Lynn
     characterA: {fileID: 11400000, guid: 74736f0dd50e8ce448a5eb50e16802ba, type: 2}
     characterB: {fileID: 11400000, guid: bfd2e2416d70ccd49b0a798220ace20b, type: 2}
@@ -29259,11 +29259,41 @@ MonoBehaviour:
     characterA: {fileID: 11400000, guid: 914c084cda719c149b3ce3ae947d0973, type: 2}
     characterB: {fileID: 11400000, guid: bfd2e2416d70ccd49b0a798220ace20b, type: 2}
     specificFailScenario: {fileID: 11400000, guid: c723d4cdc4f13f64b846a836066dafa9, type: 2}
+    secondDateFailScenario: {fileID: 11400000, guid: bf2f5aa54e3a060408b717304c383d51, type: 2}
+  - ciftAdi: Jetty Elroi
+    characterA: {fileID: 11400000, guid: 74736f0dd50e8ce448a5eb50e16802ba, type: 2}
+    characterB: {fileID: 11400000, guid: 70924192341f4a244bdda3ba9cd56e47, type: 2}
+    specificFailScenario: {fileID: 11400000, guid: 1d5738aa87789194badd6ce6f2807a15, type: 2}
     secondDateFailScenario: {fileID: 0}
-  - ciftAdi: Io Lynn
+  - ciftAdi: Io Linus
     characterA: {fileID: 11400000, guid: 914c084cda719c149b3ce3ae947d0973, type: 2}
+    characterB: {fileID: 11400000, guid: 5f6e0fde49813654aa1d61918d175f26, type: 2}
+    specificFailScenario: {fileID: 11400000, guid: 1c04ca6ea3ca5334b802accf04e05156, type: 2}
+    secondDateFailScenario: {fileID: 0}
+  - ciftAdi: Nemelise Lynn
+    characterA: {fileID: 11400000, guid: 10ae37b55ea06ba4eadbd5ffcc3098c2, type: 2}
     characterB: {fileID: 11400000, guid: bfd2e2416d70ccd49b0a798220ace20b, type: 2}
-    specificFailScenario: {fileID: 11400000, guid: c723d4cdc4f13f64b846a836066dafa9, type: 2}
+    specificFailScenario: {fileID: 11400000, guid: c97b48fb2be4e214da648dc5587dd15a, type: 2}
+    secondDateFailScenario: {fileID: 0}
+  - ciftAdi: Loreen Lynn
+    characterA: {fileID: 11400000, guid: 52f97840cc872804392c25a1f2b8175b, type: 2}
+    characterB: {fileID: 11400000, guid: bfd2e2416d70ccd49b0a798220ace20b, type: 2}
+    specificFailScenario: {fileID: 11400000, guid: 2febf5395b7f0194d9d3d8a02ad9feed, type: 2}
+    secondDateFailScenario: {fileID: 0}
+  - ciftAdi: Io Ary
+    characterA: {fileID: 11400000, guid: 914c084cda719c149b3ce3ae947d0973, type: 2}
+    characterB: {fileID: 11400000, guid: d9880c6a901c8d643a786ea1b19f0372, type: 2}
+    specificFailScenario: {fileID: 11400000, guid: bc8513b2a24d17a428c1fe94a89e885b, type: 2}
+    secondDateFailScenario: {fileID: 0}
+  - ciftAdi: Nemelise Elroi
+    characterA: {fileID: 11400000, guid: 10ae37b55ea06ba4eadbd5ffcc3098c2, type: 2}
+    characterB: {fileID: 11400000, guid: 70924192341f4a244bdda3ba9cd56e47, type: 2}
+    specificFailScenario: {fileID: 11400000, guid: 5aa51dac9d1147648a6fd7557c1c9d7e, type: 2}
+    secondDateFailScenario: {fileID: 0}
+  - ciftAdi: Loreen Elroi
+    characterA: {fileID: 11400000, guid: 52f97840cc872804392c25a1f2b8175b, type: 2}
+    characterB: {fileID: 11400000, guid: 70924192341f4a244bdda3ba9cd56e47, type: 2}
+    specificFailScenario: {fileID: 11400000, guid: 5bee2ac2223b8d941b715c8a3d17017c, type: 2}
     secondDateFailScenario: {fileID: 0}
   defaultFailScenario: {fileID: 0}
   dodgeScript: {fileID: 1190985220}
