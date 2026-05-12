@@ -33,7 +33,9 @@ public class LocationAudio
 {
     public string locationName = "Mekan Adı";
     public AudioClip musicClip;
+    [Range(0f, 1f)] public float musicVolume = 1f; 
     public AudioClip ambianceClip;
+    [Range(0f, 1f)] public float ambianceVolume = 1f; 
 }
 
 public class brainDate : MonoBehaviour
@@ -1745,16 +1747,20 @@ public class brainDate : MonoBehaviour
         LocationAudio locAudio = mekanSesleri.Find(x => x.locationName == locName);
         if (locAudio != null)
         {
-            StartCoroutine(FadeAudio(bgmSource, locAudio.musicClip));
-            StartCoroutine(FadeAudio(bgsSource, locAudio.ambianceClip));
+            StartCoroutine(FadeAudio(bgmSource, locAudio.musicClip, locAudio.musicVolume));
+            StartCoroutine(FadeAudio(bgsSource, locAudio.ambianceClip, locAudio.ambianceVolume));
         }
     }
 
-    IEnumerator FadeAudio(AudioSource source, AudioClip newClip)
+    IEnumerator FadeAudio(AudioSource source, AudioClip newClip, float hedefSesSeviyesi)
     {
         if (source == null) yield break;
 
-        if (source.clip == newClip && source.isPlaying) yield break;
+        if (source.clip == newClip && source.isPlaying) 
+        {
+            source.volume = hedefSesSeviyesi;
+            yield break;
+        }
 
         if (source.isPlaying)
         {
@@ -1772,12 +1778,13 @@ public class brainDate : MonoBehaviour
         {
             source.volume = 0;
             source.Play();
-            while (source.volume < 1f) 
+            
+            while (source.volume < hedefSesSeviyesi) 
             {
                 source.volume += Time.deltaTime * fadeSpeed;
                 yield return null;
             }
-            source.volume = 1f; 
+            source.volume = hedefSesSeviyesi; 
         }
     }
 }
