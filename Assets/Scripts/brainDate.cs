@@ -6,6 +6,15 @@ using TMPro;
 using UnityEngine.SceneManagement;
 
 [System.Serializable]
+public class CoupleKokteylOutcome
+{
+    public string ciftAdi = "Yeni Çift";
+    public Characters characterA;
+    public Characters characterB;
+    public DialogueDataları ortakSevmeSenaryosu;
+}
+
+[System.Serializable]
 public class CoupleEndScenario
 {
     public string ciftAdi = "Yeni Çift";
@@ -17,6 +26,14 @@ public class CoupleEndScenario
 
     [Header("İkinci Date Fail Senaryosu")]
     public DialogueDataları secondDateFailScenario;
+}
+
+[System.Serializable]
+public class LocationAudio
+{
+    public string locationName = "Mekan Adı";
+    public AudioClip musicClip;
+    public AudioClip ambianceClip;
 }
 
 public class brainDate : MonoBehaviour
@@ -55,7 +72,7 @@ public class brainDate : MonoBehaviour
     [Header("Bitiş Panelleri")]
     public GameObject dateSuccessPanel;
     public GameObject dateFailPanel;
-    public GameObject dateEkilmePanel; //Gelmeyen karakterler için
+    public GameObject dateEkilmePanel; 
     public TMP_Text ekilmeKalanKarakterText;
     
     private bool leftKarakterGelmedi = false;
@@ -86,10 +103,19 @@ public class brainDate : MonoBehaviour
     public GameObject dateEndedObject;
     public DialogueDataları startingScenario;
 
+    [Header("Kokteyl Çift Senaryoları")]
+    public List<CoupleKokteylOutcome> coupleKokteylOutcomes;
+
     public List<CoupleEndScenario> coupleEndScenarios;
     public DialogueDataları defaultFailScenario;
 
     private DialogueDataları savedMainScenario;
+
+    [Header("Mekan Ses Sistemi")]
+    public List<LocationAudio> mekanSesleri;
+    public AudioSource bgmSource; 
+    public AudioSource bgsSource; 
+    public float fadeSpeed = 3f; 
 
     [Header("Dodge Klasik")]
     public brainDODGE dodgeScript;
@@ -220,13 +246,17 @@ public class brainDate : MonoBehaviour
         }
     }
 
+    public DialogueDataları GetSavedMainScenario()
+    {
+        return savedMainScenario;
+    }
+
     void PrepareSceneData()
     {
         DialogueDataları playThis = DateSettings.selectedScenario != null ? DateSettings.selectedScenario : startingScenario;
 
         if (playThis != null)
         {
-            // YENİ: Gelmeme durumunu global değişkene çek
             leftKarakterGelmedi = playThis.leftKarakterGelmedi;
             rightKarakterGelmedi = playThis.rightKarakterGelmedi;
 
@@ -433,6 +463,11 @@ public class brainDate : MonoBehaviour
     {
         currentScenario = scenario;
         lineIndex = 0;
+
+        if (!string.IsNullOrEmpty(scenario.locationName))
+        {
+            PlayLocationAudio(scenario.locationName);
+        }
         
         if (leftDaterImage != null)
         {
@@ -591,7 +626,6 @@ public class brainDate : MonoBehaviour
 
         totalHearts += hearts;
 
-        // YENİ: Eğer karakter gelmemişse asla yıldız alamaz!
         if (target == TargetCharacter.Left && !leftKarakterGelmedi)
         {
             leftStars += stars;
@@ -609,7 +643,6 @@ public class brainDate : MonoBehaviour
         UpdateScoreUI();
     }
 
-    // ... [Geri Kalan Kod Aynı] ...
     void DisplayLine()
     {
         if (lineIndex >= currentScenario.allLines.Count)
@@ -1288,7 +1321,7 @@ public class brainDate : MonoBehaviour
         });
     }
 
-    public void EndBartendingGame(float earnedStars, int earnedHearts, TargetCharacter target)
+    public void EndBartendingGame(float earnedStars, int earnedHearts, TargetCharacter target, List<DialogueDataları> sequence)
     {
         isBartendingMode = false;
         isEventTriggered = false;
@@ -1297,9 +1330,13 @@ public class brainDate : MonoBehaviour
 
         ShowUniversalScoreBoard(bartendingMiniGameObj, earnedStars, earnedHearts, () => 
         {
-            if (savedMainScenario != null && savedMainScenario.nextScenario != null)
+            if (sequence != null && sequence.Count > 0)
             {
-                StartScenario(savedMainScenario.nextScenario);
+                QueueScenarios(sequence); 
+            }
+            else if (savedMainScenario != null && savedMainScenario.nextScenario != null)
+            {
+                StartScenario(savedMainScenario.nextScenario); 
             }
         });
     }
@@ -1700,6 +1737,47 @@ public class brainDate : MonoBehaviour
         {
             if (heartUI.transform.parent != null) PopToFront(heartUI.transform.parent.gameObject, true, 32000);
             else PopToFront(heartUI.gameObject, true, 32000);
+        }
+    }
+
+    public void PlayLocationAudio(string locName)
+    {
+        LocationAudio locAudio = mekanSesleri.Find(x => x.locationName == locName);
+        if (locAudio != null)
+        {
+            StartCoroutine(FadeAudio(bgmSource, locAudio.musicClip));
+            StartCoroutine(FadeAudio(bgsSource, locAudio.ambianceClip));
+        }
+    }
+
+    IEnumerator FadeAudio(AudioSource source, AudioClip newClip)
+    {
+        if (source == null) yield break;
+
+        if (source.clip == newClip && source.isPlaying) yield break;
+
+        if (source.isPlaying)
+        {
+            while (source.volume > 0)
+            {
+                source.volume -= Time.deltaTime * fadeSpeed;
+                yield return null;
+            }
+        }
+
+        source.Stop();
+        source.clip = newClip;
+
+        if (newClip != null)
+        {
+            source.volume = 0;
+            source.Play();
+            while (source.volume < 1f) 
+            {
+                source.volume += Time.deltaTime * fadeSpeed;
+                yield return null;
+            }
+            source.volume = 1f; 
         }
     }
 }

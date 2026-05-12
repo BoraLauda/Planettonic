@@ -26,7 +26,7 @@ MonoBehaviour:
   profileRatingIcons: []
   quoteText: 
   locationPreferences:
-  - locationName: Arcade
+  - locationName: Bar
     bonusStars: 1
   hatedFoods:
   - food: 1
@@ -35,6 +35,8 @@ MonoBehaviour:
     reactionScenario: {fileID: 11400000, guid: 75e8d3a5d7fde0c46a6e806468b9767d, type: 2}
   - food: 7
     reactionScenario: {fileID: 11400000, guid: 75e8d3a5d7fde0c46a6e806468b9767d, type: 2}
+  sevdigiKokteyl: Cosmopolitan
+  kokteylSevmediDiyalogu: {fileID: 11400000, guid: 9dce85cb58f33294fbd3133312232f28, type: 2}
   iceBreakerGood:
   - targetCharacter: {fileID: 11400000, guid: 52f97840cc872804392c25a1f2b8175b, type: 2}
     diyalogDosyasi: {fileID: 11400000, guid: 0a58d084a5c71d5439b8bfa8b53616b8, type: 2}
@@ -71,3 +73,8 @@ MonoBehaviour:
     diyalogDosyasi: {fileID: 11400000, guid: 86d98146310b9b348a524ed946324f90, type: 2}
   - targetCharacter: {fileID: 11400000, guid: 10ae37b55ea06ba4eadbd5ffcc3098c2, type: 2}
     diyalogDosyasi: {fileID: 11400000, guid: 4f157b34d4fec5f4d9144b03992e4695, type: 2}
+  curveDodgeQuestions:
+  - targetCharacter: {fileID: 11400000, guid: 52f97840cc872804392c25a1f2b8175b, type: 2}
+    diyalogDosyasi: {fileID: 11400000, guid: 184a1b451bd428b4fbc68d8d7a603a55, type: 2}
+  - targetCharacter: {fileID: 11400000, guid: 52f97840cc872804392c25a1f2b8175b, type: 2}
+    diyalogDosyasi: {fileID: 11400000, guid: d7e61cf355da5e0498e6d024b5739132, type: 2}

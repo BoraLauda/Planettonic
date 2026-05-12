@@ -1,0 +1,80 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f832b14936fc2048824d9308b14ded6, type: 3}
+  m_Name: AfterKokteyl
+  m_EditorClassIdentifier: 
+  leftKarakterGelmedi: 0
+  rightKarakterGelmedi: 0
+  locationName: 
+  locationBackground: {fileID: 0}
+  allLines:
+  - side: 0
+    characterName: Nemelise
+    characterSprite: {fileID: 21300000, guid: b5a5cc5d83848d843aadeaf9b5e083f1, type: 3}
+    sentence: You look a little tired, did you have work today?
+    eventTrigger: 
+    choices: []
+  - side: 1
+    characterName: Linus
+    characterSprite: {fileID: 21300000, guid: dc24e77c8220d5b43bd418e911809b3b, type: 3}
+    sentence: "Yeah, last minute case. Although, I\u2019m getting better at managing
+      these spontaneous assignments. I\u2019m already sure my client will win it."
+    eventTrigger: 
+    choices: []
+  - side: 0
+    characterName: Nemelise
+    characterSprite: {fileID: 0}
+    sentence: What kind of people do you defend?
+    eventTrigger: 
+    choices: []
+  - side: 1
+    characterName: Linus
+    characterSprite: {fileID: 0}
+    sentence: "I like to steer away from actual criminals and I also try to avoid
+      divorce cases \u2018cause they tend to get a little.."
+    eventTrigger: 
+    choices: []
+  - side: 0
+    characterName: Nemelise
+    characterSprite: {fileID: 0}
+    sentence: Messy?
+    eventTrigger: 
+    choices: []
+  - side: 1
+    characterName: Linus
+    characterSprite: {fileID: 0}
+    sentence: "Yeah, messy. I\u2019d like to think that I mostly represent innocent
+      people who have been wrongly accused."
+    eventTrigger: 
+    choices: []
+  - side: 0
+    characterName: Nemelise
+    characterSprite: {fileID: 0}
+    sentence: 
+    eventTrigger: 
+    choices:
+    - choices: The justice system is shit and doing good can leave you broke.
+      nextScenario: {fileID: 11400000, guid: 4c0fe4245cc3ecd4eaca722284590982, type: 2}
+      target: 0
+      starReward: 1
+      heartReward: 0
+    - choices: I feel like you say that to ease your own conscience.
+      nextScenario: {fileID: 11400000, guid: e00e00bddedb52f4eb777848a6ae0665, type: 2}
+      target: 0
+      starReward: 0.5
+      heartReward: 0
+    - choices: "Lawyers tend to take cases they know they\u2019re going to win."
+      nextScenario: {fileID: 11400000, guid: 6da37fab5b96ca544946f5a2d72c6fc4, type: 2}
+      target: 0
+      starReward: 0
+      heartReward: 0
+  nextScenario: {fileID: 0}
