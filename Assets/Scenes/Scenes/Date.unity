@@ -29642,6 +29642,10 @@ MonoBehaviour:
     characterA: {fileID: 11400000, guid: 52f97840cc872804392c25a1f2b8175b, type: 2}
     characterB: {fileID: 11400000, guid: d9880c6a901c8d643a786ea1b19f0372, type: 2}
     ortakSevmeSenaryosu: {fileID: 11400000, guid: 554bf967a7e65574f87d74040471920d, type: 2}
+  - ciftAdi: Nemelise Ary
+    characterA: {fileID: 11400000, guid: 10ae37b55ea06ba4eadbd5ffcc3098c2, type: 2}
+    characterB: {fileID: 11400000, guid: d9880c6a901c8d643a786ea1b19f0372, type: 2}
+    ortakSevmeSenaryosu: {fileID: 11400000, guid: 53b9c100a25cb2d4da7f2d05fdb9a82a, type: 2}
   coupleEndScenarios:
   - ciftAdi: Io Elroi
     characterA: {fileID: 11400000, guid: 914c084cda719c149b3ce3ae947d0973, type: 2}
@@ -29682,7 +29686,7 @@ MonoBehaviour:
     characterA: {fileID: 11400000, guid: 10ae37b55ea06ba4eadbd5ffcc3098c2, type: 2}
     characterB: {fileID: 11400000, guid: d9880c6a901c8d643a786ea1b19f0372, type: 2}
     specificFailScenario: {fileID: 11400000, guid: d498eadffffec4246983f2ff7a5c036c, type: 2}
-    secondDateFailScenario: {fileID: 0}
+    secondDateFailScenario: {fileID: 11400000, guid: 843e3ff577a1a2e4e9385dd7bf5f0f49, type: 2}
   - ciftAdi: Io Lynn
     characterA: {fileID: 11400000, guid: 914c084cda719c149b3ce3ae947d0973, type: 2}
     characterB: {fileID: 11400000, guid: bfd2e2416d70ccd49b0a798220ace20b, type: 2}

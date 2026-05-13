@@ -1,0 +1,91 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f832b14936fc2048824d9308b14ded6, type: 3}
+  m_Name: AfterKurt
+  m_EditorClassIdentifier: 
+  leftKarakterGelmedi: 0
+  rightKarakterGelmedi: 0
+  locationName: 
+  locationBackground: {fileID: 0}
+  allLines:
+  - side: 0
+    characterName: Nemelise
+    characterSprite: {fileID: 21300000, guid: 9e123617e7f2f1144af267697bab3b12, type: 3}
+    sentence: So, thought of what to teach me yet?
+    eventTrigger: 
+    choices: []
+  - side: 1
+    characterName: Ary
+    characterSprite: {fileID: 21300000, guid: 8bd2552c80c908b44afa833a7b98048e, type: 3}
+    sentence: What do you mean?
+    eventTrigger: 
+    choices: []
+  - side: 0
+    characterName: Nemelise
+    characterSprite: {fileID: 0}
+    sentence: "You said you\u2019d teach me a thing or two about music, I thought
+      you\u2019d come prepared."
+    eventTrigger: 
+    choices: []
+  - side: 1
+    characterName: Ary
+    characterSprite: {fileID: 0}
+    sentence: What, you expected me to make you a syllabus? Show up with a guitar
+      or something?
+    eventTrigger: 
+    choices: []
+  - side: 0
+    characterName: Nemelise
+    characterSprite: {fileID: 0}
+    sentence: Why not?
+    eventTrigger: 
+    choices: []
+  - side: 1
+    characterName: Ary
+    characterSprite: {fileID: 0}
+    sentence: So you do want to learn from me.
+    eventTrigger: 
+    choices: []
+  - side: 0
+    characterName: Nemelise
+    characterSprite: {fileID: 0}
+    sentence: Oh, I just want a good laugh is all.
+    eventTrigger: 
+    choices: []
+  - side: 1
+    characterName: Ary
+    characterSprite: {fileID: 0}
+    sentence: So you brought it up just to make fun of me?
+    eventTrigger: 
+    choices: []
+  - side: 0
+    characterName: Nemelise
+    characterSprite: {fileID: 0}
+    sentence: 
+    eventTrigger: 
+    choices:
+    - choices: Oh not at all, just wanted to see your reaction.
+      nextScenario: {fileID: 11400000, guid: 30b041d40ef56394e9f746bfd75483c9, type: 2}
+      target: 0
+      starReward: 1
+      heartReward: 0
+    - choices: Maybe I did. You really pissed me off the last time.
+      nextScenario: {fileID: 11400000, guid: 86cc3e23a01387641a76882f61960f25, type: 2}
+      target: 0
+      starReward: 0.5
+      heartReward: 0
+    - choices: I want to see at what point your confidence breaks.
+      nextScenario: {fileID: 11400000, guid: fd1c6c4e06969e94bb62cd518604e875, type: 2}
+      target: 0
+      starReward: 0
+      heartReward: 0
+  nextScenario: {fileID: 0}

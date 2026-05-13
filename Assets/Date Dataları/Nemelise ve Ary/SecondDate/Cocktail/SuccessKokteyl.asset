@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0f832b14936fc2048824d9308b14ded6, type: 3}
-  m_Name: Ary
+  m_Name: SuccessKokteyl
   m_EditorClassIdentifier: 
   leftKarakterGelmedi: 0
   rightKarakterGelmedi: 0
@@ -19,8 +19,18 @@ MonoBehaviour:
   allLines:
   - side: 1
     characterName: Ary
-    characterSprite: {fileID: 0}
-    sentence: "Ugh. You can\u2019t expect me to pay for this shit.\r\n"
+    characterSprite: {fileID: 21300000, guid: 817cd7df8a25d4a49991757c32df1fad, type: 3}
+    sentence: 'I could drink a couple of these.
+
+'
+    eventTrigger: 
+    choices: []
+  - side: 0
+    characterName: Nemelise
+    characterSprite: {fileID: 21300000, guid: ef06b996f8fd01a469fcd3724e3ff6bd, type: 3}
+    sentence: 'Ooh, strong. I love it.
+
+'
     eventTrigger: 
     choices: []
   nextScenario: {fileID: 0}

@@ -1,0 +1,61 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f832b14936fc2048824d9308b14ded6, type: 3}
+  m_Name: AryBestOpt
+  m_EditorClassIdentifier: 
+  leftKarakterGelmedi: 0
+  rightKarakterGelmedi: 0
+  locationName: 
+  locationBackground: {fileID: 0}
+  allLines:
+  - side: 1
+    characterName: Ary
+    characterSprite: {fileID: 21300000, guid: 8bd2552c80c908b44afa833a7b98048e, type: 3}
+    sentence: "It\u2019s not that. I just want to understand how people can remain
+      in places where they aren\u2019t accepted. I know I couldn\u2019t."
+    eventTrigger: 
+    choices: []
+  - side: 0
+    characterName: Nemelise
+    characterSprite: {fileID: 21300000, guid: 9e123617e7f2f1144af267697bab3b12, type: 3}
+    sentence: "What do you mean? Everyone around me accepts me. It\u2019s about being
+      careful in who you choose to keep around you."
+    eventTrigger: 
+    choices: []
+  - side: 1
+    characterName: Ary
+    characterSprite: {fileID: 0}
+    sentence: "You will still be in risk of getting hatecrimed by some person you
+      don\u2019t even know."
+    eventTrigger: 
+    choices: []
+  - side: 0
+    characterName: Nemelise
+    characterSprite: {fileID: 0}
+    sentence: "That\u2019s a risk I\u2019m willing to take for my friends and career.
+      Why is this such a sensitive topic for you? I\u2019m curious."
+    eventTrigger: 
+    choices: []
+  - side: 1
+    characterName: Ary
+    characterSprite: {fileID: 0}
+    sentence: "It\u2019s not sensitive. I chose to leave, is all."
+    eventTrigger: 
+    choices: []
+  - side: 0
+    characterName: Nemelise
+    characterSprite: {fileID: 0}
+    sentence: "Not all decisions are one size fits all. I don\u2019t know about your
+      situation, but I can bet that it is very different than mine."
+    eventTrigger: StartCurveDodge
+    choices: []
+  nextScenario: {fileID: 11400000, guid: 7ed9ed65667e3ac4bb19ed2dff33716d, type: 2}
