@@ -31,8 +31,8 @@ MonoBehaviour:
     sentence: "Neither did I but, here we are. Would you rather we didn\u2019t?\r\n"
     eventTrigger: 
     choices: []
-  - side: 1
-    characterName: Ary
+  - side: 0
+    characterName: Nemelise
     characterSprite: {fileID: 0}
     sentence: "Hmm, there\u2019s a reason I showed up, right?\r\n"
     eventTrigger: 

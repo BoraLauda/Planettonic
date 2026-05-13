@@ -36,12 +36,12 @@ MonoBehaviour:
     sentence: 
     eventTrigger: 
     choices:
-    - choices: adults tend to get rigid with age.
+    - choices: Adults tend to get rigid with age.
       nextScenario: {fileID: 11400000, guid: 3a9829c07ac0e16448649d47e46c2b66, type: 2}
       target: 1
       starReward: 1
       heartReward: 0
-    - choices: they must come up with fun stuff.
+    - choices: They must come up with fun stuff.
       nextScenario: {fileID: 11400000, guid: a7c9c540a76b4d34f9a1ec77d590c4ee, type: 2}
       target: 1
       starReward: 0.5
