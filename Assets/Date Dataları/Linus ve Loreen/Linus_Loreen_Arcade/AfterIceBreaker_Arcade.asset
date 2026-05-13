@@ -19,13 +19,13 @@ MonoBehaviour:
   allLines:
   - side: 1
     characterName: Linus
-    characterSprite: {fileID: 21300000, guid: dc24e77c8220d5b43bd418e911809b3b, type: 3}
+    characterSprite: {fileID: 21300000, guid: 763ec54e5ebac7a4fab56b7edd48e3bb, type: 3}
     sentence: Phew, been a hot minute since I last played this game.
     eventTrigger: 
     choices: []
   - side: 0
     characterName: Loreen
-    characterSprite: {fileID: 21300000, guid: 821994f203fef8344a71dda283821891, type: 3}
+    characterSprite: {fileID: 21300000, guid: 84293290075aa6c48984f4ed5a1b5098, type: 3}
     sentence: Wish I could say the same. I do it quite often, and college students
       get nasty with it.
     eventTrigger: 

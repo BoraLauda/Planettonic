@@ -19,14 +19,14 @@ MonoBehaviour:
   allLines:
   - side: 0
     characterName: Nemelise
-    characterSprite: {fileID: 21300000, guid: b5a5cc5d83848d843aadeaf9b5e083f1, type: 3}
+    characterSprite: {fileID: 21300000, guid: 9e123617e7f2f1144af267697bab3b12, type: 3}
     sentence: "You\u2019d like to? I know lawyers tend to chase after cases that
       they know they\u2019re likely to win, so I find that hard to believe."
     eventTrigger: 
     choices: []
   - side: 1
     characterName: Linus
-    characterSprite: {fileID: 21300000, guid: dc24e77c8220d5b43bd418e911809b3b, type: 3}
+    characterSprite: {fileID: 21300000, guid: 64e84f3179f251c4da7a8bc08495d28c, type: 3}
     sentence: "It\u2019s weird that you think I\u2019m not aware of what I\u2019ve
       done. You don\u2019t need the moral conscience of a saint to know that."
     eventTrigger: 

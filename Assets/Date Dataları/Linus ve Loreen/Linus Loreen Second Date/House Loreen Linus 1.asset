@@ -25,7 +25,7 @@ MonoBehaviour:
     choices: []
   - side: 0
     characterName: Loreen
-    characterSprite: {fileID: 21300000, guid: 8ee8136007822ef44baf33c1fe10e0ba, type: 3}
+    characterSprite: {fileID: 21300000, guid: 84293290075aa6c48984f4ed5a1b5098, type: 3}
     sentence: "Yeah, I guessed as much. Do I have to pay for the drinks I\u2019ve
       had?"
     eventTrigger: 
@@ -51,7 +51,7 @@ MonoBehaviour:
     choices: []
   - side: 0
     characterName: Loreen
-    characterSprite: {fileID: 0}
+    characterSprite: {fileID: 21300000, guid: e12fe458cba716f48a2cc799cb0c641a, type: 3}
     sentence: Wow thanks. That makes me feel a little less shit about getting stood
       up.
     eventTrigger: 

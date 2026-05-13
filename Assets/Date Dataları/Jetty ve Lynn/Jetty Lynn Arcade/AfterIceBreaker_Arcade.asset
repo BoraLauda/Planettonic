@@ -19,14 +19,14 @@ MonoBehaviour:
   allLines:
   - side: 1
     characterName: Lynn
-    characterSprite: {fileID: 21300000, guid: 724a9d18b99b23f4d8ef91418ba692f0, type: 3}
+    characterSprite: {fileID: 21300000, guid: 62eaae04548671943969da195ad840fd, type: 3}
     sentence: This game always reminds me of all those school UN conferences I used
       to attend..
     eventTrigger: 
     choices: []
   - side: 0
     characterName: Jetty
-    characterSprite: {fileID: 1936918675910826544, guid: e8f1130d0e09cef45bb1f9ab49489848, type: 3}
+    characterSprite: {fileID: 21300000, guid: bb4a40a34f961664591ec86a97fbdc10, type: 3}
     sentence: Oof, sounds boring.
     eventTrigger: 
     choices: []
