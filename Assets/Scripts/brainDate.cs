@@ -119,6 +119,12 @@ public class brainDate : MonoBehaviour
     public AudioSource bgsSource; 
     public float fadeSpeed = 3f; 
 
+    // Ses Kısma-Açma İşlemleri İçin Hafıza Değişkenleri
+    private float currentMusicTargetVol = 1f;
+    private float currentAmbTargetVol = 1f;
+    private Coroutine bgmVolRoutine;
+    private Coroutine bgsVolRoutine;
+
     [Header("Dodge Klasik")]
     public brainDODGE dodgeScript;
     private bool isDodgeMode = false;
@@ -182,6 +188,7 @@ public class brainDate : MonoBehaviour
 
     private int lineIndex = 0;
     private bool isTyping = false;
+    private Coroutine aktifYaziCoroutinesi;
     private string currentFullSentence = "";
 
     private bool isEventTriggered = false;
@@ -400,6 +407,8 @@ public class brainDate : MonoBehaviour
             if (curveDodgeMiniGameObj) curveDodgeMiniGameObj.SetActive(false);
             if (evrenselSkorPaneli) evrenselSkorPaneli.SetActive(false);
             if (BGblur) BGblur.SetActive(false);
+
+            RestoreBackgroundAudio();
 
             scenarioQueue.Clear();
             PlayNextInQueue();
@@ -768,8 +777,8 @@ public class brainDate : MonoBehaviour
         }
         else
         {
-            StopAllCoroutines();
-            StartCoroutine(TypeSentence(targetBodyText, line.sentence));
+            if (aktifYaziCoroutinesi != null) StopCoroutine(aktifYaziCoroutinesi);
+            aktifYaziCoroutinesi = StartCoroutine(TypeSentence(targetBodyText, line.sentence));
         }
     }
 
@@ -791,8 +800,8 @@ public class brainDate : MonoBehaviour
             activeOptionsPanel.SetActive(false);
             bodyTxt.gameObject.SetActive(true);
 
-            StopAllCoroutines();
-            StartCoroutine(TypeSentence(bodyTxt, line.sentence));
+            if (aktifYaziCoroutinesi != null) StopCoroutine(aktifYaziCoroutinesi);
+            aktifYaziCoroutinesi = StartCoroutine(TypeSentence(bodyTxt, line.sentence));
         }
     }
 
@@ -821,8 +830,8 @@ public class brainDate : MonoBehaviour
             activeOptionsPanel.SetActive(false);
             bodyTxt.gameObject.SetActive(true);
 
-            StopAllCoroutines();
-            StartCoroutine(TypeSentence(bodyTxt, line.sentence));
+            if (aktifYaziCoroutinesi != null) StopCoroutine(aktifYaziCoroutinesi);
+            aktifYaziCoroutinesi = StartCoroutine(TypeSentence(bodyTxt, line.sentence));
         }
     }
 
@@ -932,6 +941,8 @@ public class brainDate : MonoBehaviour
             if (kapatilacakMiniOyun != null) kapatilacakMiniOyun.SetActive(false);
             if (BGblur != null) BGblur.SetActive(false);
 
+            RestoreBackgroundAudio();
+
             if (pendingRewardAction != null)
             {
                 System.Action action = pendingRewardAction;
@@ -969,7 +980,7 @@ public class brainDate : MonoBehaviour
 
         if (isTyping)
         {
-            StopAllCoroutines();
+            if (aktifYaziCoroutinesi != null) StopCoroutine(aktifYaziCoroutinesi);
             if (line.side == SpeakerSide.Left) leftBodyText.text = currentFullSentence;
             else if (line.side == SpeakerSide.Right) rightBodyText.text = currentFullSentence;
             else if (line.side == SpeakerSide.Counselor) chancellorBodyText.text = currentFullSentence;
@@ -1001,6 +1012,8 @@ public class brainDate : MonoBehaviour
             if (BGblur) BGblur.SetActive(true);
             if (menuMiniGameObj != null) menuMiniGameObj.SetActive(true);
 
+            DimBackgroundAudio();
+
             bool isIoAndElroi = false;
             if (DateSettings.leftChar != null && DateSettings.rightChar != null)
             {
@@ -1031,6 +1044,7 @@ public class brainDate : MonoBehaviour
             {
                 isEventTriggered = false;
                 isMenuMode = true;
+                DimBackgroundAudio();
             });
         }
         else if (eventName == "StartPixelGame")
@@ -1048,6 +1062,7 @@ public class brainDate : MonoBehaviour
             tutorialPopup.OpenTutorial("PIXEL GAME", pixelTutorialSprites, () =>
             {
                 if (pixelMiniGameObj != null) pixelMiniGameObj.SetActive(true);
+                DimBackgroundAudio();
             });
         }
         else if (eventName == "StartIceBreaker")
@@ -1067,6 +1082,7 @@ public class brainDate : MonoBehaviour
             tutorialPopup.OpenTutorial("ICE BREAKER", iceBreakerTutorialSprites, () =>
             {
                 if (iceBreakerScript != null) iceBreakerScript.StartGame();
+                DimBackgroundAudio();
             });
         }
         else if (eventName == "StartBartending")
@@ -1085,6 +1101,7 @@ public class brainDate : MonoBehaviour
             tutorialPopup.OpenTutorial("BARTENDING", bartendingTutorialSprites, () =>
             {
                 if (bartendingMiniGameObj != null) bartendingMiniGameObj.SetActive(true);
+                DimBackgroundAudio();
             });
         }
         else if (eventName == "StartDodgeGame")
@@ -1103,6 +1120,7 @@ public class brainDate : MonoBehaviour
             tutorialPopup.OpenTutorial("DODGE THE QUESTION", dodgeTutorialSprites, () =>
             {
                 if (dodgeScript != null) dodgeScript.StartGame();
+                DimBackgroundAudio();
             });
         }
         else if (eventName == "StartCurveDodge")
@@ -1121,6 +1139,7 @@ public class brainDate : MonoBehaviour
             tutorialPopup.OpenTutorial("CURVE DODGE", dodgeTutorialSprites, () =>
             {
                 if (curveDodgeScript != null) curveDodgeScript.StartGame();
+                DimBackgroundAudio();
             });
         }
         else if (eventName == "StartRitimGame")
@@ -1138,6 +1157,7 @@ public class brainDate : MonoBehaviour
             tutorialPopup.OpenTutorial("RHYTHM GAME", rhythmTutorialSprites, () =>
             {
                 if (rhythmMiniGameObj != null) rhythmMiniGameObj.SetActive(true);
+                DimBackgroundAudio();
             });
         }
         else if (eventName == "StartClawMachine")
@@ -1155,6 +1175,7 @@ public class brainDate : MonoBehaviour
             tutorialPopup.OpenTutorial("CLAW MACHINE", clawMachineTutorialSprites, () =>
             {
                 if (clawMachineMiniGameObj != null) clawMachineMiniGameObj.SetActive(true);
+                DimBackgroundAudio();
             });
         }
         else if (eventName == "StartKurtGame")
@@ -1172,6 +1193,7 @@ public class brainDate : MonoBehaviour
             tutorialPopup.OpenTutorial("RUNNER GAME", runnerTutorialSprites, () =>
             {
                 if (runnerMiniGameObj != null) runnerMiniGameObj.SetActive(true);
+                DimBackgroundAudio();
             });
         }
         else
@@ -1188,6 +1210,8 @@ public class brainDate : MonoBehaviour
 
         if (menuMiniGameObj != null) menuMiniGameObj.SetActive(false);
         if (BGblur) BGblur.SetActive(false);
+
+        RestoreBackgroundAudio();
 
         QueueScenarios(results);
     }
@@ -1742,14 +1766,73 @@ public class brainDate : MonoBehaviour
         }
     }
 
+    // --- Ses Fonksiyonları ---
+
     public void PlayLocationAudio(string locName)
     {
         LocationAudio locAudio = mekanSesleri.Find(x => x.locationName == locName);
         if (locAudio != null)
         {
-            StartCoroutine(FadeAudio(bgmSource, locAudio.musicClip, locAudio.musicVolume));
-            StartCoroutine(FadeAudio(bgsSource, locAudio.ambianceClip, locAudio.ambianceVolume));
+            currentMusicTargetVol = locAudio.musicVolume;
+            currentAmbTargetVol = locAudio.ambianceVolume;
+
+            if (bgmVolRoutine != null) StopCoroutine(bgmVolRoutine);
+            bgmVolRoutine = StartCoroutine(FadeAudio(bgmSource, locAudio.musicClip, locAudio.musicVolume));
+
+            if (bgsVolRoutine != null) StopCoroutine(bgsVolRoutine);
+            bgsVolRoutine = StartCoroutine(FadeAudio(bgsSource, locAudio.ambianceClip, locAudio.ambianceVolume));
         }
+    }
+
+    public void DimBackgroundAudio()
+    {
+        if (bgmSource != null)
+        {
+            if (bgmVolRoutine != null) StopCoroutine(bgmVolRoutine);
+            bgmVolRoutine = StartCoroutine(FadeToVolume(bgmSource, 0.05f));
+        }
+        if (bgsSource != null)
+        {
+            if (bgsVolRoutine != null) StopCoroutine(bgsVolRoutine);
+            bgsVolRoutine = StartCoroutine(FadeToVolume(bgsSource, 0.05f));
+        }
+    }
+
+    public void RestoreBackgroundAudio()
+    {
+        if (bgmSource != null)
+        {
+            if (bgmVolRoutine != null) StopCoroutine(bgmVolRoutine);
+            bgmVolRoutine = StartCoroutine(FadeToVolume(bgmSource, currentMusicTargetVol));
+        }
+        if (bgsSource != null)
+        {
+            if (bgsVolRoutine != null) StopCoroutine(bgsVolRoutine);
+            bgsVolRoutine = StartCoroutine(FadeToVolume(bgsSource, currentAmbTargetVol));
+        }
+    }
+
+    IEnumerator FadeToVolume(AudioSource source, float targetVol)
+    {
+        if (source == null) yield break;
+
+        if (source.volume > targetVol)
+        {
+            while (source.volume > targetVol)
+            {
+                source.volume -= Time.deltaTime * fadeSpeed;
+                yield return null;
+            }
+        }
+        else if (source.volume < targetVol)
+        {
+            while (source.volume < targetVol)
+            {
+                source.volume += Time.deltaTime * fadeSpeed;
+                yield return null;
+            }
+        }
+        source.volume = targetVol;
     }
 
     IEnumerator FadeAudio(AudioSource source, AudioClip newClip, float hedefSesSeviyesi)

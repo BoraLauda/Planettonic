@@ -23,7 +23,6 @@ public class ArrowSpawner : MonoBehaviour
     public static int leftScore = 0;
     public static int rightScore = 0;
    
-
     private float timer;
     private float gameTimer;
     private bool isGameOver = false;
@@ -112,9 +111,10 @@ public class ArrowSpawner : MonoBehaviour
         lanes[randomLane].activeNotes.Add(noteScript);
     }
 
-   
     public void AddScore(int basePoints, bool isLeftSide)
     {
+        if (isGameOver) return; // Oyun bittiyse puan ekleme
+
         int earnedScore = basePoints * currentGlobalCombo;
 
         if (isLeftSide)
@@ -135,7 +135,6 @@ public class ArrowSpawner : MonoBehaviour
         if (rightScoreText != null) rightScoreText.text = rightScore.ToString();
     }
    
-
     void GameOver()
     {
         isGameOver = true;
@@ -146,13 +145,23 @@ public class ArrowSpawner : MonoBehaviour
             sureText.text = "0";
         }
         
+       
+        Arrows[] sahadakiOklar = FindObjectsByType<Arrows>(FindObjectsSortMode.None);
+        foreach (Arrows ok in sahadakiOklar)
+        {
+          
+            ok.fallSpeed = 0f;
+            
+            Collider2D okCollider = ok.GetComponent<Collider2D>();
+            if(okCollider != null) okCollider.enabled = false;
+        }
+
         brainDate bd = FindFirstObjectByType<brainDate>();
         if (bd != null)
         {
             float kazanilanYildiz = 0f;
             int kazanilanKalp = 0;
             
-          
             if (maxGlobalCombo >= 14) 
             {
                 kazanilanYildiz = 1f;

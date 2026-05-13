@@ -8992,7 +8992,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 1
@@ -9791,8 +9791,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -646, y: -558.46}
-  m_SizeDelta: {x: 1844.12, y: 2346.08}
+  m_AnchoredPosition: {x: -634.2, y: -558.1}
+  m_SizeDelta: {x: 1441.79, y: 1834.25}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &370962506
 MonoBehaviour:
@@ -9814,7 +9814,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: fefe20566df6d5f46be5a5c4ad17dd74, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6cc6ef422b8726c45b55b885412734f7, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -13436,8 +13436,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: ccdf82d859dc4904985f43d5201a9f4f, type: 2}
-  m_sharedMaterial: {fileID: 1397160446952650585, guid: ccdf82d859dc4904985f43d5201a9f4f, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -15131,8 +15131,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 572, y: -409.42}
-  m_SizeDelta: {x: 1448, y: 2048}
+  m_AnchoredPosition: {x: 601.5, y: -433.7}
+  m_SizeDelta: {x: 1338.7, y: 1893.35}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &553506849
 MonoBehaviour:
@@ -15154,7 +15154,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 940a91f339e1825439b9f6d15b9c98fa, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 62eaae04548671943969da195ad840fd, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -15319,8 +15319,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Ready
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: ccdf82d859dc4904985f43d5201a9f4f, type: 2}
-  m_sharedMaterial: {fileID: 1397160446952650585, guid: ccdf82d859dc4904985f43d5201a9f4f, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -17677,7 +17677,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.7961426, y: 22.57373}
+  m_AnchoredPosition: {x: 3.0340576, y: 4.2800293}
   m_SizeDelta: {x: -1126.0602, y: -282.1474}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &613308421
@@ -23044,7 +23044,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 1.1196289, y: -43.48999}
+  m_AnchoredPosition: {x: 2.659912, y: 8.870117}
   m_SizeDelta: {x: -630, y: -236.24}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &824090831
@@ -27016,8 +27016,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 500
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: ccdf82d859dc4904985f43d5201a9f4f, type: 2}
-  m_sharedMaterial: {fileID: 1397160446952650585, guid: ccdf82d859dc4904985f43d5201a9f4f, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -29727,22 +29727,22 @@ MonoBehaviour:
   mekanSesleri:
   - locationName: Restaurant
     musicClip: {fileID: 8300000, guid: 601c9502ba12148419bfe029fb7cd64a, type: 3}
-    musicVolume: 1
+    musicVolume: 0.1
     ambianceClip: {fileID: 8300000, guid: 2d488c135462c294d9a58c606903fb66, type: 3}
-    ambianceVolume: 1
+    ambianceVolume: 0.1
   - locationName: Arcade
     musicClip: {fileID: 8300000, guid: 5d0b84762a5a38e4b909337ca8b3dd79, type: 3}
-    musicVolume: 1
+    musicVolume: 0.1
     ambianceClip: {fileID: 8300000, guid: 8964c0547494e704099ae75d99d95461, type: 3}
-    ambianceVolume: 1
+    ambianceVolume: 0.1
   - locationName: Bar
-    musicClip: {fileID: 8300000, guid: f25f338b9df49164a8da2ca65720bb38, type: 3}
-    musicVolume: 1
+    musicClip: {fileID: 8300000, guid: bebe1e11d3583ca4bb1dffa73427d174, type: 3}
+    musicVolume: 0.1
     ambianceClip: {fileID: 8300000, guid: cf6515b0f3625ca43ae560f68cddcbb0, type: 3}
-    ambianceVolume: 1
+    ambianceVolume: 0.1
   - locationName: House
     musicClip: {fileID: 8300000, guid: bd364e4bb084e6541b37fd24dd5759af, type: 3}
-    musicVolume: 1
+    musicVolume: 0.1
     ambianceClip: {fileID: 0}
     ambianceVolume: 1
   bgmSource: {fileID: 1606547670}
@@ -32974,7 +32974,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 28.375977, y: 308}
+  m_AnchoredPosition: {x: 17.232056, y: 308}
   m_SizeDelta: {x: -1090.0043, y: -349.1098}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1190985218
@@ -37986,8 +37986,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 2.66, y: 6.4684}
-  m_SizeDelta: {x: 906.07, y: 818.06}
+  m_AnchoredPosition: {x: 2.66, y: 4.28}
+  m_SizeDelta: {x: 906.07, y: 822.44}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &1416898064
 Canvas:
@@ -42344,7 +42344,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 1
@@ -54216,7 +54216,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1.119, y: 157}
+  m_AnchoredPosition: {x: 3.0341, y: 141}
   m_SizeDelta: {x: 797.77, y: 745.68}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1828623619
