@@ -12,12 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f832b14936fc2048824d9308b14ded6, type: 3}
   m_Name: LinusBestOption
   m_EditorClassIdentifier: 
+  leftKarakterGelmedi: 0
+  rightKarakterGelmedi: 0
   locationName: 
   locationBackground: {fileID: 0}
   allLines:
   - side: 1
     characterName: Linus
-    characterSprite: {fileID: 21300000, guid: dc24e77c8220d5b43bd418e911809b3b, type: 3}
+    characterSprite: {fileID: 21300000, guid: 763ec54e5ebac7a4fab56b7edd48e3bb, type: 3}
     sentence: "Being young and bragging about all the unique experiences you\u2019ve
       had is great, but I think really growing up and then finding out just how unique
       it can all be is better."
@@ -25,7 +27,7 @@ MonoBehaviour:
     choices: []
   - side: 0
     characterName: Nemelise
-    characterSprite: {fileID: 21300000, guid: b5a5cc5d83848d843aadeaf9b5e083f1, type: 3}
+    characterSprite: {fileID: 21300000, guid: ef06b996f8fd01a469fcd3724e3ff6bd, type: 3}
     sentence: Then, you really get to see in perspective how different life treats
       each individual person.
     eventTrigger: 

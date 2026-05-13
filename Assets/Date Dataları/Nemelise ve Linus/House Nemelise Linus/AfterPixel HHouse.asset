@@ -19,14 +19,14 @@ MonoBehaviour:
   allLines:
   - side: 1
     characterName: Linus
-    characterSprite: {fileID: 21300000, guid: dc24e77c8220d5b43bd418e911809b3b, type: 3}
+    characterSprite: {fileID: 21300000, guid: 763ec54e5ebac7a4fab56b7edd48e3bb, type: 3}
     sentence: "I\u2019m curious, how is it that you ended up livingin Mars? I thought
       Neptunians and Marsians were polar opposites."
     eventTrigger: 
     choices: []
   - side: 0
     characterName: Nemelise
-    characterSprite: {fileID: 21300000, guid: b5a5cc5d83848d843aadeaf9b5e083f1, type: 3}
+    characterSprite: {fileID: 21300000, guid: 9e123617e7f2f1144af267697bab3b12, type: 3}
     sentence: Ah well. I was born and raised in Neptune originally and then I got
       accepted into a prestigious college in Mars. Interestingly so, they are home
       to some of the best performance schools in the galaxy.

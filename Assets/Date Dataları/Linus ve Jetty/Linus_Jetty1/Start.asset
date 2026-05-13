@@ -12,12 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f832b14936fc2048824d9308b14ded6, type: 3}
   m_Name: Start
   m_EditorClassIdentifier: 
+  leftKarakterGelmedi: 0
+  rightKarakterGelmedi: 0
   locationName: Restaurant
   locationBackground: {fileID: 21300000, guid: f8bdb2b11a144d94f9ac89625b2a01f4, type: 3}
   allLines:
   - side: 1
     characterName: Linus
-    characterSprite: {fileID: 21300000, guid: dc24e77c8220d5b43bd418e911809b3b, type: 3}
+    characterSprite: {fileID: 21300000, guid: 763ec54e5ebac7a4fab56b7edd48e3bb, type: 3}
     sentence: 'Hey, Jetty. It is very nice to meet you. Beautiful venue, huh?
 
 '
@@ -25,28 +27,28 @@ MonoBehaviour:
     choices: []
   - side: 0
     characterName: Jetty
-    characterSprite: {fileID: 1936918675910826544, guid: e8f1130d0e09cef45bb1f9ab49489848, type: 3}
+    characterSprite: {fileID: 21300000, guid: bb4a40a34f961664591ec86a97fbdc10, type: 3}
     sentence: "Nice to meet you too. I\u2019ve been to Venus quite a few times, crazy
       to think I haven\u2019t come here once.\r\n"
     eventTrigger: 
     choices: []
   - side: 1
     characterName: Linus
-    characterSprite: {fileID: 21300000, guid: dc24e77c8220d5b43bd418e911809b3b, type: 3}
+    characterSprite: {fileID: 0}
     sentence: "You\u2019re an entertainer, right? I bet you get to travel quite a
       bit."
     eventTrigger: 
     choices: []
   - side: 0
     characterName: Jetty
-    characterSprite: {fileID: 1936918675910826544, guid: e8f1130d0e09cef45bb1f9ab49489848, type: 3}
+    characterSprite: {fileID: 0}
     sentence: "Heh, yeah. Although it can be a bit tiring at times, it\u2019s nice
       that I get to meet so many different people."
     eventTrigger: 
     choices: []
   - side: 1
     characterName: Linus
-    characterSprite: {fileID: 21300000, guid: dc24e77c8220d5b43bd418e911809b3b, type: 3}
+    characterSprite: {fileID: 0}
     sentence: "Ah, I\u2019m kinda jealous. I only get to meet people when they\u2019re
       tense, pity we are not allowed to drink in court like you would at a lounge.
       Heh, well, at least not openly."
@@ -54,21 +56,21 @@ MonoBehaviour:
     choices: []
   - side: 0
     characterName: Jetty
-    characterSprite: {fileID: 3149642799716058400, guid: e8f20d8f7db9ba542878b46ed2f36bc0, type: 3}
+    characterSprite: {fileID: 21300000, guid: 76893eb7c1cb94246acde9b63f0604be, type: 3}
     sentence: "Wow~ Admitting to your crimes so soon? I knew I could be distracting
       but I\u2019ve never gotten a confession this quick."
     eventTrigger: 
     choices: []
   - side: 1
     characterName: Linus
-    characterSprite: {fileID: 21300000, guid: af0c810f9bf8b7840ad7c7e7ceff54b5, type: 3}
+    characterSprite: {fileID: 21300000, guid: 78aafcb2f30c885499b2b92021bfe829, type: 3}
     sentence: "Well, it\u2019s not that big of a secret, but I must say, I do tend
       to get loose around a Neptunian so pretty."
     eventTrigger: 
     choices: []
   - side: 0
     characterName: Jetty
-    characterSprite: {fileID: 3149642799716058400, guid: e8f20d8f7db9ba542878b46ed2f36bc0, type: 3}
+    characterSprite: {fileID: 0}
     sentence: Hah. You flatter me.
     eventTrigger: 
     choices: []

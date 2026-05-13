@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f832b14936fc2048824d9308b14ded6, type: 3}
   m_Name: ContinueMenu
   m_EditorClassIdentifier: 
+  leftKarakterGelmedi: 0
+  rightKarakterGelmedi: 0
   locationName: 
   locationBackground: {fileID: 0}
   allLines:
@@ -42,14 +44,14 @@ MonoBehaviour:
     choices: []
   - side: 0
     characterName: Jetty
-    characterSprite: {fileID: 1936918675910826544, guid: e8f1130d0e09cef45bb1f9ab49489848, type: 3}
+    characterSprite: {fileID: 21300000, guid: bb4a40a34f961664591ec86a97fbdc10, type: 3}
     sentence: So, a lawyer, huh? A lawyer that drinks, nonetheless. Are you one of
       those shitty ones or do you have dignity?
     eventTrigger: 
     choices: []
   - side: 1
     characterName: Linus
-    characterSprite: {fileID: 21300000, guid: 19b8c42c96185954db27cd2f9406e0a0, type: 3}
+    characterSprite: {fileID: 21300000, guid: 64e84f3179f251c4da7a8bc08495d28c, type: 3}
     sentence: "Wow, so direct. You know, I tend to get mostly respectable clients
       but of course I have to defend the scum of the earth from time to time too.
       They\u2019re mostly the ones that pay for my rent so, can\u2019t really complain."
@@ -64,20 +66,20 @@ MonoBehaviour:
     choices: []
   - side: 1
     characterName: Linus
-    characterSprite: {fileID: 0}
+    characterSprite: {fileID: 21300000, guid: 763ec54e5ebac7a4fab56b7edd48e3bb, type: 3}
     sentence: You pour their drinks, I cover up their secrets. Oh to be an interplanetary
       piggy and live a life so glamorous.
     eventTrigger: 
     choices: []
   - side: 0
     characterName: Jetty
-    characterSprite: {fileID: 3947505554978647017, guid: 46d86ba6625735d43aef9c49760dd1da, type: 3}
+    characterSprite: {fileID: 0}
     sentence: You think their lives are glamorous?
     eventTrigger: 
     choices: []
   - side: 1
     characterName: Linus
-    characterSprite: {fileID: 21300000, guid: dc24e77c8220d5b43bd418e911809b3b, type: 3}
+    characterSprite: {fileID: 0}
     sentence: "\u2018Course not. I bet I know more about their dirty secrets than
       you do. A drunk man is an honest man, a desperate man however, is willing to
       give so much more than honesty."
@@ -85,7 +87,7 @@ MonoBehaviour:
     choices: []
   - side: 0
     characterName: Jetty
-    characterSprite: {fileID: 1936918675910826544, guid: e8f1130d0e09cef45bb1f9ab49489848, type: 3}
+    characterSprite: {fileID: 0}
     sentence: 
     eventTrigger: 
     choices:

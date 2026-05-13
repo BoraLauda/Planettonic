@@ -19,7 +19,7 @@ MonoBehaviour:
   allLines:
   - side: 1
     characterName: Elroi
-    characterSprite: {fileID: 21300000, guid: 940a91f339e1825439b9f6d15b9c98fa, type: 3}
+    characterSprite: {fileID: 21300000, guid: f24fad0acf0cae14db43b6fd0a80b07c, type: 3}
     sentence: "So I\u2019ve been waiting for almost 15 whole minutes. What\u2019s
       the hold up?\r\n"
     eventTrigger: 
@@ -33,7 +33,7 @@ MonoBehaviour:
     choices: []
   - side: 1
     characterName: Elroi
-    characterSprite: {fileID: 0}
+    characterSprite: {fileID: 21300000, guid: fa546b7fd855a1445ace5ee2c2c54f01, type: 3}
     sentence: Ugh, women are ridiculous!
     eventTrigger: 
     choices: []

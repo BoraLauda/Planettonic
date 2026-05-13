@@ -12,18 +12,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f832b14936fc2048824d9308b14ded6, type: 3}
   m_Name: MenuSuccess
   m_EditorClassIdentifier: 
+  leftKarakterGelmedi: 0
+  rightKarakterGelmedi: 0
   locationName: 
   locationBackground: {fileID: 0}
   allLines:
   - side: 1
     characterName: Ary
-    characterSprite: {fileID: 21300000, guid: ece41423a199ba04f8804d355c231cbb, type: 3}
+    characterSprite: {fileID: 21300000, guid: 817cd7df8a25d4a49991757c32df1fad, type: 3}
     sentence: Mm, good pick.
     eventTrigger: 
     choices: []
   - side: 0
     characterName: Nemelise
-    characterSprite: {fileID: 21300000, guid: b5a5cc5d83848d843aadeaf9b5e083f1, type: 3}
+    characterSprite: {fileID: 21300000, guid: ef06b996f8fd01a469fcd3724e3ff6bd, type: 3}
     sentence: "I don\u2019t think I\u2019ve seen vegan options this nice at a restaurant
       before."
     eventTrigger: 

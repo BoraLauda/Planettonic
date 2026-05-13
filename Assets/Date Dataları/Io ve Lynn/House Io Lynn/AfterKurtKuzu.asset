@@ -19,20 +19,20 @@ MonoBehaviour:
   allLines:
   - side: 0
     characterName: Io
-    characterSprite: {fileID: -1160322238068995058, guid: e79cf994b0112f542bb5904bcd06966b, type: 3}
+    characterSprite: {fileID: 21300000, guid: 6cc6ef422b8726c45b55b885412734f7, type: 3}
     sentence: So, Lynn. Before we lose ourselves in nerdy talk again I want to ask-
       Why did you come here?
     eventTrigger: 
     choices: []
   - side: 1
     characterName: Lynn
-    characterSprite: {fileID: 21300000, guid: 724a9d18b99b23f4d8ef91418ba692f0, type: 3}
+    characterSprite: {fileID: 21300000, guid: 62eaae04548671943969da195ad840fd, type: 3}
     sentence: Oh, well.. I thought you and I.. we kind of connected you know and-
     eventTrigger: 
     choices: []
   - side: 0
     characterName: Io
-    characterSprite: {fileID: 0}
+    characterSprite: {fileID: 21300000, guid: 01e1aff972284664e96e9b5d30ca1b74, type: 3}
     sentence: "Oh haha, I guess I should\u2019ve been clearer. I meant like, what
       led you to signing up for these dates?"
     eventTrigger: 
@@ -47,13 +47,13 @@ MonoBehaviour:
     choices: []
   - side: 0
     characterName: Io
-    characterSprite: {fileID: 0}
+    characterSprite: {fileID: 21300000, guid: 6cc6ef422b8726c45b55b885412734f7, type: 3}
     sentence: "I hear you. I\u2019ve never been a natural at these things either."
     eventTrigger: 
     choices: []
   - side: 1
     characterName: Lynn
-    characterSprite: {fileID: 0}
+    characterSprite: {fileID: 21300000, guid: 6dc6dc528b1ca174c8f9f2f96dd29415, type: 3}
     sentence: "What- really? But you\u2019re like gorgeous and as much as I\u2019ve
       seen, very talented at flirting."
     eventTrigger: 

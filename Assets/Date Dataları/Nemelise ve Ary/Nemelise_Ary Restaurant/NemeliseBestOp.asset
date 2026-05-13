@@ -12,32 +12,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f832b14936fc2048824d9308b14ded6, type: 3}
   m_Name: NemeliseBestOp
   m_EditorClassIdentifier: 
+  leftKarakterGelmedi: 0
+  rightKarakterGelmedi: 0
   locationName: 
   locationBackground: {fileID: 0}
   allLines:
   - side: 0
     characterName: Nemelise
-    characterSprite: {fileID: 21300000, guid: b5a5cc5d83848d843aadeaf9b5e083f1, type: 3}
+    characterSprite: {fileID: 21300000, guid: 9e123617e7f2f1144af267697bab3b12, type: 3}
     sentence: " Oh my rhythm is just fine, but I'm sure you\u2019d love an excuse
       to show off."
     eventTrigger: 
     choices: []
   - side: 1
     characterName: Ary
-    characterSprite: {fileID: 21300000, guid: ece41423a199ba04f8804d355c231cbb, type: 3}
+    characterSprite: {fileID: 21300000, guid: 817cd7df8a25d4a49991757c32df1fad, type: 3}
     sentence: Maybe a little, do you think you can keep up?
     eventTrigger: 
     choices: []
   - side: 0
     characterName: Nemelise
-    characterSprite: {fileID: 0}
+    characterSprite: {fileID: 21300000, guid: ef06b996f8fd01a469fcd3724e3ff6bd, type: 3}
     sentence: Keep up? Oh honey, you will end up struggling the most if we ever play
       together.
     eventTrigger: 
     choices: []
   - side: 1
     characterName: Ary
-    characterSprite: {fileID: 0}
+    characterSprite: {fileID: 21300000, guid: 8bd2552c80c908b44afa833a7b98048e, type: 3}
     sentence: "I\u2019ll keep you to that."
     eventTrigger: 
     choices: []

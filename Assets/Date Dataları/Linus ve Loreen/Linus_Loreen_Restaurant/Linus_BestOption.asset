@@ -12,19 +12,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f832b14936fc2048824d9308b14ded6, type: 3}
   m_Name: Linus_BestOption
   m_EditorClassIdentifier: 
+  leftKarakterGelmedi: 0
+  rightKarakterGelmedi: 0
   locationName: 
   locationBackground: {fileID: 0}
   allLines:
   - side: 1
     characterName: Linus
-    characterSprite: {fileID: 21300000, guid: dc24e77c8220d5b43bd418e911809b3b, type: 3}
+    characterSprite: {fileID: 21300000, guid: 763ec54e5ebac7a4fab56b7edd48e3bb, type: 3}
     sentence: "I can\u2019t even imagine teaching adults. You tend to get rigid as
       you age, so making any kind of change in the way you think becomes near impossible."
     eventTrigger: 
     choices: []
   - side: 0
     characterName: Loreen
-    characterSprite: {fileID: 21300000, guid: 821994f203fef8344a71dda283821891, type: 3}
+    characterSprite: {fileID: 21300000, guid: 84293290075aa6c48984f4ed5a1b5098, type: 3}
     sentence: That is true but the adult mind is so much more comprehensive.
     eventTrigger: 
     choices: []
@@ -42,13 +44,13 @@ MonoBehaviour:
     choices: []
   - side: 1
     characterName: Linus
-    characterSprite: {fileID: 0}
+    characterSprite: {fileID: 21300000, guid: 78aafcb2f30c885499b2b92021bfe829, type: 3}
     sentence: Like you.
-    eventTrigger: StartDodgeGame
+    eventTrigger: 
     choices: []
   - side: 0
     characterName: Loreen
-    characterSprite: {fileID: 0}
+    characterSprite: {fileID: 21300000, guid: 0ccf03e1d53cde149b6ee91d03e63a25, type: 3}
     sentence: "And you, don\u2019t cut yourself short. I\u2019ve read about you. "
     eventTrigger: 
     choices: []

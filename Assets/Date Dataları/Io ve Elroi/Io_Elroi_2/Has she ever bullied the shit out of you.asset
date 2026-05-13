@@ -12,19 +12,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f832b14936fc2048824d9308b14ded6, type: 3}
   m_Name: Has she ever bullied the shit out of you
   m_EditorClassIdentifier: 
+  leftKarakterGelmedi: 0
+  rightKarakterGelmedi: 0
   locationName: 
   locationBackground: {fileID: 0}
   allLines:
   - side: 0
     characterName: Io
-    characterSprite: {fileID: 0}
+    characterSprite: {fileID: 21300000, guid: 6cc6ef422b8726c45b55b885412734f7, type: 3}
     sentence: "I\u2019ve heard sisters always tend to be amazing. Do you have like
       a memory of her bullying you straight into the ground? "
     eventTrigger: 
     choices: []
   - side: 1
     characterName: Elroi
-    characterSprite: {fileID: 0}
+    characterSprite: {fileID: 21300000, guid: 84c5181503f6e47458e85b7e3a484d79, type: 3}
     sentence: '*laughs* Oh where should I even begin? There was this one time I had
       a little accident...
 
@@ -33,7 +35,7 @@ MonoBehaviour:
     choices: []
   - side: 0
     characterName: Io
-    characterSprite: {fileID: 0}
+    characterSprite: {fileID: 21300000, guid: 6cc6ef422b8726c45b55b885412734f7, type: 3}
     sentence: 'What kind of accident?
 
 '
@@ -41,7 +43,7 @@ MonoBehaviour:
     choices: []
   - side: 1
     characterName: Elroi
-    characterSprite: {fileID: 0}
+    characterSprite: {fileID: 21300000, guid: f24fad0acf0cae14db43b6fd0a80b07c, type: 3}
     sentence: "Okay promise not to laugh, I was like 12. Shit like that never happens
       anymore, like, obviously it doesn\u2019t. And like I had the right to, I was
       sick with a stomach bug.\r\n"
@@ -125,7 +127,7 @@ MonoBehaviour:
     choices: []
   - side: 0
     characterName: Io
-    characterSprite: {fileID: 0}
+    characterSprite: {fileID: 21300000, guid: 01e1aff972284664e96e9b5d30ca1b74, type: 3}
     sentence: '*chuckles* Ohohoh nooo that is evil.
 
 '
@@ -142,7 +144,7 @@ MonoBehaviour:
     choices: []
   - side: 0
     characterName: Io
-    characterSprite: {fileID: 0}
+    characterSprite: {fileID: 21300000, guid: 6cc6ef422b8726c45b55b885412734f7, type: 3}
     sentence: "I\u2019m guessing you never stole her stuff again.\r\n"
     eventTrigger: 
     choices: []
