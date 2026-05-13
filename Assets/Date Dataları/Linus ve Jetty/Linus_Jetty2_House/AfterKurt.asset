@@ -12,19 +12,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f832b14936fc2048824d9308b14ded6, type: 3}
   m_Name: AfterKurt
   m_EditorClassIdentifier: 
+  leftKarakterGelmedi: 0
+  rightKarakterGelmedi: 0
   locationName: 
   locationBackground: {fileID: 0}
   allLines:
   - side: 0
     characterName: Jetty
-    characterSprite: {fileID: 1936918675910826544, guid: e8f1130d0e09cef45bb1f9ab49489848, type: 3}
+    characterSprite: {fileID: 21300000, guid: bb4a40a34f961664591ec86a97fbdc10, type: 3}
     sentence: I have to ask, Linus. You seem like a fair, intelligent man. Yet you
       seem kind of stuck up on planetary stereotypes. Why is that the case?
     eventTrigger: 
     choices: []
   - side: 1
     characterName: Linus
-    characterSprite: {fileID: 21300000, guid: af0c810f9bf8b7840ad7c7e7ceff54b5, type: 3}
+    characterSprite: {fileID: 21300000, guid: 763ec54e5ebac7a4fab56b7edd48e3bb, type: 3}
     sentence: "Ah, you noticed. I really don\u2019t mean to be that way but I guess
       my job kind of revolves around stereotyping people in one way or another. I
       can\u2019t help but do the same in my day to day life."
@@ -39,7 +41,7 @@ MonoBehaviour:
     choices: []
   - side: 1
     characterName: Linus
-    characterSprite: {fileID: 21300000, guid: dc24e77c8220d5b43bd418e911809b3b, type: 3}
+    characterSprite: {fileID: 0}
     sentence: Are you psychoanalyzing me right now?
     eventTrigger: 
     choices: []

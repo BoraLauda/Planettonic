@@ -12,24 +12,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f832b14936fc2048824d9308b14ded6, type: 3}
   m_Name: DateSuccess_Arylo
   m_EditorClassIdentifier: 
+  leftKarakterGelmedi: 0
+  rightKarakterGelmedi: 0
   locationName: 
   locationBackground: {fileID: 0}
   allLines:
   - side: 0
     characterName: Loreen
-    characterSprite: {fileID: 21300000, guid: 821994f203fef8344a71dda283821891, type: 3}
+    characterSprite: {fileID: 21300000, guid: 84293290075aa6c48984f4ed5a1b5098, type: 3}
     sentence: Soo, about your bikes...
     eventTrigger: 
     choices: []
   - side: 1
     characterName: Ary
-    characterSprite: {fileID: 21300000, guid: ece41423a199ba04f8804d355c231cbb, type: 3}
+    characterSprite: {fileID: 21300000, guid: 817cd7df8a25d4a49991757c32df1fad, type: 3}
     sentence: "You could come \u2018round mine next week, if you have the time."
     eventTrigger: 
     choices: []
   - side: 0
     characterName: Loreen
-    characterSprite: {fileID: 0}
+    characterSprite: {fileID: 21300000, guid: 0ccf03e1d53cde149b6ee91d03e63a25, type: 3}
     sentence: "Oh I\u2019m sure I can make some time for that."
     eventTrigger: 
     choices: []

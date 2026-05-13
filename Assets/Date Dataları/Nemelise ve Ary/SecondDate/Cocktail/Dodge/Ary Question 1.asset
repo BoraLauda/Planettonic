@@ -10,11 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0f832b14936fc2048824d9308b14ded6, type: 3}
-  m_Name: AfterKokteyl
+  m_Name: Ary Question 1
   m_EditorClassIdentifier: 
   leftKarakterGelmedi: 0
   rightKarakterGelmedi: 0
   locationName: 
   locationBackground: {fileID: 0}
-  allLines: []
+  allLines:
+  - side: 1
+    characterName: Ary
+    characterSprite: {fileID: 21300000, guid: 8bd2552c80c908b44afa833a7b98048e, type: 3}
+    sentence: So, when did you transition?
+    eventTrigger: 
+    choices: []
   nextScenario: {fileID: 0}

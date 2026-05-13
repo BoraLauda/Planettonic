@@ -12,18 +12,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f832b14936fc2048824d9308b14ded6, type: 3}
   m_Name: Start
   m_EditorClassIdentifier: 
+  leftKarakterGelmedi: 0
+  rightKarakterGelmedi: 0
   locationName: Restaurant
   locationBackground: {fileID: 21300000, guid: f8bdb2b11a144d94f9ac89625b2a01f4, type: 3}
   allLines:
   - side: 1
     characterName: Linus
-    characterSprite: {fileID: 21300000, guid: dc24e77c8220d5b43bd418e911809b3b, type: 3}
+    characterSprite: {fileID: 21300000, guid: 763ec54e5ebac7a4fab56b7edd48e3bb, type: 3}
     sentence: Nemelise, right? Hello. You look beautiful.
     eventTrigger: 
     choices: []
   - side: 0
     characterName: Nemelise
-    characterSprite: {fileID: 21300000, guid: b5a5cc5d83848d843aadeaf9b5e083f1, type: 3}
+    characterSprite: {fileID: 21300000, guid: 9e123617e7f2f1144af267697bab3b12, type: 3}
     sentence: "Thank you Linus, you\u2019re looking good yourself.\r\n"
     eventTrigger: 
     choices: []

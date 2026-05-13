@@ -19,13 +19,13 @@ MonoBehaviour:
   allLines:
   - side: 1
     characterName: Linus
-    characterSprite: {fileID: 21300000, guid: dc24e77c8220d5b43bd418e911809b3b, type: 3}
+    characterSprite: {fileID: 21300000, guid: 763ec54e5ebac7a4fab56b7edd48e3bb, type: 3}
     sentence: Phew, been a hot minute since I last played this game.
     eventTrigger: 
     choices: []
   - side: 0
     characterName: Loreen
-    characterSprite: {fileID: 21300000, guid: 821994f203fef8344a71dda283821891, type: 3}
+    characterSprite: {fileID: 21300000, guid: 84293290075aa6c48984f4ed5a1b5098, type: 3}
     sentence: Wish I could say the same. I do it quite often, and college students
       get nasty with it.
     eventTrigger: 
@@ -36,12 +36,12 @@ MonoBehaviour:
     sentence: 
     eventTrigger: 
     choices:
-    - choices: adults tend to get rigid with age.
+    - choices: Adults tend to get rigid with age.
       nextScenario: {fileID: 11400000, guid: 3a9829c07ac0e16448649d47e46c2b66, type: 2}
       target: 1
       starReward: 1
       heartReward: 0
-    - choices: they must come up with fun stuff.
+    - choices: They must come up with fun stuff.
       nextScenario: {fileID: 11400000, guid: a7c9c540a76b4d34f9a1ec77d590c4ee, type: 2}
       target: 1
       starReward: 0.5

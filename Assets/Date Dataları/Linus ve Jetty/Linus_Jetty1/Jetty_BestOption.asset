@@ -12,45 +12,47 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f832b14936fc2048824d9308b14ded6, type: 3}
   m_Name: Jetty_BestOption
   m_EditorClassIdentifier: 
+  leftKarakterGelmedi: 0
+  rightKarakterGelmedi: 0
   locationName: 
   locationBackground: {fileID: 0}
   allLines:
   - side: 0
     characterName: Jetty
-    characterSprite: {fileID: 1936918675910826544, guid: e8f1130d0e09cef45bb1f9ab49489848, type: 3}
+    characterSprite: {fileID: 21300000, guid: bb4a40a34f961664591ec86a97fbdc10, type: 3}
     sentence: 'You seem to get a rise out of that. Are you into desperation, or manipulation?  '
     eventTrigger: 
     choices: []
   - side: 1
     characterName: Linus
-    characterSprite: {fileID: 21300000, guid: dc24e77c8220d5b43bd418e911809b3b, type: 3}
+    characterSprite: {fileID: 21300000, guid: 78aafcb2f30c885499b2b92021bfe829, type: 3}
     sentence: "A little bit of both, under the right circumstances of course. I don\u2019t
       have any bad intentions with you."
     eventTrigger: 
     choices: []
   - side: 0
     characterName: Jetty
-    characterSprite: {fileID: 3149642799716058400, guid: e8f20d8f7db9ba542878b46ed2f36bc0, type: 3}
+    characterSprite: {fileID: 0}
     sentence: "Ah, that\u2019s a shame. Would\u2019ve been interesting at least if
       you did.\r"
     eventTrigger: 
     choices: []
   - side: 1
     characterName: Linus
-    characterSprite: {fileID: 21300000, guid: af0c810f9bf8b7840ad7c7e7ceff54b5, type: 3}
+    characterSprite: {fileID: 0}
     sentence: "A lot of things can be interesting though, you don\u2019t know me
       at all yet."
     eventTrigger: 
     choices: []
   - side: 0
     characterName: Jetty
-    characterSprite: {fileID: 1936918675910826544, guid: e8f1130d0e09cef45bb1f9ab49489848, type: 3}
+    characterSprite: {fileID: 0}
     sentence: "And you don\u2019t know what I find interesting."
     eventTrigger: 
     choices: []
   - side: 1
     characterName: Linus
-    characterSprite: {fileID: 21300000, guid: dc24e77c8220d5b43bd418e911809b3b, type: 3}
+    characterSprite: {fileID: 0}
     sentence: "Bad intentions is a start, I\u2019m sure I can get a little more information
       out of you by the end of this."
     eventTrigger: 

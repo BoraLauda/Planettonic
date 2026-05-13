@@ -12,6 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f832b14936fc2048824d9308b14ded6, type: 3}
   m_Name: "AfterSe\xE7im1"
   m_EditorClassIdentifier: 
+  leftKarakterGelmedi: 0
+  rightKarakterGelmedi: 0
+  locationName: 
+  locationBackground: {fileID: 0}
   allLines:
   - side: 3
     characterName: Chaperon
@@ -24,7 +28,7 @@ MonoBehaviour:
     choices: []
   - side: 1
     characterName: Elroi
-    characterSprite: {fileID: 0}
+    characterSprite: {fileID: 21300000, guid: f24fad0acf0cae14db43b6fd0a80b07c, type: 3}
     sentence: 'Oh great, you again.
 
 '
@@ -32,7 +36,7 @@ MonoBehaviour:
     choices: []
   - side: 0
     characterName: Io
-    characterSprite: {fileID: 0}
+    characterSprite: {fileID: 21300000, guid: 6cc6ef422b8726c45b55b885412734f7, type: 3}
     sentence: 'Be nice. You volunteered for this.
 
 '

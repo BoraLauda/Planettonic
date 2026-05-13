@@ -12,18 +12,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f832b14936fc2048824d9308b14ded6, type: 3}
   m_Name: LynnBad 1
   m_EditorClassIdentifier: 
+  leftKarakterGelmedi: 0
+  rightKarakterGelmedi: 0
   locationName: 
   locationBackground: {fileID: 0}
   allLines:
   - side: 1
     characterName: Lynn
-    characterSprite: {fileID: 21300000, guid: 724a9d18b99b23f4d8ef91418ba692f0, type: 3}
+    characterSprite: {fileID: 21300000, guid: 62eaae04548671943969da195ad840fd, type: 3}
     sentence: What was your last partner like?
     eventTrigger: 
     choices: []
   - side: 0
     characterName: Io
-    characterSprite: {fileID: -1160322238068995058, guid: e79cf994b0112f542bb5904bcd06966b, type: 3}
+    characterSprite: {fileID: 21300000, guid: 1c3ce6504e74815449e24533a0083e0d, type: 3}
     sentence: "Oh, I don\u2019t really want to talk about it."
     eventTrigger: 
     choices: []

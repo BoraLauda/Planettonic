@@ -19,13 +19,13 @@ MonoBehaviour:
   allLines:
   - side: 0
     characterName: Loreen
-    characterSprite: {fileID: 21300000, guid: 8ee8136007822ef44baf33c1fe10e0ba, type: 3}
+    characterSprite: {fileID: 21300000, guid: 84293290075aa6c48984f4ed5a1b5098, type: 3}
     sentence: "Yet another question as an answer. You\u2019re impossible."
     eventTrigger: 
     choices: []
   - side: 1
     characterName: Ary
-    characterSprite: {fileID: 21300000, guid: ece41423a199ba04f8804d355c231cbb, type: 3}
+    characterSprite: {fileID: 21300000, guid: 8bd2552c80c908b44afa833a7b98048e, type: 3}
     sentence: "Aw, thank you. I\u2019d rather be difficuly than boring."
     eventTrigger: 
     choices: []

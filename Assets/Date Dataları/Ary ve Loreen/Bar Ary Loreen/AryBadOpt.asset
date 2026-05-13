@@ -19,13 +19,13 @@ MonoBehaviour:
   allLines:
   - side: 1
     characterName: Ary
-    characterSprite: {fileID: 21300000, guid: ece41423a199ba04f8804d355c231cbb, type: 3}
+    characterSprite: {fileID: 21300000, guid: 9e781b29aa2808c4a9e37204da7b98b1, type: 3}
     sentence: None of your fucking business is what it is.
     eventTrigger: 
     choices: []
   - side: 0
     characterName: Loreen
-    characterSprite: {fileID: 21300000, guid: 8ee8136007822ef44baf33c1fe10e0ba, type: 3}
+    characterSprite: {fileID: 21300000, guid: e12fe458cba716f48a2cc799cb0c641a, type: 3}
     sentence: Ohh..kay!
     eventTrigger: StartCurveDodge
     choices: []

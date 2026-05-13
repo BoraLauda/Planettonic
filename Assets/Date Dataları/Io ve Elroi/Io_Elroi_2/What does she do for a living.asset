@@ -12,18 +12,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f832b14936fc2048824d9308b14ded6, type: 3}
   m_Name: What does she do for a living
   m_EditorClassIdentifier: 
+  leftKarakterGelmedi: 0
+  rightKarakterGelmedi: 0
   locationName: 
   locationBackground: {fileID: 0}
   allLines:
   - side: 0
     characterName: Io
-    characterSprite: {fileID: 0}
+    characterSprite: {fileID: 21300000, guid: 6cc6ef422b8726c45b55b885412734f7, type: 3}
     sentence: What does Yova do for a living? Is she in the same industry as you?
     eventTrigger: 
     choices: []
   - side: 1
     characterName: Elroi
-    characterSprite: {fileID: 0}
+    characterSprite: {fileID: 21300000, guid: f24fad0acf0cae14db43b6fd0a80b07c, type: 3}
     sentence: "She is, actually. She works in sound design and ambience. She\u2019s
       kinda more successful than I am.\r\n"
     eventTrigger: 
