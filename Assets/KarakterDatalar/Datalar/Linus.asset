@@ -17,7 +17,7 @@ MonoBehaviour:
   profileIcon: {fileID: 21300000, guid: 243dec76f289a0c4f86cf1cd834c6e39, type: 3}
   dodgeTheQuestionIkonu: {fileID: -5726526971280107390, guid: 7d8893f829515954da8db8356faa17df, type: 3}
   menuMinigameIkonu: {fileID: -5726526971280107390, guid: 7d8893f829515954da8db8356faa17df, type: 3}
-  portraitImage: {fileID: 21300000, guid: 19b8c42c96185954db27cd2f9406e0a0, type: 3}
+  portraitImage: {fileID: 8721690836180394749, guid: a73a3a57fa9f88744805f6a9a13124af, type: 3}
   fullName: Linus
   demographicsInfo: 20 || Male || Lawyer
   relationshipGoals: Casual || Kids
@@ -29,8 +29,6 @@ MonoBehaviour:
   quoteText: "\xD6zl\xFC s\xF6z"
   locationPreferences:
   - locationName: Restaurant
-    bonusStars: 1
-  - locationName: Bar
     bonusStars: 1
   - locationName: House
     bonusStars: 1
@@ -46,6 +44,7 @@ MonoBehaviour:
   - food: 7
     reactionScenario: {fileID: 11400000, guid: 3b9413dd336563e48ace9cf6b8768dd9, type: 2}
   sevdigiKokteyl: 
+  kokteylSevmediDiyalogu: {fileID: 0}
   iceBreakerGood:
   - targetCharacter: {fileID: 11400000, guid: 52f97840cc872804392c25a1f2b8175b, type: 2}
     diyalogDosyasi: {fileID: 11400000, guid: d003e060d1f24f846906f6754de64ce6, type: 2}
