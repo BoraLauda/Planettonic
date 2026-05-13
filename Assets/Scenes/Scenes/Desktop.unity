@@ -75425,7 +75425,7 @@ MonoBehaviour:
   - characterA: {fileID: 11400000, guid: 914c084cda719c149b3ce3ae947d0973, type: 2}
     characterB: {fileID: 11400000, guid: 70924192341f4a244bdda3ba9cd56e47, type: 2}
     restoranSenaryolari:
-    - {fileID: 11400000, guid: 9e10de6043eeade479a3a9f33b079cee, type: 2}
+    - {fileID: 11400000, guid: d37bd3029dab67645813aba49870f279, type: 2}
     arcadeSenaryolari: []
     barSenaryolari:
     - {fileID: 11400000, guid: 32d9ea7a34af157409207a942f77ea1a, type: 2}
