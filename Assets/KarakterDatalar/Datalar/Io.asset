@@ -28,7 +28,10 @@ MonoBehaviour:
   - {fileID: 21300000, guid: e5e6a14ad2095aa4482d97042cb3de7f, type: 3}
   - {fileID: 21300000, guid: a85149ffbf8caf24cb342d45c59ff28c, type: 3}
   - {fileID: 21300000, guid: a0743298d763d9b4fad0d06790a00df6, type: 3}
-  quoteText: "\xD6zl\xFC s\xF6z\r\n"
+  goodReview: Had a great time!
+  midReview: "It was fine.\r"
+  badReview: It went awful.
+  quoteText: A little nerdy but still a catch.
   locationPreferences:
   - locationName: Restaurant
     bonusStars: 1

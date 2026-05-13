@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   leftKarakterGelmedi: 0
   rightKarakterGelmedi: 0
-  locationName: 
-  locationBackground: {fileID: 0}
+  locationName: Restaurant
+  locationBackground: {fileID: 21300000, guid: 99f8b52cd13c70845a1feb7b3f0d1d2f, type: 3}
   allLines:
   - side: 1
     characterName: Linus

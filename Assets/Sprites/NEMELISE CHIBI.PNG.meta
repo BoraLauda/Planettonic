@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 28d7790a91b4b464094faf043544df35
+guid: 2601a97620bb5974eb0b8523922c2bc6
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3456797449147395136
-    second: NEMELISE DEFAULT_0
+      213: -7938587475872823007
+    second: NEMELISE CHIBI_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: NEMELISE DEFAULT_0
+      name: NEMELISE CHIBI_0
       rect:
         serializedVersion: 2
-        x: 834
-        y: 92
-        width: 1235
-        height: 3649
+        x: 878
+        y: 1081
+        width: 2340
+        height: 2523
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 04c28e017f209ff20800000000000000
-      internalID: 3456797449147395136
+      spriteID: 1294c3a40c874d190800000000000000
+      internalID: -7938587475872823007
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      NEMELISE DEFAULT_0: 3456797449147395136
+      NEMELISE CHIBI_0: -7938587475872823007
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -102,11 +102,7 @@ public class KokteylManager : MonoBehaviour
         {
             NextPhase();
         }
-
-        if (Input.GetKeyDown(hileTusu))
-        {
-            HileyleBitir();
-        }
+        
     }
 
     public void StartPhase(GamePhase newPhase)

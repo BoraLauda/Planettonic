@@ -26,6 +26,9 @@ MonoBehaviour:
   profileRatingIcons:
   - {fileID: 21300000, guid: e5e6a14ad2095aa4482d97042cb3de7f, type: 3}
   - {fileID: 21300000, guid: 3a92a48834ed72d49ac50653aa5d7202, type: 3}
+  goodReview: Great fucking date.
+  midReview: "It was mid.\r"
+  badReview: "God fucking awful.\r"
   quoteText: Only god can judge me...
   locationPreferences:
   - locationName: Bar

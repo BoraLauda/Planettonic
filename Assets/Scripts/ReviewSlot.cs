@@ -37,7 +37,9 @@ public class ReviewSlot : MonoBehaviour
         else
         {
             char1NameText.text = data.char1Name;
-            char1CommentText.text = "\"" + data.char1Comment + "\"";
+            // ZORLA EKLENEN TIRNAKLAR SİLİNDİ
+            char1CommentText.text = data.char1Comment;
+            
             if (profile1Icon != null) char1Image.sprite = profile1Icon;
             char1Image.gameObject.SetActive(true);
             char1StarsContainer.gameObject.SetActive(true);
@@ -54,7 +56,9 @@ public class ReviewSlot : MonoBehaviour
         else
         {
             char2NameText.text = data.char2Name;
-            char2CommentText.text = "\"" + data.char2Comment + "\"";
+           
+            char2CommentText.text = data.char2Comment;
+            
             if (profile2Icon != null) char2Image.sprite = profile2Icon;
             char2Image.gameObject.SetActive(true);
             char2StarsContainer.gameObject.SetActive(true);

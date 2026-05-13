@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   leftKarakterGelmedi: 0
   rightKarakterGelmedi: 0
-  locationName: 
+  locationName: Restaurant
   locationBackground: {fileID: 0}
   allLines:
   - side: 1

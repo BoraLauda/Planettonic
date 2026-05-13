@@ -12,19 +12,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f832b14936fc2048824d9308b14ded6, type: 3}
   m_Name: ElroiGOOD
   m_EditorClassIdentifier: 
+  leftKarakterGelmedi: 0
+  rightKarakterGelmedi: 0
   locationName: 
   locationBackground: {fileID: 0}
   allLines:
   - side: 1
     characterName: Elroi
-    characterSprite: {fileID: 21300000, guid: 940a91f339e1825439b9f6d15b9c98fa, type: 3}
+    characterSprite: {fileID: 21300000, guid: f24fad0acf0cae14db43b6fd0a80b07c, type: 3}
     sentence: "I saw on your profile that you like comics. Do you... maybe know about
       \u201CThe Revenge of the Neptunian Beast\u201D?"
     eventTrigger: 
     choices: []
   - side: 0
     characterName: Io
-    characterSprite: {fileID: 7956698841550424776, guid: 2dfa7703027856e42aa0ad06571044c3, type: 3}
+    characterSprite: {fileID: 21300000, guid: 01e1aff972284664e96e9b5d30ca1b74, type: 3}
     sentence: "Holy shit you collect Neptunian erotica too? I love the last volume
       they released. It hasn\u2019t even come to the comic book stores in Venus yet
       but I was smart enough to preorder this time. God I love the new tentacle lady."
@@ -32,7 +34,7 @@ MonoBehaviour:
     choices: []
   - side: 1
     characterName: Elroi
-    characterSprite: {fileID: 21300000, guid: 50ded667945ab4c4b8acc9e58eafd0a1, type: 3}
+    characterSprite: {fileID: 21300000, guid: 84c5181503f6e47458e85b7e3a484d79, type: 3}
     sentence: Oh me too, me fucking too.
     eventTrigger: 
     choices: []

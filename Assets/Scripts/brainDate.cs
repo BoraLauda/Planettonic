@@ -119,7 +119,6 @@ public class brainDate : MonoBehaviour
     public AudioSource bgsSource; 
     public float fadeSpeed = 3f; 
 
-    // Ses Kısma-Açma İşlemleri İçin Hafıza Değişkenleri
     private float currentMusicTargetVol = 1f;
     private float currentAmbTargetVol = 1f;
     private Coroutine bgmVolRoutine;
@@ -206,10 +205,6 @@ public class brainDate : MonoBehaviour
     private bool isHeartOfCircuitActive = false;
     private bool isHeartOfCircuitUsedThisDate = false;
 
-    public List<string> goodReviews;
-    public List<string> midReviews;
-    public List<string> badReviews;
-    
     public ReactionParticles reactionVFX;
 
     private bool hasPendingReaction = false;
@@ -320,7 +315,6 @@ public class brainDate : MonoBehaviour
                 introLeftNameText.gameObject.SetActive(!leftKarakterGelmedi); 
             }
 
-            
             if (!leftKarakterGelmedi)
             {
                 foreach (var pref in DateSettings.leftChar.locationPreferences)
@@ -342,7 +336,6 @@ public class brainDate : MonoBehaviour
                 introRightNameText.gameObject.SetActive(!rightKarakterGelmedi);
             }
 
-            
             if (!rightKarakterGelmedi)
             {
                 foreach (var pref in DateSettings.rightChar.locationPreferences)
@@ -384,35 +377,35 @@ public class brainDate : MonoBehaviour
             rightDaterImage.transform.localScale = Vector3.Lerp(rightDaterImage.transform.localScale, rightTargetScale, Time.deltaTime * focusSpeed);
         }
 
-        if (Input.GetKeyDown(KeyCode.F9) || Input.GetKeyDown(KeyCode.H))
-        {
-            leftStars = 3f;
-            rightStars = 4f;
-            totalHearts += 50;
-            UpdateScoreUI();
-
-            isMenuMode = false;
-            isDodgeMode = false;
-            isCurveDodgeMode = false;
-            isIceBreakerMode = false;
-            isBartendingMode = false;
-            isSkorEkraniAcik = false;
-
-            if (menuMiniGameObj) menuMiniGameObj.SetActive(false);
-            if (pixelMiniGameObj) pixelMiniGameObj.SetActive(false);
-            if (rhythmMiniGameObj) rhythmMiniGameObj.SetActive(false);
-            if (clawMachineMiniGameObj) clawMachineMiniGameObj.SetActive(false);
-            if (runnerMiniGameObj) runnerMiniGameObj.SetActive(false);
-            if (bartendingMiniGameObj) bartendingMiniGameObj.SetActive(false);
-            if (curveDodgeMiniGameObj) curveDodgeMiniGameObj.SetActive(false);
-            if (evrenselSkorPaneli) evrenselSkorPaneli.SetActive(false);
-            if (BGblur) BGblur.SetActive(false);
-
-            RestoreBackgroundAudio();
-
-            scenarioQueue.Clear();
-            PlayNextInQueue();
-        }
+        /*  if (Input.GetKeyDown(KeyCode.F9) || Input.GetKeyDown(KeyCode.H))
+         {
+             leftStars = 3f;
+             rightStars = 4f;
+             totalHearts += 50;
+             UpdateScoreUI();
+ 
+             isMenuMode = false;
+             isDodgeMode = false;
+             isCurveDodgeMode = false;
+             isIceBreakerMode = false;
+             isBartendingMode = false;
+             isSkorEkraniAcik = false;
+ 
+             if (menuMiniGameObj) menuMiniGameObj.SetActive(false);
+             if (pixelMiniGameObj) pixelMiniGameObj.SetActive(false);
+             if (rhythmMiniGameObj) rhythmMiniGameObj.SetActive(false);
+             if (clawMachineMiniGameObj) clawMachineMiniGameObj.SetActive(false);
+             if (runnerMiniGameObj) runnerMiniGameObj.SetActive(false);
+             if (bartendingMiniGameObj) bartendingMiniGameObj.SetActive(false);
+             if (curveDodgeMiniGameObj) curveDodgeMiniGameObj.SetActive(false);
+             if (evrenselSkorPaneli) evrenselSkorPaneli.SetActive(false);
+             if (BGblur) BGblur.SetActive(false);
+ 
+             RestoreBackgroundAudio();
+ 
+             scenarioQueue.Clear();
+             PlayNextInQueue();
+         } */
 
         if (Input.GetMouseButtonDown(0))
         {
@@ -503,7 +496,6 @@ public class brainDate : MonoBehaviour
         PlayNextInQueue();
     }
 
-    
     void PlayNextInQueue()
     {
         if (scenarioQueue.Count > 0)
@@ -524,27 +516,27 @@ public class brainDate : MonoBehaviour
 
             if (dateEndedObject != null) dateEndedObject.SetActive(true);
 
+            string GetCharacterComment(Characters character, float stars)
+            {
+                if (character == null) return "...";
+                if (stars >= 4) return character.goodReview;
+                if (stars >= 3) return character.midReview;
+                return character.badReview;
+            }
+
             if (DateSettings.leftChar != null && DateSettings.rightChar != null)
             {
-                string GetRandomComment(float stars)
-                {
-                    List<string> pool = stars >= 4 ? goodReviews : (stars >= 3 ? midReviews : badReviews);
-                    if (pool == null || pool.Count == 0) return "...";
-                    return pool[UnityEngine.Random.Range(0, pool.Count)];
-                }
-
                 string jsonLoad = UnityEngine.PlayerPrefs.GetString("SavedReviewsDB", "");
                 ReviewDatabase db = string.IsNullOrEmpty(jsonLoad) ? new ReviewDatabase() : UnityEngine.JsonUtility.FromJson<ReviewDatabase>(jsonLoad);
 
-              
                 DateReview newReview = new DateReview
                 {
                     char1Name = leftKarakterGelmedi ? "" : DateSettings.leftChar.characterName,
                     char2Name = rightKarakterGelmedi ? "" : DateSettings.rightChar.characterName,
                     char1Stars = leftKarakterGelmedi ? 0 : leftStars,
                     char2Stars = rightKarakterGelmedi ? 0 : rightStars,
-                    char1Comment = leftKarakterGelmedi ? "..." : GetRandomComment(leftStars),
-                    char2Comment = rightKarakterGelmedi ? "..." : GetRandomComment(rightStars),
+                    char1Comment = leftKarakterGelmedi ? "..." : GetCharacterComment(DateSettings.leftChar, leftStars),
+                    char2Comment = rightKarakterGelmedi ? "..." : GetCharacterComment(DateSettings.rightChar, rightStars),
                     isSuccess = isSuccessFlag
                 };
 
@@ -553,13 +545,10 @@ public class brainDate : MonoBehaviour
                 UnityEngine.PlayerPrefs.Save();
             }
 
-           
             if (isStoodUp)
             {
-              
                 if (dateEkilmePanel != null) dateEkilmePanel.SetActive(true);
 
-             
                 if (ekilmeKalanKarakterText != null)
                 {
                     if (!leftKarakterGelmedi && rightKarakterGelmedi && DateSettings.leftChar != null)
@@ -1002,6 +991,18 @@ public class brainDate : MonoBehaviour
 
     void TriggerEvent(string eventName)
     {
+       
+        bool ShouldShowTutorial(string key) {
+            return PlayerPrefs.GetInt("FirstTime_" + key, 0) == 0;
+        }
+
+        
+        void MarkTutorialAsShown(string key) {
+            PlayerPrefs.SetInt("FirstTime_" + key, 1);
+            PlayerPrefs.Save();
+        }
+        
+        
         if (eventName == "StartMenuGame")
         {
             if (leftDialoguePanel) leftDialoguePanel.SetActive(false);
@@ -1624,7 +1625,7 @@ public class brainDate : MonoBehaviour
 
         float totalScore = leftStars + rightStars;
 
-        if (totalScore >= starThreshold && DateSettings.leftChar != null && DateSettings.rightChar != null)
+        if (DateSettings.leftChar != null && DateSettings.rightChar != null)
         {
             string char1 = DateSettings.leftChar.characterName;
             string char2 = DateSettings.rightChar.characterName;
@@ -1632,15 +1633,27 @@ public class brainDate : MonoBehaviour
                 "DateLevel_" + char1 + "_" + char2 :
                 "DateLevel_" + char2 + "_" + char1;
 
-            int currentLevel = PlayerPrefs.GetInt(coupleKey, 0);
-            PlayerPrefs.SetInt(coupleKey, currentLevel + 1);
+            
+            int startingLevel = PlayerPrefs.GetInt(coupleKey, 0);
+
+            if (totalScore >= starThreshold)
+            {
+                PlayerPrefs.SetInt(coupleKey, startingLevel + 1);
+            }
+
+            if ((char1 == "Io" && char2 == "Elroi") || (char1 == "Elroi" && char2 == "Io"))
+            {
+                if (startingLevel >= 1)
+                {
+                    PlayerPrefs.SetInt("IsMarketUnlocked", 1);
+                }
+            }
         }
 
         int currentBank = PlayerPrefs.GetInt("SavedHearts", 0);
         int newTotal = currentBank + totalHearts;
         PlayerPrefs.SetInt("SavedHearts", newTotal);
 
-        PlayerPrefs.SetInt("IsMarketUnlocked", 1);
         PlayerPrefs.SetInt("HasSave", 1);
 
         PlayerPrefs.Save();
@@ -1649,7 +1662,9 @@ public class brainDate : MonoBehaviour
         {
             SceneManager.LoadScene(desktopScene);
         }
+        
     }
+    
 
     public void StartTheDate()
     {
@@ -1765,8 +1780,6 @@ public class brainDate : MonoBehaviour
             else PopToFront(heartUI.gameObject, true, 32000);
         }
     }
-
-    // --- Ses Fonksiyonları ---
 
     public void PlayLocationAudio(string locName)
     {
