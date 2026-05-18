@@ -92,23 +92,31 @@ public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
         canvasGroup.alpha = 1f;
         
         bool isDrinkFinished = KokteylManager.Instance.zilObjesi != null && KokteylManager.Instance.zilObjesi.activeSelf;
-        bool isGarnish = (itemName == "Zeytin" || itemName == "Portakal" || itemName == "Nane" || itemName == "Cilek");
+        bool isGarnish = (itemName == "Zeytin");
 
         if (isDrinkFinished && isGarnish && !isLocked)
         {
-            isLocked = true; 
-            this.transform.SetParent(KokteylManager.Instance.masadakiBardakObjeleri[KokteylManager.Instance.secilenBardakIndex]);
-            canvasGroup.blocksRaycasts = false; 
-            this.enabled = false;
-            
-            if (itemName == "Zeytin") KokteylManager.Instance.ZeytinEkle();
-            else if (itemName == "Portakal") KokteylManager.Instance.PortakalEkle();
-            else if (itemName == "Nane") KokteylManager.Instance.NaneEkle();
-            else if (itemName == "Cilek") KokteylManager.Instance.CilekEkle();
-            
-            KokteylManager.Instance.masadakiSusler.Add(this.gameObject);
-            
-            return; 
+            RectTransform glassRect = KokteylManager.Instance.masadakiBardakObjeleri[KokteylManager.Instance.secilenBardakIndex];
+
+            if (glassRect != null)
+            {
+                Vector2 oliveCenterScreenPoint = RectTransformUtility.WorldToScreenPoint(eventData.pressEventCamera, rectTransform.position);
+                
+                if (RectTransformUtility.RectangleContainsScreenPoint(glassRect, oliveCenterScreenPoint, eventData.pressEventCamera))
+                {
+                    isLocked = true; 
+                    
+                    this.transform.SetParent(glassRect, true);
+                    
+                    canvasGroup.blocksRaycasts = false; 
+                    this.enabled = false;
+                    
+                    KokteylManager.Instance.ZeytinEkle();
+                    KokteylManager.Instance.masadakiSusler.Add(this.gameObject);
+                    
+                    return; 
+                }
+            }
         }
 
         if (isInfiniteSource)

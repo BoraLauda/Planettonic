@@ -42,7 +42,7 @@ MonoBehaviour:
   - locationName: House
     bonusStars: 1
   hatedFoods: []
-  sevdigiKokteyl: Neptun
+  sevdigiKokteyl: Cosmopolitan
   kokteylSevmediDiyalogu: {fileID: 11400000, guid: 7a0e336fc7ef63742be98e92797a904a, type: 2}
   iceBreakerGood:
   - targetCharacter: {fileID: 11400000, guid: 5f6e0fde49813654aa1d61918d175f26, type: 2}

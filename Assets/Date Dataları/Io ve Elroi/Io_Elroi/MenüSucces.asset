@@ -20,7 +20,7 @@ MonoBehaviour:
   - side: 0
     characterName: Io
     characterSprite: {fileID: 21300000, guid: 01e1aff972284664e96e9b5d30ca1b74, type: 3}
-    sentence: Oh my god this salad is so damn good. I was craving something exactly
+    sentence: Oh my god this food is so damn good. I was craving something exactly
       like this.
     eventTrigger: 
     choices: []

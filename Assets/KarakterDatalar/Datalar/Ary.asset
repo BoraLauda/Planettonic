@@ -39,7 +39,7 @@ MonoBehaviour:
     reactionScenario: {fileID: 11400000, guid: 75e8d3a5d7fde0c46a6e806468b9767d, type: 2}
   - food: 7
     reactionScenario: {fileID: 11400000, guid: 75e8d3a5d7fde0c46a6e806468b9767d, type: 2}
-  sevdigiKokteyl: Cosmopolitan
+  sevdigiKokteyl: Martini
   kokteylSevmediDiyalogu: {fileID: 11400000, guid: 9dce85cb58f33294fbd3133312232f28, type: 2}
   iceBreakerGood:
   - targetCharacter: {fileID: 11400000, guid: 52f97840cc872804392c25a1f2b8175b, type: 2}

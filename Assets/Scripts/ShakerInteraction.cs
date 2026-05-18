@@ -1,13 +1,12 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 using System.Collections;
+using TMPro;
 
 public class ShakerInteraction : MonoBehaviour, IDropHandler, IPointerClickHandler
 {
-   
     public static ShakerInteraction Instance;
     
-
     public int currentIceCount = 0;
     public int requiredIce = 2;
 
@@ -22,19 +21,37 @@ public class ShakerInteraction : MonoBehaviour, IDropHandler, IPointerClickHandl
     public float bumpDuration = 0.1f; 
     private Vector3 originalScale;   
 
+    [Header("Masa Kontrolü")]
+    public bool masadaMi = false; 
+    public RectTransform masaMerkezi; 
+    public float kabulEdilebilirMesafe = 50f; 
+
+    [Header("UI Uyarı Sistemi")]
+    public TMP_Text emptyWarningText; 
+    public float warningDuration = 1.5f; 
+    private Coroutine warningCoroutine;
+
     void Awake()
     {
-      
         if (Instance == null) Instance = this;
         else Destroy(gameObject);
     
-
         originalScale = transform.localScale;
     }
 
     void Start()
     {
         ResetShaker(); 
+        if (emptyWarningText != null) emptyWarningText.gameObject.SetActive(false);
+    }
+
+    void Update()
+    {
+        if (masaMerkezi != null)
+        {
+            float mesafe = Vector2.Distance(GetComponent<RectTransform>().anchoredPosition, masaMerkezi.anchoredPosition);
+            masadaMi = (mesafe < kabulEdilebilirMesafe);
+        }
     }
 
     public void ResetShaker()
@@ -51,7 +68,6 @@ public class ShakerInteraction : MonoBehaviour, IDropHandler, IPointerClickHandl
         ResetShaker();
     }
 
-  
     public void TriggerBlup()
     {
         if (gameObject.activeInHierarchy)
@@ -60,10 +76,40 @@ public class ShakerInteraction : MonoBehaviour, IDropHandler, IPointerClickHandl
             StartCoroutine("BumpScale");
         }
     }
+
     
+    public void ShowEmptyWarning()
+    {
+        if (warningCoroutine != null) StopCoroutine(warningCoroutine);
+        warningCoroutine = StartCoroutine(HideWarningRoutine());
+    }
+
+    IEnumerator HideWarningRoutine()
+    {
+        if (emptyWarningText != null)
+        {
+            emptyWarningText.text = "Shaker is empty!";
+            emptyWarningText.gameObject.SetActive(true);
+            yield return new WaitForSeconds(warningDuration);
+            emptyWarningText.gameObject.SetActive(false);
+        }
+    }
 
     public void OnPointerClick(PointerEventData eventData)
     {
+        if (!masadaMi)
+        {
+            Debug.Log("Shaker henüz masanın ortasında değil! Kapak açılamaz.");
+            return;
+        }
+
+        
+        if (kapakAcikMi && KokteylManager.Instance != null && KokteylManager.Instance.IsShakerEmpty())
+        {
+            ShowEmptyWarning();
+            return;
+        }
+
         bool oncekiDurum = kapakAcikMi; 
         kapakAcikMi = !kapakAcikMi; 
         
@@ -85,6 +131,12 @@ public class ShakerInteraction : MonoBehaviour, IDropHandler, IPointerClickHandl
 
     public void OnDrop(PointerEventData eventData)
     {
+        if (!masadaMi)
+        {
+            Debug.Log("Shaker henüz masanın ortasında değil! İçine bir şey atılamaz.");
+            return;
+        }
+
         if (!kapakAcikMi)
         {
             Debug.Log("Shaker kapalı! Eşya atılamaz.");
@@ -97,9 +149,9 @@ public class ShakerInteraction : MonoBehaviour, IDropHandler, IPointerClickHandl
 
             if (draggedItem != null)
             {
-                // Katı malzemeler atıldığında (Blup içeriden tetikleniyor)
                 if (draggedItem.itemName == "Buz" || draggedItem.itemName == "Portakal" || 
-                    draggedItem.itemName == "Nane" || draggedItem.itemName == "Cilek" || draggedItem.itemName == "Zeytin")
+                    draggedItem.itemName == "Nane" || draggedItem.itemName == "Cilek" || 
+                    draggedItem.itemName == "Zeytin" || draggedItem.itemName == "Limon")
                 {
                     draggedItem.isLocked = true;
                     
@@ -110,18 +162,16 @@ public class ShakerInteraction : MonoBehaviour, IDropHandler, IPointerClickHandl
                         else if (draggedItem.itemName == "Nane") KokteylManager.Instance.NaneEkle();
                         else if (draggedItem.itemName == "Cilek") KokteylManager.Instance.CilekEkle();
                         else if (draggedItem.itemName == "Zeytin") KokteylManager.Instance.ZeytinEkle();
+                        else if (draggedItem.itemName == "Limon") KokteylManager.Instance.LimonEkle(); 
                     }
 
                     if (draggedItem.itemName == "Buz") currentIceCount++;
                     
-                    
                     TriggerBlup(); 
-                 
 
                     Debug.Log(draggedItem.itemName + " shaker'a atıldı!");
                     Destroy(draggedItem.gameObject); 
                 }
-
                
                 else if (draggedItem.itemName == "Sos")
                 {
@@ -129,25 +179,28 @@ public class ShakerInteraction : MonoBehaviour, IDropHandler, IPointerClickHandl
                     SauceBottle sauce = draggedItem.GetComponent<SauceBottle>();
                     if (sauce != null) sauce.StartAutomaticPour(this.transform); 
                 }
-                else if (draggedItem.itemName == "Limon")
-                {
-                    draggedItem.isLocked = true;
-                    draggedItem.GetComponent<RectTransform>().position = transform.position;
-                    Lemon squeeze = draggedItem.GetComponent<Lemon>();
-                    if (squeeze != null) squeeze.canSqueeze = true; 
-                }
                
                 else if (draggedItem.itemName == "Kasik")
                 {
-                    if (KokteylManager.Instance != null && !KokteylManager.Instance.isStirred)
+                    if (KokteylManager.Instance != null)
                     {
-                        draggedItem.ForceTurn();
-                        Debug.Log("Kaşık atıldı, Karıştırma (Stir) başlıyor!");
-                        StartCoroutine(GecikmeliFazaGec(KokteylManager.GamePhase.Stirring, 0.4f));
-                    }
-                    else
-                    {
-                        draggedItem.ForceTurn();
+                        if (KokteylManager.Instance.IsShakerEmpty())
+                        {
+                            draggedItem.ForceTurn(); 
+                            ShowEmptyWarning(); 
+                            return; 
+                        }
+
+                        if (!KokteylManager.Instance.isStirred)
+                        {
+                            draggedItem.ForceTurn();
+                            Debug.Log("Kaşık atıldı, Karıştırma (Stir) başlıyor!");
+                            StartCoroutine(GecikmeliFazaGec(KokteylManager.GamePhase.Stirring, 0.4f));
+                        }
+                        else
+                        {
+                            draggedItem.ForceTurn();
+                        }
                     }
                 }
                 
