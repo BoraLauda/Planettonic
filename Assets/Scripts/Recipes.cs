@@ -14,7 +14,7 @@ public class Recipes : MonoBehaviour
 
     void Awake()
     {
-        // Orijinal boyutu en başta (obje doğduğu an) hafızaya alıyoruz
+    
         originalScale = transform.localScale;
     }
 
@@ -23,13 +23,13 @@ public class Recipes : MonoBehaviour
         if (openBookPanel != null) openBookPanel.SetActive(false);
     }
 
-    // Kokteyl mini-game'i/kitap butonu sahneye her geldiğinde (açıldığında) tetiklenir
+    
     void OnEnable()
     {
         isPulsing = true;
     }
 
-    // YENİDEN EKLENEN KISIM: Animasyonun asıl çalıştığı yer!
+   
     void Update()
     {
         if (isPulsing)
@@ -44,7 +44,7 @@ public class Recipes : MonoBehaviour
 
     public void ToggleBook()
     {
-        // Kitaba tıklandığı an animasyonu durdur ve boyutu normale döndür
+       
         if (isPulsing)
         {
             isPulsing = false;
