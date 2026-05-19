@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterName: Lynn
   cinsiyet: 1
-  profileIcon: {fileID: 21300000, guid: 724a9d18b99b23f4d8ef91418ba692f0, type: 3}
-  dodgeTheQuestionIkonu: {fileID: 21300000, guid: 724a9d18b99b23f4d8ef91418ba692f0, type: 3}
-  menuMinigameIkonu: {fileID: 21300000, guid: 724a9d18b99b23f4d8ef91418ba692f0, type: 3}
-  portraitImage: {fileID: 21300000, guid: 724a9d18b99b23f4d8ef91418ba692f0, type: 3}
+  profileIcon: {fileID: 21300000, guid: ad703972440297a42b7eef9775b34f10, type: 3}
+  dodgeTheQuestionIkonu: {fileID: -7167039501240531379, guid: f9ac1517a7ba7db499d2a4fe6051ae3b, type: 3}
+  menuMinigameIkonu: {fileID: -7167039501240531379, guid: f9ac1517a7ba7db499d2a4fe6051ae3b, type: 3}
+  portraitImage: {fileID: 3799175423264972002, guid: d000f0f05ef42ce4999e8d91e3f69b04, type: 3}
   fullName: Lynn
   demographicsInfo: 21 || Male || Uranus || Fine Arts
   relationshipGoals: Casual
@@ -26,11 +26,12 @@ MonoBehaviour:
   profileRatingIcons:
   - {fileID: 21300000, guid: 3a92a48834ed72d49ac50653aa5d7202, type: 3}
   - {fileID: 21300000, guid: e5e6a14ad2095aa4482d97042cb3de7f, type: 3}
-  quoteText: "\xF6zl\xFC s\xF6z"
+  goodReview: It was really fun.
+  midReview: It was okay overall.
+  badReview: "It didn\u2019t go very well."
+  quoteText: "Let\u2019s grab coffee and yap about games.\r"
   locationPreferences:
   - locationName: Restaurant
-    bonusStars: 1
-  - locationName: House
     bonusStars: 1
   - locationName: Arcade
     bonusStars: 1

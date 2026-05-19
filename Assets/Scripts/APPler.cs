@@ -274,15 +274,8 @@ public class APPler : MonoBehaviour
     {
        if (IoData == null || ElroiData == null) return;
 
-        string char1 = IoData.characterName;
-        string char2 = ElroiData.characterName;
-        
-        string dateKey = string.Compare(char1, char2) < 0 ? 
-            "DateLevel_" + char1 + "_" + char2 : 
-            "DateLevel_" + char2 + "_" + char1;
-
-        int ioElroiLevel = PlayerPrefs.GetInt(dateKey, 0);
-        bool isFirstDateDone = ioElroiLevel > 0;
+        // Market kilit durumunu brainDate'in açtığı IsMarketUnlocked üzerinden çekiyoruz.
+        bool isMarketUnlocked = PlayerPrefs.GetInt("IsMarketUnlocked", 0) == 1;
 
         for (int i = 0; i < allSlots.Count; i++)
         {
@@ -301,7 +294,8 @@ public class APPler : MonoBehaviour
             }
             else
             {
-                isUnlocked = isFirstDateDone; 
+                // Artık Io/Elroi'nin 1. Date'ini değil, genel marketin açılıp açılmadığını kontrol ediyoruz.
+                isUnlocked = isMarketUnlocked; 
             }
 
             string cName = allSlots[i].myProfile.characterName;

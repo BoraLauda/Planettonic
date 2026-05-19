@@ -12,18 +12,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f832b14936fc2048824d9308b14ded6, type: 3}
   m_Name: Start_Restaurant
   m_EditorClassIdentifier: 
+  leftKarakterGelmedi: 0
+  rightKarakterGelmedi: 0
   locationName: Restaurant
   locationBackground: {fileID: 21300000, guid: f8bdb2b11a144d94f9ac89625b2a01f4, type: 3}
   allLines:
   - side: 1
     characterName: Ary
-    characterSprite: {fileID: 21300000, guid: ece41423a199ba04f8804d355c231cbb, type: 3}
+    characterSprite: {fileID: 21300000, guid: 8bd2552c80c908b44afa833a7b98048e, type: 3}
     sentence: Hi, Jetty. You look really pretty in that outfit.
     eventTrigger: 
     choices: []
   - side: 0
     characterName: Jetty
-    characterSprite: {fileID: 3149642799716058400, guid: e8f20d8f7db9ba542878b46ed2f36bc0, type: 3}
+    characterSprite: {fileID: 21300000, guid: 76893eb7c1cb94246acde9b63f0604be, type: 3}
     sentence: Hey, thank you. I like your fit too.
     eventTrigger: 
     choices: []
@@ -36,7 +38,7 @@ MonoBehaviour:
     choices: []
   - side: 0
     characterName: Jetty
-    characterSprite: {fileID: 1936918675910826544, guid: e8f1130d0e09cef45bb1f9ab49489848, type: 3}
+    characterSprite: {fileID: 21300000, guid: bb4a40a34f961664591ec86a97fbdc10, type: 3}
     sentence: Weird assumption that I do, and what do you mean someone like me?
     eventTrigger: 
     choices: []
@@ -49,7 +51,7 @@ MonoBehaviour:
     choices: []
   - side: 0
     characterName: Jetty
-    characterSprite: {fileID: 3947505554978647017, guid: 46d86ba6625735d43aef9c49760dd1da, type: 3}
+    characterSprite: {fileID: 21300000, guid: 6e1f57653606a4d49b9d330e1a673e81, type: 3}
     sentence: "Yeah, I\u2019m not doing this first thing into a date."
     eventTrigger: 
     choices: []
@@ -68,7 +70,7 @@ MonoBehaviour:
     choices: []
   - side: 1
     characterName: Ary
-    characterSprite: {fileID: 0}
+    characterSprite: {fileID: 21300000, guid: 9e781b29aa2808c4a9e37204da7b98b1, type: 3}
     sentence: Wow, so easily offended and boring. I guess I want out too.
     eventTrigger: 
     choices: []

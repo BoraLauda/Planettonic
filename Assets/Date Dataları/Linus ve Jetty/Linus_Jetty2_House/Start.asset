@@ -12,19 +12,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f832b14936fc2048824d9308b14ded6, type: 3}
   m_Name: Start
   m_EditorClassIdentifier: 
+  leftKarakterGelmedi: 0
+  rightKarakterGelmedi: 0
   locationName: House
   locationBackground: {fileID: -6643673001374232007, guid: 6cb3a6d37d3340942b9d3a11a14f33c4, type: 3}
   allLines:
   - side: 0
     characterName: Jetty
-    characterSprite: {fileID: 1936918675910826544, guid: e8f1130d0e09cef45bb1f9ab49489848, type: 3}
+    characterSprite: {fileID: 21300000, guid: bb4a40a34f961664591ec86a97fbdc10, type: 3}
     sentence: Ooh this place is surprisingly nice, how much do you think they paid
       for it?
     eventTrigger: 
     choices: []
   - side: 1
     characterName: Linus
-    characterSprite: {fileID: 21300000, guid: dc24e77c8220d5b43bd418e911809b3b, type: 3}
+    characterSprite: {fileID: 21300000, guid: 763ec54e5ebac7a4fab56b7edd48e3bb, type: 3}
     sentence: "A shit ton, for sure. They are funded by the government, remember?
       They have that disturbingly intelligent AI woman and teleportation devices
       and shit...\r"
@@ -58,7 +60,7 @@ MonoBehaviour:
     choices: []
   - side: 1
     characterName: Linus
-    characterSprite: {fileID: 21300000, guid: af0c810f9bf8b7840ad7c7e7ceff54b5, type: 3}
+    characterSprite: {fileID: 0}
     sentence: Do you think they do like polyamorous dates?
     eventTrigger: 
     choices: []

@@ -14,17 +14,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterName: Nemelise
   cinsiyet: 0
-  profileIcon: {fileID: 21300000, guid: b5a5cc5d83848d843aadeaf9b5e083f1, type: 3}
-  dodgeTheQuestionIkonu: {fileID: 21300000, guid: b5a5cc5d83848d843aadeaf9b5e083f1, type: 3}
-  menuMinigameIkonu: {fileID: 21300000, guid: b5a5cc5d83848d843aadeaf9b5e083f1, type: 3}
-  portraitImage: {fileID: 21300000, guid: b5a5cc5d83848d843aadeaf9b5e083f1, type: 3}
+  profileIcon: {fileID: 21300000, guid: 0b9a1a191c2104c42a649fd66e57da86, type: 3}
+  dodgeTheQuestionIkonu: {fileID: 21300000, guid: 56974c930c96c3f4cac03be07c8efd94, type: 3}
+  menuMinigameIkonu: {fileID: 21300000, guid: 56974c930c96c3f4cac03be07c8efd94, type: 3}
+  portraitImage: {fileID: 3456797449147395136, guid: 28d7790a91b4b464094faf043544df35, type: 3}
   fullName: Nemelise
-  demographicsInfo: 
-  relationshipGoals: 
-  hobbies: 
-  foodPreferenceText: 
-  profileRatingIcons: []
-  quoteText: 
+  demographicsInfo: 32 || Female || Opera Singer
+  relationshipGoals: Long-term commitment
+  hobbies: Cooking, deep conversations, long walks, singing
+  foodPreferenceText: Vegan
+  profileRatingIcons:
+  - {fileID: 21300000, guid: 3a92a48834ed72d49ac50653aa5d7202, type: 3}
+  - {fileID: 21300000, guid: a85149ffbf8caf24cb342d45c59ff28c, type: 3}
+  goodReview: Pretty enjoyable.
+  midReview: It went fine.
+  badReview: Not for me.
+  quoteText: Long walks, good food, and commitment.
   locationPreferences:
   - locationName: Restaurant
     bonusStars: 1
@@ -37,7 +42,7 @@ MonoBehaviour:
     reactionScenario: {fileID: 11400000, guid: 3af82a29ca78dee4bb3d5d1161db2fb0, type: 2}
   - food: 7
     reactionScenario: {fileID: 11400000, guid: 3af82a29ca78dee4bb3d5d1161db2fb0, type: 2}
-  sevdigiKokteyl: Neptun
+  sevdigiKokteyl: Cosmopolitan
   kokteylSevmediDiyalogu: {fileID: 11400000, guid: 1c16696f6826c1641b63b96d59b3a06e, type: 2}
   iceBreakerGood:
   - targetCharacter: {fileID: 11400000, guid: 5f6e0fde49813654aa1d61918d175f26, type: 2}

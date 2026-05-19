@@ -33,7 +33,9 @@ public class LocationAudio
 {
     public string locationName = "Mekan Adı";
     public AudioClip musicClip;
+    [Range(0f, 1f)] public float musicVolume = 1f; 
     public AudioClip ambianceClip;
+    [Range(0f, 1f)] public float ambianceVolume = 1f; 
 }
 
 public class brainDate : MonoBehaviour
@@ -117,6 +119,11 @@ public class brainDate : MonoBehaviour
     public AudioSource bgsSource; 
     public float fadeSpeed = 3f; 
 
+    private float currentMusicTargetVol = 1f;
+    private float currentAmbTargetVol = 1f;
+    private Coroutine bgmVolRoutine;
+    private Coroutine bgsVolRoutine;
+
     [Header("Dodge Klasik")]
     public brainDODGE dodgeScript;
     private bool isDodgeMode = false;
@@ -180,6 +187,7 @@ public class brainDate : MonoBehaviour
 
     private int lineIndex = 0;
     private bool isTyping = false;
+    private Coroutine aktifYaziCoroutinesi;
     private string currentFullSentence = "";
 
     private bool isEventTriggered = false;
@@ -197,10 +205,6 @@ public class brainDate : MonoBehaviour
     private bool isHeartOfCircuitActive = false;
     private bool isHeartOfCircuitUsedThisDate = false;
 
-    public List<string> goodReviews;
-    public List<string> midReviews;
-    public List<string> badReviews;
-    
     public ReactionParticles reactionVFX;
 
     private bool hasPendingReaction = false;
@@ -311,7 +315,6 @@ public class brainDate : MonoBehaviour
                 introLeftNameText.gameObject.SetActive(!leftKarakterGelmedi); 
             }
 
-            
             if (!leftKarakterGelmedi)
             {
                 foreach (var pref in DateSettings.leftChar.locationPreferences)
@@ -333,7 +336,6 @@ public class brainDate : MonoBehaviour
                 introRightNameText.gameObject.SetActive(!rightKarakterGelmedi);
             }
 
-            
             if (!rightKarakterGelmedi)
             {
                 foreach (var pref in DateSettings.rightChar.locationPreferences)
@@ -381,14 +383,14 @@ public class brainDate : MonoBehaviour
             rightStars = 4f;
             totalHearts += 50;
             UpdateScoreUI();
-
+ 
             isMenuMode = false;
             isDodgeMode = false;
             isCurveDodgeMode = false;
             isIceBreakerMode = false;
             isBartendingMode = false;
             isSkorEkraniAcik = false;
-
+ 
             if (menuMiniGameObj) menuMiniGameObj.SetActive(false);
             if (pixelMiniGameObj) pixelMiniGameObj.SetActive(false);
             if (rhythmMiniGameObj) rhythmMiniGameObj.SetActive(false);
@@ -398,10 +400,12 @@ public class brainDate : MonoBehaviour
             if (curveDodgeMiniGameObj) curveDodgeMiniGameObj.SetActive(false);
             if (evrenselSkorPaneli) evrenselSkorPaneli.SetActive(false);
             if (BGblur) BGblur.SetActive(false);
-
+ 
+            RestoreBackgroundAudio();
+ 
             scenarioQueue.Clear();
             PlayNextInQueue();
-        }
+        } 
 
         if (Input.GetMouseButtonDown(0))
         {
@@ -492,125 +496,117 @@ public class brainDate : MonoBehaviour
         PlayNextInQueue();
     }
 
-    
     void PlayNextInQueue()
     {
-        if (scenarioQueue.Count > 0)
-        {
-            DialogueDataları next = scenarioQueue.Dequeue();
-            StartScenario(next);
-        }
-        else
-        {
-            bool isStoodUp = leftKarakterGelmedi || rightKarakterGelmedi;
-            float totalScore = leftStars + rightStars;
-            bool isSuccessFlag = totalScore >= starThreshold && !isStoodUp;
+      if (scenarioQueue.Count > 0)
+      {
+          DialogueDataları next = scenarioQueue.Dequeue();
+          StartScenario(next);
+      }
+      else
+      {
+          bool isStoodUp = leftKarakterGelmedi || rightKarakterGelmedi;
+          float totalScore = leftStars + rightStars;
+          bool isSuccessFlag = totalScore >= starThreshold && !isStoodUp;
 
-            if (leftDialoguePanel) leftDialoguePanel.SetActive(false);
-            if (rightDialoguePanel) rightDialoguePanel.SetActive(false);
-            if (chancellorPanel) chancellorPanel.SetActive(false);
-            if (chaperonPanel) chaperonPanel.SetActive(false);
+          if (leftDialoguePanel) leftDialoguePanel.SetActive(false);
+          if (rightDialoguePanel) rightDialoguePanel.SetActive(false);
+          if (chancellorPanel) chancellorPanel.SetActive(false);
+          if (chaperonPanel) chaperonPanel.SetActive(false);
 
-            if (dateEndedObject != null) dateEndedObject.SetActive(true);
+          if (dateEndedObject != null) dateEndedObject.SetActive(true);
 
-            if (DateSettings.leftChar != null && DateSettings.rightChar != null)
-            {
-                string GetRandomComment(float stars)
-                {
-                    List<string> pool = stars >= 4 ? goodReviews : (stars >= 3 ? midReviews : badReviews);
-                    if (pool == null || pool.Count == 0) return "...";
-                    return pool[UnityEngine.Random.Range(0, pool.Count)];
-                }
+            
+          bool isTutorialDate = false;
+          if (DateSettings.leftChar != null && DateSettings.rightChar != null)
+          {
+              string char1 = DateSettings.leftChar.characterName;
+              string char2 = DateSettings.rightChar.characterName;
 
-                string jsonLoad = UnityEngine.PlayerPrefs.GetString("SavedReviewsDB", "");
-                ReviewDatabase db = string.IsNullOrEmpty(jsonLoad) ? new ReviewDatabase() : UnityEngine.JsonUtility.FromJson<ReviewDatabase>(jsonLoad);
+              if ((char1 == "Io" && char2 == "Elroi") || (char1 == "Elroi" && char2 == "Io"))
+              {
+                  string coupleKey = string.Compare(char1, char2) < 0 ? "DateLevel_" + char1 + "_" + char2 : "DateLevel_" + char2 + "_" + char1;
+                  if (PlayerPrefs.GetInt(coupleKey, 0) == 0)
+                  {
+                      isTutorialDate = true; 
+                  }
+              }
+          }
 
-              
-                DateReview newReview = new DateReview
-                {
-                    char1Name = leftKarakterGelmedi ? "" : DateSettings.leftChar.characterName,
-                    char2Name = rightKarakterGelmedi ? "" : DateSettings.rightChar.characterName,
-                    char1Stars = leftKarakterGelmedi ? 0 : leftStars,
-                    char2Stars = rightKarakterGelmedi ? 0 : rightStars,
-                    char1Comment = leftKarakterGelmedi ? "..." : GetRandomComment(leftStars),
-                    char2Comment = rightKarakterGelmedi ? "..." : GetRandomComment(rightStars),
-                    isSuccess = isSuccessFlag
-                };
+          bool shouldSaveReview = !(isTutorialDate && !isSuccessFlag);
 
-                db.allPastDates.Add(newReview);
-                UnityEngine.PlayerPrefs.SetString("SavedReviewsDB", UnityEngine.JsonUtility.ToJson(db));
-                UnityEngine.PlayerPrefs.Save();
-            }
+          string GetCharacterComment(Characters character, float stars)
+          {
+              if (character == null) return "...";
+              if (stars >= 4) return character.goodReview;
+              if (stars >= 3) return character.midReview;
+              return character.badReview;
+          }
+
+          if (shouldSaveReview && DateSettings.leftChar != null && DateSettings.rightChar != null)
+          {
+              string jsonLoad = UnityEngine.PlayerPrefs.GetString("SavedReviewsDB", "");
+              ReviewDatabase db = string.IsNullOrEmpty(jsonLoad) ? new ReviewDatabase() : UnityEngine.JsonUtility.FromJson<ReviewDatabase>(jsonLoad);
+
+              DateReview newReview = new DateReview
+              {
+                  char1Name = leftKarakterGelmedi ? "" : DateSettings.leftChar.characterName,
+                  char2Name = rightKarakterGelmedi ? "" : DateSettings.rightChar.characterName,
+                  char1Stars = leftKarakterGelmedi ? 0 : leftStars,
+                  char2Stars = rightKarakterGelmedi ? 0 : rightStars,
+                  char1Comment = leftKarakterGelmedi ? "..." : GetCharacterComment(DateSettings.leftChar, leftStars),
+                  char2Comment = rightKarakterGelmedi ? "..." : GetCharacterComment(DateSettings.rightChar, rightStars),
+                  isSuccess = isSuccessFlag
+              };
+
+              db.allPastDates.Add(newReview);
+              UnityEngine.PlayerPrefs.SetString("SavedReviewsDB", UnityEngine.JsonUtility.ToJson(db));
+              UnityEngine.PlayerPrefs.Save();
+          }
 
            
-            if (isStoodUp)
-            {
-              
-                if (dateEkilmePanel != null) dateEkilmePanel.SetActive(true);
+          if (isStoodUp)
+          {
+              if (dateEkilmePanel != null) dateEkilmePanel.SetActive(true);
 
-             
-                if (ekilmeKalanKarakterText != null)
-                {
-                    if (!leftKarakterGelmedi && rightKarakterGelmedi && DateSettings.leftChar != null)
-                    {
-                        ekilmeKalanKarakterText.text = DateSettings.leftChar.characterName;
-                    }
-                    else if (leftKarakterGelmedi && !rightKarakterGelmedi && DateSettings.rightChar != null)
-                    {
-                        ekilmeKalanKarakterText.text = DateSettings.rightChar.characterName;
-                    }
-                    else
-                    {
-                        ekilmeKalanKarakterText.text = "Kimse"; 
-                    }
-                }
-            }
-            else if (isSuccessFlag)
-            {
-                bool isTutorialDate = false;
+              if (ekilmeKalanKarakterText != null)
+              {
+                  if (!leftKarakterGelmedi && rightKarakterGelmedi && DateSettings.leftChar != null)
+                      ekilmeKalanKarakterText.text = DateSettings.leftChar.characterName;
+                  else if (leftKarakterGelmedi && !rightKarakterGelmedi && DateSettings.rightChar != null)
+                      ekilmeKalanKarakterText.text = DateSettings.rightChar.characterName;
+                  else
+                      ekilmeKalanKarakterText.text = "Kimse"; 
+              }
+          }
+          else if (isSuccessFlag)
+          {
+              if (DateSettings.leftChar != null && DateSettings.rightChar != null)
+              {
+                  if (successLeftNameText != null) successLeftNameText.text = DateSettings.leftChar.characterName;
+                  if (successRightNameText != null) successRightNameText.text = DateSettings.rightChar.characterName;
+              }
 
-                if (DateSettings.leftChar != null && DateSettings.rightChar != null)
-                {
-                    string char1 = DateSettings.leftChar.characterName;
-                    string char2 = DateSettings.rightChar.characterName;
+              if (successTutorialTextObj != null) successTutorialTextObj.SetActive(isTutorialDate);
+              if (dateSuccessPanel != null) dateSuccessPanel.SetActive(true);
+          }
+          else
+          {
+              if (DateSettings.leftChar != null && DateSettings.rightChar != null)
+              {
+                  if (failLeftNameText != null) failLeftNameText.text = DateSettings.leftChar.characterName;
+                  if (failRightNameText != null) failRightNameText.text = DateSettings.rightChar.characterName;
+              }
 
-                    if (successLeftNameText != null) successLeftNameText.text = DateSettings.leftChar.characterName;
-                    if (successRightNameText != null) successRightNameText.text = DateSettings.rightChar.characterName;
+              if (failTutorialTextObj != null) failTutorialTextObj.SetActive(isTutorialDate);
+                
+               
+              if (failRestartButtonObj != null) failRestartButtonObj.SetActive(isTutorialDate);
+              if (failDesktopButtonObj != null) failDesktopButtonObj.SetActive(!isTutorialDate);
 
-                    if ((char1 == "Io" && char2 == "Elroi") || (char1 == "Elroi" && char2 == "Io"))
-                    {
-                        isTutorialDate = true;
-                    }
-                }
-
-                if (successTutorialTextObj != null) successTutorialTextObj.SetActive(isTutorialDate);
-                if (dateSuccessPanel != null) dateSuccessPanel.SetActive(true);
-            }
-            else
-            {
-                bool isTutorialDate = false;
-
-                if (DateSettings.leftChar != null && DateSettings.rightChar != null)
-                {
-                    string char1 = DateSettings.leftChar.characterName;
-                    string char2 = DateSettings.rightChar.characterName;
-
-                    if (failLeftNameText != null) failLeftNameText.text = DateSettings.leftChar.characterName;
-                    if (failRightNameText != null) failRightNameText.text = DateSettings.rightChar.characterName;
-
-                    if ((char1 == "Io" && char2 == "Elroi") || (char1 == "Elroi" && char2 == "Io"))
-                    {
-                        isTutorialDate = true;
-                    }
-                }
-
-                if (failTutorialTextObj != null) failTutorialTextObj.SetActive(isTutorialDate);
-                if (failRestartButtonObj != null) failRestartButtonObj.SetActive(isTutorialDate);
-                if (failDesktopButtonObj != null) failDesktopButtonObj.SetActive(!isTutorialDate);
-
-                if (dateFailPanel != null) dateFailPanel.SetActive(true);
-            }
-        }
+              if (dateFailPanel != null) dateFailPanel.SetActive(true);
+          }
+      }
     }
 
     public void AddReward(float stars, int hearts, TargetCharacter target)
@@ -766,8 +762,8 @@ public class brainDate : MonoBehaviour
         }
         else
         {
-            StopAllCoroutines();
-            StartCoroutine(TypeSentence(targetBodyText, line.sentence));
+            if (aktifYaziCoroutinesi != null) StopCoroutine(aktifYaziCoroutinesi);
+            aktifYaziCoroutinesi = StartCoroutine(TypeSentence(targetBodyText, line.sentence));
         }
     }
 
@@ -789,8 +785,8 @@ public class brainDate : MonoBehaviour
             activeOptionsPanel.SetActive(false);
             bodyTxt.gameObject.SetActive(true);
 
-            StopAllCoroutines();
-            StartCoroutine(TypeSentence(bodyTxt, line.sentence));
+            if (aktifYaziCoroutinesi != null) StopCoroutine(aktifYaziCoroutinesi);
+            aktifYaziCoroutinesi = StartCoroutine(TypeSentence(bodyTxt, line.sentence));
         }
     }
 
@@ -819,8 +815,8 @@ public class brainDate : MonoBehaviour
             activeOptionsPanel.SetActive(false);
             bodyTxt.gameObject.SetActive(true);
 
-            StopAllCoroutines();
-            StartCoroutine(TypeSentence(bodyTxt, line.sentence));
+            if (aktifYaziCoroutinesi != null) StopCoroutine(aktifYaziCoroutinesi);
+            aktifYaziCoroutinesi = StartCoroutine(TypeSentence(bodyTxt, line.sentence));
         }
     }
 
@@ -930,6 +926,8 @@ public class brainDate : MonoBehaviour
             if (kapatilacakMiniOyun != null) kapatilacakMiniOyun.SetActive(false);
             if (BGblur != null) BGblur.SetActive(false);
 
+            RestoreBackgroundAudio();
+
             if (pendingRewardAction != null)
             {
                 System.Action action = pendingRewardAction;
@@ -967,7 +965,7 @@ public class brainDate : MonoBehaviour
 
         if (isTyping)
         {
-            StopAllCoroutines();
+            if (aktifYaziCoroutinesi != null) StopCoroutine(aktifYaziCoroutinesi);
             if (line.side == SpeakerSide.Left) leftBodyText.text = currentFullSentence;
             else if (line.side == SpeakerSide.Right) rightBodyText.text = currentFullSentence;
             else if (line.side == SpeakerSide.Counselor) chancellorBodyText.text = currentFullSentence;
@@ -989,6 +987,16 @@ public class brainDate : MonoBehaviour
 
     void TriggerEvent(string eventName)
     {
+      
+        bool ShouldShowTutorial(string key) {
+            return PlayerPrefs.GetInt("FirstTime_" + key, 0) == 0;
+        }
+
+        void MarkTutorialAsShown(string key) {
+            PlayerPrefs.SetInt("FirstTime_" + key, 1);
+            PlayerPrefs.Save();
+        }
+
         if (eventName == "StartMenuGame")
         {
             if (leftDialoguePanel) leftDialoguePanel.SetActive(false);
@@ -998,6 +1006,8 @@ public class brainDate : MonoBehaviour
 
             if (BGblur) BGblur.SetActive(true);
             if (menuMiniGameObj != null) menuMiniGameObj.SetActive(true);
+
+            DimBackgroundAudio();
 
             bool isIoAndElroi = false;
             if (DateSettings.leftChar != null && DateSettings.rightChar != null)
@@ -1025,11 +1035,22 @@ public class brainDate : MonoBehaviour
             if (chancellorPanel) chancellorPanel.SetActive(false);
             if (chaperonPanel) chaperonPanel.SetActive(false);
 
-            tutorialPopup.OpenTutorial("MENU", menuTutorialSprites, () =>
+            if (ShouldShowTutorial("MENU"))
+            {
+                MarkTutorialAsShown("MENU");
+                tutorialPopup.OpenTutorial("MENU", menuTutorialSprites, () =>
+                {
+                    isEventTriggered = false;
+                    isMenuMode = true;
+                    DimBackgroundAudio();
+                });
+            }
+            else
             {
                 isEventTriggered = false;
                 isMenuMode = true;
-            });
+                DimBackgroundAudio();
+            }
         }
         else if (eventName == "StartPixelGame")
         {
@@ -1043,16 +1064,25 @@ public class brainDate : MonoBehaviour
 
             if (BGblur) BGblur.SetActive(true);
             
-            tutorialPopup.OpenTutorial("PIXEL GAME", pixelTutorialSprites, () =>
+            if (ShouldShowTutorial("PIXEL"))
+            {
+                MarkTutorialAsShown("PIXEL"); 
+                tutorialPopup.OpenTutorial("PIXEL GAME", pixelTutorialSprites, () =>
+                {
+                    if (pixelMiniGameObj != null) pixelMiniGameObj.SetActive(true);
+                    DimBackgroundAudio();
+                });
+            }
+            else
             {
                 if (pixelMiniGameObj != null) pixelMiniGameObj.SetActive(true);
-            });
+                DimBackgroundAudio();
+            }
         }
         else if (eventName == "StartIceBreaker")
         {
             savedMainScenario = currentScenario;
             isEventTriggered = true;
-            
             isIceBreakerMode = true;
 
             if (leftDialoguePanel) leftDialoguePanel.SetActive(false);
@@ -1062,10 +1092,20 @@ public class brainDate : MonoBehaviour
 
             if (BGblur) BGblur.SetActive(true);
 
-            tutorialPopup.OpenTutorial("ICE BREAKER", iceBreakerTutorialSprites, () =>
+            if (ShouldShowTutorial("ICEBREAKER"))
+            {
+                MarkTutorialAsShown("ICEBREAKER"); 
+                tutorialPopup.OpenTutorial("ICE BREAKER", iceBreakerTutorialSprites, () =>
+                {
+                    if (iceBreakerScript != null) iceBreakerScript.StartGame();
+                    DimBackgroundAudio();
+                });
+            }
+            else
             {
                 if (iceBreakerScript != null) iceBreakerScript.StartGame();
-            });
+                DimBackgroundAudio();
+            }
         }
         else if (eventName == "StartBartending")
         {
@@ -1080,10 +1120,20 @@ public class brainDate : MonoBehaviour
 
             if (BGblur) BGblur.SetActive(true);
             
-            tutorialPopup.OpenTutorial("BARTENDING", bartendingTutorialSprites, () =>
+            if (ShouldShowTutorial("BARTENDING"))
+            {
+                MarkTutorialAsShown("BARTENDING"); 
+                tutorialPopup.OpenTutorial("BARTENDING", bartendingTutorialSprites, () =>
+                {
+                    if (bartendingMiniGameObj != null) bartendingMiniGameObj.SetActive(true);
+                    DimBackgroundAudio();
+                });
+            }
+            else
             {
                 if (bartendingMiniGameObj != null) bartendingMiniGameObj.SetActive(true);
-            });
+                DimBackgroundAudio();
+            }
         }
         else if (eventName == "StartDodgeGame")
         {
@@ -1098,10 +1148,20 @@ public class brainDate : MonoBehaviour
 
             if (BGblur) BGblur.SetActive(true);
 
-            tutorialPopup.OpenTutorial("DODGE THE QUESTION", dodgeTutorialSprites, () =>
+            if (ShouldShowTutorial("DODGE"))
+            {
+                MarkTutorialAsShown("DODGE"); 
+                tutorialPopup.OpenTutorial("DODGE THE QUESTION", dodgeTutorialSprites, () =>
+                {
+                    if (dodgeScript != null) dodgeScript.StartGame();
+                    DimBackgroundAudio();
+                });
+            }
+            else
             {
                 if (dodgeScript != null) dodgeScript.StartGame();
-            });
+                DimBackgroundAudio();
+            }
         }
         else if (eventName == "StartCurveDodge")
         {
@@ -1116,10 +1176,20 @@ public class brainDate : MonoBehaviour
 
             if (BGblur) BGblur.SetActive(true);
 
-            tutorialPopup.OpenTutorial("CURVE DODGE", dodgeTutorialSprites, () =>
+            if (ShouldShowTutorial("CURVEDODGE"))
+            {
+                MarkTutorialAsShown("CURVEDODGE"); 
+                tutorialPopup.OpenTutorial("CURVE DODGE", dodgeTutorialSprites, () =>
+                {
+                    if (curveDodgeScript != null) curveDodgeScript.StartGame();
+                    DimBackgroundAudio();
+                });
+            }
+            else
             {
                 if (curveDodgeScript != null) curveDodgeScript.StartGame();
-            });
+                DimBackgroundAudio();
+            }
         }
         else if (eventName == "StartRitimGame")
         {
@@ -1133,10 +1203,20 @@ public class brainDate : MonoBehaviour
 
             if (BGblur) BGblur.SetActive(true);
             
-            tutorialPopup.OpenTutorial("RHYTHM GAME", rhythmTutorialSprites, () =>
+            if (ShouldShowTutorial("RHYTHM"))
+            {
+                MarkTutorialAsShown("RHYTHM"); 
+                tutorialPopup.OpenTutorial("RHYTHM GAME", rhythmTutorialSprites, () =>
+                {
+                    if (rhythmMiniGameObj != null) rhythmMiniGameObj.SetActive(true);
+                    DimBackgroundAudio();
+                });
+            }
+            else
             {
                 if (rhythmMiniGameObj != null) rhythmMiniGameObj.SetActive(true);
-            });
+                DimBackgroundAudio();
+            }
         }
         else if (eventName == "StartClawMachine")
         {
@@ -1150,10 +1230,20 @@ public class brainDate : MonoBehaviour
 
             if (BGblur) BGblur.SetActive(true);
             
-            tutorialPopup.OpenTutorial("CLAW MACHINE", clawMachineTutorialSprites, () =>
+            if (ShouldShowTutorial("CLAW"))
+            {
+                MarkTutorialAsShown("CLAW"); 
+                tutorialPopup.OpenTutorial("CLAW MACHINE", clawMachineTutorialSprites, () =>
+                {
+                    if (clawMachineMiniGameObj != null) clawMachineMiniGameObj.SetActive(true);
+                    DimBackgroundAudio();
+                });
+            }
+            else
             {
                 if (clawMachineMiniGameObj != null) clawMachineMiniGameObj.SetActive(true);
-            });
+                DimBackgroundAudio();
+            }
         }
         else if (eventName == "StartKurtGame")
         {
@@ -1167,16 +1257,27 @@ public class brainDate : MonoBehaviour
 
             if (BGblur) BGblur.SetActive(true);
             
-            tutorialPopup.OpenTutorial("RUNNER GAME", runnerTutorialSprites, () =>
+            if (ShouldShowTutorial("RUNNER"))
+            {
+                MarkTutorialAsShown("RUNNER"); 
+                tutorialPopup.OpenTutorial("RUNNER GAME", runnerTutorialSprites, () =>
+                {
+                    if (runnerMiniGameObj != null) runnerMiniGameObj.SetActive(true);
+                    DimBackgroundAudio();
+                });
+            }
+            else
             {
                 if (runnerMiniGameObj != null) runnerMiniGameObj.SetActive(true);
-            });
+                DimBackgroundAudio();
+            }
         }
         else
         {
             isEventTriggered = false;
             NextLine();
         }
+      
     }
 
     public void ResumeFromMiniGame(List<DialogueDataları> results)
@@ -1186,6 +1287,8 @@ public class brainDate : MonoBehaviour
 
         if (menuMiniGameObj != null) menuMiniGameObj.SetActive(false);
         if (BGblur) BGblur.SetActive(false);
+
+        RestoreBackgroundAudio();
 
         QueueScenarios(results);
     }
@@ -1598,7 +1701,7 @@ public class brainDate : MonoBehaviour
 
         float totalScore = leftStars + rightStars;
 
-        if (totalScore >= starThreshold && DateSettings.leftChar != null && DateSettings.rightChar != null)
+        if (DateSettings.leftChar != null && DateSettings.rightChar != null)
         {
             string char1 = DateSettings.leftChar.characterName;
             string char2 = DateSettings.rightChar.characterName;
@@ -1606,15 +1709,27 @@ public class brainDate : MonoBehaviour
                 "DateLevel_" + char1 + "_" + char2 :
                 "DateLevel_" + char2 + "_" + char1;
 
-            int currentLevel = PlayerPrefs.GetInt(coupleKey, 0);
-            PlayerPrefs.SetInt(coupleKey, currentLevel + 1);
+            
+            int startingLevel = PlayerPrefs.GetInt(coupleKey, 0);
+
+            if (totalScore >= starThreshold)
+            {
+                PlayerPrefs.SetInt(coupleKey, startingLevel + 1);
+            }
+
+            if ((char1 == "Io" && char2 == "Elroi") || (char1 == "Elroi" && char2 == "Io"))
+            {
+                if (startingLevel >= 1)
+                {
+                    PlayerPrefs.SetInt("IsMarketUnlocked", 1);
+                }
+            }
         }
 
         int currentBank = PlayerPrefs.GetInt("SavedHearts", 0);
         int newTotal = currentBank + totalHearts;
         PlayerPrefs.SetInt("SavedHearts", newTotal);
 
-        PlayerPrefs.SetInt("IsMarketUnlocked", 1);
         PlayerPrefs.SetInt("HasSave", 1);
 
         PlayerPrefs.Save();
@@ -1623,7 +1738,9 @@ public class brainDate : MonoBehaviour
         {
             SceneManager.LoadScene(desktopScene);
         }
+        
     }
+    
 
     public void StartTheDate()
     {
@@ -1745,16 +1862,77 @@ public class brainDate : MonoBehaviour
         LocationAudio locAudio = mekanSesleri.Find(x => x.locationName == locName);
         if (locAudio != null)
         {
-            StartCoroutine(FadeAudio(bgmSource, locAudio.musicClip));
-            StartCoroutine(FadeAudio(bgsSource, locAudio.ambianceClip));
+            currentMusicTargetVol = locAudio.musicVolume;
+            currentAmbTargetVol = locAudio.ambianceVolume;
+
+            if (bgmVolRoutine != null) StopCoroutine(bgmVolRoutine);
+            bgmVolRoutine = StartCoroutine(FadeAudio(bgmSource, locAudio.musicClip, locAudio.musicVolume));
+
+            if (bgsVolRoutine != null) StopCoroutine(bgsVolRoutine);
+            bgsVolRoutine = StartCoroutine(FadeAudio(bgsSource, locAudio.ambianceClip, locAudio.ambianceVolume));
         }
     }
 
-    IEnumerator FadeAudio(AudioSource source, AudioClip newClip)
+    public void DimBackgroundAudio()
+    {
+        if (bgmSource != null)
+        {
+            if (bgmVolRoutine != null) StopCoroutine(bgmVolRoutine);
+            bgmVolRoutine = StartCoroutine(FadeToVolume(bgmSource, 0.05f));
+        }
+        if (bgsSource != null)
+        {
+            if (bgsVolRoutine != null) StopCoroutine(bgsVolRoutine);
+            bgsVolRoutine = StartCoroutine(FadeToVolume(bgsSource, 0.05f));
+        }
+    }
+
+    public void RestoreBackgroundAudio()
+    {
+        if (bgmSource != null)
+        {
+            if (bgmVolRoutine != null) StopCoroutine(bgmVolRoutine);
+            bgmVolRoutine = StartCoroutine(FadeToVolume(bgmSource, currentMusicTargetVol));
+        }
+        if (bgsSource != null)
+        {
+            if (bgsVolRoutine != null) StopCoroutine(bgsVolRoutine);
+            bgsVolRoutine = StartCoroutine(FadeToVolume(bgsSource, currentAmbTargetVol));
+        }
+    }
+
+    IEnumerator FadeToVolume(AudioSource source, float targetVol)
     {
         if (source == null) yield break;
 
-        if (source.clip == newClip && source.isPlaying) yield break;
+        if (source.volume > targetVol)
+        {
+            while (source.volume > targetVol)
+            {
+                source.volume -= Time.deltaTime * fadeSpeed;
+                yield return null;
+            }
+        }
+        else if (source.volume < targetVol)
+        {
+            while (source.volume < targetVol)
+            {
+                source.volume += Time.deltaTime * fadeSpeed;
+                yield return null;
+            }
+        }
+        source.volume = targetVol;
+    }
+
+    IEnumerator FadeAudio(AudioSource source, AudioClip newClip, float hedefSesSeviyesi)
+    {
+        if (source == null) yield break;
+
+        if (source.clip == newClip && source.isPlaying) 
+        {
+            source.volume = hedefSesSeviyesi;
+            yield break;
+        }
 
         if (source.isPlaying)
         {
@@ -1772,12 +1950,13 @@ public class brainDate : MonoBehaviour
         {
             source.volume = 0;
             source.Play();
-            while (source.volume < 1f) 
+            
+            while (source.volume < hedefSesSeviyesi) 
             {
                 source.volume += Time.deltaTime * fadeSpeed;
                 yield return null;
             }
-            source.volume = 1f; 
+            source.volume = hedefSesSeviyesi; 
         }
     }
 }

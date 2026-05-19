@@ -19,13 +19,13 @@ MonoBehaviour:
   allLines:
   - side: 0
     characterName: Nemelise
-    characterSprite: {fileID: 21300000, guid: b5a5cc5d83848d843aadeaf9b5e083f1, type: 3}
+    characterSprite: {fileID: 21300000, guid: 9e123617e7f2f1144af267697bab3b12, type: 3}
     sentence: You look a little tired, did you have work today?
     eventTrigger: 
     choices: []
   - side: 1
     characterName: Linus
-    characterSprite: {fileID: 21300000, guid: dc24e77c8220d5b43bd418e911809b3b, type: 3}
+    characterSprite: {fileID: 21300000, guid: 763ec54e5ebac7a4fab56b7edd48e3bb, type: 3}
     sentence: "Yeah, last minute case. Although, I\u2019m getting better at managing
       these spontaneous assignments. I\u2019m already sure my client will win it."
     eventTrigger: 
@@ -63,17 +63,17 @@ MonoBehaviour:
     eventTrigger: 
     choices:
     - choices: The justice system is shit and doing good can leave you broke.
-      nextScenario: {fileID: 11400000, guid: 98262b6b72a2961488e46b0b58d6489c, type: 2}
+      nextScenario: {fileID: 11400000, guid: 919cd118d55399e4cb2b773a8e152d47, type: 2}
       target: 0
       starReward: 1
       heartReward: 0
     - choices: I feel like you say that to ease your own conscience.
-      nextScenario: {fileID: 11400000, guid: 72676669f38464d41b54bb1a7871dd5f, type: 2}
+      nextScenario: {fileID: 11400000, guid: 0664db8f167282f4aa8ea93429a90a44, type: 2}
       target: 0
       starReward: 0.5
       heartReward: 0
     - choices: "Lawyers tend to take cases they know they\u2019re going to win."
-      nextScenario: {fileID: 11400000, guid: e4fa92d1281a2f446899cd4a5654f234, type: 2}
+      nextScenario: {fileID: 11400000, guid: c66332c466e3197498f6e307b3b25226, type: 2}
       target: 0
       starReward: 0
       heartReward: 0

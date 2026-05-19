@@ -12,18 +12,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f832b14936fc2048824d9308b14ded6, type: 3}
   m_Name: DateSuccess
   m_EditorClassIdentifier: 
+  leftKarakterGelmedi: 0
+  rightKarakterGelmedi: 0
   locationName: 
   locationBackground: {fileID: 0}
   allLines:
   - side: 0
     characterName: Io
-    characterSprite: {fileID: -1160322238068995058, guid: e79cf994b0112f542bb5904bcd06966b, type: 3}
+    characterSprite: {fileID: 21300000, guid: 6cc6ef422b8726c45b55b885412734f7, type: 3}
     sentence: "Sooo... I\u2019m getting kinda tired of this bar..."
     eventTrigger: 
     choices: []
   - side: 1
     characterName: Elroi
-    characterSprite: {fileID: 21300000, guid: 940a91f339e1825439b9f6d15b9c98fa, type: 3}
+    characterSprite: {fileID: 21300000, guid: f24fad0acf0cae14db43b6fd0a80b07c, type: 3}
     sentence: Yeah, honestly... Oh I know a place that would be much less tiring.
     eventTrigger: 
     choices: []
@@ -35,13 +37,13 @@ MonoBehaviour:
     choices: []
   - side: 1
     characterName: Elroi
-    characterSprite: {fileID: 0}
+    characterSprite: {fileID: 21300000, guid: 84c5181503f6e47458e85b7e3a484d79, type: 3}
     sentence: Your words, not mine babe.
     eventTrigger: 
     choices: []
   - side: 0
     characterName: Io
-    characterSprite: {fileID: 0}
+    characterSprite: {fileID: 21300000, guid: 01e1aff972284664e96e9b5d30ca1b74, type: 3}
     sentence: 'Hmmm, I do kinda wanna see your music setup, you know? Maybe you could
       give me a house tour?
 
@@ -74,13 +76,13 @@ MonoBehaviour:
     choices: []
   - side: 0
     characterName: Io
-    characterSprite: {fileID: 0}
+    characterSprite: {fileID: 21300000, guid: 1c3ce6504e74815449e24533a0083e0d, type: 3}
     sentence: Elroi, what the fuck-
     eventTrigger: 
     choices: []
   - side: 1
     characterName: Elroi
-    characterSprite: {fileID: 0}
+    characterSprite: {fileID: 21300000, guid: f24fad0acf0cae14db43b6fd0a80b07c, type: 3}
     sentence: "Yeah I\u2019m sorry that was a bit much-"
     eventTrigger: 
     choices: []
@@ -99,7 +101,7 @@ MonoBehaviour:
     choices: []
   - side: 0
     characterName: Io
-    characterSprite: {fileID: 0}
+    characterSprite: {fileID: 21300000, guid: 6cc6ef422b8726c45b55b885412734f7, type: 3}
     sentence: "Done! You are officially free from us Counselor and again I\u2019m
       truly sorry-\r\n"
     eventTrigger: 

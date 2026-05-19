@@ -12,19 +12,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f832b14936fc2048824d9308b14ded6, type: 3}
   m_Name: MenuSuccess_JettyLinus
   m_EditorClassIdentifier: 
+  leftKarakterGelmedi: 0
+  rightKarakterGelmedi: 0
   locationName: 
   locationBackground: {fileID: 0}
   allLines:
   - side: 1
     characterName: Linus
-    characterSprite: {fileID: -7897688028454486748, guid: 0398d82947456fc41abf63d48afc016f, type: 3}
+    characterSprite: {fileID: 21300000, guid: 78aafcb2f30c885499b2b92021bfe829, type: 3}
     sentence: "I\u2019m glad this place has such immaculate low-fat options. It\u2019s
       rare to come by."
     eventTrigger: 
     choices: []
   - side: 0
     characterName: Jetty
-    characterSprite: {fileID: 3149642799716058400, guid: e8f20d8f7db9ba542878b46ed2f36bc0, type: 3}
+    characterSprite: {fileID: 21300000, guid: 76893eb7c1cb94246acde9b63f0604be, type: 3}
     sentence: "Ah, I\u2019m kinda bummed out they don\u2019t have lactose-free floats
       but oh well, this\u2019ll do."
     eventTrigger: 

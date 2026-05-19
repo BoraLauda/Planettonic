@@ -18,13 +18,17 @@ MonoBehaviour:
   dodgeTheQuestionIkonu: {fileID: 3216859368059932112, guid: 985a192cf3d85f840b87ec78e0742dcc, type: 3}
   menuMinigameIkonu: {fileID: 3216859368059932112, guid: 985a192cf3d85f840b87ec78e0742dcc, type: 3}
   portraitImage: {fileID: -8685837172151492293, guid: 23e0b331d4f8e104b970efcecf3de6e0, type: 3}
-  fullName: 
-  demographicsInfo: 
-  relationshipGoals: 
-  hobbies: 
-  foodPreferenceText: 
-  profileRatingIcons: []
-  quoteText: 
+  fullName: Ary
+  demographicsInfo: 32 || Male || Venus || MD/Model
+  relationshipGoals: Casual || Marriage
+  hobbies: Attending to concert, reading books, listening music
+  foodPreferenceText: Vegeterian
+  profileRatingIcons:
+  - {fileID: 21300000, guid: a0743298d763d9b4fad0d06790a00df6, type: 3}
+  goodReview: I enjoyed it.
+  midReview: It was meh.
+  badReview: I hated that.
+  quoteText: Catch me at a concert or carving asphalt.
   locationPreferences:
   - locationName: Bar
     bonusStars: 1
@@ -35,7 +39,7 @@ MonoBehaviour:
     reactionScenario: {fileID: 11400000, guid: 75e8d3a5d7fde0c46a6e806468b9767d, type: 2}
   - food: 7
     reactionScenario: {fileID: 11400000, guid: 75e8d3a5d7fde0c46a6e806468b9767d, type: 2}
-  sevdigiKokteyl: Cosmopolitan
+  sevdigiKokteyl: Martini
   kokteylSevmediDiyalogu: {fileID: 11400000, guid: 9dce85cb58f33294fbd3133312232f28, type: 2}
   iceBreakerGood:
   - targetCharacter: {fileID: 11400000, guid: 52f97840cc872804392c25a1f2b8175b, type: 2}

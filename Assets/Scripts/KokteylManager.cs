@@ -102,11 +102,7 @@ public class KokteylManager : MonoBehaviour
         {
             NextPhase();
         }
-
-        if (Input.GetKeyDown(hileTusu))
-        {
-            HileyleBitir();
-        }
+        
     }
 
     public void StartPhase(GamePhase newPhase)
@@ -468,6 +464,17 @@ public class KokteylManager : MonoBehaviour
         
         return "";
     }
+    
+    public bool IsShakerEmpty()
+    {
+        return eklenenBuzSayisi == 0 &&
+               eklenenLimonSayisi == 0 &&
+               eklenenPortakalSayisi == 0 &&
+               eklenenNaneSayisi == 0 &&
+               eklenenCilekSayisi == 0 &&
+               eklenenZeytinSayisi == 0 &&
+               eklenenSoslar.Count == 0;
+    }
 
    
     public Color GetKokteylRengi()
@@ -509,6 +516,19 @@ public class KokteylManager : MonoBehaviour
         sonucRengi.a = 180f / 255f; 
         
         return sonucRengi;
+    }
+    
+    public void IptalEtVeHazirligaDon()
+    {
+        
+        if (currentPhase == GamePhase.Shaking && ShakerInteraction.Instance != null)
+        {
+            ShakerInteraction.Instance.kapakAcikMi = true;
+            if (ShakerInteraction.Instance.kapaliShakerObjesi != null) ShakerInteraction.Instance.kapaliShakerObjesi.SetActive(false);
+            if (ShakerInteraction.Instance.acikShakerObjesi != null) ShakerInteraction.Instance.acikShakerObjesi.SetActive(true);
+        }
+        
+        StartPhase(GamePhase.Preparation);
     }
     
 }

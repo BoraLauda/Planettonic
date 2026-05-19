@@ -19,14 +19,14 @@ MonoBehaviour:
   allLines:
   - side: 1
     characterName: Linus
-    characterSprite: {fileID: 21300000, guid: dc24e77c8220d5b43bd418e911809b3b, type: 3}
+    characterSprite: {fileID: 21300000, guid: 763ec54e5ebac7a4fab56b7edd48e3bb, type: 3}
     sentence: "You know, I have to be honest here. I actually never thought I\u2019d
       meet someone like you in a program like this."
     eventTrigger: 
     choices: []
   - side: 0
     characterName: Jetty
-    characterSprite: {fileID: 3149642799716058400, guid: e8f20d8f7db9ba542878b46ed2f36bc0, type: 3}
+    characterSprite: {fileID: 21300000, guid: bb4a40a34f961664591ec86a97fbdc10, type: 3}
     sentence: Likewise. I thought I was going to be meeting a bunch of clueless people
       who are just here for an easy hook-up.
     eventTrigger: 
@@ -39,7 +39,7 @@ MonoBehaviour:
     choices: []
   - side: 0
     characterName: Jetty
-    characterSprite: {fileID: 3947505554978647017, guid: 46d86ba6625735d43aef9c49760dd1da, type: 3}
+    characterSprite: {fileID: 0}
     sentence: "That.. is not what I said. I see what you\u2019re trying to do here."
     eventTrigger: 
     choices: []
@@ -51,7 +51,7 @@ MonoBehaviour:
     choices: []
   - side: 0
     characterName: Jetty
-    characterSprite: {fileID: 1936918675910826544, guid: e8f1130d0e09cef45bb1f9ab49489848, type: 3}
+    characterSprite: {fileID: 0}
     sentence: "No, not at all. I have to warn you, though. I\u2019m probably not
       what you think I am."
     eventTrigger: 

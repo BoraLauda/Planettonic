@@ -19,19 +19,19 @@ MonoBehaviour:
   allLines:
   - side: 0
     characterName: Loreen
-    characterSprite: {fileID: 21300000, guid: 8ee8136007822ef44baf33c1fe10e0ba, type: 3}
+    characterSprite: {fileID: 21300000, guid: 84293290075aa6c48984f4ed5a1b5098, type: 3}
     sentence: "Well, I guess it\u2019s time to wrap this up."
     eventTrigger: 
     choices: []
   - side: 1
     characterName: Ary
-    characterSprite: {fileID: 21300000, guid: ece41423a199ba04f8804d355c231cbb, type: 3}
+    characterSprite: {fileID: 21300000, guid: 9e781b29aa2808c4a9e37204da7b98b1, type: 3}
     sentence: I had higher hopes about you, to be honest.
     eventTrigger: 
     choices: []
   - side: 0
     characterName: Loreen
-    characterSprite: {fileID: 0}
+    characterSprite: {fileID: 21300000, guid: e12fe458cba716f48a2cc799cb0c641a, type: 3}
     sentence: Wow, last piece of honesty for the night?
     eventTrigger: 
     choices: []

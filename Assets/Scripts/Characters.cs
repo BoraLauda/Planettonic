@@ -26,8 +26,16 @@ public class Characters : ScriptableObject
     
     public List<Sprite> profileRatingIcons;
     
+    
+    [Header("Karakter Özel Yorumları")]
+    public string goodReview = "";
+    public string midReview = "";
+    public string badReview = "";
+    
     [TextArea(3, 5)] 
-    public string quoteText;         
+    public string quoteText;       
+    
+    
     
     [Header("Mekan ve Yemek Tercihleri")]
     public List<LocationPreference> locationPreferences;

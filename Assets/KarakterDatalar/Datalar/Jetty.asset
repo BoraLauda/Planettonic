@@ -26,7 +26,10 @@ MonoBehaviour:
   profileRatingIcons:
   - {fileID: 21300000, guid: 3a92a48834ed72d49ac50653aa5d7202, type: 3}
   - {fileID: 21300000, guid: a0743298d763d9b4fad0d06790a00df6, type: 3}
-  quoteText: "\xF6zl\xFC s\xF6z"
+  goodReview: I had a lot of fun!
+  midReview: Was an okay date.
+  badReview: Worst date ever.
+  quoteText: "Looking for a dance partner.\r"
   locationPreferences:
   - locationName: Restaurant
     bonusStars: 1
@@ -37,7 +40,7 @@ MonoBehaviour:
     reactionScenario: {fileID: 11400000, guid: 08b1ff16f60bfdb4ca046126682780d3, type: 2}
   - food: 2
     reactionScenario: {fileID: 11400000, guid: 08b1ff16f60bfdb4ca046126682780d3, type: 2}
-  sevdigiKokteyl: Cosmopolitan
+  sevdigiKokteyl: Neptun
   kokteylSevmediDiyalogu: {fileID: 11400000, guid: 752aa093cf63b894f8cff324abd1a468, type: 2}
   iceBreakerGood:
   - targetCharacter: {fileID: 11400000, guid: 5f6e0fde49813654aa1d61918d175f26, type: 2}

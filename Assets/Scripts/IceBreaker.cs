@@ -36,7 +36,7 @@ public class IceBreaker : MonoBehaviour
     public float explosion = 800f;
     
     [Header("Ayarlar")]
-    public float speed = 1200f;        
+    public float speed = 2000f;        
     private int currentIceLevel = 0; 
     public float shakeStrength = 5f;
     public float strikeDistance = 30f; 
@@ -82,7 +82,7 @@ public class IceBreaker : MonoBehaviour
         currentHearts = 4;
         currentIceLevel = 0;
         isLeftTurn = true; 
-        speed = 1200f; 
+        speed = 2000f; 
 
         
         totalEarnedStarsThisGame = 0f;
@@ -287,8 +287,8 @@ public class IceBreaker : MonoBehaviour
         currentIceLevel += amount;
 
         if (speed < 2200) speed = 2200;
-        else if (speed < 2500) speed = 2500;
-        else speed = 3000;
+        else if (speed < 2400) speed = 2400;
+        else speed = 2600;
         
         int indexToShow = Mathf.Clamp(currentIceLevel, 0, iceSprites.Length - 1);
         if (indexToShow < iceSprites.Length)

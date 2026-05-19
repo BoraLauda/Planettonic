@@ -19,7 +19,7 @@ MonoBehaviour:
   allLines:
   - side: 1
     characterName: Lynn
-    characterSprite: {fileID: 21300000, guid: 724a9d18b99b23f4d8ef91418ba692f0, type: 3}
+    characterSprite: {fileID: 21300000, guid: 62eaae04548671943969da195ad840fd, type: 3}
     sentence: Why do Venusians have 4 arms? Is it even useful in any way?
     eventTrigger: 
     choices: []

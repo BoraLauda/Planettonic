@@ -5,6 +5,9 @@ using System.Collections.Generic;
 
 public class CarouselWithDetail : MonoBehaviour
 {
+    [Header("Senkronizasyon")]
+    public CarouselWithDetail linkedCarousel;
+
     [Header("Görsel Alanları")]
     public Image imgLeft;
     public Image imgCenter;
@@ -45,6 +48,11 @@ public class CarouselWithDetail : MonoBehaviour
 
         currentIndex = (currentIndex + 1) % dataList.Count;
         UpdateUI();
+
+        if (linkedCarousel != null)
+        {
+            linkedCarousel.SyncIndex(currentIndex);
+        }
     }
 
     public void OnPreviousClicked()
@@ -58,6 +66,19 @@ public class CarouselWithDetail : MonoBehaviour
             currentIndex = dataList.Count - 1;
         }
         UpdateUI();
+
+        if (linkedCarousel != null)
+        {
+            linkedCarousel.SyncIndex(currentIndex);
+        }
+    }
+
+    public void SyncIndex(int newIndex)
+    {
+        if (currentIndex == newIndex) return;
+
+        currentIndex = newIndex;
+        UpdateUI();
     }
 
     void UpdateUI()
@@ -66,7 +87,6 @@ public class CarouselWithDetail : MonoBehaviour
 
         ItemData currentItem = dataList[currentIndex];
         
-      
         imgCenter.sprite = currentItem.iconSprite;
         imgCenter.rectTransform.localScale = Vector3.one * 1.2f; 
         imgCenter.color = Color.white; 
@@ -76,11 +96,9 @@ public class CarouselWithDetail : MonoBehaviour
             imgDetailDisplay.sprite = currentItem.detailSprite;
         }
 
-      
         if(textPlanetName != null) textPlanetName.text = currentItem.planetName;
         if(textPlaceTitle != null) textPlaceTitle.text = currentItem.placeTitle;
         if(textPlaceDesc != null) textPlaceDesc.text = currentItem.placeDescription;
-        
         
         int leftIndex = (currentIndex - 1 + dataList.Count) % dataList.Count;
         

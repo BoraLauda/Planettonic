@@ -17,20 +17,21 @@ MonoBehaviour:
   profileIcon: {fileID: 21300000, guid: 243dec76f289a0c4f86cf1cd834c6e39, type: 3}
   dodgeTheQuestionIkonu: {fileID: -5726526971280107390, guid: 7d8893f829515954da8db8356faa17df, type: 3}
   menuMinigameIkonu: {fileID: -5726526971280107390, guid: 7d8893f829515954da8db8356faa17df, type: 3}
-  portraitImage: {fileID: 21300000, guid: 19b8c42c96185954db27cd2f9406e0a0, type: 3}
+  portraitImage: {fileID: 8721690836180394749, guid: a73a3a57fa9f88744805f6a9a13124af, type: 3}
   fullName: Linus
-  demographicsInfo: 20 || Male || Lawyer
+  demographicsInfo: 24 || Male || Lawyer
   relationshipGoals: Casual || Kids
   hobbies: Hosting parties, baking, running, rock climbing
   foodPreferenceText: Low-calorie, diet friendly
   profileRatingIcons:
   - {fileID: 21300000, guid: 3a92a48834ed72d49ac50653aa5d7202, type: 3}
   - {fileID: 21300000, guid: a85149ffbf8caf24cb342d45c59ff28c, type: 3}
-  quoteText: "\xD6zl\xFC s\xF6z"
+  goodReview: I had a good time.
+  midReview: Decent enough date.
+  badReview: "Really wasn\u2019t enjoyable."
+  quoteText: "Any rock climbing buddies? I\u2019ll buy you a drink after."
   locationPreferences:
   - locationName: Restaurant
-    bonusStars: 1
-  - locationName: Bar
     bonusStars: 1
   - locationName: House
     bonusStars: 1
@@ -45,7 +46,8 @@ MonoBehaviour:
     reactionScenario: {fileID: 11400000, guid: 3b9413dd336563e48ace9cf6b8768dd9, type: 2}
   - food: 7
     reactionScenario: {fileID: 11400000, guid: 3b9413dd336563e48ace9cf6b8768dd9, type: 2}
-  sevdigiKokteyl: 
+  sevdigiKokteyl: Martini
+  kokteylSevmediDiyalogu: {fileID: 11400000, guid: d70b1109a950e214d923d41db6aa8ada, type: 2}
   iceBreakerGood:
   - targetCharacter: {fileID: 11400000, guid: 52f97840cc872804392c25a1f2b8175b, type: 2}
     diyalogDosyasi: {fileID: 11400000, guid: d003e060d1f24f846906f6754de64ce6, type: 2}
