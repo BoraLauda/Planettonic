@@ -23,7 +23,19 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-    
+       
+        if (!HeartSpawner.isGameActive)
+        {
+            anim.speed = 0;           
+            rb.simulated = false;     
+            return;                  
+        }
+        else
+        {
+            anim.speed = 1;
+            rb.simulated = true;
+        }
+
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, zeminLayer);
         anim.SetBool("isGrounded", isGrounded);
         
@@ -40,6 +52,9 @@ public class Player : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D temas)
     {
+      
+        if (!HeartSpawner.isGameActive) return; 
+
         if (temas.CompareTag("Kalp"))
         {
             if (BrainKuzu.Instance != null)
@@ -47,12 +62,10 @@ public class Player : MonoBehaviour
                 BrainKuzu.Instance.KalpToplandi();
             }
             
-         
             Destroy(temas.gameObject);
         }
         else if (temas.CompareTag("KirikKalp"))
         {
-           
             if (BrainKuzu.Instance != null)
             {
                 BrainKuzu.Instance.KirikKalbeCarpildi();

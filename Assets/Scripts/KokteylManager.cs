@@ -17,10 +17,6 @@ public class KokteylTarifi
     public int istenenZeytinSayisi = 0;   
     
     public List<string> istenenSoslar = new List<string>();
-    
-    [Header("Yapilis")]
-    public bool calkalanmaliMi = false;
-    public bool karistirilmaliMi = false;
 }
 
 public class KokteylManager : MonoBehaviour
@@ -29,9 +25,6 @@ public class KokteylManager : MonoBehaviour
 
     public enum GamePhase { Preparation, Jigger, Stirring, Shaking, Pouring, Finished }
     public GamePhase currentPhase = GamePhase.Preparation;
-    
-    public bool isShaken = false;
-    public bool isStirred = false;
 
     [Header("Asama UI Kutulari")]
     public GameObject phase0_Preparation;
@@ -102,7 +95,6 @@ public class KokteylManager : MonoBehaviour
         {
             NextPhase();
         }
-        
     }
 
     public void StartPhase(GamePhase newPhase)
@@ -158,8 +150,6 @@ public class KokteylManager : MonoBehaviour
     private void ResetMasayiVeDegiskenleri()
     {
         currentPhase = GamePhase.Preparation;
-        isShaken = false; 
-        isStirred = false;
         
         eklenenBuzSayisi = 0;
         eklenenLimonSayisi = 0;
@@ -237,7 +227,8 @@ public class KokteylManager : MonoBehaviour
         foreach (KokteylTarifi tarif in tumTarifler)
         {
             float dogruPuan = 0;
-            float toplamKriter = 8f + tarif.istenenSoslar.Count;
+            // DİKKAT: Eski 8 puanı 6'ya düşürdük!
+            float toplamKriter = 6f + tarif.istenenSoslar.Count;
 
             if (eklenenBuzSayisi == tarif.istenenBuzSayisi) dogruPuan++;
             if (eklenenLimonSayisi == tarif.istenenLimonSayisi) dogruPuan++;
@@ -245,9 +236,6 @@ public class KokteylManager : MonoBehaviour
             if (eklenenNaneSayisi == tarif.istenenNaneSayisi) dogruPuan++;
             if (eklenenCilekSayisi == tarif.istenenCilekSayisi) dogruPuan++;
             if (eklenenZeytinSayisi == tarif.istenenZeytinSayisi) dogruPuan++;
-            
-            if (isStirred == tarif.karistirilmaliMi) dogruPuan++;
-            if (isShaken == tarif.calkalanmaliMi) dogruPuan++;
 
             int dogruSosSayisi = 0;
             List<string> kopyaEklenenler = new List<string>(eklenenSoslar);
@@ -414,7 +402,6 @@ public class KokteylManager : MonoBehaviour
         TemizlikYap();
     }
 
-   // YENİ: Renk vermeden önce shaker'ın içindekilerin hangi tarife dönüştüğünü bulur
     private string MevcutTarifiBul()
     {
         float enYuksekBasariOrani = 0f;
@@ -423,7 +410,8 @@ public class KokteylManager : MonoBehaviour
         foreach (KokteylTarifi tarif in tumTarifler)
         {
             float dogruPuan = 0;
-            float toplamKriter = 8f + tarif.istenenSoslar.Count;
+            // DİKKAT: Burada da eski 8 puanı 6'ya düşürdük!
+            float toplamKriter = 6f + tarif.istenenSoslar.Count;
 
             if (eklenenBuzSayisi == tarif.istenenBuzSayisi) dogruPuan++;
             if (eklenenLimonSayisi == tarif.istenenLimonSayisi) dogruPuan++;
@@ -431,9 +419,6 @@ public class KokteylManager : MonoBehaviour
             if (eklenenNaneSayisi == tarif.istenenNaneSayisi) dogruPuan++;
             if (eklenenCilekSayisi == tarif.istenenCilekSayisi) dogruPuan++;
             if (eklenenZeytinSayisi == tarif.istenenZeytinSayisi) dogruPuan++;
-            
-            if (isStirred == tarif.karistirilmaliMi) dogruPuan++;
-            if (isShaken == tarif.calkalanmaliMi) dogruPuan++;
 
             int dogruSosSayisi = 0;
             List<string> kopyaEklenenler = new List<string>(eklenenSoslar);
@@ -476,15 +461,11 @@ public class KokteylManager : MonoBehaviour
                eklenenSoslar.Count == 0;
     }
 
-   
     public Color GetKokteylRengi()
     {
         Color sonucRengi = Color.white; 
-        
-        
         string yapilanTarif = MevcutTarifiBul().ToLower();
 
-       
         if (yapilanTarif.Contains("cosmopolitan"))
         {
             ColorUtility.TryParseHtmlString("#E9ADAD", out sonucRengi);
@@ -499,7 +480,6 @@ public class KokteylManager : MonoBehaviour
         }
         else if (eklenenSoslar.Count > 0)
         {
-          
             string anaSos = eklenenSoslar[0];
             switch (anaSos)
             {
@@ -512,15 +492,12 @@ public class KokteylManager : MonoBehaviour
             }
         }
 
-      
         sonucRengi.a = 180f / 255f; 
-        
         return sonucRengi;
     }
     
     public void IptalEtVeHazirligaDon()
     {
-        
         if (currentPhase == GamePhase.Shaking && ShakerInteraction.Instance != null)
         {
             ShakerInteraction.Instance.kapakAcikMi = true;
@@ -530,5 +507,4 @@ public class KokteylManager : MonoBehaviour
         
         StartPhase(GamePhase.Preparation);
     }
-    
 }

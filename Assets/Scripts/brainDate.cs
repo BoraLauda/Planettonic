@@ -90,6 +90,12 @@ public class brainDate : MonoBehaviour
     public GameObject failRestartButtonObj;
     public GameObject failDesktopButtonObj;
 
+    [Header("Debt (Borç) Sistemi")]
+    public TMP_Text successDebtText;  
+    public TMP_Text failDebtText;  
+    public int startingDebt = 5000;   
+    private int currentDebt;         
+
     public GameObject BGblur;
 
     public Transform leftStarsCont;
@@ -258,6 +264,9 @@ public class brainDate : MonoBehaviour
     void PrepareSceneData()
     {
         DialogueDataları playThis = DateSettings.selectedScenario != null ? DateSettings.selectedScenario : startingScenario;
+
+        // YENİ: Oyuncunun güncel borcunu hafızadan çek, yoksa varsayılanı (5000) ata.
+        currentDebt = PlayerPrefs.GetInt("PlayerDebt", startingDebt);
 
         if (playThis != null)
         {
@@ -516,7 +525,6 @@ public class brainDate : MonoBehaviour
 
           if (dateEndedObject != null) dateEndedObject.SetActive(true);
 
-            
           bool isTutorialDate = false;
           if (DateSettings.leftChar != null && DateSettings.rightChar != null)
           {
@@ -564,7 +572,13 @@ public class brainDate : MonoBehaviour
               UnityEngine.PlayerPrefs.Save();
           }
 
-           
+          // YENİ: Kalan borcu hesapla ve UI'a yansıt (Sadece gösterim için)
+          int calculatedRemainingDebt = currentDebt - totalHearts;
+          if (calculatedRemainingDebt < 0) calculatedRemainingDebt = 0; // Borç eksiye düşmesin
+
+          if (successDebtText != null) successDebtText.text = calculatedRemainingDebt.ToString();
+          if (failDebtText != null) failDebtText.text = calculatedRemainingDebt.ToString();
+
           if (isStoodUp)
           {
               if (dateEkilmePanel != null) dateEkilmePanel.SetActive(true);
@@ -599,8 +613,6 @@ public class brainDate : MonoBehaviour
               }
 
               if (failTutorialTextObj != null) failTutorialTextObj.SetActive(isTutorialDate);
-                
-               
               if (failRestartButtonObj != null) failRestartButtonObj.SetActive(isTutorialDate);
               if (failDesktopButtonObj != null) failDesktopButtonObj.SetActive(!isTutorialDate);
 
@@ -609,14 +621,23 @@ public class brainDate : MonoBehaviour
       }
     }
 
+   
+
     public void AddReward(float stars, int hearts, TargetCharacter target)
     {
         if (isHeartOfCircuitActive && hearts > 0)
         {
             int roll = Random.Range(0, 100);
+            Debug.Log($"<color=yellow>Heart of the Circuit Zarı:</color> Gelen Zar: {roll} (Kazanma Şartı: 30'dan küçük olması)");
+
             if (roll < 30)
             {
+                Debug.Log($"<color=green>ŞANS GÜLDÜ!</color> Kazanılan kalp sayısı {hearts} değerinden {hearts * 2} değerine yükseldi!");
                 hearts *= 2;
+            }
+            else
+            {
+                Debug.Log($"<color=red>PAS GEÇTİ.</color> Kalpler katlanmadı. Sadece normal miktar eklenecek.");
             }
         }
 
@@ -1559,6 +1580,8 @@ public class brainDate : MonoBehaviour
 
         PlayerPrefs.SetInt("HeartCooldown", 2);
         PlayerPrefs.Save();
+        
+        Debug.Log("<color=orange>ITEM KULLANILDI: Heart of the Circuit!</color> Bu date boyunca kazanılan kalpler %30 ihtimalle ikiye katlanacak. (Cooldown: 2 olarak ayarlandı)");
     }
 
     public void UseCyberchics()
@@ -1685,6 +1708,7 @@ public class brainDate : MonoBehaviour
 
     public void RestartDate()
     {
+        
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
@@ -1729,18 +1753,19 @@ public class brainDate : MonoBehaviour
         int currentBank = PlayerPrefs.GetInt("SavedHearts", 0);
         int newTotal = currentBank + totalHearts;
         PlayerPrefs.SetInt("SavedHearts", newTotal);
+        
+        int newDebt = currentDebt - totalHearts;
+        if (newDebt < 0) newDebt = 0; 
+        PlayerPrefs.SetInt("PlayerDebt", newDebt);
 
         PlayerPrefs.SetInt("HasSave", 1);
-
         PlayerPrefs.Save();
 
         if (!string.IsNullOrEmpty(desktopScene))
         {
             SceneManager.LoadScene(desktopScene);
         }
-        
     }
-    
 
     public void StartTheDate()
     {

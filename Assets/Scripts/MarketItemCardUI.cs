@@ -13,7 +13,6 @@ public class ItemCardUI : MonoBehaviour
     public Image cardImageUI;
     public TMP_Text itemNameText; 
   
-
     public string cardType = "Market"; 
     
     void OnEnable()
@@ -25,7 +24,6 @@ public class ItemCardUI : MonoBehaviour
     {
         if (actionButton == null) actionButton = GetComponentInChildren<Button>();
         
-    
         if (myData != null)
         {
             if (cardImageUI != null && myData.cardImage != null)
@@ -75,6 +73,21 @@ public class ItemCardUI : MonoBehaviour
     {
         if (manager == null || myData == null) return;
 
+        // --- YENİ EKLENEN COOLDOWN AJANI ---
+        bool isCooldownActive = false;
+        int currentCooldown = 0;
+
+        // Eşyanın adını tam olarak ScriptableObject'indeki (ItemData) ismiyle aynı yazmalısın.
+        if (myData.itemName == "Heart of the Circuit")
+        {
+            currentCooldown = PlayerPrefs.GetInt("HeartCooldown", 0);
+            if (currentCooldown > 0)
+            {
+                isCooldownActive = true;
+            }
+        }
+        // ------------------------------------
+
         if (cardType == "Market")
         {
             if (manager.IsOwned(myData))
@@ -90,7 +103,13 @@ public class ItemCardUI : MonoBehaviour
         }
         else if (cardType == "Owned")
         {
-            if (manager.IsEquipped(myData))
+            // Eğer sahipsek ve kuşanmak istiyorsak ama Cooldown varsa:
+            if (isCooldownActive)
+            {
+                if(buttonText) buttonText.text = $"Cooldown ({currentCooldown})";
+                actionButton.interactable = false; // Tıklamayı engelle
+            }
+            else if (manager.IsEquipped(myData))
             {
                 if(buttonText) buttonText.text = "Equipped";
                 actionButton.interactable = false;
@@ -103,8 +122,17 @@ public class ItemCardUI : MonoBehaviour
         }
         else if (cardType == "Equipped")
         {
-            if(buttonText) buttonText.text = "Equipped";
-            actionButton.interactable = false;
+            // Zaten kuşanılmış ama date'ten dönünce Cooldown yemişse:
+            if (isCooldownActive)
+            {
+                if(buttonText) buttonText.text = $"Cooldown ({currentCooldown})";
+                actionButton.interactable = false;
+            }
+            else
+            {
+                if(buttonText) buttonText.text = "Equipped";
+                actionButton.interactable = false;
+            }
         }
     }
 

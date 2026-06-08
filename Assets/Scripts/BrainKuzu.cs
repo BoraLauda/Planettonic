@@ -11,7 +11,7 @@ public class BrainKuzu : MonoBehaviour
     public Image[] kalpImajlari; 
 
     [Header("Zamanlayıcı Ayarları")]
-    public float gameDuration = 20f;
+    public float gameDuration = 60f; 
     public TextMeshProUGUI sureText;
     private float gameTimer;
     private bool isGameOver = false;
@@ -27,11 +27,15 @@ public class BrainKuzu : MonoBehaviour
         else Destroy(gameObject);
     }
 
-    private void Start()
+    private void OnEnable()
     {
         gameTimer = gameDuration;
         isGameOver = false;
+        mevcutYarimKalpPuan = 0; 
         KalpleriGuncelle();
+        
+       
+        HeartSpawner.isGameActive = true; 
     }
 
     private void Update()
@@ -102,16 +106,17 @@ public class BrainKuzu : MonoBehaviour
             if (kalpImajlari[i] != null)
             {
                 float kalbinPayi = (mevcutYarimKalpPuan - (i * 2)) / 2f;
-                
                 kalpImajlari[i].fillAmount = Mathf.Clamp(kalbinPayi, 0f, 1f);
             }
         }
     }
     
- 
     private void MinigameBitti(bool basariliMi)
     {
         isGameOver = true;
+
+        
+        HeartSpawner.isGameActive = false;
 
         brainDate bd = FindFirstObjectByType<brainDate>();
         if (bd != null)

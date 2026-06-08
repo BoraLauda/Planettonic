@@ -77,7 +77,6 @@ public class ShakerInteraction : MonoBehaviour, IDropHandler, IPointerClickHandl
         }
     }
 
-    
     public void ShowEmptyWarning()
     {
         if (warningCoroutine != null) StopCoroutine(warningCoroutine);
@@ -103,7 +102,6 @@ public class ShakerInteraction : MonoBehaviour, IDropHandler, IPointerClickHandl
             return;
         }
 
-        
         if (kapakAcikMi && KokteylManager.Instance != null && KokteylManager.Instance.IsShakerEmpty())
         {
             ShowEmptyWarning();
@@ -116,15 +114,13 @@ public class ShakerInteraction : MonoBehaviour, IDropHandler, IPointerClickHandl
         if (kapaliShakerObjesi != null) kapaliShakerObjesi.SetActive(!kapakAcikMi);
         if (acikShakerObjesi != null) acikShakerObjesi.SetActive(kapakAcikMi);
         
+        
         if (oncekiDurum == true && kapakAcikMi == false)
         {
             if (KokteylManager.Instance != null)
             {
-                if (!KokteylManager.Instance.isShaken)
-                {
-                    Debug.Log("Kapak kapandı, Çalkalama (Shake) başlıyor!");
-                    StartCoroutine(GecikmeliFazaGec(KokteylManager.GamePhase.Shaking, 0.5f));
-                }
+                Debug.Log("Kapak kapandı, Çalkalama (Shake) başlıyor!");
+                StartCoroutine(GecikmeliFazaGec(KokteylManager.GamePhase.Shaking, 0.5f));
             }
         }
     }
@@ -172,14 +168,12 @@ public class ShakerInteraction : MonoBehaviour, IDropHandler, IPointerClickHandl
                     Debug.Log(draggedItem.itemName + " shaker'a atıldı!");
                     Destroy(draggedItem.gameObject); 
                 }
-               
                 else if (draggedItem.itemName == "Sos")
                 {
                     draggedItem.isLocked = true; 
                     SauceBottle sauce = draggedItem.GetComponent<SauceBottle>();
                     if (sauce != null) sauce.StartAutomaticPour(this.transform); 
                 }
-               
                 else if (draggedItem.itemName == "Kasik")
                 {
                     if (KokteylManager.Instance != null)
@@ -191,19 +185,12 @@ public class ShakerInteraction : MonoBehaviour, IDropHandler, IPointerClickHandl
                             return; 
                         }
 
-                        if (!KokteylManager.Instance.isStirred)
-                        {
-                            draggedItem.ForceTurn();
-                            Debug.Log("Kaşık atıldı, Karıştırma (Stir) başlıyor!");
-                            StartCoroutine(GecikmeliFazaGec(KokteylManager.GamePhase.Stirring, 0.4f));
-                        }
-                        else
-                        {
-                            draggedItem.ForceTurn();
-                        }
+                      
+                        draggedItem.ForceTurn();
+                        Debug.Log("Kaşık atıldı, Karıştırma (Stir) başlıyor!");
+                        StartCoroutine(GecikmeliFazaGec(KokteylManager.GamePhase.Stirring, 0.4f));
                     }
                 }
-                
                 else if (draggedItem.itemName.StartsWith("Bardak_"))
                 {
                     string indexString = draggedItem.itemName.Substring(draggedItem.itemName.Length - 1);

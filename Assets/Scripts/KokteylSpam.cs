@@ -148,7 +148,6 @@ public class KokteylSpam : MonoBehaviour
             shakerToShake.localRotation = initialRotation;
         }
 
-       
         if (yildizPrefab != null && efektMerkezi != null)
         {
             for (int i = 0; i < pariltiSayisi; i++)
@@ -160,12 +159,8 @@ public class KokteylSpam : MonoBehaviour
 
         yield return new WaitForSeconds(1.0f);
         
-        if (buEkranStirringMi) KokteylManager.Instance.isStirred = true;
-        else KokteylManager.Instance.isShaken = true;
-
         KokteylManager.Instance.StartPhase(KokteylManager.GamePhase.Preparation);
     }
-
     
     private IEnumerator YildizUcurRoutine(GameObject yildiz)
     {
@@ -174,11 +169,9 @@ public class KokteylSpam : MonoBehaviour
 
         Vector2 rastgeleYon = new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1f)).normalized;
         
-       
         float rastgeleHiz = Random.Range(patlamaGucu * 0.8f, patlamaGucu * 1.5f); 
         float rastgeleDonusHizi = Random.Range(-300f, 300f);
 
-       
         float animasyonSuresi = 1.2f;
         float gecenSure = 0f;
 
@@ -189,7 +182,6 @@ public class KokteylSpam : MonoBehaviour
 
             rt.anchoredPosition += rastgeleYon * rastgeleHiz * Time.deltaTime;
             
-         
             rastgeleHiz = Mathf.Lerp(rastgeleHiz, 0f, Time.deltaTime * 2.5f); 
 
             rt.Rotate(0, 0, rastgeleDonusHizi * Time.deltaTime);
@@ -197,7 +189,6 @@ public class KokteylSpam : MonoBehaviour
             if (img != null)
             {
                 Color c = img.color;
-                
                 c.a = Mathf.Lerp(1f, 0f, Mathf.Pow(oran, 2f)); 
                 img.color = c;
             }

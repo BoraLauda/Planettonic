@@ -40,6 +40,7 @@ public class LiquidSpawn : MonoBehaviour
     {
         if (isFinished) return;
 
+        
         if (Input.GetMouseButton(0))
         {
             hasStartedPouring = true;
@@ -48,8 +49,10 @@ public class LiquidSpawn : MonoBehaviour
         }
         else if (hasStartedPouring)
         {
+           
             idleTimer += Time.deltaTime;
             
+           
             if (idleTimer >= 1f)
             {
                 FinishPouring();
@@ -58,6 +61,7 @@ public class LiquidSpawn : MonoBehaviour
 
         targetFill = Mathf.Clamp(targetFill, 0f, 1f);
 
+       
         if (currentFill < targetFill)
         {
             currentFill += fillSpeed * Time.deltaTime;
@@ -71,50 +75,10 @@ public class LiquidSpawn : MonoBehaviour
 
         if (KokteylManager.Instance != null)
         {
-            KokteylManager.Instance.MasadakiBardagiGuncelle(liquidImage.fillAmount);
             
+            KokteylManager.Instance.MasadakiBardagiGuncelle(liquidImage.fillAmount);
+          
             KokteylManager.Instance.SadeceMasayiBirakVeSifirla(); 
         }
-    }
-
-    private void HangiTarifYapildiKontrolEt()
-    {
-        string sonucMesaji = "Uyan tarif yok!";
-        
-        foreach (KokteylTarifi tarif in KokteylManager.Instance.tumTarifler)
-        {
-            if (KokteylManager.Instance.eklenenBuzSayisi == tarif.istenenBuzSayisi &&
-                KokteylManager.Instance.eklenenLimonSayisi == tarif.istenenLimonSayisi &&
-                KokteylManager.Instance.isStirred == tarif.karistirilmaliMi &&
-                KokteylManager.Instance.isShaken == tarif.calkalanmaliMi)
-            {
-                if (KokteylManager.Instance.eklenenSoslar.Count == tarif.istenenSoslar.Count)
-                {
-                    List<string> kopyaEklenenler = new List<string>(KokteylManager.Instance.eklenenSoslar);
-                    bool soslarDogruMu = true;
-
-                    foreach (string istenenSos in tarif.istenenSoslar)
-                    {
-                        if (kopyaEklenenler.Contains(istenenSos))
-                        {
-                            kopyaEklenenler.Remove(istenenSos);
-                        }
-                        else
-                        {
-                            soslarDogruMu = false;
-                            break;
-                        }
-                    }
-
-                    if (soslarDogruMu)
-                    {
-                        sonucMesaji = tarif.tarifAdi + " yapıldı!";
-                        break; 
-                    }
-                }
-            }
-        }
-
-        Debug.Log("Dökme İşlemi Bitti! -> " + sonucMesaji);
     }
 }

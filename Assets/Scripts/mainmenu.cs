@@ -5,12 +5,10 @@ using UnityEngine.UI;
 
 public class MainMenuManager : MonoBehaviour
 {
-  
     public string startSceneName = "Desktop"; 
+    public string introSceneName = "Intro"; 
     
-   
     public StarAnimation starAnimator; 
-    
     
     public RectTransform buttonsContainer; 
     public float buttonExitOffsetY = -1000f; 
@@ -20,7 +18,6 @@ public class MainMenuManager : MonoBehaviour
     public RectTransform titleContainer; 
     public float titleExitOffsetY = 1000f;
 
-   
     public Button loadGameButton; 
 
     void Start()
@@ -36,9 +33,7 @@ public class MainMenuManager : MonoBehaviour
                 cg = loadGameButton.gameObject.AddComponent<CanvasGroup>();
             }
             
-           
             cg.alpha = hasSave ? 1f : 0.8f; 
-           
         }
         
         if (buttonsContainer != null)
@@ -54,25 +49,25 @@ public class MainMenuManager : MonoBehaviour
 
     public void NewGame()
     {
-        Debug.Log("Yeni Oyun");
+        Debug.Log("Yeni Oyun - Videoya Gidiliyor");
         
         PlayerPrefs.DeleteAll();
         PlayerPrefs.SetInt("HasSave", 1); 
         PlayerPrefs.Save();
-
-        StartTransition(); 
+        
+        StartTransition(introSceneName); 
     }
 
     public void LoadGame()
     {
-        Debug.Log("Kayıt");
+        Debug.Log("Kayıt Yükleniyor");
         if (PlayerPrefs.GetInt("HasSave", 0) == 1)
         {
-            StartTransition();
+            StartTransition(startSceneName);
         }
     }
     
-    private void StartTransition()
+    private void StartTransition(string hedefSahne)
     {
         float beklemeSuresi = 1.5f;
 
@@ -91,9 +86,8 @@ public class MainMenuManager : MonoBehaviour
         {
             StartCoroutine(AnimateTitleOut(beklemeSuresi));
         }
-
-       
-        StartCoroutine(WaitAndLoadScene(startSceneName, beklemeSuresi));
+        
+        StartCoroutine(WaitAndLoadScene(hedefSahne, beklemeSuresi));
     }
     
     IEnumerator AnimateTitleIn(float duration)

@@ -5,7 +5,6 @@ using System.Collections.Generic;
 public class Background : MonoBehaviour
 {
     [Header("Ayarlar")]
-    public float kaymaHizi = 200f;
     public RectTransform baslangicArkaplan; 
     public GameObject donguPrefab;
     public Transform donguKonteyner; 
@@ -45,7 +44,10 @@ public class Background : MonoBehaviour
 
     void Update()
     {
-        float mesafe = kaymaHizi * Time.deltaTime;
+       
+        if (!HeartSpawner.isGameActive) return;
+
+        float mesafe = HeartSpawner.AnlikHiz * Time.deltaTime;
         
         if (!baslangicBitti && baslangicArkaplan != null)
         {
@@ -60,7 +62,6 @@ public class Background : MonoBehaviour
             }
         }
         
-    
         float atlamaMesafesi = aktifDonguler.Count * (donguGenisligi - icIceGecmePayi);
 
         for (int i = 0; i < aktifDonguler.Count; i++)
@@ -71,10 +72,7 @@ public class Background : MonoBehaviour
             
             if (klonSagKenar <= klonKapanisOfseti) 
             {
-                
                 aktifDonguler[i].anchoredPosition += new Vector2(atlamaMesafesi, 0);
-
-               
             }
         }
     }
