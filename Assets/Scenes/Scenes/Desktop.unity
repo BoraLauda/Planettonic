@@ -114801,6 +114801,7 @@ GameObject:
   - component: {fileID: 795977748}
   - component: {fileID: 795977747}
   - component: {fileID: 795977746}
+  - component: {fileID: 795977750}
   m_Layer: 5
   m_Name: Music (1)
   m_TagString: Untagged
@@ -114886,9 +114887,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 795977746}
-        m_TargetAssemblyTypeName: Icons, Assembly-CSharp
-        m_MethodName: OpenWindow
+      - m_Target: {fileID: 795977750}
+        m_TargetAssemblyTypeName: QuitFunction, Assembly-CSharp
+        m_MethodName: QuitGameFunction
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -114936,6 +114937,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 795977744}
   m_CullTransparentMesh: 1
+--- !u!114 &795977750
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 795977744}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05afdd5779663ee49bcc372512c1026b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &796147556
 GameObject:
   m_ObjectHideFlags: 0
